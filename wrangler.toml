@@ -1,0 +1,21 @@
+name = "leaseplain"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = ".vercel/output/static"
+
+# ─── Cloudflare D1 ────────────────────────────────────────────────────────────
+[[d1_databases]]
+binding = "DB"
+database_name = "leaseplain-db"
+database_id = "YOUR_D1_DATABASE_ID"   # Replace after: wrangler d1 create leaseplain-db
+
+# ─── Cloudflare R2 ────────────────────────────────────────────────────────────
+[[r2_buckets]]
+binding = "LEASE_BUCKET"
+bucket_name = "leaseplain-pdfs"
+
+# ─── Environment Variables ────────────────────────────────────────────────────
+[vars]
+NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
+
+# Secrets (set via: wrangler secret put ANTHROPIC_API_KEY)
+# ANTHROPIC_API_KEY — set as a secret, not in vars

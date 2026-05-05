@@ -26,6 +26,7 @@ export default function Footer() {
               <span className="font-semibold text-slate-800">Account</span>
               <Link href="/login" className="hover:text-slate-900">Log in</Link>
               <Link href="/login" className="hover:text-slate-900">Sign up</Link>
+              <Link href="/billing" className="hover:text-slate-900">Billing</Link>
             </div>
           </div>
         </div>

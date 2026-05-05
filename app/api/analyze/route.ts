@@ -4,6 +4,7 @@ import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude } from "@/lib/claude";
 import { saveAnalysis } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
+import { auth } from "@/lib/auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -19,6 +20,10 @@ async function extractTextFromPDF(buffer: ArrayBuffer): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
+    // Attach user ID if signed in (guests can still analyze)
+    const session = await auth.api.getSession({ headers: req.headers });
+    const userId = session?.user.id;
+
     const formData = await req.formData();
     const textField = formData.get("text");
     const fileField = formData.get("file");
@@ -105,7 +110,7 @@ export async function POST(req: NextRequest) {
     };
 
     // Persist to D1 (no-op in local dev)
-    await saveAnalysis({ ...analysis, rawText: leaseText });
+    await saveAnalysis({ ...analysis, userId, rawText: leaseText });
 
     return NextResponse.json({ id, analysis });
   } catch (err) {

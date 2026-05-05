@@ -2,10 +2,21 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, FileText } from "lucide-react";
+import { Menu, X, FileText, LogOut, LayoutDashboard } from "lucide-react";
+import { useSession, signOut } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { data: session } = useSession();
+  const router = useRouter();
+  const user = session?.user;
+
+  const handleSignOut = async () => {
+    await signOut();
+    router.push("/");
+    router.refresh();
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
@@ -18,8 +29,21 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
           <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
-          <Link href="/dashboard" className="hover:text-slate-900 transition-colors">Dashboard</Link>
-          <Link href="/login" className="hover:text-slate-900 transition-colors">Log in</Link>
+          {user ? (
+            <>
+              <Link href="/dashboard" className="hover:text-slate-900 transition-colors flex items-center gap-1.5">
+                <LayoutDashboard className="w-4 h-4" /> Dashboard
+              </Link>
+              <button
+                onClick={handleSignOut}
+                className="flex items-center gap-1.5 hover:text-slate-900 transition-colors"
+              >
+                <LogOut className="w-4 h-4" /> Sign out
+              </button>
+            </>
+          ) : (
+            <Link href="/login" className="hover:text-slate-900 transition-colors">Log in</Link>
+          )}
           <Link
             href="/upload"
             className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
@@ -42,8 +66,14 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-slate-100 bg-white px-4 py-4 flex flex-col gap-4 text-sm font-medium text-slate-700">
           <Link href="/pricing" onClick={() => setOpen(false)}>Pricing</Link>
-          <Link href="/dashboard" onClick={() => setOpen(false)}>Dashboard</Link>
-          <Link href="/login" onClick={() => setOpen(false)}>Log in</Link>
+          {user ? (
+            <>
+              <Link href="/dashboard" onClick={() => setOpen(false)}>Dashboard</Link>
+              <button onClick={() => { setOpen(false); handleSignOut(); }} className="text-left">Sign out</button>
+            </>
+          ) : (
+            <Link href="/login" onClick={() => setOpen(false)}>Log in</Link>
+          )}
           <Link
             href="/upload"
             onClick={() => setOpen(false)}

@@ -1,40 +1,33 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { FileText, Plus, Clock, AlertTriangle, CheckCircle } from "lucide-react";
+import { auth } from "@/lib/auth";
+import { listAnalysesByUser } from "@/lib/db";
+import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
+import { LeaseAnalysis } from "@/lib/types";
+import {
+  FileText, Plus, Clock, AlertTriangle, CheckCircle, CreditCard,
+} from "lucide-react";
 
-const mockAnalyses = [
-  {
-    id: "1",
-    filename: "123-main-st-lease.pdf",
-    address: "123 Main St, Apt 4B",
-    date: "May 3, 2026",
-    status: "complete",
-    redFlags: 3,
-    summary: "12-month lease at $1,850/month. Three red flags found: auto-renewal clause, unclear subletting policy, and a broad entry-without-notice provision.",
-  },
-  {
-    id: "2",
-    filename: "oak-avenue-lease.pdf",
-    address: "45 Oak Ave, Unit 2",
-    date: "Apr 28, 2026",
-    status: "complete",
-    redFlags: 1,
-    summary: "Month-to-month lease at $1,200/month. One red flag: unusually high late fee structure (10% after day 1).",
-  },
-  {
-    id: "3",
-    filename: "riverside-lease-draft.pdf",
-    address: "789 Riverside Dr",
-    date: "Apr 15, 2026",
-    status: "complete",
-    redFlags: 0,
-    summary: "Standard 12-month lease at $2,100/month. No major red flags. Tenant-friendly terms overall.",
-  },
-];
+export default async function DashboardPage() {
+  const session = await auth.api.getSession({ headers: await headers() });
 
-export default function DashboardPage() {
+  if (!session) redirect("/login?redirect=/dashboard");
+
+  // Load real analyses from D1, fall back to mock data in dev
+  let analyses: LeaseAnalysis[] = await listAnalysesByUser(session.user.id);
+  const isMock = analyses.length === 0;
+  if (isMock) {
+    analyses = [MOCK_ANALYSIS];
+  }
+
+  const redFlagTotal = analyses.reduce((sum, a) => sum + a.redFlags.length, 0);
+  const cleanCount = analyses.filter((a) => a.redFlags.length === 0).length;
+  const plan = (session.user as { plan?: string }).plan ?? "free";
+
   return (
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -44,10 +37,10 @@ export default function DashboardPage() {
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
-              <p className="text-slate-500 text-sm mt-1">
-                Your lease analysis history
-              </p>
+              <h1 className="text-2xl font-bold text-slate-900">
+                Welcome back{session.user.name ? `, ${session.user.name.split(" ")[0]}` : ""}
+              </h1>
+              <p className="text-slate-500 text-sm mt-1">Your lease analysis history</p>
             </div>
             <Link
               href="/upload"
@@ -60,23 +53,39 @@ export default function DashboardPage() {
 
           <DisclaimerBanner />
 
-          {/* Mock auth notice */}
-          <div className="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-700 mb-8">
-            <strong>Demo mode:</strong> You&apos;re viewing sample analyses. Sign in to save and access your real lease history.{" "}
-            <Link href="/login" className="underline font-medium">Sign in</Link>
+          {/* Plan badge */}
+          <div className="mt-4 mb-6 flex items-center justify-between bg-white border border-slate-100 rounded-xl px-4 py-3 shadow-sm">
+            <div className="flex items-center gap-2 text-sm text-slate-600">
+              <span className="font-medium text-slate-900 capitalize">{plan} Plan</span>
+              {plan === "free" && (
+                <span className="text-slate-400">· 1 analysis/month</span>
+              )}
+            </div>
+            {plan === "free" && (
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:underline"
+              >
+                <CreditCard className="w-3.5 h-3.5" /> Upgrade to Pro
+              </Link>
+            )}
           </div>
+
+          {/* Mock data notice */}
+          {isMock && (
+            <div className="mb-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-700">
+              <strong>Demo data:</strong> These are sample analyses. Your real history will appear here after your first upload.
+            </div>
+          )}
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mb-8">
             {[
-              { label: "Leases Analyzed", value: "3", icon: FileText },
-              { label: "Red Flags Found", value: "4", icon: AlertTriangle },
-              { label: "Clean Leases", value: "1", icon: CheckCircle },
+              { label: "Leases Analyzed", value: analyses.length, icon: FileText },
+              { label: "Red Flags Found", value: redFlagTotal, icon: AlertTriangle },
+              { label: "Clean Leases", value: cleanCount, icon: CheckCircle },
             ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 text-center"
-              >
+              <div key={stat.label} className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 text-center">
                 <stat.icon className="w-5 h-5 text-indigo-500 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
                 <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
@@ -84,9 +93,9 @@ export default function DashboardPage() {
             ))}
           </div>
 
-          {/* Analysis history */}
+          {/* Analysis list */}
           <div className="flex flex-col gap-4">
-            {mockAnalyses.map((analysis) => (
+            {analyses.map((analysis) => (
               <div
                 key={analysis.id}
                 className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 hover:shadow-md transition-shadow"
@@ -98,33 +107,31 @@ export default function DashboardPage() {
                     </div>
                     <div className="min-w-0">
                       <h3 className="font-semibold text-slate-900 text-sm truncate">
-                        {analysis.address}
+                        {analysis.filename ?? "Pasted lease text"}
                       </h3>
                       <p className="text-xs text-slate-400 mt-0.5 flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        {analysis.date} &middot; {analysis.filename}
+                        {new Date(analysis.createdAt).toLocaleDateString("en-US", {
+                          month: "short", day: "numeric", year: "numeric",
+                        })}
                       </p>
-                      <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                      <p className="text-sm text-slate-600 mt-2 leading-relaxed line-clamp-2">
                         {analysis.summary}
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 flex-shrink-0">
-                    {analysis.redFlags > 0 ? (
+                    {analysis.redFlags.length > 0 ? (
                       <span className="inline-flex items-center gap-1 bg-red-50 text-red-600 text-xs font-semibold px-2.5 py-1 rounded-full border border-red-100">
                         <AlertTriangle className="w-3 h-3" />
-                        {analysis.redFlags} red flag{analysis.redFlags !== 1 ? "s" : ""}
+                        {analysis.redFlags.length} red flag{analysis.redFlags.length !== 1 ? "s" : ""}
                       </span>
                     ) : (
                       <span className="inline-flex items-center gap-1 bg-green-50 text-green-600 text-xs font-semibold px-2.5 py-1 rounded-full border border-green-100">
-                        <CheckCircle className="w-3 h-3" />
-                        Clean
+                        <CheckCircle className="w-3 h-3" /> Clean
                       </span>
                     )}
-                    <Link
-                      href={`/analysis/${analysis.id}`}
-                      className="text-indigo-600 text-sm font-medium hover:underline"
-                    >
+                    <Link href={`/analysis/${analysis.id}`} className="text-indigo-600 text-sm font-medium hover:underline">
                       View &rarr;
                     </Link>
                   </div>
@@ -132,24 +139,6 @@ export default function DashboardPage() {
               </div>
             ))}
           </div>
-
-          {/* Empty state (hidden when there are results) */}
-          {mockAnalyses.length === 0 && (
-            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-12 text-center">
-              <FileText className="w-10 h-10 text-slate-300 mx-auto mb-4" />
-              <h3 className="font-semibold text-slate-700 mb-2">No analyses yet</h3>
-              <p className="text-slate-400 text-sm mb-6">
-                Upload your first lease to get started.
-              </p>
-              <Link
-                href="/upload"
-                className="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors text-sm"
-              >
-                <Plus className="w-4 h-4" />
-                Analyze a Lease
-              </Link>
-            </div>
-          )}
         </div>
       </main>
 

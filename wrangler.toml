@@ -1,30 +1,27 @@
 name = "leaseplain"
 compatibility_date = "2024-09-23"
-pages_build_output_dir = ".vercel/output/static"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".open-next/cloudflare"
 
 # ─── Cloudflare D1 ────────────────────────────────────────────────────────────
 [[d1_databases]]
 binding = "DB"
 database_name = "leaseplain-db"
-database_id = "YOUR_D1_DATABASE_ID"   # Replace after: wrangler d1 create leaseplain-db
+database_id = "YOUR_D1_DATABASE_ID"
 
 # ─── Cloudflare R2 ────────────────────────────────────────────────────────────
 [[r2_buckets]]
 binding = "LEASE_BUCKET"
 bucket_name = "leaseplain-pdfs"
 
-# ─── Environment Variables (non-secret) ───────────────────────────────────────
+# ─── Environment Variables ────────────────────────────────────────────────────
 [vars]
-NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
+NEXT_PUBLIC_APP_URL = "https://www.leaseplain.com"
 
-# ─── Secrets (set via CLI, never commit) ──────────────────────────────────────
-# wrangler secret put ANTHROPIC_API_KEY
-# wrangler secret put BETTER_AUTH_SECRET
-# wrangler secret put GITHUB_CLIENT_ID
-# wrangler secret put GITHUB_CLIENT_SECRET
-# wrangler secret put GOOGLE_CLIENT_ID
-# wrangler secret put GOOGLE_CLIENT_SECRET
-# wrangler secret put STRIPE_SECRET_KEY
-# wrangler secret put STRIPE_WEBHOOK_SECRET
-# wrangler secret put STRIPE_PRO_PRICE_ID
-# wrangler secret put STRIPE_TEAM_PRICE_ID
+# ─── Secrets (set in Cloudflare Pages dashboard → Settings → Variables) ───────
+# ANTHROPIC_API_KEY
+# BETTER_AUTH_SECRET
+# GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET
+# GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET
+# STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET
+# STRIPE_PRO_PRICE_ID / STRIPE_TEAM_PRICE_ID

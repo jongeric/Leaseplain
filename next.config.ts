@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+// Initialize Cloudflare bindings (D1, R2, KV) in local dev via `next dev`
+if (process.env.NODE_ENV === "development") {
+  initOpenNextCloudflareForDev();
+}
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Required for Cloudflare Pages deployment via OpenNext
 };
 
 export default nextConfig;

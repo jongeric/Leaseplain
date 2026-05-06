@@ -138,7 +138,7 @@ export default async function AnalysisPage({
                   <Link href="/login?redirect=/upload" className="underline font-semibold">
                     Sign up free
                   </Link>{" "}
-                  to unlock red flags, unclear clauses, and negotiation tips.
+                  to unlock financial terms, red flags, unclear clauses, and negotiation tips.
                 </span>
               </div>
             )}
@@ -158,7 +158,7 @@ export default async function AnalysisPage({
               <p className="text-slate-700 text-sm leading-relaxed">{analysis.summary}</p>
             </section>
 
-            {/* 2. Key Financial Terms — always visible */}
+            {/* 2. Key Financial Terms — gated for guests */}
             <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center">
@@ -166,24 +166,50 @@ export default async function AnalysisPage({
                 </div>
                 <h2 className="font-bold text-slate-900">Key Financial Terms</h2>
               </div>
-              <div className="flex flex-col gap-2">
-                {analysis.financialTerms.map((term) => (
-                  <div
-                    key={term.label}
-                    className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 py-2.5 border-b border-slate-50 last:border-0"
-                  >
-                    <span className="text-sm font-medium text-slate-600 sm:w-48 flex-shrink-0">
-                      {term.label}
-                    </span>
-                    <div className="flex-1">
-                      <span className="text-sm font-semibold text-slate-900">{term.value}</span>
-                      {term.note && (
-                        <p className="text-xs text-slate-400 mt-0.5">{term.note}</p>
-                      )}
-                    </div>
+
+              {isTeaser ? (
+                <div className="relative">
+                  <div className="flex flex-col gap-2 pointer-events-none select-none blur-sm opacity-40" aria-hidden="true">
+                    {analysis.financialTerms.slice(0, 4).map((term) => (
+                      <div
+                        key={term.label}
+                        className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 py-2.5 border-b border-slate-50 last:border-0"
+                      >
+                        <span className="text-sm font-medium text-slate-600 sm:w-48 flex-shrink-0">{term.label}</span>
+                        <span className="text-sm font-semibold text-slate-900">{term.value}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Link
+                      href="/login?redirect=/upload"
+                      className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition-colors shadow-md"
+                    >
+                      <Lock className="w-4 h-4" />
+                      Sign up free to unlock
+                    </Link>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  {analysis.financialTerms.map((term) => (
+                    <div
+                      key={term.label}
+                      className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 py-2.5 border-b border-slate-50 last:border-0"
+                    >
+                      <span className="text-sm font-medium text-slate-600 sm:w-48 flex-shrink-0">
+                        {term.label}
+                      </span>
+                      <div className="flex-1">
+                        <span className="text-sm font-semibold text-slate-900">{term.value}</span>
+                        {term.note && (
+                          <p className="text-xs text-slate-400 mt-0.5">{term.note}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </section>
 
             {/* 3. Red Flags — gated for guests */}

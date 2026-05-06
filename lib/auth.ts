@@ -1,6 +1,8 @@
 import { betterAuth } from "better-auth";
+import { memoryAdapter } from "@better-auth/memory-adapter";
 
 export const auth = betterAuth({
+  database: memoryAdapter({}),
   secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-in-production",
   baseURL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
 

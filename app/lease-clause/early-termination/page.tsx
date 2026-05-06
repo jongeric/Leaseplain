@@ -21,10 +21,10 @@ const tenantRights = [
 ];
 
 const redFlags = [
-  "Large flat-fee "lease break penalty" (e.g., two or three months rent) — these are often unenforceable in Ontario",
+  "Large flat-fee “lease break penalty” (e.g., two or three months rent) — these are often unenforceable in Ontario",
   "Forfeiture of your entire security deposit for early termination",
   "Clause waives your right to sublet or assign the lease",
-  "Clause requires "advertising costs" or "re-leasing fees" payable to the landlord",
+  "Clause requires “advertising costs” or “re-leasing fees” payable to the landlord",
   "Short notice periods (less than 60 days for fixed-term, less than 60 days for monthly)",
   "Clause prevents you from leaving even in safety-related circumstances",
 ];

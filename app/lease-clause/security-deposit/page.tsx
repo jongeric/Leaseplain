@@ -21,9 +21,9 @@ const rights = [
 
 const redFlags = [
   "Deposit exceeding one month's rent",
-  "Lease calls the deposit a "damage deposit" or "cleaning deposit" (illegal in Ontario)",
+  "Lease calls the deposit a “damage deposit” or “cleaning deposit” (illegal in Ontario)",
   "No mention of interest on the deposit",
-  "Clause says deposit can be used for "any damages at landlord's discretion"",
+  "Clause says deposit can be used for “any damages at landlord’s discretion”",
   "Landlord does not provide a receipt for the deposit",
   "Clause waives your right to recover the deposit",
 ];

@@ -29,12 +29,12 @@ const tenantDuties = [
 ];
 
 const redFlags = [
-  "Clause shifts landlord maintenance duties onto the tenant (e.g., "tenant responsible for all repairs")",
+  "Clause shifts landlord maintenance duties onto the tenant (e.g., “tenant responsible for all repairs”)",
   "Lease requires tenant to pay for repairs above a set dollar threshold — these may be unenforceable",
   "No clear process for submitting maintenance requests",
   "Clause makes tenant responsible for appliances the landlord owns",
   "Clause waives landlord liability for injury from deferred maintenance",
-  "Lease says repairs will be addressed "at landlord's discretion"",
+  "Lease says repairs will be addressed “at landlord’s discretion”",
 ];
 
 const questions = [

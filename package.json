@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cloudflare": "echo 'CWD:' && pwd && echo 'FILES:' && ls -la && opennextjs-cloudflare build",
+    "build:cloudflare": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint"
   },

@@ -2,6 +2,7 @@ export interface LeaseAnalysis {
   id: string;
   createdAt: string;
   filename?: string;
+  teaser?: boolean;
   summary: string;
   financialTerms: FinancialTerm[];
   redFlags: RedFlag[];

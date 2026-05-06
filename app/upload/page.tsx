@@ -76,7 +76,7 @@ export default function UploadPage() {
       }
 
       const data = await res.json();
-      router.push(`/analysis/${data.id}`);
+      router.push(`/analysis/${data.id}${data.teaser ? "?teaser=1" : ""}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
       setLoading(false);

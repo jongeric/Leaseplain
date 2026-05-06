@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude } from "@/lib/claude";
-import { saveAnalysis } from "@/lib/db";
+import { saveAnalysis, countAnalysesThisMonth } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { auth } from "@/lib/auth";
 
@@ -20,9 +20,23 @@ async function extractTextFromPDF(buffer: ArrayBuffer): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
-    // Attach user ID if signed in (guests can still analyze)
     const session = await auth.api.getSession({ headers: req.headers });
     const userId = session?.user.id;
+
+    // Free-tier gate: authenticated users get 1 full analysis per month
+    if (userId) {
+      const usedThisMonth = await countAnalysesThisMonth(userId);
+      if (usedThisMonth >= 1) {
+        return NextResponse.json(
+          {
+            error:
+              "You've used your free analysis for this month. Upgrade to Pro for unlimited analyses.",
+            code: "MONTHLY_LIMIT_REACHED",
+          },
+          { status: 402 }
+        );
+      }
+    }
 
     const formData = await req.formData();
     const textField = formData.get("text");
@@ -101,18 +115,22 @@ export async function POST(req: NextRequest) {
       };
     }
 
+    // Guests get a teaser — full data saved to DB, restricted view returned
+    const teaser = !userId;
+
     const analysis = {
       id,
       createdAt,
       filename,
       pdfKey,
+      teaser,
       ...analysisData,
     };
 
-    // Persist to D1 (no-op in local dev)
+    // Persist to D1 (no-op in local dev) — always save full data
     await saveAnalysis({ ...analysis, userId, rawText: leaseText });
 
-    return NextResponse.json({ id, analysis });
+    return NextResponse.json({ id, teaser });
   } catch (err) {
     console.error("[/api/analyze] Error:", err);
     return NextResponse.json(

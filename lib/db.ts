@@ -54,6 +54,24 @@ export async function getAnalysisById(id: string): Promise<LeaseAnalysis | null>
   return JSON.parse(row.result_json) as LeaseAnalysis;
 }
 
+export async function countAnalysesThisMonth(userId: string): Promise<number> {
+  const db = getDB();
+  if (!db) return 0;
+
+  const startOfMonth = new Date();
+  startOfMonth.setDate(1);
+  startOfMonth.setHours(0, 0, 0, 0);
+
+  const row = await db
+    .prepare(
+      "SELECT COUNT(*) as count FROM analyses WHERE user_id = ? AND created_at >= ?"
+    )
+    .bind(userId, startOfMonth.toISOString())
+    .first() as { count: number } | null;
+
+  return row?.count ?? 0;
+}
+
 export async function listAnalysesByUser(userId: string): Promise<LeaseAnalysis[]> {
   const db = getDB();
   if (!db) return [];

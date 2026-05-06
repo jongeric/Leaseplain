@@ -1,13 +1,27 @@
 import Link from "next/link";
 
-const footerColumns = [
+const FOOTER_COLUMNS = [
   {
     heading: "Product",
     links: [
       { label: "Lease Analyzer", href: "/lease-analyzer" },
       { label: "Upload Lease", href: "/upload" },
       { label: "Example Report", href: "/example-report" },
+      { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
+    ],
+  },
+  {
+    heading: "Locations",
+    links: [
+      { label: "Canada", href: "/canada" },
+      { label: "Ontario", href: "/canada/ontario" },
+      { label: "Toronto", href: "/canada/ontario/toronto" },
+      { label: "British Columbia", href: "/canada/british-columbia" },
+      { label: "Vancouver", href: "/canada/british-columbia/vancouver" },
+      { label: "Alberta", href: "/canada/alberta" },
+      { label: "Quebec", href: "/canada/quebec" },
+      { label: "United States", href: "/united-states" },
     ],
   },
   {
@@ -16,7 +30,7 @@ const footerColumns = [
       { label: "Security Deposit", href: "/lease-clause/security-deposit" },
       { label: "Rent Increase", href: "/lease-clause/rent-increase" },
       { label: "Early Termination", href: "/lease-clause/early-termination" },
-      { label: "Maintenance Responsibilities", href: "/lease-clause/maintenance" },
+      { label: "Maintenance", href: "/lease-clause/maintenance" },
       { label: "Subletting", href: "/lease-clause/subletting" },
       { label: "Late Fees", href: "/lease-clause/late-fees" },
     ],
@@ -24,20 +38,24 @@ const footerColumns = [
   {
     heading: "Tenant Rights",
     links: [
-      { label: "Ontario", href: "/tenant-rights/ontario" },
-      { label: "Toronto", href: "/tenant-rights/toronto" },
+      { label: "Tenant Rights", href: "/tenant-rights" },
+      { label: "Canada Tenant Rights", href: "/tenant-rights/canada" },
+      { label: "Ontario Tenant Rights", href: "/tenant-rights/ontario" },
+      { label: "BC Tenant Rights", href: "/tenant-rights/british-columbia" },
+      { label: "Alberta Tenant Rights", href: "/tenant-rights/alberta" },
       { label: "Rent Increase Rules", href: "/tenant-rights/rent-increase-rules" },
       { label: "Breaking a Lease", href: "/tenant-rights/breaking-a-lease" },
-      { label: "Landlord Responsibilities", href: "/tenant-rights/landlord-responsibilities" },
     ],
   },
   {
     heading: "Resources",
     links: [
-      { label: "Blog", href: "/resources" },
-      { label: "How to Read a Lease", href: "/resources/how-to-read-a-lease" },
-      { label: "Lease Agreement Explained", href: "/resources/lease-agreement-explained" },
-      { label: "Lease Red Flags", href: "/resources/lease-red-flags" },
+      { label: "Resources", href: "/resources" },
+      { label: "Lease Basics", href: "/resources/lease-basics" },
+      { label: "Before You Sign", href: "/resources/before-you-sign" },
+      { label: "AI Lease Review", href: "/resources/ai-lease-review" },
+      { label: "Tenant Guides", href: "/resources/tenant-guides" },
+      { label: "Landlord Guides", href: "/resources/landlord-guides" },
       { label: "FAQ", href: "/faq" },
     ],
   },
@@ -55,45 +73,42 @@ const footerColumns = [
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-[#0a1628] text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-14 pb-10">
-        {/* Brand row */}
-        <div className="mb-10 flex flex-col gap-3 max-w-xs">
+    <footer className="mt-auto bg-[#0a1628] text-slate-300" aria-label="Site footer">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-10">
+
+        {/* Logo + tagline */}
+        <div className="mb-12 flex flex-col gap-2 max-w-xs">
           <Link
             href="/"
             aria-label="LeasePlain home"
-            className="flex items-center gap-0 font-extrabold text-xl tracking-tight select-none"
+            className="inline-flex items-center font-extrabold text-xl tracking-tight select-none"
           >
             <span className="text-white">Lease</span>
             <span className="text-blue-400">Plain</span>
             <span className="text-slate-400 font-normal text-sm ml-0.5">.com</span>
           </Link>
           <p className="text-sm text-slate-400 leading-relaxed">
-            Understand your lease in plain English. AI-powered analysis that
-            highlights risks, explains clauses, and protects your rights as a
-            tenant.
+            AI-powered lease analysis for Canadian renters. Understand your lease in plain English.
           </p>
-          <p className="text-xs text-slate-500">
-            Not a law firm. Not legal advice.
-          </p>
+          <p className="text-xs text-slate-500">Not a law firm. Not legal advice.</p>
         </div>
 
-        {/* Columns grid */}
+        {/* Link columns */}
         <nav aria-label="Footer navigation">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-            {footerColumns.map((col) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+            {FOOTER_COLUMNS.map((col) => (
               <div key={col.heading}>
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
                   {col.heading}
                 </h3>
                 <ul className="flex flex-col gap-2.5">
-                  {col.links.map((link) => (
-                    <li key={link.href}>
+                  {col.links.map((l) => (
+                    <li key={l.href}>
                       <Link
-                        href={link.href}
-                        className="text-sm text-slate-400 hover:text-white transition-colors"
+                        href={l.href}
+                        className="text-sm text-slate-400 hover:text-white transition-colors leading-snug"
                       >
-                        {link.label}
+                        {l.label}
                       </Link>
                     </li>
                   ))}
@@ -104,15 +119,10 @@ export default function Footer() {
         </nav>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>
-            &copy; {new Date().getFullYear()} LeasePlain. All rights reserved.
-          </p>
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>&copy; {new Date().getFullYear()} LeasePlain. All rights reserved.</p>
           <p className="text-center sm:text-right">
-            <strong className="text-slate-400">Disclaimer:</strong> LeasePlain
-            provides general information only and is not a substitute for
-            professional legal advice. Always consult a licensed attorney before
-            signing any legal agreement.
+            LeasePlain provides general information only and is not a substitute for professional legal advice.
           </p>
         </div>
       </div>

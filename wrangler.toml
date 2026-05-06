@@ -1,7 +1,11 @@
 name = "leaseplain"
+main = ".open-next/cloudflare/index.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".open-next/cloudflare"
+
+[assets]
+directory = ".open-next/cloudflare/assets"
+binding = "ASSETS"
 
 # ─── Cloudflare D1 ────────────────────────────────────────────────────────────
 [[d1_databases]]
@@ -18,7 +22,7 @@ bucket_name = "leaseplain-pdfs"
 [vars]
 NEXT_PUBLIC_APP_URL = "https://www.leaseplain.com"
 
-# ─── Secrets (set in Cloudflare Pages dashboard → Settings → Variables) ───────
+# ─── Secrets (set in Workers dashboard → Settings → Variables and secrets) ────
 # ANTHROPIC_API_KEY
 # BETTER_AUTH_SECRET
 # GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET

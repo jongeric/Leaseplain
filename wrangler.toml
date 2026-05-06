@@ -1,6 +1,6 @@
 name = "leaseplain"
 main = ".open-next/worker.js"
-compatibility_date = "2024-12-01"
+compatibility_date = "2026-05-05"
 compatibility_flags = ["nodejs_compat"]
 
 [assets]
@@ -12,16 +12,14 @@ binding = "DB"
 database_name = "leaseplain-db"
 database_id = "YOUR_D1_DATABASE_ID"
 
-[[r2_buckets]]
-binding = "LEASE_BUCKET"
-bucket_name = "leaseplain-pdfs"
-
 [vars]
-NEXT_PUBLIC_APP_URL = "https://www.leaseplain.com"
+NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
 
+# Secrets set in Workers dashboard → Settings → Variables and secrets:
 # ANTHROPIC_API_KEY
 # BETTER_AUTH_SECRET
 # GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET
 # GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET
 # STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET
 # STRIPE_PRO_PRICE_ID / STRIPE_TEAM_PRICE_ID
+# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY

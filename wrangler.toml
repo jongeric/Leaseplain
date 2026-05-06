@@ -7,17 +7,21 @@ compatibility_flags = ["nodejs_compat"]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "leaseplain-db"
-database_id = "YOUR_D1_DATABASE_ID"
-
 [vars]
 NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
 
+# Add after creating resources in Cloudflare Dashboard:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "leaseplain-db"
+# database_id = "<your-d1-id>"
+#
+# [[r2_buckets]]
+# binding = "LEASE_BUCKET"
+# bucket_name = "leaseplain-pdfs"
+
 # Secrets set in Workers dashboard → Settings → Variables and secrets:
-# ANTHROPIC_API_KEY
-# BETTER_AUTH_SECRET
+# ANTHROPIC_API_KEY, BETTER_AUTH_SECRET
 # GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET
 # GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET
 # STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET

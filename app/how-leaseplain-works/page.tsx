@@ -6,8 +6,6 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import {
-
-export const dynamic = "force-static";
   Upload,
   ScanText,
   Brain,
@@ -17,6 +15,8 @@ export const dynamic = "force-static";
   Scale,
   Clock,
 } from "lucide-react";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "How LeasePlain Works | AI Lease Analysis Explained",

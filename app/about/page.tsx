@@ -6,8 +6,6 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import {
-
-export const dynamic = "force-static";
   ShieldCheck,
   Zap,
   Users,
@@ -22,6 +20,8 @@ export const dynamic = "force-static";
   MessageSquare,
   TrendingUp,
 } from "lucide-react";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "About LeasePlain – AI Lease Analysis for Every Renter | LeasePlain",

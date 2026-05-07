@@ -3,11 +3,11 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
-
-export const dynamic = "force-static";
   FileText, AlertTriangle, DollarSign, Lightbulb,
   ShieldCheck, Zap, ChevronRight, Upload, Eye, CheckCircle,
 } from "lucide-react";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "AI Lease Analyzer – Understand Any Lease in Minutes | LeasePlain",

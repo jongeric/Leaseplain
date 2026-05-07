@@ -5,8 +5,6 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import {
-
-export const dynamic = "force-static";
   AlertTriangle,
   CheckCircle,
   TrendingDown,
@@ -18,6 +16,8 @@ export const dynamic = "force-static";
   BookOpen,
   TrendingUp,
 } from "lucide-react";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "LeasePlain Methodology | How We Score and Analyze Leases",

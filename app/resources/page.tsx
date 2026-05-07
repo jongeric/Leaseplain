@@ -3,8 +3,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
-
-export const dynamic = "force-static";
   BookOpen,
   CheckSquare,
   Zap,
@@ -14,6 +12,8 @@ export const dynamic = "force-static";
   Upload,
   AlertTriangle,
 } from "lucide-react";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Lease Resources for Renters and Landlords | LeasePlain",

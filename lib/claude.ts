@@ -45,14 +45,14 @@ function parseClaudeResponse(text: string): Omit<LeaseAnalysis, "id" | "createdA
   };
 }
 
-function makeClient() {
-  return new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+function makeClient(apiKey?: string) {
+  return new Anthropic({ apiKey: apiKey ?? process.env.ANTHROPIC_API_KEY });
 }
 
-export async function analyzeLeaseWithClaude(leaseText: string): Promise<Omit<LeaseAnalysis, "id" | "createdAt">> {
+export async function analyzeLeaseWithClaude(leaseText: string, apiKey?: string): Promise<Omit<LeaseAnalysis, "id" | "createdAt">> {
   const USER_PROMPT = `${ANALYSIS_PROMPT}\n\nLEASE TEXT:\n${leaseText}`;
 
-  const message = await makeClient().messages.create({
+  const message = await makeClient(apiKey).messages.create({
     model: "claude-sonnet-4-6",
     max_tokens: 4096,
     system: SYSTEM_PROMPT,
@@ -64,7 +64,7 @@ export async function analyzeLeaseWithClaude(leaseText: string): Promise<Omit<Le
   return parseClaudeResponse(content.text);
 }
 
-export async function analyzeLeaseWithClaudePDF(pdfBuffer: ArrayBuffer): Promise<Omit<LeaseAnalysis, "id" | "createdAt">> {
+export async function analyzeLeaseWithClaudePDF(pdfBuffer: ArrayBuffer, apiKey?: string): Promise<Omit<LeaseAnalysis, "id" | "createdAt">> {
   const documentBlock: DocumentBlockParam = {
     type: "document",
     source: {
@@ -74,7 +74,7 @@ export async function analyzeLeaseWithClaudePDF(pdfBuffer: ArrayBuffer): Promise
     },
   };
 
-  const message = await makeClient().messages.create({
+  const message = await makeClient(apiKey).messages.create({
     model: "claude-sonnet-4-6",
     max_tokens: 4096,
     system: SYSTEM_PROMPT,

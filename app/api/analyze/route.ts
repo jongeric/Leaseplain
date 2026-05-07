@@ -32,11 +32,17 @@ export async function POST(req: NextRequest) {
   try {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let d1: any = undefined;
+    let cfApiKey: string | undefined;
     try {
       const ctx = await getCloudflareContext({ async: true });
-      d1 = (ctx.env as Record<string, unknown>).DB;
+      const env = ctx.env as Record<string, unknown>;
+      d1 = env.DB;
+      if (typeof env.ANTHROPIC_API_KEY === "string") {
+        cfApiKey = env.ANTHROPIC_API_KEY;
+      }
     } catch { /* local dev */ }
 
+    const anthropicApiKey = cfApiKey ?? process.env.ANTHROPIC_API_KEY;
     const userId = await getUserIdFromSession(req, d1) ?? undefined;
     const isPro = userId ? await isUserPro(userId) : false;
 
@@ -60,8 +66,8 @@ export async function POST(req: NextRequest) {
         );
       }
 
-      if (process.env.ANTHROPIC_API_KEY) {
-        analysisData = await analyzeLeaseWithClaude(leaseText);
+      if (anthropicApiKey) {
+        analysisData = await analyzeLeaseWithClaude(leaseText, anthropicApiKey);
       } else {
         await new Promise((r) => setTimeout(r, 1200));
         analysisData = { ...MOCK_ANALYSIS };
@@ -90,8 +96,8 @@ export async function POST(req: NextRequest) {
       const key = `leases/${randomUUID()}.pdf`;
       pdfKey = (await uploadPDF(key, buffer)) ?? undefined;
 
-      if (process.env.ANTHROPIC_API_KEY) {
-        analysisData = await analyzeLeaseWithClaudePDF(buffer);
+      if (anthropicApiKey) {
+        analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
       } else {
         await new Promise((r) => setTimeout(r, 1200));
         analysisData = { ...MOCK_ANALYSIS };

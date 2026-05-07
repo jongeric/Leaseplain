@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS user (
 
 CREATE TABLE IF NOT EXISTS session (
   id TEXT PRIMARY KEY,
+  token TEXT NOT NULL UNIQUE,
   expires_at TEXT NOT NULL,
   ip_address TEXT,
   user_agent TEXT,
@@ -29,7 +30,9 @@ CREATE TABLE IF NOT EXISTS account (
   access_token TEXT,
   refresh_token TEXT,
   id_token TEXT,
-  expires_at TEXT,
+  access_token_expires_at TEXT,
+  refresh_token_expires_at TEXT,
+  scope TEXT,
   password TEXT,
   created_at TEXT NOT NULL,
   updated_at TEXT NOT NULL

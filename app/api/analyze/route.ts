@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude } from "@/lib/claude";
-import { saveAnalysis, countAnalysesThisMonth } from "@/lib/db";
+import { saveAnalysis } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { auth } from "@/lib/auth";
 
@@ -22,21 +22,7 @@ export async function POST(req: NextRequest) {
   try {
     const session = await auth.api.getSession({ headers: req.headers });
     const userId = session?.user.id;
-
-    // Free-tier gate: authenticated users get 1 full analysis per month
-    if (userId) {
-      const usedThisMonth = await countAnalysesThisMonth(userId);
-      if (usedThisMonth >= 1) {
-        return NextResponse.json(
-          {
-            error:
-              "You've used your free analysis for this month. Upgrade to Pro for unlimited analyses.",
-            code: "MONTHLY_LIMIT_REACHED",
-          },
-          { status: 402 }
-        );
-      }
-    }
+    const isPro = false; // Pro tier not yet implemented — all users get teaser view
 
     const formData = await req.formData();
     const textField = formData.get("text");
@@ -115,8 +101,8 @@ export async function POST(req: NextRequest) {
       };
     }
 
-    // Guests get a teaser — full data saved to DB, restricted view returned
-    const teaser = !userId;
+    // Only Pro users get the full analysis; guests and free accounts get a teaser
+    const teaser = !isPro;
 
     const analysis = {
       id,

@@ -194,7 +194,7 @@ export default function LoginClient() {
 
           {mode === "signup" && (
             <p className="text-center text-xs text-slate-400 mt-4 leading-relaxed">
-              Free plan includes 1 full analysis per month.<br />
+              Free plan includes a summary preview of each analysis.<br />
               Not legal advice. For informational purposes only.
             </p>
           )}

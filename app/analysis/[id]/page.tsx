@@ -61,10 +61,10 @@ function PaywallOverlay({ count, noun }: { count: number; noun: string }) {
             {count} {noun}{count !== 1 ? "s" : ""} found
           </p>
           <p className="text-sm text-slate-500 mb-4">
-            Sign up free to unlock the full analysis
+            Upgrade to Pro to unlock the full analysis
           </p>
           <Link
-            href="/login?redirect=/upload"
+            href="/pricing"
             className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition-colors"
           >
             Sign up free — it&apos;s free
@@ -135,8 +135,8 @@ export default async function AnalysisPage({
                 <Lock className="w-4 h-4 flex-shrink-0" />
                 <span>
                   You&apos;re viewing a <strong>free preview</strong>.{" "}
-                  <Link href="/login?redirect=/upload" className="underline font-semibold">
-                    Sign up free
+                  <Link href="/pricing" className="underline font-semibold">
+                    Upgrade to Pro
                   </Link>{" "}
                   to unlock financial terms, red flags, unclear clauses, and negotiation tips.
                 </span>
@@ -182,11 +182,11 @@ export default async function AnalysisPage({
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Link
-                      href="/login?redirect=/upload"
+                      href="/pricing"
                       className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition-colors shadow-md"
                     >
                       <Lock className="w-4 h-4" />
-                      Sign up free to unlock
+                      Upgrade to Pro to unlock
                     </Link>
                   </div>
                 </div>
@@ -304,11 +304,11 @@ export default async function AnalysisPage({
                   </ul>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Link
-                      href="/login?redirect=/upload"
+                      href="/pricing"
                       className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition-colors shadow-md"
                     >
                       <Lock className="w-4 h-4" />
-                      Sign up free to unlock
+                      Upgrade to Pro to unlock
                     </Link>
                   </div>
                 </div>
@@ -347,11 +347,11 @@ export default async function AnalysisPage({
                   </ul>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Link
-                      href="/login?redirect=/upload"
+                      href="/pricing"
                       className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition-colors shadow-md"
                     >
                       <Lock className="w-4 h-4" />
-                      Sign up free to unlock
+                      Upgrade to Pro to unlock
                     </Link>
                   </div>
                 </div>
@@ -372,10 +372,10 @@ export default async function AnalysisPage({
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             {isTeaser ? (
               <Link
-                href="/login?redirect=/upload"
+                href="/pricing"
                 className="flex-1 text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm"
               >
-                Sign Up Free for Full Analysis
+                Upgrade to Pro for Full Analysis
               </Link>
             ) : (
               <Link

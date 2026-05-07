@@ -6,6 +6,7 @@ import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { createAuth } from "@/lib/auth";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { ensureTables } from "@/lib/migrate";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -16,6 +17,7 @@ export async function POST(req: NextRequest) {
     try {
       const ctx = await getCloudflareContext({ async: true });
       d1 = (ctx.env as Record<string, unknown>).DB;
+      if (d1) await ensureTables(d1);
     } catch { /* local dev */ }
     const auth = createAuth(d1);
     const session = await auth.api.getSession({ headers: req.headers });

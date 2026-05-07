@@ -1,6 +1,7 @@
 import { createAuth } from "@/lib/auth";
 import { toNextJsHandler } from "better-auth/next-js";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { ensureTables } from "@/lib/migrate";
 
 export const runtime = "nodejs";
 
@@ -10,6 +11,7 @@ async function getHandler() {
   try {
     const ctx = await getCloudflareContext({ async: true });
     d1 = (ctx.env as Record<string, unknown>).DB;
+    if (d1) await ensureTables(d1);
   } catch {
     // Not in Cloudflare environment (local dev) — use memory adapter
   }

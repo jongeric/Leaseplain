@@ -4,24 +4,40 @@ import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
-import { createAuth } from "@/lib/auth";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { ensureTables } from "@/lib/migrate";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
+// Lightweight session lookup directly from D1 — avoids spinning up full auth instance
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function getUserIdFromSession(req: NextRequest, d1: any): Promise<string | null> {
+  if (!d1) return null;
+  try {
+    const cookieHeader = req.headers.get("cookie") ?? "";
+    const match = cookieHeader.match(/better-auth\.session_token=([^;]+)/);
+    if (!match) return null;
+    const token = decodeURIComponent(match[1]);
+    const row = await d1
+      .prepare("SELECT userId FROM session WHERE token = ? AND expiresAt > ? LIMIT 1")
+      .bind(token, new Date().toISOString())
+      .first() as { userId: string } | null;
+    return row?.userId ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
-    let d1: unknown = undefined;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let d1: any = undefined;
     try {
       const ctx = await getCloudflareContext({ async: true });
       d1 = (ctx.env as Record<string, unknown>).DB;
-      if (d1) await ensureTables(d1);
     } catch { /* local dev */ }
-    const auth = createAuth(d1);
-    const session = await auth.api.getSession({ headers: req.headers });
-    const userId = session?.user.id;
+
+    const userId = await getUserIdFromSession(req, d1);
     const isPro = userId ? await isUserPro(userId) : false;
 
     const formData = await req.formData();
@@ -71,13 +87,10 @@ export async function POST(req: NextRequest) {
       }
 
       const buffer = await file.arrayBuffer();
-
-      // Store to R2 (no-op in local dev)
       const key = `leases/${randomUUID()}.pdf`;
       pdfKey = (await uploadPDF(key, buffer)) ?? undefined;
 
       if (process.env.ANTHROPIC_API_KEY) {
-        // Send PDF bytes directly to Claude — no pdf-parse needed
         analysisData = await analyzeLeaseWithClaudePDF(buffer);
       } else {
         await new Promise((r) => setTimeout(r, 1200));

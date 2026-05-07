@@ -4,13 +4,20 @@ import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
-import { auth } from "@/lib/auth";
+import { createAuth } from "@/lib/auth";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
+    let d1: unknown = undefined;
+    try {
+      const ctx = await getCloudflareContext({ async: true });
+      d1 = (ctx.env as Record<string, unknown>).DB;
+    } catch { /* local dev */ }
+    const auth = createAuth(d1);
     const session = await auth.api.getSession({ headers: req.headers });
     const userId = session?.user.id;
     const isPro = userId ? await isUserPro(userId) : false;

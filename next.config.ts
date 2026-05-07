@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === "development") {
 
 const nextConfig: NextConfig = {
   // Required for Cloudflare Pages deployment via OpenNext
+  serverExternalPackages: ["pdf-parse"],
 };
 
 export default nextConfig;

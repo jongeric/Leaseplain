@@ -59,7 +59,8 @@ export async function POST(req: NextRequest) {
       // Extract text for analysis
       try {
         leaseText = await extractTextFromPDF(buffer);
-      } catch {
+      } catch (extractErr) {
+        console.error("[/api/analyze] PDF extraction failed:", extractErr);
         return NextResponse.json(
           { error: "Could not extract text from the uploaded PDF. Please try pasting the text instead." },
           { status: 422 }

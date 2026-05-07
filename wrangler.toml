@@ -11,10 +11,9 @@ binding = "ASSETS"
 NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
 
 # ── D1 Database ───────────────────────────────────────────────────────────────
-[[d1_databases]]
-binding = "DB"
-database_name = "leaseplain"
-database_id = "10dd15c3-28f4-4f10-8786-f72bf5d51661"
+# Binding "DB" → leaseplain is configured in Cloudflare dashboard
+# (Workers & Pages → leaseplain → Settings → Bindings)
+# database_id: 10dd15c3-28f4-4f10-8786-f72bf5d51661
 
 # ── R2 Bucket (optional — PDF storage) ────────────────────────────────────────
 # 1. Create: npx wrangler r2 bucket create leaseplain-pdfs

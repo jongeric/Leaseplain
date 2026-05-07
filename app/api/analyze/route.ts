@@ -1,21 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
-import { analyzeLeaseWithClaude } from "@/lib/claude";
+import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
 import { saveAnalysis } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { auth } from "@/lib/auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-async function extractTextFromPDF(buffer: ArrayBuffer): Promise<string> {
-  const { PDFParse } = await import("pdf-parse");
-  const parser = new PDFParse({ data: Buffer.from(buffer) });
-  const result = await parser.getText();
-  await parser.destroy();
-  return result.text;
-}
 
 export async function POST(req: NextRequest) {
   try {
@@ -27,12 +19,31 @@ export async function POST(req: NextRequest) {
     const textField = formData.get("text");
     const fileField = formData.get("file");
 
-    let leaseText = "";
+    const id = randomUUID();
+    const createdAt = new Date().toISOString();
     let filename: string | undefined;
     let pdfKey: string | undefined;
+    let analysisData;
 
     if (textField && typeof textField === "string") {
-      leaseText = textField.trim();
+      const leaseText = textField.trim();
+
+      if (leaseText.length < 100) {
+        return NextResponse.json(
+          { error: "Lease text is too short. Please provide more complete lease content." },
+          { status: 400 }
+        );
+      }
+
+      if (process.env.ANTHROPIC_API_KEY) {
+        analysisData = await analyzeLeaseWithClaude(leaseText);
+      } else {
+        await new Promise((r) => setTimeout(r, 1200));
+        analysisData = { ...MOCK_ANALYSIS };
+      }
+
+      await saveAnalysis({ id, createdAt, userId, rawText: leaseText, teaser: !isPro, ...analysisData });
+
     } else if (fileField && fileField instanceof Blob) {
       const file = fileField as File;
       filename = file.name;
@@ -56,16 +67,16 @@ export async function POST(req: NextRequest) {
       const key = `leases/${randomUUID()}.pdf`;
       pdfKey = (await uploadPDF(key, buffer)) ?? undefined;
 
-      // Extract text for analysis
-      try {
-        leaseText = await extractTextFromPDF(buffer);
-      } catch (extractErr) {
-        console.error("[/api/analyze] PDF extraction failed:", extractErr);
-        return NextResponse.json(
-          { error: "Could not extract text from the uploaded PDF. Please try pasting the text instead." },
-          { status: 422 }
-        );
+      if (process.env.ANTHROPIC_API_KEY) {
+        // Send PDF bytes directly to Claude — no pdf-parse needed
+        analysisData = await analyzeLeaseWithClaudePDF(buffer);
+      } else {
+        await new Promise((r) => setTimeout(r, 1200));
+        analysisData = { ...MOCK_ANALYSIS };
       }
+
+      await saveAnalysis({ id, createdAt, filename, pdfKey, userId, teaser: !isPro, ...analysisData });
+
     } else {
       return NextResponse.json(
         { error: "Please provide lease text or a PDF file." },
@@ -73,50 +84,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (leaseText.length < 100) {
-      return NextResponse.json(
-        { error: "Lease text is too short. Please provide more complete lease content." },
-        { status: 400 }
-      );
-    }
-
-    const id = randomUUID();
-    const createdAt = new Date().toISOString();
-
-    let analysisData;
-
-    if (process.env.ANTHROPIC_API_KEY) {
-      // Real Claude analysis
-      analysisData = await analyzeLeaseWithClaude(leaseText);
-    } else {
-      // Mock analysis for development (no API key needed)
-      await new Promise((r) => setTimeout(r, 1200)); // simulate latency
-      analysisData = {
-        summary: MOCK_ANALYSIS.summary,
-        financialTerms: MOCK_ANALYSIS.financialTerms,
-        redFlags: MOCK_ANALYSIS.redFlags,
-        unclearClauses: MOCK_ANALYSIS.unclearClauses,
-        questionsToAsk: MOCK_ANALYSIS.questionsToAsk,
-        negotiationSuggestions: MOCK_ANALYSIS.negotiationSuggestions,
-      };
-    }
-
-    // Only Pro users get the full analysis; guests and free accounts get a teaser
-    const teaser = !isPro;
-
-    const analysis = {
-      id,
-      createdAt,
-      filename,
-      pdfKey,
-      teaser,
-      ...analysisData,
-    };
-
-    // Persist to D1 (no-op in local dev) — always save full data
-    await saveAnalysis({ ...analysis, userId, rawText: leaseText });
-
-    return NextResponse.json({ id, teaser });
+    return NextResponse.json({ id, teaser: !isPro });
   } catch (err) {
     console.error("[/api/analyze] Error:", err);
     return NextResponse.json(

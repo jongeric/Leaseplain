@@ -19,7 +19,7 @@ function getDB(): D1Database | null {
 }
 
 export async function saveAnalysis(
-  analysis: Omit<LeaseAnalysis, "id"> & { id: string; userId?: string; rawText?: string }
+  analysis: Omit<LeaseAnalysis, "id"> & { id: string; userId?: string; rawText?: string; pdfKey?: string }
 ): Promise<void> {
   const db = getDB();
   if (!db) return; // no-op in local dev

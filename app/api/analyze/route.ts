@@ -10,12 +10,11 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 
 async function extractTextFromPDF(buffer: ArrayBuffer): Promise<string> {
-  // Dynamic import so pdf-parse doesn't break edge builds
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const pdfParseModule = await import("pdf-parse") as any;
-  const pdfParse = pdfParseModule.default ?? pdfParseModule;
-  const data = await pdfParse(Buffer.from(buffer));
-  return data.text;
+  const { PDFParse } = await import("pdf-parse");
+  const parser = new PDFParse({ data: Buffer.from(buffer) });
+  const result = await parser.getText();
+  await parser.destroy();
+  return result.text;
 }
 
 export async function POST(req: NextRequest) {

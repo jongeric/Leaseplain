@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
-import { saveAnalysis } from "@/lib/db";
+import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { auth } from "@/lib/auth";
 
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     const session = await auth.api.getSession({ headers: req.headers });
     const userId = session?.user.id;
-    const isPro = false; // Pro tier not yet implemented — all users get teaser view
+    const isPro = userId ? await isUserPro(userId) : false;
 
     const formData = await req.formData();
     const textField = formData.get("text");

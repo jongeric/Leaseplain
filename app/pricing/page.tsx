@@ -67,28 +67,25 @@ export default function PricingPage() {
   const { data: session } = useSession();
   const [loading, setLoading] = useState<string | null>(null);
 
-  const handleSubscribe = async (planKey: "pro" | "team") => {
+  const PAYMENT_LINKS: Record<"pro" | "team", string> = {
+    pro: "https://buy.stripe.com/aFabJ3deScjyb4mes7enS00",
+    team: "https://buy.stripe.com/aFabJ3deScjyb4mes7enS00", // update when team link is created
+  };
+
+  const handleSubscribe = (planKey: "pro" | "team") => {
     if (!session) {
       router.push(`/login?redirect=/pricing`);
       return;
     }
 
     setLoading(planKey);
-    try {
-      const res = await fetch("/api/stripe/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: planKey }),
-      });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      }
-    } catch {
-      // fail silently — UI feedback via loading state reset
-    } finally {
-      setLoading(null);
-    }
+
+    const base = PAYMENT_LINKS[planKey];
+    const params = new URLSearchParams({
+      client_reference_id: session.user.id,
+      prefilled_email: session.user.email,
+    });
+    window.location.href = `${base}?${params.toString()}`;
   };
 
   return (

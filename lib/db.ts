@@ -72,6 +72,49 @@ export async function countAnalysesThisMonth(userId: string): Promise<number> {
   return row?.count ?? 0;
 }
 
+// ── Subscriptions ────────────────────────────────────────────────────────────
+
+export async function isUserPro(userId: string): Promise<boolean> {
+  const db = getDB();
+  if (!db) return false;
+
+  const row = await db
+    .prepare("SELECT status FROM subscriptions WHERE user_id = ? LIMIT 1")
+    .bind(userId)
+    .first() as { status: string } | null;
+
+  return row?.status === "active";
+}
+
+export async function upsertSubscription(opts: {
+  userId: string;
+  stripeCustomerId: string;
+  stripeSubscriptionId: string;
+  status: "active" | "canceled" | "past_due";
+}): Promise<void> {
+  const db = getDB();
+  if (!db) return;
+
+  await db
+    .prepare(
+      `INSERT INTO subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, updated_at)
+       VALUES (?, ?, ?, ?, ?)
+       ON CONFLICT(user_id) DO UPDATE SET
+         stripe_customer_id = excluded.stripe_customer_id,
+         stripe_subscription_id = excluded.stripe_subscription_id,
+         status = excluded.status,
+         updated_at = excluded.updated_at`
+    )
+    .bind(
+      opts.userId,
+      opts.stripeCustomerId,
+      opts.stripeSubscriptionId,
+      opts.status,
+      new Date().toISOString()
+    )
+    .run();
+}
+
 export async function listAnalysesByUser(userId: string): Promise<LeaseAnalysis[]> {
   const db = getDB();
   if (!db) return [];

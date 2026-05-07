@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       d1 = (ctx.env as Record<string, unknown>).DB;
     } catch { /* local dev */ }
 
-    const userId = await getUserIdFromSession(req, d1);
+    const userId = await getUserIdFromSession(req, d1) ?? undefined;
     const isPro = userId ? await isUserPro(userId) : false;
 
     const formData = await req.formData();

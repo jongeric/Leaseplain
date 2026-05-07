@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AlertTriangle, ChevronRight, Upload, Clock, BookOpen, CheckCircle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "15 Lease Red Flags Every Tenant Should Know | LeasePlain",
   description:

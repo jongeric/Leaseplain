@@ -6,6 +6,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import {
+
+export const dynamic = "force-static";
   ShieldCheck,
   Zap,
   Users,

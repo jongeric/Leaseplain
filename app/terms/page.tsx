@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Terms of Use | LeasePlain",
   description: "LeasePlain terms of use — the rules governing your use of the LeasePlain service.",

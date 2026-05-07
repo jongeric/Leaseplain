@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Common Landlord Lease Mistakes (and How to Avoid Them) | LeasePlain",
   description:

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Privacy Policy | LeasePlain",
   description: "LeasePlain's privacy policy — how we handle your data, your lease documents, and your personal information.",

@@ -5,6 +5,8 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import {
+
+export const dynamic = "force-static";
   AlertTriangle,
   CheckCircle,
   TrendingDown,

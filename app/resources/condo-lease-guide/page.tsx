@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Home, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Condo Lease Guide: What's Different About Renting a Condo | LeasePlain",
   description:

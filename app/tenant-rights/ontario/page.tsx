@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, AlertTriangle, ChevronRight, Upload, BookOpen } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Tenant Rights in Ontario – Complete Guide (RTA 2006) | LeasePlain",
   description:

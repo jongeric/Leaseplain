@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, CheckCircle, AlertTriangle, ChevronRight, Upload } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Ontario Rent Increase Rules – Guideline, Notice & Your Rights | LeasePlain",
   description:

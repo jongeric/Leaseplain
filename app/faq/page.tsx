@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HelpCircle, ChevronRight, Upload } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "FAQ – Frequently Asked Questions | LeasePlain",
   description:

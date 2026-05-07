@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Apartment Lease Guide: What to Know Before Renting | LeasePlain",
   description:

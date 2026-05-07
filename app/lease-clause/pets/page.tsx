@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heart, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario? | LeasePlain",
   description:

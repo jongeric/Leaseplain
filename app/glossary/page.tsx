@@ -7,6 +7,8 @@ import CTASection from "@/components/CTASection";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { BookOpen, AlertTriangle, CheckCircle, TrendingDown } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Lease Glossary | Plain-English Definitions of Rental Terms | LeasePlain",
   description:

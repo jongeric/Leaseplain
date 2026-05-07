@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Alberta Tenant Rights: Guide to the Residential Tenancies Act | LeasePlain",
   description:

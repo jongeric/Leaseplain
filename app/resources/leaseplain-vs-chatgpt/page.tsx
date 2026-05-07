@@ -7,6 +7,8 @@ import CTASection from "@/components/CTASection";
 import { CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "LeasePlain vs ChatGPT for Lease Review | Which AI Tool Is Better?",
   description:

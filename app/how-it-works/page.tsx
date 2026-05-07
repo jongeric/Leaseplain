@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
+
+export const dynamic = "force-static";
   Upload, Cpu, FileText, CheckCircle, AlertTriangle,
   DollarSign, Lightbulb, ShieldCheck, Eye, ChevronRight,
 } from "lucide-react";

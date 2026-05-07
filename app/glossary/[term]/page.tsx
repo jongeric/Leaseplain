@@ -8,6 +8,8 @@ import CTASection from "@/components/CTASection";
 import RelatedLinks from "@/components/RelatedLinks";
 import { AlertTriangle, CheckCircle, TrendingDown } from "lucide-react";
 
+export const dynamic = "force-static";
+
 interface GlossaryEntry {
   slug: string;
   term: string;

@@ -5,6 +5,8 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, RefreshCw, Users, Scale, BookOpen, AlertTriangle } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Editorial Policy | LeasePlain Content Standards",
   description:

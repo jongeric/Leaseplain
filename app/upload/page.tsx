@@ -8,6 +8,8 @@ import DisclaimerBanner from "@/components/DisclaimerBanner";
 import { Upload, FileText, Type, AlertCircle, Loader2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+export const dynamic = "force-static";
+
 type InputMode = "paste" | "upload";
 
 export default function UploadPage() {

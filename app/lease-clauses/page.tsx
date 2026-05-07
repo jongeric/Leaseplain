@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FileText, ChevronRight, Upload, Shield, TrendingUp, DoorOpen, Wrench, Share2, DollarSign, Zap, Heart, Users, Hammer } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Lease Clauses Explained: Common Terms in Residential Agreements | LeasePlain",
   description:

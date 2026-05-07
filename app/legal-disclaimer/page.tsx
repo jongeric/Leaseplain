@@ -5,6 +5,8 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { Scale, AlertTriangle, Globe, Users, Brain, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Legal Disclaimer | LeasePlain",
   description:

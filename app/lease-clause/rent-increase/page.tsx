@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Rent Increase Clause Explained – Rules, Notice & Your Rights | LeasePlain",
   description:

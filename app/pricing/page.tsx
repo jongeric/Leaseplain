@@ -8,6 +8,8 @@ import Footer from "@/components/Footer";
 import { Check, Zap, Loader2 } from "lucide-react";
 import { useSession } from "@/lib/auth-client";
 
+export const dynamic = "force-static";
+
 const plans = [
   {
     key: "free" as const,

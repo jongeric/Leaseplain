@@ -7,6 +7,8 @@ import CTASection from "@/components/CTASection";
 import { CheckCircle, XCircle, AlertTriangle, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Is AI Lease Review Accurate? What AI Can and Can't Catch | LeasePlain",
   description:

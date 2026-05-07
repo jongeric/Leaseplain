@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ id, teaser: !isPro });
+    return NextResponse.json({ id, teaser: !isPro, analysis: analysisData });
   } catch (err) {
     console.error("[/api/analyze] Error:", err);
     return NextResponse.json(

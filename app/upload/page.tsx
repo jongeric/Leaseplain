@@ -76,6 +76,13 @@ export default function UploadPage() {
       }
 
       const data = await res.json();
+      // Cache the analysis so the result page can display it without needing D1
+      if (data.analysis) {
+        sessionStorage.setItem(
+          `lp_analysis_${data.id}`,
+          JSON.stringify({ teaser: data.teaser, ...data.analysis })
+        );
+      }
       router.push(`/analysis/${data.id}${data.teaser ? "?teaser=1" : ""}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");

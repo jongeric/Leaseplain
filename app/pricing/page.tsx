@@ -69,7 +69,7 @@ export default function PricingPage() {
 
   const PAYMENT_LINKS: Record<"pro" | "team", string> = {
     pro: "https://buy.stripe.com/aFabJ3deScjyb4mes7enS00",
-    team: "https://buy.stripe.com/aFabJ3deScjyb4mes7enS00", // update when team link is created
+    team: "https://buy.stripe.com/aFa28tcaOdnC3BU4RxenS02",
   };
 
   const handleSubscribe = (planKey: "pro" | "team") => {

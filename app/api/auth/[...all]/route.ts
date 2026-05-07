@@ -11,9 +11,13 @@ async function getHandler() {
   try {
     const ctx = await getCloudflareContext({ async: true });
     d1 = (ctx.env as Record<string, unknown>).DB;
-    if (d1) await ensureTables(d1);
-  } catch {
-    // Not in Cloudflare environment (local dev) — use memory adapter
+    if (d1) {
+      await ensureTables(d1);
+    } else {
+      console.error("[auth] D1 binding not found — falling back to memoryAdapter");
+    }
+  } catch (e) {
+    console.error("[auth] getCloudflareContext failed:", e);
   }
 
   const { GET, POST } = toNextJsHandler(createAuth(d1));
@@ -26,6 +30,14 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const { POST } = await getHandler();
-  return POST(req);
+  try {
+    const { POST } = await getHandler();
+    return POST(req);
+  } catch (e) {
+    console.error("[auth] POST handler error:", e);
+    return new Response(JSON.stringify({ error: "Auth error", detail: String(e) }), {
+      status: 500,
+      headers: { "content-type": "application/json" },
+    });
+  }
 }

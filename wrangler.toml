@@ -10,20 +10,24 @@ binding = "ASSETS"
 [vars]
 NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
 
-# Add after creating resources in Cloudflare Dashboard:
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "leaseplain-db"
-# database_id = "<your-d1-id>"
-#
+# ── D1 Database (required for auth + analysis history) ────────────────────────
+# 1. Create:  npx wrangler d1 create leaseplain-db
+# 2. Apply schema: npx wrangler d1 execute leaseplain-db --file=migrations/0001_initial.sql
+# 3. Fill in database_id from the output of step 1:
+[[d1_databases]]
+binding = "DB"
+database_name = "leaseplain-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+# ── R2 Bucket (optional — PDF storage) ────────────────────────────────────────
+# 1. Create: npx wrangler r2 bucket create leaseplain-pdfs
 # [[r2_buckets]]
 # binding = "LEASE_BUCKET"
 # bucket_name = "leaseplain-pdfs"
 
-# Secrets set in Workers dashboard → Settings → Variables and secrets:
-# ANTHROPIC_API_KEY, BETTER_AUTH_SECRET
-# GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET
-# GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET
-# STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET
-# STRIPE_PRO_PRICE_ID / STRIPE_TEAM_PRICE_ID
-# NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+# ── Secrets (set via: npx wrangler secret put SECRET_NAME) ────────────────────
+# ANTHROPIC_API_KEY
+# BETTER_AUTH_SECRET       (run: openssl rand -base64 32)
+# STRIPE_SECRET_KEY
+# STRIPE_WEBHOOK_SECRET
+

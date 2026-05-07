@@ -10,9 +10,11 @@ binding = "ASSETS"
 [vars]
 NEXT_PUBLIC_APP_URL = "https://leaseplain.com"
 
-# ── D1 Database (required for auth + analysis history) ────────────────────────
-# Binding is configured in the Cloudflare dashboard (Workers & Pages → D1 → leaseplain-db).
-# To apply the schema: npx wrangler d1 execute leaseplain-db --file=migrations/0001_initial.sql --remote
+# ── D1 Database ───────────────────────────────────────────────────────────────
+[[d1_databases]]
+binding = "DB"
+database_name = "leaseplain"
+database_id = "REPLACE_WITH_UUID"
 
 # ── R2 Bucket (optional — PDF storage) ────────────────────────────────────────
 # 1. Create: npx wrangler r2 bucket create leaseplain-pdfs

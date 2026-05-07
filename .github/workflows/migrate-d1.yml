@@ -13,4 +13,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: d1 execute leaseplain-db --file=migrations/0001_initial.sql --remote --yes
+          command: d1 execute leaseplain --file=migrations/0001_initial.sql --remote --yes

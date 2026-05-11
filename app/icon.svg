@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 510" fill="none">
+  <!-- Document body: white fill, dark navy border, folded top-right corner -->
+  <path d="M 74 22 L 315 22 L 386 93 L 386 456 Q 386 470 372 470 L 60 470 Q 46 470 46 456 L 46 36 Q 46 22 60 22 Z"
+    fill="white" stroke="#0c1c2e" stroke-width="16" stroke-linejoin="round"/>
+
+  <!-- Fold corner triangle -->
+  <path d="M 315 22 L 386 93 L 315 93 Z"
+    fill="#e2e8f0" stroke="#0c1c2e" stroke-width="16" stroke-linejoin="round"/>
+
+  <!-- Text lines: slate-blue rounded rects -->
+  <rect x="78" y="116" width="145" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="141" width="114" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="175" width="150" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="200" width="118" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="234" width="146" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="259" width="108" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="293" width="104" height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="318" width="86"  height="13" rx="6.5" fill="#4a637a"/>
+  <rect x="78" y="352" width="116" height="13" rx="6.5" fill="#4a637a"/>
+
+  <!-- Signature: blue cursive squiggle -->
+  <path d="M 76 416 C 89 406 103 427 117 416 C 130 406 142 422 157 414 C 168 408 180 419 196 412"
+    fill="none" stroke="#2563eb" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 76 434 C 91 440 108 428 121 436"
+    fill="none" stroke="#2563eb" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Magnifying glass circle: white fill, dark navy border -->
+  <circle cx="326" cy="335" r="114" fill="white" stroke="#0c1c2e" stroke-width="18"/>
+
+  <!-- House roof: bright blue chevron -->
+  <polyline points="248,344 326,287 404,344"
+    fill="none" stroke="#2563eb" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- House body: blue filled rect -->
+  <rect x="273" y="344" width="106" height="82" rx="3" fill="#2563eb"/>
+
+  <!-- 2×2 window grid inside house body -->
+  <rect x="285" y="354" width="37" height="28" rx="2" fill="white" opacity="0.4"/>
+  <rect x="328" y="354" width="37" height="28" rx="2" fill="white" opacity="0.4"/>
+  <rect x="285" y="388" width="37" height="28" rx="2" fill="white" opacity="0.4"/>
+  <rect x="328" y="388" width="37" height="28" rx="2" fill="white" opacity="0.4"/>
+
+  <!-- Magnifying glass handle -->
+  <line x1="413" y1="421" x2="476" y2="486"
+    stroke="#0c1c2e" stroke-width="28" stroke-linecap="round"/>
+</svg>

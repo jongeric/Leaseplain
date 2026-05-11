@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, FileText } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -110,6 +111,18 @@ export default function MiamiPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is there rent control in Miami?", a: "No. Florida state law preempts local rent control, so Miami cannot impose rent caps. Landlords can increase rent with proper notice. This makes Miami one of the most landlord-friendly rental markets in the US regarding pricing." },
+                  { q: "What tenant protections exist in Miami?", a: "Miami tenants rely on Florida state law for protections: habitability standards, 3-day cure notices for non-payment, security deposit regulations, and anti-retaliation rules. The City of Miami has additional ordinances for specific issues like short-term rentals." },
+                  { q: "What notice is required to evict a Miami tenant?", a: "For non-payment of rent, 3 days' notice to pay or vacate. For lease violations, 7 days' notice to cure or vacate. For no-cause termination of a month-to-month tenancy, 15 days' notice before the next rent due date." },
+                  { q: "How does Miami's high cost of living affect lease negotiations?", a: "In a high-demand market like Miami, landlord leverage is significant. However, tenants can still negotiate on move-in concessions, rent freezes for longer fixed terms, and inclusion of utilities. LeasePlain's negotiation suggestions can help identify what's worth asking for." },
+                  { q: "Are verbal leases valid in Miami/Florida?", a: "Yes, verbal leases are legally valid in Florida for terms under one year. However, a written lease is strongly recommended to document all terms and avoid disputes about what was agreed." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -162,6 +163,18 @@ export default function CanadaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Canada have a national tenancy law?", a: "No. Residential tenancy law in Canada falls under provincial jurisdiction, so every province has its own legislation, deposit rules, notice periods, and dispute bodies. There is no single federal tenancy statute." },
+                  { q: "Can a lease clause override provincial tenant-protection law?", a: "No. A clause that conflicts with provincial legislation is automatically void and unenforceable, even if both parties signed the lease. The provincial Residential Tenancies Act (or equivalent) always takes precedence." },
+                  { q: "What is a security deposit and how much can a landlord charge in Canada?", a: "A security deposit is money held by the landlord to cover unpaid rent or damages. The maximum varies: Ontario and PEI cap it at the first month's rent, BC caps it at half a month's rent, and Alberta caps it at one month's rent. Quebec bans security deposits entirely." },
+                  { q: "How do I dispute a problem with my landlord in Canada?", a: "File an application with your province's tenancy tribunal — the Ontario LTB, BC Residential Tenancy Branch, Alberta RTDRS, or Quebec TAL. Most hearings are free or very low cost for tenants and can be requested online." },
+                  { q: "Can I use LeasePlain to check a Canadian lease?", a: "Yes. Upload your PDF or paste your lease text and our AI will flag clauses that may violate your province's tenant-protection rules and explain them in plain English." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

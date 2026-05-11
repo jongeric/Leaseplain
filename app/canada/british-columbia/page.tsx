@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -151,6 +152,18 @@ export default function BritishColumbiaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How much can a BC landlord charge for a security deposit?", a: "In British Columbia, a security deposit cannot exceed half a month's rent. A separate pet deposit of up to half a month's rent is also permitted. Both are held in trust and earn interest." },
+                  { q: "How is rent controlled in BC?", a: "BC ties annual rent increases to the BC Consumer Price Index (CPI). The Residential Tenancy Branch publishes the allowable increase each year. Landlords must give 3 months' written notice before any increase." },
+                  { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that mediates and arbitrates landlord-tenant disputes in BC. Most hearings are conducted by phone or video and are free for tenants to apply." },
+                  { q: "Can a BC landlord evict a tenant without cause?", a: "No. BC requires a legal reason (cause) for eviction — such as non-payment of rent, substantial damage, or the landlord's genuine need to reclaim the unit. Landlords must provide the correct written notice and form." },
+                  { q: "Is a rental agreement required to be in writing in BC?", a: "BC strongly recommends written agreements and requires landlords to provide a copy of the standard RTB tenancy agreement form or their own written agreement. Verbal tenancies are valid but hard to enforce." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

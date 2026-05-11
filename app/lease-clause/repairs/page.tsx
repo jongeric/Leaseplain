@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -183,6 +184,18 @@ export default function RepairsClausePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Who is responsible for repairs in a rental property?", a: "In Canada, landlords are responsible for maintaining the rental unit in a good state of repair. Tenants are responsible for keeping the unit reasonably clean and for repairs caused by their own negligence or damage." },
+                  { q: "How do I request a repair from my landlord?", a: "Always request repairs in writing (email or letter) and keep a copy. Include a description of the problem, when it started, and a reasonable deadline for repairs. Written requests protect you if you later need to file with a tenancy tribunal." },
+                  { q: "What if my landlord refuses to make urgent repairs?", a: "For urgent repairs (no heat in winter, water leak, electrical hazard), call your local municipal bylaw or health department. You can also file an emergency application with your province's tenancy tribunal for a repair order and possible rent abatement." },
+                  { q: "Can I make repairs myself and deduct from rent?", a: "Generally no. 'Repair and deduct' is risky and may not be legal in your province. In most Canadian provinces, the approved process is to apply to the tenancy tribunal for a repair order or rent reduction — not to withhold or reduce rent unilaterally." },
+                  { q: "What is a rent abatement and how do I get one?", a: "A rent abatement is a partial refund of rent for a period when the unit was not fully habitable. To get one, apply to your province's tenancy tribunal (e.g., LTB in Ontario) with evidence of the maintenance problem and the impact on your use of the unit." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Check your repairs clause</h3>

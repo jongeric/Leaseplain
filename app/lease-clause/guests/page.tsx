@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -158,6 +159,18 @@ export default function GuestsClausePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Can a landlord restrict guests in a lease?", a: "Landlords can include reasonable guest policies, but very restrictive clauses (like banning all overnight guests) may be unenforceable. Tenants in Canada generally have the right to reasonable enjoyment of their unit, which includes hosting visitors." },
+                  { q: "What is the legal difference between a guest and an occupant?", a: "A guest is a temporary visitor with no right to occupy the unit on their own. An occupant is someone who lives there regularly but is not on the lease. Having unauthorized long-term occupants can be grounds for lease termination in most provinces." },
+                  { q: "Can a landlord charge extra rent for an additional occupant?", a: "In most provinces, landlords cannot charge more rent simply because of an additional legal occupant (e.g., a partner) unless the increase follows proper notice procedures. However, additional occupants should generally be disclosed to the landlord." },
+                  { q: "Can my landlord ban my family from visiting?", a: "No. Restricting family members from visiting your home is generally unreasonable. Lease clauses that prohibit visits by immediate family members are likely unenforceable as a violation of the tenant's right to quiet enjoyment." },
+                  { q: "What constitutes an unauthorized occupant in Canada?", a: "If someone moves in permanently without being added to the lease or notifying the landlord, they may be an unauthorized occupant. This can lead to lease termination, especially if the additional person increases wear and tear or causes disturbances." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Check your guest clause</h3>

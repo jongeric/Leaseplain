@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -113,6 +114,18 @@ export default function TenantGuidesPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are the most important tenant rights in Canada?", a: "Key rights include: the right to a habitable unit, protection from illegal rent increases, proper notice before landlord entry, the right to dispute issues through a tenancy tribunal, and protection from illegal eviction — all guaranteed by provincial law." },
+                  { q: "What is the best way to document my rental unit?", a: "Take a dated video walkthrough of the entire unit before moving in, noting every pre-existing imperfection. Fill out a move-in condition report signed by the landlord. Store all documentation safely throughout your tenancy." },
+                  { q: "What should I do if my landlord enters without notice?", a: "Document the incident (date, time, what happened) and remind your landlord in writing of the required notice period. If it continues, file a complaint with your provincial tenancy tribunal — landlords can face fines for illegal entry." },
+                  { q: "How do I find a tenant legal clinic in Canada?", a: "Legal Aid Ontario offers a clinic finder. BC has TRAC (Tenant Resource and Advisory Centre). Alberta has Student Legal Services. Quebec has legal aid (Aide juridique). Most provinces fund community legal clinics for low-income tenants." },
+                  { q: "Can my landlord raise rent because I'm a good tenant who has lived there for years?", a: "No. Landlords must follow the same notice and guideline rules regardless of how long you've lived there. In rent-controlled provinces, the guideline cap applies the same way for long-term and new tenants. Some provinces actually give long-term tenants additional protections." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

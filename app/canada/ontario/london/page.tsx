@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -142,6 +143,18 @@ export default function LondonPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is London Ontario a renter-friendly city?", a: "London has a relatively affordable rental market compared to Toronto and Ottawa. The Ontario LTB serves London tenants, providing access to dispute resolution for maintenance, rent, and eviction issues." },
+                  { q: "What are a London Ontario landlord's maintenance obligations?", a: "Under the Residential Tenancies Act, London landlords must maintain rental units in a good state of repair, fit for habitation, and compliant with health and safety standards. Tenants can file a T6 application with the LTB if maintenance is not done." },
+                  { q: "Does London have any student-specific rental protections?", a: "Students in London renting from private landlords have the same RTA protections as any tenant. University-managed housing (on-campus) is generally exempt from the RTA. Off-campus students should read their lease carefully." },
+                  { q: "Are there legal aid resources for London Ontario tenants?", a: "Middlesex London Legal Aid and Community Legal Services at Western University's law school both offer free or low-cost tenant assistance, including help with LTB applications and lease review." },
+                  { q: "Can a London Ontario landlord ask for first and last month's rent?", a: "Yes. Ontario landlords are permitted to collect first and last month's rent deposits only — no additional damage deposit. The last month's rent deposit must earn interest at the rent-increase guideline rate each year." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

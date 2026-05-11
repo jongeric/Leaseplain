@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -160,6 +161,18 @@ export default function NewfoundlandAndLabradorPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is there rent control in Newfoundland and Labrador?", a: "No. Newfoundland and Labrador does not have rent control. Landlords may raise rent by any amount but must give tenants at least 8 weeks' written notice before the increase takes effect." },
+                  { q: "What is the security deposit limit in Newfoundland?", a: "Newfoundland and Labrador caps security deposits at three-quarters (0.75×) of one month's rent — a unique limit compared to most other provinces. The deposit must be returned within 15 days of tenancy end." },
+                  { q: "How do I file a landlord-tenant complaint in Newfoundland?", a: "Contact the Residential Tenancies Division of Service NL. Tenants and landlords can file applications for hearings on rent disputes, deposits, evictions, and maintenance issues." },
+                  { q: "What happens if a NL landlord doesn't return my deposit?", a: "File a complaint with the Residential Tenancies Division within 60 days of the tenancy ending. An officer can order the landlord to return your deposit plus interest, and may award additional compensation for non-compliance." },
+                  { q: "What notice does a Newfoundland landlord need to terminate a tenancy?", a: "For non-payment of rent, landlords must give at least 30 days' notice. For other lease violations, notice periods vary. Month-to-month tenancies generally require 8 weeks' (2 months') notice to terminate without cause." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

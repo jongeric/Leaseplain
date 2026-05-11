@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
 import { Upload, FileText, Type, AlertCircle, Loader2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -248,6 +249,18 @@ export default function UploadPage() {
             </p>
           </div>
         </div>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What file size limit does LeasePlain accept?", a: "LeasePlain accepts PDF files up to 10MB. Most residential lease PDFs are well under 5MB. If your file is larger, try compressing the PDF before uploading." },
+                  { q: "Can I paste my lease text instead of uploading a PDF?", a: "Yes. Use the text tab to paste your lease text directly. This works well for leases you receive as Word documents, emails, or online forms. Copy the full text, including any addenda, for the most complete analysis." },
+                  { q: "What happens after I upload my lease?", a: "LeasePlain's AI reads the full document and generates a structured analysis within 30–60 seconds. You'll see a summary, financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions." },
+                  { q: "Is my uploaded lease kept private?", a: "Your lease is processed securely to generate your analysis. LeasePlain does not sell or share your lease data. Create an account to save and access your analysis history. See our privacy policy for full details." },
+                  { q: "Can I analyze more than one lease?", a: "Yes. Free users can analyze leases with full access to core features. Pro users get unlimited analyses and access to the complete financial terms section. If you are comparing multiple apartments, Pro is well worth it." }
+                ]} />
+              </div>
       </main>
 
       <Footer />

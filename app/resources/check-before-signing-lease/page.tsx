@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, CheckCircle, ChevronRight, Upload, Clock } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -144,6 +145,18 @@ export default function CheckBeforeSigningPage() {
                 </p>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is the most important thing to check before signing a lease?", a: "The total monthly cost — not just rent but utilities, parking, amenities, and any required insurance. Many tenants focus only on the headline rent and are surprised by significant additional costs." },
+                  { q: "How do I check if a lease clause is legal in my province?", a: "Look up your province's Residential Tenancies Act online (usually on the provincial government website), or use LeasePlain to compare your lease against common provincial standards. Your provincial tenancy tribunal also publishes guides." },
+                  { q: "Should I get the lease in writing?", a: "Always. While verbal leases are technically valid in most provinces, they are nearly impossible to enforce in a dispute. A written lease protects both tenant and landlord by documenting agreed terms." },
+                  { q: "What are common surprise clauses in Canadian leases?", a: "Watch for: automatic lease renewal clauses, landlord entry rights that exceed the legal minimum, broad damage liability that ignores normal wear and tear, flat penalty fees for early termination, and restrictions on guests or occupants." },
+                  { q: "Can I ask a landlord to remove or change a lease clause?", a: "Yes. Any clause in a lease can be proposed for removal or modification before signing. If the landlord refuses, you must decide whether to accept the term (checking if it's even enforceable) or walk away." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

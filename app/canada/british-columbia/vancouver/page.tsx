@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -136,6 +137,18 @@ export default function VancouverPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How are annual rent increases regulated in Vancouver?", a: "Vancouver follows BC provincial rules. Rent increases are tied to the BC Consumer Price Index (CPI). Landlords must give 3 months' written notice on the approved RTB form and can only raise rent once per 12-month period." },
+                  { q: "What is the maximum security deposit in Vancouver?", a: "BC law caps security deposits at half a month's rent. A separate pet damage deposit of up to half a month's rent is also allowed. The landlord must return these within 15 days of tenancy end." },
+                  { q: "Does Vancouver have a vacancy tax that affects renters?", a: "Vancouver's Empty Homes Tax (EHT) is aimed at owners of vacant properties and does not directly affect tenants. However, it has incentivized some landlords to put more units on the rental market, potentially improving vacancy rates." },
+                  { q: "Can a Vancouver landlord evict a tenant for renovations?", a: "Yes, under the BC Residential Tenancy Act, landlords can give 4 months' notice to vacate for major renovations requiring permits and vacant possession. Tenants have the right of first refusal to return at the same rent after renovations." },
+                  { q: "What legal resources are available to Vancouver tenants?", a: "The Tenant Resource and Advisory Centre (TRAC) offers free advice and webinars. The BC Residential Tenancy Branch handles dispute resolution. Dial-a-Law BC offers recorded legal information on tenant rights." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -136,6 +137,18 @@ export default function MontrealPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is there a security deposit for Montreal rentals?", a: "No. Quebec law prohibits landlords from charging any security deposit or damage deposit. If a Montreal landlord asks for one, this is illegal and you can report it to the Tribunal administratif du logement (TAL)." },
+                  { q: "How do rent increases work for Montreal apartments?", a: "Landlords must send a written notice of any proposed rent change 3–6 months before lease renewal. Tenants can accept, counter-propose, or refuse. If they refuse, the landlord can apply to the TAL to set a reasonable increase." },
+                  { q: "What is Montreal's July 1 moving day?", a: "Historically, most Quebec leases expire June 30 and renew July 1, creating the famous July 1 moving day. While less universal today, many Montreal leases still use this cycle. Plan moves early to secure movers and trucks." },
+                  { q: "What is the mandatory Quebec lease form (bail)?", a: "Quebec law requires residential leases to use the standard bail form issued by the TAL. Landlords who use a different form must still honor the rights granted by the Civil Code of Quebec and related legislation." },
+                  { q: "What are tenant rights regarding repairs in Montreal?", a: "Montreal landlords must keep units in good habitable condition. If repairs are not made within a reasonable time after written notice, tenants can apply to the TAL for a rent reduction or an order requiring the work to be done." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

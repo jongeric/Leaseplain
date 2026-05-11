@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -209,6 +210,18 @@ export default function StudentLeaseGuidePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Do students have the same tenant rights as other renters in Canada?", a: "Yes. Students renting off-campus from private landlords have full protections under provincial tenancy law. University-managed on-campus housing (dorms, residences) is typically exempt from residential tenancy legislation." },
+                  { q: "What should students look for in a lease?", a: "Watch for short fixed terms with high penalties for breaking early, broad damage clauses, fees for landlord-supplied furniture, mandatory insurance clauses, and automatic rent increases. LeasePlain can flag these quickly." },
+                  { q: "Can a student break a lease if they fail courses or transfer schools?", a: "Academic reasons are not a statutory ground for early termination in most Canadian provinces. Students who need to leave early should negotiate with the landlord, find an assignment or subletter, or accept losing some rent — depending on how quickly the unit re-rents." },
+                  { q: "What is a co-signer and when do students need one?", a: "A co-signer (guarantor) is someone (often a parent) who guarantees to pay rent if the tenant cannot. Landlords often require co-signers for students without stable income or Canadian credit history. Co-signers are legally liable for the debt." },
+                  { q: "Should students get renters insurance?", a: "Yes. Renters insurance is inexpensive ($15–$30/month) and covers theft, fire, and liability. Many student apartments lack adequate coverage, and landlord insurance does not protect tenant belongings." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

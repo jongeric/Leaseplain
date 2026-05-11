@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, MapPin } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -182,6 +183,18 @@ export default function LocationsPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does LeasePlain cover my city or province?", a: "LeasePlain covers all Canadian provinces and major Canadian cities, as well as key US states and cities. Our AI analyzer works anywhere — jurisdiction-specific content guides are available for the most-requested locations." },
+                  { q: "What Canadian provinces does LeasePlain support?", a: "LeasePlain has specific guides for Ontario, British Columbia, Alberta, Quebec, Manitoba, Saskatchewan, Nova Scotia, New Brunswick, Newfoundland and Labrador, and Prince Edward Island — covering all major Canadian rental markets." },
+                  { q: "Is tenancy law the same across Canada?", a: "No. Each province has its own Residential Tenancies Act with different rules for deposits, rent increases, notice periods, and dispute resolution. LeasePlain's location guides explain how the rules differ province by province." },
+                  { q: "Can I use LeasePlain if I'm in a US city not listed?", a: "Yes. While LeasePlain has detailed guides for major US states and cities, the AI lease analyzer works for any residential lease — it is not restricted to locations with a dedicated guide page." },
+                  { q: "Why does location matter for lease analysis?", a: "Provincial and state laws override lease clauses. A clause that is perfectly legal in one jurisdiction may be void in another. Knowing your location allows LeasePlain's AI to flag violations of your specific local rules." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

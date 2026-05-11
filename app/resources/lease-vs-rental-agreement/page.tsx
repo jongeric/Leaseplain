@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -174,6 +175,18 @@ export default function LeaseVsRentalAgreementPage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is the main difference between a lease and a rental agreement?", a: "A lease is a fixed-term contract (typically 12 months) that can only be ended by proper notice at renewal or for legal cause. A rental agreement is usually month-to-month, giving both parties more flexibility to terminate with the required notice." },
+                  { q: "Which is better for a tenant — a fixed-term lease or month-to-month?", a: "It depends on your situation. A fixed-term lease provides stability and locks in your rent for the term. Month-to-month offers flexibility if you may need to move. In most provinces, a fixed-term lease converts to month-to-month at the end — giving you both stability and eventual flexibility." },
+                  { q: "Can a landlord evict a tenant during a fixed-term lease?", a: "Only for legal cause (non-payment, damage, etc.) or if the landlord needs the unit for specific permitted reasons. A landlord generally cannot evict a tenant simply because they want them out during a fixed term." },
+                  { q: "Does a month-to-month rental agreement provide the same protections as a lease?", a: "Yes. Provincial tenancy law applies equally to both. Month-to-month tenants have the same rights regarding maintenance, deposits, rent increases, and eviction protection as those on a fixed-term lease." },
+                  { q: "What happens at the end of a fixed-term lease if I don't sign a new one?", a: "In most Canadian provinces, the tenancy automatically converts to a month-to-month arrangement under the same terms. You are NOT required to sign a new lease. The existing rent-control protections and rights continue." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

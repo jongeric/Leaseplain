@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FileText, ChevronRight, Upload, Shield, TrendingUp, DoorOpen, Wrench, Share2, DollarSign, Zap, Heart, Users, Hammer } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -192,6 +193,18 @@ export default function LeaseClausesPage() {
             <p className="text-xs text-blue-200 mt-4">Not legal advice. For informational purposes only.</p>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are the most important clauses to review in a Canadian lease?", a: "Focus on rent amount and due date, deposit terms, termination notice periods, maintenance responsibilities, subletting rights, pet policies, rent increase procedures, and any fees for things like parking, lockers, or amenities." },
+                  { q: "Are all clauses in a signed lease enforceable?", a: "No. A clause that violates provincial tenancy law is automatically void, even if you signed the lease. Provincial legislation sets minimum rights that landlords cannot contract out of, no matter what the lease says." },
+                  { q: "What is an illegal lease clause?", a: "An illegal clause is one that attempts to remove or restrict rights granted by provincial tenancy law. Examples include waiving notice periods, charging deposits beyond the legal limit, banning pets in Ontario, or waiving the right to a habitability standard." },
+                  { q: "How does LeasePlain identify problem clauses?", a: "LeasePlain's AI reads your full lease text or PDF and flags clauses that are unusual, one-sided, or potentially illegal under your province's rules. It explains each clause in plain English so you can decide whether to negotiate or sign." },
+                  { q: "Should I negotiate lease clauses before signing?", a: "Yes, especially in a tenant's market. Common negotiable items include rent amount, parking fees, early termination rights, pet permissions, and the inclusion of appliances or utilities. LeasePlain's negotiation suggestions can guide what to ask for." }
+                ]} />
+              </div>
       </main>
 
       <Footer />

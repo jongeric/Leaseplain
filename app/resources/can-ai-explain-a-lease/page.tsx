@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -184,6 +185,18 @@ export default function CanAIExplainALeasePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Can AI really explain a legal lease agreement?", a: "Yes. Modern AI models like Claude (which powers LeasePlain) are highly capable at reading legal text and translating it into plain English. They can identify key terms, flag unusual clauses, and explain what provisions mean in practice." },
+                  { q: "What parts of a lease is AI best at explaining?", a: "AI excels at explaining standard clauses: rent terms, deposit rules, termination procedures, maintenance responsibilities, and common fee structures. It is less reliable for highly unusual clauses or situations requiring professional legal judgment." },
+                  { q: "Is AI lease explanation legally binding?", a: "No. AI-generated explanations are for informational purposes only and are not legal advice. For binding interpretations, consult a lawyer. Use AI to understand your lease, not as a legal opinion." },
+                  { q: "How does LeasePlain's AI explain a lease?", a: "You upload a PDF or paste the text. The AI reads the full document, identifies the key provisions, and generates a structured report: summary, financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions — all in plain English." },
+                  { q: "What should I do after getting an AI explanation of my lease?", a: "Review each flagged item. If something is marked as a red flag or unclear clause, ask your landlord to explain or amend it before signing. For serious concerns, consult a tenant legal clinic or lawyer." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

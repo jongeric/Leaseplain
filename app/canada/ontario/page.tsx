@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -149,6 +150,18 @@ export default function OntarioPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is the Ontario Residential Tenancies Act?", a: "The Residential Tenancies Act (RTA) is Ontario's main landlord-tenant law. It governs rent increases, deposits, evictions, maintenance obligations, and dispute resolution through the Landlord and Tenant Board (LTB)." },
+                  { q: "How much can a landlord charge for a security deposit in Ontario?", a: "Ontario landlords may only collect a rent deposit equal to the last month's rent. They cannot charge a separate damage deposit. The deposit must earn interest at the annual rent-increase guideline rate." },
+                  { q: "What is Ontario's rent increase guideline?", a: "Each year the Ontario government sets a rent-increase guideline — the maximum a landlord can raise rent for most sitting tenants without LTB approval. Units first occupied after November 15, 2018 are exempt from rent control." },
+                  { q: "How do I file a complaint with the Ontario Landlord and Tenant Board?", a: "Applications are filed at ontario.ca/LTB or in person at an LTB office. Tenants pay no filing fee. Common applications include T2 (rights interference), T6 (maintenance), and T3 (vital services)." },
+                  { q: "What notice must an Ontario landlord give to end a tenancy?", a: "The required notice depends on the reason: 60 days for landlord's own use, 60 days for purchaser's own use, or the prescribed notice for non-payment of rent (N4) plus the right to void the notice by paying within 14 days." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

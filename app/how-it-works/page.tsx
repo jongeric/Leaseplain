@@ -6,6 +6,7 @@ import {
   Upload, Cpu, FileText, CheckCircle, AlertTriangle,
   DollarSign, Lightbulb, ShieldCheck, Eye, ChevronRight,
 } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -202,6 +203,18 @@ export default function HowItWorksPage() {
             </p>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How does LeasePlain analyze a lease?", a: "You upload a PDF or paste the lease text. LeasePlain sends the document to Claude, Anthropic's AI, which reads the entire lease and returns a structured report covering financial terms, red flags, unclear clauses, questions to ask your landlord, and negotiation suggestions." },
+                  { q: "Is LeasePlain's analysis based on my specific province?", a: "Yes. The AI is prompted to flag clauses relative to Canadian and US residential tenancy law standards. You can specify your province when uploading so the analysis is tailored to your local rules." },
+                  { q: "How long does it take to analyze a lease?", a: "Most analyses take 30–60 seconds. LeasePlain processes the full lease document — not just a summary — to ensure thorough coverage. Longer leases may take up to a minute." },
+                  { q: "What format should my lease be in?", a: "LeasePlain accepts PDF files up to 10MB and plain text pasted directly. Most landlord-provided lease PDFs work immediately. If your lease is a scanned image, convert it to text first using a PDF OCR tool." },
+                  { q: "What do I do after I get my LeasePlain analysis?", a: "Review each flagged item carefully. For red flags, ask your landlord to explain or amend the clause. Use the negotiation suggestions as talking points. For serious concerns, share the analysis with a tenant legal clinic before signing." }
+                ]} />
+              </div>
       </main>
 
       <Footer />

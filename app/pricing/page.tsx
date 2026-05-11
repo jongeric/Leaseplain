@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Check, Zap, Loader2 } from "lucide-react";
 import { useSession } from "@/lib/auth-client";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -192,6 +193,18 @@ export default function PricingPage() {
             </p>
           </div>
         </div>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What does LeasePlain's free plan include?", a: "The free plan includes a full AI lease analysis with summary, red flags, unclear clauses, questions to ask, and negotiation suggestions. Financial terms are available on Pro plans. Analyses are saved to your account." },
+                  { q: "What does LeasePlain Pro include?", a: "Pro unlocks the complete financial terms section, unlimited lease analyses, priority processing, and downloadable PDF reports. It is designed for frequent renters, agents, and property managers." },
+                  { q: "Is there a free trial of LeasePlain Pro?", a: "LeasePlain's free tier provides substantial value with no credit card required. Pro features are available on a monthly subscription. Check the Pricing page for current plans and any available promotions." },
+                  { q: "Can I cancel my LeasePlain subscription?", a: "Yes. Subscriptions are month-to-month and can be cancelled at any time through your account settings. Access continues until the end of the paid billing period." },
+                  { q: "Is LeasePlain affordable for first-time renters?", a: "Yes. LeasePlain offers meaningful free functionality, and Pro is priced to be accessible. Compared to the cost of a single hour of lawyer time, LeasePlain Pro provides significant value for tenants who sign multiple leases or need ongoing peace of mind." }
+                ]} />
+              </div>
       </main>
 
       <Footer />

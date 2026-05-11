@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -102,6 +103,18 @@ export default function LandlordGuidesPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are a Canadian landlord's key obligations?", a: "Landlords must maintain the unit in a good state of repair, comply with housing and safety standards, give proper written notice for entry and rent increases, follow legal processes for eviction, and return deposits within the timeframe required by provincial law." },
+                  { q: "Can a landlord run credit and background checks on applicants?", a: "Yes, with the applicant's consent, landlords can conduct credit and reference checks. They cannot use protected characteristics (race, religion, disability, etc.) as reasons to reject applicants." },
+                  { q: "What notice must a landlord give before entering a rental unit?", a: "Most provinces require at least 24 hours' written notice. Ontario requires exactly 24 hours. BC requires 24 hours. Alberta requires 24 hours. Emergency situations may allow immediate entry. Failing to give notice can expose landlords to complaints." },
+                  { q: "How does a landlord legally raise rent in Canada?", a: "Give written notice using the prescribed form, provide the required advance notice (typically 3 months), and comply with rent-increase guidelines in provinces that have them. Only one rent increase per 12-month period is generally permitted." },
+                  { q: "What is the legal eviction process in Canada?", a: "The process varies by province but generally involves: serving a written notice to terminate (specifying the reason), waiting the required period, then filing an application with the tenancy tribunal if the tenant does not comply. Self-help evictions (changing locks, removing belongings) are illegal everywhere in Canada." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

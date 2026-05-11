@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -179,6 +180,18 @@ export default function HiddenLeaseFeesPage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are common hidden fees in Canadian leases?", a: "Watch for: parking fees not included in rent, locker fees, move-in/move-out fees charged by condo corporations, administrative fees for lease changes, key replacement fees (above actual cost), early termination penalties, and utility surcharges." },
+                  { q: "Are administrative fees in a lease legal?", a: "Provincial law varies. Ontario explicitly prohibits many fees beyond rent and last month's deposit. In other provinces, fees must be reasonable and related to actual costs. Vague 'administrative fees' in a lease are a red flag worth questioning." },
+                  { q: "Can a landlord charge for utilities on top of rent mid-lease?", a: "Only if the lease provides for it from the start. If utilities were included in your rent when you signed, the landlord cannot unilaterally separate them out mid-tenancy. This would constitute an illegal rent increase." },
+                  { q: "What fees can a BC landlord legally charge?", a: "BC landlords can charge rent and a security deposit (max half a month). Pet deposits (max half a month) are allowed. Other fees — like move-in fees, administration fees, or appliance fees — are generally prohibited under the BC Residential Tenancy Act." },
+                  { q: "What should I do if a landlord tries to charge an illegal fee?", a: "Refuse to pay, document the request, and file a complaint with your provincial tenancy tribunal. You may be entitled to a refund plus compensation. Paying under protest does not waive your right to dispute the charge later." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

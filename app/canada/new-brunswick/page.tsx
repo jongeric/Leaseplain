@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -158,6 +159,18 @@ export default function NewBrunswickPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is there rent control in New Brunswick?", a: "No. New Brunswick has no rent control. Landlords can raise rent by any amount, but must give tenants written notice — at least 3 months for most residential tenancies." },
+                  { q: "What is the maximum security deposit in New Brunswick?", a: "New Brunswick caps security deposits at one month's rent. Landlords must provide a written receipt and return the deposit within 7 days of the tenancy ending, minus any valid deductions." },
+                  { q: "How do I resolve a landlord-tenant dispute in New Brunswick?", a: "File a complaint with the Rentalsman's Office (Service New Brunswick — Rental Residential Tenancies). The Rentalsman is a provincial officer who mediates and adjudicates disputes at little or no cost." },
+                  { q: "Can a New Brunswick landlord evict a tenant without cause?", a: "Yes, with proper notice. A landlord can terminate a month-to-month tenancy by giving at least 3 months' written notice without needing a specific reason. Eviction for cause (e.g., non-payment) requires shorter notice." },
+                  { q: "Is New Brunswick's tenancy law available in French?", a: "Yes. New Brunswick is Canada's only officially bilingual province. The Residential Tenancies Act and government services are fully available in both English and French." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

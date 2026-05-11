@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heart, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -164,6 +165,18 @@ export default function PetsClausePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Can a landlord legally ban pets in Canada?", a: "Most provinces allow landlords to include no-pet clauses. However, Ontario is an exception — no-pet clauses in Ontario leases are void under the Residential Tenancies Act. In BC, Alberta, and most other provinces, no-pet clauses are generally enforceable." },
+                  { q: "Can a landlord refuse a service animal or emotional support animal?", a: "No. Across Canada, refusing a service animal is a human rights violation. Landlords must accommodate tenants with disabilities who rely on service animals, even if the lease contains a no-pet clause." },
+                  { q: "Can a landlord charge a pet deposit in Canada?", a: "This varies by province. BC allows a pet damage deposit of up to half a month's rent. Alberta includes pet damage in the general security deposit (capped at one month). Ontario bans any deposit beyond last month's rent, including pet deposits." },
+                  { q: "What happens if I get a pet without telling my landlord in Ontario?", a: "In Ontario, a no-pet clause is void, so getting a pet is technically your right. However, if the pet causes damage or disturbs neighbours, the landlord can seek eviction based on the damage or disturbance — not just for having the pet." },
+                  { q: "Do lease clauses about pet sizes or breeds hold up legally?", a: "Size and breed restrictions are less certain legally than outright bans. In Ontario, they may still be void along with the general no-pet clause. In other provinces, specific breed or size restrictions may be enforceable if clearly written in the lease." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Check your pet clause</h3>

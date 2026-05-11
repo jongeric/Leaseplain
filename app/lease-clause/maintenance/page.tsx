@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -147,6 +148,18 @@ export default function MaintenancePage() {
                 </ul>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What counts as a landlord's maintenance obligation in Canada?", a: "Landlords must maintain rental units in good repair and comply with all housing, health, and safety standards. This includes structural integrity, heating systems, plumbing, pest control, and common areas." },
+                  { q: "How long does a landlord have to respond to a maintenance request?", a: "There is no universal statutory deadline, but 'reasonable time' is the standard. Emergency situations (no heat, flooding) require immediate action. Routine repairs (broken fixture, minor leak) should typically be addressed within days to a few weeks." },
+                  { q: "What documentation should I keep for maintenance issues?", a: "Keep copies of all written repair requests, take dated photos or videos of the problem, and document any verbal conversations in follow-up emails. This evidence is essential if you need to file a complaint with a tenancy tribunal." },
+                  { q: "Can I be evicted for complaining about maintenance?", a: "Retaliatory eviction for filing a maintenance complaint is illegal in most Canadian provinces. If you suspect retaliation, document the timeline carefully and file a counter-complaint with the tenancy tribunal." },
+                  { q: "What is an N13 notice in Ontario and when does it relate to maintenance?", a: "An N13 is an Ontario landlord's notice to terminate tenancy for major renovations or demolition. Landlords must have necessary permits and cannot use renovation as a pretext for eviction. Tenants have the right of first refusal to return at the same rent after renovations." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

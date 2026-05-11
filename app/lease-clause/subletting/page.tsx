@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -154,6 +155,18 @@ export default function SublettingPage() {
                 </ul>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is subletting and how does it differ from assigning a lease?", a: "Subletting means you (the original tenant) temporarily move out, a subtenant takes over, but you remain liable under the original lease. Assignment means you transfer the entire lease to someone else and leave permanently. Assignment requires the landlord's consent in most provinces." },
+                  { q: "Can my landlord refuse to let me sublet?", a: "Canadian landlords generally cannot unreasonably withhold consent to sublet. They may reject a specific subtenant if they have good reason (e.g., the subtenant cannot afford rent), but they cannot simply say 'no subletting allowed.'" },
+                  { q: "Am I still responsible if my subtenant doesn't pay rent?", a: "Yes. As the head tenant, you remain liable to the landlord for rent and damages caused by your subtenant. If your subtenant defaults, the landlord can pursue you — so choose your subtenant carefully and ideally sign a written sublease." },
+                  { q: "Can a landlord charge a fee to approve a sublease?", a: "No. In most Canadian provinces, charging a fee to consent to a sublet or assignment is prohibited. Only reasonable out-of-pocket expenses (like credit check costs) may be charged in some jurisdictions." },
+                  { q: "What does 'no subletting' in a lease mean legally?", a: "A blanket no-subletting clause may be unenforceable if provincial law gives tenants the right to sublet with landlord consent. For example, Ontario's RTA allows tenants to sublet and a lease clause cannot override this statutory right." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

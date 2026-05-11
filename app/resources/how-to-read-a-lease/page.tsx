@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, CheckCircle, ChevronRight, Upload, Clock } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -166,6 +167,18 @@ export default function HowToReadALeasePage() {
                 </p>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are the main sections of a Canadian lease?", a: "Most leases include: parties and property description, lease term and rent amount, deposit terms, rules (pets, guests, smoking), maintenance obligations, termination and notice procedures, and any schedules or addenda for additional rules." },
+                  { q: "What lease language is a red flag?", a: "Watch for: waiver-of-rights clauses, blanket liability for all damage, landlord entry without notice, penalties for breaking the lease beyond actual losses, automatic rent increases without proper notice, and fees for things beyond rent and legal deposits." },
+                  { q: "What does 'joint and several liability' mean in a lease?", a: "'Joint and several' means each co-tenant is individually responsible for the entire rent amount. If one roommate doesn't pay, the landlord can pursue any or all remaining tenants for the full amount — not just their share." },
+                  { q: "What is an addendum or schedule in a lease?", a: "An addendum is an attachment to the main lease containing additional rules (e.g., pet policy, parking rules, condo rules). Addenda are legally binding if properly incorporated into the lease — read them as carefully as the main document." },
+                  { q: "Can I use LeasePlain to help me understand my lease?", a: "Yes. Paste your lease text or upload a PDF and LeasePlain will explain the key terms, flag unusual or potentially illegal clauses, and give you specific questions to ask and negotiation suggestions." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

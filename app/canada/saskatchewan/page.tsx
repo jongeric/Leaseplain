@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -156,6 +157,18 @@ export default function SaskatchewanPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Saskatchewan have rent control?", a: "No. Saskatchewan removed rent control in the 1990s. Landlords can raise rent by any amount, but must provide at least one full rental period's written notice (e.g., one month for monthly leases) before the increase takes effect." },
+                  { q: "What is the security deposit limit in Saskatchewan?", a: "Saskatchewan caps security deposits at one month's rent. Landlords must provide a receipt and return the deposit within 7 business days of the tenancy ending, or provide an itemized list of deductions." },
+                  { q: "How do I file a dispute in Saskatchewan?", a: "Contact the Office of Residential Tenancies (ORT), which operates offices in Saskatoon and Regina and handles applications province-wide. Hearings are conducted in person, by phone, or by written submission." },
+                  { q: "Can a Saskatchewan landlord refuse to rent to a tenant with pets?", a: "Yes, Saskatchewan landlords may include pet-restriction clauses in leases. However, service animals and guide dogs cannot be refused under The Saskatchewan Human Rights Code." },
+                  { q: "What is required for a valid lease in Saskatchewan?", a: "While leases can be verbal in Saskatchewan, a written tenancy agreement is strongly recommended. It should include rent amount, payment date, deposit details, and any specific rules. The ORT provides standard agreement templates." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

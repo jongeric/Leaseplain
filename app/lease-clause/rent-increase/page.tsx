@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -139,6 +140,18 @@ export default function RentIncreasePage() {
                 </ul>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How much notice is required for a rent increase in Canada?", a: "Most provinces require 3 months' written notice. Ontario requires 90 days. BC requires 3 months. Alberta requires 3 months. Notice must typically be in writing on a prescribed form and given only once every 12 months." },
+                  { q: "Can my landlord raise rent above the provincial guideline?", a: "In provinces with rent control (Ontario for pre-2018 buildings, BC, Manitoba, PEI), raises above the guideline require tribunal approval. In provinces without rent control (Alberta, Saskatchewan, New Brunswick), landlords can raise by any amount with proper notice." },
+                  { q: "What is a rent-increase guideline?", a: "Provincial governments publish an annual guideline — the maximum percentage landlords can raise rent without approval. Ontario's is based on inflation; BC's is tied to the CPI. Exceeding the guideline without approval is illegal in rent-controlled provinces." },
+                  { q: "Can a landlord raise rent when I renew my lease?", a: "Generally yes, but only once per 12-month period and with the required notice. In Ontario, a lease renewal itself does not trigger a new rental period — existing rent-control protections continue regardless of whether you sign a new lease or go month-to-month." },
+                  { q: "Is a verbal rent increase enforceable?", a: "No. Virtually all Canadian provinces require rent increases to be in writing. A verbal promise or text message is not sufficient. Landlords must use the prescribed written notice form (e.g., Ontario Form N1) and give adequate advance notice." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

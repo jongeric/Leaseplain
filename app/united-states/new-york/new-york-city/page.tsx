@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -149,6 +150,18 @@ export default function NewYorkCityPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How do I find out if my NYC apartment is rent-stabilized?", a: "Check the NYC Rent Guidelines Board website (or nyc.gov/hpd) or use the NYC FOIL/DHCR records to look up your building. Buildings built before 1974 with 6+ units are often covered. You can also check your lease — rent-stabilized leases say so on the first page." },
+                  { q: "Can a NYC landlord refuse to renew my lease?", a: "For rent-stabilized apartments, landlords must offer a lease renewal unless there is a legal basis for non-renewal (e.g., owner's personal use, building demolition). For market-rate apartments, landlords generally can decline to renew with proper notice." },
+                  { q: "What is the NYC preferential rent and how does it affect me?", a: "Some rent-stabilized tenants pay a 'preferential rent' below their unit's legal regulated rent. After the 2019 HSTPA, landlords can only raise the rent by the RGB increase — they can no longer jump to the full legal rent when a tenant renews." },
+                  { q: "What is the NYC DHCR?", a: "The Division of Housing and Community Renewal (DHCR) is the state agency that oversees rent stabilization in NYC and New York State. Tenants can file complaints about rent overcharges, improper lease renewals, and service reductions with the DHCR." },
+                  { q: "Can I break a lease in NYC for any reason?", a: "Not without consequences. You can negotiate an early termination with your landlord, sublet (with consent), or assign the lease. Domestic violence victims have special protections allowing earlier termination. Leaving without following the legal process exposes you to liability for unpaid rent." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

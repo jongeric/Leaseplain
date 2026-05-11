@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -155,6 +156,18 @@ export default function QuestionsBeforeSigningPage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is the most important question to ask before signing a lease?", a: "Ask for a complete breakdown of all monthly costs — rent, utilities, parking, locker, and any other fees. Hidden costs can add hundreds of dollars per month beyond the advertised rent." },
+                  { q: "Should I ask to see the landlord's identity?", a: "Yes. Ask for government-issued ID and verify the landlord actually owns or manages the property. Rental scams often involve people posing as landlords for properties they don't control." },
+                  { q: "Is it reasonable to ask about the building's maintenance history?", a: "Absolutely. Ask when the building was last inspected, whether there are any outstanding work orders, and how maintenance requests are handled. A landlord who is evasive about maintenance is a yellow flag." },
+                  { q: "Can I ask for the previous tenant's rent amount?", a: "In provinces with rent control, the previous tenant's rent is legally relevant because landlords may try to reset the rent to market rate between tenancies. Ask, and compare it to what you're being offered. In Ontario, former tenants can request their rent history." },
+                  { q: "What should I ask about the lease renewal process?", a: "Ask: Will rent increase at renewal? By how much? When will you be notified? Can you go month-to-month? Understanding the renewal process upfront prevents surprises when your first term ends." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

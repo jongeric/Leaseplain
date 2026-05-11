@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Home, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -137,6 +138,18 @@ export default function CondoLeaseGuidePage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "How is renting a condo different from renting an apartment?", a: "Condo rentals involve both your lease with the landlord-owner and the condo corporation's rules. Condo rules about noise, amenity use, pets, and common areas are binding on tenants and can be stricter than provincial tenancy law." },
+                  { q: "Can a condo corporation evict a tenant?", a: "No. Only the landlord can evict a tenant through the provincial tenancy process. However, condo corporations can take action against landlords for tenant rule violations, which may prompt the landlord to pursue eviction." },
+                  { q: "What condo documents should I ask for before signing a condo lease?", a: "Ask for the condo's declaration, by-laws, and rules (sometimes called the Status Certificate package). These documents outline restrictions on pets, rentals, noise, parking, and use of amenities that will apply to you as a tenant." },
+                  { q: "Are condo amenities available to tenants?", a: "Usually yes, but access may be restricted or require advance booking. Check the condo rules for guest suite policies, gym hours, pool access, and move-in/out procedures. Some buildings charge separate amenity fees for tenants." },
+                  { q: "What happens if a condo is converted to a different use during my tenancy?", a: "Landlords who want to convert or demolish a condo must follow provincial tenancy law, including providing proper notice and, in some provinces, compensation. Tenants cannot be forced out without following the legal process." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

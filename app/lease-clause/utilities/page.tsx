@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -164,6 +165,18 @@ export default function UtilitiesClausePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What utilities should be included in a Canadian rental?", a: "There is no standard requirement — it depends on what is negotiated in the lease. Common arrangements include all-inclusive (heat, water, electricity), or heat and water included with tenant paying electricity. Always clarify in writing before signing." },
+                  { q: "Can a landlord pass on utility cost increases to tenants mid-lease?", a: "Only if the lease specifically provides for it. If utilities are included in a fixed rent, the landlord cannot suddenly charge extra for rising costs without a proper rent increase following provincial notice rules." },
+                  { q: "What happens if utilities are cut off in my rental?", a: "Cutting off utilities is illegal in most Canadian provinces. File an emergency application with your province's tenancy tribunal. In Ontario, tenants can apply for a T2 order for interference with vital services, which can result in fines and rent abatements." },
+                  { q: "Am I responsible for utility setup if not included in rent?", a: "If the lease states utilities are the tenant's responsibility, you need to set up accounts directly with utility providers. Ensure this is clear in the lease before signing — ask who sets up the accounts and whether any deposits are required." },
+                  { q: "What are submetered utilities?", a: "Some newer buildings use subbmetering, where each unit has its own meter and tenants pay only for their actual consumption. Submetered arrangements must be disclosed before signing the lease and are subject to specific provincial regulations." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Check your utilities clause</h3>

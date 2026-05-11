@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -150,6 +151,18 @@ export default function SurreyPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Do BC rent-control rules apply in Surrey?", a: "Yes. Surrey follows BC's provincial Residential Tenancy Act. Rent increases are capped annually at the BC CPI rate. Landlords must give 3 months' written notice and can only raise rent once in a 12-month period." },
+                  { q: "What is the security deposit limit in Surrey?", a: "BC-wide, security deposits are capped at half a month's rent. Surrey landlords cannot collect more than this. A pet damage deposit of up to half a month's rent is permitted separately." },
+                  { q: "Is Surrey more affordable to rent than Vancouver?", a: "Generally yes. Surrey's rental market has been more affordable than central Vancouver, though prices have risen with the region's growth. Purpose-built rental buildings are increasing in areas like Surrey Central and Guildford." },
+                  { q: "Where can Surrey tenants get help with a dispute?", a: "File a dispute with the BC Residential Tenancy Branch (RTB) online at gov.bc.ca/landlordtenant. The Tenant Resource and Advisory Centre (TRAC) also provides free phone advice to BC tenants including those in Surrey." },
+                  { q: "Can a Surrey landlord refuse to accept pets?", a: "Yes. BC landlords can include no-pet clauses in their leases and generally can enforce them. However, they cannot refuse to accommodate a service animal needed by a tenant with a disability under the BC Human Rights Code." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

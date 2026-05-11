@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, FileText } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -111,6 +112,18 @@ export default function LosAngelesPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Los Angeles have its own rent control?", a: "Yes. The City of Los Angeles Rent Stabilization Ordinance (RSO) applies to most rental units built before October 1, 1978. RSO units have stricter rent increase limits and just-cause eviction requirements on top of California's statewide AB 1482." },
+                  { q: "What is the security deposit limit in LA?", a: "California law caps deposits at 2 months' rent for unfurnished and 3 months for furnished apartments. Los Angeles follows state law. Deposits must be returned within 21 days of move-out with an itemized deduction statement." },
+                  { q: "What is the LA Housing Department?", a: "The Los Angeles Housing Department (LAHD) administers the Rent Stabilization Ordinance. Tenants can file complaints about illegal rent increases, landlord harassment, or illegal evictions. LAHD also operates the Rent Adjustment Commission for appeals." },
+                  { q: "Can an LA landlord evict a tenant without cause?", a: "RSO buildings require just cause for eviction of protected tenants. Allowable reasons include non-payment of rent, nuisance, owner move-in, and others. No-fault evictions (like owner move-in) often require relocation assistance." },
+                  { q: "How do I know if my LA apartment is under RSO?", a: "Check the LAHD's online RSO registration database at housing.lacity.org. Most apartments built before 1978 with two or more units are covered. If you're unsure, contact LAHD directly — coverage questions are answered for free." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

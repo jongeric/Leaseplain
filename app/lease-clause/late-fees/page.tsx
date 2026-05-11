@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Clock, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -159,6 +160,18 @@ export default function LateFeesPage() {
                 </ul>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Are late fees legal in Canadian leases?", a: "Late fees are explicitly prohibited in Ontario (the RTA bans illegal charges). In BC and other provinces, the rules are stricter — any penalty fee not permitted by the tenancy act is generally void. Check your province's law before paying a late fee." },
+                  { q: "What can a landlord do if I pay rent late in Canada?", a: "The landlord can issue an eviction notice for non-payment of rent. In Ontario, this is an N4 notice, giving tenants 14 days to pay the arrears and void the notice. Most provinces have similar processes with a grace period." },
+                  { q: "How much late fee is too much?", a: "In provinces that do permit late fees (a minority), courts will not enforce punitive or exorbitant fees. A reasonable administrative charge proportional to actual administrative cost may be enforced; large percentage-based fees typically will not be." },
+                  { q: "Can a landlord charge NSF fees for a bounced cheque?", a: "Landlords can generally charge the actual bank NSF fee passed on to them. They cannot mark up this fee or add penalties beyond the actual bank cost. This varies by province — review your lease and provincial rules." },
+                  { q: "What should I do if my lease includes a late fee clause?", a: "First, check whether late fees are permitted in your province. If they are not (as in Ontario), the clause is void even though you signed the lease. If you are charged an illegal late fee, dispute it with your province's tenancy tribunal." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

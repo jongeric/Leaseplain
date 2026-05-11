@@ -12,6 +12,7 @@ import {
   Upload,
   AlertTriangle,
 } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -237,6 +238,18 @@ export default function ResourcesPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What resources does LeasePlain offer for tenants?", a: "LeasePlain provides AI-powered lease analysis, plain-English guides on tenant rights by province, lease clause explanations, province-specific legal information, and answers to common renting questions — all free." },
+                  { q: "Is the information on LeasePlain specific to Canadian law?", a: "Yes, LeasePlain's content focuses heavily on Canadian provincial tenancy law (Ontario, BC, Alberta, Quebec, and more) as well as US state laws. Content is clearly labeled by jurisdiction." },
+                  { q: "How is LeasePlain different from a Google search about tenant rights?", a: "LeasePlain analyzes your specific lease and flags problem clauses in context. Generic search results tell you the law but don't tell you whether your actual lease violates it. LeasePlain bridges that gap." },
+                  { q: "Can I use LeasePlain to prepare for a lease negotiation?", a: "Yes. Upload or paste your proposed lease and LeasePlain will flag unusual terms and suggest specific negotiation points — giving you concrete talking points before you meet with a landlord." },
+                  { q: "Does LeasePlain replace a lawyer?", a: "No. LeasePlain provides lease clarity and education, not legal advice. If you face eviction, a complex dispute, or need advice for a specific legal situation, consult a licensed lawyer or free tenant legal clinic." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

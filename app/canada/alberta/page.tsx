@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -149,6 +150,18 @@ export default function AlbertaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Alberta have rent control?", a: "No. Alberta has no province-wide rent control. Landlords can increase rent by any amount, but must give tenants at least 3 months' written notice before any increase takes effect." },
+                  { q: "What is the security deposit limit in Alberta?", a: "Alberta landlords can charge a maximum security deposit equal to one month's rent. They cannot charge a separate damage deposit, pet deposit beyond that cap, or additional security fees." },
+                  { q: "How do I dispute a landlord-tenant issue in Alberta?", a: "You can apply to the Residential Tenancy Dispute Resolution Service (RTDRS) for a fast, affordable hearing, or file a claim in Provincial Court. The RTDRS is available throughout Alberta and often faster than court." },
+                  { q: "What notice does an Alberta landlord need to end a tenancy?", a: "For a month-to-month tenancy, landlords must give 3 months' notice to terminate without cause. For fixed-term leases, either party must give notice of non-renewal within the timeframe specified in the lease or in the Act." },
+                  { q: "Are Alberta lease clauses restricting pets enforceable?", a: "Yes. Unlike some provinces, Alberta allows landlords to prohibit pets in a lease. However, no-pet clauses do not override human rights protections for service animals and emotional support animals." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

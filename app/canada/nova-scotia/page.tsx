@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -158,6 +159,18 @@ export default function NovaScotiaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Nova Scotia have rent control?", a: "Nova Scotia introduced a rent cap in 2020, limiting annual rent increases to 5% for existing tenants. This cap applies to most residential tenancies and is enforced through the Residential Tenancies Program." },
+                  { q: "How are security deposits handled in Nova Scotia?", a: "Nova Scotia requires landlords to deposit the security deposit (up to half a month's rent) with the Director of Residential Tenancies, not hold it themselves. This protects tenants from landlords who spend the deposit." },
+                  { q: "What body handles landlord-tenant disputes in Nova Scotia?", a: "The Residential Tenancies Program administers disputes. The Director of Residential Tenancies hears applications for rent increases, evictions, deposit returns, and maintenance complaints." },
+                  { q: "How much notice must a Nova Scotia landlord give to end a tenancy?", a: "For non-payment of rent, landlords must give 15 days' notice. For other breaches, the notice period is generally longer. For a fixed-term lease, landlords must give 3 months' notice if they do not intend to renew." },
+                  { q: "Are pet clauses enforceable in Nova Scotia leases?", a: "Generally yes, but human rights legislation protects service animals. A no-pets clause in a Nova Scotia lease is usually valid for regular pets, though the Human Rights Act requires accommodation for animals assisting persons with disabilities." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LogOut, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -132,6 +133,18 @@ export default function EarlyTerminationPage() {
                 </ul>
               </div>
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What does an early termination clause do?", a: "An early termination clause describes what happens if a tenant breaks the lease before the end date. Under Canadian provincial law, landlords can only claim their actual losses (unpaid rent minus what they earn from re-renting the unit) — flat penalty clauses are generally void." },
+                  { q: "Can I assign my lease instead of breaking it?", a: "Yes. Most Canadian provinces allow tenants to assign a lease to a qualified new tenant with the landlord's consent. Assignment eliminates your ongoing liability, unlike subletting where you remain responsible." },
+                  { q: "What happens to my deposit if I leave early?", a: "Your deposit may be applied to unpaid rent for the period while the unit sits vacant. Once the landlord finds a new tenant, your liability ends. Any remaining deposit should be returned with an itemized deduction statement." },
+                  { q: "Is there a standard early termination fee in Canada?", a: "No standard fee exists. Provincial law generally caps recovery at the landlord's actual losses. A flat fee of '2 months' rent' written into a lease is typically unenforceable if the landlord re-rents quickly." },
+                  { q: "Can a tenant break a lease due to domestic violence?", a: "Yes. Most Canadian provinces have special provisions allowing survivors of domestic violence to break a lease with shorter notice (often 28 days) by providing documentation. Ontario, BC, Alberta, and others have these protections." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

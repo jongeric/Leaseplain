@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload, Clock, FileText } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -131,6 +132,18 @@ export default function LeaseAgreementExplainedPage() {
                 </div>
               ))}
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is a lease agreement?", a: "A lease agreement is a legally binding contract between a landlord and tenant that sets out the terms of renting a property. It specifies rent, duration, deposit, and the rights and responsibilities of both parties." },
+                  { q: "What is the difference between a lease and a rental agreement?", a: "A lease is typically a fixed-term contract (e.g., one year), while a rental agreement is month-to-month. Both are legally binding, but a lease provides more certainty for both parties about the tenancy duration." },
+                  { q: "Is a verbal lease agreement valid in Canada?", a: "Yes, verbal leases are technically valid in most Canadian provinces, but they are very difficult to enforce because there is no written record. A written lease is strongly recommended to protect both parties." },
+                  { q: "What happens if I don't understand something in my lease?", a: "Ask your landlord to explain it in writing before you sign. You can also use LeasePlain's AI to get a plain-English explanation, or consult a tenant legal clinic. Never sign a document you don't understand." },
+                  { q: "Can I change the terms of a standard lease?", a: "Yes. Even if you are given a standard provincial lease form, you can negotiate to add or modify clauses before signing. Any modifications should be written on the lease or in a separate addendum, signed by both parties." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -142,6 +143,18 @@ export default function EdmontonPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Edmonton have rent control?", a: "No. Like all of Alberta, Edmonton has no rent control. Landlords can increase rent by any amount, but must provide at least 3 months' written notice before any increase takes effect." },
+                  { q: "What security deposit rules apply in Edmonton?", a: "Edmonton landlords can collect a security deposit of up to one month's rent. They must provide a receipt and conduct a move-in inspection with the tenant before the tenancy starts." },
+                  { q: "How do Edmonton students handle off-campus leases?", a: "Students at the University of Alberta and other institutions renting off-campus have the same rights as any Alberta tenant. Watch for clauses with unusual damage fees, automatic renewal, or penalties for early departure — LeasePlain can flag these." },
+                  { q: "What is the RTDRS and how does it help Edmonton tenants?", a: "The Residential Tenancy Dispute Resolution Service (RTDRS) in Edmonton provides fast, inexpensive hearings for deposit disputes, illegal lockouts, lease breaches, and eviction challenges. Decisions are legally binding." },
+                  { q: "Can an Edmonton landlord keep my deposit for normal wear and tear?", a: "No. Under the Alberta Residential Tenancies Act, landlords can only deduct from a deposit for damages beyond normal wear and tear, unpaid rent, and unpaid utilities. A move-out inspection report supports any deduction claims." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

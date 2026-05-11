@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -142,6 +143,18 @@ export default function BramptonPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are the rent-control rules in Brampton?", a: "Brampton follows Ontario provincial rules. Units occupied before November 15, 2018 are subject to the annual rent-increase guideline. Newer units are exempt. Landlords must give 90 days' written notice of any rent increase." },
+                  { q: "Is basement apartment renting common in Brampton?", a: "Yes, Brampton has a high concentration of basement apartments. Tenants in these units have the same RTA rights as those in full apartments, but should confirm the unit is a legal secondary suite to ensure proper fire and safety compliance." },
+                  { q: "What resources do Brampton tenants have?", a: "Brampton Legal Aid, Peel Community Legal Services, and the Ontario LTB all serve Brampton tenants. For free lease review, LeasePlain's AI can flag issues in minutes." },
+                  { q: "Can a Brampton landlord include a no-guest rule in a lease?", a: "Landlords can restrict guests, but extreme clauses limiting any overnight guests may be unenforceable under the RTA, which gives tenants the right to reasonable enjoyment of their unit. Review any guest policy carefully before signing." },
+                  { q: "How much notice does a Brampton landlord need to enter my unit?", a: "Under the Ontario RTA, landlords must give at least 24 hours' written notice before entering a tenant's unit for inspections, repairs, or other permitted purposes. Emergency entry is allowed without notice." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

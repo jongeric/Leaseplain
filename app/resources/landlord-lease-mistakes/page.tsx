@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -120,6 +121,18 @@ export default function LandlordLeaseMistakesPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What are common mistakes landlords make in Canadian leases?", a: "Common mistakes include: illegal clauses (waiving notice, charging excessive deposits), not using the mandatory standard form (Ontario/Quebec), not conducting a written move-in inspection, missing rent-increase notice deadlines, and attempting self-help evictions." },
+                  { q: "Is a no-pets clause enforceable in Ontario?", a: "No. Ontario's Residential Tenancies Act makes no-pet clauses void. Ontario landlords cannot enforce pet prohibitions in a lease, though they can pursue eviction if a pet causes damage or disturbs other tenants." },
+                  { q: "What happens if a landlord charges an illegal deposit?", a: "The tenant can apply to the tenancy tribunal for a return of the illegal deposit plus potentially double the amount as a penalty. The landlord may also face fines. It is much easier to comply with deposit rules than to defend against an illegal-deposit complaint." },
+                  { q: "Can a landlord change the locks without notice?", a: "No. Changing locks without tenant consent or a court order is an illegal lockout in every Canadian province. Landlords who do this can face significant penalties, injunctions, and orders for damages." },
+                  { q: "What notice period mistakes do Canadian landlords make?", a: "Common errors: serving notice too late (not giving the full required notice period), using an incorrect form, failing to include all required information, and not serving notice in the prescribed way. An improperly served notice may be void." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

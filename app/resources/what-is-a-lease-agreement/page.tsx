@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -160,6 +161,18 @@ export default function WhatIsALeaseAgreementPage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What is a lease agreement in simple terms?", a: "A lease agreement is a written contract between a landlord (property owner) and a tenant (renter) that spells out the rules for renting the property — including how much rent is paid, when it's due, and how long the tenancy lasts." },
+                  { q: "What are the essential parts of a lease agreement?", a: "A complete lease must include the landlord and tenant names, the property address, lease start and end dates, monthly rent amount and payment due date, deposit details, and any specific rules (pets, parking, smoking, etc.)." },
+                  { q: "What happens if there's no lease agreement?", a: "Without a written lease, tenancy terms default to what is permitted under provincial law. This means rent-control rules, entry notice requirements, and deposit limits all still apply, but disputes about verbal terms are very difficult to resolve." },
+                  { q: "Is a lease agreement legally binding?", a: "Yes. A signed lease is a legally binding contract. Both landlord and tenant must follow its terms as long as those terms comply with provincial tenancy law. Terms that violate the law are void even in a signed agreement." },
+                  { q: "What is the Ontario standard lease form?", a: "Ontario requires most residential landlords to use the provincially mandated Residential Tenancy Agreement (Standard Form of Lease). Landlords who don't provide it within 21 days of a tenant's request risk the tenant withholding one month's rent." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

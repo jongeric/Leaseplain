@@ -6,6 +6,7 @@ import {
   FileText, DollarSign, AlertTriangle, ShieldCheck,
   Lightbulb, Eye, CheckCircle, Upload, ChevronRight,
 } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -252,6 +253,18 @@ export default function ExampleReportPage() {
             </div>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What does a LeasePlain report look like?", a: "A LeasePlain report includes a plain-English summary of the lease, a financial terms table (rent, deposit, fees), a list of red flags with severity ratings, unclear clauses that need clarification, questions to ask your landlord, and negotiation suggestions." },
+                  { q: "Is the example report based on a real lease?", a: "The example report is generated from a sample lease for demonstration purposes. It shows the exact format and depth of analysis you receive when you upload your own lease." },
+                  { q: "Can I download my LeasePlain report?", a: "PDF report download is available on Pro plans. Free users can view and share their report via a link. Analysis results are saved to your account for future reference." },
+                  { q: "What are red flags in a LeasePlain report?", a: "Red flags are clauses that are unusual, one-sided, potentially illegal, or worth questioning before signing. LeasePlain rates them as high, medium, or low severity so you know which to prioritize." },
+                  { q: "Can I share my LeasePlain report with a lawyer or legal clinic?", a: "Yes. Share the report link with anyone you choose, including a lawyer, tenant legal clinic, or trusted friend. The link provides read-only access to your full analysis." }
+                ]} />
+              </div>
       </main>
 
       <Footer />

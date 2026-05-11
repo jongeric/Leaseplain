@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -127,6 +128,18 @@ export default function NewYorkPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does New York have rent control?", a: "Yes. New York has one of the most extensive rent regulation systems in the US. New York City has rent-stabilized and rent-controlled apartments. The 2019 Housing Stability and Tenant Protection Act strengthened these protections significantly." },
+                  { q: "What is the security deposit limit in New York?", a: "New York caps security deposits at one month's rent for most residential tenancies under the 2019 tenant protection law. This applies statewide for most leases." },
+                  { q: "How does rent stabilization work in New York?", a: "Rent-stabilized apartments in New York City have regulated rents that can only increase by amounts set annually by the Rent Guidelines Board. Tenants have the right to lease renewals, and landlords cannot refuse to renew without legal cause." },
+                  { q: "What notice is required for eviction in New York?", a: "New York landlords must give proper written notice before starting eviction proceedings. For non-payment, a 14-day notice. For month-to-month tenancies, 30 days (for tenancies under one year) to 90 days (for tenancies over two years) depending on the length of tenancy." },
+                  { q: "What are tenant rights in New York regarding repairs?", a: "New York landlords must maintain apartments in a habitable condition. Tenants can file a complaint with the city's Department of Housing Preservation and Development (HPD) for serious violations. Serious code violations can result in civil penalties for landlords." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

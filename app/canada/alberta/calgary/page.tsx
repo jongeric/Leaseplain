@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -141,6 +142,18 @@ export default function CalgaryPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Is there rent control in Calgary?", a: "No. Alberta has no rent control, so Calgary landlords can raise rent by any amount. They must give at least 3 months' written notice before a rent increase takes effect." },
+                  { q: "What is the security deposit limit in Calgary?", a: "Alberta caps security deposits at one month's rent. This applies in Calgary and throughout the province. Landlords must return the deposit within 10 days of tenancy end with an itemized statement of any deductions." },
+                  { q: "Can a Calgary landlord evict me without cause?", a: "No immediate without-cause eviction is allowed. For a periodic (month-to-month) tenancy, landlords can terminate by giving 3 months' written notice. For cause (e.g., non-payment), shorter notice periods apply." },
+                  { q: "Where do Calgary tenants file a dispute?", a: "File with the Residential Tenancy Dispute Resolution Service (RTDRS) in Calgary — it is faster than Provincial Court and free for most applications. The RTDRS can order the return of deposits, end illegal rent increases, and more." },
+                  { q: "Is a verbal lease valid in Calgary?", a: "Yes, Alberta law recognizes verbal tenancy agreements, but they are very difficult to enforce if a dispute arises. A written lease clearly documenting rent, deposits, and responsibilities is strongly recommended." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -198,6 +199,18 @@ export default function FirstTimeRenterGuidePage() {
             </div>
 
             {/* Sidebar */}
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What do I need to rent my first apartment in Canada?", a: "Typically: government-issued ID, proof of income or employment (pay stubs, employment letter), references (personal or professional), and your first and last month's rent. Some landlords also request a credit check." },
+                  { q: "What rights do I have as a first-time tenant in Canada?", a: "You have the same rights as any tenant: the right to a habitable unit, protection from illegal rent increases, proper notice before landlord entry, the right to dispute maintenance issues, and protection from illegal eviction." },
+                  { q: "How do I know if a lease is fair for a first-time renter?", a: "Compare the rent to similar units nearby, check that deposit rules comply with provincial law, look for unusual fees or penalties, and use LeasePlain to flag any clauses that seem one-sided. When in doubt, ask questions before signing." },
+                  { q: "What is the difference between a month-to-month and a fixed-term lease?", a: "A fixed-term lease runs for a set period (usually 12 months) and converts to month-to-month at the end unless notice is given. A month-to-month tenancy continues indefinitely until either party gives the required notice to terminate." },
+                  { q: "Can a landlord reject my rental application?", a: "Yes, but not for discriminatory reasons. Landlords cannot reject applicants based on race, gender, religion, disability, family status, sexual orientation, or source of income (in provinces that prohibit it). Rejection based on credit, income, or references is generally permitted." }
+                ]} />
+              </div>
+
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">AI Lease Review</h3>

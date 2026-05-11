@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -114,6 +115,18 @@ export default function BeforeYouSignPage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What should I do before signing a lease in Canada?", a: "Read the entire lease carefully, ask about anything unclear, check provincial rules on deposits and notices, visit the unit in person, ask about utilities and parking, and use LeasePlain's AI to flag any concerning clauses before you commit." },
+                  { q: "What questions should I ask a landlord before signing?", a: "Ask: What is the total monthly cost including utilities and parking? How long is the lease and what happens at the end? What is the procedure for rent increases? Is the unit legal? Who handles maintenance? Are pets allowed?" },
+                  { q: "Can I negotiate a lease before signing?", a: "Yes. Many terms — including rent, parking fees, appliance inclusion, early termination rights, and pet permissions — are negotiable, especially in a tenant's market. Never assume a lease is non-negotiable just because it's a standard form." },
+                  { q: "Should I take photos before moving in?", a: "Always. Take dated photos or video of every room, appliance, wall, floor, and fixture before moving in. Store these safely. If there are pre-existing damages, note them on the move-in inspection form and get the landlord's written acknowledgment." },
+                  { q: "What is a move-in inspection and is it required?", a: "A move-in inspection (or condition report) documents the unit's state when you arrive. Alberta requires a joint inspection. BC strongly recommends it. A written inspection report signed by both parties protects you from unfair damage deductions at move-out." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

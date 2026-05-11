@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -127,6 +128,18 @@ export default function CaliforniaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does California have statewide rent control?", a: "Yes. AB 1482 (California Tenant Protection Act, 2019) caps annual rent increases at 5% plus local CPI (max 10%) for most multi-family buildings 15 years or older. Stricter local rent control applies in cities like Los Angeles, San Francisco, and Oakland." },
+                  { q: "What is the security deposit limit in California?", a: "California caps security deposits at 2 months' rent for unfurnished units and 3 months for furnished units. Landlords must return the deposit (with itemized deductions) within 21 days of the tenant vacating." },
+                  { q: "What does 'just cause' eviction mean in California?", a: "Under AB 1482, landlords covered by California's tenant protection law can only evict tenants for specific reasons (just cause) — such as non-payment, criminal activity, or owner move-in. After 12 months of tenancy, no-fault evictions require relocation assistance." },
+                  { q: "What is California's habitability standard?", a: "California requires landlords to maintain rental units in habitable condition — including adequate heat, plumbing, weatherproofing, pest control, and structural safety. Tenants can repair and deduct (up to one month's rent) or withhold rent for serious habitability failures." },
+                  { q: "Do California tenants have the right to sublet?", a: "California tenants generally have the right to assign or sublet with the landlord's consent, which cannot be unreasonably withheld. A lease that prohibits all subletting may be enforceable, but blanket bans can be challenged if the landlord is being unreasonable." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

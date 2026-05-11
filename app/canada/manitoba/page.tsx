@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -157,6 +158,18 @@ export default function ManitobaPage() {
               </div>
 
             </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "Does Manitoba have rent control?", a: "Yes. Manitoba applies an annual rent increase guideline set each year by the Residential Tenancies Branch. Landlords generally cannot raise rent above the guideline without branch approval." },
+                  { q: "What is the security deposit limit in Manitoba?", a: "Manitoba limits security deposits to half a month's rent. The deposit is held by the Residential Tenancies Branch (not the landlord) and earns interest at a prescribed rate." },
+                  { q: "How do I file a tenancy dispute in Manitoba?", a: "Contact the Residential Tenancies Branch (RTB) in person, by phone, or online. The RTB handles rent increases, deposits, maintenance complaints, evictions, and other landlord-tenant disputes throughout Manitoba." },
+                  { q: "What notice is required to end a month-to-month tenancy in Manitoba?", a: "In Manitoba, tenants must give one full rental period notice (e.g., one month for monthly rentals). Landlords must give at least one rental period's notice unless evicting for cause, which may require a shorter or longer period." },
+                  { q: "Can I get my Manitoba security deposit back?", a: "Yes, provided you have no outstanding rent or damages above normal wear and tear. The Residential Tenancies Branch holds deposits and releases them after the tenancy ends, usually within 14–28 days of a claim." }
+                ]} />
+              </div>
+
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">

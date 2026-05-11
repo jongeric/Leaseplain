@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -161,6 +162,18 @@ export default function ApartmentLeaseGuidePage() {
             </Link>
           </div>
         </section>
+      
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={[
+                  { q: "What should I look for in an apartment lease?", a: "Check rent amount and due date, deposit rules, utilities included or excluded, parking arrangements, pet policy, lease term and renewal process, notice periods, maintenance responsibilities, and any extra charges for amenities or lockers." },
+                  { q: "What is the standard apartment lease term in Canada?", a: "Most Canadian apartment leases are for 12 months, after which the tenancy typically converts to month-to-month automatically. Shorter (6-month) and longer (2-year) leases exist but are less common." },
+                  { q: "Can an apartment landlord increase rent during a fixed-term lease?", a: "Generally no. In most provinces, a landlord cannot increase rent mid-lease. The increase can only take effect at renewal, with proper written notice and compliance with provincial rent-control rules." },
+                  { q: "What happens at the end of my apartment lease?", a: "Most provincial laws convert the lease to a month-to-month tenancy automatically at the end of a fixed term, unless either party provides proper termination notice. You do NOT have to sign a new lease — your rights continue." },
+                  { q: "How do I know if an apartment is a legal rental unit?", a: "Ask the landlord for a certificate of occupancy or check with local municipal zoning. Illegal units (e.g., unpermitted basement apartments) may lack fire safety features. You still have tenant rights in illegal units, but the safety risk is real." }
+                ]} />
+              </div>
       </main>
       <Footer />
     </div>

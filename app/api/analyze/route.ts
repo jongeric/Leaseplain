@@ -43,6 +43,7 @@ export async function POST(req: NextRequest) {
     } catch { /* local dev */ }
 
     const anthropicApiKey = cfApiKey ?? process.env.ANTHROPIC_API_KEY;
+    console.log("[analyze] API key present:", !!anthropicApiKey, "| source:", cfApiKey ? "cf_env" : process.env.ANTHROPIC_API_KEY ? "process_env" : "none");
     const userId = await getUserIdFromSession(req, d1) ?? undefined;
     const isPro = userId ? await isUserPro(userId) : false;
 
@@ -55,6 +56,7 @@ export async function POST(req: NextRequest) {
     let filename: string | undefined;
     let pdfKey: string | undefined;
     let analysisData;
+    let usedRealAnalysis = false;
 
     if (textField && typeof textField === "string") {
       const leaseText = textField.trim();
@@ -68,7 +70,9 @@ export async function POST(req: NextRequest) {
 
       if (anthropicApiKey) {
         analysisData = await analyzeLeaseWithClaude(leaseText, anthropicApiKey);
+        usedRealAnalysis = true;
       } else {
+        console.warn("[analyze] No API key — returning mock data for text input");
         await new Promise((r) => setTimeout(r, 1200));
         analysisData = { ...MOCK_ANALYSIS };
       }
@@ -98,7 +102,9 @@ export async function POST(req: NextRequest) {
 
       if (anthropicApiKey) {
         analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
+        usedRealAnalysis = true;
       } else {
+        console.warn("[analyze] No API key — returning mock data for PDF input");
         await new Promise((r) => setTimeout(r, 1200));
         analysisData = { ...MOCK_ANALYSIS };
       }
@@ -112,7 +118,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    return NextResponse.json({ id, teaser: !isPro, analysis: analysisData });
+    return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, analysis: analysisData });
   } catch (err) {
     console.error("[/api/analyze] Error:", err);
     return NextResponse.json(

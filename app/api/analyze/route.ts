@@ -9,6 +9,26 @@ import { getCloudflareContext } from "@opennextjs/cloudflare";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
+function classifyApiError(msg: string): string {
+  const m = msg.toLowerCase();
+  if (m.includes("credit balance") || m.includes("billing") || m.includes("quota") || m.includes("insufficient_quota")) {
+    return "The AI service is temporarily unavailable due to a billing issue. Please try again later or contact support.";
+  }
+  if (m.includes("timeout") || m.includes("timed out") || m.includes("etimedout")) {
+    return "This PDF took too long to process. Try a smaller file (under 2MB) or paste the key sections as text.";
+  }
+  if (m.includes("401") || m.includes("authentication") || m.includes("invalid x-api-key") || m.includes("invalid api key")) {
+    return "API configuration error. Please contact support.";
+  }
+  if (m.includes("too large") || m.includes("max_bytes") || m.includes("file size")) {
+    return "This PDF is too complex for direct upload. Please paste the lease text instead.";
+  }
+  if (m.includes("rate limit") || m.includes("rate_limit") || m.includes("429")) {
+    return "Too many requests. Please wait a moment and try again.";
+  }
+  return "Analysis failed. Please try again or paste your lease as text.";
+}
+
 // Lightweight session lookup directly from D1 — avoids spinning up full auth instance
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function getUserIdFromSession(req: NextRequest, d1: any): Promise<string | null> {
@@ -90,13 +110,7 @@ export async function POST(req: NextRequest) {
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         console.error("[analyze] Claude text error:", msg);
-        if (msg.includes("timeout") || msg.includes("timed out") || msg.includes("ETIMEDOUT")) {
-          return NextResponse.json({ error: "Analysis timed out. Please try with a shorter lease or paste just the key sections." }, { status: 504 });
-        }
-        if (msg.includes("401") || msg.includes("authentication") || msg.includes("API key")) {
-          return NextResponse.json({ error: "API configuration error. Please contact support." }, { status: 500 });
-        }
-        return NextResponse.json({ error: "Analysis failed. Please try again." }, { status: 500 });
+        return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
       }
     } else {
       console.warn("[analyze] No API key — returning mock data for text input");
@@ -148,22 +162,7 @@ export async function POST(req: NextRequest) {
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         console.error("[analyze] Claude PDF error:", msg);
-        if (msg.includes("timeout") || msg.includes("timed out") || msg.includes("ETIMEDOUT")) {
-          return NextResponse.json(
-            { error: "This PDF took too long to process. Try uploading a smaller file (under 2MB), or paste the key sections as text instead." },
-            { status: 504 },
-          );
-        }
-        if (msg.includes("401") || msg.includes("authentication") || msg.includes("invalid x-api-key")) {
-          return NextResponse.json({ error: "API configuration error. Please contact support." }, { status: 500 });
-        }
-        if (msg.includes("too large") || msg.includes("max_bytes") || msg.includes("file size")) {
-          return NextResponse.json(
-            { error: "This PDF is too complex for direct upload. Please paste the lease text instead." },
-            { status: 400 },
-          );
-        }
-        return NextResponse.json({ error: `Analysis failed: ${msg}` }, { status: 500 });
+        return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
       }
     } else {
       console.warn("[analyze] No API key — returning mock data for PDF input");

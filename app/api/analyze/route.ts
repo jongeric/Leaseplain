@@ -160,12 +160,16 @@ export async function POST(req: NextRequest) {
       let extractedText: string | null = null;
       try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const parser = new PDFParse(Buffer.from(buffer)) as any;
-        await parser.load();
-        const numPages: number = parser.numPages ?? 0;
+        const parser = new PDFParse(new Uint8Array(buffer)) as any;
+        const pdfDoc = await parser.load();
+        const numPages: number = pdfDoc.numPages ?? 0;
         const pages: string[] = [];
         for (let i = 1; i <= numPages; i++) {
-          pages.push(await parser.getPageText(i));
+          const page = await pdfDoc.getPage(i);
+          const content = await page.getTextContent();
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const pageText = content.items.map((item: any) => item.str ?? "").join(" ");
+          pages.push(pageText);
         }
         const text = pages.join("\n").trim();
         if (text.length > 200) {

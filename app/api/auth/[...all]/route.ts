@@ -7,10 +7,16 @@ export const runtime = "nodejs";
 
 async function getHandler() {
   let d1: unknown = undefined;
+  let secret: string | undefined;
 
   try {
     const ctx = await getCloudflareContext({ async: true });
-    d1 = (ctx.env as Record<string, unknown>).DB;
+    const env = ctx.env as Record<string, unknown>;
+    d1 = env.DB;
+    // Cloudflare secrets are not in process.env — read them from ctx.env
+    if (typeof env.BETTER_AUTH_SECRET === "string" && env.BETTER_AUTH_SECRET.length > 0) {
+      secret = env.BETTER_AUTH_SECRET;
+    }
     if (d1) {
       await ensureTables(d1);
     } else {
@@ -20,7 +26,7 @@ async function getHandler() {
     console.error("[auth] getCloudflareContext failed:", e);
   }
 
-  const { GET, POST } = toNextJsHandler(createAuth(d1));
+  const { GET, POST } = toNextJsHandler(createAuth(d1, { secret }));
   return { GET, POST };
 }
 

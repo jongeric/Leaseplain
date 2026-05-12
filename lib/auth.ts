@@ -4,38 +4,6 @@ import { kyselyAdapter } from "@better-auth/kysely-adapter";
 import { Kysely } from "kysely";
 import { D1Dialect } from "kysely-d1";
 
-const AUTH_CONFIG = {
-  secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-in-production",
-  baseURL: process.env.BETTER_AUTH_URL ?? process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
-
-  emailAndPassword: {
-    enabled: true,
-    requireEmailVerification: false,
-  },
-
-  session: {
-    cookieCache: {
-      enabled: true,
-      maxAge: 60 * 5,
-    },
-  },
-
-  user: {
-    additionalFields: {
-      plan: {
-        type: "string" as const,
-        defaultValue: "free",
-        input: false,
-      },
-      stripeCustomerId: {
-        type: "string" as const,
-        required: false,
-        input: false,
-      },
-    },
-  },
-} as const;
-
 // In-memory store for dev / non-D1 environments.
 // Data is ephemeral — for production, provision a Cloudflare D1 database.
 const memDb = {
@@ -46,10 +14,51 @@ const memDb = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function createAuth(d1?: any) {
+export function createAuth(d1?: any, overrides?: { secret?: string }) {
+  // Resolve secret at call time — Cloudflare secrets are NOT in process.env at
+  // module load time; they must be passed in from the request handler context.
+  const secret =
+    overrides?.secret ??
+    process.env.BETTER_AUTH_SECRET ??
+    "dev-secret-change-in-production";
+
+  const baseURL =
+    process.env.BETTER_AUTH_URL ??
+    process.env.NEXT_PUBLIC_APP_URL ??
+    "http://localhost:3000";
+
+  const config = {
+    secret,
+    baseURL,
+    emailAndPassword: {
+      enabled: true,
+      requireEmailVerification: false,
+    },
+    session: {
+      cookieCache: {
+        enabled: true,
+        maxAge: 60 * 5,
+      },
+    },
+    user: {
+      additionalFields: {
+        plan: {
+          type: "string" as const,
+          defaultValue: "free",
+          input: false,
+        },
+        stripeCustomerId: {
+          type: "string" as const,
+          required: false,
+          input: false,
+        },
+      },
+    },
+  };
+
   if (d1) {
     return betterAuth({
-      ...AUTH_CONFIG,
+      ...config,
       database: kyselyAdapter(
         new Kysely({ dialect: new D1Dialect({ database: d1 }) }),
         { type: "sqlite" }
@@ -58,7 +67,7 @@ export function createAuth(d1?: any) {
   }
 
   return betterAuth({
-    ...AUTH_CONFIG,
+    ...config,
     database: memoryAdapter(memDb),
   });
 }

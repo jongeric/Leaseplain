@@ -46,7 +46,27 @@ function parseClaudeResponse(text: string): Omit<LeaseAnalysis, "id" | "createdA
 }
 
 function makeClient(apiKey?: string) {
-  return new Anthropic({ apiKey: apiKey ?? process.env.ANTHROPIC_API_KEY });
+  return new Anthropic({
+    apiKey: apiKey ?? process.env.ANTHROPIC_API_KEY,
+    // Explicit timeout slightly under Cloudflare's 30s wall-clock limit
+    timeout: 25000,
+  });
+}
+
+// Converts ArrayBuffer to base64 without relying on Node.js Buffer global,
+// which may not be available in all Cloudflare Worker configurations.
+function toBase64(buffer: ArrayBuffer): string {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(buffer).toString("base64");
+  }
+  // Web-compatible fallback
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
 }
 
 export async function analyzeLeaseWithClaude(leaseText: string, apiKey?: string): Promise<Omit<LeaseAnalysis, "id" | "createdAt">> {
@@ -70,7 +90,7 @@ export async function analyzeLeaseWithClaudePDF(pdfBuffer: ArrayBuffer, apiKey?:
     source: {
       type: "base64",
       media_type: "application/pdf",
-      data: Buffer.from(pdfBuffer).toString("base64"),
+      data: toBase64(pdfBuffer),
     },
   };
 

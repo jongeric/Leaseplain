@@ -29,101 +29,158 @@ async function getUserIdFromSession(req: NextRequest, d1: any): Promise<string |
 }
 
 export async function POST(req: NextRequest) {
+  // ── 1. Resolve Cloudflare env bindings ──────────────────────────────────────
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let d1: any = undefined;
+  let cfApiKey: string | undefined;
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let d1: any = undefined;
-    let cfApiKey: string | undefined;
-    try {
-      const ctx = await getCloudflareContext({ async: true });
-      const env = ctx.env as Record<string, unknown>;
-      d1 = env.DB;
-      if (typeof env.ANTHROPIC_API_KEY === "string") {
-        cfApiKey = env.ANTHROPIC_API_KEY;
-      }
-    } catch { /* local dev */ }
+    const ctx = await getCloudflareContext({ async: true });
+    const env = ctx.env as Record<string, unknown>;
+    d1 = env.DB;
+    if (typeof env.ANTHROPIC_API_KEY === "string" && env.ANTHROPIC_API_KEY.length > 0) {
+      cfApiKey = env.ANTHROPIC_API_KEY;
+    }
+  } catch { /* local dev — no CF context */ }
 
-    const anthropicApiKey = cfApiKey ?? process.env.ANTHROPIC_API_KEY;
-    console.log("[analyze] API key present:", !!anthropicApiKey, "| source:", cfApiKey ? "cf_env" : process.env.ANTHROPIC_API_KEY ? "process_env" : "none");
-    const userId = await getUserIdFromSession(req, d1) ?? undefined;
-    const isPro = userId ? await isUserPro(userId) : false;
+  const anthropicApiKey = cfApiKey ?? process.env.ANTHROPIC_API_KEY;
+  console.log(
+    "[analyze] key present:", !!anthropicApiKey,
+    "| source:", cfApiKey ? "cf_env" : process.env.ANTHROPIC_API_KEY ? "process_env" : "NONE",
+    "| key prefix:", anthropicApiKey?.slice(0, 7) ?? "n/a",
+  );
 
-    const formData = await req.formData();
-    const textField = formData.get("text");
-    const fileField = formData.get("file");
+  // ── 2. Session / pro status ─────────────────────────────────────────────────
+  const userId = await getUserIdFromSession(req, d1) ?? undefined;
+  const isPro = userId ? await isUserPro(userId) : false;
 
-    const id = randomUUID();
-    const createdAt = new Date().toISOString();
-    let filename: string | undefined;
-    let pdfKey: string | undefined;
-    let analysisData;
-    let usedRealAnalysis = false;
+  // ── 3. Parse form data ──────────────────────────────────────────────────────
+  let formData: FormData;
+  try {
+    formData = await req.formData();
+  } catch (err) {
+    console.error("[analyze] formData parse error:", err);
+    return NextResponse.json({ error: "Could not read the uploaded file. Please try again." }, { status: 400 });
+  }
 
-    if (textField && typeof textField === "string") {
-      const leaseText = textField.trim();
+  const textField = formData.get("text");
+  const fileField = formData.get("file");
 
-      if (leaseText.length < 100) {
-        return NextResponse.json(
-          { error: "Lease text is too short. Please provide more complete lease content." },
-          { status: 400 }
-        );
-      }
+  const id = randomUUID();
+  const createdAt = new Date().toISOString();
+  let filename: string | undefined;
+  let pdfKey: string | undefined;
+  let analysisData;
+  let usedRealAnalysis = false;
 
-      if (anthropicApiKey) {
-        analysisData = await analyzeLeaseWithClaude(leaseText, anthropicApiKey);
-        usedRealAnalysis = true;
-      } else {
-        console.warn("[analyze] No API key — returning mock data for text input");
-        await new Promise((r) => setTimeout(r, 1200));
-        analysisData = { ...MOCK_ANALYSIS };
-      }
+  // ── 4a. Text path ───────────────────────────────────────────────────────────
+  if (textField && typeof textField === "string") {
+    const leaseText = textField.trim();
 
-      await saveAnalysis({ id, createdAt, userId, rawText: leaseText, teaser: !isPro, ...analysisData });
-
-    } else if (fileField && fileField instanceof Blob) {
-      const file = fileField as File;
-      filename = file.name;
-
-      if (file.type !== "application/pdf") {
-        return NextResponse.json(
-          { error: "Only PDF files are supported." },
-          { status: 400 }
-        );
-      }
-      if (file.size > 10 * 1024 * 1024) {
-        return NextResponse.json(
-          { error: "File too large. Maximum size is 10MB." },
-          { status: 400 }
-        );
-      }
-
-      const buffer = await file.arrayBuffer();
-      const key = `leases/${randomUUID()}.pdf`;
-      pdfKey = (await uploadPDF(key, buffer)) ?? undefined;
-
-      if (anthropicApiKey) {
-        analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
-        usedRealAnalysis = true;
-      } else {
-        console.warn("[analyze] No API key — returning mock data for PDF input");
-        await new Promise((r) => setTimeout(r, 1200));
-        analysisData = { ...MOCK_ANALYSIS };
-      }
-
-      await saveAnalysis({ id, createdAt, filename, pdfKey, userId, teaser: !isPro, ...analysisData });
-
-    } else {
+    if (leaseText.length < 100) {
       return NextResponse.json(
-        { error: "Please provide lease text or a PDF file." },
-        { status: 400 }
+        { error: "Lease text is too short. Please provide more complete lease content." },
+        { status: 400 },
       );
     }
 
-    return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, analysis: analysisData });
-  } catch (err) {
-    console.error("[/api/analyze] Error:", err);
-    return NextResponse.json(
-      { error: "Analysis failed. Please try again." },
-      { status: 500 }
-    );
+    if (anthropicApiKey) {
+      try {
+        analysisData = await analyzeLeaseWithClaude(leaseText, anthropicApiKey);
+        usedRealAnalysis = true;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error("[analyze] Claude text error:", msg);
+        if (msg.includes("timeout") || msg.includes("timed out") || msg.includes("ETIMEDOUT")) {
+          return NextResponse.json({ error: "Analysis timed out. Please try with a shorter lease or paste just the key sections." }, { status: 504 });
+        }
+        if (msg.includes("401") || msg.includes("authentication") || msg.includes("API key")) {
+          return NextResponse.json({ error: "API configuration error. Please contact support." }, { status: 500 });
+        }
+        return NextResponse.json({ error: "Analysis failed. Please try again." }, { status: 500 });
+      }
+    } else {
+      console.warn("[analyze] No API key — returning mock data for text input");
+      await new Promise((r) => setTimeout(r, 1200));
+      analysisData = { ...MOCK_ANALYSIS };
+    }
+
+    try {
+      await saveAnalysis({ id, createdAt, userId, rawText: leaseText, teaser: !isPro, ...analysisData });
+    } catch (err) {
+      console.error("[analyze] saveAnalysis error (text):", err);
+      // non-fatal — analysis was successful, just not persisted
+    }
+
+  // ── 4b. PDF path ────────────────────────────────────────────────────────────
+  } else if (fileField && fileField instanceof Blob) {
+    const file = fileField as File;
+    filename = file.name;
+
+    if (file.type !== "application/pdf") {
+      return NextResponse.json({ error: "Only PDF files are supported." }, { status: 400 });
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      return NextResponse.json({ error: "File too large. Maximum size is 10MB." }, { status: 400 });
+    }
+
+    let buffer: ArrayBuffer;
+    try {
+      buffer = await file.arrayBuffer();
+    } catch (err) {
+      console.error("[analyze] arrayBuffer error:", err);
+      return NextResponse.json({ error: "Could not read the PDF file. Please try again." }, { status: 400 });
+    }
+
+    // Upload to R2 (best-effort — never blocks the analysis)
+    try {
+      const key = `leases/${randomUUID()}.pdf`;
+      pdfKey = (await uploadPDF(key, buffer)) ?? undefined;
+    } catch (err) {
+      console.warn("[analyze] R2 upload failed (non-fatal):", err);
+    }
+
+    if (anthropicApiKey) {
+      try {
+        console.log("[analyze] Sending PDF to Claude:", file.name, Math.round(file.size / 1024), "KB");
+        analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
+        usedRealAnalysis = true;
+        console.log("[analyze] Claude PDF analysis complete");
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error("[analyze] Claude PDF error:", msg);
+        if (msg.includes("timeout") || msg.includes("timed out") || msg.includes("ETIMEDOUT")) {
+          return NextResponse.json(
+            { error: "This PDF took too long to process. Try uploading a smaller file (under 2MB), or paste the key sections as text instead." },
+            { status: 504 },
+          );
+        }
+        if (msg.includes("401") || msg.includes("authentication") || msg.includes("invalid x-api-key")) {
+          return NextResponse.json({ error: "API configuration error. Please contact support." }, { status: 500 });
+        }
+        if (msg.includes("too large") || msg.includes("max_bytes") || msg.includes("file size")) {
+          return NextResponse.json(
+            { error: "This PDF is too complex for direct upload. Please paste the lease text instead." },
+            { status: 400 },
+          );
+        }
+        return NextResponse.json({ error: `Analysis failed: ${msg}` }, { status: 500 });
+      }
+    } else {
+      console.warn("[analyze] No API key — returning mock data for PDF input");
+      await new Promise((r) => setTimeout(r, 1200));
+      analysisData = { ...MOCK_ANALYSIS };
+    }
+
+    try {
+      await saveAnalysis({ id, createdAt, filename, pdfKey, userId, teaser: !isPro, ...analysisData });
+    } catch (err) {
+      console.error("[analyze] saveAnalysis error (PDF):", err);
+      // non-fatal
+    }
+
+  } else {
+    return NextResponse.json({ error: "Please provide lease text or a PDF file." }, { status: 400 });
   }
+
+  return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, analysis: analysisData });
 }

@@ -134,7 +134,7 @@ export default function UploadPage() {
       if (data.analysis) {
         sessionStorage.setItem(
           `lp_analysis_${data.id}`,
-          JSON.stringify({ teaser: data.teaser, ...data.analysis })
+          JSON.stringify({ teaser: data.teaser, ruleBasedFallback: data.ruleBasedFallback ?? false, ...data.analysis })
         );
       }
       router.push(`/analysis/${data.id}${data.teaser ? "?teaser=1" : ""}`);

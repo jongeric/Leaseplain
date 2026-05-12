@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
+import { analyzeLeaseRuleBased } from "@/lib/ruleBasedAnalysis";
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
@@ -92,6 +93,7 @@ export async function POST(req: NextRequest) {
   let pdfKey: string | undefined;
   let analysisData;
   let usedRealAnalysis = false;
+  let ruleBasedFallback = false;
 
   // ── 4a. Text path ───────────────────────────────────────────────────────────
   if (textField && typeof textField === "string") {
@@ -110,13 +112,14 @@ export async function POST(req: NextRequest) {
         usedRealAnalysis = true;
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        console.error("[analyze] Claude text error:", msg);
-        return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
+        console.warn("[analyze] Claude text error — falling back to rule-based:", msg);
+        analysisData = analyzeLeaseRuleBased(leaseText);
+        ruleBasedFallback = true;
       }
     } else {
-      console.warn("[analyze] No API key — returning mock data for text input");
-      await new Promise((r) => setTimeout(r, 1200));
-      analysisData = { ...MOCK_ANALYSIS };
+      console.warn("[analyze] No API key — using rule-based analysis for text input");
+      analysisData = analyzeLeaseRuleBased(leaseText);
+      ruleBasedFallback = true;
     }
 
     try {
@@ -154,11 +157,10 @@ export async function POST(req: NextRequest) {
       console.warn("[analyze] R2 upload failed (non-fatal):", err);
     }
 
-    if (anthropicApiKey) {
-      // Extract text from the PDF first — sending text to Claude is 5-10x faster
-      // than the PDF binary API and avoids Cloudflare's 30s wall-clock timeout.
-      let extractedText: string | null = null;
-      try {
+    // Extract text from the PDF first — sending text to Claude is 5-10x faster
+    // than the PDF binary API and avoids Cloudflare's 30s wall-clock timeout.
+    let extractedText: string | null = null;
+    try {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const parser = new PDFParse(new Uint8Array(buffer)) as any;
         const pdfDoc = await parser.load();
@@ -178,10 +180,11 @@ export async function POST(req: NextRequest) {
         } else {
           console.warn("[analyze] PDF text too short after extraction, falling back to PDF API");
         }
-      } catch (err) {
-        console.warn("[analyze] pdf-parse failed, falling back to PDF API:", err instanceof Error ? err.message : err);
-      }
+    } catch (err) {
+      console.warn("[analyze] pdf-parse failed, falling back to PDF API:", err instanceof Error ? err.message : err);
+    }
 
+    if (anthropicApiKey) {
       try {
         if (extractedText) {
           console.log("[analyze] Analyzing extracted text from PDF");
@@ -194,13 +197,25 @@ export async function POST(req: NextRequest) {
         console.log("[analyze] Analysis complete");
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        console.error("[analyze] Claude error:", msg);
-        return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
+        console.warn("[analyze] Claude PDF error — falling back to rule-based:", msg);
+        const textForFallback = extractedText ?? "";
+        if (textForFallback.length > 100) {
+          analysisData = analyzeLeaseRuleBased(textForFallback);
+          ruleBasedFallback = true;
+        } else {
+          return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
+        }
       }
     } else {
-      console.warn("[analyze] No API key — returning mock data for PDF input");
-      await new Promise((r) => setTimeout(r, 1200));
-      analysisData = { ...MOCK_ANALYSIS };
+      console.warn("[analyze] No API key — using rule-based analysis for PDF input");
+      const textForFallback = extractedText ?? "";
+      if (textForFallback.length > 100) {
+        analysisData = analyzeLeaseRuleBased(textForFallback);
+        ruleBasedFallback = true;
+      } else {
+        analysisData = { ...MOCK_ANALYSIS };
+        ruleBasedFallback = true;
+      }
     }
 
     try {
@@ -214,5 +229,5 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Please provide lease text or a PDF file." }, { status: 400 });
   }
 
-  return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, analysis: analysisData });
+  return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, ruleBasedFallback, analysis: analysisData });
 }

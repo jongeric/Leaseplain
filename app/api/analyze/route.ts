@@ -6,7 +6,8 @@ import { analyzeLeaseRuleBased } from "@/lib/ruleBasedAnalysis";
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { PDFParse } from "pdf-parse";
+// PDFParse is imported dynamically inside the PDF path to avoid a module-level
+// crash if the package fails to initialize in the CF Worker environment.
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -50,7 +51,7 @@ async function getUserIdFromSession(req: NextRequest, d1: any): Promise<string |
   }
 }
 
-export async function POST(req: NextRequest) {
+async function handlePOST(req: NextRequest): Promise<NextResponse> {
   // ── 1. Resolve Cloudflare env bindings ──────────────────────────────────────
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let d1: any = undefined;
@@ -161,25 +162,27 @@ export async function POST(req: NextRequest) {
     // than the PDF binary API and avoids Cloudflare's 30s wall-clock timeout.
     let extractedText: string | null = null;
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const { PDFParse } = await import("pdf-parse") as any;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const parser = new PDFParse(new Uint8Array(buffer)) as any;
+      const pdfDoc = await parser.load();
+      const numPages: number = pdfDoc.numPages ?? 0;
+      const pages: string[] = [];
+      for (let i = 1; i <= numPages; i++) {
+        const page = await pdfDoc.getPage(i);
+        const content = await page.getTextContent();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const parser = new PDFParse(new Uint8Array(buffer)) as any;
-        const pdfDoc = await parser.load();
-        const numPages: number = pdfDoc.numPages ?? 0;
-        const pages: string[] = [];
-        for (let i = 1; i <= numPages; i++) {
-          const page = await pdfDoc.getPage(i);
-          const content = await page.getTextContent();
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const pageText = content.items.map((item: any) => item.str ?? "").join(" ");
-          pages.push(pageText);
-        }
-        const text = pages.join("\n").trim();
-        if (text.length > 200) {
-          extractedText = text;
-          console.log("[analyze] PDF text extracted:", text.length, "chars from", numPages, "pages");
-        } else {
-          console.warn("[analyze] PDF text too short after extraction, falling back to PDF API");
-        }
+        const pageText = content.items.map((item: any) => item.str ?? "").join(" ");
+        pages.push(pageText);
+      }
+      const text = pages.join("\n").trim();
+      if (text.length > 200) {
+        extractedText = text;
+        console.log("[analyze] PDF text extracted:", text.length, "chars from", numPages, "pages");
+      } else {
+        console.warn("[analyze] PDF text too short after extraction, falling back to PDF API");
+      }
     } catch (err) {
       console.warn("[analyze] pdf-parse failed, falling back to PDF API:", err instanceof Error ? err.message : err);
     }
@@ -230,4 +233,16 @@ export async function POST(req: NextRequest) {
   }
 
   return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, ruleBasedFallback, analysis: analysisData });
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    return await handlePOST(req);
+  } catch (err) {
+    console.error("[analyze] Unhandled route error:", err);
+    return NextResponse.json(
+      { error: "An unexpected error occurred. Please try again." },
+      { status: 500 },
+    );
+  }
 }

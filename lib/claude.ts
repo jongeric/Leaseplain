@@ -48,8 +48,11 @@ function parseClaudeResponse(text: string): Omit<LeaseAnalysis, "id" | "createdA
 function makeClient(apiKey?: string) {
   return new Anthropic({
     apiKey: apiKey ?? process.env.ANTHROPIC_API_KEY,
-    // Explicit timeout slightly under Cloudflare's 30s wall-clock limit
+    // Explicit timeout slightly under Cloudflare's 30s wall-clock limit.
+    // maxRetries: 0 prevents the SDK from retrying — one retry could push
+    // total time over 30s, causing CF to return a 524 with no JSON body.
     timeout: 25000,
+    maxRetries: 0,
   });
 }
 

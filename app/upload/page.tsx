@@ -126,8 +126,11 @@ export default function UploadPage() {
       });
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Analysis failed. Please try again.");
+        const data = await res.json().catch(() => null);
+        const msg = data?.error ||
+          (res.status === 524 || res.status === 504 ? "Analysis timed out. Please try again — it's usually faster on the second attempt." : null) ||
+          `Analysis failed (${res.status}). Please try again.`;
+        throw new Error(msg);
       }
 
       const data = await res.json();

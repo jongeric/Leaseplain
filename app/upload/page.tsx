@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { Upload, FileText, Type, AlertCircle, Loader2, X } from "lucide-react";
+import { Upload, FileText, Type, AlertCircle, Loader2, X, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -13,37 +13,79 @@ export const dynamic = "force-static";
 
 type InputMode = "paste" | "upload";
 
+async function extractTextFromPDF(file: File): Promise<string | null> {
+  try {
+    const pdfjsLib = await import("pdfjs-dist");
+    // Use CDN worker so it doesn't bloat the JS bundle
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const pages: string[] = [];
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const pageText = content.items
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        .map((item: any) => item.str ?? "")
+        .join(" ");
+      pages.push(pageText);
+    }
+
+    const text = pages.join("\n").trim();
+    return text.length > 100 ? text : null;
+  } catch (err) {
+    console.warn("[upload] PDF text extraction failed:", err);
+    return null;
+  }
+}
+
 export default function UploadPage() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [mode, setMode] = useState<InputMode>("paste");
   const [leaseText, setLeaseText] = useState("");
   const [file, setFile] = useState<File | null>(null);
+  const [extractedText, setExtractedText] = useState<string | null>(null);
   const [dragOver, setDragOver] = useState(false);
+  const [extracting, setExtracting] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const processFile = async (selected: File) => {
+    if (selected.type !== "application/pdf") {
+      setError("Only PDF files are supported.");
+      return;
+    }
+    if (selected.size > 10 * 1024 * 1024) {
+      setError("File too large. Maximum size is 10MB.");
+      return;
+    }
+    setFile(selected);
+    setError(null);
+    setExtractedText(null);
+    setExtracting(true);
+    const text = await extractTextFromPDF(selected);
+    setExtractedText(text);
+    setExtracting(false);
+    if (!text) {
+      // will fall back to PDF binary upload — warn the user it may be slower
+      console.warn("[upload] No text extracted — will upload PDF binary");
+    }
+  };
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setDragOver(false);
     const dropped = e.dataTransfer.files[0];
-    if (dropped && dropped.type === "application/pdf") {
-      setFile(dropped);
-    } else {
-      setError("Please upload a PDF file.");
-    }
+    if (dropped) processFile(dropped);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selected = e.target.files?.[0];
-    if (selected) {
-      if (selected.type !== "application/pdf") {
-        setError("Only PDF files are supported.");
-        return;
-      }
-      setFile(selected);
-      setError(null);
-    }
+    if (selected) processFile(selected);
   };
 
   const handleSubmit = async () => {
@@ -57,15 +99,26 @@ export default function UploadPage() {
       setError("Please select a PDF file to upload.");
       return;
     }
+    if (extracting) {
+      setError("Still reading the PDF — please wait a moment.");
+      return;
+    }
 
     setLoading(true);
 
     try {
       const formData = new FormData();
+
       if (mode === "paste") {
         formData.append("text", leaseText);
       } else if (file) {
-        formData.append("file", file);
+        if (extractedText) {
+          // Send extracted text — fast, no server-side timeout risk
+          formData.append("text", extractedText);
+        } else {
+          // Scanned / image-only PDF: fall back to binary upload
+          formData.append("file", file);
+        }
       }
 
       const res = await fetch("/api/analyze", {
@@ -79,7 +132,6 @@ export default function UploadPage() {
       }
 
       const data = await res.json();
-      // Cache the analysis so the result page can display it without needing D1
       if (data.analysis) {
         sessionStorage.setItem(
           `lp_analysis_${data.id}`,
@@ -115,7 +167,7 @@ export default function UploadPage() {
             {/* Mode toggle */}
             <div className="flex gap-2 p-1 bg-slate-100 rounded-xl mb-6">
               <button
-                onClick={() => { setMode("paste"); setFile(null); setError(null); }}
+                onClick={() => { setMode("paste"); setFile(null); setExtractedText(null); setError(null); }}
                 className={cn(
                   "flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium transition-colors",
                   mode === "paste"
@@ -169,9 +221,10 @@ export default function UploadPage() {
                   onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
                   onDragLeave={() => setDragOver(false)}
                   onDrop={handleDrop}
-                  onClick={() => fileInputRef.current?.click()}
+                  onClick={() => !file && fileInputRef.current?.click()}
                   className={cn(
-                    "border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-colors",
+                    "border-2 border-dashed rounded-xl p-10 text-center transition-colors",
+                    file ? "cursor-default" : "cursor-pointer",
                     dragOver
                       ? "border-indigo-400 bg-indigo-50"
                       : file
@@ -186,8 +239,25 @@ export default function UploadPage() {
                       <p className="text-xs text-slate-400">
                         {(file.size / 1024).toFixed(1)} KB
                       </p>
+                      {extracting && (
+                        <p className="text-xs text-indigo-600 flex items-center gap-1">
+                          <Loader2 className="w-3 h-3 animate-spin" />
+                          Reading PDF…
+                        </p>
+                      )}
+                      {!extracting && extractedText && (
+                        <p className="text-xs text-green-600 flex items-center gap-1">
+                          <CheckCircle className="w-3 h-3" />
+                          Ready — {Math.round(extractedText.length / 1000)}k characters extracted
+                        </p>
+                      )}
+                      {!extracting && !extractedText && file && (
+                        <p className="text-xs text-amber-600">
+                          Image-based PDF — will upload directly
+                        </p>
+                      )}
                       <button
-                        onClick={(e) => { e.stopPropagation(); setFile(null); }}
+                        onClick={(e) => { e.stopPropagation(); setFile(null); setExtractedText(null); }}
                         className="mt-1 text-xs text-red-500 hover:underline flex items-center gap-1"
                       >
                         <X className="w-3 h-3" /> Remove
@@ -228,13 +298,18 @@ export default function UploadPage() {
             {/* Submit */}
             <button
               onClick={handleSubmit}
-              disabled={loading}
+              disabled={loading || extracting}
               className="mt-6 w-full flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold py-3.5 rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Analyzing your lease...
+                  Analyzing your lease…
+                </>
+              ) : extracting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Reading PDF…
                 </>
               ) : (
                 <>
@@ -249,18 +324,17 @@ export default function UploadPage() {
             </p>
           </div>
         </div>
-      
 
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What file size limit does LeasePlain accept?", a: "LeasePlain accepts PDF files up to 10MB. Most residential lease PDFs are well under 5MB. If your file is larger, try compressing the PDF before uploading." },
-                  { q: "Can I paste my lease text instead of uploading a PDF?", a: "Yes. Use the text tab to paste your lease text directly. This works well for leases you receive as Word documents, emails, or online forms. Copy the full text, including any addenda, for the most complete analysis." },
-                  { q: "What happens after I upload my lease?", a: "LeasePlain's AI reads the full document and generates a structured analysis within 30–60 seconds. You'll see a summary, financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions." },
-                  { q: "Is my uploaded lease kept private?", a: "Your lease is processed securely to generate your analysis. LeasePlain does not sell or share your lease data. Create an account to save and access your analysis history. See our privacy policy for full details." },
-                  { q: "Can I analyze more than one lease?", a: "Yes. Free users can analyze leases with full access to core features. Pro users get unlimited analyses and access to the complete financial terms section. If you are comparing multiple apartments, Pro is well worth it." }
-                ]} />
-              </div>
+        <div className="max-w-2xl mx-auto mt-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+          <FAQAccordion items={[
+            { q: "What file size limit does LeasePlain accept?", a: "LeasePlain accepts PDF files up to 10MB. Most residential lease PDFs are well under 5MB. If your file is larger, try compressing the PDF before uploading." },
+            { q: "Can I paste my lease text instead of uploading a PDF?", a: "Yes. Use the text tab to paste your lease text directly. This works well for leases you receive as Word documents, emails, or online forms. Copy the full text, including any addenda, for the most complete analysis." },
+            { q: "What happens after I upload my lease?", a: "LeasePlain's AI reads the full document and generates a structured analysis within 30–60 seconds. You'll see a summary, financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions." },
+            { q: "Is my uploaded lease kept private?", a: "Your lease is processed securely to generate your analysis. LeasePlain does not sell or share your lease data. Create an account to save and access your analysis history. See our privacy policy for full details." },
+            { q: "Can I analyze more than one lease?", a: "Yes. Free users can analyze leases with full access to core features. Pro users get unlimited analyses and access to the complete financial terms section. If you are comparing multiple apartments, Pro is well worth it." }
+          ]} />
+        </div>
       </main>
 
       <Footer />

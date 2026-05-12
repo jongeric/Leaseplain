@@ -5,6 +5,7 @@ import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude"
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { PDFParse } from "pdf-parse";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -154,14 +155,42 @@ export async function POST(req: NextRequest) {
     }
 
     if (anthropicApiKey) {
+      // Extract text from the PDF first — sending text to Claude is 5-10x faster
+      // than the PDF binary API and avoids Cloudflare's 30s wall-clock timeout.
+      let extractedText: string | null = null;
       try {
-        console.log("[analyze] Sending PDF to Claude:", file.name, Math.round(file.size / 1024), "KB");
-        analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const parser = new PDFParse(Buffer.from(buffer)) as any;
+        await parser.load();
+        const numPages: number = parser.numPages ?? 0;
+        const pages: string[] = [];
+        for (let i = 1; i <= numPages; i++) {
+          pages.push(await parser.getPageText(i));
+        }
+        const text = pages.join("\n").trim();
+        if (text.length > 200) {
+          extractedText = text;
+          console.log("[analyze] PDF text extracted:", text.length, "chars from", numPages, "pages");
+        } else {
+          console.warn("[analyze] PDF text too short after extraction, falling back to PDF API");
+        }
+      } catch (err) {
+        console.warn("[analyze] pdf-parse failed, falling back to PDF API:", err instanceof Error ? err.message : err);
+      }
+
+      try {
+        if (extractedText) {
+          console.log("[analyze] Analyzing extracted text from PDF");
+          analysisData = await analyzeLeaseWithClaude(extractedText, anthropicApiKey);
+        } else {
+          console.log("[analyze] Sending PDF binary to Claude:", file.name, Math.round(file.size / 1024), "KB");
+          analysisData = await analyzeLeaseWithClaudePDF(buffer, anthropicApiKey);
+        }
         usedRealAnalysis = true;
-        console.log("[analyze] Claude PDF analysis complete");
+        console.log("[analyze] Analysis complete");
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        console.error("[analyze] Claude PDF error:", msg);
+        console.error("[analyze] Claude error:", msg);
         return NextResponse.json({ error: classifyApiError(msg) }, { status: 500 });
       }
     } else {

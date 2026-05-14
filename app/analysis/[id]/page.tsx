@@ -1,10 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
 import AnalysisContent from "./AnalysisContent";
+import ShareButton from "./ShareButton";
 import { getAnalysisById } from "@/lib/db";
 import { FileText, ArrowLeft, Lock } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Lease Analysis Report | LeasePlain",
+  description: "View your plain-English lease analysis — red flags, financial terms, unclear clauses, and questions to ask your landlord.",
+  robots: { index: false, follow: false },
+};
 
 export default async function AnalysisPage({
   params,
@@ -86,6 +94,7 @@ export default async function AnalysisPage({
                 Analyze Another Lease
               </Link>
             )}
+            <ShareButton id={id} />
             <Link href="/dashboard" className="flex-1 text-center bg-white border border-slate-200 text-slate-700 font-semibold py-3 rounded-xl hover:bg-slate-50 transition-colors text-sm">
               Back to Dashboard
             </Link>

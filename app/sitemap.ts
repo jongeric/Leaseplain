@@ -21,6 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/example-report",      0.7, "monthly"),
     url("/login",               0.5, "monthly"),
 
+    // ── Free Tools ────────────────────────────────────────────────────────────
+    url("/tools",                                    0.9, "monthly"),
+    url("/tools/rent-increase-calculator",           0.9, "monthly"),
+    url("/tools/deposit-calculator",                 0.9, "monthly"),
+
     // ── Locations hub ─────────────────────────────────────────────────────────
     url("/locations",           0.9, "monthly"),
 

@@ -6,12 +6,14 @@ const NOW = new Date("2026-05-06");
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // ── Core ──────────────────────────────────────────────────────────────────
-    { url: BASE,                           lastModified: NOW, changeFrequency: "weekly",  priority: 1.0 },
-    { url: `${BASE}/lease-analyzer`,       lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/how-it-works`,         lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/upload`,               lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/pricing`,              lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/example-report`,       lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: BASE,                                lastModified: NOW, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${BASE}/lease-analyzer`,            lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/how-it-works`,              lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/how-leaseplain-works`,      lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/methodology`,               lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/upload`,                    lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/pricing`,                   lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/example-report`,            lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
 
     // ── Locations ─────────────────────────────────────────────────────────────
     { url: `${BASE}/locations`,                            lastModified: NOW, changeFrequency: "monthly", priority: 0.9 },
@@ -87,15 +89,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/resources/condo-lease-guide`,             lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/resources/apartment-lease-guide`,         lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/resources/landlord-guides`,               lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/resources/landlord-lease-checklist`,      lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BASE}/resources/landlord-lease-mistakes`,       lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/resources/landlord-lease-checklist`,         lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/resources/landlord-lease-mistakes`,          lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/resources/is-ai-lease-review-accurate`,      lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/resources/leaseplain-vs-chatgpt`,            lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/resources/should-you-pay-lawyer-review-lease`, lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+
+    // ── Glossary ──────────────────────────────────────────────────────────────
+    { url: `${BASE}/glossary`,                              lastModified: NOW, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/glossary/security-deposit`,             lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/rent-increase`,                lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/late-fees`,                    lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/grace-period`,                 lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/glossary/termination-clause`,           lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/lease-renewal`,                lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/holdover-tenant`,              lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/occupancy-limits`,             lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/glossary/maintenance-clause`,           lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/subletting`,                   lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/guarantor`,                    lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/joint-and-several-liability`,  lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/glossary/force-majeure`,                lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/glossary/quiet-enjoyment`,              lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/glossary/habitability`,                 lastModified: NOW, changeFrequency: "monthly", priority: 0.7 },
 
     // ── Company / utility ─────────────────────────────────────────────────────
-    { url: `${BASE}/faq`,        lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/about`,      lastModified: NOW, changeFrequency: "yearly",  priority: 0.5 },
-    { url: `${BASE}/contact`,    lastModified: NOW, changeFrequency: "yearly",  priority: 0.5 },
-    { url: `${BASE}/privacy`,    lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
-    { url: `${BASE}/terms`,      lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
-    { url: `${BASE}/disclaimer`, lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE}/faq`,              lastModified: NOW, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/about`,            lastModified: NOW, changeFrequency: "yearly",  priority: 0.5 },
+    { url: `${BASE}/contact`,          lastModified: NOW, changeFrequency: "yearly",  priority: 0.5 },
+    { url: `${BASE}/editorial-policy`, lastModified: NOW, changeFrequency: "yearly",  priority: 0.4 },
+    { url: `${BASE}/legal-disclaimer`, lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE}/privacy`,          lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE}/terms`,            lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE}/disclaimer`,       lastModified: NOW, changeFrequency: "yearly",  priority: 0.3 },
   ];
 }

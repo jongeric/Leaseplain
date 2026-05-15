@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Master the fundamentals of lease agreements. Plain-English guides explaining what a lease is, how to read one, and the differences between lease types.",
   alternates: { canonical: "https://leaseplain.com/resources/lease-basics" },
+  openGraph: {
+    title: "Lease Basics: Guides to Rental Agreements | LeasePlain",
+    description: "Master the fundamentals of lease agreements. Plain-English guides explaining what a lease is, how to read one, and the differences between lease types.",
+    url: "https://leaseplain.com/resources/lease-basics",
+  },
+  keywords: ["lease basics", "rental agreement fundamentals", "what is a lease", "lease types Canada", "how to read a lease"],
 };
 
 const articles = [
@@ -43,6 +50,15 @@ const articles = [
 
 export default function LeaseBasicsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Lease Basics: Guides to Rental Agreements"
+        description="Master the fundamentals of lease agreements. Plain-English guides explaining what a lease is, how to read one, and the differences between lease types."
+        url="https://leaseplain.com/resources/lease-basics"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["lease basics", "rental agreement fundamentals", "what is a lease", "lease types Canada", "how to read a lease"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -129,5 +145,6 @@ export default function LeaseBasicsPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "The most frequent lease drafting errors that create legal exposure for Canadian landlords — and what to do instead. Avoid these mistakes before your next tenancy.",
   alternates: { canonical: "https://leaseplain.com/resources/landlord-lease-mistakes" },
+  openGraph: {
+    title: "Common Landlord Lease Mistakes (and How to Avoid Them) | LeasePlain",
+    description: "The most frequent lease drafting errors that create legal exposure for Canadian landlords — and what to do instead. Avoid these mistakes before your next tenancy.",
+    url: "https://leaseplain.com/resources/landlord-lease-mistakes",
+  },
+  keywords: ["landlord lease mistakes", "lease drafting errors Canada", "illegal lease clauses landlord", "landlord mistakes Ontario", "lease compliance landlord"],
 };
 
 const mistakes = [
@@ -51,6 +58,15 @@ const mistakes = [
 
 export default function LandlordLeaseMistakesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Common Landlord Lease Mistakes (and How to Avoid Them)"
+        description="The most frequent lease drafting errors that create legal exposure for Canadian landlords — and what to do instead. Avoid these mistakes before your next tenancy."
+        url="https://leaseplain.com/resources/landlord-lease-mistakes"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["landlord lease mistakes", "lease drafting errors Canada", "illegal lease clauses landlord", "landlord mistakes Ontario", "lease compliance landlord"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -136,5 +152,6 @@ export default function LandlordLeaseMistakesPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

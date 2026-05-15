@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "A practical checklist of everything to verify before signing a residential lease — the unit, the landlord, the terms, and your rights.",
   alternates: { canonical: "https://leaseplain.com/resources/check-before-signing-lease" },
+  openGraph: {
+    title: "What to Check Before Signing a Lease – Full Checklist | LeasePlain",
+    description: "A practical checklist of everything to verify before signing a residential lease — the unit, the landlord, the terms, and your rights.",
+    url: "https://leaseplain.com/resources/check-before-signing-lease",
+  },
+  keywords: ["lease checklist", "before signing a lease", "what to check in a lease", "tenant checklist", "lease review tips"],
 };
 
 const checklist = [
@@ -85,7 +91,16 @@ const checklist = [
 
 export default function CheckBeforeSigningPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="What to Check Before Signing a Lease"
+        description="A practical checklist of everything to verify before signing a residential lease — the unit, the landlord, the terms, and your rights."
+        url="https://leaseplain.com/resources/check-before-signing-lease"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["lease checklist", "before signing a lease", "what to check in a lease", "tenant checklist", "lease review tips"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -201,5 +216,6 @@ export default function CheckBeforeSigningPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

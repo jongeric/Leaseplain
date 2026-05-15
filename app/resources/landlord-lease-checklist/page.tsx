@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "A complete checklist for landlords creating or reviewing a residential lease — clauses, disclosures, and legal requirements you can't afford to miss in Canada.",
   alternates: { canonical: "https://leaseplain.com/resources/landlord-lease-checklist" },
+  openGraph: {
+    title: "Landlord Lease Checklist: What Every Residential Lease Must Include | LeasePlain",
+    description: "A complete checklist for landlords creating or reviewing a residential lease — clauses, disclosures, and legal requirements you can't afford to miss in Canada.",
+    url: "https://leaseplain.com/resources/landlord-lease-checklist",
+  },
+  keywords: ["landlord lease checklist", "residential lease requirements Canada", "lease drafting checklist", "what to include in a lease", "landlord legal requirements"],
 };
 
 const sections = [
@@ -73,6 +80,15 @@ const sections = [
 
 export default function LandlordLeaseChecklistPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Landlord Lease Checklist: What Every Residential Lease Must Include"
+        description="A complete checklist for landlords creating or reviewing a residential lease — clauses, disclosures, and legal requirements you can't afford to miss in Canada."
+        url="https://leaseplain.com/resources/landlord-lease-checklist"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["landlord lease checklist", "residential lease requirements Canada", "lease drafting checklist", "what to include in a lease", "landlord legal requirements"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -163,5 +179,6 @@ export default function LandlordLeaseChecklistPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

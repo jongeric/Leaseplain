@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,10 +13,25 @@ export const metadata: Metadata = {
   description:
     "How leases work for students in Ontario — roommates, joint tenancy, subletting over summer, student housing, and lease red flags to watch for.",
   alternates: { canonical: "https://leaseplain.com/resources/student-lease-guide" },
+  openGraph: {
+    title: "Student Lease Guide: Renting Near Campus in Ontario | LeasePlain",
+    description: "How leases work for students in Ontario — roommates, joint tenancy, subletting over summer, student housing, and lease red flags to watch for.",
+    url: "https://leaseplain.com/resources/student-lease-guide",
+  },
+  keywords: ["student lease guide", "renting near campus Ontario", "student tenant rights", "joint tenancy students", "subletting over summer"],
 };
 
 export default function StudentLeaseGuidePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Student Lease Guide: Renting Near Campus in Ontario"
+        description="How leases work for students in Ontario — roommates, joint tenancy, subletting over summer, student housing, and lease red flags to watch for."
+        url="https://leaseplain.com/resources/student-lease-guide"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["student lease guide", "renting near campus Ontario", "student tenant rights", "joint tenancy students", "subletting over summer"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -259,5 +275,6 @@ export default function StudentLeaseGuidePage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

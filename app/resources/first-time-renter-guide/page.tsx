@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario.",
   alternates: { canonical: "https://leaseplain.com/resources/first-time-renter-guide" },
+  openGraph: {
+    title: "First-Time Renter Guide: How to Read and Sign a Lease | LeasePlain",
+    description: "Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario.",
+    url: "https://leaseplain.com/resources/first-time-renter-guide",
+  },
+  keywords: ["first-time renter guide", "renting for the first time", "how to sign a lease", "tenant rights Ontario", "lease guide beginners"],
 };
 
 export default function FirstTimeRenterGuidePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="First-Time Renter Guide: How to Read and Sign a Lease"
+        description="Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario."
+        url="https://leaseplain.com/resources/first-time-renter-guide"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["first-time renter guide", "renting for the first time", "how to sign a lease", "tenant rights Ontario", "lease guide beginners"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -248,5 +264,6 @@ export default function FirstTimeRenterGuidePage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

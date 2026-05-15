@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Learn which hidden fees landlords add to leases, which are illegal in Ontario, and how to negotiate their removal.",
   alternates: { canonical: "https://leaseplain.com/resources/hidden-lease-fees" },
+  openGraph: {
+    title: "How to Spot Hidden Fees in Your Lease Agreement | LeasePlain",
+    description: "Learn which hidden fees landlords add to leases, which are illegal in Ontario, and how to negotiate their removal.",
+    url: "https://leaseplain.com/resources/hidden-lease-fees",
+  },
+  keywords: ["hidden lease fees", "illegal lease fees Ontario", "lease fee negotiation", "rental hidden costs", "landlord fees"],
 };
 
 export default function HiddenLeaseFeesPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="How to Spot Hidden Fees in Your Lease Agreement"
+        description="Learn which hidden fees landlords add to leases, which are illegal in Ontario, and how to negotiate their removal."
+        url="https://leaseplain.com/resources/hidden-lease-fees"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["hidden lease fees", "illegal lease fees Ontario", "lease fee negotiation", "rental hidden costs", "landlord fees"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -229,5 +245,6 @@ export default function HiddenLeaseFeesPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

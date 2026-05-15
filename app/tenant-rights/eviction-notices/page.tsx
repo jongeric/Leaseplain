@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Learn about N4, N5, N12, and other eviction notices in Ontario. A notice alone does NOT evict you — understand your rights, the LTB process, and illegal eviction tactics.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/eviction-notices" },
+  openGraph: {
+    title: "Eviction Notices in Ontario: What Landlords Can and Cannot Do | LeasePlain",
+    description: "Learn about N4, N5, N12, and other eviction notices in Ontario. A notice alone does NOT evict you — understand your rights, the LTB process, and illegal eviction tactics.",
+    url: "https://leaseplain.com/tenant-rights/eviction-notices",
+  },
+  keywords: ["eviction notices Ontario", "N4 notice Ontario", "N12 notice Ontario", "LTB eviction process", "tenant eviction rights Canada"],
 };
 
 const noticeTypes = [
@@ -71,6 +78,15 @@ const illegalTactics = [
 
 export default function EvictionNoticesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Eviction Notices in Ontario: What Landlords Can and Cannot Do"
+        description="Learn about N4, N5, N12, and other eviction notices in Ontario. A notice alone does NOT evict you — understand your rights, the LTB process, and illegal eviction tactics."
+        url="https://leaseplain.com/tenant-rights/eviction-notices"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["eviction notices Ontario", "N4 notice Ontario", "N12 notice Ontario", "LTB eviction process", "tenant eviction rights Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -252,5 +268,6 @@ export default function EvictionNoticesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

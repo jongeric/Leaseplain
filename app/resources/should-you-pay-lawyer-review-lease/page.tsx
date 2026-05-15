@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import ArticleSchema from "@/components/ArticleSchema";
 import { CheckCircle, DollarSign, AlertTriangle, Scale } from "lucide-react";
 import Link from "next/link";
 
@@ -22,6 +23,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://leaseplain.com/resources/should-you-pay-lawyer-review-lease",
+  },
+  openGraph: {
+    title: "Should I Pay a Lawyer to Review My Lease? | LeasePlain",
+    description: "Is it worth paying a lawyer to review your lease? Decision framework covering when AI suffices, when a lawyer is worth it, typical costs, and how to decide for your situation.",
+    url: "https://leaseplain.com/resources/should-you-pay-lawyer-review-lease",
   },
 };
 
@@ -92,7 +98,16 @@ const decisionFactors = [
 
 export default function ShouldYouPayLawyerReviewLeasePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Should You Pay a Lawyer to Review Your Lease?"
+        description="Is it worth paying a lawyer to review your lease? Decision framework covering when AI suffices, when a lawyer is worth it, typical costs, and how to decide for your situation."
+        url="https://leaseplain.com/resources/should-you-pay-lawyer-review-lease"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["should I pay a lawyer to review my lease", "lawyer lease review cost", "is it worth getting a lawyer to review a lease", "residential lease legal review", "tenant lawyer cost canada"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -356,5 +371,6 @@ export default function ShouldYouPayLawyerReviewLeasePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

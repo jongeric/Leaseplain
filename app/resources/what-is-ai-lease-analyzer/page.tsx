@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,10 +13,25 @@ export const metadata: Metadata = {
   description:
     "Learn what an AI lease analyzer is, how it works, what it can and cannot do, and how LeasePlain uses AI to explain your lease in plain English.",
   alternates: { canonical: "https://leaseplain.com/resources/what-is-ai-lease-analyzer" },
+  openGraph: {
+    title: "What Is an AI Lease Analyzer? How It Works | LeasePlain",
+    description: "Learn what an AI lease analyzer is, how it works, what it can and cannot do, and how LeasePlain uses AI to explain your lease in plain English.",
+    url: "https://leaseplain.com/resources/what-is-ai-lease-analyzer",
+  },
+  keywords: ["AI lease analyzer", "what is AI lease review", "how lease AI works", "lease analysis tool", "LeasePlain AI"],
 };
 
 export default function WhatIsAILeaseAnalyzerPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="What Is an AI Lease Analyzer? How It Works"
+        description="Learn what an AI lease analyzer is, how it works, what it can and cannot do, and how LeasePlain uses AI to explain your lease in plain English."
+        url="https://leaseplain.com/resources/what-is-ai-lease-analyzer"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["AI lease analyzer", "what is AI lease review", "how lease AI works", "lease analysis tool", "LeasePlain AI"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -232,5 +248,6 @@ export default function WhatIsAILeaseAnalyzerPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

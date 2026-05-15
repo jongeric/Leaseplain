@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import ArticleSchema from "@/components/ArticleSchema";
 import { CheckCircle, XCircle, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
     "ai lease analyzer",
   ],
   alternates: { canonical: "https://leaseplain.com/resources/leaseplain-vs-chatgpt" },
+  openGraph: {
+    title: "LeasePlain vs ChatGPT for Lease Review | Which AI Tool Is Better?",
+    description: "Comparing LeasePlain vs ChatGPT for lease analysis: purpose-built vs general AI, structured output vs free-form chat, tenant-specific risk scoring vs generic summaries. Which tool actually helps renters?",
+    url: "https://leaseplain.com/resources/leaseplain-vs-chatgpt",
+  },
 };
 
 const comparisonRows = [
@@ -111,7 +117,16 @@ const faqs = [
 
 export default function LeasePlainVsChatGPTPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="LeasePlain vs ChatGPT for Lease Review"
+        description="Comparing LeasePlain vs ChatGPT for lease analysis: purpose-built vs general AI, structured output vs free-form chat, tenant-specific risk scoring vs generic summaries. Which tool actually helps renters?"
+        url="https://leaseplain.com/resources/leaseplain-vs-chatgpt"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["leaseplain vs chatgpt", "AI lease review tool comparison", "best AI for lease review", "chatgpt lease analysis", "ai lease analyzer"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -323,5 +338,6 @@ export default function LeasePlainVsChatGPTPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

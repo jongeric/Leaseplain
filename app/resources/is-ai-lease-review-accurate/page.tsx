@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import ArticleSchema from "@/components/ArticleSchema";
 import { CheckCircle, XCircle, AlertTriangle, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
     "ai lease review limitations",
   ],
   alternates: { canonical: "https://leaseplain.com/resources/is-ai-lease-review-accurate" },
+  openGraph: {
+    title: "Is AI Lease Review Accurate? What AI Can and Can't Catch | LeasePlain",
+    description: "How accurate is AI lease review? What can AI reliably identify in a lease, where does it fall short, and when does a human lawyer add irreplaceable value? An honest assessment.",
+    url: "https://leaseplain.com/resources/is-ai-lease-review-accurate",
+  },
 };
 
 const aiStrengths = [
@@ -114,7 +120,16 @@ const faqs = [
 
 export default function IsAILeaseReviewAccuratePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Is AI Lease Review Accurate?"
+        description="How accurate is AI lease review? What can AI reliably identify in a lease, where does it fall short, and when does a human lawyer add irreplaceable value? An honest assessment."
+        url="https://leaseplain.com/resources/is-ai-lease-review-accurate"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["is ai lease review accurate", "ai lease analysis accuracy", "ai vs lawyer lease review", "how accurate is leaseplain", "ai lease review limitations"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -339,5 +354,6 @@ export default function IsAILeaseReviewAccuratePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

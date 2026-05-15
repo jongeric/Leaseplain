@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "A complete guide to tenant rights in Alberta under the Residential Tenancies Act. Covers the RTDRS, security deposits, rent increases, and notice periods.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/alberta" },
+  openGraph: {
+    title: "Alberta Tenant Rights: Guide to the Residential Tenancies Act | LeasePlain",
+    description: "A complete guide to tenant rights in Alberta under the Residential Tenancies Act. Covers the RTDRS, security deposits, rent increases, and notice periods.",
+    url: "https://leaseplain.com/tenant-rights/alberta",
+  },
+  keywords: ["Alberta tenant rights", "Residential Tenancies Act Alberta", "RTDRS Alberta", "Alberta rent increase rules", "Alberta security deposit"],
 };
 
 const depositRules = [
@@ -49,6 +56,15 @@ const albertaRedFlags = [
 
 export default function AlbertaTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Alberta Tenant Rights: Guide to the Residential Tenancies Act"
+        description="A complete guide to tenant rights in Alberta under the Residential Tenancies Act. Covers the RTDRS, security deposits, rent increases, and notice periods."
+        url="https://leaseplain.com/tenant-rights/alberta"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["Alberta tenant rights", "Residential Tenancies Act Alberta", "RTDRS Alberta", "Alberta rent increase rules", "Alberta security deposit"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -236,5 +252,6 @@ export default function AlbertaTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

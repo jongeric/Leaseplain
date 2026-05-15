@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LogOut, CheckCircle, AlertTriangle, ChevronRight, Upload, FileText } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Can you break a lease early in Ontario? Learn your options: subletting, assignment, N9 notice, domestic violence provisions, and what the landlord can legally charge.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/breaking-a-lease" },
+  openGraph: {
+    title: "Breaking a Lease in Ontario – Your Rights & Options | LeasePlain",
+    description: "Can you break a lease early in Ontario? Learn your options: subletting, assignment, N9 notice, domestic violence provisions, and what the landlord can legally charge.",
+    url: "https://leaseplain.com/tenant-rights/breaking-a-lease",
+  },
+  keywords: ["breaking a lease Ontario", "early lease termination", "subletting Ontario", "N9 notice", "how to break a lease Canada"],
 };
 
 const options = [
@@ -61,6 +68,15 @@ const landlordLimitations = [
 
 export default function BreakingALeasePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Breaking a Lease in Ontario – Your Rights & Options"
+        description="Can you break a lease early in Ontario? Learn your options: subletting, assignment, N9 notice, domestic violence provisions, and what the landlord can legally charge."
+        url="https://leaseplain.com/tenant-rights/breaking-a-lease"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["breaking a lease Ontario", "early lease termination", "subletting Ontario", "N9 notice", "how to break a lease Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -196,5 +212,6 @@ export default function BreakingALeasePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

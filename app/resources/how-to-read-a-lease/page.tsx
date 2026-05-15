@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, CheckCircle, ChevronRight, Upload, Clock } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Learn how to read a residential lease agreement. A step-by-step guide covering each section, what to look for, and the questions to ask before signing.",
   alternates: { canonical: "https://leaseplain.com/resources/how-to-read-a-lease" },
+  openGraph: {
+    title: "How to Read a Lease Agreement – Step-by-Step Guide | LeasePlain",
+    description: "Learn how to read a residential lease agreement. A step-by-step guide covering each section, what to look for, and the questions to ask before signing.",
+    url: "https://leaseplain.com/resources/how-to-read-a-lease",
+  },
+  keywords: ["how to read a lease", "lease agreement guide", "understanding lease clauses", "lease review steps", "residential lease explained"],
 };
 
 const steps = [
@@ -92,7 +99,16 @@ const steps = [
 
 export default function HowToReadALeasePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="How to Read a Lease Agreement: A Step-by-Step Guide"
+        description="Learn how to read a residential lease agreement. A step-by-step guide covering each section, what to look for, and the questions to ask before signing."
+        url="https://leaseplain.com/resources/how-to-read-a-lease"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["how to read a lease", "lease agreement guide", "understanding lease clauses", "lease review steps", "residential lease explained"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -221,5 +237,6 @@ export default function HowToReadALeasePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

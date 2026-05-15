@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Home, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Renting a condo is different from renting in a purpose-built building. Learn about condo rules, investor landlords, your rights if the unit is sold, and what to watch for in a condo lease.",
   alternates: { canonical: "https://leaseplain.com/resources/condo-lease-guide" },
+  openGraph: {
+    title: "Condo Lease Guide: What's Different About Renting a Condo | LeasePlain",
+    description: "Renting a condo is different from renting in a purpose-built building. Learn about condo rules, investor landlords, your rights if the unit is sold, and what to watch for in a condo lease.",
+    url: "https://leaseplain.com/resources/condo-lease-guide",
+  },
+  keywords: ["condo lease guide", "renting a condo", "condo tenant rights", "investor landlord lease", "condo corporation rules"],
 };
 
 export default function CondoLeaseGuidePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Condo Lease Guide: What's Different About Renting a Condo"
+        description="Renting a condo is different from renting in a purpose-built building. Learn about condo rules, investor landlords, your rights if the unit is sold, and what to watch for in a condo lease."
+        url="https://leaseplain.com/resources/condo-lease-guide"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["condo lease guide", "renting a condo", "condo tenant rights", "investor landlord lease", "condo corporation rules"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -153,5 +169,6 @@ export default function CondoLeaseGuidePage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

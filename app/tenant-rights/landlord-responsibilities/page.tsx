@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, AlertTriangle, ChevronRight, Upload, Clock } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "A complete guide to landlord responsibilities in Ontario. Maintenance, entry notice, heat, pests, harassment, and what to do if your landlord fails their duties.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/landlord-responsibilities" },
+  openGraph: {
+    title: "Landlord Responsibilities in Ontario – What They Must Do by Law | LeasePlain",
+    description: "A complete guide to landlord responsibilities in Ontario. Maintenance, entry notice, heat, pests, harassment, and what to do if your landlord fails their duties.",
+    url: "https://leaseplain.com/tenant-rights/landlord-responsibilities",
+  },
+  keywords: ["landlord responsibilities Ontario", "landlord obligations Canada", "landlord maintenance duty", "landlord entry notice Ontario", "landlord RTA requirements"],
 };
 
 const responsibilities = [
@@ -69,6 +76,15 @@ const whatToDoIfLandlordFails = [
 
 export default function LandlordResponsibilitiesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Landlord Responsibilities in Ontario – What They Must Do by Law"
+        description="A complete guide to landlord responsibilities in Ontario. Maintenance, entry notice, heat, pests, harassment, and what to do if your landlord fails their duties."
+        url="https://leaseplain.com/tenant-rights/landlord-responsibilities"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["landlord responsibilities Ontario", "landlord obligations Canada", "landlord maintenance duty", "landlord entry notice Ontario", "landlord RTA requirements"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -204,5 +220,6 @@ export default function LandlordResponsibilitiesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

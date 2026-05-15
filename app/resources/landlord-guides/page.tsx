@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Practical lease guides for landlords — avoid common mistakes, create airtight leases, and understand your obligations under Canadian landlord-tenant law.",
   alternates: { canonical: "https://leaseplain.com/resources/landlord-guides" },
+  openGraph: {
+    title: "Landlord Guides: Lease Resources for Property Owners | LeasePlain",
+    description: "Practical lease guides for landlords — avoid common mistakes, create airtight leases, and understand your obligations under Canadian landlord-tenant law.",
+    url: "https://leaseplain.com/resources/landlord-guides",
+  },
+  keywords: ["landlord lease guide", "landlord obligations Canada", "residential lease tips landlord", "property owner lease help"],
 };
 
 const articles = [
@@ -31,6 +38,15 @@ const articles = [
 
 export default function LandlordGuidesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Landlord Guides: Lease Resources for Property Owners"
+        description="Practical lease guides for landlords — avoid common mistakes, create airtight leases, and understand your obligations under Canadian landlord-tenant law."
+        url="https://leaseplain.com/resources/landlord-guides"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["landlord lease guide", "landlord obligations Canada", "residential lease tips landlord", "property owner lease help"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -118,5 +134,6 @@ export default function LandlordGuidesPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

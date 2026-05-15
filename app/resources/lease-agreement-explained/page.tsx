@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload, Clock, FileText } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "A plain-English explanation of every standard section in a residential lease agreement — what each clause means, and what to watch for.",
   alternates: { canonical: "https://leaseplain.com/resources/lease-agreement-explained" },
+  openGraph: {
+    title: "Lease Agreement Explained: Every Section Decoded | LeasePlain",
+    description: "A plain-English explanation of every standard section in a residential lease agreement — what each clause means, and what to watch for.",
+    url: "https://leaseplain.com/resources/lease-agreement-explained",
+  },
+  keywords: ["lease agreement explained", "lease sections decoded", "residential lease clauses", "lease terms plain English", "understanding a lease"],
 };
 
 const sections = [
@@ -79,6 +86,15 @@ const sections = [
 
 export default function LeaseAgreementExplainedPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Lease Agreement Explained: Every Section Decoded"
+        description="A plain-English explanation of every standard section in a residential lease agreement — what each clause means, and what to watch for."
+        url="https://leaseplain.com/resources/lease-agreement-explained"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["lease agreement explained", "lease sections decoded", "residential lease clauses", "lease terms plain English", "understanding a lease"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -186,5 +202,6 @@ export default function LeaseAgreementExplainedPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ShieldCheck, CheckCircle, ChevronRight, Upload, Phone } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Tenant rights guide for Toronto renters. Ontario RTA applies city-wide, plus local resources, legal clinics, and housing organizations specific to Toronto.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/toronto" },
+  openGraph: {
+    title: "Tenant Rights in Toronto – Local Resources & Housing Help | LeasePlain",
+    description: "Tenant rights guide for Toronto renters. Ontario RTA applies city-wide, plus local resources, legal clinics, and housing organizations specific to Toronto.",
+    url: "https://leaseplain.com/tenant-rights/toronto",
+  },
+  keywords: ["tenant rights Toronto", "Toronto housing help", "Toronto tenant legal clinic", "renting in Toronto", "Ontario RTA Toronto"],
 };
 
 const localResources = [
@@ -63,6 +70,15 @@ const commonTorontoIssues = [
 
 export default function TorontoTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Tenant Rights in Toronto – Local Resources & Housing Help"
+        description="Tenant rights guide for Toronto renters. Ontario RTA applies city-wide, plus local resources, legal clinics, and housing organizations specific to Toronto."
+        url="https://leaseplain.com/tenant-rights/toronto"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["tenant rights Toronto", "Toronto housing help", "Toronto tenant legal clinic", "renting in Toronto", "Ontario RTA Toronto"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -192,5 +208,6 @@ export default function TorontoTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

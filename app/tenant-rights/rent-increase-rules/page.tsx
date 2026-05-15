@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { TrendingUp, CheckCircle, AlertTriangle, ChevronRight, Upload } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Complete guide to rent increase rules in Ontario. The annual guideline, 90-day notice requirements, above-guideline increases, and how to dispute an illegal increase.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/rent-increase-rules" },
+  openGraph: {
+    title: "Ontario Rent Increase Rules – Guideline, Notice & Your Rights | LeasePlain",
+    description: "Complete guide to rent increase rules in Ontario. The annual guideline, 90-day notice requirements, above-guideline increases, and how to dispute an illegal increase.",
+    url: "https://leaseplain.com/tenant-rights/rent-increase-rules",
+  },
+  keywords: ["Ontario rent increase rules", "rent increase guideline Ontario", "rent control Ontario", "dispute rent increase", "above guideline increase Ontario"],
 };
 
 const guidelines = [
@@ -39,6 +46,15 @@ const disputeSteps = [
 
 export default function RentIncreaseRulesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Ontario Rent Increase Rules – Guideline, Notice & Your Rights"
+        description="Complete guide to rent increase rules in Ontario. The annual guideline, 90-day notice requirements, above-guideline increases, and how to dispute an illegal increase."
+        url="https://leaseplain.com/tenant-rights/rent-increase-rules"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["Ontario rent increase rules", "rent increase guideline Ontario", "rent control Ontario", "dispute rent increase", "above guideline increase Ontario"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -197,5 +213,6 @@ export default function RentIncreaseRulesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Lease guides for every type of renter — first-time renters, students, condo tenants, and apartment dwellers. Plain-English help for Ontario renters.",
   alternates: { canonical: "https://leaseplain.com/resources/tenant-guides" },
+  openGraph: {
+    title: "Renter Guides: Lease Help for Every Situation | LeasePlain",
+    description: "Lease guides for every type of renter — first-time renters, students, condo tenants, and apartment dwellers. Plain-English help for Ontario renters.",
+    url: "https://leaseplain.com/resources/tenant-guides",
+  },
+  keywords: ["renter guides", "tenant lease help", "Ontario renter resources", "lease guide for tenants", "tenant rights Canada"],
 };
 
 const articles = [
@@ -43,6 +50,15 @@ const articles = [
 
 export default function TenantGuidesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Renter Guides: Lease Help for Every Situation"
+        description="Lease guides for every type of renter — first-time renters, students, condo tenants, and apartment dwellers. Plain-English help for Ontario renters."
+        url="https://leaseplain.com/resources/tenant-guides"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["renter guides", "tenant lease help", "Ontario renter resources", "lease guide for tenants", "tenant rights Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -129,5 +145,6 @@ export default function TenantGuidesPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

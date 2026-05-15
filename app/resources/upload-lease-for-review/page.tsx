@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,10 +13,25 @@ export const metadata: Metadata = {
   description:
     "Step-by-step guide to uploading your lease on LeasePlain. Learn what formats are supported, how your data is kept secure, and what the AI report shows.",
   alternates: { canonical: "https://leaseplain.com/resources/upload-lease-for-review" },
+  openGraph: {
+    title: "Upload Your Lease for AI Review: How It Works | LeasePlain",
+    description: "Step-by-step guide to uploading your lease on LeasePlain. Learn what formats are supported, how your data is kept secure, and what the AI report shows.",
+    url: "https://leaseplain.com/resources/upload-lease-for-review",
+  },
+  keywords: ["upload lease for review", "AI lease review how it works", "lease PDF upload", "lease analysis tool", "LeasePlain how to use"],
 };
 
 export default function UploadLeaseForReviewPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Upload Your Lease for AI Review: How It Works"
+        description="Step-by-step guide to uploading your lease on LeasePlain. Learn what formats are supported, how your data is kept secure, and what the AI report shows."
+        url="https://leaseplain.com/resources/upload-lease-for-review"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["upload lease for review", "AI lease review how it works", "lease PDF upload", "lease analysis tool", "LeasePlain how to use"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -247,5 +263,6 @@ export default function UploadLeaseForReviewPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

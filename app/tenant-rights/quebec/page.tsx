@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "A complete guide to tenant rights in Quebec — the standard bail, the Tribunal administratif du logement (TAL), rent increases, and the prohibition on security deposits.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/quebec" },
+  openGraph: {
+    title: "Quebec Tenant Rights: Guide to Housing Law and the TAL | LeasePlain",
+    description: "A complete guide to tenant rights in Quebec — the standard bail, the Tribunal administratif du logement (TAL), rent increases, and the prohibition on security deposits.",
+    url: "https://leaseplain.com/tenant-rights/quebec",
+  },
+  keywords: ["Quebec tenant rights", "TAL tribunal logement", "Quebec bail lease", "Quebec rent increase", "renter rights Quebec Canada"],
 };
 
 const leaseFormSections = [
@@ -49,6 +56,15 @@ const quebecRedFlags = [
 
 export default function QuebecTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Quebec Tenant Rights: Guide to Housing Law and the TAL"
+        description="A complete guide to tenant rights in Quebec — the standard bail, the Tribunal administratif du logement (TAL), rent increases, and the prohibition on security deposits."
+        url="https://leaseplain.com/tenant-rights/quebec"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["Quebec tenant rights", "TAL tribunal logement", "Quebec bail lease", "Quebec rent increase", "renter rights Quebec Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -249,5 +265,6 @@ export default function QuebecTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, Globe } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Tenant rights in the United States vary by state. LeasePlain is expanding to cover US markets. Learn about tenant protections in New York, California, Florida, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/united-states" },
+  openGraph: {
+    title: "US Tenant Rights by State — Coming to LeasePlain | LeasePlain",
+    description: "Tenant rights in the United States vary by state. LeasePlain is expanding to cover US markets. Learn about tenant protections in New York, California, Florida, and more.",
+    url: "https://leaseplain.com/tenant-rights/united-states",
+  },
+  keywords: ["US tenant rights by state", "American renter rights", "tenant protection United States", "California tenant rights", "New York tenant rights"],
 };
 
 const usStates = [
@@ -62,6 +69,15 @@ const usStates = [
 
 export default function UnitedStatesTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="US Tenant Rights by State — Coming to LeasePlain"
+        description="Tenant rights in the United States vary by state. LeasePlain is expanding to cover US markets. Learn about tenant protections in New York, California, Florida, and more."
+        url="https://leaseplain.com/tenant-rights/united-states"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["US tenant rights by state", "American renter rights", "tenant protection United States", "California tenant rights", "New York tenant rights"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -212,5 +228,6 @@ export default function UnitedStatesTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

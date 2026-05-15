@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, MapPin } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Tenancy law in Canada is provincially regulated. Explore tenant rights in Ontario, BC, Alberta, and Quebec — security deposits, rent control, eviction rules, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/canada" },
+  openGraph: {
+    title: "Tenant Rights in Canada: A Province-by-Province Guide | LeasePlain",
+    description: "Tenancy law in Canada is provincially regulated. Explore tenant rights in Ontario, BC, Alberta, and Quebec — security deposits, rent control, eviction rules, and more.",
+    url: "https://leaseplain.com/tenant-rights/canada",
+  },
+  keywords: ["tenant rights Canada", "Canadian tenant law", "province tenant rights", "rent control Canada", "eviction rules Canada"],
 };
 
 const provinces = [
@@ -90,6 +97,15 @@ const nationalThemes = [
 
 export default function CanadaTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Tenant Rights in Canada: A Province-by-Province Guide"
+        description="Tenancy law in Canada is provincially regulated. Explore tenant rights in Ontario, BC, Alberta, and Quebec — security deposits, rent control, eviction rules, and more."
+        url="https://leaseplain.com/tenant-rights/canada"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["tenant rights Canada", "Canadian tenant law", "province tenant rights", "rent control Canada", "eviction rules Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -213,5 +229,6 @@ export default function CanadaTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

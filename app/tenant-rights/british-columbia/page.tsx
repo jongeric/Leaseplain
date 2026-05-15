@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/british-columbia" },
+  openGraph: {
+    title: "BC Tenant Rights: Guide to the Residential Tenancy Act | LeasePlain",
+    description: "A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution.",
+    url: "https://leaseplain.com/tenant-rights/british-columbia",
+  },
+  keywords: ["BC tenant rights", "Residential Tenancy Act BC", "British Columbia renter rights", "BC rent increase rules", "RTB British Columbia"],
 };
 
 const depositRules = [
@@ -47,6 +54,15 @@ const bcRedFlags = [
 
 export default function BritishColumbiaTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="BC Tenant Rights: Guide to the Residential Tenancy Act"
+        description="A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution."
+        url="https://leaseplain.com/tenant-rights/british-columbia"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["BC tenant rights", "Residential Tenancy Act BC", "British Columbia renter rights", "BC rent increase rules", "RTB British Columbia"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -240,5 +256,6 @@ export default function BritishColumbiaTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

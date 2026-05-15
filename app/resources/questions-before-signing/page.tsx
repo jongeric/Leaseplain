@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,10 +13,25 @@ export const metadata: Metadata = {
   description:
     "The questions every renter should ask before signing a lease in Ontario — about the unit, lease terms, the landlord, and fees.",
   alternates: { canonical: "https://leaseplain.com/resources/questions-before-signing" },
+  openGraph: {
+    title: "20 Questions to Ask Before Signing a Lease | LeasePlain",
+    description: "The questions every renter should ask before signing a lease in Ontario — about the unit, lease terms, the landlord, and fees.",
+    url: "https://leaseplain.com/resources/questions-before-signing",
+  },
+  keywords: ["questions to ask before signing a lease", "lease signing checklist", "what to ask landlord", "renter questions Ontario", "before you sign a lease"],
 };
 
 export default function QuestionsBeforeSigningPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="20 Questions to Ask Before Signing a Lease"
+        description="The questions every renter should ask before signing a lease in Ontario — about the unit, lease terms, the landlord, and fees."
+        url="https://leaseplain.com/resources/questions-before-signing"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["questions to ask before signing a lease", "lease signing checklist", "what to ask landlord", "renter questions Ontario", "before you sign a lease"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -205,5 +221,6 @@ export default function QuestionsBeforeSigningPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

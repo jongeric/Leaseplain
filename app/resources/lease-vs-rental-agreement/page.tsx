@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,10 +13,25 @@ export const metadata: Metadata = {
   description:
     "Learn the key differences between a fixed-term lease and a month-to-month rental agreement in Ontario — and which is better for tenants.",
   alternates: { canonical: "https://leaseplain.com/resources/lease-vs-rental-agreement" },
+  openGraph: {
+    title: "Lease vs Rental Agreement: What's the Difference? | LeasePlain",
+    description: "Learn the key differences between a fixed-term lease and a month-to-month rental agreement in Ontario — and which is better for tenants.",
+    url: "https://leaseplain.com/resources/lease-vs-rental-agreement",
+  },
+  keywords: ["lease vs rental agreement", "fixed-term lease", "month-to-month tenancy", "lease difference Ontario", "rental agreement types Canada"],
 };
 
 export default function LeaseVsRentalAgreementPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Lease vs Rental Agreement: What's the Difference?"
+        description="Learn the key differences between a fixed-term lease and a month-to-month rental agreement in Ontario — and which is better for tenants."
+        url="https://leaseplain.com/resources/lease-vs-rental-agreement"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["lease vs rental agreement", "fixed-term lease", "month-to-month tenancy", "lease difference Ontario", "rental agreement types Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -224,5 +240,6 @@ export default function LeaseVsRentalAgreementPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

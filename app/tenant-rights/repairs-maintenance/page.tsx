@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/repairs-maintenance" },
+  openGraph: {
+    title: "Tenant Rights for Repairs and Maintenance in Ontario | LeasePlain",
+    description: "Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues.",
+    url: "https://leaseplain.com/tenant-rights/repairs-maintenance",
+  },
+  keywords: ["tenant repair rights Ontario", "landlord repair obligations", "rent abatement Ontario", "T6 application LTB", "maintenance rights renter Canada"],
 };
 
 const landlordDuties = [
@@ -66,6 +73,15 @@ const warningsAboutWithholding = [
 
 export default function RepairsMaintenancePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Tenant Rights for Repairs and Maintenance in Ontario"
+        description="Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues."
+        url="https://leaseplain.com/tenant-rights/repairs-maintenance"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["tenant repair rights Ontario", "landlord repair obligations", "rent abatement Ontario", "T6 application LTB", "maintenance rights renter Canada"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -264,5 +280,6 @@ export default function RepairsMaintenancePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -20,6 +20,16 @@ export const metadata: Metadata = {
   description:
     "Upload your residential lease and get a clear, plain-English breakdown of what you're signing. Not legal advice.",
   keywords: ["lease analysis", "rental agreement", "tenant rights", "lease review"],
+  openGraph: {
+    siteName: "LeasePlain",
+    type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "LeasePlain – Understand Your Lease in Plain English" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@leaseplain",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, AlertTriangle, ChevronRight, Upload, BookOpen } from "lucide-react";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "A plain-English guide to tenant rights in Ontario under the Residential Tenancies Act. Covers rent, maintenance, eviction, entry, deposits, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/ontario" },
+  openGraph: {
+    title: "Tenant Rights in Ontario – Complete Guide (RTA 2006) | LeasePlain",
+    description: "Plain-English guide to Ontario tenant rights under the RTA — rent, eviction, deposits, maintenance, and illegal landlord actions.",
+    url: "https://leaseplain.com/tenant-rights/ontario",
+  },
+  keywords: ["tenant rights Ontario", "Ontario RTA", "residential tenancies act", "Ontario landlord tenant rights", "LTB Ontario"],
 };
 
 const coreRights = [
@@ -44,6 +51,15 @@ const illegalLandlordActions = [
 
 export default function OntarioTenantRightsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Tenant Rights in Ontario – Complete Guide (RTA 2006)"
+        description="A plain-English guide to tenant rights in Ontario under the Residential Tenancies Act. Covers rent, maintenance, eviction, entry, deposits, and more."
+        url="https://leaseplain.com/tenant-rights/ontario"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["tenant rights Ontario", "Ontario RTA", "residential tenancies act Ontario", "LTB Ontario", "eviction rights Ontario"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -196,5 +212,6 @@ export default function OntarioTenantRightsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

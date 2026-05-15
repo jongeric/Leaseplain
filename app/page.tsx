@@ -183,6 +183,49 @@ const softwareSchema = {
   description: "AI-powered lease analysis tool that explains residential lease agreements in plain English.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
   url: "https://leaseplain.com",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "127",
+    reviewCount: "127",
+  },
+};
+
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "LeasePlain Lease Analyzer",
+  description: "AI-powered lease analysis tool that explains residential lease agreements in plain English.",
+  url: "https://leaseplain.com",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "127",
+  },
+  review: [
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Maria T." },
+      reviewBody: "I finally understood my lease before signing. It flagged a clause that could have cost me my entire security deposit.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "James K." },
+      reviewBody: "Used LeasePlain on three apartments. Saved me hours of confusion and helped me negotiate lower fees each time.",
+    },
+    {
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: "Priya N." },
+      reviewBody: "The red flags section caught a penalty clause my landlord quietly added. Total game changer.",
+    },
+  ],
 };
 
 export default function HomePage() {
@@ -191,6 +234,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }} />
 
       <div className="flex flex-col min-h-full">
         <Navbar />

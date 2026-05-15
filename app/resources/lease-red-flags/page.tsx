@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AlertTriangle, ChevronRight, Upload, Clock, BookOpen, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "The most common lease red flags in residential leases — what each means, whether it's enforceable, and what to do if you see it.",
   alternates: { canonical: "https://leaseplain.com/resources/lease-red-flags" },
+  openGraph: {
+    title: "15 Lease Red Flags Every Tenant Should Know | LeasePlain",
+    description: "The most common lease red flags in residential leases — what each means, whether it's enforceable, and what to do.",
+    url: "https://leaseplain.com/resources/lease-red-flags",
+  },
+  keywords: ["lease red flags", "bad lease clauses", "lease warning signs", "tenant lease risks", "lease agreement problems"],
 };
 
 const redFlags = [
@@ -130,6 +137,15 @@ const severityColor: Record<string, string> = {
 
 export default function LeaseRedFlagsPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="15 Lease Red Flags Every Tenant Should Know"
+        description="The most common lease red flags in residential leases — what each means, whether it's enforceable, and what to do if you see it."
+        url="https://leaseplain.com/resources/lease-red-flags"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["lease red flags", "bad lease clauses", "lease warning signs", "tenant lease risks"]}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -261,5 +277,6 @@ export default function LeaseRedFlagsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

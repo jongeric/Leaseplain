@@ -16,6 +16,30 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Canada Security Deposit Return Calculator",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Web",
+  url: "https://leaseplain.com/tools/deposit-calculator",
+  description:
+    "Free calculator that determines how much security deposit a tenant should receive back and the landlord's legal return deadline by Canadian province.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
+  provider: { "@type": "Organization", name: "LeasePlain", url: "https://leaseplain.com" },
+  featureList: [
+    "Deposit return amount calculation",
+    "Province-specific return deadlines (7–21 days)",
+    "Wear-and-tear deduction warnings",
+    "Landlord overcharge detection",
+  ],
+};
+
 export default function DepositCalculatorPage() {
-  return <DepositCalculatorClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <DepositCalculatorClient />
+    </>
+  );
 }

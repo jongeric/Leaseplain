@@ -16,6 +16,29 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Canada Rent Increase Calculator",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "Web",
+  url: "https://leaseplain.com/tools/rent-increase-calculator",
+  description:
+    "Free calculator that checks whether a landlord's proposed rent increase is within the legal limit for any Canadian province in 2025.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
+  provider: { "@type": "Organization", name: "LeasePlain", url: "https://leaseplain.com" },
+  featureList: [
+    "2025 rent increase limits for all 10 Canadian provinces",
+    "Instant legal compliance check",
+    "Province-specific guidelines and notices",
+  ],
+};
+
 export default function RentIncreaseCalculatorPage() {
-  return <RentIncreaseClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <RentIncreaseClient />
+    </>
+  );
 }

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Building2, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Types of apartment rentals, standard lease clauses explained, and how to vet a landlord before signing. A complete guide for apartment renters in Canada and the US.",
   alternates: { canonical: "https://leaseplain.com/resources/apartment-lease-guide" },
+  openGraph: {
+    title: "Apartment Lease Guide: What to Know Before Renting | LeasePlain",
+    description: "Types of apartment rentals, standard lease clauses explained, and how to vet a landlord before signing. A complete guide for apartment renters in Canada and the US.",
+    url: "https://leaseplain.com/resources/apartment-lease-guide",
+  },
+  keywords: ["apartment lease guide", "renting an apartment", "apartment lease clauses", "tenant guide Canada"],
 };
 
 export default function ApartmentLeaseGuidePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Apartment Lease Guide: What to Know Before Renting"
+        description="Types of apartment rentals, standard lease clauses explained, and how to vet a landlord before signing. A complete guide for apartment renters in Canada and the US."
+        url="https://leaseplain.com/resources/apartment-lease-guide"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["apartment lease guide", "renting an apartment", "apartment lease clauses", "tenant guide Canada"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -177,5 +193,6 @@ export default function ApartmentLeaseGuidePage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

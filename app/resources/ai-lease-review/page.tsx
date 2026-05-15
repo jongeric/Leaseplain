@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Cpu, CheckCircle, AlertTriangle, ChevronRight, Upload, Clock, BookOpen } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "What can AI actually do when reviewing a lease? Understand the real benefits, the honest limitations, and why AI lease review is a smart first step — not a replacement for a lawyer.",
   alternates: { canonical: "https://leaseplain.com/resources/ai-lease-review" },
+  openGraph: {
+    title: "AI Lease Review: Benefits, Limitations & How It Works | LeasePlain",
+    description: "What can AI actually do when reviewing a lease? Understand the real benefits, the honest limitations, and why AI lease review is a smart first step — not a replacement for a lawyer.",
+    url: "https://leaseplain.com/resources/ai-lease-review",
+  },
+  keywords: ["AI lease review", "lease analysis AI", "AI lease analyzer", "tenant AI tools", "lease review benefits"],
 };
 
 const canDo = [
@@ -54,7 +61,16 @@ const whenUseful = [
 
 export default function AILeaseReviewPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="AI Lease Review: What It Can Do, What It Can't, and When to Use It"
+        description="What can AI actually do when reviewing a lease? Understand the real benefits, the honest limitations, and why AI lease review is a smart first step — not a replacement for a lawyer."
+        url="https://leaseplain.com/resources/ai-lease-review"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["AI lease review", "lease analysis AI", "AI lease analyzer", "tenant AI tools", "lease review benefits"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -218,5 +234,6 @@ export default function AILeaseReviewPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

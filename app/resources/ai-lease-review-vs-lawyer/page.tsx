@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Compare AI lease review and hiring a lawyer — speed, cost, and when each is appropriate. Make the right choice before signing your lease.",
   alternates: { canonical: "https://leaseplain.com/resources/ai-lease-review-vs-lawyer" },
+  openGraph: {
+    title: "AI Lease Review vs. a Lawyer: Which Do You Need? | LeasePlain",
+    description: "Compare AI lease review and hiring a lawyer — speed, cost, and when each is appropriate. Make the right choice before signing your lease.",
+    url: "https://leaseplain.com/resources/ai-lease-review-vs-lawyer",
+  },
+  keywords: ["AI lease review vs lawyer", "lease review cost", "tenant legal advice", "AI vs lawyer lease"],
 };
 
 export default function AILeaseReviewVsLawyerPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="AI Lease Review vs. a Lawyer: Which Do You Need?"
+        description="Compare AI lease review and hiring a lawyer — speed, cost, and when each is appropriate. Make the right choice before signing your lease."
+        url="https://leaseplain.com/resources/ai-lease-review-vs-lawyer"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["AI lease review vs lawyer", "lease review cost", "tenant legal advice", "AI vs lawyer lease"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -213,5 +229,6 @@ export default function AILeaseReviewVsLawyerPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

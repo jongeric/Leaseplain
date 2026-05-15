@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Know what to look for before committing to a rental. Guides covering what to check, red flags to watch for, questions to ask, and hidden fees.",
   alternates: { canonical: "https://leaseplain.com/resources/before-you-sign" },
+  openGraph: {
+    title: "Before You Sign a Lease: Complete Checklist for Renters | LeasePlain",
+    description: "Know what to look for before committing to a rental. Guides covering what to check, red flags to watch for, questions to ask, and hidden fees.",
+    url: "https://leaseplain.com/resources/before-you-sign",
+  },
+  keywords: ["before signing a lease", "lease checklist renters", "lease red flags", "questions to ask landlord", "hidden lease fees"],
 };
 
 const articles = [
@@ -43,7 +50,16 @@ const articles = [
 
 export default function BeforeYouSignPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Before You Sign a Lease: Complete Checklist for Renters"
+        description="Know what to look for before committing to a rental. Guides covering what to check, red flags to watch for, questions to ask, and hidden fees."
+        url="https://leaseplain.com/resources/before-you-sign"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["before signing a lease", "lease checklist renters", "lease red flags", "questions to ask landlord", "hidden lease fees"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -130,5 +146,6 @@ export default function BeforeYouSignPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

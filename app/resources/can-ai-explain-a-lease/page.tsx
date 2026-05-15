@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -12,11 +13,26 @@ export const metadata: Metadata = {
   description:
     "Discover what AI does well when explaining lease agreements, where it struggles, and how to use AI lease explanations effectively.",
   alternates: { canonical: "https://leaseplain.com/resources/can-ai-explain-a-lease" },
+  openGraph: {
+    title: "Can AI Explain a Lease Agreement? What to Expect | LeasePlain",
+    description: "Discover what AI does well when explaining lease agreements, where it struggles, and how to use AI lease explanations effectively.",
+    url: "https://leaseplain.com/resources/can-ai-explain-a-lease",
+  },
+  keywords: ["AI explain lease", "AI lease explanation", "understand lease agreement", "lease plain English", "AI lease tool"],
 };
 
 export default function CanAIExplainALeasePage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
+      <ArticleSchema
+        headline="Can AI Explain a Lease Agreement? What to Expect"
+        description="Discover what AI does well when explaining lease agreements, where it struggles, and how to use AI lease explanations effectively."
+        url="https://leaseplain.com/resources/can-ai-explain-a-lease"
+        datePublished="2025-01-15"
+        dateModified="2026-05-15"
+        keywords={["AI explain lease", "AI lease explanation", "understand lease agreement", "lease plain English", "AI lease tool"]}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
         {/* Hero */}
@@ -234,5 +250,6 @@ export default function CanAIExplainALeasePage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

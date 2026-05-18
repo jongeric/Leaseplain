@@ -2,18 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { TrendingUp, DollarSign } from "lucide-react";
+import {
+  TrendingUp, DollarSign, Clock, Home, FileX, Shield,
+  HelpCircle, BookOpen, Search, ChevronRight,
+} from "lucide-react";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Free Tenant Tools | LeasePlain",
+  title: "Free Tenant Tools for Canadian Renters | LeasePlain",
   description:
-    "Free calculators and tools for Canadian renters — check if your rent increase is legal, calculate your security deposit return, and more.",
+    "Free interactive tools for Canadian renters — rent increase calculator, notice period calculator, lease break estimator, eviction checker, deposit calculator, and more.",
   alternates: { canonical: "https://leaseplain.com/tools" },
   openGraph: {
-    title: "Free Tenant Tools | LeasePlain",
-    description: "Free rent increase calculator, deposit return calculator, and more tools for Canadian tenants.",
+    title: "Free Tenant Tools for Canadian Renters | LeasePlain",
+    description: "9 free calculators and tools for Canadian tenants — know your rights in seconds.",
     url: "https://leaseplain.com/tools",
   },
 };
@@ -33,52 +36,144 @@ const tools = [
     title: "Security Deposit Return Calculator",
     description: "Find out how much of your deposit you should get back and your landlord's legal deadline.",
   },
+  {
+    href: "/tools/notice-period-calculator",
+    icon: Clock,
+    color: "blue",
+    title: "Notice Period Calculator",
+    description: "Find out exactly how much notice is required for rent increases, evictions, entry, and more.",
+  },
+  {
+    href: "/tools/move-in-cost-calculator",
+    icon: Home,
+    color: "emerald",
+    title: "Move-In Cost Calculator",
+    description: "Calculate your total upfront rental costs including deposit, first month, and pet deposit by province.",
+  },
+  {
+    href: "/tools/lease-break-calculator",
+    icon: FileX,
+    color: "amber",
+    title: "Lease Break Cost Estimator",
+    description: "Estimate your financial exposure if you need to break your lease early — province by province.",
+  },
+  {
+    href: "/tools/eviction-notice-checker",
+    icon: Shield,
+    color: "red",
+    title: "Eviction Notice Validity Checker",
+    description: "Enter your province, notice type, and days given to find out if an eviction notice is legally valid.",
+  },
+  {
+    href: "/tools/clause-checker",
+    icon: Search,
+    color: "violet",
+    title: "Lease Clause Red Flag Scanner",
+    description: "Paste any lease clause and instantly scan it for 19 common red flag patterns with risk ratings.",
+  },
+  {
+    href: "/tools/landlord-quiz",
+    icon: HelpCircle,
+    color: "orange",
+    title: "Is My Landlord Allowed To Do This?",
+    description: "Pick a scenario and your province — get a clear Yes, No, or Depends answer with an explanation.",
+  },
+  {
+    href: "/tools/tenant-rights-lookup",
+    icon: BookOpen,
+    color: "teal",
+    title: "Tenant Rights Lookup by Province",
+    description: "Instant reference card: deposits, rent control, notice periods, and tribunal links for all 10 provinces.",
+  },
 ];
+
+const colorMap: Record<string, { bg: string; text: string }> = {
+  indigo:  { bg: "bg-indigo-50",  text: "text-indigo-600" },
+  green:   { bg: "bg-green-50",   text: "text-green-600" },
+  blue:    { bg: "bg-blue-50",    text: "text-blue-600" },
+  emerald: { bg: "bg-emerald-50", text: "text-emerald-600" },
+  amber:   { bg: "bg-amber-50",   text: "text-amber-600" },
+  red:     { bg: "bg-red-50",     text: "text-red-600" },
+  violet:  { bg: "bg-violet-50",  text: "text-violet-600" },
+  orange:  { bg: "bg-orange-50",  text: "text-orange-600" },
+  teal:    { bg: "bg-teal-50",    text: "text-teal-600" },
+};
 
 export default function ToolsPage() {
   return (
     <div className="flex flex-col min-h-full">
       <Navbar />
-      <main className="flex-1 py-12 px-4 bg-slate-50">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">Free Tenant Tools</h1>
-            <p className="text-slate-500 text-sm max-w-md mx-auto">
-              Free calculators and resources for Canadian renters. Know your rights — without a lawyer.
+
+      <main>
+        <section className="bg-slate-50 border-b border-slate-100 py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 text-xs font-semibold text-blue-700 mb-4">
+              <Link href="/" className="hover:underline">Home</Link>
+              <ChevronRight className="w-3 h-3" aria-hidden="true" />
+              <span>Free Tools</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 border border-blue-100">
+              <TrendingUp className="w-3.5 h-3.5" aria-hidden="true" />
+              Free Tenant Tools
+            </div>
+            <h1 className="text-4xl font-bold text-slate-900 mb-4 leading-tight">
+              Free Tools for Canadian Renters
+            </h1>
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              9 free calculators and reference tools covering rent increases, notice periods, lease
+              breaks, eviction notices, deposits, and more. No sign-up required.
             </p>
           </div>
+        </section>
 
-          <div className="flex flex-col gap-4">
-            {tools.map(({ href, icon: Icon, color, title, description }) => (
+        <section className="py-14 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {tools.map(({ href, icon: Icon, color, title, description }) => {
+                const c = colorMap[color] ?? { bg: "bg-slate-50", text: "text-slate-600" };
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col gap-3 hover:border-blue-200 hover:shadow-md transition-all group"
+                  >
+                    <div className={`w-11 h-11 rounded-xl ${c.bg} flex items-center justify-center flex-shrink-0`}>
+                      <Icon className={`w-5 h-5 ${c.text}`} aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h2 className="font-bold text-slate-900 mb-1.5 group-hover:text-blue-700 transition-colors leading-snug">
+                        {title}
+                      </h2>
+                      <p className="text-sm text-slate-500 leading-relaxed">{description}</p>
+                    </div>
+                    <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-blue-600">
+                      Open tool
+                      <ChevronRight className="w-3 h-3" aria-hidden="true" />
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="mt-12 bg-blue-600 rounded-2xl p-8 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div>
+                <h2 className="text-2xl font-bold mb-2">Want a Full Lease Analysis?</h2>
+                <p className="text-blue-100 text-sm leading-relaxed max-w-lg">
+                  These tools answer specific questions — but our AI reads your entire lease and flags
+                  every clause that may violate your provincial rights.
+                </p>
+              </div>
               <Link
-                key={href}
-                href={href}
-                className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex items-start gap-4 hover:shadow-md transition-shadow group"
+                href="/upload"
+                className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors whitespace-nowrap flex-shrink-0"
               >
-                <div className={`w-12 h-12 rounded-xl bg-${color}-50 flex items-center justify-center flex-shrink-0`}>
-                  <Icon className={`w-6 h-6 text-${color}-600`} />
-                </div>
-                <div>
-                  <h2 className="font-bold text-slate-900 mb-1 group-hover:text-indigo-700 transition-colors">{title}</h2>
-                  <p className="text-sm text-slate-500">{description}</p>
-                </div>
+                Analyze My Lease Free
               </Link>
-            ))}
+            </div>
           </div>
-
-          <div className="mt-10 bg-white rounded-2xl border border-slate-100 shadow-sm p-6 text-center">
-            <p className="text-slate-700 text-sm mb-3">
-              Want a full analysis of your lease? LeasePlain reads the whole thing and flags what matters.
-            </p>
-            <Link
-              href="/upload"
-              className="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors text-sm"
-            >
-              Analyze My Lease Free
-            </Link>
-          </div>
-        </div>
+        </section>
       </main>
+
       <Footer />
     </div>
   );

@@ -57,6 +57,18 @@ const NAV_LOCATIONS = {
   },
 };
 
+const NAV_TOOLS = [
+  { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator", desc: "Is the increase legal?" },
+  { label: "Deposit Return Calculator", href: "/tools/deposit-calculator", desc: "How much do I get back?" },
+  { label: "Notice Period Calculator", href: "/tools/notice-period-calculator", desc: "How much notice is required?" },
+  { label: "Move-In Cost Calculator", href: "/tools/move-in-cost-calculator", desc: "Total upfront cost" },
+  { label: "Lease Break Estimator", href: "/tools/lease-break-calculator", desc: "Breaking lease early?" },
+  { label: "Eviction Notice Checker", href: "/tools/eviction-notice-checker", desc: "Is the notice valid?" },
+  { label: "Clause Red Flag Scanner", href: "/tools/clause-checker", desc: "Scan a lease clause" },
+  { label: "Landlord Action Quiz", href: "/tools/landlord-quiz", desc: "Is my landlord allowed to?" },
+  { label: "Tenant Rights Lookup", href: "/tools/tenant-rights-lookup", desc: "Rights by province" },
+];
+
 const NAV_CLAUSES = {
   hub: { label: "All Lease Clauses", href: "/lease-clauses" },
   links: [
@@ -366,6 +378,36 @@ function ClausesPanel({ close }: { close: () => void }) {
   );
 }
 
+function ToolsPanel({ close }: { close: () => void }) {
+  return (
+    <div className="px-4" style={{ width: 400 }}>
+      <Link
+        href="/tools"
+        role="menuitem"
+        onClick={close}
+        className="flex items-center gap-1 text-sm font-semibold text-blue-600 hover:underline mb-3 pb-3 border-b border-slate-100"
+      >
+        All Free Tools
+        <ChevronRight className="w-3 h-3" aria-hidden="true" />
+      </Link>
+      <div className="grid grid-cols-1 gap-0.5">
+        {NAV_TOOLS.map((t) => (
+          <Link
+            key={t.href}
+            href={t.href}
+            role="menuitem"
+            onClick={close}
+            className="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-slate-50 transition-colors group"
+          >
+            <span className="text-sm text-slate-700 group-hover:text-blue-600 transition-colors font-medium">{t.label}</span>
+            <span className="text-xs text-slate-400 group-hover:text-slate-500 ml-3 shrink-0">{t.desc}</span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function TenantRightsPanel({ close }: { close: () => void }) {
   return (
     <div className="flex gap-0 px-1" style={{ width: 560 }}>
@@ -492,6 +534,7 @@ export default function Navbar() {
   const isClausesActive = pathname.startsWith("/lease-clause");
   const isRightsActive = pathname.startsWith("/tenant-rights");
   const isResourcesActive = pathname.startsWith("/resources");
+  const isToolsActive = pathname.startsWith("/tools");
 
   function MobileLinks({ links }: { links: { label: string; href: string }[] }) {
     return (
@@ -511,6 +554,13 @@ export default function Navbar() {
   }
 
   const mobileSections: MobileSection[] = [
+    {
+      key: "tools",
+      label: "Free Tools",
+      content: (
+        <MobileLinks links={[{ label: "All Free Tools", href: "/tools" }, ...NAV_TOOLS.map((t) => ({ label: t.label, href: t.href }))]} />
+      ),
+    },
     {
       key: "locations",
       label: "Locations",
@@ -598,6 +648,10 @@ export default function Navbar() {
           >
             How It Works
           </Link>
+
+          <MegaMenu label="Free Tools" isActive={isToolsActive}>
+            <ToolsPanel close={() => {}} />
+          </MegaMenu>
 
           <MegaMenu label="Locations" isActive={isLocationActive}>
             <LocationsPanel close={() => {}} />

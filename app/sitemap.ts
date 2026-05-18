@@ -25,6 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/tools",                                    0.9, "monthly"),
     url("/tools/rent-increase-calculator",           0.9, "monthly"),
     url("/tools/deposit-calculator",                 0.9, "monthly"),
+    url("/tools/notice-period-calculator",           0.9, "monthly"),
+    url("/tools/move-in-cost-calculator",            0.9, "monthly"),
+    url("/tools/lease-break-calculator",             0.9, "monthly"),
+    url("/tools/eviction-notice-checker",            0.9, "monthly"),
+    url("/tools/clause-checker",                     0.9, "monthly"),
+    url("/tools/landlord-quiz",                      0.9, "monthly"),
+    url("/tools/tenant-rights-lookup",               0.9, "monthly"),
 
     // ── Locations hub ─────────────────────────────────────────────────────────
     url("/locations",           0.9, "monthly"),

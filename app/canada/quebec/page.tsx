@@ -35,6 +35,8 @@ const quebecLeaseIssues = [
 
 const cities = [
   { name: "Montreal", href: "/canada/quebec/montreal", desc: "Canada's largest rental market, bilingual leases, July 1 moving day" },
+  { name: "Quebec City", href: "/canada/quebec/quebec-city", desc: "Provincial capital, lower vacancy than Montreal, French-language leases" },
+  { name: "Laval", href: "/canada/quebec/laval", desc: "Montreal suburb, growing rental market, TAL jurisdiction" },
 ];
 
 export default function QuebecPage() {
@@ -146,7 +148,7 @@ export default function QuebecPage() {
                     </Link>
                   ))}
                 </div>
-                <p className="mt-4 text-sm text-slate-500">More Quebec cities coming soon — Quebec City, Laval, Gatineau, and others.</p>
+                <p className="mt-4 text-sm text-slate-500">More Quebec cities coming soon — Gatineau, Sherbrooke, and others.</p>
               </div>
 
             </div>

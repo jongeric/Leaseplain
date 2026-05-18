@@ -38,6 +38,12 @@ const cities = [
   { name: "Ottawa", href: "/canada/ontario/ottawa", desc: "Government & student renters, competitive downtown core" },
   { name: "Mississauga", href: "/canada/ontario/mississauga", desc: "GTA suburb, growing condo inventory, Ontario RTA applies" },
   { name: "Hamilton", href: "/canada/ontario/hamilton", desc: "Fast-growing city, GTA spillover, strong tenant community" },
+  { name: "Brampton", href: "/canada/ontario/brampton", desc: "Fast-growing GTA city, diverse rental market, Ontario RTA applies" },
+  { name: "London", href: "/canada/ontario/london", desc: "University city, large student rental market, Western University area" },
+  { name: "Kitchener", href: "/canada/ontario/kitchener", desc: "Tech hub, growing rental demand, Waterloo Region proximity" },
+  { name: "Waterloo", href: "/canada/ontario/waterloo", desc: "University town, student-dominated rental market, Waterloo Region" },
+  { name: "Kingston", href: "/canada/ontario/kingston", desc: "Queen's University city, strong student rental demand" },
+  { name: "Oshawa", href: "/canada/ontario/oshawa", desc: "Durham Region city, commuter belt, affordable GTA alternative" },
 ];
 
 export default function OntarioPage() {

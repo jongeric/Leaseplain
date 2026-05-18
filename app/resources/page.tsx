@@ -57,6 +57,9 @@ const categories = [
       { label: "What Is AI Analyzer?", href: "/resources/what-is-ai-lease-analyzer" },
       { label: "AI vs Lawyer", href: "/resources/ai-lease-review-vs-lawyer" },
       { label: "Can AI Explain a Lease?", href: "/resources/can-ai-explain-a-lease" },
+      { label: "Is AI Lease Review Accurate?", href: "/resources/is-ai-lease-review-accurate" },
+      { label: "LeasePlain vs ChatGPT", href: "/resources/leaseplain-vs-chatgpt" },
+      { label: "Upload Lease for Review", href: "/resources/upload-lease-for-review" },
     ],
   },
   {
@@ -79,6 +82,7 @@ const categories = [
     links: [
       { label: "Landlord Checklist", href: "/resources/landlord-lease-checklist" },
       { label: "Common Mistakes", href: "/resources/landlord-lease-mistakes" },
+      { label: "Should You Pay a Lawyer?", href: "/resources/should-you-pay-lawyer-review-lease" },
     ],
   },
 ];

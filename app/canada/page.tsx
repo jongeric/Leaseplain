@@ -43,6 +43,48 @@ const provinces = [
     body: "Tribunal administratif du logement (TAL)",
     highlights: ["Mandatory standard lease form (bail)", "July 1 moving day tradition", "Right of first refusal on renewal"],
   },
+  {
+    name: "Manitoba",
+    href: "/canada/manitoba",
+    law: "Residential Tenancies Act",
+    body: "Residential Tenancies Branch (RTB)",
+    highlights: ["Rent increases require RTB approval", "Security deposit capped at 0.5x monthly rent", "Dispute resolution through RTB"],
+  },
+  {
+    name: "Nova Scotia",
+    href: "/canada/nova-scotia",
+    law: "Residential Tenancies Act",
+    body: "Residential Tenancies Program",
+    highlights: ["Rent increases capped annually", "Security deposit capped at 0.5x monthly rent", "Hearings handled by Director of Residential Tenancies"],
+  },
+  {
+    name: "New Brunswick",
+    href: "/canada/new-brunswick",
+    law: "Residential Tenancies Act",
+    body: "Rentalsman Office",
+    highlights: ["No province-wide rent control", "Security deposit capped at 1x monthly rent", "Disputes handled by the Rentalsman"],
+  },
+  {
+    name: "Saskatchewan",
+    href: "/canada/saskatchewan",
+    law: "Residential Tenancies Act",
+    body: "Office of Residential Tenancies",
+    highlights: ["No rent control", "Security deposit capped at 1x monthly rent", "Disputes via Office of Residential Tenancies"],
+  },
+  {
+    name: "Prince Edward Island",
+    href: "/canada/prince-edward-island",
+    law: "Rental of Residential Property Act",
+    body: "Island Regulatory and Appeals Commission",
+    highlights: ["Rent review process for increases", "Security deposit capped at 2 months' rent", "IRAC handles disputes"],
+  },
+  {
+    name: "Newfoundland & Labrador",
+    href: "/canada/newfoundland-and-labrador",
+    law: "Residential Tenancies Act",
+    body: "Digital Government & Service NL",
+    highlights: ["No rent control", "Security deposit capped at 75% of one month's rent", "Disputes via Residential Tenancies Section"],
+  },
 ];
 
 const keyFacts = [
@@ -147,7 +189,7 @@ export default function CanadaPage() {
                   ))}
                 </div>
                 <p className="mt-4 text-sm text-slate-500">
-                  More provinces coming soon — New Brunswick, Nova Scotia, Manitoba, Saskatchewan, and others.
+                  More provincial guides coming soon — Northwest Territories, Yukon, and Nunavut.
                 </p>
               </div>
 
@@ -194,13 +236,15 @@ export default function CanadaPage() {
               </div>
 
               <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
-                <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
+                <h3 className="font-semibold text-slate-900 mb-3 text-sm">Popular Cities</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "Ontario Tenant Rights", href: "/canada/ontario" },
-                    { label: "BC Tenant Rights", href: "/canada/british-columbia" },
-                    { label: "Alberta Tenant Rights", href: "/canada/alberta" },
-                    { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+                    { label: "Toronto", href: "/canada/ontario/toronto" },
+                    { label: "Ottawa", href: "/canada/ontario/ottawa" },
+                    { label: "Vancouver", href: "/canada/british-columbia/vancouver" },
+                    { label: "Calgary", href: "/canada/alberta/calgary" },
+                    { label: "Edmonton", href: "/canada/alberta/edmonton" },
+                    { label: "Montreal", href: "/canada/quebec/montreal" },
                     { label: "All Locations", href: "/locations" },
                   ].map((l) => (
                     <li key={l.href}>

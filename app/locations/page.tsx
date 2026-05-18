@@ -39,6 +39,64 @@ const canadaProvinces = [
     law: "Civil Code of Quebec",
     highlight: "TAL tribunal, standard bail form",
   },
+  {
+    name: "Manitoba",
+    href: "/canada/manitoba",
+    law: "Residential Tenancies Act",
+    highlight: "RTB approval for rent increases",
+  },
+  {
+    name: "Nova Scotia",
+    href: "/canada/nova-scotia",
+    law: "Residential Tenancies Act",
+    highlight: "Annual rent increase cap",
+  },
+  {
+    name: "New Brunswick",
+    href: "/canada/new-brunswick",
+    law: "Residential Tenancies Act",
+    highlight: "No rent control, Rentalsman disputes",
+  },
+  {
+    name: "Saskatchewan",
+    href: "/canada/saskatchewan",
+    law: "Residential Tenancies Act",
+    highlight: "No rent control, ORT disputes",
+  },
+  {
+    name: "Prince Edward Island",
+    href: "/canada/prince-edward-island",
+    law: "Rental of Residential Property Act",
+    highlight: "IRAC rent review process",
+  },
+  {
+    name: "Newfoundland & Labrador",
+    href: "/canada/newfoundland-and-labrador",
+    law: "Residential Tenancies Act",
+    highlight: "No rent control, 75% deposit cap",
+  },
+];
+
+const canadaCities = [
+  { name: "Toronto", href: "/canada/ontario/toronto" },
+  { name: "Ottawa", href: "/canada/ontario/ottawa" },
+  { name: "Mississauga", href: "/canada/ontario/mississauga" },
+  { name: "Hamilton", href: "/canada/ontario/hamilton" },
+  { name: "Brampton", href: "/canada/ontario/brampton" },
+  { name: "London", href: "/canada/ontario/london" },
+  { name: "Kitchener", href: "/canada/ontario/kitchener" },
+  { name: "Waterloo", href: "/canada/ontario/waterloo" },
+  { name: "Kingston", href: "/canada/ontario/kingston" },
+  { name: "Oshawa", href: "/canada/ontario/oshawa" },
+  { name: "Vancouver", href: "/canada/british-columbia/vancouver" },
+  { name: "Burnaby", href: "/canada/british-columbia/burnaby" },
+  { name: "Surrey", href: "/canada/british-columbia/surrey" },
+  { name: "Victoria", href: "/canada/british-columbia/victoria" },
+  { name: "Calgary", href: "/canada/alberta/calgary" },
+  { name: "Edmonton", href: "/canada/alberta/edmonton" },
+  { name: "Montreal", href: "/canada/quebec/montreal" },
+  { name: "Quebec City", href: "/canada/quebec/quebec-city" },
+  { name: "Laval", href: "/canada/quebec/laval" },
 ];
 
 const usStates = [
@@ -63,6 +121,12 @@ const usStates = [
     highlight: "No statewide rent control",
     comingSoon: true,
   },
+];
+
+const usCities = [
+  { name: "New York City", href: "/united-states/new-york/new-york-city" },
+  { name: "Los Angeles", href: "/united-states/california/los-angeles" },
+  { name: "Miami", href: "/united-states/florida/miami" },
 ];
 
 export default function LocationsPage() {
@@ -115,10 +179,15 @@ export default function LocationsPage() {
               </div>
 
               <div>
-                <div className="flex items-center gap-2 mb-5">
+                <div className="flex items-center gap-2 mb-2">
                   <MapPin className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                  <h2 className="text-2xl font-bold text-slate-900">Canada</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    <Link href="/canada" className="hover:text-blue-700 transition-colors">Canada</Link>
+                  </h2>
                 </div>
+                <p className="text-slate-600 text-sm mb-5">
+                  Browse by province — or <Link href="/canada" className="text-blue-600 hover:underline">see the full Canada overview</Link>.
+                </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {canadaProvinces.map((p) => (
                     <Link
@@ -137,15 +206,28 @@ export default function LocationsPage() {
                     </Link>
                   ))}
                 </div>
-                <p className="mt-4 text-sm text-slate-500">
-                  More provinces coming soon — New Brunswick, Nova Scotia, Manitoba, Saskatchewan, and others.
-                </p>
+                <div className="mt-6">
+                  <h3 className="text-base font-semibold text-slate-800 mb-3">Canadian Cities</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {canadaCities.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className="text-sm text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-100 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <div>
-                <div className="flex items-center gap-2 mb-5">
+                <div className="flex items-center gap-2 mb-2">
                   <Globe className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                  <h2 className="text-2xl font-bold text-slate-900">United States</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    <Link href="/united-states" className="hover:text-blue-700 transition-colors">United States</Link>
+                  </h2>
                   <span className="text-xs bg-amber-100 text-amber-700 font-semibold px-2 py-0.5 rounded-full border border-amber-200">
                     Coming Soon
                   </span>
@@ -153,7 +235,7 @@ export default function LocationsPage() {
                 <p className="text-slate-700 leading-relaxed mb-5">
                   LeasePlain is expanding to the United States. US tenancy law is governed at the state
                   level, with some cities like New York City and Los Angeles having additional local
-                  regulations. Our AI lease analysis will be calibrated to each state's specific rules.
+                  regulations. See the <Link href="/united-states" className="text-blue-600 hover:underline">US overview</Link> or browse by state below.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {usStates.map((s) => (
@@ -179,6 +261,20 @@ export default function LocationsPage() {
                       <p className="text-sm text-slate-600">{s.highlight}</p>
                     </Link>
                   ))}
+                </div>
+                <div className="mt-6">
+                  <h3 className="text-base font-semibold text-slate-800 mb-3">US Cities</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {usCities.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className="text-sm text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-100 px-3 py-1.5 rounded-full transition-colors"
+                      >
+                        {c.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -217,10 +313,19 @@ export default function LocationsPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Browse by Province</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "Canada Overview", href: "/canada" },
                     { label: "Ontario", href: "/canada/ontario" },
                     { label: "British Columbia", href: "/canada/british-columbia" },
                     { label: "Alberta", href: "/canada/alberta" },
                     { label: "Quebec", href: "/canada/quebec" },
+                    { label: "Manitoba", href: "/canada/manitoba" },
+                    { label: "Nova Scotia", href: "/canada/nova-scotia" },
+                    { label: "New Brunswick", href: "/canada/new-brunswick" },
+                    { label: "Saskatchewan", href: "/canada/saskatchewan" },
+                    { label: "United States Overview", href: "/united-states" },
+                    { label: "New York", href: "/united-states/new-york" },
+                    { label: "California", href: "/united-states/california" },
+                    { label: "Florida", href: "/united-states/florida" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

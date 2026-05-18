@@ -21,9 +21,39 @@ const guides = [
     badge: "Most comprehensive",
   },
   {
+    title: "Tenant Rights in Canada",
+    description: "How Canadian tenancy law works province by province — deposits, rent control, notice periods, and dispute bodies.",
+    href: "/tenant-rights/canada",
+    badge: null,
+  },
+  {
+    title: "Tenant Rights in British Columbia",
+    description: "BC tenant rights under the Residential Tenancy Act — RTB disputes, deposit rules, and rent increase limits.",
+    href: "/tenant-rights/british-columbia",
+    badge: null,
+  },
+  {
+    title: "Tenant Rights in Alberta",
+    description: "Alberta tenant rights under the Residential Tenancies Act — RTDRS process, deposit rules, and notice periods.",
+    href: "/tenant-rights/alberta",
+    badge: null,
+  },
+  {
+    title: "Tenant Rights in Quebec",
+    description: "Quebec tenant rights under the Civil Code — the TAL tribunal, standard bail form, and rent increase rules.",
+    href: "/tenant-rights/quebec",
+    badge: null,
+  },
+  {
     title: "Tenant Rights in Toronto",
     description: "Toronto-specific resources, organizations, and how to navigate the LTB in Ontario's largest city.",
     href: "/tenant-rights/toronto",
+    badge: null,
+  },
+  {
+    title: "Tenant Rights in the United States",
+    description: "Overview of US tenant rights by state — New York, California, Florida, and general federal protections.",
+    href: "/tenant-rights/united-states",
     badge: null,
   },
   {
@@ -42,6 +72,18 @@ const guides = [
     title: "Landlord Responsibilities",
     description: "What your landlord is legally required to do — maintenance, entry notice, heat, pests, and more.",
     href: "/tenant-rights/landlord-responsibilities",
+    badge: null,
+  },
+  {
+    title: "Eviction Notices",
+    description: "Types of eviction notices in Canada, what they mean, how to respond, and when they can be challenged.",
+    href: "/tenant-rights/eviction-notices",
+    badge: null,
+  },
+  {
+    title: "Repairs & Maintenance Rights",
+    description: "Your landlord's duty to maintain a habitable unit — what qualifies, how to request repairs, and your remedies.",
+    href: "/tenant-rights/repairs-maintenance",
     badge: null,
   },
 ];

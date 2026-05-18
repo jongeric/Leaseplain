@@ -35,6 +35,9 @@ const bcLeaseIssues = [
 
 const cities = [
   { name: "Vancouver", href: "/canada/british-columbia/vancouver", desc: "Canada's most expensive rental market, RTB dispute volume high" },
+  { name: "Burnaby", href: "/canada/british-columbia/burnaby", desc: "Metro Vancouver city, SFU area, high-rise rental market" },
+  { name: "Surrey", href: "/canada/british-columbia/surrey", desc: "BC's second-largest city, growing rental supply, diverse market" },
+  { name: "Victoria", href: "/canada/british-columbia/victoria", desc: "BC capital, UVic student market, low vacancy rates" },
 ];
 
 export default function BritishColumbiaPage() {
@@ -147,7 +150,7 @@ export default function BritishColumbiaPage() {
                   ))}
                 </div>
                 <p className="mt-4 text-sm text-slate-500">
-                  More BC cities coming soon — Victoria, Kelowna, Surrey, and others.
+                  More BC cities coming soon — Kelowna, Abbotsford, and others.
                 </p>
               </div>
 

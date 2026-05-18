@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE = "https://leaseplain.com";
-const NOW = new Date("2026-05-12");
+const NOW = new Date("2026-05-18");
 
 type Entry = MetadataRoute.Sitemap[number];
 

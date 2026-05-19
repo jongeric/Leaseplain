@@ -40,6 +40,20 @@ export default function WhatIsALeaseAgreementPage() {
         { name: "Lease Basics", href: "https://leaseplain.com/resources/lease-basics" },
         { name: "What Is a Lease Agreement?", href: "https://leaseplain.com/resources/what-is-a-lease-agreement" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/what-is-a-lease-agreement",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -62,7 +76,7 @@ export default function WhatIsALeaseAgreementPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               What Is a Lease Agreement? A Plain-English Explanation
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               A lease agreement is one of the most important documents you'll ever sign. Here's
               exactly what it is, what it must contain, and why it matters.
             </p>

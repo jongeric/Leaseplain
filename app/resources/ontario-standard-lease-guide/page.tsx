@@ -133,6 +133,20 @@ export default function OntarioStandardLeaseGuidePage() {
         dateModified="2026-05-15"
         keywords={["Ontario standard lease", "Form 2229E", "Ontario RTA lease", "standard lease form Ontario", "Schedule A lease Ontario"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/ontario-standard-lease-guide",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -149,7 +163,7 @@ export default function OntarioStandardLeaseGuidePage() {
                 className="text-indigo-300 mb-6 [&_a]:text-indigo-300 [&_a:hover]:text-white [&_span.text-slate-900]:text-white"
               />
               <h1 className="text-4xl font-bold mb-4">Ontario Standard Lease Guide</h1>
-              <p className="text-xl text-slate-300 max-w-2xl">
+              <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
                 Ontario&apos;s mandatory residential lease form (Form 2229E) — explained section by
                 section. What each part means and what landlords cannot legally add or change.
               </p>

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Guides, updates, and plain-English explanations of Canadian rental law — rent increase rules, eviction notices, tenant rights by province, and more.",
     url: "https://leaseplain.com/blog",
+    type: "website",
   },
 };
 
@@ -80,6 +81,21 @@ const categoryColor: Record<string, string> = {
 
 export default function BlogPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -98,7 +114,7 @@ export default function BlogPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights Blog
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Plain-English guides, provincial law updates, and practical advice for Canadian
               renters — covering rent increases, eviction rules, deposits, and more.
             </p>
@@ -155,5 +171,6 @@ export default function BlogPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

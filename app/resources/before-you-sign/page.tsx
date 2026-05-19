@@ -66,6 +66,20 @@ export default function BeforeYouSignPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "Before You Sign", href: "https://leaseplain.com/resources/before-you-sign" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/before-you-sign",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -86,7 +100,7 @@ export default function BeforeYouSignPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Before You Sign a Lease: Complete Checklist for Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Signing a lease is a serious commitment. These guides help you know what to look for,
               what red flags to spot, and what questions to ask before you commit.
             </p>

@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     url: "https://leaseplain.com/resources/leaseplain-vs-chatgpt",
     type: "website",
   },
+
 };
 
 const comparisonRows = [
@@ -127,6 +128,20 @@ export default function LeasePlainVsChatGPTPage() {
         dateModified="2026-05-15"
         keywords={["leaseplain vs chatgpt", "AI lease review tool comparison", "best AI for lease review", "chatgpt lease analysis", "ai lease analyzer"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/leaseplain-vs-chatgpt",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -143,7 +158,7 @@ export default function LeasePlainVsChatGPTPage() {
               className="text-indigo-300 mb-6 [&_a]:text-indigo-300 [&_a:hover]:text-white [&_span.text-slate-900]:text-white"
             />
             <h1 className="text-4xl font-bold mb-4">LeasePlain vs ChatGPT for Lease Review</h1>
-            <p className="text-xl text-slate-300 max-w-2xl">
+            <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
               Both are AI tools. One is purpose-built for lease analysis; the other is a
               general-purpose chatbot. Here&apos;s what that difference actually means for renters.
             </p>

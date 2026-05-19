@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Renter Guides: Lease Help for Every Situation | LeasePlain",
     description: "Lease guides for every type of renter — first-time renters, students, condo tenants, and apartment dwellers. Plain-English help for Ontario renters.",
     url: "https://leaseplain.com/resources/tenant-guides",
+    type: "website",
   },
   keywords: ["renter guides", "tenant lease help", "Ontario renter resources", "lease guide for tenants", "tenant rights Canada"],
 };
@@ -65,6 +66,20 @@ export default function TenantGuidesPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/tenant-guides",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -85,7 +100,7 @@ export default function TenantGuidesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Renter Guides: Lease Help for Every Situation
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Whether you're renting for the first time, heading back to campus, or moving into a
               condo, these guides cover the lease issues that matter most for your situation.
             </p>

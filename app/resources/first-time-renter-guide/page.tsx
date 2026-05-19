@@ -57,6 +57,20 @@ export default function FirstTimeRenterGuidePage() {
         { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
         { name: "First-Time Renter Guide", href: "https://leaseplain.com/resources/first-time-renter-guide" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/first-time-renter-guide",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -79,7 +93,7 @@ export default function FirstTimeRenterGuidePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               First-Time Renter Guide: How to Read and Sign a Lease
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Renting for the first time in Ontario? Here's what you need to know — from
               budgeting and finding a place, to understanding your lease and knowing your rights.
             </p>

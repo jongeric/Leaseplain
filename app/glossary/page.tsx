@@ -123,11 +123,26 @@ const riskBadge = (risk: string) => {
 
 export default function GlossaryPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/glossary",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
+    <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -145,7 +160,7 @@ export default function GlossaryPage() {
               <BookOpen className="w-8 h-8 text-indigo-400" />
               <h1 className="text-4xl font-bold">Lease Glossary</h1>
             </div>
-            <p className="text-xl text-slate-300 max-w-2xl">
+            <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
               Plain-English definitions of every term you might encounter in a residential lease.
               Know what you&apos;re signing before you sign it.
             </p>
@@ -288,5 +303,6 @@ export default function GlossaryPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Can AI Explain a Lease Agreement? What to Expect | LeasePlain",
     description: "Discover what AI does well when explaining lease agreements, where it struggles, and how to use AI lease explanations effectively.",
     url: "https://leaseplain.com/resources/can-ai-explain-a-lease",
+    type: "website",
   },
   keywords: ["AI explain lease", "AI lease explanation", "understand lease agreement", "lease plain English", "AI lease tool"],
 };
@@ -39,6 +40,20 @@ export default function CanAIExplainALeasePage() {
         { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
         { name: "Can AI Explain a Lease?", href: "https://leaseplain.com/resources/can-ai-explain-a-lease" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/can-ai-explain-a-lease",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function CanAIExplainALeasePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Can AI Explain a Lease Agreement? What to Expect
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Modern AI is surprisingly good at translating lease language into plain English.
               Here's what it does well, what it struggles with, and how to use it effectively.
             </p>

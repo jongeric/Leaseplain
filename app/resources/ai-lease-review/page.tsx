@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "AI Lease Review: Benefits, Limitations & How It Works | LeasePlain",
     description: "What can AI actually do when reviewing a lease? Understand the real benefits, the honest limitations, and why AI lease review is a smart first step — not a replacement for a lawyer.",
     url: "https://leaseplain.com/resources/ai-lease-review",
+    type: "website",
   },
   keywords: ["AI lease review", "lease analysis AI", "AI lease analyzer", "tenant AI tools", "lease review benefits"],
 };
@@ -76,6 +77,20 @@ export default function AILeaseReviewPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/ai-lease-review",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -100,7 +115,7 @@ export default function AILeaseReviewPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               AI Lease Review: What It Can Do, What It Can't, and When to Use It
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               AI-powered lease analysis is a genuinely useful tool for tenants — but it's not magic.
               Here's an honest look at the real benefits, the real limitations, and how to use
               AI review intelligently alongside (not instead of) proper legal advice.

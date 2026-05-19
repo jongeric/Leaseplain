@@ -85,6 +85,21 @@ const clauses = [
 
 export default function LeaseClausesPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/lease-clauses",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -104,7 +119,7 @@ export default function LeaseClausesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Clauses Explained: Common Terms in Residential Agreements
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Every residential lease is packed with legal language. Some clauses protect you.
               Others can be unenforceable — or outright illegal under Ontario&apos;s{" "}
               <em>Residential Tenancies Act</em>. This library breaks down the most important
@@ -215,5 +230,6 @@ export default function LeaseClausesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

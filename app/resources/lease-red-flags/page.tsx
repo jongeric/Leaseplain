@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     title: "15 Lease Red Flags Every Tenant Should Know | LeasePlain",
     description: "The most common lease red flags in residential leases — what each means, whether it's enforceable, and what to do.",
     url: "https://leaseplain.com/resources/lease-red-flags",
+    type: "website",
   },
   keywords: ["lease red flags", "bad lease clauses", "lease warning signs", "tenant lease risks", "lease agreement problems"],
 };

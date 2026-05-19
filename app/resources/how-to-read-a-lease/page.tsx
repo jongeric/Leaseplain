@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "How to Read a Lease Agreement – Step-by-Step Guide | LeasePlain",
     description: "Learn how to read a residential lease agreement. A step-by-step guide covering each section, what to look for, and the questions to ask before signing.",
     url: "https://leaseplain.com/resources/how-to-read-a-lease",
+    type: "website",
   },
   keywords: ["how to read a lease", "lease agreement guide", "understanding lease clauses", "lease review steps", "residential lease explained"],
 };

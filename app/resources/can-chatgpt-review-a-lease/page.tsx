@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     description:
       "ChatGPT can explain lease language, but it doesn't know Canadian provincial tenancy law. Here's what it can and can't do — and what to use instead.",
     url: "https://leaseplain.com/resources/can-chatgpt-review-a-lease",
+    type: "website",
   },
 };
 
@@ -177,6 +178,20 @@ export default function CanChatGPTReviewALeasePage() {
         dateModified="2026-05-18"
         keywords={["can chatgpt review a lease", "chatgpt lease review Canada", "AI lease review Ontario", "chatgpt vs leaseplain", "chatgpt Canadian tenancy law"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/can-chatgpt-review-a-lease",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -193,7 +208,7 @@ export default function CanChatGPTReviewALeasePage() {
                 className="text-indigo-300 mb-6 [&_a]:text-indigo-300 [&_a:hover]:text-white [&_span.text-slate-900]:text-white"
               />
               <h1 className="text-4xl font-bold mb-4">Can ChatGPT Review a Lease?</h1>
-              <p className="text-xl text-slate-300 max-w-2xl">
+              <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
                 Honest answer for Canadian renters: ChatGPT can explain lease language, but it
                 doesn&apos;t know your province&apos;s tenancy law. Here&apos;s exactly what it
                 can and can&apos;t do.

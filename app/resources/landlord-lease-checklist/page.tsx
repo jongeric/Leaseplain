@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Landlord Lease Checklist: What Every Residential Lease Must Include | LeasePlain",
     description: "A complete checklist for landlords creating or reviewing a residential lease — clauses, disclosures, and legal requirements you can't afford to miss in Canada.",
     url: "https://leaseplain.com/resources/landlord-lease-checklist",
+    type: "website",
   },
   keywords: ["landlord lease checklist", "residential lease requirements Canada", "lease drafting checklist", "what to include in a lease", "landlord legal requirements"],
 };
@@ -96,6 +97,20 @@ export default function LandlordLeaseChecklistPage() {
         { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
         { name: "Landlord Lease Checklist", href: "https://leaseplain.com/resources/landlord-lease-checklist" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/landlord-lease-checklist",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -118,7 +133,7 @@ export default function LandlordLeaseChecklistPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Landlord Lease Checklist: What Every Residential Lease Must Include
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               A well-drafted lease protects both you and your tenant. Use this checklist to confirm your
               residential lease covers everything it needs to — before handing it over.
             </p>

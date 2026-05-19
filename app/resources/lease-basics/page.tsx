@@ -66,6 +66,20 @@ export default function LeaseBasicsPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "Lease Basics", href: "https://leaseplain.com/resources/lease-basics" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/lease-basics",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -86,7 +100,7 @@ export default function LeaseBasicsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Lease Basics: Everything You Need to Know About Rental Agreements
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Whether you're signing your first lease or your tenth, these guides break down the
               fundamentals of rental agreements in plain English.
             </p>

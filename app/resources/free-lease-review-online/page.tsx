@@ -163,6 +163,20 @@ export default function FreeLeaseReviewOnlinePage() {
         dateModified="2026-05-18"
         keywords={["free lease review online", "lease review free Canada", "tenant legal clinic", "AI lease review", "provincial tenant helpline"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/free-lease-review-online",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -179,7 +193,7 @@ export default function FreeLeaseReviewOnlinePage() {
                 className="text-indigo-300 mb-6 [&_a]:text-indigo-300 [&_a:hover]:text-white [&_span.text-slate-900]:text-white"
               />
               <h1 className="text-4xl font-bold mb-4">Free Lease Review Online: Your Options in 2026</h1>
-              <p className="text-xl text-slate-300 max-w-2xl">
+              <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
                 Five ways to get your lease reviewed without paying a lawyer — what each option
                 can do, what it can&apos;t, and who each is best for.
               </p>

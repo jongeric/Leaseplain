@@ -40,6 +40,20 @@ export default function HiddenLeaseFeesPage() {
         { name: "Before You Sign", href: "https://leaseplain.com/resources/before-you-sign" },
         { name: "Hidden Lease Fees", href: "https://leaseplain.com/resources/hidden-lease-fees" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/hidden-lease-fees",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -62,7 +76,7 @@ export default function HiddenLeaseFeesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               How to Spot Hidden Fees in Your Lease Agreement
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Some landlords bury extra charges in the fine print. Here's how to find them,
               which ones are illegal in Ontario, and how to push back.
             </p>

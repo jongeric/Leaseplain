@@ -108,6 +108,20 @@ export default function CheckBeforeSigningPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "What to Check Before Signing", href: "https://leaseplain.com/resources/check-before-signing-lease" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/check-before-signing-lease",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "HowTo",
@@ -146,7 +160,7 @@ export default function CheckBeforeSigningPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               What to Check Before Signing a Lease
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Signing a lease is a legally binding commitment. Take the time to check these items
               before you sign — it can save you months of stress and thousands of dollars.
             </p>

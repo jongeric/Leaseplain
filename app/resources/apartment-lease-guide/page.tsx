@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Apartment Lease Guide: What to Know Before Renting | LeasePlain",
     description: "Types of apartment rentals, standard lease clauses explained, and how to vet a landlord before signing. A complete guide for apartment renters in Canada and the US.",
     url: "https://leaseplain.com/resources/apartment-lease-guide",
+    type: "website",
   },
   keywords: ["apartment lease guide", "renting an apartment", "apartment lease clauses", "tenant guide Canada"],
 };
@@ -39,6 +40,20 @@ export default function ApartmentLeaseGuidePage() {
         { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
         { name: "Apartment Lease Guide", href: "https://leaseplain.com/resources/apartment-lease-guide" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/apartment-lease-guide",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function ApartmentLeaseGuidePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Apartment Lease Guide: What to Know Before Renting
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Apartment leases are the most common type of rental agreement. Understanding what you&apos;re
               signing — and what landlords can and can&apos;t include — puts you in a much stronger position
               before move-in day.

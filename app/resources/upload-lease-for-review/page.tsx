@@ -40,6 +40,20 @@ export default function UploadLeaseForReviewPage() {
         { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
         { name: "Upload Lease for Review", href: "https://leaseplain.com/resources/upload-lease-for-review" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/upload-lease-for-review",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -62,7 +76,7 @@ export default function UploadLeaseForReviewPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Upload Your Lease for AI Review: How It Works
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Getting a plain-English analysis of your lease takes less than a minute. Here's
               exactly what to do and what to expect.
             </p>

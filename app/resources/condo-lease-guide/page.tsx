@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Condo Lease Guide: What's Different About Renting a Condo | LeasePlain",
     description: "Renting a condo is different from renting in a purpose-built building. Learn about condo rules, investor landlords, your rights if the unit is sold, and what to watch for in a condo lease.",
     url: "https://leaseplain.com/resources/condo-lease-guide",
+    type: "website",
   },
   keywords: ["condo lease guide", "renting a condo", "condo tenant rights", "investor landlord lease", "condo corporation rules"],
 };
@@ -39,6 +40,20 @@ export default function CondoLeaseGuidePage() {
         { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
         { name: "Condo Lease Guide", href: "https://leaseplain.com/resources/condo-lease-guide" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/condo-lease-guide",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function CondoLeaseGuidePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Condo Lease Guide: What&apos;s Different About Renting a Condo
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Condo rentals look like any other tenancy — but they come with a layer of complexity that
               can catch renters off guard. Here&apos;s what you need to know before signing a condo lease.
             </p>

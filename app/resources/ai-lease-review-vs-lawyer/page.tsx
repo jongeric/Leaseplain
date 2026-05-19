@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "AI Lease Review vs. a Lawyer: Which Do You Need? | LeasePlain",
     description: "Compare AI lease review and hiring a lawyer — speed, cost, and when each is appropriate. Make the right choice before signing your lease.",
     url: "https://leaseplain.com/resources/ai-lease-review-vs-lawyer",
+    type: "website",
   },
   keywords: ["AI lease review vs lawyer", "lease review cost", "tenant legal advice", "AI vs lawyer lease"],
 };
@@ -39,6 +40,20 @@ export default function AILeaseReviewVsLawyerPage() {
         { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
         { name: "AI vs Lawyer", href: "https://leaseplain.com/resources/ai-lease-review-vs-lawyer" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/ai-lease-review-vs-lawyer",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function AILeaseReviewVsLawyerPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               AI Lease Review vs. a Lawyer: Which Do You Need?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               AI tools and lawyers both have a role in helping you understand a lease — but they
               serve different purposes and suit different situations.
             </p>

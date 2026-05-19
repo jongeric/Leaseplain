@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "20 Questions to Ask Before Signing a Lease | LeasePlain",
     description: "The questions every renter should ask before signing a lease in Ontario — about the unit, lease terms, the landlord, and fees.",
     url: "https://leaseplain.com/resources/questions-before-signing",
+    type: "website",
   },
   keywords: ["questions to ask before signing a lease", "lease signing checklist", "what to ask landlord", "renter questions Ontario", "before you sign a lease"],
 };
@@ -39,6 +40,20 @@ export default function QuestionsBeforeSigningPage() {
         { name: "Before You Sign", href: "https://leaseplain.com/resources/before-you-sign" },
         { name: "Questions to Ask", href: "https://leaseplain.com/resources/questions-before-signing" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/questions-before-signing",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function QuestionsBeforeSigningPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               20 Questions to Ask Before Signing a Lease
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Asking the right questions before signing can save you from costly surprises. Here
               are 20 questions every renter should ask their landlord.
             </p>

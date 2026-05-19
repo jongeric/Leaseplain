@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Landlord Guides: Lease Resources for Property Owners | LeasePlain",
     description: "Practical lease guides for landlords — avoid common mistakes, create airtight leases, and understand your obligations under Canadian landlord-tenant law.",
     url: "https://leaseplain.com/resources/landlord-guides",
+    type: "website",
   },
   keywords: ["landlord lease guide", "landlord obligations Canada", "residential lease tips landlord", "property owner lease help"],
 };
@@ -53,6 +54,20 @@ export default function LandlordGuidesPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/landlord-guides",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -73,7 +88,7 @@ export default function LandlordGuidesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Landlord Guides: Lease Resources for Property Owners
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Creating a compliant, enforceable lease protects you and your tenant. These guides walk
               through what Canadian landlords need to know about drafting, reviewing, and managing
               residential lease agreements.

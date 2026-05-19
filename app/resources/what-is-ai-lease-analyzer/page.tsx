@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "What Is an AI Lease Analyzer? How It Works | LeasePlain",
     description: "Learn what an AI lease analyzer is, how it works, what it can and cannot do, and how LeasePlain uses AI to explain your lease in plain English.",
     url: "https://leaseplain.com/resources/what-is-ai-lease-analyzer",
+    type: "website",
   },
   keywords: ["AI lease analyzer", "what is AI lease review", "how lease AI works", "lease analysis tool", "LeasePlain AI"],
 };
@@ -39,6 +40,20 @@ export default function WhatIsAILeaseAnalyzerPage() {
         { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
         { name: "What Is an AI Lease Analyzer?", href: "https://leaseplain.com/resources/what-is-ai-lease-analyzer" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/what-is-ai-lease-analyzer",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function WhatIsAILeaseAnalyzerPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               What Is an AI Lease Analyzer? How It Works and What It Can Do
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               AI lease analyzers are changing how renters understand their contracts. Here's
               exactly what the technology does, how LeasePlain's AI works, and what its
               limitations are.

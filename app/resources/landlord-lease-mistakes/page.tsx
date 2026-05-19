@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Common Landlord Lease Mistakes (and How to Avoid Them) | LeasePlain",
     description: "The most frequent lease drafting errors that create legal exposure for Canadian landlords — and what to do instead. Avoid these mistakes before your next tenancy.",
     url: "https://leaseplain.com/resources/landlord-lease-mistakes",
+    type: "website",
   },
   keywords: ["landlord lease mistakes", "lease drafting errors Canada", "illegal lease clauses landlord", "landlord mistakes Ontario", "lease compliance landlord"],
 };
@@ -74,6 +75,20 @@ export default function LandlordLeaseMistakesPage() {
         { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
         { name: "Landlord Lease Mistakes", href: "https://leaseplain.com/resources/landlord-lease-mistakes" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/landlord-lease-mistakes",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -96,7 +111,7 @@ export default function LandlordLeaseMistakesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Common Landlord Lease Mistakes (and How to Avoid Them)
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Most landlord-tenant disputes trace back to a poorly written lease. These are the most
               frequent mistakes Canadian landlords make — and what to do instead.
             </p>

@@ -708,11 +708,26 @@ export default async function GlossaryTermPage({
   ];
 
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": `https://leaseplain.com/glossary/${entry.slug}`,
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
+    <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -731,7 +746,7 @@ export default async function GlossaryTermPage({
               <h1 className="text-4xl font-bold">{entry.term}</h1>
               {getRiskBadge(entry.riskLevel)}
             </div>
-            <p className="text-xl text-slate-300 max-w-2xl">{entry.definition}</p>
+            <p className="text-xl text-slate-300 max-w-2xl speakable-summary">{entry.definition}</p>
           </div>
         </div>
 
@@ -817,5 +832,6 @@ export default async function GlossaryTermPage({
 
       <Footer />
     </div>
+    </>
   );
 }

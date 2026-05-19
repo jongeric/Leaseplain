@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Student Lease Guide: Renting Near Campus in Ontario | LeasePlain",
     description: "How leases work for students in Ontario — roommates, joint tenancy, subletting over summer, student housing, and lease red flags to watch for.",
     url: "https://leaseplain.com/resources/student-lease-guide",
+    type: "website",
   },
   keywords: ["student lease guide", "renting near campus Ontario", "student tenant rights", "joint tenancy students", "subletting over summer"],
 };
@@ -39,6 +40,20 @@ export default function StudentLeaseGuidePage() {
         { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
         { name: "Student Lease Guide", href: "https://leaseplain.com/resources/student-lease-guide" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/student-lease-guide",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -61,7 +76,7 @@ export default function StudentLeaseGuidePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Student Lease Guide: Renting Near Campus in Ontario
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Student rental situations come with their own set of lease questions — from
               roommates and joint tenancy to subletting over summer break.
             </p>

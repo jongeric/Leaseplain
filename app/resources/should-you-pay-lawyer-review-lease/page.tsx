@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     title: "Should I Pay a Lawyer to Review My Lease? | LeasePlain",
     description: "Is it worth paying a lawyer to review your lease? Decision framework covering when AI suffices, when a lawyer is worth it, typical costs, and how to decide for your situation.",
     url: "https://leaseplain.com/resources/should-you-pay-lawyer-review-lease",
+    type: "website",
   },
 };
 
@@ -107,6 +108,20 @@ export default function ShouldYouPayLawyerReviewLeasePage() {
         dateModified="2026-05-15"
         keywords={["should I pay a lawyer to review my lease", "lawyer lease review cost", "is it worth getting a lawyer to review a lease", "residential lease legal review", "tenant lawyer cost canada"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/should-you-pay-lawyer-review-lease",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -125,7 +140,7 @@ export default function ShouldYouPayLawyerReviewLeasePage() {
             <h1 className="text-4xl font-bold mb-4">
               Should You Pay a Lawyer to Review Your Lease?
             </h1>
-            <p className="text-xl text-slate-300 max-w-2xl">
+            <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
               An honest look at when professional legal review is worth the cost — and when a free
               AI analysis is all you need.
             </p>

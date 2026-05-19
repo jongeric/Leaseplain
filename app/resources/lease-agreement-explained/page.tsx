@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Lease Agreement Explained: Every Section Decoded | LeasePlain",
     description: "A plain-English explanation of every standard section in a residential lease agreement — what each clause means, and what to watch for.",
     url: "https://leaseplain.com/resources/lease-agreement-explained",
+    type: "website",
   },
   keywords: ["lease agreement explained", "lease sections decoded", "residential lease clauses", "lease terms plain English", "understanding a lease"],
 };
@@ -101,6 +102,20 @@ export default function LeaseAgreementExplainedPage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "Lease Agreement Explained", href: "https://leaseplain.com/resources/lease-agreement-explained" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/lease-agreement-explained",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -125,7 +140,7 @@ export default function LeaseAgreementExplainedPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Agreement Explained: Every Section Decoded
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               What does your lease actually say — and what does it mean? Here's every standard
               section of a residential lease, translated from legalese into plain English.
             </p>

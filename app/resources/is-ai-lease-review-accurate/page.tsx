@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "Is AI Lease Review Accurate? What AI Can and Can't Catch | LeasePlain",
     description: "How accurate is AI lease review? What can AI reliably identify in a lease, where does it fall short, and when does a human lawyer add irreplaceable value? An honest assessment.",
     url: "https://leaseplain.com/resources/is-ai-lease-review-accurate",
+    type: "website",
   },
 };
 
@@ -129,6 +130,20 @@ export default function IsAILeaseReviewAccuratePage() {
         dateModified="2026-05-15"
         keywords={["is ai lease review accurate", "ai lease analysis accuracy", "ai vs lawyer lease review", "how accurate is leaseplain", "ai lease review limitations"]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/resources/is-ai-lease-review-accurate",
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".speakable-summary"]
+            }
+          })
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -145,7 +160,7 @@ export default function IsAILeaseReviewAccuratePage() {
               className="text-indigo-300 mb-6 [&_a]:text-indigo-300 [&_a:hover]:text-white [&_span.text-slate-900]:text-white"
             />
             <h1 className="text-4xl font-bold mb-4">Is AI Lease Review Accurate?</h1>
-            <p className="text-xl text-slate-300 max-w-2xl">
+            <p className="text-xl text-slate-300 max-w-2xl speakable-summary">
               An honest assessment of what AI can and can&apos;t catch in a residential lease — and
               when you should still consult a human professional.
             </p>

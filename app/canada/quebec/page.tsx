@@ -87,7 +87,7 @@ export default function QuebecPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Quebec Tenant Rights: Lease Help Under the Civil Code &amp; Housing Tribunal
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Quebec's tenancy framework is unique in Canada. Governed by the Civil Code of Quebec
               and the Act Respecting Lessor and Lessee, Quebec renters deal with a mandatory standard
               lease form, strong renewal rights, and a specialized housing tribunal — the Tribunal

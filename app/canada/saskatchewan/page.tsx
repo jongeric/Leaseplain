@@ -45,8 +45,20 @@ const cities = [
   { name: "Regina", href: "/canada/saskatchewan/regina", desc: "Provincial capital — government-employment rental market, ORT regional office located here" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/saskatchewan",
+};
+
 export default function SaskatchewanPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -74,7 +86,7 @@ export default function SaskatchewanPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Saskatchewan Tenant Rights: Lease Help Under the Residential Tenancies Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Saskatchewan's <em>Residential Tenancies Act, 2006</em> sets out the rights and obligations
               of renters and landlords across the province. With no rent control but accessible dispute
               resolution through the Office of Residential Tenancies, Saskatchewan tenants in Saskatoon,
@@ -222,5 +234,6 @@ export default function SaskatchewanPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -44,8 +44,20 @@ const cities = [
   { name: "St. John's", href: "/canada/newfoundland-and-labrador/st-johns", desc: "NL's largest city and capital — growing rental demand, historic housing stock, Service NL main office" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/newfoundland-and-labrador",
+};
+
 export default function NewfoundlandAndLabradorPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -73,7 +85,7 @@ export default function NewfoundlandAndLabradorPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Newfoundland and Labrador Tenant Rights: Lease Help for NL Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Newfoundland and Labrador's <em>Residential Tenancies Act</em> sets out distinct rules
               for renters across the province — including a unique 75% deposit cap, no pet deposits,
               and 8-week notice requirements for landlord-initiated terminations and rent increases.
@@ -227,5 +239,6 @@ export default function NewfoundlandAndLabradorPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

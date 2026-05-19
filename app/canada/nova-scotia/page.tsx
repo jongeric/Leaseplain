@@ -44,8 +44,20 @@ const cities = [
   { name: "Halifax", href: "/canada/nova-scotia/halifax", desc: "Nova Scotia's largest and fastest-growing rental market — significant rent growth in recent years" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/nova-scotia",
+};
+
 export default function NovaScotiaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -73,7 +85,7 @@ export default function NovaScotiaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Nova Scotia Tenant Rights: Lease Help &amp; Renter Protections
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Nova Scotia's <em>Residential Tenancies Act</em> provides meaningful protections for renters
               — including a provincial rent increase cap, government-held security deposits managed by the
               Director of Residential Tenancies, and free access to hearing officers for dispute resolution.
@@ -224,5 +236,6 @@ export default function NovaScotiaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

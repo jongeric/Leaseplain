@@ -87,6 +87,33 @@ const tools = [
   },
 ];
 
+const toolsPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://leaseplain.com/tools",
+  "name": "Free Tenant Tools | LeasePlain",
+  "description": "Free calculators and checkers for Canadian renters.",
+  "url": "https://leaseplain.com/tools",
+  "hasPart": tools.map((tool) => ({
+    "@type": "SoftwareApplication",
+    "name": tool.title,
+    "description": tool.description,
+    "url": `https://leaseplain.com${tool.href}`,
+    "applicationCategory": "UtilityApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+  })),
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/tools",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 const colorMap: Record<string, { bg: string; text: string }> = {
   indigo:  { bg: "bg-indigo-50",  text: "text-indigo-600" },
   green:   { bg: "bg-green-50",   text: "text-green-600" },
@@ -116,10 +143,18 @@ export default function ToolsPage() {
               <TrendingUp className="w-3.5 h-3.5" aria-hidden="true" />
               Free Tenant Tools
             </div>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(toolsPageSchema).replace(/</g, "\\u003c") }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\\u003c") }}
+            />
             <h1 className="text-4xl font-bold text-slate-900 mb-4 leading-tight">
               Free Tools for Canadian Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               9 free calculators and reference tools covering rent increases, notice periods, lease
               breaks, eviction notices, deposits, and more. No sign-up required.
             </p>

@@ -19,6 +19,39 @@ export const metadata: Metadata = {
   },
 };
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://leaseplain.com/contact",
+  "name": "Contact LeasePlain",
+  "url": "https://leaseplain.com/contact",
+  "description": "Get in touch with LeasePlain — questions about your analysis, account, or the product.",
+  "contactOption": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "support@leaseplain.com",
+      "availableLanguage": "English",
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "general inquiry",
+      "email": "hello@leaseplain.com",
+      "availableLanguage": "English",
+    },
+  ],
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/contact",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 const contactOptions = [
   {
     icon: Mail,
@@ -42,8 +75,16 @@ export default function ContactPage() {
       <main>
         <section className="bg-slate-50 border-b border-slate-100 py-16 px-4">
           <div className="max-w-4xl mx-auto">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema).replace(/</g, "\\u003c") }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\\u003c") }}
+            />
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">Contact Us</h1>
-            <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-xl leading-relaxed">
               We're a small team. We read every message and respond within one business day.
             </p>
           </div>

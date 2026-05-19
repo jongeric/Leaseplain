@@ -65,6 +65,31 @@ const steps = [
   },
 ];
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://leaseplain.com/how-it-works",
+  "name": "How to Analyze Your Lease with LeasePlain",
+  "description": "Upload your PDF lease and get a plain-English report in seconds.",
+  "totalTime": "PT2M",
+  "step": steps.map((step, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": step.title,
+    "text": step.description,
+  })),
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/how-it-works",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 const reportSections = [
   { icon: FileText, label: "Plain-English Summary", desc: "Overall summary of what you're agreeing to" },
   { icon: DollarSign, label: "Financial Terms", desc: "Rent, deposit, fees, utilities, increases" },
@@ -106,10 +131,18 @@ export default function HowItWorksPage() {
         {/* Hero */}
         <section className="bg-slate-50 border-b border-slate-100 py-16 px-4">
           <div className="max-w-4xl mx-auto">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\\u003c") }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\\u003c") }}
+            />
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-5 leading-tight">
               How LeasePlain Works
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               Upload your lease, let AI do the reading, and get a plain-English report in under a
               minute. Here's exactly what happens at each step.
             </p>

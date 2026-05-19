@@ -110,6 +110,29 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://leaseplain.com/faq",
+  "mainEntity": faqs.flatMap((group) =>
+    group.questions.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": { "@type": "Answer", "text": item.a },
+    }))
+  ),
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/faq",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export default function FAQPage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -118,6 +141,14 @@ export default function FAQPage() {
       <main>
         <section className="bg-slate-50 border-b border-slate-100 py-16 px-4">
           <div className="max-w-4xl mx-auto">
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\\u003c") }}
+            />
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 border border-blue-100">
               <HelpCircle className="w-3.5 h-3.5" aria-hidden="true" />
               Frequently Asked Questions
@@ -125,7 +156,7 @@ export default function FAQPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               Questions about LeasePlain, how it works, tenant rights, and billing — answered clearly.
             </p>
           </div>

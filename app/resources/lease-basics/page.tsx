@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Lease Basics: Guides to Rental Agreements | LeasePlain",
     description: "Master the fundamentals of lease agreements. Plain-English guides explaining what a lease is, how to read one, and the differences between lease types.",
     url: "https://leaseplain.com/resources/lease-basics",
+    type: "website",
   },
   keywords: ["lease basics", "rental agreement fundamentals", "what is a lease", "lease types Canada", "how to read a lease"],
 };

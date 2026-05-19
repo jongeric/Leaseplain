@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "How to Spot Hidden Fees in Your Lease Agreement | LeasePlain",
     description: "Learn which hidden fees landlords add to leases, which are illegal in Ontario, and how to negotiate their removal.",
     url: "https://leaseplain.com/resources/hidden-lease-fees",
+    type: "website",
   },
   keywords: ["hidden lease fees", "illegal lease fees Ontario", "lease fee negotiation", "rental hidden costs", "landlord fees"],
 };

@@ -86,6 +86,15 @@ export default function TorontoTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Toronto", href: "https://leaseplain.com/tenant-rights/toronto" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/toronto",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -104,7 +113,7 @@ export default function TorontoTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights in Toronto: Local Resources & What You Need to Know
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Toronto renters are protected by the same Ontario <em>Residential Tenancies Act</em>{" "}
               as all Ontario tenants — but the city also has local organizations, legal clinics,
               and issues unique to its rental market.

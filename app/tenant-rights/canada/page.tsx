@@ -143,7 +143,7 @@ export default function CanadaTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights in Canada: A Province-by-Province Guide
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Tenancy in Canada is regulated at the provincial level — not federally. Each province
               has its own legislation, its own dispute resolution body, and its own rules on rent
               increases, deposits, and eviction. Here&apos;s how the major provinces compare.

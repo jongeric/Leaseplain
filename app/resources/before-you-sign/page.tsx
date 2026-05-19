@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Before You Sign a Lease: Complete Checklist for Renters | LeasePlain",
     description: "Know what to look for before committing to a rental. Guides covering what to check, red flags to watch for, questions to ask, and hidden fees.",
     url: "https://leaseplain.com/resources/before-you-sign",
+    type: "website",
   },
   keywords: ["before signing a lease", "lease checklist renters", "lease red flags", "questions to ask landlord", "hidden lease fees"],
 };

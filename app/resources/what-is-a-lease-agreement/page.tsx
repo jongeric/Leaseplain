@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "What Is a Lease Agreement? A Plain-English Explanation | LeasePlain",
     description: "Learn what a lease agreement is, what it must include, and how it becomes legally binding in Ontario. A plain-English guide for renters.",
     url: "https://leaseplain.com/resources/what-is-a-lease-agreement",
+    type: "website",
   },
   keywords: ["what is a lease agreement", "lease agreement explained", "rental contract Ontario", "legally binding lease", "lease basics Canada"],
 };

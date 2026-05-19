@@ -85,6 +85,15 @@ export default function UnitedStatesTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "United States", href: "https://leaseplain.com/tenant-rights/united-states" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/united-states",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -106,7 +115,7 @@ export default function UnitedStatesTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               US Tenant Rights by State — Coming to LeasePlain
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Tenant rights in the United States are governed at the state level, with additional
               protections in many cities and counties. LeasePlain is expanding to help US renters
               understand their leases. Here&apos;s what you need to know about the US system.

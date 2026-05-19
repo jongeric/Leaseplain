@@ -111,7 +111,7 @@ export default function BreakingALeasePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Breaking a Lease in Ontario: Your Options and Rights
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Needing to leave before your lease ends is stressful — but Ontario tenants have more
               options than most landlords let on. Here's every legitimate path to ending your
               tenancy early, and what your landlord can legally recover from you.

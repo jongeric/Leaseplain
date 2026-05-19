@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Upload Your Lease for AI Review: How It Works | LeasePlain",
     description: "Step-by-step guide to uploading your lease on LeasePlain. Learn what formats are supported, how your data is kept secure, and what the AI report shows.",
     url: "https://leaseplain.com/resources/upload-lease-for-review",
+    type: "website",
   },
   keywords: ["upload lease for review", "AI lease review how it works", "lease PDF upload", "lease analysis tool", "LeasePlain how to use"],
 };

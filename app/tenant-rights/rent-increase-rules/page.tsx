@@ -89,7 +89,7 @@ export default function RentIncreaseRulesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Ontario Rent Increase Rules: What's Legal and What's Not
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Your landlord cannot raise your rent whenever they want. Ontario law sets strict limits
               on how often, how much, and how a rent increase must be communicated. Here's everything
               you need to know.

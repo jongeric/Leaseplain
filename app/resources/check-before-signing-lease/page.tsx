@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     title: "What to Check Before Signing a Lease – Full Checklist | LeasePlain",
     description: "A practical checklist of everything to verify before signing a residential lease — the unit, the landlord, the terms, and your rights.",
     url: "https://leaseplain.com/resources/check-before-signing-lease",
+    type: "website",
   },
   keywords: ["lease checklist", "before signing a lease", "what to check in a lease", "tenant checklist", "lease review tips"],
 };

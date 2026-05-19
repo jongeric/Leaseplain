@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     title: "LeasePlain vs ChatGPT for Lease Review | Which AI Tool Is Better?",
     description: "Comparing LeasePlain vs ChatGPT for lease analysis: purpose-built vs general AI, structured output vs free-form chat, tenant-specific risk scoring vs generic summaries. Which tool actually helps renters?",
     url: "https://leaseplain.com/resources/leaseplain-vs-chatgpt",
+    type: "website",
   },
 };
 

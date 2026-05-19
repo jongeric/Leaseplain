@@ -124,7 +124,7 @@ export default function EvictionNoticesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Eviction Notices in Ontario: What Landlords Can and Cannot Do
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Receiving an eviction notice is frightening — but in Ontario, a notice alone cannot
               remove you from your home. The law requires a full LTB process, with a hearing where
               you have the right to respond. Here&apos;s what every Ontario tenant needs to know.

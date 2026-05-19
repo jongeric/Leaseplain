@@ -119,7 +119,7 @@ export default function RepairsMaintenancePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights for Repairs and Maintenance in Ontario
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario law gives tenants strong rights when landlords fail to maintain rental
               properties. Whether it&apos;s a broken furnace, a leaking roof, or persistent mould,
               you have remedies — including a rent reduction. Here&apos;s how to use them.

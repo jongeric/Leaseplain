@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     description:
       "Compare your options for getting a lease reviewed for free online — AI tools, legal clinics, tenant helplines, and what each can and can't do.",
     url: "https://leaseplain.com/resources/free-lease-review-online",
+    type: "website",
   },
 };
 

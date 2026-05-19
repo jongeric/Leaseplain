@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     title: "First-Time Renter Guide: How to Read and Sign a Lease | LeasePlain",
     description: "Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario.",
     url: "https://leaseplain.com/resources/first-time-renter-guide",
+    type: "website",
   },
   keywords: ["first-time renter guide", "renting for the first time", "how to sign a lease", "tenant rights Ontario", "lease guide beginners"],
 };

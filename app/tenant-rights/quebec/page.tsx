@@ -102,7 +102,7 @@ export default function QuebecTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Quebec Tenant Rights: Guide to Housing Law and the TAL
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Quebec has the most distinctive tenancy framework in Canada — governed by the{" "}
               <em>Civil Code of Quebec</em> and the{" "}
               <em>Act Respecting Lessor and Lessee</em>, with disputes handled by the{" "}

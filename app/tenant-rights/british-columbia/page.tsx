@@ -100,7 +100,7 @@ export default function BritishColumbiaTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               BC Tenant Rights: Guide to the Residential Tenancy Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               British Columbia tenants are protected by the{" "}
               <em>Residential Tenancy Act</em> (RTA) and the Residential Tenancy Branch (RTB),
               which resolves disputes between landlords and tenants. Here&apos;s what BC law

@@ -119,7 +119,7 @@ export default function LandlordResponsibilitiesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Landlord Responsibilities in Ontario: What They Must Do by Law
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario landlords have significant legal obligations under the{" "}
               <em>Residential Tenancies Act</em>. Many of these obligations cannot be waived by
               a lease clause. Here's what your landlord is legally required to do — and what to

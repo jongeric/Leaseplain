@@ -96,6 +96,16 @@ const guides = [
 
 export default function TenantRightsIndexPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -109,7 +119,7 @@ export default function TenantRightsIndexPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Know Your Rights as a Tenant
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Canadian tenants have strong legal protections — but only if you know about them.
               Our guides cover Ontario tenant rights in plain English, from signing a lease to
               resolving disputes with your landlord.
@@ -185,5 +195,6 @@ export default function TenantRightsIndexPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

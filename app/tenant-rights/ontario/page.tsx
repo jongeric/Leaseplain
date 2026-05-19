@@ -70,6 +70,11 @@ export default function OntarioTenantRightsPage() {
         },
         "url": "https://leaseplain.com/tenant-rights/ontario",
       }) }} />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Ontario", href: "https://leaseplain.com/tenant-rights/ontario" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

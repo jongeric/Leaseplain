@@ -103,9 +103,20 @@ const keyFacts = [
   "Standard lease forms are mandatory in Ontario and Quebec; other provinces may use custom leases.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada",
+};
+
 export default function CanadaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Canada", href: "https://leaseplain.com/canada" },
@@ -130,7 +141,7 @@ export default function CanadaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights &amp; Lease Help in Canada
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Canada has no single national tenancy law. Each province governs landlord-tenant
               relationships through its own legislation, courts, and dispute resolution bodies. Understanding
               which provincial law applies to your lease is the first step in protecting your rights as

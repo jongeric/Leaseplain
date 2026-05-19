@@ -46,8 +46,20 @@ const cities = [
   { name: "Laval", href: "/canada/quebec/laval", desc: "Montreal suburb, growing rental market, TAL jurisdiction" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/quebec",
+};
+
 export default function QuebecPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -219,5 +231,6 @@ export default function QuebecPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

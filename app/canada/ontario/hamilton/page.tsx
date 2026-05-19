@@ -38,8 +38,21 @@ const hamiltonLeaseIssues = [
   "Basement apartment leases with clauses that purport to limit the landlord's maintenance obligations — these are void under the RTA.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/hamilton",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/hamilton",
+};
+
 export default function HamiltonPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function HamiltonPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Hamilton, Ontario | Tenant Rights
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Hamilton's rental market has been transformed by GTA spillover demand, bringing rising
               rents, increased renoviction pressure, and new landlords to an older housing stock.
               The Ontario RTA protects every Hamilton renter — here's what you need to know.
@@ -210,5 +223,6 @@ export default function HamiltonPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

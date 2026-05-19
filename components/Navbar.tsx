@@ -535,6 +535,7 @@ export default function Navbar() {
   const isRightsActive = pathname.startsWith("/tenant-rights");
   const isResourcesActive = pathname.startsWith("/resources");
   const isToolsActive = pathname.startsWith("/tools");
+  const isBlogActive = pathname.startsWith("/blog");
 
   function MobileLinks({ links }: { links: { label: string; href: string }[] }) {
     return (
@@ -670,6 +671,15 @@ export default function Navbar() {
           </MegaMenu>
 
           <Link
+            href="/blog"
+            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
+              isBlogActive ? "text-blue-600" : "text-slate-600"
+            }`}
+          >
+            Blog
+          </Link>
+
+          <Link
             href="/pricing"
             className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
               pathname === "/pricing" ? "text-blue-600" : "text-slate-600"
@@ -759,6 +769,10 @@ export default function Navbar() {
                 {expanded === key && content}
               </div>
             ))}
+
+            <Link href="/blog" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
+              Blog
+            </Link>
 
             <Link href="/pricing" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
               Pricing

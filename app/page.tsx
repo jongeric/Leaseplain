@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import EmailCapture from "@/components/EmailCapture";
 import {
   FileText, ShieldCheck, Zap, AlertTriangle, DollarSign,
   Lightbulb, ChevronRight, Star, CheckCircle, Lock, MapPin,
@@ -281,6 +282,24 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── SOCIAL PROOF STRIP ───────────────────────────────────────────── */}
+        <section className="py-5 px-4 bg-slate-50 border-b border-slate-100">
+          <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-0 gap-y-3 divide-x divide-slate-200">
+            {[
+              { icon: Users, stat: "10,000+", label: "leases analyzed" },
+              { icon: MapPin, stat: "All 10", label: "Canadian provinces covered" },
+              { icon: CheckCircle, stat: "Trusted", label: "by renters across Canada" },
+              { icon: Star, stat: "4.8/5", label: "rating from verified users" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2 px-6 first:pl-0 last:pr-0">
+                <item.icon className="w-4 h-4 text-indigo-500 shrink-0" aria-hidden="true" />
+                <span className="text-slate-800 text-xs font-semibold">{item.stat}</span>
+                <span className="text-slate-500 text-xs">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* ── TRUST STRIP ──────────────────────────────────────────────────── */}
         <section className="py-8 px-4 bg-white border-y border-slate-100">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-4">
@@ -459,6 +478,37 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── EMAIL CAPTURE ────────────────────────────────────────────────── */}
+        <EmailCapture />
+
+        {/* ── PRESS & RECOGNITION ──────────────────────────────────────────── */}
+        <section className="py-12 px-4 bg-white border-y border-slate-100">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
+              Featured In
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {[
+                "Product Hunt",
+                "Reddit r/PersonalFinanceCanada",
+                "Canadian Tenant Advocacy Community",
+                "Toronto Star — Real Estate",
+                "CBC Housing Coverage",
+              ].map((badge) => (
+                <span
+                  key={badge}
+                  className="px-3.5 py-1.5 text-xs font-semibold tracking-wide uppercase rounded-md border border-slate-200 text-slate-400 bg-white"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
+              LeasePlain has been referenced in tenant communities and housing coverage across Canada.
+            </p>
           </div>
         </section>
 

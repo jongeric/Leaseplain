@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand Canadian tenant rights by province. Each province has its own Residential Tenancies Act. Learn about Ontario, BC, Alberta, and Quebec rental law.",
   alternates: { canonical: "https://leaseplain.com/canada" },
+  openGraph: {
+    title: "Tenant Rights & Lease Help in Canada | LeasePlain",
+    description: "Understand Canadian tenant rights by province. Each province has its own Residential Tenancies Act. Learn about Ontario, BC, Alberta, and Quebec rental law.",
+    url: "https://leaseplain.com/canada",
+    type: "website",
+  },
 };
 
 const provinces = [
@@ -98,6 +105,11 @@ const keyFacts = [
 
 export default function CanadaPage() {
   return (
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Canada", href: "https://leaseplain.com/canada" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -263,5 +275,6 @@ export default function CanadaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

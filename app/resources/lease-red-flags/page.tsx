@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { AlertTriangle, ChevronRight, Upload, Clock, BookOpen, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import EmailCapture from "@/components/EmailCapture";
 
 export const dynamic = "force-static";
 
@@ -275,6 +276,7 @@ export default function LeaseRedFlagsPage() {
         </section>
       </main>
 
+      <EmailCapture />
       <Footer />
     </div>
     </>

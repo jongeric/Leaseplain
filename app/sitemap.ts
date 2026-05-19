@@ -164,6 +164,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/resources/landlord-lease-mistakes",           0.7, "monthly"),
     url("/resources/should-you-pay-lawyer-review-lease",0.7, "monthly"),
 
+    // ── Blog ──────────────────────────────────────────────────────────────────
+    url("/blog",                                              0.9, "weekly"),
+    url("/blog/ontario-rent-increase-guideline-2026",         0.8, "monthly"),
+    url("/blog/bc-rent-increase-2026",                        0.8, "monthly"),
+    url("/blog/how-to-fight-an-illegal-eviction-ontario",     0.8, "monthly"),
+    url("/blog/security-deposit-rules-canada",                0.8, "monthly"),
+    url("/blog/lease-red-flags-to-watch-for",                 0.8, "monthly"),
+    url("/blog/moving-out-ontario-checklist",                 0.8, "monthly"),
+
     // ── Company / utility ─────────────────────────────────────────────────────
     url("/faq",              0.6, "monthly"),
     url("/about",            0.5, "yearly"),

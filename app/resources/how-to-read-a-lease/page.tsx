@@ -97,6 +97,31 @@ const steps = [
   },
 ];
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Read a Lease Agreement",
+  "description": "A step-by-step guide to reading and understanding a residential lease agreement before signing.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Check the parties and property details", "text": "Verify your full legal name, the landlord's name, and the exact address of the rental unit match what you were told." },
+    { "@type": "HowToStep", "position": 2, "name": "Confirm the lease term and rent", "text": "Check whether the lease is fixed-term or month-to-month, and confirm the rent amount, due date, and accepted payment methods." },
+    { "@type": "HowToStep", "position": 3, "name": "Review deposit and fee clauses", "text": "Find all clauses about security deposits, last month's rent, pet deposits, and any other upfront fees. Compare them to your province's legal limits." },
+    { "@type": "HowToStep", "position": 4, "name": "Check maintenance and repair responsibilities", "text": "Identify who is responsible for repairs — many leases try to shift the landlord's legal repair obligation onto tenants, which is not enforceable." },
+    { "@type": "HowToStep", "position": 5, "name": "Look for red flag clauses", "text": "Watch for clauses that waive your rights, give the landlord unlimited entry, allow rent increases 'at any time', or charge illegal fees." },
+    { "@type": "HowToStep", "position": 6, "name": "Check the rules and schedule sections", "text": "Read any attached schedules or addenda carefully — these are where non-standard clauses are often buried." },
+  ],
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/resources/how-to-read-a-lease",
+};
+
 export default function HowToReadALeasePage() {
   return (
     <>
@@ -108,6 +133,8 @@ export default function HowToReadALeasePage() {
         dateModified="2026-05-15"
         keywords={["how to read a lease", "lease agreement guide", "understanding lease clauses", "lease review steps", "residential lease explained"]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -132,7 +159,7 @@ export default function HowToReadALeasePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               How to Read a Lease Agreement: A Step-by-Step Guide
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Most residential leases are 15–40 pages of dense legal language. Here's how to read
               yours systematically — section by section — so nothing catches you off guard after
               you sign.
@@ -143,6 +170,10 @@ export default function HowToReadALeasePage() {
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-10">
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl">
+                <p className="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Quick Answer</p>
+                <p className="text-sm text-blue-900 leading-relaxed">To read a lease: check parties and property details → verify rent and term → review deposit amounts against provincial limits → look for illegal clauses → read all schedules. Any clause that violates your province&apos;s Residential Tenancies Act is unenforceable even if you signed it.</p>
+              </div>
               <p className="text-slate-700 leading-relaxed">
                 Before you start reading, set aside at least 30–60 minutes. Read the entire lease
                 — not just the highlighted parts your landlord points to. If something is unclear,

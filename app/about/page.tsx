@@ -28,6 +28,13 @@ export const metadata: Metadata = {
   description:
     "LeasePlain was built on a simple belief: every renter deserves to understand what they're signing. Learn our mission, who we help, what we analyze, and our AI limitations.",
   alternates: { canonical: "https://leaseplain.com/about" },
+  openGraph: {
+    title: "About LeasePlain – AI Lease Analysis for Every Renter | LeasePlain",
+    description:
+      "LeasePlain was built on a simple belief: every renter deserves to understand what they're signing. Learn our mission, who we help, what we analyze, and our AI limitations.",
+    url: "https://leaseplain.com/about",
+    type: "website",
+  },
 };
 
 const schema = {

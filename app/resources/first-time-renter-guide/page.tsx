@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import EmailCapture from "@/components/EmailCapture";
 
 export const dynamic = "force-static";
 
@@ -262,6 +263,7 @@ export default function FirstTimeRenterGuidePage() {
           </div>
         </section>
       </main>
+      <EmailCapture />
       <Footer />
     </div>
     </>

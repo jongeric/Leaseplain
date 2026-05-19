@@ -5,6 +5,15 @@ import Footer from "@/components/Footer";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/terms",
+  "name": "Terms of Use | LeasePlain",
+  "description": "LeasePlain terms of use — the rules governing your use of the LeasePlain service.",
+  "url": "https://leaseplain.com/terms",
+};
+
 export const metadata: Metadata = {
   title: "Terms of Use | LeasePlain",
   description: "LeasePlain terms of use — the rules governing your use of the LeasePlain service.",
@@ -22,6 +31,7 @@ const lastUpdated = "May 6, 2026";
 export default function TermsPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>

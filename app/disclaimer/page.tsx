@@ -6,6 +6,15 @@ import { AlertTriangle } from "lucide-react";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/disclaimer",
+  "name": "Legal Disclaimer | LeasePlain",
+  "description": "LeasePlain's legal disclaimer. Our AI lease analysis is informational only.",
+  "url": "https://leaseplain.com/disclaimer",
+};
+
 export const metadata: Metadata = {
   title: "Legal Disclaimer | LeasePlain",
   description:
@@ -22,6 +31,7 @@ export const metadata: Metadata = {
 export default function DisclaimerPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>

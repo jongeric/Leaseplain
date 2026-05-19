@@ -44,8 +44,20 @@ const cities = [
   { name: "Winnipeg", href: "/canada/manitoba/winnipeg", desc: "Manitoba's capital and largest city — the RTB's main office serves Winnipeg renters directly" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/manitoba",
+};
+
 export default function ManitobaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -73,7 +85,7 @@ export default function ManitobaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Manitoba Tenant Rights: Lease Help Under the Residential Tenancies Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Manitoba's <em>Residential Tenancies Act</em> gives renters across the province meaningful
               protections — from annual rent increase guidelines tied to CPI to low-cost dispute resolution
               through the Residential Tenancies Branch. Whether you rent in Winnipeg or a smaller
@@ -224,5 +236,6 @@ export default function ManitobaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

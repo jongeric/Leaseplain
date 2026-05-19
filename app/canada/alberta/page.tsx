@@ -45,8 +45,20 @@ const cities = [
   { name: "Edmonton", href: "/canada/alberta/edmonton", desc: "Government hub, university market, affordable relative to other metros" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/alberta",
+};
+
 export default function AlbertaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -74,7 +86,7 @@ export default function AlbertaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Alberta Tenant Rights: Lease Help Under the Residential Tenancies Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Alberta is one of the few Canadian provinces with no province-wide rent control. While
               this gives landlords more flexibility to raise rents, Alberta tenants still have
               meaningful protections around deposits, notice periods, and dispute resolution through
@@ -217,5 +229,6 @@ export default function AlbertaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -47,8 +47,20 @@ const cities = [
   { name: "Victoria", href: "/canada/british-columbia/victoria", desc: "BC capital, UVic student market, low vacancy rates" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/british-columbia",
+};
+
 export default function BritishColumbiaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -76,7 +88,7 @@ export default function BritishColumbiaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               BC Tenant Rights: Lease Help Under the Residential Tenancy Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               British Columbia's <em>Residential Tenancy Act</em> governs all private residential rentals
               in the province. With some of the strictest deposit limits in Canada, annual rent increase
               caps, and an accessible dispute resolution system, BC tenants have significant protections
@@ -222,5 +234,6 @@ export default function BritishColumbiaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

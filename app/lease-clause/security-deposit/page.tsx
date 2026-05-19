@@ -8,6 +8,16 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/security-deposit",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Security Deposit Clause Explained – What Tenants Need to Know | LeasePlain",
   description:
@@ -54,6 +64,7 @@ export default function SecurityDepositPage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Security Deposit", href: "https://leaseplain.com/lease-clause/security-deposit" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Navbar />
 
       <main>
@@ -72,7 +83,7 @@ export default function SecurityDepositPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Security Deposit Clause: What It Means and What's Legal
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A security deposit clause outlines how much you must pay upfront, how it's held, and
               when you get it back. In Ontario, this clause is heavily regulated — many landlords
               include terms that are actually illegal.

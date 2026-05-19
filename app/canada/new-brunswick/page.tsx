@@ -46,8 +46,20 @@ const cities = [
   { name: "Saint John", href: "/canada/new-brunswick/saint-john", desc: "New Brunswick's oldest city — affordable rental market with heritage housing stock" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/new-brunswick",
+};
+
 export default function NewBrunswickPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -75,7 +87,7 @@ export default function NewBrunswickPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               New Brunswick Tenant Rights: Lease Help &amp; Renter Protections
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New Brunswick's <em>Residential Tenancies Act</em> governs landlord-tenant relationships
               across Canada's only officially bilingual province. With no rent control but strong notice
               requirements and a fully bilingual Residential Tenancies Tribunal, NB renters in Moncton,
@@ -225,5 +237,6 @@ export default function NewBrunswickPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -8,6 +8,16 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/utilities",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Utilities Clause in a Lease: Who Pays for What? | LeasePlain",
   description:
@@ -60,6 +70,7 @@ export default function UtilitiesClausePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Utilities", href: "https://leaseplain.com/lease-clause/utilities" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Navbar />
 
       <main>
@@ -80,7 +91,7 @@ export default function UtilitiesClausePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Utilities Clause in a Lease: Who Pays for What?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A utilities clause in your lease determines whether you or your landlord pays for
               hydro, gas, water, heat, and internet. In Ontario, the answer has real legal
               implications — especially when utilities are included in your rent.

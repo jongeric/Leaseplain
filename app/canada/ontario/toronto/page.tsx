@@ -38,8 +38,21 @@ const torontoLeaseIssues = [
   "Short-notice entry clauses — landlords must give 24 hours written notice to enter for most reasons.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/toronto",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/toronto",
+};
+
 export default function TorontoPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function TorontoPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Toronto, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Toronto is Canada's most competitive rental market. With sky-high rents, a surge of
               condo investor-landlords, and growing awareness of tenant rights, knowing the Ontario RTA
               is essential before signing any Toronto lease.
@@ -210,5 +223,6 @@ export default function TorontoPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

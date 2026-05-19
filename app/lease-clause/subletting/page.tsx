@@ -8,6 +8,16 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/subletting",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Subletting Clause Explained – Your Rights to Sublet in Ontario | LeasePlain",
   description:
@@ -61,6 +71,7 @@ export default function SublettingPage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Subletting", href: "https://leaseplain.com/lease-clause/subletting" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <Navbar />
 
       <main>
@@ -78,7 +89,7 @@ export default function SublettingPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Subletting Clause: What You Can and Can't Do
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A subletting clause governs your right to have someone else take over your unit
               temporarily (sublet) or permanently (assign). In Ontario, landlords cannot simply
               prohibit subletting — your rights are protected under the RTA.

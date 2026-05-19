@@ -54,6 +54,10 @@ const usVsCanada = [
 export default function UnitedStatesPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+      ]} />
       <Navbar />
 
       <main>

@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as an Ontario renter under the Residential Tenancies Act (RTA). Learn about LTB hearings, rent increase guidelines, Form N12, and lease protections.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario" },
+  openGraph: {
+    title: "Ontario Tenant Rights: Lease Help Under the Residential Tenancies Act | LeasePlain",
+    description: "Understand your rights as an Ontario renter under the Residential Tenancies Act (RTA). Learn about LTB hearings, rent increase guidelines, Form N12, and lease protections.",
+    url: "https://leaseplain.com/canada/ontario",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

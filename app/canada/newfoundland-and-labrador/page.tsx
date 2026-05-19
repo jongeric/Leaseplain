@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a Newfoundland and Labrador renter under the Residential Tenancies Act. Learn about Service NL, the 75% deposit cap, 8-week notice rules, and lease protections in St. John's and across NL.",
   alternates: { canonical: "https://leaseplain.com/canada/newfoundland-and-labrador" },
+  openGraph: {
+    title: "Newfoundland and Labrador Tenant Rights: Lease Help for NL Renters | LeasePlain",
+    description: "Understand your rights as a Newfoundland and Labrador renter under the Residential Tenancies Act. Learn about Service NL, the 75% deposit cap, 8-week notice rules, and lease protections in St. John's and across NL.",
+    url: "https://leaseplain.com/canada/newfoundland-and-labrador",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

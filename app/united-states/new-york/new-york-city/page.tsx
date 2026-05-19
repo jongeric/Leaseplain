@@ -43,6 +43,12 @@ const nycLeaseIssues = [
 export default function NewYorkCityPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+        { name: "New York", href: "https://leaseplain.com/united-states/new-york" },
+        { name: "New York City", href: "https://leaseplain.com/united-states/new-york/new-york-city" },
+      ]} />
       <Navbar />
 
       <main>

@@ -38,6 +38,11 @@ const cities = [
 export default function NewYorkPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+        { name: "New York", href: "https://leaseplain.com/united-states/new-york" },
+      ]} />
       <Navbar />
 
       <main>

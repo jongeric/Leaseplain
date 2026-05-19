@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, FileText } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -23,6 +24,12 @@ export const metadata: Metadata = {
 export default function LosAngelesPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+        { name: "California", href: "https://leaseplain.com/united-states/california" },
+        { name: "Los Angeles", href: "https://leaseplain.com/united-states/california/los-angeles" },
+      ]} />
       <Navbar />
       <main>
         {/* Hero */}

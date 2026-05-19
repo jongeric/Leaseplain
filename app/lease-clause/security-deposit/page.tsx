@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Understand what a security deposit clause means, how much your landlord can legally charge, and when you're entitled to get it back — with interest.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/security-deposit" },
+  keywords: ["security deposit clause", "rental deposit rules Ontario", "last month rent Ontario", "deposit return Canada", "damage deposit illegal Ontario"],
   openGraph: {
     title: "Security Deposit Clause Explained – What Tenants Need to Know | LeasePlain",
     description: "Understand what a security deposit clause means, how much your landlord can legally charge, and when you're entitled to get it back — with interest.",

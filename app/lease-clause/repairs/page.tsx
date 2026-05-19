@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/repairs",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Repairs Clause in a Lease: Landlord vs. Tenant Responsibilities | LeasePlain",
   description:
     "Who is responsible for repairs in a rental unit in Ontario? Learn what the RTA says about your landlord's duty to repair and what red flags to watch for in repair clauses.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/repairs" },
+  keywords: ["repairs clause lease Ontario", "landlord duty to repair Canada", "tenant repair rights RTA", "who pays repairs rental", "T6 application LTB repairs"],
   openGraph: {
     title: "Repairs Clause in a Lease: Landlord vs. Tenant Responsibilities | LeasePlain",
     description: "Who is responsible for repairs in a rental unit in Ontario? Learn what the RTA says about your landlord's duty to repair and what red flags to watch for in repair clauses.",

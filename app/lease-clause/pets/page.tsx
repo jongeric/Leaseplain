@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/pets",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario? | LeasePlain",
   description:
     "Ontario law makes 'no pets' clauses void. Learn what landlords can and cannot require around pets in a lease, and what red flags to watch for in pet clauses.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/pets" },
+  keywords: ["pet clause lease Ontario", "no pets clause void RTA", "landlord refuse pets Canada", "pet deposit illegal Ontario", "tenant pet rights Ontario"],
   openGraph: {
     title: "Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario? | LeasePlain",
     description: "Ontario law makes 'no pets' clauses void. Learn what landlords can and cannot require around pets in a lease, and what red flags to watch for in pet clauses.",

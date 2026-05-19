@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Understand what a utilities clause covers in an Ontario rental lease — hydro, gas, water, heat, and internet — and your rights when utilities are included in rent.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/utilities" },
+  keywords: ["utilities clause lease Ontario", "who pays utilities rental Canada", "hydro included rent Ontario", "vital services landlord RTA", "utilities rental agreement"],
   openGraph: {
     title: "Utilities Clause in a Lease: Who Pays for What? | LeasePlain",
     description: "Understand what a utilities clause covers in an Ontario rental lease — hydro, gas, water, heat, and internet — and your rights when utilities are included in rent.",

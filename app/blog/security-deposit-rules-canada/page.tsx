@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "Quebec bans deposits entirely. Ontario only allows last month's rent. Alberta allows one month. Here's exactly what landlords can charge in every Canadian province.",
     url: "https://leaseplain.com/blog/security-deposit-rules-canada",
+    type: "article",
+    publishedTime: "2026-03-01T00:00:00Z",
+    modifiedTime: "2026-03-01T00:00:00Z",
   },
   keywords: [
     "security deposit Canada",

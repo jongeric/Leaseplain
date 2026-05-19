@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/late-fees",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Late Fee Clause Explained – Are Late Fees Legal in Ontario? | LeasePlain",
   description:
     "Understand late fee clauses in your lease. Learn whether your landlord can legally charge late fees in Ontario and what the law actually allows.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/late-fees" },
+  keywords: ["late fee clause lease", "are late fees legal Ontario", "late rent fee Canada", "RTA late payment rules", "landlord late fee enforceable"],
   openGraph: {
     title: "Late Fee Clause Explained – Are Late Fees Legal in Ontario? | LeasePlain",
     description: "Understand late fee clauses in your lease. Learn whether your landlord can legally charge late fees in Ontario and what the law actually allows.",

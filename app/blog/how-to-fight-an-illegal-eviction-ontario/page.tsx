@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "Learn what makes an Ontario eviction notice invalid, how to file a T2 at the LTB, and what bad-faith eviction means for tenants.",
     url: "https://leaseplain.com/blog/how-to-fight-an-illegal-eviction-ontario",
+    type: "article",
+    publishedTime: "2026-02-15T00:00:00Z",
+    modifiedTime: "2026-02-15T00:00:00Z",
   },
   keywords: [
     "illegal eviction ontario",

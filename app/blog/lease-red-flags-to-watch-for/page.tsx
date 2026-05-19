@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "Clauses waiving LTB rights, unlimited rent increases, and illegal fees all appear in real Canadian leases. Know what to look for before you sign.",
     url: "https://leaseplain.com/blog/lease-red-flags-to-watch-for",
+    type: "article",
+    publishedTime: "2026-03-15T00:00:00Z",
+    modifiedTime: "2026-03-15T00:00:00Z",
   },
   keywords: [
     "lease red flags Canada",

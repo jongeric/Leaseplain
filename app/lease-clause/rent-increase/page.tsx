@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/rent-increase",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Rent Increase Clause Explained – Rules, Notice & Your Rights | LeasePlain",
   description:
     "Learn how rent increase clauses work in Ontario. Understand the annual guideline, how much notice is required, and when a rent increase is illegal.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/rent-increase" },
+  keywords: ["rent increase clause Ontario", "rent increase guideline Canada", "how much notice rent increase", "above guideline increase LTB", "illegal rent increase Ontario"],
   openGraph: {
     title: "Rent Increase Clause Explained – Rules, Notice & Your Rights | LeasePlain",
     description: "Learn how rent increase clauses work in Ontario. Understand the annual guideline, how much notice is required, and when a rent increase is illegal.",

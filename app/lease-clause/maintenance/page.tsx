@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/maintenance",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Maintenance Responsibilities Clause Explained | LeasePlain",
   description:
     "Understand who is responsible for repairs and maintenance in your lease. Learn what your landlord must fix, what you're responsible for, and your rights when repairs are ignored.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/maintenance" },
+  keywords: ["maintenance clause lease", "landlord maintenance obligations Ontario", "tenant repair responsibilities Canada", "who fixes repairs rental unit", "RTA maintenance duties"],
   openGraph: {
     title: "Maintenance Responsibilities Clause Explained | LeasePlain",
     description: "Understand who is responsible for repairs and maintenance in your lease. Learn what your landlord must fix, what you're responsible for, and your rights when repairs are ignored.",

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "Serve notice correctly, document the unit, and know your rights around last month's rent. A step-by-step Ontario move-out checklist.",
     url: "https://leaseplain.com/blog/moving-out-ontario-checklist",
+    type: "article",
+    publishedTime: "2026-04-01T00:00:00Z",
+    modifiedTime: "2026-04-01T00:00:00Z",
   },
   keywords: [
     "moving out Ontario tenant checklist",

@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "BC's 2026 rent increase cap uses the CPI + 2% formula. Learn the notice requirements and what to do if your landlord charges more.",
     url: "https://leaseplain.com/blog/bc-rent-increase-2026",
+    type: "article",
+    publishedTime: "2026-02-01T00:00:00Z",
+    modifiedTime: "2026-02-01T00:00:00Z",
   },
   keywords: [
     "bc rent increase 2026",

@@ -8,11 +8,22 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/lease-clause/early-termination",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Early Termination Clause Explained – Breaking a Lease Legally | LeasePlain",
   description:
     "Understand early termination clauses in your lease. Learn when you can legally break a lease in Ontario, what notice is required, and what penalties are enforceable.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/early-termination" },
+  keywords: ["early termination clause", "break a lease Ontario", "lease break fee Canada", "tenant rights early exit", "ending tenancy early Ontario"],
   openGraph: {
     title: "Early Termination Clause Explained – Breaking a Lease Legally | LeasePlain",
     description: "Understand early termination clauses in your lease. Learn when you can legally break a lease in Ontario, what notice is required, and what penalties are enforceable.",

@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://leaseplain.com"),
   title: "LeasePlain – Understand Your Lease in Plain English",
+  themeColor: "#1e40af",
   description:
     "Upload your residential lease and get a clear, plain-English breakdown of what you're signing. Not legal advice.",
   keywords: ["lease analysis", "rental agreement", "tenant rights", "lease review"],

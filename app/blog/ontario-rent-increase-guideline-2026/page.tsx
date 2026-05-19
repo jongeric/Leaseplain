@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     description:
       "Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, and what to do if your landlord goes over.",
     url: "https://leaseplain.com/blog/ontario-rent-increase-guideline-2026",
+    type: "article",
+    publishedTime: "2026-01-15T00:00:00Z",
+    modifiedTime: "2026-01-15T00:00:00Z",
   },
   keywords: [
     "ontario rent increase 2026",

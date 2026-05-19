@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Who is responsible for repairs in a rental unit in Ontario? Learn what the RTA says about your landlord's duty to repair and what red flags to watch for in repair clauses.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/repairs" },
+  openGraph: {
+    title: "Repairs Clause in a Lease: Landlord vs. Tenant Responsibilities | LeasePlain",
+    description: "Who is responsible for repairs in a rental unit in Ontario? Learn what the RTA says about your landlord's duty to repair and what red flags to watch for in repair clauses.",
+    url: "https://leaseplain.com/lease-clause/repairs",
+    type: "website",
+  },
 };
 
 const tenantRepairDuties = [

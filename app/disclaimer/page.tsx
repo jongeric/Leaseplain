@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "LeasePlain's legal disclaimer. Our AI lease analysis is for informational purposes only and does not constitute legal advice.",
   alternates: { canonical: "https://leaseplain.com/disclaimer" },
+  openGraph: {
+    title: "Legal Disclaimer | LeasePlain",
+    description: "LeasePlain's legal disclaimer. Our AI lease analysis is for informational purposes only and does not constitute legal advice.",
+    url: "https://leaseplain.com/disclaimer",
+    type: "website",
+  },
 };
 
 export default function DisclaimerPage() {

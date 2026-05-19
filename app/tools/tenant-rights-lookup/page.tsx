@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   },
 };
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/tools/tenant-rights-lookup",
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -38,6 +48,7 @@ export default function TenantRightsLookupPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <TenantRightsLookupClient />
     </>
   );

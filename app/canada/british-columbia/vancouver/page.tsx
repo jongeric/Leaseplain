@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -35,6 +36,12 @@ const vancouverLeaseIssues = [
 export default function VancouverPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Canada", href: "https://leaseplain.com/canada" },
+        { name: "British Columbia", href: "https://leaseplain.com/canada/british-columbia" },
+        { name: "Vancouver", href: "https://leaseplain.com/canada/british-columbia/vancouver" },
+      ]} />
       <Navbar />
 
       <main>

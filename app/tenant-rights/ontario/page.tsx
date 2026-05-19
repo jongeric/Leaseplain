@@ -60,6 +60,15 @@ export default function OntarioTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["tenant rights Ontario", "Ontario RTA", "residential tenancies act Ontario", "LTB Ontario", "eviction rights Ontario"]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+        "url": "https://leaseplain.com/tenant-rights/ontario",
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -78,7 +87,7 @@ export default function OntarioTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Tenant Rights in Ontario: A Complete Plain-English Guide
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario tenants are protected by the <em>Residential Tenancies Act, 2006</em> (RTA),
               one of the strongest tenant protection frameworks in Canada. Here's what you're
               entitled to — and what your landlord cannot legally do.

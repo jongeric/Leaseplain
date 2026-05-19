@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   description:
     "Plain-English guides to understand leases, spot red flags, and know what to check before signing. Free lease resources for Canadian renters and landlords.",
   alternates: { canonical: "https://leaseplain.com/resources" },
+  openGraph: {
+    title: "Lease Resources for Renters and Landlords | LeasePlain",
+    description: "Plain-English guides to understand leases, spot red flags, and know what to check before signing. Free lease resources for Canadian renters and landlords.",
+    url: "https://leaseplain.com/resources",
+    type: "website",
+  },
 };
 
 const categories = [

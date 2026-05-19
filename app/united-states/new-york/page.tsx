@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Learn about New York tenant rights under the Housing Stability & Tenant Protection Act, rent stabilization, and DHCR oversight. LeasePlain's AI lease analysis for New York is coming soon.",
   alternates: { canonical: "https://leaseplain.com/united-states/new-york" },
+  openGraph: {
+    title: "New York Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+    description: "Learn about New York tenant rights under the Housing Stability & Tenant Protection Act, rent stabilization, and DHCR oversight. LeasePlain's AI lease analysis for New York is coming soon.",
+    url: "https://leaseplain.com/united-states/new-york",
+    type: "website",
+  },
 };
 
 const nyProtections = [

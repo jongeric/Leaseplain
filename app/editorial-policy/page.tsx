@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "LeasePlain's editorial policy covers our content review standards, accuracy process, update procedures, AI and human oversight framework, and our commitment to educational — not legal — content.",
   alternates: { canonical: "https://leaseplain.com/editorial-policy" },
+  openGraph: {
+    title: "Editorial Policy | LeasePlain Content Standards",
+    description: "LeasePlain's editorial policy covers our content review standards, accuracy process, update procedures, AI and human oversight framework, and our commitment to educational — not legal — content.",
+    url: "https://leaseplain.com/editorial-policy",
+    type: "website",
+  },
 };
 
 const schema = {

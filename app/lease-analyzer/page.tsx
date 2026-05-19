@@ -19,6 +19,12 @@ export const metadata: Metadata = {
     "lease review tool", "tenant lease checker", "lease clause analyzer",
   ],
   alternates: { canonical: "https://leaseplain.com/lease-analyzer" },
+  openGraph: {
+    title: "AI Lease Analyzer – Understand Any Lease in Minutes | LeasePlain",
+    description: "Upload your residential lease and get a plain-English breakdown instantly. Our AI identifies red flags, explains every clause, and highlights your rights as a tenant.",
+    url: "https://leaseplain.com/lease-analyzer",
+    type: "website",
+  },
 };
 
 const analysisSection = [

@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Learn your rights as a residential tenant in Canada. Guides for Ontario, Toronto, rent increase rules, breaking a lease, and landlord responsibilities.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights" },
+  openGraph: {
+    title: "Tenant Rights in Canada – Know Your Rights as a Renter | LeasePlain",
+    description: "Learn your rights as a residential tenant in Canada. Guides for Ontario, Toronto, rent increase rules, breaking a lease, and landlord responsibilities.",
+    url: "https://leaseplain.com/tenant-rights",
+    type: "website",
+  },
 };
 
 const guides = [

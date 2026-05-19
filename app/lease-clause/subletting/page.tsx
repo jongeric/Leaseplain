@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand subletting and assignment clauses in your lease. Learn when your landlord can and cannot refuse a sublet request in Ontario.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/subletting" },
+  openGraph: {
+    title: "Subletting Clause Explained – Your Rights to Sublet in Ontario | LeasePlain",
+    description: "Understand subletting and assignment clauses in your lease. Learn when your landlord can and cannot refuse a sublet request in Ontario.",
+    url: "https://leaseplain.com/lease-clause/subletting",
+    type: "website",
+  },
 };
 
 const subletRights = [

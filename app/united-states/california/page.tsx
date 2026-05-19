@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Learn about California tenant rights under AB 1482, statewide rent cap, just cause eviction, and the Anti-Price Gouging Law. LeasePlain's AI lease analysis for California is coming soon.",
   alternates: { canonical: "https://leaseplain.com/united-states/california" },
+  openGraph: {
+    title: "California Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+    description: "Learn about California tenant rights under AB 1482, statewide rent cap, just cause eviction, and the Anti-Price Gouging Law. LeasePlain's AI lease analysis for California is coming soon.",
+    url: "https://leaseplain.com/united-states/california",
+    type: "website",
+  },
 };
 
 const californiaProtections = [

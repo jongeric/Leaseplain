@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "What does a guest clause in a lease mean? Learn the difference between guests and occupants in Ontario, whether guest restrictions are enforceable, and what red flags to avoid.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/guests" },
+  openGraph: {
+    title: "Guest Clause in a Lease: How Long Can Guests Stay? | LeasePlain",
+    description: "What does a guest clause in a lease mean? Learn the difference between guests and occupants in Ontario, whether guest restrictions are enforceable, and what red flags to avoid.",
+    url: "https://leaseplain.com/lease-clause/guests",
+    type: "website",
+  },
 };
 
 const redFlags = [

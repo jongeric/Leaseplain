@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   description:
     "Learn how LeasePlain analyzes your residential lease. Upload a PDF, our AI reads every clause, and you get a plain-English report in seconds.",
   alternates: { canonical: "https://leaseplain.com/how-it-works" },
+  openGraph: {
+    title: "How LeasePlain Works – AI Lease Analysis in 3 Steps",
+    description: "Learn how LeasePlain analyzes your residential lease. Upload a PDF, our AI reads every clause, and you get a plain-English report in seconds.",
+    url: "https://leaseplain.com/how-it-works",
+    type: "website",
+  },
 };
 
 const steps = [

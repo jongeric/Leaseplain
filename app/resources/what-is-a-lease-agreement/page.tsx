@@ -61,6 +61,13 @@ export default function WhatIsALeaseAgreementPage() {
           </div>
         </section>
 
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <div className="border-l-4 border-blue-500 bg-blue-50 rounded-r-xl p-4">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Quick Answer</p>
+            <p className="text-sm text-blue-900 leading-relaxed">A lease agreement is a legally binding contract between a landlord and a tenant that sets out the terms of renting a residential property — including rent amount, payment date, lease term, and both parties&apos; rights and responsibilities. In Canada, any lease clause that conflicts with provincial tenancy law is automatically void, even if both parties signed it.</p>
+          </div>
+        </div>
+
         {/* Content + Sidebar */}
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">

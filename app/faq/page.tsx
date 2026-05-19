@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Answers to the most common questions about LeasePlain, lease analysis, tenant rights, and what our AI can and can't do.",
   alternates: { canonical: "https://leaseplain.com/faq" },
+  openGraph: {
+    title: "FAQ – Frequently Asked Questions | LeasePlain",
+    description: "Answers to the most common questions about LeasePlain, lease analysis, tenant rights, and what our AI can and can't do.",
+    url: "https://leaseplain.com/faq",
+    type: "website",
+  },
 };
 
 const faqs = [

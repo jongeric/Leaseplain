@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   description:
     "See what a LeasePlain analysis report looks like. A sample plain-English breakdown of a residential lease showing all six report sections.",
   alternates: { canonical: "https://leaseplain.com/example-report" },
+  openGraph: {
+    title: "Example Lease Analysis Report | LeasePlain",
+    description: "See what a LeasePlain analysis report looks like. A sample plain-English breakdown of a residential lease showing all six report sections.",
+    url: "https://leaseplain.com/example-report",
+    type: "website",
+  },
 };
 
 export default function ExampleReportPage() {

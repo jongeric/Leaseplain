@@ -101,6 +101,20 @@ export default function CheckBeforeSigningPage() {
         dateModified="2026-05-15"
         keywords={["lease checklist", "before signing a lease", "what to check in a lease", "tenant checklist", "lease review tips"]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "What to Check Before Signing a Lease",
+        "description": "A practical checklist of everything to verify about the unit, the landlord, and the lease terms before signing a residential lease in Canada.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Verify the landlord's identity and ownership", "text": "Search the property on your municipality's property tax portal to confirm the person claiming to be the landlord actually owns the unit." },
+          { "@type": "HowToStep", "position": 2, "name": "Inspect the unit in person", "text": "Visit at different times of day. Check for mold, water damage, pests, broken fixtures, and whether appliances work. Document everything with photos." },
+          { "@type": "HowToStep", "position": 3, "name": "Research the building's history", "text": "Check if the building has outstanding work orders or property standards violations with your city's open data portal." },
+          { "@type": "HowToStep", "position": 4, "name": "Read the entire lease before signing", "text": "Do not sign on the day you receive the lease. Take it home, read every clause, and use LeasePlain's AI to flag anything unusual." },
+          { "@type": "HowToStep", "position": 5, "name": "Compare deposit and fee terms to provincial law", "text": "Calculate whether the deposit amount requested is within your province's legal limit. Ontario: 1 month LMR only. BC: 0.5 months. Alberta: 1 month." },
+          { "@type": "HowToStep", "position": 6, "name": "Get everything in writing", "text": "Any promises the landlord makes verbally must be added to the lease in writing before you sign." },
+        ],
+      }) }} />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

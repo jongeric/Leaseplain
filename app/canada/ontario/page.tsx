@@ -47,8 +47,20 @@ const cities = [
   { name: "Oshawa", href: "/canada/ontario/oshawa", desc: "Durham Region city, commuter belt, affordable GTA alternative" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario",
+};
+
 export default function OntarioPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -76,7 +88,7 @@ export default function OntarioPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Ontario Tenant Rights: Lease Help Under the Residential Tenancies Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario's <em>Residential Tenancies Act</em> (RTA) provides some of the strongest tenant
               protections in North America. From rent increase caps to no-cost LTB hearings, Ontario
               renters have significant rights — but only if they know them.
@@ -217,5 +229,6 @@ export default function OntarioPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

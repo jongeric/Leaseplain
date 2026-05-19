@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "Terms of Use | LeasePlain",
   description: "LeasePlain terms of use — the rules governing your use of the LeasePlain service.",
   alternates: { canonical: "https://leaseplain.com/terms" },
+  openGraph: {
+    title: "Terms of Use | LeasePlain",
+    description: "LeasePlain terms of use — the rules governing your use of the LeasePlain service.",
+    url: "https://leaseplain.com/terms",
+    type: "website",
+  },
 };
 
 const lastUpdated = "May 6, 2026";

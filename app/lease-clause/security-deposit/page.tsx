@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand what a security deposit clause means, how much your landlord can legally charge, and when you're entitled to get it back — with interest.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/security-deposit" },
+  openGraph: {
+    title: "Security Deposit Clause Explained – What Tenants Need to Know | LeasePlain",
+    description: "Understand what a security deposit clause means, how much your landlord can legally charge, and when you're entitled to get it back — with interest.",
+    url: "https://leaseplain.com/lease-clause/security-deposit",
+    type: "website",
+  },
 };
 
 const rights = [

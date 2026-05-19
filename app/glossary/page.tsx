@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   description:
     "Understand every term in your lease. Plain-English definitions of security deposit, guarantor, subletting, holdover tenant, force majeure, quiet enjoyment, and 15+ more rental terms.",
   alternates: { canonical: "https://leaseplain.com/glossary" },
+  openGraph: {
+    title: "Lease Glossary | Plain-English Definitions of Rental Terms | LeasePlain",
+    description: "Understand every term in your lease. Plain-English definitions of security deposit, guarantor, subletting, holdover tenant, force majeure, quiet enjoyment, and 15+ more rental terms.",
+    url: "https://leaseplain.com/glossary",
+    type: "website",
+  },
 };
 
 const terms = [

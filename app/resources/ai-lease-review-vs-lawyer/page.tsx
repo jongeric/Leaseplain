@@ -61,6 +61,13 @@ export default function AILeaseReviewVsLawyerPage() {
           </div>
         </section>
 
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <div className="border-l-4 border-blue-500 bg-blue-50 rounded-r-xl p-4">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Quick Answer</p>
+            <p className="text-sm text-blue-900 leading-relaxed">Use AI lease review for everyday lease checks — it&apos;s free, instant, and covers common provincial law violations. Use a lawyer for evictions, complex disputes, or when you need a formal legal opinion. Most Canadian renters don&apos;t need a lawyer to review a standard residential lease.</p>
+          </div>
+        </div>
+
         {/* Content + Sidebar */}
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">

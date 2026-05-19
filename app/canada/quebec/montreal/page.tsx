@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -35,6 +36,12 @@ const montrealLeaseIssues = [
 export default function MontrealPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Canada", href: "https://leaseplain.com/canada" },
+        { name: "Quebec", href: "https://leaseplain.com/canada/quebec" },
+        { name: "Montreal", href: "https://leaseplain.com/canada/quebec/montreal" },
+      ]} />
       <Navbar />
 
       <main>

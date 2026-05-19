@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as an Alberta renter. Alberta has no rent control — learn how the Residential Tenancies Act, RTDRS process, and security deposit rules protect you.",
   alternates: { canonical: "https://leaseplain.com/canada/alberta" },
+  openGraph: {
+    title: "Alberta Tenant Rights: Lease Help Under the Residential Tenancies Act | LeasePlain",
+    description: "Understand your rights as an Alberta renter. Alberta has no rent control — learn how the Residential Tenancies Act, RTDRS process, and security deposit rules protect you.",
+    url: "https://leaseplain.com/canada/alberta",
+    type: "website",
+  },
 };
 
 const albertaProtections = [

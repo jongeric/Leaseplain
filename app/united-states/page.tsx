@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "LeasePlain is expanding to the United States. Learn about US tenant rights by state — New York, California, Florida, and more — and how US leases differ from Canadian ones.",
   alternates: { canonical: "https://leaseplain.com/united-states" },
+  openGraph: {
+    title: "US Tenant Rights & Lease Help — Coming to LeasePlain | LeasePlain",
+    description: "LeasePlain is expanding to the United States. Learn about US tenant rights by state — New York, California, Florida, and more — and how US leases differ from Canadian ones.",
+    url: "https://leaseplain.com/united-states",
+    type: "website",
+  },
 };
 
 const usStates = [

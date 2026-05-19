@@ -147,6 +147,15 @@ export default function LeaseRedFlagsPage() {
         dateModified="2026-05-15"
         keywords={["lease red flags", "bad lease clauses", "lease warning signs", "tenant lease risks"]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+        "url": "https://leaseplain.com/resources/lease-red-flags",
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -171,13 +180,20 @@ export default function LeaseRedFlagsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               15 Lease Red Flags Every Tenant Should Know
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               These are the most common problematic clauses found in residential leases — what each
               one means, whether it's actually enforceable, and what you should do if you see it in
               your lease.
             </p>
           </div>
         </section>
+
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <div className="border-l-4 border-blue-500 bg-blue-50 rounded-r-xl p-4">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Quick Answer</p>
+            <p className="text-sm text-blue-900 leading-relaxed">Lease red flags are clauses that attempt to remove your rights as a tenant, charge illegal fees, or expose you to unexpected liability. In Canada, many such clauses are automatically void under provincial tenancy law — but you still need to know they&apos;re there before signing. Common red flags include waiving LTB/RTB rights, unlimited rent increases, illegal deposits, and unrestricted landlord entry.</p>
+          </div>
+        </div>
 
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">

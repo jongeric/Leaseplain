@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Learn how rent increase clauses work in Ontario. Understand the annual guideline, how much notice is required, and when a rent increase is illegal.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/rent-increase" },
+  openGraph: {
+    title: "Rent Increase Clause Explained – Rules, Notice & Your Rights | LeasePlain",
+    description: "Learn how rent increase clauses work in Ontario. Understand the annual guideline, how much notice is required, and when a rent increase is illegal.",
+    url: "https://leaseplain.com/lease-clause/rent-increase",
+    type: "website",
+  },
 };
 
 const rights = [

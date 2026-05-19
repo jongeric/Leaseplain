@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand early termination clauses in your lease. Learn when you can legally break a lease in Ontario, what notice is required, and what penalties are enforceable.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/early-termination" },
+  openGraph: {
+    title: "Early Termination Clause Explained – Breaking a Lease Legally | LeasePlain",
+    description: "Understand early termination clauses in your lease. Learn when you can legally break a lease in Ontario, what notice is required, and what penalties are enforceable.",
+    url: "https://leaseplain.com/lease-clause/early-termination",
+    type: "website",
+  },
 };
 
 const tenantRights = [

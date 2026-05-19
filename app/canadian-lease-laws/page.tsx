@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "A complete guide to Canadian residential lease laws by province. Understand how Ontario, BC, Alberta, Quebec, and other provinces regulate rent increases, deposits, evictions, and tenant rights.",
   alternates: { canonical: "https://leaseplain.com/canadian-lease-laws" },
+  openGraph: {
+    title: "Canadian Lease Laws Explained: Province-by-Province Guide | LeasePlain",
+    description: "A complete guide to Canadian residential lease laws by province. Understand how Ontario, BC, Alberta, Quebec, and other provinces regulate rent increases, deposits, evictions, and tenant rights.",
+    url: "https://leaseplain.com/canadian-lease-laws",
+    type: "website",
+  },
 };
 
 const provinceData = [

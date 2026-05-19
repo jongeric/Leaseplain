@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a BC renter under the Residential Tenancy Act. Learn about the RTB dispute process, security deposit rules, rent increase limits, and BC-specific lease protections.",
   alternates: { canonical: "https://leaseplain.com/canada/british-columbia" },
+  openGraph: {
+    title: "BC Tenant Rights: Lease Help Under the Residential Tenancy Act | LeasePlain",
+    description: "Understand your rights as a BC renter under the Residential Tenancy Act. Learn about the RTB dispute process, security deposit rules, rent increase limits, and BC-specific lease protections.",
+    url: "https://leaseplain.com/canada/british-columbia",
+    type: "website",
+  },
 };
 
 const bcProtections = [

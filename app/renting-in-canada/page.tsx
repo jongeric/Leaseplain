@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Everything you need to know about renting in Canada — how leases work, tenant rights by province, what to watch for, and how to protect yourself before signing.",
   alternates: { canonical: "https://leaseplain.com/renting-in-canada" },
+  openGraph: {
+    title: "Renting in Canada: Complete Guide for New Renters | LeasePlain",
+    description: "Everything you need to know about renting in Canada — how leases work, tenant rights by province, what to watch for, and how to protect yourself before signing.",
+    url: "https://leaseplain.com/renting-in-canada",
+    type: "website",
+  },
 };
 
 const leaseSections = [

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand your Florida residential lease in plain English. AI-powered analysis covering FL landlord-tenant law, security deposits, early termination, and tenant rights.",
   alternates: { canonical: "https://leaseplain.com/united-states/florida" },
+  openGraph: {
+    title: "Florida Lease Review: AI Lease Analyzer for FL Renters | LeasePlain",
+    description: "Understand your Florida residential lease in plain English. AI-powered analysis covering FL landlord-tenant law, security deposits, early termination, and tenant rights.",
+    url: "https://leaseplain.com/united-states/florida",
+    type: "website",
+  },
 };
 
 const cities = [

@@ -62,6 +62,13 @@ export default function WhatIsAILeaseAnalyzerPage() {
           </div>
         </section>
 
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <div className="border-l-4 border-blue-500 bg-blue-50 rounded-r-xl p-4">
+            <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">Quick Answer</p>
+            <p className="text-sm text-blue-900 leading-relaxed">An AI lease analyzer reads your residential lease and automatically flags clauses that may violate provincial tenancy law, charge above-legal fees, or contain unusual terms — giving plain-English explanations without needing a lawyer. LeasePlain&apos;s analyzer checks against the specific laws of your Canadian province.</p>
+          </div>
+        </div>
+
         {/* Content + Sidebar */}
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">

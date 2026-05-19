@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Learn about NYC tenant rights: rent stabilization, DHCR, major capital improvements (MCI), and the right to counsel. LeasePlain's AI lease analysis for New York City is coming soon.",
   alternates: { canonical: "https://leaseplain.com/united-states/new-york/new-york-city" },
+  openGraph: {
+    title: "Lease Help in New York City | Tenant Rights (Coming Soon) | LeasePlain",
+    description: "Learn about NYC tenant rights: rent stabilization, DHCR, major capital improvements (MCI), and the right to counsel. LeasePlain's AI lease analysis for New York City is coming soon.",
+    url: "https://leaseplain.com/united-states/new-york/new-york-city",
+    type: "website",
+  },
 };
 
 const nycRights = [

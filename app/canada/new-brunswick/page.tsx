@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal, no rent control, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
   alternates: { canonical: "https://leaseplain.com/canada/new-brunswick" },
+  openGraph: {
+    title: "New Brunswick Tenant Rights: Lease Help & Renter Protections | LeasePlain",
+    description: "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal, no rent control, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
+    url: "https://leaseplain.com/canada/new-brunswick",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

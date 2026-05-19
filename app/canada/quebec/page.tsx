@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a Quebec renter under the Civil Code, the Act Respecting Lessor and Lessee, and the Tribunal administratif du logement (TAL). Learn about the standard bail and rent increase rules.",
   alternates: { canonical: "https://leaseplain.com/canada/quebec" },
+  openGraph: {
+    title: "Quebec Tenant Rights: Lease Help Under the Civil Code & Housing Tribunal | LeasePlain",
+    description: "Understand your rights as a Quebec renter under the Civil Code, the Act Respecting Lessor and Lessee, and the Tribunal administratif du logement (TAL). Learn about the standard bail and rent increase rules.",
+    url: "https://leaseplain.com/canada/quebec",
+    type: "website",
+  },
 };
 
 const quebecProtections = [

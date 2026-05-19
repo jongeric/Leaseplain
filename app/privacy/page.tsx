@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy | LeasePlain",
   description: "LeasePlain's privacy policy — how we handle your data, your lease documents, and your personal information.",
   alternates: { canonical: "https://leaseplain.com/privacy" },
+  openGraph: {
+    title: "Privacy Policy | LeasePlain",
+    description: "LeasePlain's privacy policy — how we handle your data, your lease documents, and your personal information.",
+    url: "https://leaseplain.com/privacy",
+    type: "website",
+  },
 };
 
 const lastUpdated = "May 6, 2026";

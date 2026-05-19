@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a Manitoba renter under The Residential Tenancies Act. Learn about RTB hearings, annual rent increase guidelines, security deposit rules, and lease protections in Winnipeg and across Manitoba.",
   alternates: { canonical: "https://leaseplain.com/canada/manitoba" },
+  openGraph: {
+    title: "Manitoba Tenant Rights: Lease Help Under the Residential Tenancies Act | LeasePlain",
+    description: "Understand your rights as a Manitoba renter under The Residential Tenancies Act. Learn about RTB hearings, annual rent increase guidelines, security deposit rules, and lease protections in Winnipeg and across Manitoba.",
+    url: "https://leaseplain.com/canada/manitoba",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Ontario law makes 'no pets' clauses void. Learn what landlords can and cannot require around pets in a lease, and what red flags to watch for in pet clauses.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/pets" },
+  openGraph: {
+    title: "Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario? | LeasePlain",
+    description: "Ontario law makes 'no pets' clauses void. Learn what landlords can and cannot require around pets in a lease, and what red flags to watch for in pet clauses.",
+    url: "https://leaseplain.com/lease-clause/pets",
+    type: "website",
+  },
 };
 
 const allowedRequirements = [

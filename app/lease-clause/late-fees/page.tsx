@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand late fee clauses in your lease. Learn whether your landlord can legally charge late fees in Ontario and what the law actually allows.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/late-fees" },
+  openGraph: {
+    title: "Late Fee Clause Explained – Are Late Fees Legal in Ontario? | LeasePlain",
+    description: "Understand late fee clauses in your lease. Learn whether your landlord can legally charge late fees in Ontario and what the law actually allows.",
+    url: "https://leaseplain.com/lease-clause/late-fees",
+    type: "website",
+  },
 };
 
 const keyFacts = [

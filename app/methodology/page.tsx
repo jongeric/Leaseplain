@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   description:
     "Learn how LeasePlain evaluates lease clauses, assigns risk scores (high/medium/low), and categorizes findings across 6 analysis dimensions. Transparent, educational, and honest about limitations.",
   alternates: { canonical: "https://leaseplain.com/methodology" },
+  openGraph: {
+    title: "LeasePlain Methodology | How We Score and Analyze Leases",
+    description: "Learn how LeasePlain evaluates lease clauses, assigns risk scores (high/medium/low), and categorizes findings across 6 analysis dimensions. Transparent, educational, and honest about limitations.",
+    url: "https://leaseplain.com/methodology",
+    type: "website",
+  },
 };
 
 const schema = {

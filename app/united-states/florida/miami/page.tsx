@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand your Miami, FL lease in plain English. AI-powered analysis covering Florida landlord-tenant law, Miami tenant rights, security deposits, and lease red flags.",
   alternates: { canonical: "https://leaseplain.com/united-states/florida/miami" },
+  openGraph: {
+    title: "Miami Lease Review: AI Lease Analyzer for Miami Renters | LeasePlain",
+    description: "Understand your Miami, FL lease in plain English. AI-powered analysis covering Florida landlord-tenant law, Miami tenant rights, security deposits, and lease red flags.",
+    url: "https://leaseplain.com/united-states/florida/miami",
+    type: "website",
+  },
 };
 
 export default function MiamiPage() {

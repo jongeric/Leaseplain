@@ -34,10 +34,24 @@ const schema = {
   ],
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate the Required Notice Period",
+  "description": "How to determine the legally required notice period for rent increases, evictions, entry, and tenancy terminations in your Canadian province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Notice periods vary significantly by province. Choose the province where your rental unit is located." },
+    { "@type": "HowToStep", "position": 2, "name": "Select the notice type", "text": "Choose whether you need a rent increase notice, landlord entry notice, tenant termination notice, landlord termination notice, or eviction notice." },
+    { "@type": "HowToStep", "position": 3, "name": "Read the required period and legal basis", "text": "The calculator shows the exact required notice period, the specific legislation that mandates it, and the official form required." },
+    { "@type": "HowToStep", "position": 4, "name": "Count from today's date", "text": "The notice period begins on the day the written notice is delivered, not the day it is sent. Factor in delivery time if mailing." },
+  ],
+};
+
 export default function NoticePeriodCalculatorPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <NoticePeriodClient />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -33,6 +34,12 @@ const cityLeaseIssues = [
 export default function KingstonPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Canada", href: "https://leaseplain.com/canada" },
+        { name: "Ontario", href: "https://leaseplain.com/canada/ontario" },
+        { name: "Kingston", href: "https://leaseplain.com/canada/ontario/kingston" },
+      ]} />
       <Navbar />
 
       <main>

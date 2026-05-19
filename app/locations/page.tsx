@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Find tenant rights guides, lease help, and local rental law information for provinces across Canada and states in the United States. Each jurisdiction has its own rules.",
   alternates: { canonical: "https://leaseplain.com/locations" },
+  openGraph: {
+    title: "Lease Help by Location: Canada & United States | LeasePlain",
+    description: "Find tenant rights guides, lease help, and local rental law information for provinces across Canada and states in the United States. Each jurisdiction has its own rules.",
+    url: "https://leaseplain.com/locations",
+    type: "website",
+  },
 };
 
 const canadaProvinces = [

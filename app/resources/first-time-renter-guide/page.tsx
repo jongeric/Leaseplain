@@ -22,9 +22,25 @@ export const metadata: Metadata = {
   keywords: ["first-time renter guide", "renting for the first time", "how to sign a lease", "tenant rights Ontario", "lease guide beginners"],
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Rent for the First Time in Canada",
+  "description": "A step-by-step guide for first-time renters covering budgeting, finding a unit, understanding a lease, signing, and moving in.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Set your budget and prepare your documents", "text": "Calculate how much you can afford (aim for rent under 30% of gross income). Get your credit report, prepare references, and get tenant insurance quotes before you start looking." },
+    { "@type": "HowToStep", "position": 2, "name": "Inspect the unit in person", "text": "Visit the unit before signing anything. Test appliances, check for moisture or pests, and document the condition with photos. Never sign a lease for a unit you haven't seen." },
+    { "@type": "HowToStep", "position": 3, "name": "Read and understand the lease", "text": "Read every clause before signing. Understand key terms: gross vs net rent, fixed-term vs month-to-month, notice periods, and last month's rent deposit. Use an AI analyzer to flag anything unusual." },
+    { "@type": "HowToStep", "position": 4, "name": "Sign the lease and keep a copy", "text": "Never sign under pressure. Get any verbal promises added in writing. Once signed, keep a copy of the lease in a safe place — you'll need it if a dispute arises." },
+    { "@type": "HowToStep", "position": 5, "name": "Complete a move-in inspection", "text": "Walk through every room on move-in day. Document existing damage with date-stamped photos and complete the move-in inspection report. Report any issues to your landlord in writing immediately." },
+    { "@type": "HowToStep", "position": 6, "name": "Know your tenant rights", "text": "In Ontario, you're entitled to a written lease, 24-hour entry notice, repairs under the RTA, and protection from illegal eviction. Your landlord cannot evict you without an LTB order." },
+  ],
+};
+
 export default function FirstTimeRenterGuidePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <ArticleSchema
         headline="First-Time Renter Guide: How to Read and Sign a Lease"
         description="Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario."

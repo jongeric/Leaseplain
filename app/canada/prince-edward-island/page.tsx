@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a PEI renter. Learn about the Island Regulatory and Appeals Commission, rent caps, deposits, and lease protections in Prince Edward Island.",
   alternates: { canonical: "https://leaseplain.com/canada/prince-edward-island" },
+  openGraph: {
+    title: "PEI Tenant Rights: Lease Help & Rental Laws in Prince Edward Island | LeasePlain",
+    description: "Understand your rights as a PEI renter. Learn about the Island Regulatory and Appeals Commission, rent caps, deposits, and lease protections in Prince Edward Island.",
+    url: "https://leaseplain.com/canada/prince-edward-island",
+    type: "website",
+  },
 };
 
 const tenantProtections = [
@@ -35,6 +42,11 @@ const watchInLeases = [
 export default function PrinceEdwardIslandPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Canada", href: "https://leaseplain.com/canada" },
+        { name: "Prince Edward Island", href: "https://leaseplain.com/canada/prince-edward-island" },
+      ]} />
       <Navbar />
 
       <main>

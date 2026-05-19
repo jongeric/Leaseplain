@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   description:
     "Get in touch with LeasePlain. Questions about your analysis, your account, or the product — we're here to help.",
   alternates: { canonical: "https://leaseplain.com/contact" },
+  openGraph: {
+    title: "Contact LeasePlain | LeasePlain",
+    description: "Get in touch with LeasePlain. Questions about your analysis, your account, or the product — we're here to help.",
+    url: "https://leaseplain.com/contact",
+    type: "website",
+  },
 };
 
 const contactOptions = [

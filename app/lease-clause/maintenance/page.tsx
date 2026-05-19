@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand who is responsible for repairs and maintenance in your lease. Learn what your landlord must fix, what you're responsible for, and your rights when repairs are ignored.",
   alternates: { canonical: "https://leaseplain.com/lease-clause/maintenance" },
+  openGraph: {
+    title: "Maintenance Responsibilities Clause Explained | LeasePlain",
+    description: "Understand who is responsible for repairs and maintenance in your lease. Learn what your landlord must fix, what you're responsible for, and your rights when repairs are ignored.",
+    url: "https://leaseplain.com/lease-clause/maintenance",
+    type: "website",
+  },
 };
 
 const landlordDuties = [

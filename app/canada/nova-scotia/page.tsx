@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a Nova Scotia renter under the Residential Tenancies Act. Learn about the rent increase cap, government-held security deposits, Director of Residential Tenancies hearings, and lease protections in Halifax and across Nova Scotia.",
   alternates: { canonical: "https://leaseplain.com/canada/nova-scotia" },
+  openGraph: {
+    title: "Nova Scotia Tenant Rights: Lease Help & Renter Protections | LeasePlain",
+    description: "Understand your rights as a Nova Scotia renter under the Residential Tenancies Act. Learn about the rent increase cap, government-held security deposits, Director of Residential Tenancies hearings, and lease protections in Halifax and across Nova Scotia.",
+    url: "https://leaseplain.com/canada/nova-scotia",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

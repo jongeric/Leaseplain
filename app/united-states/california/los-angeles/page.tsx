@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Understand your Los Angeles lease in plain English. AI-powered analysis covering California landlord-tenant law, LA rent control, tenant rights, and lease red flags.",
   alternates: { canonical: "https://leaseplain.com/united-states/california/los-angeles" },
+  openGraph: {
+    title: "Los Angeles Lease Review: AI Lease Analyzer for LA Renters | LeasePlain",
+    description: "Understand your Los Angeles lease in plain English. AI-powered analysis covering California landlord-tenant law, LA rent control, tenant rights, and lease red flags.",
+    url: "https://leaseplain.com/united-states/california/los-angeles",
+    type: "website",
+  },
 };
 
 export default function LosAngelesPage() {

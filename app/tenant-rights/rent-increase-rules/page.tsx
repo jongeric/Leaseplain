@@ -56,6 +56,11 @@ export default function RentIncreaseRulesPage() {
         dateModified="2026-05-15"
         keywords={["Ontario rent increase rules", "rent increase guideline Ontario", "rent control Ontario", "dispute rent increase", "above guideline increase Ontario"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Rent Increase Rules", href: "https://leaseplain.com/tenant-rights/rent-increase-rules" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

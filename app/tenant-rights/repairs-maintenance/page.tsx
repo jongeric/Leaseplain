@@ -83,6 +83,11 @@ export default function RepairsMaintenancePage() {
         dateModified="2026-05-15"
         keywords={["tenant repair rights Ontario", "landlord repair obligations", "rent abatement Ontario", "T6 application LTB", "maintenance rights renter Canada"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Repairs & Maintenance", href: "https://leaseplain.com/tenant-rights/repairs-maintenance" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

@@ -80,6 +80,11 @@ export default function TorontoTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["tenant rights Toronto", "Toronto housing help", "Toronto tenant legal clinic", "renting in Toronto", "Ontario RTA Toronto"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Toronto", href: "https://leaseplain.com/tenant-rights/toronto" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

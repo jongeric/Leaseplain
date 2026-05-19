@@ -66,6 +66,11 @@ export default function QuebecTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["Quebec tenant rights", "TAL tribunal logement", "Quebec bail lease", "Quebec rent increase", "renter rights Quebec Canada"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Quebec", href: "https://leaseplain.com/tenant-rights/quebec" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

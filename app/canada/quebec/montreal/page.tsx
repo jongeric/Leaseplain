@@ -39,8 +39,21 @@ const montrealLeaseIssues = [
   "Informal side agreements to waive rights or pay above-market deposits — deposits (\"dépôts de garantie\") are generally prohibited in Quebec.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/quebec/montreal",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/quebec/montreal",
+};
+
 export default function MontrealPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -69,7 +82,7 @@ export default function MontrealPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Montreal, Quebec | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Montreal is Canada's largest rental market by the proportion of renters in its population.
               Quebec's strong tenant protections, the standard bail form, July 1 moving day, and the
               TAL dispute tribunal are all essential knowledge for any Montreal renter.
@@ -204,5 +217,6 @@ export default function MontrealPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

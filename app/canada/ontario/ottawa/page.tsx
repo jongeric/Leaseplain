@@ -38,8 +38,21 @@ const ottawaLeaseIssues = [
   "Informal side agreements not included in the written lease — always insist that all terms are in the signed lease.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/ottawa",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/ottawa",
+};
+
 export default function OttawaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function OttawaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Ottawa, Ontario | Tenant Rights for Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ottawa's rental market is shaped by a large federal public service workforce and a
               significant student population near the University of Ottawa and Carleton University.
               The Ontario RTA protects all of these renters equally — but knowing those protections
@@ -210,5 +223,6 @@ export default function OttawaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

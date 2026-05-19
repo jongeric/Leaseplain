@@ -38,8 +38,21 @@ const mississaugaLeaseIssues = [
   "No-pet clauses — in Ontario, a blanket no-pet clause in a lease is void; landlords can only seek eviction if a specific pet causes a problem.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/mississauga",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/mississauga",
+};
+
 export default function MississaugaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function MississaugaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Mississauga, Ontario | Tenant Rights
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Mississauga is a rapidly growing GTA suburb with one of Ontario's most active condo rental
               markets. The Ontario RTA protects every Mississauga renter, but condo-specific leases
               introduce unique issues that are important to understand before signing.
@@ -198,5 +211,6 @@ export default function MississaugaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

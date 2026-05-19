@@ -38,8 +38,21 @@ const calgaryLeaseIssues = [
   "Pet deposits structured as non-refundable fees — Alberta RTA security deposits must be refundable subject to damages.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/alberta/calgary",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/alberta/calgary",
+};
+
 export default function CalgaryPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function CalgaryPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Calgary, Alberta | Tenant Rights
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Calgary's rental market is tightly linked to the energy sector — when oil prices fall,
               vacancy rates rise; when they climb, rents follow. In either environment, knowing the
               Alberta RTA protects you from illegal deposits, improper rent hikes, and unfair lease terms.
@@ -209,5 +222,6 @@ export default function CalgaryPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

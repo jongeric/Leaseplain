@@ -38,8 +38,21 @@ const londonLeaseIssues = [
   "Noise and guest clauses targeted at student behaviour that may conflict with RTA protections — tenants have the right to reasonable enjoyment of the unit.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/london",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/london",
+};
+
 export default function LondonPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function LondonPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in London, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               London is a major university city where student renters, young professionals, and
               families share a rental market shaped by Western University and Fanshawe College.
               Whether you rent off-campus or in the city proper, the Ontario RTA gives you strong protections.
@@ -210,5 +223,6 @@ export default function LondonPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -38,8 +38,21 @@ const surreyLeaseIssues = [
   "Unauthorized entry without 24 hours' written notice — a common issue in owner-occupied homes with a basement suite where the landlord lives on-site.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/british-columbia/surrey",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/british-columbia/surrey",
+};
+
 export default function SurreyPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function SurreyPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Surrey, BC | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Surrey is Metro Vancouver's largest city by area and its fastest-growing municipality.
               With one of Canada's most diverse newcomer renter communities and rapidly rising rents
               across Guildford, Newton, and City Centre, knowing your rights under BC's Residential
@@ -219,5 +232,6 @@ export default function SurreyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

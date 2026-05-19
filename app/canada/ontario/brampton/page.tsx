@@ -38,8 +38,21 @@ const bramptonLeaseIssues = [
   "Unauthorized restrictions on roommates or subletting — the RTA permits subletting with the landlord's consent, which cannot be unreasonably withheld.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/ontario/brampton",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/ontario/brampton",
+};
+
 export default function BramptonPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -68,7 +81,7 @@ export default function BramptonPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Brampton, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Brampton is Peel Region's largest and fastest-growing city, with a large newcomer
               population and a rental market spanning basement apartments to new condominiums.
               Understanding the Ontario RTA is essential before signing any Brampton lease.
@@ -210,5 +223,6 @@ export default function BramptonPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

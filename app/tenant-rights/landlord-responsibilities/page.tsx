@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "A complete guide to landlord responsibilities in Ontario. Maintenance, entry notice, heat, pests, harassment, and what to do if your landlord fails their duties.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/landlord-responsibilities" },
   openGraph: {
+    type: "website",
     title: "Landlord Responsibilities in Ontario – What They Must Do by Law | LeasePlain",
     description: "A complete guide to landlord responsibilities in Ontario. Maintenance, entry notice, heat, pests, harassment, and what to do if your landlord fails their duties.",
     url: "https://leaseplain.com/tenant-rights/landlord-responsibilities",
@@ -91,6 +92,15 @@ export default function LandlordResponsibilitiesPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Landlord Responsibilities", href: "https://leaseplain.com/tenant-rights/landlord-responsibilities" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/landlord-responsibilities",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

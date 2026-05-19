@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Complete guide to rent increase rules in Ontario. The annual guideline, 90-day notice requirements, above-guideline increases, and how to dispute an illegal increase.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/rent-increase-rules" },
   openGraph: {
+    type: "website",
     title: "Ontario Rent Increase Rules – Guideline, Notice & Your Rights | LeasePlain",
     description: "Complete guide to rent increase rules in Ontario. The annual guideline, 90-day notice requirements, above-guideline increases, and how to dispute an illegal increase.",
     url: "https://leaseplain.com/tenant-rights/rent-increase-rules",
@@ -61,6 +62,15 @@ export default function RentIncreaseRulesPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Rent Increase Rules", href: "https://leaseplain.com/tenant-rights/rent-increase-rules" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/rent-increase-rules",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

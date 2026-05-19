@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Tenant rights in the United States vary by state. LeasePlain is expanding to cover US markets. Learn about tenant protections in New York, California, Florida, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/united-states" },
   openGraph: {
+    type: "website",
     title: "US Tenant Rights by State — Coming to LeasePlain | LeasePlain",
     description: "Tenant rights in the United States vary by state. LeasePlain is expanding to cover US markets. Learn about tenant protections in New York, California, Florida, and more.",
     url: "https://leaseplain.com/tenant-rights/united-states",

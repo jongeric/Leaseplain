@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/british-columbia" },
   openGraph: {
+    type: "website",
     title: "BC Tenant Rights: Guide to the Residential Tenancy Act | LeasePlain",
     description: "A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution.",
     url: "https://leaseplain.com/tenant-rights/british-columbia",
@@ -69,6 +70,15 @@ export default function BritishColumbiaTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "British Columbia", href: "https://leaseplain.com/tenant-rights/british-columbia" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/british-columbia",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

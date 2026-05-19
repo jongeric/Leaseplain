@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "A complete guide to tenant rights in Quebec — the standard bail, the Tribunal administratif du logement (TAL), rent increases, and the prohibition on security deposits.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/quebec" },
   openGraph: {
+    type: "website",
     title: "Quebec Tenant Rights: Guide to Housing Law and the TAL | LeasePlain",
     description: "A complete guide to tenant rights in Quebec — the standard bail, the Tribunal administratif du logement (TAL), rent increases, and the prohibition on security deposits.",
     url: "https://leaseplain.com/tenant-rights/quebec",
@@ -71,6 +72,15 @@ export default function QuebecTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Quebec", href: "https://leaseplain.com/tenant-rights/quebec" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/quebec",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

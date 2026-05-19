@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/repairs-maintenance" },
   openGraph: {
+    type: "website",
     title: "Tenant Rights for Repairs and Maintenance in Ontario | LeasePlain",
     description: "Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues.",
     url: "https://leaseplain.com/tenant-rights/repairs-maintenance",
@@ -88,6 +89,15 @@ export default function RepairsMaintenancePage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Repairs & Maintenance", href: "https://leaseplain.com/tenant-rights/repairs-maintenance" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/repairs-maintenance",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "A complete guide to tenant rights in Alberta under the Residential Tenancies Act. Covers the RTDRS, security deposits, rent increases, and notice periods.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/alberta" },
   openGraph: {
+    type: "website",
     title: "Alberta Tenant Rights: Guide to the Residential Tenancies Act | LeasePlain",
     description: "A complete guide to tenant rights in Alberta under the Residential Tenancies Act. Covers the RTDRS, security deposits, rent increases, and notice periods.",
     url: "https://leaseplain.com/tenant-rights/alberta",
@@ -71,6 +72,15 @@ export default function AlbertaTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Alberta", href: "https://leaseplain.com/tenant-rights/alberta" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/alberta",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 
@@ -92,7 +102,7 @@ export default function AlbertaTenantRightsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Alberta Tenant Rights: Guide to the Residential Tenancies Act
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Alberta tenants are governed by the{" "}
               <em>Residential Tenancies Act</em> (RSA 2000, c. R-17.1). Alberta is notable among
               Canadian provinces for having <strong>no rent control</strong> — but it does have

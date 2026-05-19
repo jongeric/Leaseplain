@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "A plain-English guide to tenant rights in Ontario under the Residential Tenancies Act. Covers rent, maintenance, eviction, entry, deposits, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/ontario" },
   openGraph: {
+    type: "website",
     title: "Tenant Rights in Ontario – Complete Guide (RTA 2006) | LeasePlain",
     description: "Plain-English guide to Ontario tenant rights under the RTA — rent, eviction, deposits, maintenance, and illegal landlord actions.",
     url: "https://leaseplain.com/tenant-rights/ontario",

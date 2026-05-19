@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Can you break a lease early in Ontario? Learn your options: subletting, assignment, N9 notice, domestic violence provisions, and what the landlord can legally charge.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/breaking-a-lease" },
   openGraph: {
+    type: "website",
     title: "Breaking a Lease in Ontario – Your Rights & Options | LeasePlain",
     description: "Can you break a lease early in Ontario? Learn your options: subletting, assignment, N9 notice, domestic violence provisions, and what the landlord can legally charge.",
     url: "https://leaseplain.com/tenant-rights/breaking-a-lease",
@@ -83,6 +84,15 @@ export default function BreakingALeasePage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Breaking a Lease", href: "https://leaseplain.com/tenant-rights/breaking-a-lease" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/breaking-a-lease",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

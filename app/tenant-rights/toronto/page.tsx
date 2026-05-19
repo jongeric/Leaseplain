@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Tenant rights guide for Toronto renters. Ontario RTA applies city-wide, plus local resources, legal clinics, and housing organizations specific to Toronto.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/toronto" },
   openGraph: {
+    type: "website",
     title: "Tenant Rights in Toronto – Local Resources & Housing Help | LeasePlain",
     description: "Tenant rights guide for Toronto renters. Ontario RTA applies city-wide, plus local resources, legal clinics, and housing organizations specific to Toronto.",
     url: "https://leaseplain.com/tenant-rights/toronto",

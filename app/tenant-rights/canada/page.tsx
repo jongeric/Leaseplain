@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Tenancy law in Canada is provincially regulated. Explore tenant rights in Ontario, BC, Alberta, and Quebec — security deposits, rent control, eviction rules, and more.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/canada" },
   openGraph: {
+    type: "website",
     title: "Tenant Rights in Canada: A Province-by-Province Guide | LeasePlain",
     description: "Tenancy law in Canada is provincially regulated. Explore tenant rights in Ontario, BC, Alberta, and Quebec — security deposits, rent control, eviction rules, and more.",
     url: "https://leaseplain.com/tenant-rights/canada",
@@ -112,6 +113,15 @@ export default function CanadaTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Canada", href: "https://leaseplain.com/tenant-rights/canada" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/canada",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

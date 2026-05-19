@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "Learn about N4, N5, N12, and other eviction notices in Ontario. A notice alone does NOT evict you — understand your rights, the LTB process, and illegal eviction tactics.",
   alternates: { canonical: "https://leaseplain.com/tenant-rights/eviction-notices" },
   openGraph: {
+    type: "website",
     title: "Eviction Notices in Ontario: What Landlords Can and Cannot Do | LeasePlain",
     description: "Learn about N4, N5, N12, and other eviction notices in Ontario. A notice alone does NOT evict you — understand your rights, the LTB process, and illegal eviction tactics.",
     url: "https://leaseplain.com/tenant-rights/eviction-notices",
@@ -93,6 +94,15 @@ export default function EvictionNoticesPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Eviction Notices", href: "https://leaseplain.com/tenant-rights/eviction-notices" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://leaseplain.com/tenant-rights/eviction-notices",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".speakable-summary"],
+        },
+      }) }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

@@ -39,8 +39,21 @@ const vancouverLeaseIssues = [
   "Unreasonably short cure periods for lease violations — BC law requires specific minimum notice periods before any eviction process begins.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/canada/british-columbia/vancouver",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/canada/british-columbia/vancouver",
+};
+
 export default function VancouverPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -69,7 +82,7 @@ export default function VancouverPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Vancouver, BC | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Vancouver is one of the most expensive rental markets in the world. Tight vacancy rates,
               high investor ownership, and a heated debate about vacancy control have made understanding
               BC's Residential Tenancy Act essential for every renter in the city.
@@ -204,5 +217,6 @@ export default function VancouverPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

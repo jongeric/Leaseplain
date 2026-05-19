@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NoticePeriodClient from "./NoticePeriodClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -50,6 +51,11 @@ const howToSchema = {
 export default function NoticePeriodCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Notice Period Calculator", href: "https://leaseplain.com/tools/notice-period-calculator" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <NoticePeriodClient />

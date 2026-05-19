@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Kingston, Ontario renters: understand your rights under the Ontario RTA. Student housing near Queen's University and St. Lawrence College, joint leases, and cleaning disputes explained.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/kingston" },
+  openGraph: {
+    title: "Lease Help in Kingston, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Kingston, Ontario renters: understand your rights under the Ontario RTA. Student housing near Queen's University and St. Lawrence College, joint leases, and cleaning disputes explained.",
+    url: "https://leaseplain.com/canada/ontario/kingston",
+    type: "website",
+  },
 };
 
 const cityRights = [

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, MapPin } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -106,6 +107,11 @@ export default function CanadaTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["tenant rights Canada", "Canadian tenant law", "province tenant rights", "rent control Canada", "eviction rules Canada"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Canada", href: "https://leaseplain.com/tenant-rights/canada" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

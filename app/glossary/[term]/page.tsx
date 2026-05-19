@@ -657,6 +657,12 @@ export async function generateMetadata({
     title: `${entry.term} | Lease Glossary | LeasePlain`,
     description: `${entry.definition} Plain-English explanation, examples, common mistakes, and what it means for you as a tenant.`,
     alternates: { canonical: `https://leaseplain.com/glossary/${entry.slug}` },
+    openGraph: {
+      title: `${entry.term} | Lease Glossary | LeasePlain`,
+      description: `${entry.definition} Plain-English explanation, examples, common mistakes, and what it means for you as a tenant.`,
+      url: `https://leaseplain.com/glossary/${entry.slug}`,
+      type: "website",
+    },
   };
 }
 

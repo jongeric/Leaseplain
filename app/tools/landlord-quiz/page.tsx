@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LandlordQuizClient from "./LandlordQuizClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,11 @@ const schema = {
 export default function LandlordQuizPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Landlord Quiz", href: "https://leaseplain.com/tools/landlord-quiz" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <LandlordQuizClient />
     </>

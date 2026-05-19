@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -65,6 +66,11 @@ export default function AlbertaTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["Alberta tenant rights", "Residential Tenancies Act Alberta", "RTDRS Alberta", "Alberta rent increase rules", "Alberta security deposit"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Alberta", href: "https://leaseplain.com/tenant-rights/alberta" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

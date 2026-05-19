@@ -28,6 +28,11 @@ const cities = [
 export default function FloridaPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+        { name: "Florida", href: "https://leaseplain.com/united-states/florida" },
+      ]} />
       <Navbar />
       <main>
         {/* Hero */}

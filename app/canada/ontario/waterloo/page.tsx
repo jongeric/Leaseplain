@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Waterloo, Ontario renters: understand your rights under the Ontario RTA. Student housing, co-op sublets, joint leases, and no-sublet clauses explained for UWaterloo and WLU students.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/waterloo" },
+  openGraph: {
+    title: "Lease Help in Waterloo, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Waterloo, Ontario renters: understand your rights under the Ontario RTA. Student housing, co-op sublets, joint leases, and no-sublet clauses explained for UWaterloo and WLU students.",
+    url: "https://leaseplain.com/canada/ontario/waterloo",
+    type: "website",
+  },
 };
 
 const cityRights = [

@@ -11,9 +11,9 @@ import { CheckCircle, XCircle, AlertTriangle, ChevronRight, Upload } from "lucid
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Can ChatGPT Review a Lease? Honest Answer for Canadian Renters | LeasePlain",
+  title: "Can ChatGPT Review a Lease? What Canadian Renters Should Know | LeasePlain",
   description:
-    "ChatGPT can explain lease language, but it doesn't know Canadian provincial law. Here's what it can and can't do — and what to use instead.",
+    "ChatGPT can explain lease language, but it doesn't know Canadian provincial tenancy law. Here's what it can and can't do — and what to use instead.",
   keywords: [
     "can chatgpt review a lease",
     "chatgpt lease review Canada",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://leaseplain.com/resources/can-chatgpt-review-a-lease" },
   openGraph: {
-    title: "Can ChatGPT Review a Lease? Honest Answer for Canadian Renters | LeasePlain",
+    title: "Can ChatGPT Review a Lease? What Canadian Renters Should Know | LeasePlain",
     description:
-      "ChatGPT can explain lease language, but it doesn't know Canadian provincial law. Here's what it can and can't do — and what to use instead.",
+      "ChatGPT can explain lease language, but it doesn't know Canadian provincial tenancy law. Here's what it can and can't do — and what to use instead.",
     url: "https://leaseplain.com/resources/can-chatgpt-review-a-lease",
   },
 };
@@ -173,7 +173,7 @@ export default function CanChatGPTReviewALeasePage() {
         headline="Can ChatGPT Review a Lease? Honest Answer for Canadian Renters"
         description="ChatGPT can explain lease language, but it doesn't know Canadian provincial law. Here's what it can and can't do — and what to use instead."
         url="https://leaseplain.com/resources/can-chatgpt-review-a-lease"
-        datePublished="2026-01-10"
+        datePublished="2026-03-15"
         dateModified="2026-05-18"
         keywords={["can chatgpt review a lease", "chatgpt lease review Canada", "AI lease review Ontario", "chatgpt vs leaseplain", "chatgpt Canadian tenancy law"]}
       />

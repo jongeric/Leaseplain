@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Edmonton renters: understand your rights under Alberta's Residential Tenancies Act. Learn about Edmonton's government and university rental market, no rent control, and the RTDRS process.",
   alternates: { canonical: "https://leaseplain.com/canada/alberta/edmonton" },
+  openGraph: {
+    title: "Lease Help in Edmonton, Alberta | Tenant Rights | LeasePlain",
+    description: "Edmonton renters: understand your rights under Alberta's Residential Tenancies Act. Learn about Edmonton's government and university rental market, no rent control, and the RTDRS process.",
+    url: "https://leaseplain.com/canada/alberta/edmonton",
+    type: "website",
+  },
 };
 
 const edmontonRights = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ClauseCheckerClient from "./ClauseCheckerClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,11 @@ const schema = {
 export default function ClauseCheckerPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Clause Red Flag Scanner", href: "https://leaseplain.com/tools/clause-checker" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <ClauseCheckerClient />
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeaseBreakClient from "./LeaseBreakClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -38,6 +39,11 @@ const schema = {
 export default function LeaseBreakCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Lease Break Calculator", href: "https://leaseplain.com/tools/lease-break-calculator" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <LeaseBreakClient />
     </>

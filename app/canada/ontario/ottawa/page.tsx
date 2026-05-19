@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Ottawa renters: understand your rights under the Ontario Residential Tenancies Act. Learn about common lease issues for government workers and students near uOttawa and Carleton.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/ottawa" },
+  openGraph: {
+    title: "Lease Help in Ottawa, Ontario | Tenant Rights for Renters | LeasePlain",
+    description: "Ottawa renters: understand your rights under the Ontario Residential Tenancies Act. Learn about common lease issues for government workers and students near uOttawa and Carleton.",
+    url: "https://leaseplain.com/canada/ontario/ottawa",
+    type: "website",
+  },
 };
 
 const ottawaRights = [

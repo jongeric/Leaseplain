@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Burnaby renters: understand your rights under BC's Residential Tenancy Act. Learn about SFU and BCIT housing, condo leases, and the RTB in Burnaby.",
   alternates: { canonical: "https://leaseplain.com/canada/british-columbia/burnaby" },
+  openGraph: {
+    title: "Lease Help in Burnaby, BC | Tenant Rights & Lease Review | LeasePlain",
+    description: "Burnaby renters: understand your rights under BC's Residential Tenancy Act. Learn about SFU and BCIT housing, condo leases, and the RTB in Burnaby.",
+    url: "https://leaseplain.com/canada/british-columbia/burnaby",
+    type: "website",
+  },
 };
 
 const burnabyRights = [

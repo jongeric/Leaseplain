@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -63,6 +64,11 @@ export default function BritishColumbiaTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["BC tenant rights", "Residential Tenancy Act BC", "British Columbia renter rights", "BC rent increase rules", "RTB British Columbia"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "British Columbia", href: "https://leaseplain.com/tenant-rights/british-columbia" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

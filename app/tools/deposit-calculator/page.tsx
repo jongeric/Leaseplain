@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import DepositCalculatorClient from "./DepositCalculatorClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -38,6 +39,11 @@ const schema = {
 export default function DepositCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Deposit Calculator", href: "https://leaseplain.com/tools/deposit-calculator" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <DepositCalculatorClient />
     </>

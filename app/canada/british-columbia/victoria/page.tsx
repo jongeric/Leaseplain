@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Victoria renters: understand your rights under BC's Residential Tenancy Act. Learn about UVic and Camosun housing, rental market conditions, and the RTB in Victoria.",
   alternates: { canonical: "https://leaseplain.com/canada/british-columbia/victoria" },
+  openGraph: {
+    title: "Lease Help in Victoria, BC | Tenant Rights & Lease Review | LeasePlain",
+    description: "Victoria renters: understand your rights under BC's Residential Tenancy Act. Learn about UVic and Camosun housing, rental market conditions, and the RTB in Victoria.",
+    url: "https://leaseplain.com/canada/british-columbia/victoria",
+    type: "website",
+  },
 };
 
 const victoriaRights = [

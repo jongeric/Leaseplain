@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Calgary renters: understand your rights under Alberta's Residential Tenancies Act. Learn about Calgary's oil-driven rental cycles, no rent control, and RTDRS dispute process.",
   alternates: { canonical: "https://leaseplain.com/canada/alberta/calgary" },
+  openGraph: {
+    title: "Lease Help in Calgary, Alberta | Tenant Rights | LeasePlain",
+    description: "Calgary renters: understand your rights under Alberta's Residential Tenancies Act. Learn about Calgary's oil-driven rental cycles, no rent control, and RTDRS dispute process.",
+    url: "https://leaseplain.com/canada/alberta/calgary",
+    type: "website",
+  },
 };
 
 const calgaryRights = [

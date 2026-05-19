@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Surrey renters: understand your rights under BC's Residential Tenancy Act. Learn about renovictions, illegal fees, and RTB dispute resolution in Surrey.",
   alternates: { canonical: "https://leaseplain.com/canada/british-columbia/surrey" },
+  openGraph: {
+    title: "Lease Help in Surrey, BC | Tenant Rights & Lease Review | LeasePlain",
+    description: "Surrey renters: understand your rights under BC's Residential Tenancy Act. Learn about renovictions, illegal fees, and RTB dispute resolution in Surrey.",
+    url: "https://leaseplain.com/canada/british-columbia/surrey",
+    type: "website",
+  },
 };
 
 const surreyRights = [

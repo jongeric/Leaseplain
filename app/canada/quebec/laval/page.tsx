@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Laval renters: understand your rights under Quebec's lease law. Learn about the TAL, rent rules, lease renewals, and how to understand your bail in Laval, Quebec.",
   alternates: { canonical: "https://leaseplain.com/canada/quebec/laval" },
+  openGraph: {
+    title: "Lease Help in Laval, Quebec | Tenant Rights & Bail in Laval | LeasePlain",
+    description: "Laval renters: understand your rights under Quebec's lease law. Learn about the TAL, rent rules, lease renewals, and how to understand your bail in Laval, Quebec.",
+    url: "https://leaseplain.com/canada/quebec/laval",
+    type: "website",
+  },
 };
 
 const lavalRights = [

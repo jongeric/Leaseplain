@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Toronto renters: understand your rights under the Ontario Residential Tenancies Act. Learn about condo leases, above-guideline rent increases, and LTB hearings in Toronto.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/toronto" },
+  openGraph: {
+    title: "Lease Help in Toronto, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Toronto renters: understand your rights under the Ontario Residential Tenancies Act. Learn about condo leases, above-guideline rent increases, and LTB hearings in Toronto.",
+    url: "https://leaseplain.com/canada/ontario/toronto",
+    type: "website",
+  },
 };
 
 const torontoRights = [

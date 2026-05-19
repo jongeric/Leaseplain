@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import MoveInCostClient from "./MoveInCostClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,11 @@ const schema = {
 export default function MoveInCostCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Move-In Cost Calculator", href: "https://leaseplain.com/tools/move-in-cost-calculator" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <MoveInCostClient />
     </>

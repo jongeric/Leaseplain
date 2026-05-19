@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Kitchener renters: understand your rights under the Ontario RTA in the Waterloo Region tech corridor. Learn about rent control, AGI applications, and LTB hearings in Kitchener.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/kitchener" },
+  openGraph: {
+    title: "Lease Help in Kitchener, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Kitchener renters: understand your rights under the Ontario RTA in the Waterloo Region tech corridor. Learn about rent control, AGI applications, and LTB hearings in Kitchener.",
+    url: "https://leaseplain.com/canada/ontario/kitchener",
+    type: "website",
+  },
 };
 
 const kitchenerRights = [

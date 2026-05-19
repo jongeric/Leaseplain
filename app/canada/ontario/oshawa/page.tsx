@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Oshawa renters: understand your rights under the Ontario RTA in the Durham Region. Basement apartments, Ontario Tech students, aging housing stock, and LTB access explained.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/oshawa" },
+  openGraph: {
+    title: "Lease Help in Oshawa, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Oshawa renters: understand your rights under the Ontario RTA in the Durham Region. Basement apartments, Ontario Tech students, aging housing stock, and LTB access explained.",
+    url: "https://leaseplain.com/canada/ontario/oshawa",
+    type: "website",
+  },
 };
 
 const cityRights = [

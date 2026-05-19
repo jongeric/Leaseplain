@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -87,6 +88,11 @@ export default function EvictionNoticesPage() {
         dateModified="2026-05-15"
         keywords={["eviction notices Ontario", "N4 notice Ontario", "N12 notice Ontario", "LTB eviction process", "tenant eviction rights Canada"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Eviction Notices", href: "https://leaseplain.com/tenant-rights/eviction-notices" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

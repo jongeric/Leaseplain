@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Mississauga renters: understand your rights under the Ontario Residential Tenancies Act. Learn about Mississauga's condo-heavy rental market and common lease issues in the GTA.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/mississauga" },
+  openGraph: {
+    title: "Lease Help in Mississauga, Ontario | Tenant Rights | LeasePlain",
+    description: "Mississauga renters: understand your rights under the Ontario Residential Tenancies Act. Learn about Mississauga's condo-heavy rental market and common lease issues in the GTA.",
+    url: "https://leaseplain.com/canada/ontario/mississauga",
+    type: "website",
+  },
 };
 
 const mississaugaRights = [

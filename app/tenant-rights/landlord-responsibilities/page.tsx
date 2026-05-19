@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, AlertTriangle, ChevronRight, Upload, Clock } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -85,6 +86,11 @@ export default function LandlordResponsibilitiesPage() {
         dateModified="2026-05-15"
         keywords={["landlord responsibilities Ontario", "landlord obligations Canada", "landlord maintenance duty", "landlord entry notice Ontario", "landlord RTA requirements"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "Landlord Responsibilities", href: "https://leaseplain.com/tenant-rights/landlord-responsibilities" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

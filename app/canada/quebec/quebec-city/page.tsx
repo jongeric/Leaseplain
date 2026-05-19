@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   description:
     "Quebec City renters: understand your rights under Quebec's lease law (bail). Learn about the TAL, rent increases, lease renewal rights, and how to understand your Quebec bail in plain English.",
   alternates: { canonical: "https://leaseplain.com/canada/quebec/quebec-city" },
+  openGraph: {
+    title: "Lease Help in Quebec City | Tenant Rights & Bail in Quebec City | LeasePlain",
+    description: "Quebec City renters: understand your rights under Quebec's lease law (bail). Learn about the TAL, rent increases, lease renewal rights, and how to understand your Quebec bail in plain English.",
+    url: "https://leaseplain.com/canada/quebec/quebec-city",
+    type: "website",
+  },
 };
 
 const quebecCityRights = [

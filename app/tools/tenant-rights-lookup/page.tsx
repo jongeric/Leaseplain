@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TenantRightsLookupClient from "./TenantRightsLookupClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -47,6 +48,11 @@ const schema = {
 export default function TenantRightsLookupPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Tenant Rights Lookup", href: "https://leaseplain.com/tools/tenant-rights-lookup" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <TenantRightsLookupClient />

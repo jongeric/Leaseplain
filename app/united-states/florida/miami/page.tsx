@@ -24,6 +24,12 @@ export const metadata: Metadata = {
 export default function MiamiPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "United States", href: "https://leaseplain.com/united-states" },
+        { name: "Florida", href: "https://leaseplain.com/united-states/florida" },
+        { name: "Miami", href: "https://leaseplain.com/united-states/florida/miami" },
+      ]} />
       <Navbar />
       <main>
         {/* Hero */}

@@ -163,6 +163,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/resources/landlord-lease-checklist",          0.7, "monthly"),
     url("/resources/landlord-lease-mistakes",           0.7, "monthly"),
     url("/resources/should-you-pay-lawyer-review-lease",0.7, "monthly"),
+    url("/resources/free-lease-review-online",       0.8, "monthly"),
+    url("/resources/can-chatgpt-review-a-lease",     0.7, "monthly"),
+    url("/resources/ontario-standard-lease-guide",   0.8, "monthly"),
 
     // ── Blog ──────────────────────────────────────────────────────────────────
     url("/blog",                                              0.9, "weekly"),

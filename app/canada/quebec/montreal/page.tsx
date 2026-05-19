@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Montreal renters: understand your rights under Quebec's Civil Code and the standard bail form. Learn about bilingual leases, July 1 moving day, TAL disputes, and strong Montreal tenant protections.",
   alternates: { canonical: "https://leaseplain.com/canada/quebec/montreal" },
+  openGraph: {
+    title: "Lease Help in Montreal, Quebec | Tenant Rights & Lease Review | LeasePlain",
+    description: "Montreal renters: understand your rights under Quebec's Civil Code and the standard bail form. Learn about bilingual leases, July 1 moving day, TAL disputes, and strong Montreal tenant protections.",
+    url: "https://leaseplain.com/canada/quebec/montreal",
+    type: "website",
+  },
 };
 
 const montrealRights = [

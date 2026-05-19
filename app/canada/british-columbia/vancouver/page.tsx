@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Vancouver renters: understand your rights under BC's Residential Tenancy Act. Learn about Vancouver's high-rent market, vacancy control debates, RTB disputes, and common lease issues.",
   alternates: { canonical: "https://leaseplain.com/canada/british-columbia/vancouver" },
+  openGraph: {
+    title: "Lease Help in Vancouver, BC | Tenant Rights & Lease Review | LeasePlain",
+    description: "Vancouver renters: understand your rights under BC's Residential Tenancy Act. Learn about Vancouver's high-rent market, vacancy control debates, RTB disputes, and common lease issues.",
+    url: "https://leaseplain.com/canada/british-columbia/vancouver",
+    type: "website",
+  },
 };
 
 const vancouverRights = [

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import RentIncreaseClient from "./RentIncreaseClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,11 @@ const schema = {
 export default function RentIncreaseCalculatorPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Rent Increase Calculator", href: "https://leaseplain.com/tools/rent-increase-calculator" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <RentIncreaseClient />
     </>

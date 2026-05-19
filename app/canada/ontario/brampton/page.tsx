@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Brampton renters: understand your rights under the Ontario Residential Tenancies Act. Learn about basement apartments, newcomer tenant rights, and LTB hearings in Brampton.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/brampton" },
+  openGraph: {
+    title: "Lease Help in Brampton, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "Brampton renters: understand your rights under the Ontario Residential Tenancies Act. Learn about basement apartments, newcomer tenant rights, and LTB hearings in Brampton.",
+    url: "https://leaseplain.com/canada/ontario/brampton",
+    type: "website",
+  },
 };
 
 const bramptonRights = [

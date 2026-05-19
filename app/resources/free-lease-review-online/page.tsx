@@ -158,7 +158,7 @@ export default function FreeLeaseReviewOnlinePage() {
         headline="Free Lease Review Online: Your Options in 2026"
         description="Compare your options for getting a lease reviewed for free online — AI tools, legal clinics, tenant helplines, and what each can and can't do."
         url="https://leaseplain.com/resources/free-lease-review-online"
-        datePublished="2026-01-10"
+        datePublished="2026-03-01"
         dateModified="2026-05-18"
         keywords={["free lease review online", "lease review free Canada", "tenant legal clinic", "AI lease review", "provincial tenant helpline"]}
       />

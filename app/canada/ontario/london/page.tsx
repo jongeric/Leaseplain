@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "London, Ontario renters: understand your rights under the Ontario RTA. Learn about student housing near Western University and Fanshawe College, joint tenancies, and LTB hearings.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/london" },
+  openGraph: {
+    title: "Lease Help in London, Ontario | Tenant Rights & Lease Review | LeasePlain",
+    description: "London, Ontario renters: understand your rights under the Ontario RTA. Learn about student housing near Western University and Fanshawe College, joint tenancies, and LTB hearings.",
+    url: "https://leaseplain.com/canada/ontario/london",
+    type: "website",
+  },
 };
 
 const londonRights = [

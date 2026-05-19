@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EvictionNoticeClient from "./EvictionNoticeClient";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -38,6 +39,11 @@ const schema = {
 export default function EvictionNoticeCheckerPage() {
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tools", href: "https://leaseplain.com/tools" },
+        { name: "Eviction Notice Checker", href: "https://leaseplain.com/tools/eviction-notice-checker" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <EvictionNoticeClient />
     </>

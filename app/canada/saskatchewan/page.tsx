@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Understand your rights as a Saskatchewan renter under the Residential Tenancies Act, 2006. Learn about the ORT, security and pet deposit rules, rent increases, and lease protections in Saskatoon, Regina, and across Saskatchewan.",
   alternates: { canonical: "https://leaseplain.com/canada/saskatchewan" },
+  openGraph: {
+    title: "Saskatchewan Tenant Rights: Lease Help Under the Residential Tenancies Act | LeasePlain",
+    description: "Understand your rights as a Saskatchewan renter under the Residential Tenancies Act, 2006. Learn about the ORT, security and pet deposit rules, rent increases, and lease protections in Saskatoon, Regina, and across Saskatchewan.",
+    url: "https://leaseplain.com/canada/saskatchewan",
+    type: "website",
+  },
 };
 
 const tenantProtections = [

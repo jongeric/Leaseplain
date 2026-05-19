@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   description:
     "Hamilton renters: understand your rights under the Ontario Residential Tenancies Act. Learn about Hamilton's fast-growing rental market and GTA-spillover pressures on local tenants.",
   alternates: { canonical: "https://leaseplain.com/canada/ontario/hamilton" },
+  openGraph: {
+    title: "Lease Help in Hamilton, Ontario | Tenant Rights | LeasePlain",
+    description: "Hamilton renters: understand your rights under the Ontario Residential Tenancies Act. Learn about Hamilton's fast-growing rental market and GTA-spillover pressures on local tenants.",
+    url: "https://leaseplain.com/canada/ontario/hamilton",
+    type: "website",
+  },
 };
 
 const hamiltonRights = [

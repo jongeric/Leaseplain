@@ -35,8 +35,21 @@ const cities = [
   { name: "Los Angeles", href: "/united-states/california/los-angeles", desc: "LA RSO, HCIDLA, rent stabilization for pre-1978 buildings" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states/california",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states/california",
+};
+
 export default function CaliforniaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -62,7 +75,7 @@ export default function CaliforniaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               California Tenant Rights &amp; Lease Help | Coming Soon
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               California enacted landmark statewide tenant protections in 2019 with AB 1482, capping
               rent increases and requiring just cause for most evictions. LeasePlain's AI lease
               analysis for California is in development — here's a guide to current California tenant
@@ -194,5 +207,6 @@ export default function CaliforniaPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

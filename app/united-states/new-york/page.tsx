@@ -35,8 +35,21 @@ const cities = [
   { name: "New York City", href: "/united-states/new-york/new-york-city", desc: "Rent stabilization, DHCR, free right to counsel in evictions" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states/new-york",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states/new-york",
+};
+
 export default function NewYorkPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -62,7 +75,7 @@ export default function NewYorkPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               New York Tenant Rights &amp; Lease Help | Coming Soon
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New York has some of the strongest tenant protections in the United States, anchored by
               the 2019 Housing Stability and Tenant Protection Act and New York City's rent stabilization
               system. LeasePlain's AI lease analysis for New York is in development — here's what you
@@ -194,5 +207,6 @@ export default function NewYorkPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

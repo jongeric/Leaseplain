@@ -51,8 +51,21 @@ const usVsCanada = [
   "US landlords may require renters' insurance as a lease condition more commonly than Canadian landlords do.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states",
+};
+
 export default function UnitedStatesPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -77,7 +90,7 @@ export default function UnitedStatesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               US Tenant Rights &amp; Lease Help — Coming to LeasePlain
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               LeasePlain is expanding to the United States. Our AI lease analysis is currently
               calibrated for Canadian provincial law. US state-level analysis — starting with New York,
               California, and Florida — is in development. In the meantime, explore the educational
@@ -215,5 +228,6 @@ export default function UnitedStatesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

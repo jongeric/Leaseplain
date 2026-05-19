@@ -40,8 +40,21 @@ const nycLeaseIssues = [
   "Broker fees charged to tenants — under NYC law (FARE Act), the party who hires the broker (typically the landlord) must pay the broker's fee.",
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states/new-york/new-york-city",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states/new-york/new-york-city",
+};
+
 export default function NewYorkCityPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -70,7 +83,7 @@ export default function NewYorkCityPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in New York City | Tenant Rights (Coming Soon)
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New York City has the most complex rental regulatory system in the United States.
               Rent stabilization, DHCR oversight, free right to counsel, and a maze of capital
               improvement rules make understanding your lease essential — and often contentious.
@@ -217,5 +230,6 @@ export default function NewYorkCityPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

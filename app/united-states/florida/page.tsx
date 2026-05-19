@@ -25,8 +25,21 @@ const cities = [
   { name: "Miami", href: "/united-states/florida/miami" },
 ];
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states/florida",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states/florida",
+};
+
 export default function FloridaPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -52,7 +65,7 @@ export default function FloridaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Florida Lease Review: AI Lease Analyzer for FL Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Florida&apos;s landlord-tenant law has specific rules around security deposits, notice periods,
               and early termination. Our AI reads your FL lease and explains it in plain English so you
               know exactly what you&apos;re signing.
@@ -171,5 +184,6 @@ export default function FloridaPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

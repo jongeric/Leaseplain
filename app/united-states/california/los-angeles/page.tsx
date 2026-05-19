@@ -21,8 +21,21 @@ export const metadata: Metadata = {
   },
 };
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/united-states/california/los-angeles",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+  "url": "https://leaseplain.com/united-states/california/los-angeles",
+};
+
 export default function LosAngelesPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -51,7 +64,7 @@ export default function LosAngelesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight max-w-3xl">
               Los Angeles Lease Review: AI Lease Analyzer for LA Renters
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Los Angeles has some of the strongest tenant protections in the US, including rent control
               under the LA Rent Stabilization Ordinance. Our AI analyzes your LA lease and explains what
               it means for you — in plain English.
@@ -140,5 +153,6 @@ export default function LosAngelesPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

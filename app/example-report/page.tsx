@@ -10,6 +10,19 @@ import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/example-report",
+  "name": "Example Lease Analysis Report | LeasePlain",
+  "description": "See what a LeasePlain analysis report looks like. A sample plain-English breakdown of a residential lease showing all six report sections.",
+  "url": "https://leaseplain.com/example-report",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Example Lease Analysis Report | LeasePlain",
   description:
@@ -26,6 +39,7 @@ export const metadata: Metadata = {
 export default function ExampleReportPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>
@@ -38,7 +52,7 @@ export default function ExampleReportPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Sample Lease Analysis Report
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               This is an example of what LeasePlain produces when you upload your lease. All
               content below is based on a fictional standard Ontario residential lease for
               illustration purposes.

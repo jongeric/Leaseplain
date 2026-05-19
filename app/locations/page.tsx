@@ -8,6 +8,19 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://leaseplain.com/locations",
+  "name": "Lease Help by Location | LeasePlain",
+  "description": "Tenant rights and lease guides for every Canadian province and major city.",
+  "url": "https://leaseplain.com/locations",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".speakable-summary"],
+  },
+};
+
 export const metadata: Metadata = {
   title: "Lease Help by Location: Canada & United States | LeasePlain",
   description:
@@ -143,6 +156,7 @@ export default function LocationsPage() {
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Locations", href: "https://leaseplain.com/locations" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>
@@ -160,7 +174,7 @@ export default function LocationsPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help by Location: Canada &amp; United States
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               Tenancy law is local. Whether you rent in Toronto, Vancouver, Calgary, or Montreal, the
               rules governing your lease are set by your province or territory — not the federal
               government. In the United States, each state has its own landlord-tenant statutes. Use

@@ -4,6 +4,15 @@ import Footer from "@/components/Footer";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/privacy",
+  "name": "Privacy Policy | LeasePlain",
+  "description": "LeasePlain's privacy policy — how we handle your data, your lease documents, and your personal information.",
+  "url": "https://leaseplain.com/privacy",
+};
+
 export const metadata: Metadata = {
   title: "Privacy Policy | LeasePlain",
   description: "LeasePlain's privacy policy — how we handle your data, your lease documents, and your personal information.",
@@ -21,6 +30,7 @@ const lastUpdated = "May 6, 2026";
 export default function PrivacyPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>

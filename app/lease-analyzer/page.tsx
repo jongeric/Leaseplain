@@ -10,6 +10,27 @@ import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "LeasePlain AI Lease Analyzer",
+  applicationCategory: "LegalApplication",
+  operatingSystem: "Web",
+  url: "https://leaseplain.com/lease-analyzer",
+  description:
+    "Upload your residential lease and get a plain-English breakdown instantly. Our AI identifies red flags, explains every clause, and highlights your rights as a tenant.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
+  provider: { "@type": "Organization", name: "LeasePlain", url: "https://leaseplain.com" },
+  featureList: [
+    "Plain-English lease summary",
+    "Red flag detection for illegal or one-sided clauses",
+    "Key financial terms extraction",
+    "Tenant rights and obligations breakdown",
+    "Questions to ask your landlord",
+    "Unusual clause spotlight",
+  ],
+};
+
 export const metadata: Metadata = {
   title: "AI Lease Analyzer – Understand Any Lease in Minutes | LeasePlain",
   description:
@@ -95,6 +116,7 @@ const useCases = [
 export default function LeaseAnalyzerPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>

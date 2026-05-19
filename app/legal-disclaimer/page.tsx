@@ -7,6 +7,15 @@ import Link from "next/link";
 
 export const dynamic = "force-static";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://leaseplain.com/legal-disclaimer",
+  "name": "Legal Disclaimer | LeasePlain",
+  "description": "LeasePlain is not a law firm. Our analysis is for informational and educational purposes only — not legal advice.",
+  "url": "https://leaseplain.com/legal-disclaimer",
+};
+
 export const metadata: Metadata = {
   title: "Legal Disclaimer | LeasePlain",
   description:
@@ -23,6 +32,7 @@ export const metadata: Metadata = {
 export default function LegalDisclaimerPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
 
       <main>

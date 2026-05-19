@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -87,6 +88,11 @@ export default function MovingOutOntarioChecklistPage() {
           "last month rent deposit Ontario",
         ]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Blog", href: "https://leaseplain.com/blog" },
+        { name: "Moving Out Ontario Checklist", href: "https://leaseplain.com/blog/moving-out-ontario-checklist" },
+      ]} />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

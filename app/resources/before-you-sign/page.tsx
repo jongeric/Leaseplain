@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -59,6 +60,11 @@ export default function BeforeYouSignPage() {
         dateModified="2026-05-15"
         keywords={["before signing a lease", "lease checklist renters", "lease red flags", "questions to ask landlord", "hidden lease fees"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Before You Sign", href: "https://leaseplain.com/resources/before-you-sign" },
+      ]} />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

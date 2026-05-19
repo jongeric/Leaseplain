@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -67,6 +68,12 @@ export default function LandlordLeaseMistakesPage() {
         dateModified="2026-05-15"
         keywords={["landlord lease mistakes", "lease drafting errors Canada", "illegal lease clauses landlord", "landlord mistakes Ontario", "lease compliance landlord"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
+        { name: "Landlord Lease Mistakes", href: "https://leaseplain.com/resources/landlord-lease-mistakes" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

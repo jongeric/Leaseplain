@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { AlertTriangle, ChevronRight, Upload, Clock, BookOpen, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import EmailCapture from "@/components/EmailCapture";
 
 export const dynamic = "force-static";
@@ -147,6 +148,11 @@ export default function LeaseRedFlagsPage() {
         dateModified="2026-05-15"
         keywords={["lease red flags", "bad lease clauses", "lease warning signs", "tenant lease risks"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Lease Red Flags", href: "https://leaseplain.com/resources/lease-red-flags" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",

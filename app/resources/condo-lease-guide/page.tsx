@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Home, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -32,6 +33,12 @@ export default function CondoLeaseGuidePage() {
         dateModified="2026-05-15"
         keywords={["condo lease guide", "renting a condo", "condo tenant rights", "investor landlord lease", "condo corporation rules"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
+        { name: "Condo Lease Guide", href: "https://leaseplain.com/resources/condo-lease-guide" },
+      ]} />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

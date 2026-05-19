@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { CheckSquare, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -32,6 +33,12 @@ export default function HiddenLeaseFeesPage() {
         dateModified="2026-05-15"
         keywords={["hidden lease fees", "illegal lease fees Ontario", "lease fee negotiation", "rental hidden costs", "landlord fees"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Before You Sign", href: "https://leaseplain.com/resources/before-you-sign" },
+        { name: "Hidden Lease Fees", href: "https://leaseplain.com/resources/hidden-lease-fees" },
+      ]} />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

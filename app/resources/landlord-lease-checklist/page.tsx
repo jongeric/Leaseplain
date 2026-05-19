@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -89,6 +90,12 @@ export default function LandlordLeaseChecklistPage() {
         dateModified="2026-05-15"
         keywords={["landlord lease checklist", "residential lease requirements Canada", "lease drafting checklist", "what to include in a lease", "landlord legal requirements"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
+        { name: "Landlord Lease Checklist", href: "https://leaseplain.com/resources/landlord-lease-checklist" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -32,6 +33,12 @@ export default function AILeaseReviewVsLawyerPage() {
         dateModified="2026-05-15"
         keywords={["AI lease review vs lawyer", "lease review cost", "tenant legal advice", "AI vs lawyer lease"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
+        { name: "AI vs Lawyer", href: "https://leaseplain.com/resources/ai-lease-review-vs-lawyer" },
+      ]} />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

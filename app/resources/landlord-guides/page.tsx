@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Briefcase, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -47,6 +48,11 @@ export default function LandlordGuidesPage() {
         dateModified="2026-05-15"
         keywords={["landlord lease guide", "landlord obligations Canada", "residential lease tips landlord", "property owner lease help"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Landlord Guides", href: "https://leaseplain.com/resources/landlord-guides" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

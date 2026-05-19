@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload, Clock, FileText } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -95,6 +96,11 @@ export default function LeaseAgreementExplainedPage() {
         dateModified="2026-05-15"
         keywords={["lease agreement explained", "lease sections decoded", "residential lease clauses", "lease terms plain English", "understanding a lease"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Lease Agreement Explained", href: "https://leaseplain.com/resources/lease-agreement-explained" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

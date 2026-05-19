@@ -79,6 +79,11 @@ export default function UnitedStatesTenantRightsPage() {
         dateModified="2026-05-15"
         keywords={["US tenant rights by state", "American renter rights", "tenant protection United States", "California tenant rights", "New York tenant rights"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+        { name: "United States", href: "https://leaseplain.com/tenant-rights/united-states" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

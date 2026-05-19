@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -46,6 +47,11 @@ export default function FightIllegalEvictionOntarioPage() {
           "eviction notice invalid ontario",
         ]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Blog", href: "https://leaseplain.com/blog" },
+        { name: "How to Fight an Illegal Eviction", href: "https://leaseplain.com/blog/how-to-fight-an-illegal-eviction-ontario" },
+      ]} />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

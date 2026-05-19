@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { BookOpen, CheckCircle, ChevronRight, Upload, Clock } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -133,6 +134,11 @@ export default function HowToReadALeasePage() {
         dateModified="2026-05-15"
         keywords={["how to read a lease", "lease agreement guide", "understanding lease clauses", "lease review steps", "residential lease explained"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "How to Read a Lease", href: "https://leaseplain.com/resources/how-to-read-a-lease" },
+      ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
       <div className="flex flex-col min-h-full">

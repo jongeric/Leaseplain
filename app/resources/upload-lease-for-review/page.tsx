@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -32,6 +33,12 @@ export default function UploadLeaseForReviewPage() {
         dateModified="2026-05-15"
         keywords={["upload lease for review", "AI lease review how it works", "lease PDF upload", "lease analysis tool", "LeasePlain how to use"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "AI Lease Review", href: "https://leaseplain.com/resources/ai-lease-review" },
+        { name: "Upload Lease for Review", href: "https://leaseplain.com/resources/upload-lease-for-review" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

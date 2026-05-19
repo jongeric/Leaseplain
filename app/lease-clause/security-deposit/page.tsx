@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ShieldCheck, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -47,6 +48,11 @@ const questions = [
 export default function SecurityDepositPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
+        { name: "Security Deposit", href: "https://leaseplain.com/lease-clause/security-deposit" },
+      ]} />
       <Navbar />
 
       <main>

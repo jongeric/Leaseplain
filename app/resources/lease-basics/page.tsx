@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { BookOpen, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -59,6 +60,11 @@ export default function LeaseBasicsPage() {
         dateModified="2026-05-15"
         keywords={["lease basics", "rental agreement fundamentals", "what is a lease", "lease types Canada", "how to read a lease"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Lease Basics", href: "https://leaseplain.com/resources/lease-basics" },
+      ]} />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

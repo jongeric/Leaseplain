@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -45,6 +46,11 @@ export default function BCRentIncrease2026Page() {
           "bc tenant rights rent",
         ]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Blog", href: "https://leaseplain.com/blog" },
+        { name: "BC Rent Increase 2026", href: "https://leaseplain.com/blog/bc-rent-increase-2026" },
+      ]} />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

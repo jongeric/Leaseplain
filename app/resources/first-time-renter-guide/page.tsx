@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import EmailCapture from "@/components/EmailCapture";
 
 export const dynamic = "force-static";
@@ -49,6 +50,12 @@ export default function FirstTimeRenterGuidePage() {
         dateModified="2026-05-15"
         keywords={["first-time renter guide", "renting for the first time", "how to sign a lease", "tenant rights Ontario", "lease guide beginners"]}
       />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Tenant Guides", href: "https://leaseplain.com/resources/tenant-guides" },
+        { name: "First-Time Renter Guide", href: "https://leaseplain.com/resources/first-time-renter-guide" },
+      ]} />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

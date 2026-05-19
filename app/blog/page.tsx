@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -80,6 +81,10 @@ const categoryColor: Record<string, string> = {
 export default function BlogPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Blog", href: "https://leaseplain.com/blog" },
+      ]} />
       <Navbar />
 
       <main>

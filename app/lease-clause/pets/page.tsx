@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Heart, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -53,6 +54,11 @@ const redFlags = [
 export default function PetsClausePage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
+        { name: "Pets", href: "https://leaseplain.com/lease-clause/pets" },
+      ]} />
       <Navbar />
 
       <main>

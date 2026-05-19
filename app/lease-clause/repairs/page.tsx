@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Wrench, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -61,6 +62,11 @@ const repairSteps = [
 export default function RepairsClausePage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
+        { name: "Repairs", href: "https://leaseplain.com/lease-clause/repairs" },
+      ]} />
       <Navbar />
 
       <main>

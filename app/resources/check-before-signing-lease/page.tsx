@@ -119,7 +119,7 @@ export default function CheckBeforeSigningPage() {
               "@type": "SpeakableSpecification",
               "cssSelector": ["h1", ".speakable-summary"]
             }
-          })
+          }).replace(/</g, "\u003c")
         }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -135,7 +135,7 @@ export default function CheckBeforeSigningPage() {
           { "@type": "HowToStep", "position": 5, "name": "Compare deposit and fee terms to provincial law", "text": "Calculate whether the deposit amount requested is within your province's legal limit. Ontario: 1 month LMR only. BC: 0.5 months. Alberta: 1 month." },
           { "@type": "HowToStep", "position": 6, "name": "Get everything in writing", "text": "Any promises the landlord makes verbally must be added to the lease in writing before you sign." },
         ],
-      }) }} />
+      }).replace(/</g, "\u003c") }} />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

@@ -42,7 +42,7 @@ const howToSchema = {
 export default function FirstTimeRenterGuidePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <ArticleSchema
         headline="First-Time Renter Guide: How to Read and Sign a Lease"
         description="Everything a first-time renter needs to know — budgeting, understanding lease terms, the signing process, move-in checklist, and your rights in Ontario."
@@ -68,7 +68,7 @@ export default function FirstTimeRenterGuidePage() {
               "@type": "SpeakableSpecification",
               "cssSelector": ["h1", ".speakable-summary"]
             }
-          })
+          }).replace(/</g, "\u003c")
         }}
       />
       <div className="flex flex-col min-h-full">

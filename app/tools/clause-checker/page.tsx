@@ -43,7 +43,7 @@ export default function ClauseCheckerPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Clause Red Flag Scanner", href: "https://leaseplain.com/tools/clause-checker" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <ClauseCheckerClient />
     </>
   );

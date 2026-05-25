@@ -98,7 +98,7 @@ export default function PrinceEdwardIslandPage() {
                   },
                 },
               ],
-            }),
+            }).replace(/</g, "\u003c"),
           }}
         />
 

@@ -44,7 +44,7 @@ export default function EvictionNoticeCheckerPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Eviction Notice Checker", href: "https://leaseplain.com/tools/eviction-notice-checker" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <EvictionNoticeClient />
     </>
   );

@@ -94,7 +94,7 @@ export default function TorontoTenantRightsPage() {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", ".speakable-summary"],
         },
-      }) }} />
+      }).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

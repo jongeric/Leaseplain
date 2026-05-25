@@ -194,7 +194,7 @@ export default function OshawaPage() {
                         },
                       },
                     ],
-                  }),
+                  }).replace(/</g, "\u003c"),
                 }}
               />
             </div>

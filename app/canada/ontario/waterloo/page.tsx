@@ -201,7 +201,7 @@ export default function WaterlooPage() {
                         },
                       },
                     ],
-                  }),
+                  }).replace(/</g, "\u003c"),
                 }}
               />
             </div>

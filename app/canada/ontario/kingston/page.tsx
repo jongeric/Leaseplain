@@ -199,7 +199,7 @@ export default function KingstonPage() {
                         },
                       },
                     ],
-                  }),
+                  }).replace(/</g, "\u003c"),
                 }}
               />
             </div>

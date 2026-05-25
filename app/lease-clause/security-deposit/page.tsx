@@ -64,7 +64,7 @@ export default function SecurityDepositPage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Security Deposit", href: "https://leaseplain.com/lease-clause/security-deposit" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
       <Navbar />
 
       <main>

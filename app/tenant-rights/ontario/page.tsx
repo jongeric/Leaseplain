@@ -70,7 +70,7 @@ export default function OntarioTenantRightsPage() {
           "cssSelector": ["h1", ".speakable-summary"],
         },
         "url": "https://leaseplain.com/tenant-rights/ontario",
-      }) }} />
+      }).replace(/</g, "\u003c") }} />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },

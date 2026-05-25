@@ -44,7 +44,7 @@ export default function DepositCalculatorPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Deposit Calculator", href: "https://leaseplain.com/tools/deposit-calculator" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <DepositCalculatorClient />
     </>
   );

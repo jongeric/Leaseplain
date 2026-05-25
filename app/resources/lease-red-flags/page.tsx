@@ -162,7 +162,7 @@ export default function LeaseRedFlagsPage() {
           "cssSelector": ["h1", ".speakable-summary"],
         },
         "url": "https://leaseplain.com/resources/lease-red-flags",
-      }) }} />
+      }).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

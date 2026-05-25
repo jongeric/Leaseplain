@@ -156,7 +156,7 @@ export default function LocationsPage() {
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Locations", href: "https://leaseplain.com/locations" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <Navbar />
 
       <main>

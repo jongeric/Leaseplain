@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function ExampleReportPage() {
   return (
     <div className="flex flex-col min-h-full">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <Navbar />
 
       <main>

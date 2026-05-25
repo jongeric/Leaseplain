@@ -53,8 +53,8 @@ export default function TenantRightsLookupPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Tenant Rights Lookup", href: "https://leaseplain.com/tools/tenant-rights-lookup" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
       <TenantRightsLookupClient />
     </>
   );

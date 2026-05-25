@@ -56,8 +56,8 @@ export default function NoticePeriodCalculatorPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Notice Period Calculator", href: "https://leaseplain.com/tools/notice-period-calculator" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <NoticePeriodClient />
     </>
   );

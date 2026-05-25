@@ -43,7 +43,7 @@ export default function RentIncreaseCalculatorPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Rent Increase Calculator", href: "https://leaseplain.com/tools/rent-increase-calculator" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <RentIncreaseClient />
     </>
   );

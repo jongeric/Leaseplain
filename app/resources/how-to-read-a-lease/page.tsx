@@ -140,8 +140,8 @@ export default function HowToReadALeasePage() {
         { name: "Resources", href: "https://leaseplain.com/resources" },
         { name: "How to Read a Lease", href: "https://leaseplain.com/resources/how-to-read-a-lease" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

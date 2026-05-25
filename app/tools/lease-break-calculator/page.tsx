@@ -44,7 +44,7 @@ export default function LeaseBreakCalculatorPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Lease Break Calculator", href: "https://leaseplain.com/tools/lease-break-calculator" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <LeaseBreakClient />
     </>
   );

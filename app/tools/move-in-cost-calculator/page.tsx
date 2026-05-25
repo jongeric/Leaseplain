@@ -43,7 +43,7 @@ export default function MoveInCostCalculatorPage() {
         { name: "Tools", href: "https://leaseplain.com/tools" },
         { name: "Move-In Cost Calculator", href: "https://leaseplain.com/tools/move-in-cost-calculator" },
       ]} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
       <MoveInCostClient />
     </>
   );

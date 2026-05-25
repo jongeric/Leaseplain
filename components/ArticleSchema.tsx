@@ -29,8 +29,8 @@ export default function ArticleSchema({
     image: { "@type": "ImageObject", url: imageUrl, width: 1200, height: 630 },
     author: {
       "@type": "Organization",
-      name: "LeasePlain",
-      url: "https://leaseplain.com",
+      name: "LeasePlain Editorial Team",
+      url: "https://leaseplain.com/about",
     },
     publisher: {
       "@type": "Organization",

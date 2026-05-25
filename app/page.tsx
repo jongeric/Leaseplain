@@ -232,10 +232,10 @@ const reviewsSchema = {
 export default function HomePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema).replace(/</g, "\u003c") }} />
 
       <div className="flex flex-col min-h-full">
         <Navbar />
@@ -477,6 +477,74 @@ export default function HomePage() {
                   {link.label}
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── LATEST ARTICLES ──────────────────────────────────────────────── */}
+        <section className="py-20 px-4 bg-slate-50" id="blog">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-slate-900 mb-3">Latest from the Blog</h2>
+              <p className="text-slate-500 max-w-xl mx-auto">
+                Guides and resources to help Canadian renters understand their rights, read leases, and navigate rental laws.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  href: "/blog/ontario-rent-increase-guideline-2026",
+                  title: "Ontario Rent Increase Guideline 2026",
+                  desc: "Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline.",
+                },
+                {
+                  href: "/blog/bc-rent-increase-2026",
+                  title: "BC Rent Increase Guideline 2026",
+                  desc: "BC's 2026 rent increase cap uses the CPI + 2% formula. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
+                },
+                {
+                  href: "/blog/how-to-fight-an-illegal-eviction-ontario",
+                  title: "How to Fight an Illegal Eviction in Ontario",
+                  desc: "Learn what makes an eviction notice invalid in Ontario, what N4/N12/N13 notices mean, how to file a T2 application at the LTB, and what bad-faith eviction means for tenants.",
+                },
+                {
+                  href: "/blog/security-deposit-rules-canada",
+                  title: "Security Deposit Rules Across Canada",
+                  desc: "Deposit rules vary dramatically across Canada — from no deposits at all in Quebec to one month's rent in Alberta. Here's a province-by-province breakdown with return deadlines.",
+                },
+                {
+                  href: "/blog/lease-red-flags-to-watch-for",
+                  title: "Lease Red Flags to Watch For",
+                  desc: "Some lease clauses look official but are actually unenforceable — or even illegal under Canadian provincial law. Here are 7 red flags to spot before you sign.",
+                },
+                {
+                  href: "/blog/moving-out-ontario-checklist",
+                  title: "Moving Out of Your Ontario Rental: A Complete Checklist",
+                  desc: "Moving out in Ontario requires 60 days proper notice, unit documentation, and knowing the LMR deposit rules. Follow this checklist to protect yourself and get your money back.",
+                },
+              ].map((post) => (
+                <Link
+                  key={post.href}
+                  href={post.href}
+                  className="group bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all flex flex-col gap-3"
+                >
+                  <h3 className="font-semibold text-slate-900 text-base leading-snug group-hover:text-indigo-600 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed flex-1">{post.desc}</p>
+                  <span className="text-indigo-600 text-sm font-semibold flex items-center gap-1 mt-1">
+                    Read <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 bg-white text-slate-700 font-semibold px-7 py-3 rounded-xl border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors text-sm"
+              >
+                View all articles <ChevronRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </section>

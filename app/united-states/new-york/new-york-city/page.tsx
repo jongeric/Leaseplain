@@ -2,43 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
+import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Lease Help in New York City | Tenant Rights (Coming Soon) | LeasePlain",
+  title: "NYC Tenant Rights: Rent Stabilization, DHCR & Lease Help | LeasePlain",
   description:
-    "Learn about NYC tenant rights: rent stabilization, DHCR, major capital improvements (MCI), and the right to counsel. LeasePlain's AI lease analysis for New York City is coming soon.",
+    "Know your rights as a New York City renter: rent stabilization, DHCR complaints, Good Cause Eviction law, 1-month security deposit cap, and free right to counsel in Housing Court.",
   alternates: { canonical: "https://leaseplain.com/united-states/new-york/new-york-city" },
   openGraph: {
-    title: "Lease Help in New York City | Tenant Rights (Coming Soon) | LeasePlain",
-    description: "Learn about NYC tenant rights: rent stabilization, DHCR, major capital improvements (MCI), and the right to counsel. LeasePlain's AI lease analysis for New York City is coming soon.",
+    title: "NYC Tenant Rights: Rent Stabilization, DHCR & Lease Help | LeasePlain",
+    description: "Know your rights as a New York City renter: rent stabilization, DHCR complaints, Good Cause Eviction law, 1-month security deposit cap, and free right to counsel in Housing Court.",
     url: "https://leaseplain.com/united-states/new-york/new-york-city",
     type: "website",
   },
 };
-
-const nycRights = [
-  "Over one million NYC apartments are rent-stabilized — landlords can only increase rent by the annual percentage set by the NYC Rent Guidelines Board.",
-  "Rent-stabilized tenants have the right to a lease renewal on the same terms (with only guideline increases).",
-  "Security deposits are capped at one month's rent under the 2019 HSTPA — any excess must be returned.",
-  "Landlords must return security deposits within 14 days of tenancy end with a written itemized statement.",
-  "NYC provides a free right to counsel for low-income tenants facing eviction in Housing Court.",
-  "The Division of Housing and Community Renewal (DHCR) handles rent stabilization complaints and overcharge claims.",
-  "Tenants can apply for rent overcharge refunds going back up to 6 years if a landlord improperly deregulated a stabilized apartment.",
-  "Landlords are prohibited from retaliating against tenants who exercise their legal rights (e.g., filing complaints, organizing).",
-];
-
-const nycLeaseIssues = [
-  "Leases that fail to disclose a unit's rent-stabilized status — tenants may be owed overcharge refunds.",
-  "Major Capital Improvement (MCI) surcharges added to rent without proper DHCR approval and notice.",
-  "Individual Apartment Improvement (IAI) rent increases claimed for work not actually done — a significant fraud vector.",
-  "Lease clauses requiring tenants to waive the right to a jury trial or waive protections under the NYC Administrative Code.",
-  "Broker fees charged to tenants — under NYC law (FARE Act), the party who hires the broker (typically the landlord) must pay the broker's fee.",
-];
 
 const speakableSchema = {
   "@context": "https://schema.org",
@@ -50,6 +31,34 @@ const speakableSchema = {
   },
   "url": "https://leaseplain.com/united-states/new-york/new-york-city",
 };
+
+const nycRights = [
+  "NYC Rent Stabilization covers approximately one million apartments — primarily in buildings of 6 or more units built before 1974. Stabilized tenants' rents can only increase by the percentage set annually by the NYC Rent Guidelines Board (RGB).",
+  "Rent-stabilized tenants have the right to a lease renewal on substantially the same terms, with only guideline-permitted increases. A landlord cannot refuse to renew without a legal basis.",
+  "The Good Cause Eviction law (enacted statewide in 2024) limits annual rent increases for non-rent-stabilized apartments to 5% plus local CPI (max 10%), and requires landlords to show good cause before nonrenewal or eviction.",
+  "Security deposits are capped at one month's rent under the 2019 Housing Stability and Tenant Protection Act (HSTPA). Any deposit exceeding one month must be returned, and landlords must return deposits with an itemized statement within 14 days of tenancy end.",
+  "NYC provides a free Right to Counsel for low-income tenants facing eviction in Housing Court in all five boroughs — qualifying tenants are entitled to a free attorney, not just advice.",
+  "The Division of Housing and Community Renewal (DHCR) administers rent stabilization statewide. Tenants can file complaints about rent overcharges, improper deregulation, and service reductions at nyshcr.gov.",
+  "For non-payment of rent, NYC landlords must serve a 14-day rent demand notice before filing a proceeding in Housing Court — this is a mandatory prerequisite to the court process.",
+  "Landlords are prohibited from retaliating against tenants for filing DHCR complaints, organizing a tenant association, or exercising any legal right — retaliatory eviction is an affirmative defense in Housing Court.",
+];
+
+const nycLeaseRedFlags = [
+  "Missing rent stabilization rider — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) disclosing the legal regulated rent. If your lease omits this, you may have grounds to challenge the rent being charged.",
+  "Preferential rent clauses — some stabilized leases set rent below the legal regulated rent (a 'preferential rent'). After HSTPA 2019, landlords can no longer jump to the full legal rent at renewal — they can only raise by the RGB guideline amount. Beware of pre-2019 leases with preferential rent language.",
+  "Deregulation attempts through substantial rehabilitation — landlords sometimes claim units were 'substantially rehabilitated' to exit rent stabilization. This claim requires DHCR approval and must meet strict legal standards; review any such claim carefully.",
+  "High amenity and building service fees in luxury buildings — market-rate leases in new luxury buildings often include monthly fees for amenities (gym, concierge, package room) that are not separately regulated. Confirm whether these fees are included in rent for Good Cause purposes.",
+  "Lease clauses purporting to waive DHCR rights — any provision in a lease that waives your right to file a DHCR complaint, seek a rent overcharge determination, or participate in a DHCR proceeding is void under New York law.",
+  "Broker fee obligations shifted to tenants — under the NYC Fairness in Apartment Rental Expenses (FARE) Act effective June 2025, the party who hires the broker (typically the landlord) must pay the broker's commission. Lease clauses requiring tenants to pay broker fees hired by the landlord are now unlawful.",
+];
+
+const nycResources = [
+  { name: "Division of Housing and Community Renewal (DHCR)", desc: "Handles rent stabilization complaints, overcharge claims, MCI applications, and preferential rent questions at nyshcr.gov." },
+  { name: "NYC Housing Court", desc: "Free right to counsel for qualifying low-income tenants in eviction proceedings — apply at the Housing Court Help Center in your borough." },
+  { name: "Met Council on Housing", desc: "Tenant education, a free telephone hotline, and organizing support. One of NYC's oldest tenant advocacy organizations." },
+  { name: "Legal Aid Society", desc: "Provides free legal representation to low-income New Yorkers in Housing Court eviction cases and DHCR proceedings." },
+  { name: "Tenant Protection Unit (NY Attorney General)", desc: "Investigates systemic landlord fraud — including illegal deregulation schemes — and can seek injunctions and restitution for tenants." },
+];
 
 export default function NewYorkCityPage() {
   return (
@@ -76,19 +85,28 @@ export default function NewYorkCityPage() {
               <ChevronRight className="w-3 h-3" aria-hidden="true" />
               <span>New York City</span>
             </div>
-            <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 border border-amber-200">
-              <Globe className="w-3.5 h-3.5" aria-hidden="true" />
-              AI Analysis Coming Soon
+            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 border border-blue-100">
+              <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+              New York City, New York
             </div>
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
-              Lease Help in New York City | Tenant Rights (Coming Soon)
+              NYC Tenant Rights: Rent Stabilization, DHCR &amp; Lease Protections
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
-              New York City has the most complex rental regulatory system in the United States.
-              Rent stabilization, DHCR oversight, free right to counsel, and a maze of capital
-              improvement rules make understanding your lease essential — and often contentious.
-              LeasePlain's AI analysis for NYC is in development.
+              New York City has the most complex and tenant-protective rental regulatory system in the
+              United States. Rent stabilization covers nearly half the city&apos;s rental units, the 2019
+              HSTPA closed longstanding loopholes, and the 2024 Good Cause Eviction law extended
+              protections to market-rate renters. Knowing which laws apply to your apartment is essential.
             </p>
+            <div className="mt-8">
+              <Link
+                href="/upload"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors"
+              >
+                <Upload className="w-4 h-4" aria-hidden="true" />
+                Analyze My NYC Lease
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -97,24 +115,25 @@ export default function NewYorkCityPage() {
             <div className="lg:col-span-2 space-y-12">
 
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">NYC's Rental Market Overview</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">NYC&apos;s Rental Regulatory System</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                  New York City is home to approximately 2.3 million rental units, making it the
-                  largest rental market in the United States. Roughly half of those units are
-                  rent-stabilized under the city's rent stabilization system, administered by the
-                  Division of Housing and Community Renewal (DHCR) and the NYC Rent Guidelines Board.
+                  New York City is home to approximately 2.3 million rental units — the largest rental
+                  market in the United States. Nearly half are rent-stabilized, governed by the NYC Rent
+                  Stabilization Law and administered by the Division of Housing and Community Renewal (DHCR)
+                  and the NYC Rent Guidelines Board (RGB), which sets allowable annual increases each June.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                  For market-rate renters, NYC can be extraordinarily expensive. For stabilized
-                  tenants, however, the regulatory framework provides meaningful rent and tenure
-                  security — if tenants know how to assert their rights. The 2019 HSTPA closed
-                  many loopholes that had allowed landlords to deregulate apartments, and the
-                  current system is significantly more protective than before.
+                  The <strong>Housing Stability and Tenant Protection Act of 2019 (HSTPA)</strong> was a
+                  sweeping reform that eliminated most pathways to deregulate stabilized apartments, capped
+                  preferential rent increases, limited rent increases for major capital improvements and
+                  individual apartment improvements, and strengthened harassment protections. The{" "}
+                  <strong>Good Cause Eviction law (2024)</strong> extended rent cap and just-cause
+                  protections to most market-rate tenants statewide.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Your Rights as a NYC Renter</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">NYC Tenant Protections</h2>
                 <ul className="flex flex-col gap-3">
                   {nycRights.map((r) => (
                     <li key={r} className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
@@ -126,25 +145,26 @@ export default function NewYorkCityPage() {
               </div>
 
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
-                <h3 className="font-semibold text-blue-900 mb-3">Major Capital Improvements (MCI) in NYC</h3>
+                <h3 className="font-semibold text-blue-900 mb-3">Major Capital Improvements (MCI) &amp; Individual Apartment Improvements (IAI)</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
-                  In rent-stabilized buildings, landlords can apply to the DHCR for a permanent
-                  rent increase to recover the cost of building-wide capital improvements (e.g.,
-                  new roof, boiler, windows) — these are called Major Capital Improvements (MCIs).
-                  Under the HSTPA, the rent increase from an MCI is now temporary (it expires after
-                  the MCI cost is fully recovered) rather than permanent, and it is capped at 2%
-                  of the regulated rent per year. Tenants have the right to challenge MCI applications
-                  at the DHCR by participating in the administrative process.
+                  In rent-stabilized buildings, landlords can apply to DHCR for rent increases to recover
+                  the cost of building-wide improvements (MCIs — e.g., new boiler, roof, windows). After
+                  HSTPA 2019, MCI increases are <strong>temporary</strong> — they expire once the cost is
+                  recovered — and are capped at 2% of the regulated rent per year. IAIs (work in individual
+                  apartments) can also support rent increases, but HSTPA capped total IAI increases to
+                  $30 per $1 spent on improvements, reduced from prior law. Tenants have the right to
+                  challenge both MCI and IAI applications at DHCR by submitting written objections during
+                  the comment period.
                 </p>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Common Lease Issues in NYC</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">NYC Lease Red Flags</h2>
                 <ul className="flex flex-col gap-3">
-                  {nycLeaseIssues.map((i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm leading-relaxed">
-                      <span className="text-amber-500 font-bold flex-shrink-0 mt-0.5">!</span>
-                      <span className="text-slate-700 text-sm leading-relaxed">{i}</span>
+                  {nycLeaseRedFlags.map((r) => (
+                    <li key={r} className="flex items-start gap-3 text-sm leading-relaxed">
+                      <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-slate-700">{r}</span>
                     </li>
                   ))}
                 </ul>
@@ -153,48 +173,50 @@ export default function NewYorkCityPage() {
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">NYC Tenant Resources</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                  NYC has an exceptionally strong ecosystem of tenant advocacy organizations:
+                  NYC has an exceptionally strong ecosystem of tenant advocacy organizations, city agencies,
+                  and legal aid providers. Whether you need help challenging a rent overcharge, defending
+                  an eviction, or understanding your stabilization status, these resources can help:
                 </p>
-                <ul className="flex flex-col gap-2 text-sm text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold flex-shrink-0">→</span>
-                    <span><strong>NYC Housing Court</strong> — free right to counsel for qualifying tenants facing eviction</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold flex-shrink-0">→</span>
-                    <span><strong>DHCR (nyshcr.gov)</strong> — rent stabilization complaints, MCI challenges, overcharge claims</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold flex-shrink-0">→</span>
-                    <span><strong>Met Council on Housing</strong> — tenant education, hotline, and organizing support</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-blue-600 font-bold flex-shrink-0">→</span>
-                    <span><strong>Urban Justice Center</strong> — legal representation for low-income NYC tenants</span>
-                  </li>
+                <ul className="flex flex-col gap-4">
+                  {nycResources.map((r) => (
+                    <li key={r.name} className="flex items-start gap-2 text-sm text-slate-700">
+                      <span className="text-blue-600 font-bold flex-shrink-0">→</span>
+                      <span><strong>{r.name}</strong> — {r.desc}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-
-            </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
-                  { q: "How do I find out if my NYC apartment is rent-stabilized?", a: "Check the NYC Rent Guidelines Board website (or nyc.gov/hpd) or use the NYC FOIL/DHCR records to look up your building. Buildings built before 1974 with 6+ units are often covered. You can also check your lease — rent-stabilized leases say so on the first page." },
-                  { q: "Can a NYC landlord refuse to renew my lease?", a: "For rent-stabilized apartments, landlords must offer a lease renewal unless there is a legal basis for non-renewal (e.g., owner's personal use, building demolition). For market-rate apartments, landlords generally can decline to renew with proper notice." },
-                  { q: "What is the NYC preferential rent and how does it affect me?", a: "Some rent-stabilized tenants pay a 'preferential rent' below their unit's legal regulated rent. After the 2019 HSTPA, landlords can only raise the rent by the RGB increase — they can no longer jump to the full legal rent when a tenant renews." },
-                  { q: "What is the NYC DHCR?", a: "The Division of Housing and Community Renewal (DHCR) is the state agency that oversees rent stabilization in NYC and New York State. Tenants can file complaints about rent overcharges, improper lease renewals, and service reductions with the DHCR." },
-                  { q: "Can I break a lease in NYC for any reason?", a: "Not without consequences. You can negotiate an early termination with your landlord, sublet (with consent), or assign the lease. Domestic violence victims have special protections allowing earlier termination. Leaving without following the legal process exposes you to liability for unpaid rent." }
+                  {
+                    q: "How do I find out if my NYC apartment is rent-stabilized?",
+                    a: "Several methods work: (1) Check your lease — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) stating the legal regulated rent. (2) Search the DHCR's Rent Stabilization Lookup tool at apps.hcr.ny.gov/BuildingSearch. (3) Request your apartment's rent history from DHCR via a Freedom of Information Law (FOIL) request. Buildings built before 1974 with 6 or more units in NYC are generally covered unless they were deregulated.",
+                  },
+                  {
+                    q: "What is Good Cause Eviction and how does it apply in NYC?",
+                    a: "The Good Cause Eviction law, enacted statewide in April 2024, applies to most market-rate rental apartments not already covered by stronger local protections. It limits annual rent increases to 5% plus the local CPI (capped at 10%) and requires landlords to show a legally recognized reason (good cause) before refusing to renew a lease or commencing a nonpayment proceeding. In NYC, most units not covered by the RSO or other stronger laws fall under Good Cause — but single-family homes, condos, and some recently constructed buildings may be exempt. Consult a housing attorney to confirm your unit's coverage.",
+                  },
+                  {
+                    q: "My landlord is raising my stabilized rent by more than the RGB guideline — what can I do?",
+                    a: "You can file a rent overcharge complaint with the DHCR. Under HSTPA 2019, tenants can look back up to 6 years for overcharges. If the DHCR finds a willful overcharge, it can award treble damages (three times the overcharge amount) plus interest and attorney's fees. File your complaint promptly — the process takes time, but the lookback period protects you.",
+                  },
+                  {
+                    q: "Can a NYC landlord keep my security deposit for normal wear and tear?",
+                    a: "No. Under New York law, a landlord can only deduct from your security deposit for actual damages beyond normal wear and tear, unpaid rent, and certain cleaning costs if the unit was left in significantly worse condition than received. The deposit must be returned within 14 days of the tenancy ending with an itemized written statement. If the landlord fails to return the deposit within 14 days without a written itemization, they lose the right to retain any portion of it.",
+                  },
                 ]} />
               </div>
 
+            </div>
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
-                <h3 className="font-bold text-lg mb-2">Analyze My Lease</h3>
+                <h3 className="font-bold text-lg mb-2">Check your NYC lease</h3>
                 <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                  NYC AI analysis is coming soon. Canadian lease? Upload it today for a free
-                  analysis against your provincial law.
+                  Our AI reviews your NYC lease for rent stabilization compliance, illegal clauses, and
+                  HSTPA violations — in plain English.
                 </p>
                 <Link
                   href="/upload"
@@ -211,8 +233,9 @@ export default function NewYorkCityPage() {
                 <ul className="flex flex-col gap-2">
                   {[
                     { label: "New York State Tenant Rights", href: "/united-states/new-york" },
-                    { label: "United States Overview", href: "/united-states" },
                     { label: "California Tenant Rights", href: "/united-states/california" },
+                    { label: "Miami Tenant Rights", href: "/united-states/florida/miami" },
+                    { label: "United States Overview", href: "/united-states" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">
@@ -224,6 +247,25 @@ export default function NewYorkCityPage() {
                 </ul>
               </div>
             </aside>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 px-4 bg-blue-600">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-3">Renting in New York City?</h2>
+              <p className="text-blue-100 leading-relaxed max-w-xl">
+                Upload your lease and get a plain-English breakdown before you sign. Know your rent stabilization and Good Cause rights.
+              </p>
+            </div>
+            <Link
+              href="/upload"
+              className="inline-flex items-center gap-2 bg-white text-blue-700 font-semibold px-7 py-3.5 rounded-xl hover:bg-blue-50 transition-colors whitespace-nowrap flex-shrink-0"
+            >
+              <Upload className="w-4 h-4" aria-hidden="true" />
+              Analyze My Lease
+            </Link>
           </div>
         </section>
       </main>

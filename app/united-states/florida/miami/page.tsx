@@ -184,6 +184,56 @@ export default function MiamiPage() {
                 </ul>
               </div>
 
+              <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
+                <h3 className="font-semibold text-amber-900 mb-3">Miami Rental Market Context: What Makes Miami Leases Unique</h3>
+                <p className="text-sm text-amber-800 leading-relaxed mb-3">
+                  Miami&apos;s rental market is shaped by several factors that tenants elsewhere don&apos;t face. The
+                  city&apos;s large inventory of investor-owned condominiums means many tenants are governed by
+                  both a residential lease and a condo association&apos;s rules and regulations. Tropical weather
+                  — including hurricane season from June through November — creates additional legal questions
+                  around habitability, storm preparation, and insurance obligations.
+                </p>
+                <p className="text-sm text-amber-800 leading-relaxed">
+                  Miami&apos;s status as a major international city also means many tenants come from countries
+                  where landlord-tenant law works very differently. Florida law applies equally to all
+                  tenants regardless of citizenship or immigration status — if you are renting a residential
+                  unit in Miami, the FRLTA protects you.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Eviction Process in Miami: What Landlords Must Do</h2>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  Florida has a strictly procedural eviction process. Before a landlord can file for eviction
+                  in Miami-Dade County Court, they must follow specific notice requirements under Florida
+                  Statute 83.56:
+                </p>
+                <ul className="flex flex-col gap-3 mb-4">
+                  <li className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Non-payment of rent:</strong> 3-day written notice to pay or vacate (excluding weekends and legal holidays). If you pay in full within the 3-day window, the landlord cannot proceed with eviction.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Curable lease violation:</strong> 7-day written notice giving the tenant an opportunity to cure the violation. If you remedy the issue within 7 days, the eviction cannot proceed.</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Incurable lease violation:</strong> 7-day written notice of termination with no right to cure (for serious violations such as criminal activity on the premises).</span>
+                  </li>
+                  <li className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>End of lease term / no cause:</strong> For month-to-month tenancies, at least 15 days written notice before the end of the monthly period. For annual leases with no renewal, proper written notice as specified in the lease or statute.</span>
+                  </li>
+                </ul>
+                <p className="text-slate-700 leading-relaxed text-sm">
+                  If a landlord fails to follow these notice procedures exactly — even a technical defect in
+                  delivery or timing — a Miami-Dade court may dismiss the eviction. If you receive an eviction
+                  notice, count the days carefully and consult Legal Services of Greater Miami or a private
+                  attorney immediately.
+                </p>
+              </div>
+
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[

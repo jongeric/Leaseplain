@@ -16,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/upload",              0.9, "monthly"),
     url("/lease-analyzer",      0.9, "monthly"),
     url("/how-it-works",        0.9, "monthly"),
-    url("/how-leaseplain-works",0.8, "monthly"),
     url("/pricing",             0.8, "monthly"),
     url("/example-report",      0.7, "monthly"),
     url("/login",               0.5, "monthly"),
@@ -185,6 +184,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/privacy",          0.3, "yearly"),
     url("/terms",            0.3, "yearly"),
     url("/disclaimer",       0.3, "yearly"),
-    url("/legal-disclaimer", 0.3, "yearly"),
   ];
 }

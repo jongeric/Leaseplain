@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   title: "How LeasePlain Works | AI Lease Analysis Explained",
   description:
     "Understand exactly how LeasePlain analyzes your lease: OCR text extraction, AI clause detection, plain-English interpretation, risk scoring, and what the tool can and cannot do.",
-  alternates: { canonical: "https://leaseplain.com/how-leaseplain-works" },
+  alternates: { canonical: "https://leaseplain.com/how-it-works" },
   openGraph: {
     title: "How LeasePlain Works | AI Lease Analysis Explained",
     description: "Understand exactly how LeasePlain analyzes your lease: OCR text extraction, AI clause detection, plain-English interpretation, risk scoring, and what the tool can and cannot do.",
-    url: "https://leaseplain.com/how-leaseplain-works",
+    url: "https://leaseplain.com/how-it-works",
     type: "website",
   },
 };

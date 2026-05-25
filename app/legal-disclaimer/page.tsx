@@ -10,17 +10,17 @@ export const dynamic = "force-static";
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://leaseplain.com/legal-disclaimer",
+  "@id": "https://leaseplain.com/disclaimer",
   "name": "Legal Disclaimer | LeasePlain",
   "description": "LeasePlain is not a law firm. Our analysis is for informational and educational purposes only — not legal advice.",
-  "url": "https://leaseplain.com/legal-disclaimer",
+  "url": "https://leaseplain.com/disclaimer",
 };
 
 export const metadata: Metadata = {
   title: "Legal Disclaimer | LeasePlain",
   description:
     "LeasePlain is not a law firm. Our analysis is for informational and educational purposes only — not legal advice. Read our full legal disclaimer here.",
-  alternates: { canonical: "https://leaseplain.com/legal-disclaimer" },
+  alternates: { canonical: "https://leaseplain.com/disclaimer" },
   openGraph: {
     title: "Legal Disclaimer | LeasePlain",
     description: "LeasePlain is not a law firm. Our analysis is for informational and educational purposes only — not legal advice. Read our full legal disclaimer here.",

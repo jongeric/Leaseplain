@@ -48,7 +48,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       "Accepting verbal promises about the deposit instead of getting terms in writing",
     ],
     provinceConsiderations:
-      "In Ontario, landlords can only collect a last month's rent deposit — not a separate security deposit for damages. In BC and Alberta, security deposits are capped at half a month's rent. In most US states, deposits are typically capped at 1–2 months' rent, with strict timelines for return. Quebec has a unique system with no security deposits allowed by law.",
+      "In Ontario, landlords can only collect a last month's rent deposit — not a separate security deposit for damages. BC caps security deposits at half a month's rent; Alberta's cap is one full month's rent. In most US states, deposits are typically capped at 1–2 months' rent, with strict timelines for return. Quebec has a unique system with no security deposits allowed by law.",
     faqs: [
       {
         q: "Can my landlord use my security deposit for last month's rent?",

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 };
 
 const guidelines = [
+  { year: "2026", rate: "2.1%" },
   { year: "2025", rate: "2.5%" },
   { year: "2024", rate: "2.5%" },
   { year: "2023", rate: "2.5%" },

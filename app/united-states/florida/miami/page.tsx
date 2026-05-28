@@ -34,9 +34,9 @@ const speakableSchema = {
 
 const miamiRights = [
   "Florida's Residential Landlord and Tenant Act (FRLTA), codified at Florida Statutes Chapter 83, is the primary law governing Miami leases and applies to all residential tenancies statewide.",
-  "Security deposits have no statutory cap in Florida, but landlords must hold them in a separate Florida bank account OR post a surety bond — and must provide written notice of which method within 30 days of receiving the deposit.",
+  "Security deposits have no statutory cap in Florida, but landlords must hold them using one of three methods under Florida Statute 83.49: (1) a non-interest-bearing Florida bank account, (2) an interest-bearing Florida bank account (with interest paid to the tenant), or (3) a surety bond posted with the county circuit court clerk. Written notice of the method used must be provided within 30 days of receiving the deposit.",
   "Landlords must return your security deposit within 15 days if they make no claim, or within 30 days with an itemized written statement of deductions.",
-  "Florida has no statewide rent control law — however, Miami-Dade County passed a Tenant's Bill of Rights in 2022, providing additional local protections for renters in unincorporated areas.",
+  "Florida has no statewide rent control law. Miami-Dade's Tenant's Bill of Rights (2022) was preempted by Florida HB 1417 (effective July 1, 2023) and is no longer enforceable — Florida law prohibits local tenant protection ordinances beyond state law.",
   "For non-payment of rent, your landlord must give you a written 3-day notice (excluding weekends and legal holidays) before filing for eviction.",
   "Landlords must give at least 12 hours advance notice before entering your unit for non-emergency repairs or inspections, and may only enter at reasonable times.",
   "For a lease violation other than non-payment, landlords must give 7 days written notice to cure the violation before proceeding with eviction.",
@@ -122,10 +122,8 @@ export default function MiamiPage() {
                   deposit handling, entry notice requirements, and the eviction process.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                  Florida has no statewide rent control, and the state legislature has historically preempted local governments
-                  from enacting rent caps. Miami-Dade County responded in 2022 by passing a <strong>Tenant&apos;s Bill of Rights</strong>,
-                  which requires landlords in unincorporated Miami-Dade to give 60 days notice of rent increases above 5%,
-                  provide relocation assistance in some circumstances, and disclose tenant rights at lease signing.
+                  Florida has no statewide rent control, and the state legislature has preempted local governments
+                  from enacting rent caps or additional tenant protections. Note: Miami-Dade&apos;s Tenant&apos;s Bill of Rights (2022) was preempted by Florida HB 1417, effective July 1, 2023, and is no longer enforceable. Florida law prohibits local rent control or tenant protection ordinances beyond state law.
                 </p>
               </div>
 
@@ -144,9 +142,7 @@ export default function MiamiPage() {
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
                 <h3 className="font-semibold text-blue-900 mb-3">Security Deposit Rules Under Florida Statute 83.49</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
-                  Florida has specific rules about how security deposits must be held. Your landlord must
-                  either keep your deposit in a <strong>separate Florida bank account</strong> (not commingled with
-                  other funds) or post a <strong>surety bond</strong> with the county clerk. Within 30 days of
+                  Florida Statute 83.49 specifies three methods for holding security deposits. Your landlord must use one of: (1) a <strong>non-interest-bearing Florida bank account</strong> (not commingled with other funds); (2) an <strong>interest-bearing Florida bank account</strong> (landlord must pay tenant at least 75% of annualized interest or 5% simple interest per year); or (3) a <strong>surety bond</strong> posted with the county circuit court clerk. Within 30 days of
                   receiving your deposit, they must send you written notice stating which method they&apos;re using
                   and, if a bank account, which bank. Failure to do so can affect their ability to make deductions.
                   Deposits must be returned within 15 days if no claim is made, or within 30 days with an itemized
@@ -239,15 +235,15 @@ export default function MiamiPage() {
                 <FAQAccordion items={[
                   {
                     q: "Does Miami have rent control?",
-                    a: "No. Florida state law (F.S. 125.0103) preempts local governments from enacting rent control measures during non-declared emergencies. Miami and Miami-Dade County cannot cap rent increases. However, Miami-Dade's 2022 Tenant's Bill of Rights requires landlords in unincorporated areas to give 60 days advance notice of rent increases greater than 5%, which gives tenants more time to plan even if the increase itself cannot be blocked.",
+                    a: "No. Florida state law preempts local governments from enacting rent control or additional tenant protection ordinances. Miami and Miami-Dade County cannot cap rent increases. Miami-Dade's 2022 Tenant's Bill of Rights — which required advance notice of rent increases above 5% — was preempted by Florida HB 1417 (effective July 1, 2023) and is no longer enforceable.",
                   },
                   {
                     q: "What is the 3-day notice in Florida and does it apply to Miami?",
                     a: "Yes. Under Florida Statute 83.56, before a Miami landlord can file for eviction due to non-payment of rent, they must serve the tenant with a written 3-day notice to pay rent or vacate. The 3 days excludes weekends and legal holidays. If you pay the full amount owed within that 3-day window, the landlord cannot proceed with eviction. Keep written proof of any payment you make during this period.",
                   },
                   {
-                    q: "How does the Miami-Dade Tenant's Bill of Rights protect me?",
-                    a: "The Miami-Dade Tenant's Bill of Rights (passed 2022) applies to rentals in unincorporated Miami-Dade. It requires landlords to: (1) give 60 days advance written notice of rent increases above 5%; (2) disclose tenant rights in writing at lease signing; and (3) provide relocation assistance equal to two months' rent in certain no-fault termination scenarios. Note that the rights do not cap rent — they require notice and transparency. If you live in the City of Miami (incorporated), the county ordinance may not apply; check with the Miami-Dade Consumer Services Department.",
+                    q: "Does the Miami-Dade Tenant's Bill of Rights still protect me?",
+                    a: "No. The Miami-Dade Tenant's Bill of Rights (passed 2022) was preempted by Florida HB 1417, which took effect July 1, 2023. HB 1417 prohibits local governments from enacting ordinances that regulate landlord-tenant relationships beyond what state law provides. As a result, the Miami-Dade ordinance is no longer enforceable. Tenant protections in Miami are now governed exclusively by the Florida Residential Landlord and Tenant Act (Chapter 83).",
                   },
                   {
                     q: "Can a Miami condo association rule override my lease?",

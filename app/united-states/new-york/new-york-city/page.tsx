@@ -35,7 +35,7 @@ const speakableSchema = {
 const nycRights = [
   "NYC Rent Stabilization covers approximately one million apartments — primarily in buildings of 6 or more units built before 1974. Stabilized tenants' rents can only increase by the percentage set annually by the NYC Rent Guidelines Board (RGB).",
   "Rent-stabilized tenants have the right to a lease renewal on substantially the same terms, with only guideline-permitted increases. A landlord cannot refuse to renew without a legal basis.",
-  "The Good Cause Eviction law (enacted statewide in 2024) limits annual rent increases for non-rent-stabilized apartments to 5% plus local CPI (max 10%), and requires landlords to show good cause before nonrenewal or eviction.",
+  "The Good Cause Eviction law (enacted April 2024) applies automatically in New York City. Other New York municipalities may opt in via local legislation. It limits annual rent increases for non-rent-stabilized apartments to 5% plus local CPI (max 10%), and requires landlords to show good cause before nonrenewal or eviction.",
   "Security deposits are capped at one month's rent under the 2019 Housing Stability and Tenant Protection Act (HSTPA). Any deposit exceeding one month must be returned, and landlords must return deposits with an itemized statement within 14 days of tenancy end.",
   "NYC provides a free Right to Counsel for low-income tenants facing eviction in Housing Court in all five boroughs — qualifying tenants are entitled to a free attorney, not just advice.",
   "The Division of Housing and Community Renewal (DHCR) administers rent stabilization statewide. Tenants can file complaints about rent overcharges, improper deregulation, and service reductions at nyshcr.gov.",
@@ -95,8 +95,8 @@ export default function NewYorkCityPage() {
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New York City has the most complex and tenant-protective rental regulatory system in the
               United States. Rent stabilization covers nearly half the city&apos;s rental units, the 2019
-              HSTPA closed longstanding loopholes, and the 2024 Good Cause Eviction law extended
-              protections to market-rate renters. Knowing which laws apply to your apartment is essential.
+              HSTPA closed longstanding loopholes, and the April 2024 Good Cause Eviction law extended
+              protections to market-rate renters in New York City. Knowing which laws apply to your apartment is essential.
             </p>
             <div className="mt-8">
               <Link
@@ -127,8 +127,8 @@ export default function NewYorkCityPage() {
                   sweeping reform that eliminated most pathways to deregulate stabilized apartments, capped
                   preferential rent increases, limited rent increases for major capital improvements and
                   individual apartment improvements, and strengthened harassment protections. The{" "}
-                  <strong>Good Cause Eviction law (2024)</strong> extended rent cap and just-cause
-                  protections to most market-rate tenants statewide.
+                  <strong>Good Cause Eviction law (April 2024)</strong> extended rent cap and just-cause
+                  protections to most market-rate tenants in New York City (other municipalities may opt in).
                 </p>
               </div>
 
@@ -196,7 +196,7 @@ export default function NewYorkCityPage() {
                   },
                   {
                     q: "What is Good Cause Eviction and how does it apply in NYC?",
-                    a: "The Good Cause Eviction law, enacted statewide in April 2024, applies to most market-rate rental apartments not already covered by stronger local protections. It limits annual rent increases to 5% plus the local CPI (capped at 10%) and requires landlords to show a legally recognized reason (good cause) before refusing to renew a lease or commencing a nonpayment proceeding. In NYC, most units not covered by the RSO or other stronger laws fall under Good Cause — but single-family homes, condos, and some recently constructed buildings may be exempt. Consult a housing attorney to confirm your unit's coverage.",
+                    a: "The Good Cause Eviction law, enacted in April 2024, applies automatically in New York City and covers most market-rate rental apartments not already covered by stronger local protections. It limits annual rent increases to 5% plus the local CPI (capped at 10%) and requires landlords to show a legally recognized reason (good cause) before refusing to renew a lease or commencing a nonpayment proceeding. In NYC, most units not covered by the RSO or other stronger laws fall under Good Cause — but single-family homes, condos, and some recently constructed buildings may be exempt. Consult a housing attorney to confirm your unit's coverage.",
                   },
                   {
                     q: "My landlord is raising my stabilized rent by more than the RGB guideline — what can I do?",

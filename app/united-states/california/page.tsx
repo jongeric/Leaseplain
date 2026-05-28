@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const californiaProtections = [
   "AB 1482 (Tenant Protection Act of 2019) caps annual rent increases at 5% plus local CPI, with a maximum of 10%, for most covered tenancies.",
   "AB 1482 also requires \"just cause\" for evictions of tenants who have lived in a unit for 12 months or more.",
-  "Security deposits in California are capped at one month's rent for unfurnished units and two months' rent for furnished units (as of legislation effective April 2024).",
+  "As of July 1, 2024, AB 12 caps security deposits at 1 month's rent for all units (furnished and unfurnished), with a limited exception for qualifying small landlords (natural persons owning ≤2 properties/≤4 units) who may charge up to 2 months.",
   "Landlords must return security deposits within 21 days of tenancy end with an itemized statement.",
   "The Anti-Price Gouging Law (Penal Code § 396) prohibits rent increases above 10% in declared state of emergency areas.",
   "Local rent control ordinances (e.g., Los Angeles RSO, San Francisco Rent Ordinance) may provide additional protections beyond AB 1482.",
@@ -158,7 +158,7 @@ export default function CaliforniaPage() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   { q: "Does California have statewide rent control?", a: "Yes. AB 1482 (California Tenant Protection Act, 2019) caps annual rent increases at 5% plus local CPI (max 10%) for most multi-family buildings 15 years or older. Stricter local rent control applies in cities like Los Angeles, San Francisco, and Oakland." },
-                  { q: "What is the security deposit limit in California?", a: "California caps security deposits at 2 months' rent for unfurnished units and 3 months for furnished units. Landlords must return the deposit (with itemized deductions) within 21 days of the tenant vacating." },
+                  { q: "What is the security deposit limit in California?", a: "As of July 1, 2024, AB 12 caps security deposits at 1 month's rent for all units (furnished and unfurnished), with a limited exception for qualifying small landlords (up to 2 months). Landlords must return the deposit (with itemized deductions) within 21 days of the tenant vacating." },
                   { q: "What does 'just cause' eviction mean in California?", a: "Under AB 1482, landlords covered by California's tenant protection law can only evict tenants for specific reasons (just cause) — such as non-payment, criminal activity, or owner move-in. After 12 months of tenancy, no-fault evictions require relocation assistance." },
                   { q: "What is California's habitability standard?", a: "California requires landlords to maintain rental units in habitable condition — including adequate heat, plumbing, weatherproofing, pest control, and structural safety. Tenants can repair and deduct (up to one month's rent) or withhold rent for serious habitability failures." },
                   { q: "Do California tenants have the right to sublet?", a: "California tenants generally have the right to assign or sublet with the landlord's consent, which cannot be unreasonably withheld. A lease that prohibits all subletting may be enforceable, but blanket bans can be challenged if the landlord is being unreasonable." }

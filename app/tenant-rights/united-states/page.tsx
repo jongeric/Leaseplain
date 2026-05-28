@@ -40,7 +40,7 @@ const usStates = [
     highlights: [
       "Statewide rent cap: increases limited to 5% + local CPI (max 10%) annually",
       "Just-cause eviction required for covered units after 12 months of tenancy",
-      "Security deposit capped at 2 months' rent (unfurnished); 3 months' (furnished)",
+      "Security deposit capped at 1 month's rent for all units (AB 12, eff. July 1, 2024); small-landlord exception up to 2 months",
       "Many cities (San Francisco, Los Angeles) have additional, stronger local protections",
     ],
     comingSoon: true,
@@ -52,7 +52,7 @@ const usStates = [
       "No statewide rent control — landlords can raise rent by any amount with proper notice",
       "Security deposit: no statutory cap, but must be held in separate account or bonded",
       "Landlord must return deposit within 15 days (no claim) or 30 days (with claim)",
-      "7-day notice for non-payment; 15-day notice for other lease violations",
+      "3-day notice for non-payment (excluding weekends and legal holidays); 7-day notice for curable lease violations",
     ],
     comingSoon: true,
   },

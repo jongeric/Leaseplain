@@ -11,19 +11,19 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "New Brunswick Tenant Rights: Lease Help & Renter Protections | LeasePlain",
   description:
-    "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal, no rent control, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
+    "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal (RTT), rent control cap, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
   alternates: { canonical: "https://leaseplain.com/canada/new-brunswick" },
   openGraph: {
     title: "New Brunswick Tenant Rights: Lease Help & Renter Protections | LeasePlain",
-    description: "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal, no rent control, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
+    description: "Understand your rights as a New Brunswick renter under the Residential Tenancies Act. Learn about the Residential Tenancies Tribunal (RTT), rent control cap, deposit rules, and lease protections in Moncton, Fredericton, and Saint John.",
     url: "https://leaseplain.com/canada/new-brunswick",
     type: "website",
   },
 };
 
 const tenantProtections = [
-  "Security deposits are capped at one month's rent — landlords must provide a written receipt upon collection.",
-  "Rent can only be increased once every 12 months, and the landlord must give 3 months written notice before the increase takes effect.",
+  "Security deposits are capped at one month's rent and must be remitted by the landlord to the Residential Tenancies Tribunal (RTT) within 15 days of collection — landlords do not hold deposits themselves.",
+  "Rent can only be increased once every 12 months, and the landlord must give 6 months written notice before the increase takes effect.",
   "Tenants have the right to give notice to terminate within 15 days of receiving a rent increase notice they do not accept.",
   "Landlords must give 24 hours written notice before entering a rental unit, except in genuine emergencies.",
   "Tenants cannot be evicted without a formal order from the Residential Tenancies Tribunal — self-help eviction is illegal.",
@@ -35,7 +35,7 @@ const tenantProtections = [
 const watchInLeases = [
   "Deposits exceeding one month's rent — this is above New Brunswick's legal maximum and is unlawful.",
   "Clauses allowing the landlord to enter without 24 hours written notice for routine repairs or inspections.",
-  "Rent increase clauses that do not comply with the 3-month written notice requirement or that allow more than one increase per 12 months.",
+  "Rent increase clauses that do not comply with the 6-month written notice requirement or that allow more than one increase per 12 months.",
   "Provisions attempting to waive the tenant's right to apply to the Residential Tenancies Tribunal.",
   "Leases that do not acknowledge the tenant's right to terminate within 15 days of receiving an unacceptable rent increase notice.",
 ];
@@ -89,9 +89,10 @@ export default function NewBrunswickPage() {
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New Brunswick's <em>Residential Tenancies Act</em> governs landlord-tenant relationships
-              across Canada's only officially bilingual province. With no rent control but strong notice
-              requirements and a fully bilingual Residential Tenancies Tribunal, NB renters in Moncton,
-              Fredericton, and Saint John need to understand exactly what protections the law provides.
+              across Canada's only officially bilingual province. With a 3% annual rent increase cap
+              (effective February 1, 2025), strong notice requirements, and a fully bilingual
+              Residential Tenancies Tribunal (RTT), NB renters in Moncton, Fredericton, and Saint John
+              need to understand exactly what protections the law provides.
             </p>
           </div>
         </section>
@@ -133,19 +134,20 @@ export default function NewBrunswickPage() {
               </div>
 
               <div className="bg-amber-50 border border-amber-100 rounded-xl p-6">
-                <h3 className="font-semibold text-amber-900 mb-3">No Rent Control in New Brunswick</h3>
+                <h3 className="font-semibold text-amber-900 mb-3">New Brunswick Rent Cap Explained</h3>
                 <p className="text-sm text-amber-800 leading-relaxed mb-3">
-                  New Brunswick has <strong>no rent control</strong> — a landlord can increase rent by
-                  any amount at the end of a lease term or on a periodic tenancy. While the 3-month
-                  notice requirement gives tenants time to plan, there is no cap on the amount of the
-                  increase. This has significant implications for renters in a competitive market.
+                  New Brunswick introduced a <strong>3% annual rent increase cap effective February 1,
+                  2025</strong>. Landlords may apply to the Residential Tenancies Tribunal (RTT) for
+                  up to 9% with demonstrated renovation justification. Rent can only be increased once
+                  every 12 months, and the landlord must give <strong>6 months written notice</strong>{" "}
+                  before the increase takes effect.
                 </p>
                 <p className="text-sm text-amber-800 leading-relaxed">
-                  New Brunswick does provide one key protection: if you receive a rent increase notice
-                  and choose not to accept the new amount, you have <strong>15 days</strong> to give
-                  written notice to terminate the tenancy. This exit right means you are never forced
-                  to accept an unaffordable increase — but you must act within the 15-day window or
-                  the increase becomes binding.
+                  New Brunswick also provides a key exit protection: if you receive a rent increase
+                  notice and choose not to accept the new amount, you have <strong>15 days</strong> to
+                  give written notice to terminate the tenancy. This exit right means you are never
+                  forced to accept an unaffordable increase — but you must act within the 15-day window
+                  or the increase becomes binding.
                 </p>
               </div>
 
@@ -187,9 +189,9 @@ export default function NewBrunswickPage() {
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
-                  { q: "Is there rent control in New Brunswick?", a: "No. New Brunswick has no rent control. Landlords can raise rent by any amount, but must give tenants written notice — at least 3 months for most residential tenancies." },
-                  { q: "What is the maximum security deposit in New Brunswick?", a: "New Brunswick caps security deposits at one month's rent. Landlords must provide a written receipt and return the deposit within 7 days of the tenancy ending, minus any valid deductions." },
-                  { q: "How do I resolve a landlord-tenant dispute in New Brunswick?", a: "File a complaint with the Rentalsman's Office (Service New Brunswick — Rental Residential Tenancies). The Rentalsman is a provincial officer who mediates and adjudicates disputes at little or no cost." },
+                  { q: "Is there rent control in New Brunswick?", a: "Yes. New Brunswick introduced a 3% annual rent increase cap effective February 1, 2025. Landlords may apply to the Residential Tenancies Tribunal (RTT) for up to 9% with demonstrated renovation justification. Landlords must give tenants 6 months written notice before any rent increase takes effect." },
+                  { q: "What is the maximum security deposit in New Brunswick?", a: "New Brunswick caps security deposits at one month's rent. The landlord must remit the deposit to the Residential Tenancies Tribunal (RTT) within 15 days of collection — the landlord does not hold it. The deposit is returned within 7 days of the tenancy ending, minus any valid deductions." },
+                  { q: "How do I resolve a landlord-tenant dispute in New Brunswick?", a: "File a complaint with the Residential Tenancies Tribunal (RTT), administered by Service New Brunswick. The RTT mediates and adjudicates disputes at little or no cost, with fully bilingual services in English and French." },
                   { q: "Can a New Brunswick landlord evict a tenant without cause?", a: "Yes, with proper notice. A landlord can terminate a month-to-month tenancy by giving at least 3 months' written notice without needing a specific reason. Eviction for cause (e.g., non-payment) requires shorter notice." },
                   { q: "Is New Brunswick's tenancy law available in French?", a: "Yes. New Brunswick is Canada's only officially bilingual province. The Residential Tenancies Act and government services are fully available in both English and French." }
                 ]} />

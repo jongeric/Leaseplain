@@ -68,8 +68,8 @@ const provinces = [
     name: "New Brunswick",
     href: "/canada/new-brunswick",
     law: "Residential Tenancies Act",
-    body: "Rentalsman Office",
-    highlights: ["No province-wide rent control", "Security deposit capped at 1x monthly rent", "Disputes handled by the Rentalsman"],
+    body: "Residential Tenancies Tribunal (RTT)",
+    highlights: ["3% annual rent increase cap (since Feb 2025)", "Security deposit capped at 1x monthly rent", "Disputes handled by the Residential Tenancies Tribunal (RTT)"],
   },
   {
     name: "Saskatchewan",
@@ -81,9 +81,9 @@ const provinces = [
   {
     name: "Prince Edward Island",
     href: "/canada/prince-edward-island",
-    law: "Rental of Residential Property Act",
-    body: "Island Regulatory and Appeals Commission",
-    highlights: ["Rent review process for increases", "Security deposit capped at 2 months' rent", "IRAC handles disputes"],
+    law: "Residential Tenancy Act",
+    body: "Island Regulatory and Appeals Commission (IRAC)",
+    highlights: ["Rent increase cap set by Director of Residential Tenancy", "Security deposit capped at 1 month's rent", "IRAC handles disputes"],
   },
   {
     name: "Newfoundland & Labrador",

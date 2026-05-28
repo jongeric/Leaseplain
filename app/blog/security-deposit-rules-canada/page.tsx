@@ -33,15 +33,15 @@ export const metadata: Metadata = {
 };
 
 const provinceRules = [
-  { province: "Ontario", max: "Last month's rent only (no damage deposit)", petDeposit: "Not permitted", returnDeadline: "72 hours after tenancy ends", interest: "Yes — based on rent increase guideline rate" },
+  { province: "Ontario", max: "Last month's rent only (no damage deposit)", petDeposit: "Not permitted", returnDeadline: "Applied to final month's rent — no separate return step", interest: "Yes — based on rent increase guideline rate" },
   { province: "British Columbia", max: "0.5× one month's rent", petDeposit: "Additional 0.5× one month's rent", returnDeadline: "15 days after tenancy end or last day of fixed term", interest: "Yes — annual rate set by RTB" },
-  { province: "Alberta", max: "1× one month's rent (includes pet deposit)", petDeposit: "Part of overall 1× cap", returnDeadline: "10 days after tenancy end", interest: "No" },
+  { province: "Alberta", max: "1× one month's rent (includes pet deposit)", petDeposit: "Part of overall 1× cap", returnDeadline: "10 days after tenancy end", interest: "Yes — rate varies annually by regulation" },
   { province: "Quebec", max: "No security deposit permitted", petDeposit: "Not permitted", returnDeadline: "N/A", interest: "N/A" },
   { province: "Manitoba", max: "0.5× one month's rent", petDeposit: "Part of overall 0.5× cap", returnDeadline: "14 days after tenancy end", interest: "Yes — prescribed rate" },
   { province: "Saskatchewan", max: "1× one month's rent", petDeposit: "Included in 1× cap", returnDeadline: "7 days after tenancy end", interest: "No" },
-  { province: "Nova Scotia", max: "0.5× one month's rent", petDeposit: "Up to 0.5× first month's rent (separate)", returnDeadline: "10 days after tenancy end", interest: "No" },
+  { province: "Nova Scotia", max: "0.5× one month's rent", petDeposit: "Not permitted (no separate pet deposit allowed)", returnDeadline: "10 days after tenancy end", interest: "Yes — rate via provincial Security Deposit Interest Calculator" },
   { province: "New Brunswick", max: "1× one month's rent", petDeposit: "Included in 1× cap", returnDeadline: "7 days after tenancy end", interest: "No" },
-  { province: "PEI", max: "2× one month's rent", petDeposit: "Included in overall cap", returnDeadline: "10 days after tenancy end", interest: "Yes — at prescribed rate" },
+  { province: "PEI", max: "1× one month's rent", petDeposit: "Included in overall cap", returnDeadline: "10 days after tenancy end", interest: "Yes — at prescribed rate" },
   { province: "Newfoundland & Labrador", max: "75% of one month's rent", petDeposit: "No specific provision", returnDeadline: "15 days after tenancy end", interest: "No" },
 ];
 
@@ -210,7 +210,7 @@ export default function SecurityDepositRulesCanadaPage() {
                     },
                     {
                       q: "Does my security deposit earn interest?",
-                      a: "In Ontario, BC, Manitoba, and PEI, deposits must be held and returned with interest. In Alberta, Saskatchewan, New Brunswick, Nova Scotia, and Newfoundland, no interest is required.",
+                      a: "In Ontario, BC, Manitoba, PEI, Alberta, and Nova Scotia, deposits must be held and returned with interest. In Saskatchewan, New Brunswick, and Newfoundland, no interest is required.",
                     },
                     {
                       q: "Can a landlord use my deposit to cover unpaid rent in BC?",

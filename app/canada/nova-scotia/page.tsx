@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const tenantProtections = [
-  "Annual rent increases are capped — Nova Scotia introduced a provincial rent cap tied to CPI to protect tenants from steep increases.",
+  "Annual rent increases are capped — Nova Scotia has a fixed 5% annual rent increase cap, legislated under the Interim Residential Rental Increase Cap Act and extended through the end of 2027.",
   "Landlords must give at least 4 months written notice before any rent increase takes effect — one of the longest notice requirements in Canada.",
   "Security deposits are capped at half a month's rent and must be paid directly to the Director of Residential Tenancies, not held by the landlord.",
   "The Director of Residential Tenancies holds deposits in a government trust account for the duration of the tenancy, providing strong protection against landlord misuse.",
@@ -33,7 +33,7 @@ const tenantProtections = [
 ];
 
 const watchInLeases = [
-  "Clauses purporting to allow rent increases above the provincial CPI-based cap — these are unenforceable under the Residential Tenancies Act.",
+  "Clauses purporting to allow rent increases above the provincial 5% cap — these are unenforceable under the Residential Tenancies Act.",
   "Any provision stating the landlord holds the security deposit directly — in Nova Scotia, the deposit must be paid to the Director, not the landlord.",
   "Shortened notice periods for rent increases — Nova Scotia requires a full 4 months written notice before any increase takes effect.",
   "Clauses waiving the tenant's right to apply to the Residential Tenancies Officer or the Director for dispute resolution.",
@@ -134,11 +134,12 @@ export default function NovaScotiaPage() {
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
                 <h3 className="font-semibold text-blue-900 mb-3">Nova Scotia Rent Cap Explained</h3>
                 <p className="text-sm text-blue-800 leading-relaxed mb-3">
-                  Nova Scotia introduced a rent increase cap in 2020 in response to rapidly rising rental
-                  costs across the province. The cap is tied to the provincial Consumer Price Index (CPI)
-                  and limits how much rent can increase in any 12-month period. This applies to existing
-                  tenancies — a landlord setting the initial rent for a new tenancy is not constrained by
-                  the cap, but once a tenancy is established, subsequent increases must comply.
+                  Nova Scotia has a <strong>fixed 5% annual rent increase cap</strong>, legislated under
+                  the <em>Interim Residential Rental Increase Cap Act</em> and extended through the end
+                  of 2027. This cap limits how much rent can increase in any 12-month period and applies
+                  to existing tenancies — a landlord setting the initial rent for a new tenancy is not
+                  constrained by the cap, but once a tenancy is established, subsequent increases must
+                  comply.
                 </p>
                 <p className="text-sm text-blue-800 leading-relaxed">
                   Landlords must give <strong>4 months written notice</strong> before any rent increase
@@ -187,7 +188,7 @@ export default function NovaScotiaPage() {
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
-                  { q: "Does Nova Scotia have rent control?", a: "Nova Scotia introduced a rent cap in 2020, limiting annual rent increases to 5% for existing tenants. This cap applies to most residential tenancies and is enforced through the Residential Tenancies Program." },
+                  { q: "Does Nova Scotia have rent control?", a: "Yes. Nova Scotia has a fixed 5% annual rent increase cap, legislated under the Interim Residential Rental Increase Cap Act and extended through the end of 2027. This cap applies to most residential tenancies and is enforced through the Residential Tenancies Program." },
                   { q: "How are security deposits handled in Nova Scotia?", a: "Nova Scotia requires landlords to deposit the security deposit (up to half a month's rent) with the Director of Residential Tenancies, not hold it themselves. This protects tenants from landlords who spend the deposit." },
                   { q: "What body handles landlord-tenant disputes in Nova Scotia?", a: "The Residential Tenancies Program administers disputes. The Director of Residential Tenancies hears applications for rent increases, evictions, deposit returns, and maintenance complaints." },
                   { q: "How much notice must a Nova Scotia landlord give to end a tenancy?", a: "For non-payment of rent, landlords must give 15 days' notice. For other breaches, the notice period is generally longer. For a fixed-term lease, landlords must give 3 months' notice if they do not intend to renew." },

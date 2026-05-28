@@ -21,19 +21,19 @@ export const metadata: Metadata = {
 };
 
 const tenantProtections = [
-  "Rent increases are capped annually by the Rental Office Director — typically tied to CPI — providing meaningful rent control.",
+  "Rent increases are capped annually by the Director of Residential Tenancy under the Residential Tenancy Act (proclaimed April 2023) — providing meaningful rent control.",
   "Landlords must give 3 months written notice before any rent increase takes effect.",
   "Only one rent increase per 12-month period is permitted — above-cap increases require an application to IRAC.",
-  "Security deposits are held in trust by IRAC (not the landlord), protecting tenants from deposit misuse.",
-  "Security deposits are capped at approximately 2 weeks rent (0.5x monthly) and returned within 10 days after tenancy ends.",
+  "Security deposits are held by the landlord in trust in an interest-bearing account, opened within two banking days of receipt — IRAC adjudicates disputes but does not hold deposits.",
+  "Security deposits are capped at one month's rent (one week for week-to-week tenancies) and returned within 10 days after tenancy ends.",
   "Landlords must give 24 hours written notice before entering a rental unit, except in genuine emergencies.",
   "The Island Regulatory and Appeals Commission (IRAC) adjudicates all evictions — self-help eviction is illegal.",
   "Retaliatory evictions — evictions in response to a tenant exercising their legal rights — are prohibited.",
 ];
 
 const watchInLeases = [
-  "Rent increase clauses that exceed the annual cap set by the Rental Office Director — these are unenforceable.",
-  "Any provision stating the landlord holds the security deposit directly — in PEI, deposits must be held by IRAC.",
+  "Rent increase clauses that exceed the annual cap set by the Director of Residential Tenancy — these are unenforceable.",
+  "Any provision allowing the landlord to hold the deposit outside of a dedicated interest-bearing trust account — under the Residential Tenancy Act, the deposit must be held in trust in an interest-bearing account within two banking days.",
   "Shortened notice periods for rent increases — PEI requires 3 full months written notice.",
   "Clauses waiving the tenant's right to apply to IRAC for dispute resolution or appeal.",
   "Provisions allowing entry without 24 hours notice for non-emergency inspections or work.",
@@ -62,7 +62,7 @@ export default function PrinceEdwardIslandPage() {
                   name: "Is there rent control in PEI?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Yes. Prince Edward Island reintroduced rent control through the Rental of Residential Property Act. Annual rent increases are capped by the Rental Office Director, typically based on the Consumer Price Index (CPI). Landlords who wish to increase rent above the cap must apply to the Island Regulatory and Appeals Commission (IRAC) for approval. Landlords must give 3 months written notice before any increase.",
+                    text: "Yes. Prince Edward Island has rent control under the Residential Tenancy Act (proclaimed April 2023). Annual rent increases are capped by the Director of Residential Tenancy. Landlords who wish to increase rent above the cap must apply to the Island Regulatory and Appeals Commission (IRAC) for approval. Landlords must give 3 months written notice before any increase.",
                   },
                 },
                 {
@@ -70,7 +70,7 @@ export default function PrinceEdwardIslandPage() {
                   name: "Who holds the security deposit in PEI?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "In Prince Edward Island, security deposits are held in trust by the Island Regulatory and Appeals Commission (IRAC) — not by the landlord. This is similar to the Nova Scotia model and is one of the most protective deposit systems in Canada. The deposit is returned within 10 days after the tenancy ends, once any inspection and claims process is complete.",
+                    text: "Under PEI's Residential Tenancy Act (proclaimed April 2023), the landlord holds the security deposit in trust in an interest-bearing account, opened within two banking days of receipt. IRAC adjudicates any deposit disputes — it does not hold the deposits itself. The deposit is returned within 10 days after the tenancy ends, once any inspection and claims process is complete.",
                   },
                 },
                 {
@@ -86,7 +86,7 @@ export default function PrinceEdwardIslandPage() {
                   name: "What is the rent increase cap in Prince Edward Island?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "The annual rent increase cap in PEI is set each year by the Rental Office Director and is typically tied to the Consumer Price Index (CPI). Landlords cannot increase rent above this cap without applying to IRAC for approval. The landlord must give 3 months written notice of any increase, and only one increase per 12-month period is permitted.",
+                    text: "The annual rent increase cap in PEI is set each year by the Director of Residential Tenancy under the Residential Tenancy Act. Landlords cannot increase rent above this cap without applying to IRAC for approval. The landlord must give 3 months written notice of any increase, and only one increase per 12-month period is permitted.",
                   },
                 },
                 {
@@ -94,7 +94,7 @@ export default function PrinceEdwardIslandPage() {
                   name: "What is the maximum security deposit in PEI?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "The maximum security deposit in Prince Edward Island is approximately 2 weeks rent (roughly 0.5x one month's rent). The deposit is paid to IRAC and held in trust — not by the landlord. It is returned within 10 days after the tenancy ends, once the inspection and claims process is complete.",
+                    text: "The maximum security deposit in Prince Edward Island is one month's rent (one week's rent for week-to-week tenancies) under the Residential Tenancy Act. The deposit is held by the landlord in trust in an interest-bearing account — IRAC adjudicates disputes but does not hold deposits. It is returned within 10 days after the tenancy ends, once the inspection and claims process is complete.",
                   },
                 },
               ],
@@ -119,10 +119,10 @@ export default function PrinceEdwardIslandPage() {
               PEI Tenant Rights: Lease Help & Rental Laws in Prince Edward Island
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-              Prince Edward Island's <em>Rental of Residential Property Act</em> provides some of the
-              strongest tenant protections in Atlantic Canada — including rent control, government-held
-              security deposits through IRAC, and a formal adjudication process for all evictions.
-              Here's what every PEI renter needs to know before signing a lease.
+              Prince Edward Island's <em>Residential Tenancy Act</em> (proclaimed April 2023) provides
+              some of the strongest tenant protections in Atlantic Canada — including rent control,
+              landlord-held deposits in trust, and a formal adjudication process for all evictions
+              through IRAC. Here's what every PEI renter needs to know before signing a lease.
             </p>
           </div>
         </section>
@@ -132,10 +132,11 @@ export default function PrinceEdwardIslandPage() {
             <div className="lg:col-span-2 space-y-12">
 
               <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Governing Law: The Rental of Residential Property Act & IRAC</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Governing Law: The Residential Tenancy Act & IRAC</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                  The <em>Rental of Residential Property Act</em> governs residential tenancies in Prince
-                  Edward Island. The <strong>Island Regulatory and Appeals Commission (IRAC)</strong> —
+                  The <em>Residential Tenancy Act</em> (proclaimed April 2023, replacing the former
+                  Rental of Residential Property Act) governs residential tenancies in Prince Edward
+                  Island. The <strong>Island Regulatory and Appeals Commission (IRAC)</strong> —
                   specifically its Residential Tenancies Section — serves as the province's adjudicative
                   body for all landlord-tenant disputes. IRAC is based in Charlottetown and handles
                   hearings for the entire province.
@@ -144,24 +145,23 @@ export default function PrinceEdwardIslandPage() {
                   IRAC adjudicators have broad authority: they approve or deny evictions, resolve deposit
                   disputes, adjudicate rent increase applications above the annual cap, and issue repair
                   orders. PEI's system is notably protective because it combines rent control with
-                  government-held deposits and mandatory adjudication of evictions — all rare features
-                  even among Canadian provinces with strong tenant protections.
+                  landlord-held deposits in trust and mandatory adjudication of evictions — all rare
+                  features even among Canadian provinces with strong tenant protections.
                 </p>
               </div>
 
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
-                <h3 className="font-semibold text-blue-900 mb-3">IRAC and Government-Held Deposits: A Protective System</h3>
+                <h3 className="font-semibold text-blue-900 mb-3">IRAC and Landlord-Held Deposits in Trust</h3>
                 <p className="text-sm text-blue-800 leading-relaxed mb-2">
-                  PEI uses a deposit model similar to Nova Scotia: tenants pay security deposits directly
-                  to <strong>IRAC</strong>, which holds the funds in trust for the duration of the
-                  tenancy. This means your deposit is never in the landlord's hands — it is held by an
-                  independent government body and can only be released following the proper process at
-                  the end of the tenancy.
+                  Under the <em>Residential Tenancy Act</em>, the landlord holds the security deposit
+                  in trust in an <strong>interest-bearing account</strong>, opened within two banking
+                  days of receiving the deposit. IRAC adjudicates any disputes about the deposit at the
+                  end of the tenancy — it does not hold the funds itself.
                 </p>
                 <p className="text-sm text-blue-800 leading-relaxed">
-                  If your landlord asks you to pay the security deposit to them directly, this is a
-                  red flag. The deposit must go to IRAC. Contact IRAC's Residential Tenancies Section
-                  in Charlottetown if you have questions about the deposit process.
+                  If your landlord fails to place the deposit in a proper trust account, this is a
+                  violation of the Act. Contact IRAC's Residential Tenancies Section in Charlottetown
+                  if you have questions or concerns about how your deposit is being handled.
                 </p>
               </div>
 
@@ -180,10 +180,10 @@ export default function PrinceEdwardIslandPage() {
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Rent Increase Rules</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                  PEI reintroduced rent control after a period of deregulation. Annual rent increases
-                  are now <strong>capped by the Rental Office Director</strong>, typically based on the
-                  Consumer Price Index (CPI) for PEI. The cap is announced each year and applies to all
-                  residential rental units in the province.
+                  PEI reintroduced rent control under the <em>Residential Tenancy Act</em>. Annual
+                  rent increases are now <strong>capped by the Director of Residential Tenancy</strong>.
+                  The cap is announced each year and applies to all residential rental units in the
+                  province.
                 </p>
                 <p className="text-slate-700 leading-relaxed mb-4">
                   Landlords who wish to increase rent above the annual cap must apply to IRAC and
@@ -200,13 +200,13 @@ export default function PrinceEdwardIslandPage() {
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Security Deposit Rules</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                  Security deposits in PEI are capped at <strong>approximately 2 weeks rent (roughly
-                  0.5x one month's rent)</strong>. The deposit must be paid directly to IRAC, where it
-                  is held in trust — not by the landlord. This arrangement protects tenants from
-                  landlords who might otherwise misappropriate deposit funds.
+                  Security deposits in PEI are capped at <strong>one month's rent</strong> (one week's
+                  rent for week-to-week tenancies) under the <em>Residential Tenancy Act</em>. The
+                  landlord holds the deposit in trust in an interest-bearing account opened within two
+                  banking days. IRAC adjudicates any deposit disputes — it does not hold deposits itself.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                  After the tenancy ends, IRAC returns the deposit within <strong>10 days</strong>
+                  After the tenancy ends, the landlord must return the deposit within <strong>10 days</strong>
                   once the inspection and claims process is complete. If the landlord claims deductions
                   for damage, the matter is adjudicated by IRAC based on evidence from both parties.
                 </p>
@@ -266,9 +266,9 @@ export default function PrinceEdwardIslandPage() {
                 <p className="text-slate-600 text-sm leading-relaxed">
                   <strong>Charlottetown</strong> is Prince Edward Island's largest rental market and
                   the location of the IRAC offices. A city-specific lease guide for Charlottetown is
-                  coming soon. All rentals on the Island fall under the Rental of Residential Property
-                  Act — the rent cap, IRAC-held deposits, and mandatory eviction adjudication apply
-                  province-wide.
+                  coming soon. All rentals on the Island fall under the Residential Tenancy Act
+                  (proclaimed April 2023) — the rent cap, landlord-held deposits in trust, and
+                  mandatory eviction adjudication apply province-wide.
                 </p>
               </div>
 
@@ -278,7 +278,7 @@ export default function PrinceEdwardIslandPage() {
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
                 <h3 className="font-bold text-lg mb-2">Upload Your Lease</h3>
                 <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                  Our AI reviews your PEI lease against the Rental of Residential Property Act and
+                  Our AI reviews your PEI lease against the Residential Tenancy Act and
                   flags clauses that may exceed the rent cap, mishandle deposits, or waive your
                   IRAC rights.
                 </p>

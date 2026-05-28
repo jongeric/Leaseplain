@@ -27,9 +27,9 @@ const provinceData = [
   { province: "Manitoba", law: "Residential Tenancies Act", body: "RTB", rentControl: "Limited", deposit: "0.5x monthly", href: "/canada/manitoba" },
   { province: "Saskatchewan", law: "Residential Tenancies Act", body: "ORT", rentControl: "No", deposit: "1x monthly", href: "/canada/saskatchewan" },
   { province: "Nova Scotia", law: "Residential Tenancies Act", body: "RTO", rentControl: "Yes (5% cap)", deposit: "0.5x monthly (gov't held)", href: "/canada/nova-scotia" },
-  { province: "New Brunswick", law: "Residential Tenancies Act", body: "RTT", rentControl: "No", deposit: "1x monthly", href: "/canada/new-brunswick" },
-  { province: "Newfoundland & Labrador", law: "Residential Tenancies Act", body: "ORT", rentControl: "No", deposit: "0.75x monthly", href: "/canada/newfoundland-and-labrador" },
-  { province: "PEI", law: "Rental of Residential Property Act", body: "IRAC", rentControl: "Yes (CPI cap)", deposit: "2 weeks (gov't held)", href: "/canada/prince-edward-island" },
+  { province: "New Brunswick", law: "Residential Tenancies Act", body: "RTT", rentControl: "Yes (3% cap since Feb 2025)", deposit: "1x monthly", href: "/canada/new-brunswick" },
+  { province: "Newfoundland & Labrador", law: "Residential Tenancies Act", body: "Service NL (Residential Tenancies Section)", rentControl: "No", deposit: "0.75x monthly", href: "/canada/newfoundland-and-labrador" },
+  { province: "PEI", law: "Residential Tenancy Act", body: "IRAC", rentControl: "Yes (Director's annual cap)", deposit: "1x monthly (landlord-held in trust)", href: "/canada/prince-edward-island" },
 ];
 
 const keyRules = [
@@ -85,7 +85,7 @@ const faqSchema = {
       name: "Which provinces have rent control?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "As of 2026: Ontario has rent control with an annual guideline (exempting units first occupied after November 15, 2018); BC has a CPI-based cap for all units; Quebec uses a TAL formula; Nova Scotia has a 5% cap; PEI has a CPI cap; and Manitoba has limited controls. Alberta, Saskatchewan, New Brunswick, and Newfoundland & Labrador do not have rent control.",
+        text: "As of 2026: Ontario has rent control with an annual guideline (exempting units first occupied after November 15, 2018); BC has a CPI-based cap for all units; Quebec uses a TAL formula; Nova Scotia has a fixed 5% cap; PEI has an annual cap set by the Director of Residential Tenancy; Manitoba has limited controls; and New Brunswick introduced a 3% annual cap effective February 1, 2025. Alberta, Saskatchewan, and Newfoundland & Labrador do not have rent control.",
       },
     },
     {

@@ -12,12 +12,12 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "Ontario Rent Increase Guideline 2026: What Tenants Need to Know | LeasePlain",
   description:
-    "Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline.",
+    "Ontario's 2026 rent increase guideline is 2.1%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline.",
   alternates: { canonical: "https://leaseplain.com/blog/ontario-rent-increase-guideline-2026" },
   openGraph: {
     title: "Ontario Rent Increase Guideline 2026: What Tenants Need to Know | LeasePlain",
     description:
-      "Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, and what to do if your landlord goes over.",
+      "Ontario's 2026 rent increase guideline is 2.1%. Learn who is exempt, how to check if your increase is valid, and what to do if your landlord goes over.",
     url: "https://leaseplain.com/blog/ontario-rent-increase-guideline-2026",
     type: "article",
     publishedTime: "2026-01-15T00:00:00Z",
@@ -37,7 +37,7 @@ export default function OntarioRentIncrease2026Page() {
     <>
       <ArticleSchema
         headline="Ontario Rent Increase Guideline 2026: What Tenants Need to Know"
-        description="Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline."
+        description="Ontario's 2026 rent increase guideline is 2.1%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline."
         url="https://leaseplain.com/blog/ontario-rent-increase-guideline-2026"
         datePublished="2026-01-15"
         dateModified="2026-01-15"
@@ -85,7 +85,7 @@ export default function OntarioRentIncrease2026Page() {
                 Ontario Rent Increase Guideline 2026: What Tenants Need to Know
               </h1>
               <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
-                Ontario&apos;s rent increase guideline for 2026 is set at 2.5%. If your landlord
+                Ontario&apos;s rent increase guideline for 2026 is set at 2.1%. If your landlord
                 has given you an increase notice, here is how to check whether it is valid — and
                 what your options are if it is not.
               </p>
@@ -100,9 +100,9 @@ export default function OntarioRentIncrease2026Page() {
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">What Is the 2026 Rent Increase Guideline?</h2>
                   <p className="text-slate-700 leading-relaxed mb-3">
                     Each year, the Ontario government sets a maximum percentage by which landlords can
-                    increase rent for most existing tenants. For 2026, that guideline is <strong>2.5%</strong>.
+                    increase rent for most existing tenants. For 2026, that guideline is <strong>2.1%</strong>.
                     This means a landlord renting a unit covered by rent control cannot raise rent by
-                    more than 2.5% in 2026 without obtaining approval from the Landlord and Tenant
+                    more than 2.1% in 2026 without obtaining approval from the Landlord and Tenant
                     Board (LTB).
                   </p>
                   <p className="text-slate-700 leading-relaxed">
@@ -139,7 +139,7 @@ export default function OntarioRentIncrease2026Page() {
                     <li><strong>Notice period:</strong> You must receive at least 90 days written notice before the increase takes effect.</li>
                     <li><strong>Frequency:</strong> Your rent can only be increased once every 12 months.</li>
                     <li><strong>Form N1:</strong> The notice should be provided on the official LTB Form N1, which clearly states the new rent amount and the effective date.</li>
-                    <li><strong>Percentage:</strong> The increase must not exceed 2.5% for units subject to the guideline (unless the landlord has received an above-guideline increase order from the LTB).</li>
+                    <li><strong>Percentage:</strong> The increase must not exceed 2.1% for units subject to the guideline (unless the landlord has received an above-guideline increase order from the LTB).</li>
                   </ol>
                   <p className="text-slate-700 leading-relaxed">
                     Use our{" "}
@@ -171,13 +171,13 @@ export default function OntarioRentIncrease2026Page() {
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">What to Do if Your Landlord Exceeds the Guideline</h2>
                   <p className="text-slate-700 leading-relaxed mb-3">
                     If your unit is subject to rent control and your landlord proposes an increase above
-                    2.5%, you have the right to challenge it. You do not need to pay the above-guideline
+                    2.1%, you have the right to challenge it. You do not need to pay the above-guideline
                     portion while the dispute is ongoing. Here are your options:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed mb-3">
                     <li>
                       <strong>Write to your landlord</strong> explaining that the increase exceeds the
-                      2026 guideline and that you will pay only the guideline amount.
+                      2026 guideline of 2.1% and that you will pay only the guideline amount.
                     </li>
                     <li>
                       <strong>File a T1 application</strong> with the LTB if you have already paid above
@@ -207,7 +207,7 @@ export default function OntarioRentIncrease2026Page() {
                   <FAQAccordion items={[
                     {
                       q: "What is Ontario's rent increase guideline for 2026?",
-                      a: "The Ontario rent increase guideline for 2026 is 2.5%. Landlords of units subject to rent control cannot raise rent by more than this percentage in 2026 without LTB approval.",
+                      a: "The Ontario rent increase guideline for 2026 is 2.1%. Landlords of units subject to rent control cannot raise rent by more than this percentage in 2026 without LTB approval.",
                     },
                     {
                       q: "How much notice must a landlord give before raising rent in Ontario?",
@@ -218,8 +218,8 @@ export default function OntarioRentIncrease2026Page() {
                       a: "If your unit was first occupied for residential purposes after November 15, 2018, it is exempt from Ontario's rent control guideline. If it was first occupied before that date, the guideline applies.",
                     },
                     {
-                      q: "Can my landlord raise rent by more than 2.5% in 2026?",
-                      a: "For units subject to rent control, no — not without LTB approval for an above-guideline increase. For exempt units (first occupied after November 15, 2018), there is no cap on the percentage, but proper notice must still be given.",
+                      q: "Can my landlord raise rent by more than 2.1% in 2026?",
+                      a: "For units subject to rent control, no — not without LTB approval for an above-guideline increase. The 2026 guideline is 2.1%. For exempt units (first occupied after November 15, 2018), there is no cap on the percentage, but proper notice must still be given.",
                     },
                     {
                       q: "What if I already paid an illegal rent increase?",

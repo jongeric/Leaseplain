@@ -138,6 +138,8 @@ export default function FightIllegalEvictionOntarioPage() {
                         Issued when the landlord, their spouse, parent, or child wants to move into the
                         unit. Requires at least 60 days notice and must terminate on the last day of a
                         rental period. The landlord must also offer one month&apos;s rent in compensation
+                        — unless the landlord gives 120 or more days&apos; notice, in which case
+                        Bill 60 (November 2025) exempts them from the compensation requirement —
                         and actually move in — or face bad-faith eviction penalties.
                       </p>
                     </div>
@@ -166,7 +168,7 @@ export default function FightIllegalEvictionOntarioPage() {
                   <ol className="list-decimal list-inside space-y-2 text-slate-700 leading-relaxed mb-3">
                     <li>Download Form T2 from the LTB website (tribunalsontario.ca/ltb).</li>
                     <li>Complete the form with specific details of the landlord&apos;s conduct and the remedy you are seeking.</li>
-                    <li>Pay the filing fee (currently $53 for online filing; fee waivers available for financial hardship).</li>
+                    <li>Pay the filing fee (currently $48 when filed online through the Tribunals Ontario Portal, or $53 by paper/in-person; fee waivers available for financial hardship).</li>
                     <li>File online through the Tribunals Ontario Portal or in person at an LTB service location.</li>
                     <li>Serve a copy of the application on your landlord according to the LTB&apos;s service rules.</li>
                   </ol>

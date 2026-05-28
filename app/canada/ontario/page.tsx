@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 };
 
 const tenantProtections = [
-  "Landlords must give 60 days written notice before asking a tenant to vacate at end of a fixed-term lease.",
+  "A fixed-term lease expires on its end date without any notice required — the tenancy automatically converts to month-to-month if neither party acts. If a tenant on a month-to-month tenancy wishes to end the tenancy, they must give 60 days written notice (Form N9).",
   "Rent increases are limited to the provincial guideline (announced each year by the Ministry of Municipal Affairs and Housing).",
   "Landlords must use the standard Ontario lease form for most residential tenancies.",
-  "Tenants can file applications with the Landlord and Tenant Board (LTB) at no cost.",
-  "A landlord cannot evict a tenant for personal use without filing a valid Form N12 and paying one month's compensation.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
+  "A landlord cannot evict a tenant for personal use without filing a valid Form N12 and paying one month's compensation (unless 120 or more days' notice is given, in which case Bill 60 exempts the landlord from paying compensation).",
   "Above-guideline rent increases (AGI) require a formal LTB application by the landlord with documented evidence.",
   "Tenants have the right to sublet their unit — a landlord cannot unreasonably withhold consent.",
   "Security deposits (\"last month's rent\") are capped at one month's rent and must earn interest.",
@@ -96,7 +96,7 @@ export default function OntarioPage() {
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario's <em>Residential Tenancies Act</em> (RTA) provides some of the strongest tenant
-              protections in North America. From rent increase caps to no-cost LTB hearings, Ontario
+              protections in North America. From rent increase caps to accessible LTB hearings (filing fees are $48 online or $53 by paper; fee waivers available for low-income applicants), Ontario
               renters have significant rights — but only if they know them.
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function OntarioPage() {
                   evictions, and a wide range of tenancy issues.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                  Tenants can apply to the LTB for free. Landlords pay a filing fee. Applications can be
+                  Tenants pay a filing fee of $48 online or $53 by paper when applying to the LTB; fee waivers are available for low-income applicants. Landlords also pay a filing fee. Applications can be
                   filed online through the Tribunals Ontario portal, and hearings are typically conducted
                   via videoconference. The LTB has authority to order rent abatements, repairs, and in
                   some cases dismiss eviction applications.
@@ -139,8 +139,8 @@ export default function OntarioPage() {
                 <h3 className="font-semibold text-blue-900 mb-3">Form N12: Owner's Own Use</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
                   If a landlord wants to move into your unit (or have a close family member move in),
-                  they must serve you a Form N12 with at least 60 days notice and pay you one month's
-                  rent as compensation. If the landlord does not genuinely occupy the unit within a
+                  they must serve you a Form N12 with at least 60 days notice and, in most cases, pay you one month's
+                  rent as compensation (under Bill 60, this compensation requirement is waived if the landlord gives 120 or more days' notice). If the landlord does not genuinely occupy the unit within a
                   reasonable time, you may have grounds for a bad-faith eviction claim at the LTB,
                   which can result in significant financial remedies.
                 </p>
@@ -187,7 +187,7 @@ export default function OntarioPage() {
                   { q: "What is the Ontario Residential Tenancies Act?", a: "The Residential Tenancies Act (RTA) is Ontario's main landlord-tenant law. It governs rent increases, deposits, evictions, maintenance obligations, and dispute resolution through the Landlord and Tenant Board (LTB)." },
                   { q: "How much can a landlord charge for a security deposit in Ontario?", a: "Ontario landlords may only collect a rent deposit equal to the last month's rent. They cannot charge a separate damage deposit. The deposit must earn interest at the annual rent-increase guideline rate." },
                   { q: "What is Ontario's rent increase guideline?", a: "Each year the Ontario government sets a rent-increase guideline — the maximum a landlord can raise rent for most sitting tenants without LTB approval. Units first occupied after November 15, 2018 are exempt from rent control." },
-                  { q: "How do I file a complaint with the Ontario Landlord and Tenant Board?", a: "Applications are filed at ontario.ca/LTB or in person at an LTB office. Tenants pay no filing fee. Common applications include T2 (rights interference), T6 (maintenance), and T3 (vital services)." },
+                  { q: "How do I file a complaint with the Ontario Landlord and Tenant Board?", a: "Applications are filed at ontario.ca/LTB or in person at an LTB office. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. Common applications include T2 (rights interference), T6 (maintenance), and T3 (vital services)." },
                   { q: "What notice must an Ontario landlord give to end a tenancy?", a: "The required notice depends on the reason: 60 days for landlord's own use, 60 days for purchaser's own use, or the prescribed notice for non-payment of rent (N4) plus the right to void the notice by paying within 14 days." }
                 ]} />
               </div>

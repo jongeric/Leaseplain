@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 const quebecCityRights = [
   "All residential rentals in Quebec City are governed by the Civil Code of Quebec and the Act Respecting the Rental of Immovables — not the Ontario RTA.",
-  "Your lease (bail) must use Quebec's standard mandatory lease form and can be in French or English.",
+  "Quebec leases (bail) are in French by default under the Charter of the French Language. Tenants may request an English version, but the French text governs.",
   "You have the right to maintain your tenancy at renewal — a landlord in Quebec City cannot refuse renewal except for specific reasons (personal use, major work, subdivision).",
   "Rent increases must be disclosed in the mandatory renewal notice using the TAL's prescribed calculation method; tenants can refuse a proposed increase.",
   "The Tribunal administratif du logement (TAL) handles all disputes in Quebec City — applications are filed online or in person.",
@@ -30,7 +30,7 @@ const quebecCityRights = [
 ];
 
 const quebecCityLeaseIssues = [
-  "French-language leases — most Quebec City leases are in French; all tenants have the right to a lease in French even if they prefer English, but English-language leases are also valid.",
+  "Lease language — Quebec leases (bail) are in French by default under the Charter of the French Language. Tenants may request an English version, but cannot be required to use one; the French text is the legally governing version.",
   "Mandatory renewal process — Quebec City landlords must follow the exact process for renewal notices; an improperly served notice may give you the right to stay on existing terms.",
   "July 1 moving day — Quebec's traditional July 1 moving day creates extreme pressure on Quebec City renters; plan well in advance if your lease ends June 30.",
   "Heat and hot water inclusion — many Quebec City leases include heat (chauffage) and hot water in rent; ensure you understand exactly what is included before signing.",
@@ -46,7 +46,7 @@ const faqSchema = {
       name: "Can I rent in English in Quebec City?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. While most Quebec City leases are written in French, English-language leases are legally valid in Quebec. The standard mandatory bail form is available in both French and English from the TAL. All tenants have the right to request an English-language lease if they prefer, regardless of the landlord's language preference.",
+        text: "Under Quebec's Charter of the French Language, leases (bail) are in French by default. Tenants may request an English version of the standard bail form from the TAL, but the French text is the legally governing version. Landlords cannot refuse to provide the French version.",
       },
     },
     {

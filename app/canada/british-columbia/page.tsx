@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const bcProtections = [
   "Security deposits are capped at one-half (0.5x) of one month's rent.",
   "Pet deposits are also capped at 0.5x one month's rent — and cannot be combined with the security deposit to exceed that amount.",
-  "Landlords must give one month's written notice to end a tenancy for most reasons; tenants must give one month's notice.",
+  "Landlords must give one month's written notice to end a tenancy for most reasons; tenants must give one month's notice. Note: personal use (landlord or close family member) and purchaser occupancy evictions require 3 months' notice (RTB-32L/RTB-32 forms); renovations or demolitions requiring a permit require 4 months' notice.",
   "Rent increases are limited to the annual allowable increase set by the province (tied to BC CPI).",
   "Landlords must give three months notice for rent increases tied to capital expenditures.",
   "Landlords must return security deposits within 15 days of tenancy end or the tenant's forwarding address being provided.",

@@ -142,6 +142,13 @@ export default function OntarioTenantRightsPage() {
                 </ol>
               </div>
 
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
+                <h3 className="font-semibold text-blue-900 mb-3">Form N12: Owner's Own Use Evictions</h3>
+                <p className="text-sm text-blue-800 leading-relaxed">
+                  If a landlord wants to move into your unit (or have a close family member move in), they must serve you a Form N12 with at least 60 days notice and, in most cases, pay one month's rent as compensation (unless 120 or more days' notice is given, in which case Bill 60 exempts the landlord from paying compensation). If the landlord does not genuinely occupy the unit within a reasonable time, you may have grounds for a bad-faith eviction claim at the LTB.
+                </p>
+              </div>
+
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">What Your Landlord Cannot Legally Do</h2>
                 <ul className="flex flex-col gap-3">
@@ -157,7 +164,7 @@ export default function OntarioTenantRightsPage() {
               <div className="bg-slate-50 border border-slate-100 rounded-xl p-6">
                 <h2 className="text-xl font-bold text-slate-900 mb-4">Key Resources for Ontario Tenants</h2>
                 <ul className="flex flex-col gap-3 text-sm text-slate-700">
-                  <li><strong>Landlord and Tenant Board (LTB)</strong> — <span className="text-slate-500">tribunalsontario.ca/ltb</span> — file applications, check forms, find adjudication hearings</li>
+                  <li><strong>Landlord and Tenant Board (LTB)</strong> — <span className="text-slate-500">tribunalsontario.ca/ltb</span> — file applications, check forms, find adjudication hearings. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.</li>
                   <li><strong>Community Legal Education Ontario (CLEO)</strong> — <span className="text-slate-500">cleo.on.ca</span> — free legal guides for tenants</li>
                   <li><strong>Legal Aid Ontario</strong> — <span className="text-slate-500">legalaid.on.ca</span> — legal representation for low-income tenants</li>
                   <li><strong>Ontario Human Rights Commission</strong> — <span className="text-slate-500">ohrc.on.ca</span> — for discrimination in housing</li>

@@ -40,8 +40,8 @@ const rentIncreaseRules = [
 
 const noticeToEndTenancy = [
   { who: "Tenant", period: "1 month", reason: "Any reason, effective on the last day of a rental period" },
-  { who: "Landlord", period: "1 month", reason: "Landlord or close family member will occupy the unit" },
-  { who: "Landlord", period: "2 months", reason: "Sale of the property (buyer intends to occupy)" },
+  { who: "Landlord", period: "3 months", reason: "Landlord or close family member will occupy the unit (RTB-32L form; reduced from 4 months effective June 18, 2025)" },
+  { who: "Landlord", period: "3 months", reason: "Sale of the property (buyer intends to occupy) (RTB-32 form; changed August 2024)" },
   { who: "Landlord", period: "4 months", reason: "Major renovation or demolition (with permit)" },
   { who: "Landlord", period: "10 days", reason: "Non-payment of rent (can be disputed by tenant)" },
 ];

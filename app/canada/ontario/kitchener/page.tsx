@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const kitchenerRights = [
   "The Ontario RTA applies in full to all private residential rentals in Kitchener.",
-  "LTB Hamilton hearing centre serves Waterloo Region — tenants can file applications at no cost through the Tribunals Ontario portal.",
+  "The LTB now conducts most hearings by videoconference through Tribunals Ontario — Waterloo Region tenants file online at tribunalsontario.ca. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
   "Above-guideline increase (AGI) applications are increasing with older building stock — tenants have the right to participate and respond at LTB hearings.",
   "Landlords must use the standard Ontario lease form for all most residential tenancies in Kitchener.",
   "Tenants have the right to sublet their unit under the RTA — a landlord cannot unreasonably withhold consent.",
@@ -163,7 +163,7 @@ export default function KitchenerPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 font-bold flex-shrink-0">→</span>
-                    <span><strong>LTB Hamilton hearing centre</strong> — serves Waterloo Region; file applications online through Tribunals Ontario</span>
+                    <span><strong>LTB hearings (Waterloo Region)</strong> — The LTB now conducts most hearings by videoconference through Tribunals Ontario — Waterloo Region tenants file online at tribunalsontario.ca</span>
                   </li>
                 </ul>
               </div>
@@ -177,7 +177,7 @@ export default function KitchenerPage() {
                   { q: "Is Kitchener a good rental market for tenants?", a: "Kitchener-Waterloo has grown significantly due to tech-sector expansion. Rents have risen but remain lower than Toronto. The area has a mix of older apartment buildings (subject to rent control) and newer units (exempt)." },
                   { q: "Can a Kitchener landlord terminate a lease early?", a: "Landlords can only terminate a tenancy for specific reasons listed in the RTA — such as non-payment, the landlord's own use, or major renovations. Simply wanting the unit back is not a valid reason." },
                   { q: "What is LIV Student in Kitchener?", a: "LIV Student and similar purpose-built student housing providers are private landlords covered by the RTA. Students in these buildings have the same rights as any Ontario tenant, including LTB access." },
-                  { q: "How do I dispute a rent increase in Kitchener?", a: "If your landlord is trying to raise rent above the provincial guideline without LTB approval, file a T1 application with the LTB (tenant's rights). If you believe your building was built after November 15, 2018, verify first — it may be exempt from rent control." }
+                  { q: "How do I dispute a rent increase in Kitchener?", a: "If your landlord has already charged you an illegal amount, file a T1 application with the LTB to claim a rebate of money paid illegally. To challenge an unlawful rent increase before paying it, file a T2 (tenant rights application) or respond to the N1 notice at your hearing. If you believe your building was built after November 15, 2018, verify first — it may be exempt from rent control." }
                 ]} />
               </div>
 

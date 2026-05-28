@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 const depositRules = [
   "Security deposit maximum: one month's rent at the time the deposit is collected",
   "Landlord must hold the deposit in trust — it cannot be co-mingled with operating funds",
-  "Deposit must be returned within 10 days of the end of tenancy if no deductions are claimed",
-  "If the landlord makes deductions, they must provide a written statement of account within 30 days",
+  "Landlords must provide a statement of account within 10 days of tenancy end",
+  "The final statement of account must be delivered within 30 days of possession being given up",
   "Landlord must pay interest on the security deposit if it is held for 12 months or more (calculated at the prescribed rate)",
 ];
 
@@ -127,7 +127,7 @@ export default function AlbertaTenantRightsPage() {
                 <p className="text-slate-700 leading-relaxed mb-4">
                   The <strong>Residential Tenancy Dispute Resolution Service (RTDRS)</strong> is
                   Alberta&apos;s specialized tribunal for landlord-tenant disputes. It can adjudicate
-                  disputes involving claims up to $50,000. Unlike a court process, RTDRS hearings are
+                  disputes involving claims up to $100,000 (increased from $50,000 effective August 1, 2023). Unlike a court process, RTDRS hearings are
                   informal and accessible — parties can represent themselves. The RTDRS is faster than
                   the courts and specifically designed for tenancy matters.
                 </p>

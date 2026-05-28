@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const quebecProtections = [
   "Landlords must use the standard lease form (bail) provided by the Tribunal administratif du logement (TAL) for most residential tenancies.",
   "Tenants have the right of first refusal — when a landlord wants to repossess a unit or substantially modify it, the tenant has priority to get it back.",
-  "Rent increase notices must be sent in writing within a specific window (3 to 6 months before lease end for fixed-term leases).",
+  "Rent increase notices must be sent in writing within a specific window: 3 to 6 months before lease end for fixed-term leases of 12 months or more; 1 to 2 months before lease end for leases under 12 months.",
   "Tenants have the right to refuse a rent increase — if refused, the landlord must apply to the TAL to have the increase authorized.",
   "Quebec has strong anti-eviction protections — a landlord cannot refuse to renew a lease without a valid reason recognized by law.",
   "Tenants 70 years of age or older who have lived in a unit for at least 10 years benefit from additional protection against repossession.",
@@ -182,7 +182,7 @@ export default function QuebecPage() {
                 <FAQAccordion items={[
                   { q: "What is the Quebec standard lease (bail)?", a: "Quebec requires most residential leases to use the standard lease form (bail) issued by the Tribunal administratif du logement (TAL). Using a non-standard form does not invalidate the tenancy but tenants can request the standard form within 10 days of signing." },
                   { q: "Does Quebec allow security deposits?", a: "No. Quebec law prohibits landlords from collecting a security deposit, damage deposit, or any advance rent beyond one month. Asking for a deposit is illegal." },
-                  { q: "How do rent increases work in Quebec?", a: "Landlords must send tenants a written notice of any proposed rent increase 3–6 months before lease renewal. Tenants can accept, negotiate, or refuse. If refused, the landlord can apply to the TAL to set a reasonable increase." },
+                  { q: "How do rent increases work in Quebec?", a: "Landlords must send tenants a written notice of any proposed rent increase within the prescribed window: 3 to 6 months before lease renewal for leases of 12 months or more, or 1 to 2 months before lease renewal for leases under 12 months. Tenants can accept, negotiate, or refuse. If refused, the landlord can apply to the TAL to set a reasonable increase." },
                   { q: "What is the Tribunal administratif du logement (TAL)?", a: "The TAL is Quebec's housing tribunal that handles disputes about rent increases, lease renewals, repairs, and evictions. Applications can be filed online at tal.gouv.qc.ca and are free for tenants." },
                   { q: "What is July 1 moving day in Quebec?", a: "Historically, most Quebec leases expire on June 30 and renew July 1. This creates a mass moving day tradition. While less universal today, many Quebec leases still use this cycle." }
                 ]} />

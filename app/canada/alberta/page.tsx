@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const albertaProtections = [
   "Security deposits are capped at one month's rent — this is the maximum regardless of lease length.",
-  "Landlords must return security deposits within 10 days of tenancy end (or 30 days if a forwarding address was not promptly provided).",
+  "Landlords must provide a statement of account within 10 days of tenancy end. The final statement of account must be delivered within 30 days of possession being given up.",
   "For a fixed-term lease, landlords must give at least 3 months notice if they do not intend to renew.",
   "Month-to-month tenants must receive at least 3 months notice to vacate; week-to-week tenants require one week's notice.",
   "Alberta has no province-wide rent control — landlords can raise rent by any amount, but only once per year and with 3 months written notice.",

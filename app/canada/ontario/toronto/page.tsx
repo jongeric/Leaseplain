@@ -25,7 +25,7 @@ const torontoRights = [
   "The Ontario RTA applies in full to all private residential rentals in Toronto, including condominiums.",
   "Rent increases are limited to the provincial guideline — your landlord cannot raise rent by more than the guideline without an LTB order.",
   "Above-guideline rent increases (AGI) require the landlord to apply to the LTB, citing extraordinary cost increases for capital work.",
-  "Toronto tenants can file applications at the LTB at no cost — the Etobicoke or Toronto hearing centres handle local cases.",
+  "Toronto tenants can file applications at the LTB — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. The Etobicoke or Toronto hearing centres handle local cases.",
   "New condominium units built after November 15, 2018 are exempt from rent control under Ontario's 2018 RTA amendments.",
   "Condo landlords are bound by the condo corporation's rules, but they cannot pass these to you as enforceable lease obligations beyond what the RTA permits.",
 ];
@@ -174,7 +174,7 @@ export default function TorontoPage() {
                 <FAQAccordion items={[
                   { q: "Is rent controlled in Toronto?", a: "Toronto follows Ontario's rent-control rules under the Residential Tenancies Act. Units first occupied before November 15, 2018 are subject to the annual rent-increase guideline. Units built after that date are exempt from rent control." },
                   { q: "What is the average rent in Toronto?", a: "Toronto is Canada's most expensive rental market. Average one-bedroom apartments have been around $2,300–$2,600/month in recent years, varying significantly by neighbourhood and building type. Always verify current market data before signing." },
-                  { q: "How do I file a complaint about my Toronto landlord?", a: "File an application with the Ontario Landlord and Tenant Board (LTB) at ontario.ca/LTB. Tenants pay no filing fee and can apply for orders related to maintenance, rent, illegal entry, and more." },
+                  { q: "How do I file a complaint about my Toronto landlord?", a: "File an application with the Ontario Landlord and Tenant Board (LTB) at ontario.ca/LTB. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. You can apply for orders related to maintenance, rent, illegal entry, and more." },
                   { q: "Can a Toronto landlord charge a pet deposit?", a: "No. Under Ontario's Residential Tenancies Act, landlords cannot charge a pet deposit or any deposit other than the last month's rent. However, landlords can evict tenants if a lease no-pet clause is violated and the pet causes issues." },
                   { q: "What is the difference between a condo lease and an apartment lease in Toronto?", a: "The RTA applies to both, but condo leases may include condo corporation rules (which override parts of the lease). Condo rules about noise, amenity use, and move-in/move-out procedures are generally binding on tenants." }
                 ]} />

@@ -25,7 +25,7 @@ const hamiltonRights = [
   "The Ontario Residential Tenancies Act (RTA) applies fully to all private residential rentals in Hamilton.",
   "Rent increases are limited to the Ontario annual guideline — no exceptions without an LTB above-guideline application.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Tenants can file LTB applications at no cost; landlords pay a fee.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
   "Hamilton tenants have the right to request repairs; failure to maintain a unit allows tenants to apply for a rent abatement.",
   "Older rental stock (pre-2018) benefits from full rent control; newer builds after November 15, 2018 are exempt from the guideline.",
 ];

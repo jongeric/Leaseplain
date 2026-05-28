@@ -25,7 +25,7 @@ const ottawaRights = [
   "The Ontario Residential Tenancies Act (RTA) applies in full to all private residential rentals in Ottawa.",
   "Rent increases are capped at the Ontario provincial guideline — no exceptions without an LTB above-guideline application.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Ottawa tenants can file applications with the LTB for free via the Tribunals Ontario online portal.",
+  "Ottawa tenants can file applications with the LTB — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
   "Tenants cannot be evicted mid-lease without a valid LTB order — even if they fail to pay rent, the LTB process must be followed.",
   "Student housing in private rentals is covered by the RTA; university-owned residence is typically not.",
 ];
@@ -129,8 +129,7 @@ export default function OttawaPage() {
                   Many Ottawa landlords near universities offer one-year leases from May to April,
                   aligned with the academic calendar. Once the fixed term ends, the lease automatically
                   becomes a month-to-month tenancy under the Ontario RTA — the landlord cannot require
-                  you to vacate simply because the original term has ended. To end the tenancy, either
-                  you must give 60 days notice or the landlord must follow the proper LTB process.
+                  you to vacate simply because the original term has ended. No notice is required by either party at the point of natural expiry. To end the resulting month-to-month tenancy, a tenant must give 60 days notice (Form N9), or the landlord must follow the proper LTB process for a valid reason.
                 </p>
               </div>
 

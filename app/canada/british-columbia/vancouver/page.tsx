@@ -25,7 +25,7 @@ const vancouverRights = [
   "The BC Residential Tenancy Act applies to all private residential rentals in Vancouver, including condominiums and basement suites.",
   "Security deposits are capped at 0.5x one month's rent — no exceptions.",
   "Annual rent increases are limited to the allowable percentage set by the BC provincial government (CPI-based).",
-  "Landlords must give at least one month's written notice to end a tenancy; four months notice if the reason is personal use by the landlord.",
+  "Landlords must give at least one month's written notice to end a tenancy. Landlords must give at least 3 months' written notice using form RTB-32L if the reason is personal use by the landlord or close family member (reduced from 4 months effective June 18, 2025).",
   "Fixed-term leases cannot require you to vacate at end of term unless specific statutory conditions are met.",
   "The RTB dispute resolution process is accessible and relatively affordable compared to civil court.",
   "A landlord who bad-faith terminates a tenancy (e.g., false personal use claim) can be ordered to pay 12 months' compensation.",

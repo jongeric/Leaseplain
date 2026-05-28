@@ -26,7 +26,7 @@ const tenantProtections = [
   "Rent increases are limited to the provincial guideline (announced each year by the Ministry of Municipal Affairs and Housing).",
   "Landlords must use the standard Ontario lease form for most residential tenancies.",
   "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
-  "A landlord cannot evict a tenant for personal use without filing a valid Form N12 and paying one month's compensation (unless 120 or more days' notice is given, in which case Bill 60 exempts the landlord from paying compensation).",
+  "A landlord cannot evict a tenant for personal use without filing a valid Form N12 and paying one month's compensation — this applies regardless of notice period length.",
   "Above-guideline rent increases (AGI) require a formal LTB application by the landlord with documented evidence.",
   "Tenants have the right to sublet their unit — a landlord cannot unreasonably withhold consent.",
   "Security deposits (\"last month's rent\") are capped at one month's rent and must earn interest.",
@@ -139,8 +139,8 @@ export default function OntarioPage() {
                 <h3 className="font-semibold text-blue-900 mb-3">Form N12: Owner's Own Use</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
                   If a landlord wants to move into your unit (or have a close family member move in),
-                  they must serve you a Form N12 with at least 60 days notice and, in most cases, pay you one month's
-                  rent as compensation (under Bill 60, this compensation requirement is waived if the landlord gives 120 or more days' notice). If the landlord does not genuinely occupy the unit within a
+                  they must serve you a Form N12 with at least 60 days notice and pay you one month's
+                  rent as compensation (under RTA s.48.1, this applies regardless of the length of notice given). If the landlord does not genuinely occupy the unit within a
                   reasonable time, you may have grounds for a bad-faith eviction claim at the LTB,
                   which can result in significant financial remedies.
                 </p>

@@ -26,7 +26,7 @@ const bramptonRights = [
   "Landlords must use the standard Ontario lease form — a verbal or non-standard lease still triggers full RTA protections.",
   "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
   "Newcomer tenants have full RTA protection and are additionally protected from discrimination under the Ontario Human Rights Code.",
-  "A landlord seeking to end a tenancy for personal use must serve a Form N12 with at least 60 days notice and pay one month's compensation (unless 120 or more days' notice is given, in which case Bill 60 exempts the landlord from paying compensation).",
+  "A landlord seeking to end a tenancy for personal use must serve a Form N12 with at least 60 days notice and pay one month's compensation — this applies regardless of notice period length (RTA s.48.1).",
   "Only a last month's rent deposit is permitted — landlords cannot collect a security deposit or demand more than one month's rent upfront.",
 ];
 

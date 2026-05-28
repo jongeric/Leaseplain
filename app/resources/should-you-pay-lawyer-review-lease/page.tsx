@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "How much does a lawyer charge to review a residential lease in Canada?",
-    a: "Typical costs for a residential lease review by a lawyer in Canada range from $150–$400 for a standard review, depending on the province, the lawyer's experience, and the lease complexity. Paralegals (licensed in Ontario) charge less — typically $75–$200. Some tenant legal clinics offer free lease reviews for qualifying tenants.",
+    a: "Typical costs for a residential lease review by a lawyer in Canada range from $200–$600+ depending on complexity, province, and whether you use a lawyer vs. paralegal. Paralegals (licensed in Ontario) charge less — typically $75–$200. Some tenant legal clinics offer free lease reviews for qualifying tenants.",
   },
   {
     q: "Are there free alternatives to paying a lawyer?",

@@ -137,9 +137,8 @@ export default function FightIllegalEvictionOntarioPage() {
                       <p className="text-sm text-slate-700 leading-relaxed">
                         Issued when the landlord, their spouse, parent, or child wants to move into the
                         unit. Requires at least 60 days notice and must terminate on the last day of a
-                        rental period. The landlord must also offer one month&apos;s rent in compensation
-                        — unless the landlord gives 120 or more days&apos; notice, in which case
-                        Bill 60 (November 2025) exempts them from the compensation requirement —
+                        rental period. The landlord must also pay one month&apos;s rent in compensation
+                        (under RTA s.48.1, this is required regardless of how much notice is given)
                         and actually move in — or face bad-faith eviction penalties.
                       </p>
                     </div>

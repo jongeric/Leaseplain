@@ -145,7 +145,7 @@ export default function OntarioTenantRightsPage() {
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
                 <h3 className="font-semibold text-blue-900 mb-3">Form N12: Owner's Own Use Evictions</h3>
                 <p className="text-sm text-blue-800 leading-relaxed">
-                  If a landlord wants to move into your unit (or have a close family member move in), they must serve you a Form N12 with at least 60 days notice and, in most cases, pay one month's rent as compensation (unless 120 or more days' notice is given, in which case Bill 60 exempts the landlord from paying compensation). If the landlord does not genuinely occupy the unit within a reasonable time, you may have grounds for a bad-faith eviction claim at the LTB.
+                  If a landlord wants to move into your unit (or have a close family member move in), they must serve you a Form N12 with at least 60 days notice and pay one month's rent as compensation (under RTA s.48.1, this applies regardless of notice period length). If the landlord does not genuinely occupy the unit within a reasonable time, you may have grounds for a bad-faith eviction claim at the LTB.
                 </p>
               </div>
 

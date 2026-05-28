@@ -281,8 +281,7 @@ export default function CanChatGPTReviewALeasePage() {
                     <p className="leading-relaxed">
                       We tested ChatGPT-4 with a standard Ontario lease. It correctly identified
                       several unusual clauses. But it also told us a $400 key deposit was
-                      &ldquo;standard in Ontario&rdquo; — it is not; key deposits are illegal under
-                      the Ontario RTA. Confident wrong answers about provincial law are the most
+                      &ldquo;standard in Ontario&rdquo; — it is not; a key deposit exceeding the actual replacement cost of the key is prohibited under the Ontario RTA (s.105) — only a fully refundable deposit equal to actual key replacement cost is permitted, so an arbitrary $400 charge is not legal. Confident wrong answers about provincial law are the most
                       dangerous failure mode.
                     </p>
                   </div>

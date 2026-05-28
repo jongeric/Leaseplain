@@ -153,7 +153,7 @@ export default function FirstTimeRenterGuidePage() {
                     { term: "Gross rent", detail: "The total amount you pay each month, including utilities if they're covered by the landlord." },
                     { term: "Net rent", detail: "The base rent, before utilities or other charges. Make sure you know which applies to your unit." },
                     { term: "Term", detail: "How long the lease lasts. Most new leases are one-year fixed terms, after which they become month-to-month." },
-                    { term: "Notice period", detail: "How much warning you must give before moving out. In Ontario, tenants typically need to give 60 days notice before the end of a rental period." },
+                    { term: "Notice period", detail: "How much warning you must give before moving out. In Ontario, tenants typically need to give 60 days notice before the end of a rental period. This applies to month-to-month tenancies. Tenants in a fixed-term lease who simply vacate on the lease end date do not need to give formal notice." },
                     { term: "Last month's rent deposit", detail: "The only legal deposit in Ontario. Equal to one month's rent, applied to your last month. It is not a damage deposit." },
                   ].map((item) => (
                     <li key={item.term} className="flex items-start gap-3">

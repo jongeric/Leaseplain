@@ -35,7 +35,7 @@ const responsibilities = [
   {
     category: "Heat & Utilities",
     items: [
-      "Provide and maintain a heating system that keeps the unit at least 20°C (68°F) from September 1 to June 15.",
+      "Provide and maintain a heating system that keeps the unit at least 20°C (68°F) — most Ontario municipalities require this from September 15 to June 1 under municipal property standards bylaws (Toronto: 21°C from October 1 to May 15).",
       "If utilities are included in rent, maintain uninterrupted supply of electricity, water, and gas.",
       "Cannot shut off heat or utilities to force a tenant out — this is illegal.",
     ],

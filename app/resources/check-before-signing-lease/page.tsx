@@ -136,6 +136,12 @@ export default function CheckBeforeSigningPage() {
           { "@type": "HowToStep", "position": 6, "name": "Get everything in writing", "text": "Any promises the landlord makes verbally must be added to the lease in writing before you sign." },
         ],
       }).replace(/</g, "\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is the most important thing to check before signing a lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"The total monthly cost \u2014 not just rent but utilities, parking, amenities, and any required insurance. Many tenants focus only on the headline rent and are surprised by significant additional costs.\"}}, {\"@type\": \"Question\", \"name\": \"How do I check if a lease clause is legal in my province?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Look up your province's Residential Tenancies Act online (usually on the provincial government website), or use LeasePlain to compare your lease against common provincial standards. Your provincial tenancy tribunal also publishes guides.\"}}, {\"@type\": \"Question\", \"name\": \"Should I get the lease in writing?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Always. While verbal leases are technically valid in most provinces, they are nearly impossible to enforce in a dispute. A written lease protects both tenant and landlord by documenting agreed terms.\"}}, {\"@type\": \"Question\", \"name\": \"What are common surprise clauses in Canadian leases?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Watch for: automatic lease renewal clauses, landlord entry rights that exceed the legal minimum, broad damage liability that ignores normal wear and tear, flat penalty fees for early termination, and restrictions on guests or occupants.\"}}, {\"@type\": \"Question\", \"name\": \"Can I ask a landlord to remove or change a lease clause?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Any clause in a lease can be proposed for removal or modification before signing. If the landlord refuses, you must decide whether to accept the term (checking if it's even enforceable) or walk away.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

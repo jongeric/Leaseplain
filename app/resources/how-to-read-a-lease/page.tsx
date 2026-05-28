@@ -142,6 +142,22 @@ export default function HowToReadALeasePage() {
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: "What are the main sections of a Canadian lease?", acceptedAnswer: { "@type": "Answer", text: "Most leases include: parties and property description, lease term and rent amount, deposit terms, rules (pets, guests, smoking), maintenance obligations, termination and notice procedures, and any schedules or addenda for additional rules." } },
+              { "@type": "Question", name: "What lease language is a red flag?", acceptedAnswer: { "@type": "Answer", text: "Watch for: waiver-of-rights clauses, blanket liability for all damage, landlord entry without notice, penalties for breaking the lease beyond actual losses, automatic rent increases without proper notice, and fees for things beyond rent and legal deposits." } },
+              { "@type": "Question", name: "What does \'joint and several liability\' mean in a lease?", acceptedAnswer: { "@type": "Answer", text: "\'Joint and several\' means each co-tenant is individually responsible for the entire rent amount. If one roommate doesn\'t pay, the landlord can pursue any or all remaining tenants for the full amount — not just their share." } },
+              { "@type": "Question", name: "What is an addendum or schedule in a lease?", acceptedAnswer: { "@type": "Answer", text: "An addendum is an attachment to the main lease containing additional rules (e.g., pet policy, parking rules, condo rules). Addenda are legally binding if properly incorporated into the lease — read them as carefully as the main document." } },
+              { "@type": "Question", name: "Can I use LeasePlain to help me understand my lease?", acceptedAnswer: { "@type": "Answer", text: "Yes. Paste your lease text or upload a PDF and LeasePlain will explain the key terms, flag unusual or potentially illegal clauses, and give you specific questions to ask and negotiation suggestions." } },
+            ]
+          }).replace(/</g, "\u003c")
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

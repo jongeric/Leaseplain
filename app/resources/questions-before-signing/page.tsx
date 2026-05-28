@@ -54,6 +54,12 @@ export default function QuestionsBeforeSigningPage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is the most important question to ask before signing a lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask for a complete breakdown of all monthly costs \u2014 rent, utilities, parking, locker, and any other fees. Hidden costs can add hundreds of dollars per month beyond the advertised rent.\"}}, {\"@type\": \"Question\", \"name\": \"Should I ask to see the landlord's identity?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Ask for government-issued ID and verify the landlord actually owns or manages the property. Rental scams often involve people posing as landlords for properties they don't control.\"}}, {\"@type\": \"Question\", \"name\": \"Is it reasonable to ask about the building's maintenance history?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Absolutely. Ask when the building was last inspected, whether there are any outstanding work orders, and how maintenance requests are handled. A landlord who is evasive about maintenance is a yellow flag.\"}}, {\"@type\": \"Question\", \"name\": \"Can I ask for the previous tenant's rent amount?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"In provinces with rent control, the previous tenant's rent is legally relevant because landlords may try to reset the rent to market rate between tenancies. Ask, and compare it to what you're being offered. In Ontario, former tenants can request their rent history.\"}}, {\"@type\": \"Question\", \"name\": \"What should I ask about the lease renewal process?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask: Will rent increase at renewal? By how much? When will you be notified? Can you go month-to-month? Understanding the renewal process upfront prevents surprises when your first term ends.\"}}]}"
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

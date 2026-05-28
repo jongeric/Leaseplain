@@ -54,6 +54,12 @@ export default function StudentLeaseGuidePage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"Do students have the same tenant rights as other renters in Canada?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Students renting off-campus from private landlords have full protections under provincial tenancy law. University-managed on-campus housing (dorms, residences) is typically exempt from residential tenancy legislation.\"}}, {\"@type\": \"Question\", \"name\": \"What should students look for in a lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Watch for short fixed terms with high penalties for breaking early, broad damage clauses, fees for landlord-supplied furniture, mandatory insurance clauses, and automatic rent increases. LeasePlain can flag these quickly.\"}}, {\"@type\": \"Question\", \"name\": \"Can a student break a lease if they fail courses or transfer schools?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Academic reasons are not a statutory ground for early termination in most Canadian provinces. Students who need to leave early should negotiate with the landlord, find an assignment or subletter, or accept losing some rent \u2014 depending on how quickly the unit re-rents.\"}}, {\"@type\": \"Question\", \"name\": \"What is a co-signer and when do students need one?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A co-signer (guarantor) is someone (often a parent) who guarantees to pay rent if the tenant cannot. Landlords often require co-signers for students without stable income or Canadian credit history. Co-signers are legally liable for the debt.\"}}, {\"@type\": \"Question\", \"name\": \"Should students get renters insurance?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Renters insurance is inexpensive ($15-$30/month) and covers theft, fire, and liability. Many student apartments lack adequate coverage, and landlord insurance does not protect tenant belongings.\"}}]}"
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>
@@ -184,7 +190,7 @@ export default function StudentLeaseGuidePage() {
                     },
                     {
                       step: "Submit a written request to your landlord",
-                      detail: "Ask for consent to sublet in writing. Include the proposed subtenant's information if possible. The landlord has up to 7 days to request an interview with the subtenant.",
+                      detail: "Ask for consent to sublet in writing. Include the proposed subtenant's information if possible. The landlord has up to 7 days to request an interview with the subtenant. If the landlord does not respond within 7 days of receiving the sublet request, their silence is treated as consent under the Ontario RTA.",
                     },
                     {
                       step: "Get landlord approval",

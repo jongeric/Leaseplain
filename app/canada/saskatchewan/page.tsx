@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -58,6 +59,30 @@ const speakableSchema = {
 export default function SaskatchewanPage() {
   return (
     <>
+      <ArticleSchema
+        headline="Saskatchewan Tenant Rights: Lease Help Under the Residential Tenancies Act"
+        description="Understand your rights as a Saskatchewan renter under the Residential Tenancies Act, 2006. Learn about the ORT, security and pet deposit rules, rent increases, and lease protections in Saskatoon, Regina, and across Saskatchewan."
+        url="https://leaseplain.com/canada/saskatchewan"
+        datePublished="2025-01-01"
+        dateModified="2026-05-28"
+        keywords={["Saskatchewan tenant rights", "Residential Tenancies Act Saskatchewan", "ORT Saskatchewan", "Saskatchewan lease", "Saskatchewan security deposit"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: "Does Saskatchewan have rent control?", acceptedAnswer: { "@type": "Answer", text: "No. Saskatchewan removed rent control in the 1990s. Landlords can raise rent by any amount, but must provide at least one full rental period's written notice (e.g., one month for monthly leases) before the increase takes effect." } },
+              { "@type": "Question", name: "What is the security deposit limit in Saskatchewan?", acceptedAnswer: { "@type": "Answer", text: "Saskatchewan caps security deposits at one month's rent. Landlords must provide a receipt and return the deposit within 7 business days of the tenancy ending, or within 30 days with an itemized statement of any claimed deductions." } },
+              { "@type": "Question", name: "How do I file a dispute in Saskatchewan?", acceptedAnswer: { "@type": "Answer", text: "Contact the Office of Residential Tenancies (ORT), which operates offices in Saskatoon and Regina and handles applications province-wide. Hearings are conducted in person, by phone, or by written submission." } },
+              { "@type": "Question", name: "Can a Saskatchewan landlord refuse to rent to a tenant with pets?", acceptedAnswer: { "@type": "Answer", text: "Yes, Saskatchewan landlords may include pet-restriction clauses in leases. However, service animals and guide dogs cannot be refused under The Saskatchewan Human Rights Code." } },
+              { "@type": "Question", name: "What is required for a valid lease in Saskatchewan?", acceptedAnswer: { "@type": "Answer", text: "While leases can be verbal in Saskatchewan, a written tenancy agreement is strongly recommended. It should include rent amount, payment date, deposit details, and any specific rules. The ORT provides standard agreement templates." } },
+            ],
+          }).replace(/</g, "\u003c")
+        }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -186,7 +211,7 @@ export default function SaskatchewanPage() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={[
                   { q: "Does Saskatchewan have rent control?", a: "No. Saskatchewan removed rent control in the 1990s. Landlords can raise rent by any amount, but must provide at least one full rental period's written notice (e.g., one month for monthly leases) before the increase takes effect." },
-                  { q: "What is the security deposit limit in Saskatchewan?", a: "Saskatchewan caps security deposits at one month's rent. Landlords must provide a receipt and return the deposit within 7 business days of the tenancy ending, or provide an itemized list of deductions." },
+                  { q: "What is the security deposit limit in Saskatchewan?", a: "Saskatchewan caps security deposits at one month's rent. Landlords must provide a receipt and return the deposit within 7 business days of the tenancy ending, or within 30 days with an itemized statement of any claimed deductions." },
                   { q: "How do I file a dispute in Saskatchewan?", a: "Contact the Office of Residential Tenancies (ORT), which operates offices in Saskatoon and Regina and handles applications province-wide. Hearings are conducted in person, by phone, or by written submission." },
                   { q: "Can a Saskatchewan landlord refuse to rent to a tenant with pets?", a: "Yes, Saskatchewan landlords may include pet-restriction clauses in leases. However, service animals and guide dogs cannot be refused under The Saskatchewan Human Rights Code." },
                   { q: "What is required for a valid lease in Saskatchewan?", a: "While leases can be verbal in Saskatchewan, a written tenancy agreement is strongly recommended. It should include rent amount, payment date, deposit details, and any specific rules. The ORT provides standard agreement templates." }

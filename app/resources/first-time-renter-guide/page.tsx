@@ -71,6 +71,12 @@ export default function FirstTimeRenterGuidePage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What do I need to rent my first apartment in Canada?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Typically: government-issued ID, proof of income or employment (pay stubs, employment letter), references (personal or professional), and your first and last month's rent. Some landlords also request a credit check.\"}}, {\"@type\": \"Question\", \"name\": \"What rights do I have as a first-time tenant in Canada?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"You have the same rights as any tenant: the right to a habitable unit, protection from illegal rent increases, proper notice before landlord entry, the right to dispute maintenance issues, and protection from illegal eviction.\"}}, {\"@type\": \"Question\", \"name\": \"How do I know if a lease is fair for a first-time renter?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Compare the rent to similar units nearby, check that deposit rules comply with provincial law, look for unusual fees or penalties, and use LeasePlain to flag any clauses that seem one-sided. When in doubt, ask questions before signing.\"}}, {\"@type\": \"Question\", \"name\": \"What is the difference between a month-to-month and a fixed-term lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A fixed-term lease runs for a set period (usually 12 months) and converts to month-to-month at the end unless notice is given. A month-to-month tenancy continues indefinitely until either party gives the required notice to terminate.\"}}, {\"@type\": \"Question\", \"name\": \"Can a landlord reject my rental application?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes, but not for discriminatory reasons. Landlords cannot reject applicants based on race, gender, religion, disability, family status, sexual orientation, or source of income (in provinces that prohibit it). Rejection based on credit, income, or references is generally permitted.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

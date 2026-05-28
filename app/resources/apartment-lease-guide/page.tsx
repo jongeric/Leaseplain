@@ -54,6 +54,12 @@ export default function ApartmentLeaseGuidePage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What should I look for in an apartment lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Check rent amount and due date, deposit rules, utilities included or excluded, parking arrangements, pet policy, lease term and renewal process, notice periods, maintenance responsibilities, and any extra charges for amenities or lockers.\"}}, {\"@type\": \"Question\", \"name\": \"What is the standard apartment lease term in Canada?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most Canadian apartment leases are for 12 months, after which the tenancy typically converts to month-to-month automatically. Shorter (6-month) and longer (2-year) leases exist but are less common.\"}}, {\"@type\": \"Question\", \"name\": \"Can an apartment landlord increase rent during a fixed-term lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Generally no. In most provinces, a landlord cannot increase rent mid-lease. The increase can only take effect at renewal, with proper written notice and compliance with provincial rent-control rules.\"}}, {\"@type\": \"Question\", \"name\": \"What happens at the end of my apartment lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most provincial laws convert the lease to a month-to-month tenancy automatically at the end of a fixed term, unless either party provides proper termination notice. You do NOT have to sign a new lease \u2014 your rights continue.\"}}, {\"@type\": \"Question\", \"name\": \"How do I know if an apartment is a legal rental unit?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask the landlord for a certificate of occupancy or check with local municipal zoning. Illegal units (e.g., unpermitted basement apartments) may lack fire safety features. You still have tenant rights in illegal units, but the safety risk is real.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

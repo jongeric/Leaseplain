@@ -54,6 +54,12 @@ export default function WhatIsALeaseAgreementPage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is a lease agreement in simple terms?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A lease agreement is a written contract between a landlord (property owner) and a tenant (renter) that spells out the rules for renting the property \u2014 including how much rent is paid, when it's due, and how long the tenancy lasts.\"}}, {\"@type\": \"Question\", \"name\": \"What are the essential parts of a lease agreement?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A complete lease must include the landlord and tenant names, the property address, lease start and end dates, monthly rent amount and payment due date, deposit details, and any specific rules (pets, parking, smoking, etc.).\"}}, {\"@type\": \"Question\", \"name\": \"What happens if there is no lease agreement?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Without a written lease, tenancy terms default to what is permitted under provincial law. This means rent-control rules, entry notice requirements, and deposit limits all still apply, but disputes about verbal terms are very difficult to resolve.\"}}, {\"@type\": \"Question\", \"name\": \"Is a lease agreement legally binding?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. A signed lease is a legally binding contract. Both landlord and tenant must follow its terms as long as those terms comply with provincial tenancy law. Terms that violate the law are void even in a signed agreement.\"}}, {\"@type\": \"Question\", \"name\": \"What is the Ontario standard lease form?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ontario requires most residential landlords to use the provincially mandated Residential Tenancy Agreement (Standard Form of Lease). Landlords who don't provide it within 21 days of a tenant's request risk the tenant withholding one month's rent.\"}}]}"
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

@@ -54,6 +54,12 @@ export default function HiddenLeaseFeesPage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are common hidden fees in Canadian leases?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Watch for: parking fees not included in rent, locker fees, move-in/move-out fees charged by condo corporations, administrative fees for lease changes, key replacement fees (above actual cost), early termination penalties, and utility surcharges.\"}}, {\"@type\": \"Question\", \"name\": \"Are administrative fees in a lease legal?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Provincial law varies. Ontario explicitly prohibits many fees beyond rent and last month's deposit. In other provinces, fees must be reasonable and related to actual costs. Vague administrative fees in a lease are a red flag worth questioning.\"}}, {\"@type\": \"Question\", \"name\": \"Can a landlord charge for utilities on top of rent mid-lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Only if the lease provides for it from the start. If utilities were included in your rent when you signed, the landlord cannot unilaterally separate them out mid-tenancy. This would constitute an illegal rent increase.\"}}, {\"@type\": \"Question\", \"name\": \"What fees can a BC landlord legally charge?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"BC landlords can charge rent and a security deposit (max half a month). Pet deposits (max half a month) are allowed. Other fees \u2014 like move-in fees, administration fees, or appliance fees \u2014 are generally prohibited under the BC Residential Tenancy Act.\"}}, {\"@type\": \"Question\", \"name\": \"What should I do if a landlord tries to charge an illegal fee?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Refuse to pay, document the request, and file a complaint with your provincial tenancy tribunal. You may be entitled to a refund plus compensation. Paying under protest does not waive your right to dispute the charge later.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

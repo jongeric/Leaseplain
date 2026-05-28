@@ -54,6 +54,12 @@ export default function CondoLeaseGuidePage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"How is renting a condo different from renting an apartment?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Condo rentals involve both your lease with the landlord-owner and the condo corporation's rules. Condo rules about noise, amenity use, pets, and common areas are binding on tenants and can be stricter than provincial tenancy law.\"}}, {\"@type\": \"Question\", \"name\": \"Can a condo corporation evict a tenant?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"No. Only the landlord can evict a tenant through the provincial tenancy process. However, condo corporations can take action against landlords for tenant rule violations, which may prompt the landlord to pursue eviction.\"}}, {\"@type\": \"Question\", \"name\": \"What condo documents should I ask for before signing a condo lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask for the condo's declaration, by-laws, and rules (sometimes called the Status Certificate package). These documents outline restrictions on pets, rentals, noise, parking, and use of amenities that will apply to you as a tenant.\"}}, {\"@type\": \"Question\", \"name\": \"Are condo amenities available to tenants?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Usually yes, but access may be restricted or require advance booking. Check the condo rules for guest suite policies, gym hours, pool access, and move-in/out procedures. Some buildings charge separate amenity fees for tenants.\"}}, {\"@type\": \"Question\", \"name\": \"What happens if a condo is converted to a different use during my tenancy?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Landlords who want to convert or demolish a condo must follow provincial tenancy law, including providing proper notice and, in some provinces, compensation. Tenants cannot be forced out without following the legal process.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

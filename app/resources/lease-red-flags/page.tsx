@@ -163,6 +163,12 @@ export default function LeaseRedFlagsPage() {
         },
         "url": "https://leaseplain.com/resources/lease-red-flags",
       }).replace(/</g, "\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What are the biggest red flags in a rental lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Major red flags include: deposits exceeding provincial limits, waiving the right to notice for entry or rent increases, flat early-termination penalties beyond the landlord's actual losses, illegal fees, broad damage liability ignoring normal wear and tear, and clauses restricting your right to have guests or occupants.\"}}, {\"@type\": \"Question\", \"name\": \"What does a 'landlord may terminate at any time' clause mean?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"This is a serious red flag. Most Canadian provinces do not allow landlords to terminate tenancies without cause. A clause purporting to give landlords unlimited termination rights conflicts with provincial law and may be unenforceable \u2014 but it signals a problematic landlord.\"}}, {\"@type\": \"Question\", \"name\": \"Should I be worried about a very long lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Leases longer than 12 months can be fine, but consider your flexibility needs. Also check whether the rent-increase rules are clear \u2014 a 3-year lease with vague rent escalation language could expose you to unexpected increases.\"}}, {\"@type\": \"Question\", \"name\": \"What does 'tenant responsible for all repairs' mean?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"This clause attempts to shift the landlord's statutory repair obligation to you. It is largely unenforceable \u2014 provincial law requires landlords to maintain the unit in a good state of repair. You are only responsible for damage you cause beyond normal wear and tear.\"}}, {\"@type\": \"Question\", \"name\": \"How can I tell if a lease clause is illegal in my province?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Use LeasePlain to flag problem clauses, check your province's Residential Tenancies Act online, or call your provincial tenancy tribunal's information line. Tenant legal clinics also offer free advice on whether specific clauses violate the law.\"}}]}"
+        }}
+      />
     <div className="flex flex-col min-h-full">
       <Navbar />
 

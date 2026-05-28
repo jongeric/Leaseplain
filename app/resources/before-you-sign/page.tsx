@@ -80,6 +80,12 @@ export default function BeforeYouSignPage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What should I do before signing a lease in Canada?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Read the entire lease carefully, ask about anything unclear, check provincial rules on deposits and notices, visit the unit in person, ask about utilities and parking, and use LeasePlain's AI to flag any concerning clauses before you commit.\"}}, {\"@type\": \"Question\", \"name\": \"What questions should I ask a landlord before signing?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Ask: What is the total monthly cost including utilities and parking? How long is the lease and what happens at the end? What is the procedure for rent increases? Is the unit legal? Who handles maintenance? Are pets allowed?\"}}, {\"@type\": \"Question\", \"name\": \"Can I negotiate a lease before signing?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. Many terms \u2014 including rent, parking fees, appliance inclusion, early termination rights, and pet permissions \u2014 are negotiable, especially in a tenant's market. Never assume a lease is non-negotiable just because it's a standard form.\"}}, {\"@type\": \"Question\", \"name\": \"Should I take photos before moving in?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Always. Take dated photos or video of every room, appliance, wall, floor, and fixture before moving in. Store these safely. If there are pre-existing damages, note them on the move-in inspection form and get the landlord's written acknowledgment.\"}}, {\"@type\": \"Question\", \"name\": \"What is a move-in inspection and is it required?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"A move-in inspection (or condition report) documents the unit's state when you arrive. Alberta requires a joint inspection. BC strongly recommends it. A written inspection report signed by both parties protects you from unfair damage deductions at move-out.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
       <main>

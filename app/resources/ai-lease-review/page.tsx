@@ -91,6 +91,12 @@ export default function AILeaseReviewPage() {
           }).replace(/</g, "\u003c")
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: "{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is an AI lease review?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"An AI lease review uses machine learning to read your lease agreement and identify clauses that are unusual, one-sided, potentially illegal, or worth negotiating \u2014 all explained in plain English without legal jargon.\"}}, {\"@type\": \"Question\", \"name\": \"Is an AI lease review as good as a lawyer?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"For general understanding and spotting common problems, AI review is fast and effective. Lawyers are better for complex disputes, court proceedings, or situations requiring professional accountability. Use AI review for education; use a lawyer for legal action.\"}}, {\"@type\": \"Question\", \"name\": \"How accurate is LeasePlain's AI lease analysis?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"LeasePlain uses Claude, Anthropic's frontier AI model, which is highly capable of reading legal text. However, no AI is infallible \u2014 use the analysis as a starting point for your own review, and consult a professional for critical decisions.\"}}, {\"@type\": \"Question\", \"name\": \"What information does LeasePlain extract from my lease?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"LeasePlain extracts key financial terms (rent, deposit, fees), flags red-flag clauses, identifies unclear or missing provisions, suggests questions to ask your landlord, and provides negotiation recommendations.\"}}, {\"@type\": \"Question\", \"name\": \"Is my lease data kept private when I use LeasePlain?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"LeasePlain does not sell your lease data. Please review our privacy policy for full details on data handling, storage, and deletion rights.\"}}]}"
+        }}
+      />
       <div className="flex flex-col min-h-full">
       <Navbar />
 

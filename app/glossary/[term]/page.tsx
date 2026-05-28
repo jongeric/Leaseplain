@@ -48,7 +48,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       "Accepting verbal promises about the deposit instead of getting terms in writing",
     ],
     provinceConsiderations:
-      "In Ontario, landlords can only collect a last month's rent deposit — not a separate security deposit for damages. BC caps security deposits at half a month's rent; Alberta's cap is one full month's rent. In most US states, deposits are typically capped at 1–2 months' rent, with strict timelines for return. Quebec has a unique system with no security deposits allowed by law.",
+      "In Ontario, landlords may only collect a last month's rent (LMR) deposit and, optionally, a refundable key deposit capped at the actual replacement cost — damage security deposits are prohibited under the Residential Tenancies Act. BC caps security deposits at half a month's rent; landlords may also collect a separate pet damage deposit also capped at half a month's rent (so a tenant with a pet may pay the equivalent of a full month's rent in deposits). Alberta's cap is one full month's rent. In most US states, deposits are typically capped at 1–2 months' rent, with strict timelines for return. Quebec has a unique system with no security deposits allowed by law.",
     faqs: [
       {
         q: "Can my landlord use my security deposit for last month's rent?",
@@ -137,7 +137,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       "Assuming the landlord must pursue the tenant first before coming to the guarantor",
     ],
     provinceConsiderations:
-      "In Ontario, guarantor requirements must be reasonable. Some provinces limit what a guarantor can be required to cover. In Quebec, guarantors (called 'sureties') are common in student housing. In the US, guarantor agreements are common for student rentals and high-cost city apartments; liability scope varies by state.",
+      "In Ontario, guarantor agreements are governed by general contract law, not the Residential Tenancies Act directly. Demanding a guarantor in a discriminatory manner (e.g., only from tenants of a specific national origin) would violate the Ontario Human Rights Code, but there is no specific statute setting a reasonableness limit on guarantor terms. In Quebec, guarantors (called 'sureties') are common in student housing. In the US, guarantor agreements are common for student rentals and high-cost city apartments; liability scope varies by state.",
     faqs: [
       {
         q: "Can a landlord require a guarantor?",
@@ -217,7 +217,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       "Allowing repeated late fees to accumulate without addressing the underlying payment issue",
     ],
     provinceConsiderations:
-      "Ontario specifically prohibits late fees on residential leases. BC and Alberta permit them but with limits. In the US, late fees are generally allowed and are regulated at the state level — California caps them at 5–10% of rent; other states have different limits. Always verify whether late fees in your lease comply with local law.",
+      "Ontario specifically prohibits late fees on residential leases. BC and Alberta do not have explicit statutory caps on residential late fees — fees are subject to a legal reasonableness standard under contract law, and courts can void punitive amounts. In the US, late fees are generally allowed and regulated at the state level — California has no fixed statutory percentage cap; under Civil Code §1671, fees must be a reasonable estimate of actual damages and courts have found rates above ~5–6% difficult to enforce. Other states have different rules. Always verify whether late fees in your lease comply with local law.",
     faqs: [
       {
         q: "Can my landlord charge late fees in Ontario?",
@@ -333,7 +333,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       "Signing a 'break clause' that commits you to significant penalties for early termination",
     ],
     provinceConsiderations:
-      "In Ontario, tenants must give 60 days' notice before the end of their lease, or 60 days for month-to-month. Landlords can only terminate for specific reasons (non-payment, damage, personal use, etc.). In BC, tenants give one month's notice. Alberta requires one full tenancy period notice. In the US, notice requirements vary by state, but month-to-month tenancies usually require 30–60 days' notice.",
+      "In Ontario, a fixed-term lease ends automatically at the term's expiry — tenants do not need to give notice to vacate at the end of a fixed term. For month-to-month tenancies, tenants must give 60 days' written notice, ending on the last day of a rental period. Landlords can only terminate for specific reasons (non-payment, damage, personal use, etc.). In BC, tenants in a month-to-month tenancy give one full rental month's notice; fixed-term leases end at the agreed date without requiring notice. Alberta requires one full tenancy period notice. In the US, notice requirements vary by state, but month-to-month tenancies usually require 30–60 days' notice.",
     faqs: [
       {
         q: "Can my landlord evict me without cause?",
@@ -467,7 +467,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
     slug: "force-majeure",
     term: "Force Majeure",
     definition:
-      "A clause that excuses one or both parties from performing their lease obligations due to extraordinary events or circumstances beyond their control, such as natural disasters, pandemics, or government-mandated restrictions.",
+      "A clause that excuses one or both parties from performing their lease obligations due to extraordinary events or circumstances beyond their control, such as natural disasters, pandemics, or government-mandated restrictions. In residential tenancy, force majeure clauses rarely suspend rent obligations and are more commonly found in commercial leases.",
     plainEnglish:
       "A force majeure clause (French for 'superior force') is the lease's emergency exit for situations that are truly outside anyone's control — think earthquakes, floods, or (as the COVID-19 pandemic reminded everyone) government-mandated closures. If something extreme happens that makes it impossible to fulfill the lease, this clause may temporarily suspend or reduce the obligations of one or both parties. Force majeure is more commonly seen in commercial leases; in residential leases, it's less common and has limited practical application because habitability obligations usually persist regardless.",
     whyItMatters:
@@ -683,35 +683,39 @@ export default async function GlossaryTermPage({
     href: `/glossary/${slug}`,
   }));
 
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "DefinedTerm",
-      "@id": `https://leaseplain.com/glossary/${entry.slug}`,
-      name: entry.term,
-      description: entry.definition,
-      inDefinedTermSet: {
-        "@type": "DefinedTermSet",
-        name: "LeasePlain Lease Glossary",
-        url: "https://leaseplain.com/glossary",
-      },
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "@id": `https://leaseplain.com/glossary/${entry.slug}`,
+    url: `https://leaseplain.com/glossary/${entry.slug}`,
+    name: entry.term,
+    description: entry.definition,
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "LeasePlain Lease Glossary",
+      url: "https://leaseplain.com/glossary",
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: entry.faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: { "@type": "Answer", text: faq.a },
-      })),
-    },
-  ];
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: entry.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema).replace(/</g, "\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\u003c") }}
       />
       <script
         type="application/ld+json"

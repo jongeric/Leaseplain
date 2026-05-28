@@ -56,6 +56,14 @@ const questions = [
   "Is there any clause here that increases rent automatically — and if so, what triggers it?",
 ];
 
+const faqs = [
+  { q: "How much notice is required for a rent increase in Canada?", a: "Most provinces require 3 months' written notice. Ontario requires 90 days. BC requires 3 months. Alberta requires 3 months. Notice must typically be in writing on a prescribed form and given only once every 12 months." },
+  { q: "Can my landlord raise rent above the provincial guideline?", a: "In provinces with rent control (Ontario for pre-2018 buildings, BC, Manitoba, PEI), raises above the guideline require tribunal approval. In provinces without rent control (Alberta, Saskatchewan, New Brunswick), landlords can raise by any amount with proper notice." },
+  { q: "What is a rent-increase guideline?", a: "Provincial governments publish an annual guideline — the maximum percentage landlords can raise rent without approval. Ontario's is based on inflation; BC's is tied to the CPI. Exceeding the guideline without approval is illegal in rent-controlled provinces." },
+  { q: "Can a landlord raise rent when I renew my lease?", a: "Generally yes, but only once per 12-month period and with the required notice. In Ontario, a lease renewal itself does not trigger a new rental period — existing rent-control protections continue regardless of whether you sign a new lease or go month-to-month." },
+  { q: "Is a verbal rent increase enforceable?", a: "No. Virtually all Canadian provinces require rent increases to be in writing. A verbal promise or text message is not sufficient. Landlords must use the prescribed written notice form (e.g., Ontario Form N1) and give adequate advance notice." },
+];
+
 export default function RentIncreasePage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -64,6 +72,21 @@ export default function RentIncreasePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Rent Increase", href: "https://leaseplain.com/lease-clause/rent-increase" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -81,7 +104,7 @@ export default function RentIncreasePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Rent Increase Clause: Rules, Notice Requirements & Your Rights
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A rent increase clause outlines when and how your landlord can raise your rent. In
               Ontario, rent increases are governed by the Residential Tenancies Act — and many
               landlords include clauses that overstep these legal limits.
@@ -101,8 +124,8 @@ export default function RentIncreasePage() {
                 </p>
                 <p className="text-slate-700 leading-relaxed mb-4">
                   Each year, the Ontario government sets a <strong>Rent Increase Guideline</strong> — the
-                  maximum percentage a landlord can increase rent for most tenants. For 2025, the
-                  guideline is <strong>2.5%</strong>. For 2024, it was 2.5%. These numbers are tied to the Ontario
+                  maximum percentage a landlord can increase rent for most tenants. For 2026, the
+                  guideline is <strong>2.1%</strong>. For 2025, it was 2.5%. These numbers are tied to the Ontario
                   Consumer Price Index (CPI) and are announced each August for the following year.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
@@ -166,13 +189,7 @@ export default function RentIncreasePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "How much notice is required for a rent increase in Canada?", a: "Most provinces require 3 months' written notice. Ontario requires 90 days. BC requires 3 months. Alberta requires 3 months. Notice must typically be in writing on a prescribed form and given only once every 12 months." },
-                  { q: "Can my landlord raise rent above the provincial guideline?", a: "In provinces with rent control (Ontario for pre-2018 buildings, BC, Manitoba, PEI), raises above the guideline require tribunal approval. In provinces without rent control (Alberta, Saskatchewan, New Brunswick), landlords can raise by any amount with proper notice." },
-                  { q: "What is a rent-increase guideline?", a: "Provincial governments publish an annual guideline — the maximum percentage landlords can raise rent without approval. Ontario's is based on inflation; BC's is tied to the CPI. Exceeding the guideline without approval is illegal in rent-controlled provinces." },
-                  { q: "Can a landlord raise rent when I renew my lease?", a: "Generally yes, but only once per 12-month period and with the required notice. In Ontario, a lease renewal itself does not trigger a new rental period — existing rent-control protections continue regardless of whether you sign a new lease or go month-to-month." },
-                  { q: "Is a verbal rent increase enforceable?", a: "No. Virtually all Canadian provinces require rent increases to be in writing. A verbal promise or text message is not sufficient. Landlords must use the prescribed written notice form (e.g., Ontario Form N1) and give adequate advance notice." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
 

@@ -70,6 +70,14 @@ const repairSteps = [
   { step: "Contact municipal bylaw enforcement", detail: "Your local municipality has property standards bylaws. A bylaw officer can inspect and order repairs — sometimes faster than the LTB process." },
 ];
 
+const faqs = [
+  { q: "Who is responsible for repairs in a rental property?", a: "In Canada, landlords are responsible for maintaining the rental unit in a good state of repair. Tenants are responsible for keeping the unit reasonably clean and for repairs caused by their own negligence or damage." },
+  { q: "How do I request a repair from my landlord?", a: "Always request repairs in writing (email or letter) and keep a copy. Include a description of the problem, when it started, and a reasonable deadline for repairs. Written requests protect you if you later need to file with a tenancy tribunal." },
+  { q: "What if my landlord refuses to make urgent repairs?", a: "For urgent repairs (no heat in winter, water leak, electrical hazard), call your local municipal bylaw or health department. You can also file an emergency application with your province's tenancy tribunal for a repair order and possible rent abatement." },
+  { q: "Can I make repairs myself and deduct from rent?", a: "Generally no. 'Repair and deduct' is risky and may not be legal in your province. In most Canadian provinces, the approved process is to apply to the tenancy tribunal for a repair order or rent reduction — not to withhold or reduce rent unilaterally." },
+  { q: "What is a rent abatement and how do I get one?", a: "A rent abatement is a partial refund of rent for a period when the unit was not fully habitable. To get one, apply to your province's tenancy tribunal (e.g., LTB in Ontario) with evidence of the maintenance problem and the impact on your use of the unit." }
+];
+
 export default function RepairsClausePage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -78,6 +86,21 @@ export default function RepairsClausePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Repairs", href: "https://leaseplain.com/lease-clause/repairs" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -98,7 +121,7 @@ export default function RepairsClausePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Repairs Clause in a Lease: Landlord vs. Tenant Responsibilities
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A repairs clause in your lease sets out who is responsible for maintaining the unit.
               In Ontario, the law draws a clear line — and some common lease clauses attempt to
               shift more responsibilities onto tenants than the law allows.
@@ -210,13 +233,7 @@ export default function RepairsClausePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Who is responsible for repairs in a rental property?", a: "In Canada, landlords are responsible for maintaining the rental unit in a good state of repair. Tenants are responsible for keeping the unit reasonably clean and for repairs caused by their own negligence or damage." },
-                  { q: "How do I request a repair from my landlord?", a: "Always request repairs in writing (email or letter) and keep a copy. Include a description of the problem, when it started, and a reasonable deadline for repairs. Written requests protect you if you later need to file with a tenancy tribunal." },
-                  { q: "What if my landlord refuses to make urgent repairs?", a: "For urgent repairs (no heat in winter, water leak, electrical hazard), call your local municipal bylaw or health department. You can also file an emergency application with your province's tenancy tribunal for a repair order and possible rent abatement." },
-                  { q: "Can I make repairs myself and deduct from rent?", a: "Generally no. 'Repair and deduct' is risky and may not be legal in your province. In most Canadian provinces, the approved process is to apply to the tenancy tribunal for a repair order or rent reduction — not to withhold or reduce rent unilaterally." },
-                  { q: "What is a rent abatement and how do I get one?", a: "A rent abatement is a partial refund of rent for a period when the unit was not fully habitable. To get one, apply to your province's tenancy tribunal (e.g., LTB in Ontario) with evidence of the maintenance problem and the impact on your use of the unit." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
             <aside className="flex flex-col gap-5">

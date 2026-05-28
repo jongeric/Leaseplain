@@ -55,6 +55,14 @@ const redFlags = [
   },
 ];
 
+const faqs = [
+  { q: "Can a landlord restrict guests in a lease?", a: "Landlords can include reasonable guest policies, but very restrictive clauses (like banning all overnight guests) may be unenforceable. Tenants in Canada generally have the right to reasonable enjoyment of their unit, which includes hosting visitors." },
+  { q: "What is the legal difference between a guest and an occupant?", a: "A guest is a temporary visitor with no right to occupy the unit on their own. An occupant is someone who lives there regularly but is not on the lease. Having unauthorized long-term occupants can be grounds for lease termination in most provinces." },
+  { q: "Can a landlord charge extra rent for an additional occupant?", a: "In most provinces, landlords cannot charge more rent simply because of an additional legal occupant (e.g., a partner) unless the increase follows proper notice procedures. However, additional occupants should generally be disclosed to the landlord." },
+  { q: "Can my landlord ban my family from visiting?", a: "No. Restricting family members from visiting your home is generally unreasonable. Lease clauses that prohibit visits by immediate family members are likely unenforceable as a violation of the tenant's right to quiet enjoyment." },
+  { q: "What constitutes an unauthorized occupant in Canada?", a: "If someone moves in permanently without being added to the lease or notifying the landlord, they may be an unauthorized occupant. This can lead to lease termination, especially if the additional person increases wear and tear or causes disturbances." }
+];
+
 export default function GuestsClausePage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -63,6 +71,21 @@ export default function GuestsClausePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Guests", href: "https://leaseplain.com/lease-clause/guests" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -83,7 +106,7 @@ export default function GuestsClausePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Guest Clause in a Lease: How Long Can Guests Stay?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A guest clause in your lease defines who counts as a &ldquo;guest&rdquo; versus an
               &ldquo;occupant,&rdquo; how long visitors can stay, and whether the landlord has any say
               in your social life. In Ontario, these clauses have real limits.
@@ -185,13 +208,7 @@ export default function GuestsClausePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Can a landlord restrict guests in a lease?", a: "Landlords can include reasonable guest policies, but very restrictive clauses (like banning all overnight guests) may be unenforceable. Tenants in Canada generally have the right to reasonable enjoyment of their unit, which includes hosting visitors." },
-                  { q: "What is the legal difference between a guest and an occupant?", a: "A guest is a temporary visitor with no right to occupy the unit on their own. An occupant is someone who lives there regularly but is not on the lease. Having unauthorized long-term occupants can be grounds for lease termination in most provinces." },
-                  { q: "Can a landlord charge extra rent for an additional occupant?", a: "In most provinces, landlords cannot charge more rent simply because of an additional legal occupant (e.g., a partner) unless the increase follows proper notice procedures. However, additional occupants should generally be disclosed to the landlord." },
-                  { q: "Can my landlord ban my family from visiting?", a: "No. Restricting family members from visiting your home is generally unreasonable. Lease clauses that prohibit visits by immediate family members are likely unenforceable as a violation of the tenant's right to quiet enjoyment." },
-                  { q: "What constitutes an unauthorized occupant in Canada?", a: "If someone moves in permanently without being added to the lease or notifying the landlord, they may be an unauthorized occupant. This can lead to lease termination, especially if the additional person increases wear and tear or causes disturbances." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
             <aside className="flex flex-col gap-5">

@@ -65,6 +65,14 @@ const questions = [
   "If you cannot complete a repair within a reasonable time, what remedies are available to me?",
 ];
 
+const faqs = [
+  { q: "What counts as a landlord's maintenance obligation in Canada?", a: "Landlords must maintain rental units in good repair and comply with all housing, health, and safety standards. This includes structural integrity, heating systems, plumbing, pest control, and common areas." },
+  { q: "How long does a landlord have to respond to a maintenance request?", a: "There is no universal statutory deadline, but 'reasonable time' is the standard. Emergency situations (no heat, flooding) require immediate action. Routine repairs (broken fixture, minor leak) should typically be addressed within days to a few weeks." },
+  { q: "What documentation should I keep for maintenance issues?", a: "Keep copies of all written repair requests, take dated photos or videos of the problem, and document any verbal conversations in follow-up emails. This evidence is essential if you need to file a complaint with a tenancy tribunal." },
+  { q: "Can I be evicted for complaining about maintenance?", a: "Retaliatory eviction for filing a maintenance complaint is illegal in most Canadian provinces. If you suspect retaliation, document the timeline carefully and file a counter-complaint with the tenancy tribunal." },
+  { q: "What is an N13 notice in Ontario and when does it relate to maintenance?", a: "An N13 is an Ontario landlord's notice to terminate tenancy for major renovations or demolition. Landlords must have necessary permits and cannot use renovation as a pretext for eviction. Tenants have the right of first refusal to return at the same rent after renovations. Note: the tenant must notify the landlord in writing of their intention to return before vacating the unit — otherwise the right is lost." }
+];
+
 export default function MaintenancePage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -73,6 +81,21 @@ export default function MaintenancePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Maintenance", href: "https://leaseplain.com/lease-clause/maintenance" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -90,7 +113,7 @@ export default function MaintenancePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Maintenance Responsibilities Clause: Who Fixes What?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               A maintenance clause defines who is responsible for keeping the unit in good repair.
               In Ontario, landlords carry a significant legal obligation — and many leases try to
               shift those responsibilities to tenants in ways that are not enforceable.
@@ -174,13 +197,7 @@ export default function MaintenancePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What counts as a landlord's maintenance obligation in Canada?", a: "Landlords must maintain rental units in good repair and comply with all housing, health, and safety standards. This includes structural integrity, heating systems, plumbing, pest control, and common areas." },
-                  { q: "How long does a landlord have to respond to a maintenance request?", a: "There is no universal statutory deadline, but 'reasonable time' is the standard. Emergency situations (no heat, flooding) require immediate action. Routine repairs (broken fixture, minor leak) should typically be addressed within days to a few weeks." },
-                  { q: "What documentation should I keep for maintenance issues?", a: "Keep copies of all written repair requests, take dated photos or videos of the problem, and document any verbal conversations in follow-up emails. This evidence is essential if you need to file a complaint with a tenancy tribunal." },
-                  { q: "Can I be evicted for complaining about maintenance?", a: "Retaliatory eviction for filing a maintenance complaint is illegal in most Canadian provinces. If you suspect retaliation, document the timeline carefully and file a counter-complaint with the tenancy tribunal." },
-                  { q: "What is an N13 notice in Ontario and when does it relate to maintenance?", a: "An N13 is an Ontario landlord's notice to terminate tenancy for major renovations or demolition. Landlords must have necessary permits and cannot use renovation as a pretext for eviction. Tenants have the right of first refusal to return at the same rent after renovations." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
 

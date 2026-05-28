@@ -65,6 +65,26 @@ export default function SecurityDepositPage() {
         { name: "Security Deposit", href: "https://leaseplain.com/lease-clause/security-deposit" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { q: "What is a security deposit?", a: "A security deposit is money paid to the landlord before moving in, held to cover potential damages beyond normal wear and tear or unpaid rent. Most Canadian provinces cap the amount at one month's rent or half a month's rent." },
+              { q: "Can a landlord keep my entire security deposit?", a: "No. Landlords can only deduct for damages that exceed normal wear and tear, unpaid rent, or unpaid utilities — they must provide an itemized written statement. Taking the entire deposit without documentation is illegal in every Canadian province." },
+              { q: "What is the difference between a security deposit and last month's rent?", a: "A security deposit is for damages; last month's rent is applied to your final month of tenancy. Ontario only permits last month's rent (not a separate damage deposit). Other provinces (like BC and Alberta) allow a separate security deposit." },
+              { q: "How long does a landlord have to return my deposit?", a: "Return timelines vary by province: BC requires 15 days, Alberta 10 days, Manitoba 14 days, and Saskatchewan 7 business days after tenancy end. Penalties for late return vary by province — some require the full deposit be returned without deductions, others allow tribunal applications for damages. Check your province's specific rules." },
+              { q: "What counts as normal wear and tear?", a: "Normal wear and tear includes minor scuffs on walls, small nail holes from pictures, carpet worn from normal use, and faded paint. Landlords cannot deduct for these — only for damage caused by negligence, misuse, or accidents." }
+            ].map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -175,7 +195,7 @@ export default function SecurityDepositPage() {
                   { q: "What is a security deposit?", a: "A security deposit is money paid to the landlord before moving in, held to cover potential damages beyond normal wear and tear or unpaid rent. Most Canadian provinces cap the amount at one month's rent or half a month's rent." },
                   { q: "Can a landlord keep my entire security deposit?", a: "No. Landlords can only deduct for damages that exceed normal wear and tear, unpaid rent, or unpaid utilities — they must provide an itemized written statement. Taking the entire deposit without documentation is illegal in every Canadian province." },
                   { q: "What is the difference between a security deposit and last month's rent?", a: "A security deposit is for damages; last month's rent is applied to your final month of tenancy. Ontario only permits last month's rent (not a separate damage deposit). Other provinces (like BC and Alberta) allow a separate security deposit." },
-                  { q: "How long does a landlord have to return my deposit?", a: "Return timelines vary by province: BC requires 15 days, Alberta 10 days, Manitoba 14 days, and Saskatchewan 7 business days after tenancy end. If the landlord misses the deadline, you may be entitled to double the deposit amount." },
+                  { q: "How long does a landlord have to return my deposit?", a: "Return timelines vary by province: BC requires 15 days, Alberta 10 days, Manitoba 14 days, and Saskatchewan 7 business days after tenancy end. Penalties for late return vary by province — some require the full deposit be returned without deductions, others allow tribunal applications for damages. Check your province's specific rules." },
                   { q: "What counts as normal wear and tear?", a: "Normal wear and tear includes minor scuffs on walls, small nail holes from pictures, carpet worn from normal use, and faded paint. Landlords cannot deduct for these — only for damage caused by negligence, misuse, or accidents." }
                 ]} />
               </div>

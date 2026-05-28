@@ -62,6 +62,14 @@ const redFlags = [
   },
 ];
 
+const faqs = [
+  { q: "Can a landlord legally ban pets in Canada?", a: "Most provinces allow landlords to include no-pet clauses. However, Ontario is an exception — no-pet clauses in Ontario leases are void under the Residential Tenancies Act. In BC, Alberta, and most other provinces, no-pet clauses are generally enforceable." },
+  { q: "Can a landlord refuse a service animal or emotional support animal?", a: "No. Across Canada, refusing a service animal is a human rights violation. Landlords must accommodate tenants with disabilities who rely on service animals, even if the lease contains a no-pet clause." },
+  { q: "Can a landlord charge a pet deposit in Canada?", a: "This varies by province. BC allows a pet damage deposit of up to half a month's rent. Alberta includes pet damage in the general security deposit (capped at one month). Ontario bans any deposit beyond last month's rent, including pet deposits." },
+  { q: "What happens if I get a pet without telling my landlord in Ontario?", a: "In Ontario, a no-pet clause is void, so getting a pet is technically your right. However, if the pet causes damage or disturbs neighbours, the landlord can seek eviction based on the damage or disturbance — not just for having the pet." },
+  { q: "Do lease clauses about pet sizes or breeds hold up legally?", a: "Size and breed restrictions are less certain legally than outright bans. In Ontario, they may still be void along with the general no-pet clause. In other provinces, specific breed or size restrictions may be enforceable if clearly written in the lease." }
+];
+
 export default function PetsClausePage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -70,6 +78,21 @@ export default function PetsClausePage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Pets", href: "https://leaseplain.com/lease-clause/pets" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -90,7 +113,7 @@ export default function PetsClausePage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               Many Ontario leases contain a &ldquo;no pets&rdquo; clause — but most tenants don&apos;t
               know that this clause is void by law. Understanding your rights around pets
               can save you from unnecessary conflict and illegal charges.
@@ -191,13 +214,7 @@ export default function PetsClausePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Can a landlord legally ban pets in Canada?", a: "Most provinces allow landlords to include no-pet clauses. However, Ontario is an exception — no-pet clauses in Ontario leases are void under the Residential Tenancies Act. In BC, Alberta, and most other provinces, no-pet clauses are generally enforceable." },
-                  { q: "Can a landlord refuse a service animal or emotional support animal?", a: "No. Across Canada, refusing a service animal is a human rights violation. Landlords must accommodate tenants with disabilities who rely on service animals, even if the lease contains a no-pet clause." },
-                  { q: "Can a landlord charge a pet deposit in Canada?", a: "This varies by province. BC allows a pet damage deposit of up to half a month's rent. Alberta includes pet damage in the general security deposit (capped at one month). Ontario bans any deposit beyond last month's rent, including pet deposits." },
-                  { q: "What happens if I get a pet without telling my landlord in Ontario?", a: "In Ontario, a no-pet clause is void, so getting a pet is technically your right. However, if the pet causes damage or disturbs neighbours, the landlord can seek eviction based on the damage or disturbance — not just for having the pet." },
-                  { q: "Do lease clauses about pet sizes or breeds hold up legally?", a: "Size and breed restrictions are less certain legally than outright bans. In Ontario, they may still be void along with the general no-pet clause. In other provinces, specific breed or size restrictions may be enforceable if clearly written in the lease." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
             <aside className="flex flex-col gap-5">

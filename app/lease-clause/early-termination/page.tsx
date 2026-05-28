@@ -57,6 +57,14 @@ const questions = [
   "Would you agree to add a mutual early-termination clause we both can invoke with proper notice?",
 ];
 
+const faqs = [
+  { q: "What does an early termination clause do?", a: "An early termination clause describes what happens if a tenant breaks the lease before the end date. Under Canadian provincial law, landlords can only claim their actual losses (unpaid rent minus what they earn from re-renting the unit) — flat penalty clauses are generally void." },
+  { q: "Can I assign my lease instead of breaking it?", a: "Yes. Most Canadian provinces allow tenants to assign a lease to a qualified new tenant with the landlord's consent. Assignment eliminates your ongoing liability, unlike subletting where you remain responsible." },
+  { q: "What happens to my deposit if I leave early?", a: "Your deposit may be applied to unpaid rent for the period while the unit sits vacant. Once the landlord finds a new tenant, your liability ends. Any remaining deposit should be returned with an itemized deduction statement." },
+  { q: "Is there a standard early termination fee in Canada?", a: "No standard fee exists. Provincial law generally caps recovery at the landlord's actual losses. A flat fee of '2 months' rent' written into a lease is typically unenforceable if the landlord re-rents quickly." },
+  { q: "Can a tenant break a lease due to domestic violence?", a: "Yes. Most Canadian provinces have special provisions allowing survivors of domestic violence to break a lease with shorter notice (often 28 days) by providing documentation. Ontario, BC, Alberta, and others have these protections." },
+];
+
 export default function EarlyTerminationPage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -65,6 +73,21 @@ export default function EarlyTerminationPage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Early Termination", href: "https://leaseplain.com/lease-clause/early-termination" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -82,7 +105,7 @@ export default function EarlyTerminationPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Early Termination Clause: Can You Break Your Lease Legally?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               An early termination clause sets the rules for leaving before your lease ends. In
               Ontario, tenants have more rights to break a lease than many landlords let on — and
               large "lease-break fees" are often unenforceable.
@@ -159,13 +182,7 @@ export default function EarlyTerminationPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What does an early termination clause do?", a: "An early termination clause describes what happens if a tenant breaks the lease before the end date. Under Canadian provincial law, landlords can only claim their actual losses (unpaid rent minus what they earn from re-renting the unit) — flat penalty clauses are generally void." },
-                  { q: "Can I assign my lease instead of breaking it?", a: "Yes. Most Canadian provinces allow tenants to assign a lease to a qualified new tenant with the landlord's consent. Assignment eliminates your ongoing liability, unlike subletting where you remain responsible." },
-                  { q: "What happens to my deposit if I leave early?", a: "Your deposit may be applied to unpaid rent for the period while the unit sits vacant. Once the landlord finds a new tenant, your liability ends. Any remaining deposit should be returned with an itemized deduction statement." },
-                  { q: "Is there a standard early termination fee in Canada?", a: "No standard fee exists. Provincial law generally caps recovery at the landlord's actual losses. A flat fee of '2 months' rent' written into a lease is typically unenforceable if the landlord re-rents quickly." },
-                  { q: "Can a tenant break a lease due to domestic violence?", a: "Yes. Most Canadian provinces have special provisions allowing survivors of domestic violence to break a lease with shorter notice (often 28 days) by providing documentation. Ontario, BC, Alberta, and others have these protections." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
 

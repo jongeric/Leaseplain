@@ -70,6 +70,14 @@ const questions = [
   "If my payment bounces, what is the NSF fee you charge, and is it in writing?",
 ];
 
+const faqs = [
+  { q: "Are late fees legal in Canadian leases?", a: "Late fees are explicitly prohibited in Ontario (the RTA bans illegal charges). In BC and other provinces, the rules are stricter — any penalty fee not permitted by the tenancy act is generally void. Check your province's law before paying a late fee." },
+  { q: "What can a landlord do if I pay rent late in Canada?", a: "The landlord can issue an eviction notice for non-payment of rent. In Ontario, this is an N4 notice, giving tenants 14 days to pay the arrears and void the notice. Most provinces have similar processes with a grace period." },
+  { q: "How much late fee is too much?", a: "In provinces that do permit late fees (a minority), courts will not enforce punitive or exorbitant fees. A reasonable administrative charge proportional to actual administrative cost may be enforced; large percentage-based fees typically will not be." },
+  { q: "Can a landlord charge NSF fees for a bounced cheque?", a: "In Ontario, landlords may charge up to $20 for a returned cheque under the RTA — this is a statutory maximum, not a pass-through of actual bank fees." },
+  { q: "What should I do if my lease includes a late fee clause?", a: "First, check whether late fees are permitted in your province. If they are not (as in Ontario), the clause is void even though you signed the lease. If you are charged an illegal late fee, dispute it with your province's tenancy tribunal." },
+];
+
 export default function LateFeesPage() {
   return (
     <div className="flex flex-col min-h-full">
@@ -78,6 +86,21 @@ export default function LateFeesPage() {
         { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
         { name: "Late Fees", href: "https://leaseplain.com/lease-clause/late-fees" },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "<") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -95,7 +118,7 @@ export default function LateFeesPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Late Fee Clause: Are Late Rent Fees Actually Legal in Ontario?
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
               Many leases include late fee clauses — but in Ontario, most of them are not legally
               enforceable. Here's what the law actually says about charging extra for late rent.
             </p>
@@ -186,13 +209,7 @@ export default function LateFeesPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Are late fees legal in Canadian leases?", a: "Late fees are explicitly prohibited in Ontario (the RTA bans illegal charges). In BC and other provinces, the rules are stricter — any penalty fee not permitted by the tenancy act is generally void. Check your province's law before paying a late fee." },
-                  { q: "What can a landlord do if I pay rent late in Canada?", a: "The landlord can issue an eviction notice for non-payment of rent. In Ontario, this is an N4 notice, giving tenants 14 days to pay the arrears and void the notice. Most provinces have similar processes with a grace period." },
-                  { q: "How much late fee is too much?", a: "In provinces that do permit late fees (a minority), courts will not enforce punitive or exorbitant fees. A reasonable administrative charge proportional to actual administrative cost may be enforced; large percentage-based fees typically will not be." },
-                  { q: "Can a landlord charge NSF fees for a bounced cheque?", a: "Landlords can generally charge the actual bank NSF fee passed on to them. They cannot mark up this fee or add penalties beyond the actual bank cost. This varies by province — review your lease and provincial rules." },
-                  { q: "What should I do if my lease includes a late fee clause?", a: "First, check whether late fees are permitted in your province. If they are not (as in Ontario), the clause is void even though you signed the lease. If you are charged an illegal late fee, dispute it with your province's tenancy tribunal." }
-                ]} />
+                <FAQAccordion items={faqs} />
               </div>
 
 

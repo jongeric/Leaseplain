@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const vitalServices = [
-  "Heat (at a minimum temperature set by local bylaws — typically 21°C from September to June)",
+  "Heat (minimum 20°C from September 1 to June 15 under provincial rules; Toronto's bylaw requires 21°C from October 1 to May 15)",
   "Electricity and hydro (if included in the rent)",
   "Hot and cold running water",
   "Fuel (natural gas, propane, or oil if the unit relies on it for heat or hot water)",
@@ -71,6 +71,26 @@ export default function UtilitiesClausePage() {
         { name: "Utilities", href: "https://leaseplain.com/lease-clause/utilities" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { q: "What utilities should be included in a Canadian rental?", a: "There is no standard requirement — it depends on what is negotiated in the lease. Common arrangements include all-inclusive (heat, water, electricity), or heat and water included with tenant paying electricity. Always clarify in writing before signing." },
+              { q: "Can a landlord pass on utility cost increases to tenants mid-lease?", a: "Only if the lease specifically provides for it. If utilities are included in a fixed rent, the landlord cannot suddenly charge extra for rising costs without a proper rent increase following provincial notice rules." },
+              { q: "What happens if utilities are cut off in my rental?", a: "Cutting off utilities is illegal in most Canadian provinces. File an emergency application with your province's tenancy tribunal. In Ontario, tenants can apply for a T2 order for interference with vital services, which can result in fines and rent abatements." },
+              { q: "Am I responsible for utility setup if not included in rent?", a: "If the lease states utilities are the tenant's responsibility, you need to set up accounts directly with utility providers. Ensure this is clear in the lease before signing — ask who sets up the accounts and whether any deposits are required." },
+              { q: "What are submetered utilities?", a: "Some newer buildings use submetering, where each unit has its own meter and tenants pay only for their actual consumption. Submetered arrangements must be disclosed before signing the lease and are subject to specific provincial regulations." }
+            ].map(faq => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a }
+            }))
+          }).replace(/</g, "<")
+        }}
+      />
       <Navbar />
 
       <main>
@@ -197,7 +217,7 @@ export default function UtilitiesClausePage() {
                   { q: "Can a landlord pass on utility cost increases to tenants mid-lease?", a: "Only if the lease specifically provides for it. If utilities are included in a fixed rent, the landlord cannot suddenly charge extra for rising costs without a proper rent increase following provincial notice rules." },
                   { q: "What happens if utilities are cut off in my rental?", a: "Cutting off utilities is illegal in most Canadian provinces. File an emergency application with your province's tenancy tribunal. In Ontario, tenants can apply for a T2 order for interference with vital services, which can result in fines and rent abatements." },
                   { q: "Am I responsible for utility setup if not included in rent?", a: "If the lease states utilities are the tenant's responsibility, you need to set up accounts directly with utility providers. Ensure this is clear in the lease before signing — ask who sets up the accounts and whether any deposits are required." },
-                  { q: "What are submetered utilities?", a: "Some newer buildings use subbmetering, where each unit has its own meter and tenants pay only for their actual consumption. Submetered arrangements must be disclosed before signing the lease and are subject to specific provincial regulations." }
+                  { q: "What are submetered utilities?", a: "Some newer buildings use submetering, where each unit has its own meter and tenants pay only for their actual consumption. Submetered arrangements must be disclosed before signing the lease and are subject to specific provincial regulations." }
                 ]} />
               </div>
 

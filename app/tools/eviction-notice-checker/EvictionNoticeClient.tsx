@@ -26,7 +26,7 @@ const PROVINCE_DATA: Record<string, ProvinceData> = {
       {
         label: "N4 – Non-payment of rent",
         requiredDays: 14,
-        note: "Landlord must give 14 days' notice. Tenant can void the notice by paying all arrears within 7 days of receiving it.",
+        note: "Landlord must give 14 days' notice. Tenant can void the notice by paying all arrears within 14 days of receiving it.",
       },
       {
         label: "N5 – Damage or disturbance (first notice)",

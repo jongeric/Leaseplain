@@ -16,12 +16,15 @@ export default function DepositCalculatorClient() {
   const [result, setResult] = useState<null | {
     shouldReturn: number;
     months: number;
-    returnDeadlineDays: number;
+    returnDeadlineDays: number | null;
+    returnNote: string | null;
     warning: string | null;
   }>(null);
 
-  const RETURN_DEADLINES: Record<string, number> = {
-    ON: 21, BC: 15, AB: 10, QC: 3, MB: 14, SK: 7, NS: 10, NB: 7, PE: 10, NL: 14,
+  const RETURN_DEADLINES: Record<string, { days: number | null; note?: string }> = {
+    ON: { days: null, note: "Ontario LMR deposit is applied to last month's rent — no separate return deadline" },
+    BC: { days: 15 }, AB: { days: 10 }, QC: { days: 3 }, MB: { days: 14 },
+    SK: { days: 7 }, NS: { days: 10 }, NB: { days: 7 }, PE: { days: 10 }, NL: { days: 14 },
   };
 
   const calculate = () => {
@@ -39,7 +42,9 @@ export default function DepositCalculatorClient() {
       );
     }
 
-    const returnDeadlineDays = RETURN_DEADLINES[province] ?? 21;
+    const deadlineEntry = RETURN_DEADLINES[province] ?? { days: 21 };
+    const returnDeadlineDays = deadlineEntry.days ?? null;
+    const returnNote = deadlineEntry.note ?? null;
     let warning: string | null = null;
 
     if (claims > dep) {
@@ -48,7 +53,7 @@ export default function DepositCalculatorClient() {
       warning = "Large deductions after a long tenancy may include normal wear and tear, which landlords cannot legally charge for. Request an itemized list.";
     }
 
-    setResult({ shouldReturn, months, returnDeadlineDays, warning });
+    setResult({ shouldReturn, months, returnDeadlineDays, returnNote, warning });
   };
 
   return (
@@ -151,8 +156,16 @@ export default function DepositCalculatorClient() {
 
                 {province && (
                   <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
-                    <strong>Return deadline ({province}):</strong> Your landlord must return the deposit within{" "}
-                    <strong>{result.returnDeadlineDays} days</strong> of your move-out date, along with an itemized statement of any deductions.
+                    {result.returnDeadlineDays !== null ? (
+                      <>
+                        <strong>Return deadline ({province}):</strong> Your landlord must return the deposit within{" "}
+                        <strong>{result.returnDeadlineDays} days</strong> of your move-out date, along with an itemized statement of any deductions.
+                      </>
+                    ) : (
+                      <>
+                        <strong>Return deadline ({province}):</strong> {result.returnNote}
+                      </>
+                    )}
                   </div>
                 )}
 

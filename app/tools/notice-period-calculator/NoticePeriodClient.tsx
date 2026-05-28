@@ -75,8 +75,8 @@ const NOTICE_DATA: Record<string, Record<NoticeType, NoticeInfo>> = {
       nonComplianceNote: "Insufficient notice may result in the tenant owing rent for the remaining notice period.",
     },
     "landlord-personal": {
-      period: "4 months",
-      legalBasis: "Residential Tenancy Act, s. 49 — for landlord or close family member use; 4 months notice required.",
+      period: "2 months",
+      legalBasis: "Residential Tenancy Act, s. 49 — landlord or close family member personal use requires 2 months notice. Demolition/renovation/conversion requires 4 months notice.",
       nonComplianceNote: "If the landlord does not occupy the unit, the tenant can apply for double the monthly rent as compensation.",
     },
     "eviction-nonpayment": {

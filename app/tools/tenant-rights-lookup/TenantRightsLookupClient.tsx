@@ -33,7 +33,7 @@ const PROVINCES: Record<string, ProvinceData> = {
     tribunal: "Landlord and Tenant Board (LTB)",
     tribunal_url: "ltb.gov.on.ca",
     deposit: "Last month's rent only (= 1 month rent, earns interest). No security deposit.",
-    rent_control: "2.5% guideline (2025). Units built after Nov 15, 2018 are exempt.",
+    rent_control: "2.1% guideline (2026). Units built after Nov 15, 2018 are exempt.",
     notice_rent_increase: "90 days written notice",
     notice_entry: "24 hours written notice",
     notice_eviction_nonpayment: "14 days (N4 form)",

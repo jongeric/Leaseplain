@@ -75,10 +75,10 @@ const PROVINCE_DATA: Record<string, ProvinceData> = {
     lastMonthDeposit: false,
     securityDepositCap: 1.0,
     securityDepositNote: "Capped at 1× monthly rent",
-    petDepositCap: null,
-    petDepositNote: "No separate pet deposit permitted in Saskatchewan",
+    petDepositCap: 0.5,
+    petDepositNote: "Pet deposit permitted up to half a month's rent if pets are allowed (Saskatchewan RTA, 2006 s.33)",
     notAllowed:
-      "Saskatchewan landlords cannot charge a last month's rent deposit or a separate pet deposit. The security deposit is capped at 1× monthly rent.",
+      "Saskatchewan landlords cannot charge a last month's rent deposit. The security deposit is capped at 1× monthly rent.",
   },
   NS: {
     firstMonth: true,

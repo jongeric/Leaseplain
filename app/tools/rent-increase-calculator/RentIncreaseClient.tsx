@@ -8,7 +8,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import Link from "next/link";
 
 const PROVINCE_LIMITS: Record<string, { year: number; limit: number | null; note: string }> = {
-  ON: { year: 2025, limit: 2.5, note: "Ontario Rent Increase Guideline" },
+  ON: { year: 2026, limit: 2.1, note: "Ontario Rent Increase Guideline" },
   BC: { year: 2025, limit: 3.0, note: "BC Allowable Rent Increase" },
   AB: { year: 2025, limit: null, note: "Alberta has no rent increase cap — any amount is legal with 3 months' notice" },
   QC: { year: 2025, limit: null, note: "Quebec uses a complex TAL formula — contact the TAL for your specific allowable amount" },

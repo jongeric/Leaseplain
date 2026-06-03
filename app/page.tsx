@@ -493,34 +493,34 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  href: "/blog/ontario-rent-increase-guideline-2026",
-                  title: "Ontario Rent Increase Guideline 2026",
-                  desc: "Ontario's 2026 rent increase guideline is 2.5%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline.",
+                  href: "/blog/first-apartment-checklist-canada",
+                  title: "First Apartment Checklist: 25 Things Before and After Signing",
+                  desc: "Moving into your first apartment in Canada? This complete checklist covers what to verify before signing, what to document at move-in, and your five key tenant rights.",
                 },
                 {
-                  href: "/blog/bc-rent-increase-2026",
-                  title: "BC Rent Increase Guideline 2026",
-                  desc: "BC's 2026 rent increase cap uses the CPI + 2% formula. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
+                  href: "/blog/n12-eviction-ontario",
+                  title: "N12 Eviction in Ontario: Your Rights (2026 Guide)",
+                  desc: "Received an N12 notice? You're entitled to one month's compensation, 60 days notice, and the right to dispute at the LTB. Here's everything you need to know.",
+                },
+                {
+                  href: "/blog/renoviction-canada-tenant-rights",
+                  title: "Renoviction in Canada: How to Fight Back",
+                  desc: "N13 notices (Ontario) and Four Month Notices (BC) can be challenged. Learn your right of first refusal, what makes a renoviction valid, and how to spot bad-faith evictions.",
+                },
+                {
+                  href: "/blog/above-guideline-rent-increase-ontario",
+                  title: "Above-Guideline Rent Increases in Ontario",
+                  desc: "Ontario landlords can apply to the LTB to raise rent above the 2.1% guideline — but only for specific reasons. Learn how AGIs work and how tenants can dispute them.",
+                },
+                {
+                  href: "/blog/landlord-selling-property-tenant-rights",
+                  title: "Landlord Selling the Property? Know Your Rights",
+                  desc: "Your lease survives a property sale in almost every Canadian province. Here's what your rights are in Ontario, BC, and Alberta when your landlord sells.",
                 },
                 {
                   href: "/blog/how-to-fight-an-illegal-eviction-ontario",
                   title: "How to Fight an Illegal Eviction in Ontario",
-                  desc: "Learn what makes an eviction notice invalid in Ontario, what N4/N12/N13 notices mean, how to file a T2 application at the LTB, and what bad-faith eviction means for tenants.",
-                },
-                {
-                  href: "/blog/security-deposit-rules-canada",
-                  title: "Security Deposit Rules Across Canada",
-                  desc: "Deposit rules vary dramatically across Canada — from no deposits at all in Quebec to one month's rent in Alberta. Here's a province-by-province breakdown with return deadlines.",
-                },
-                {
-                  href: "/blog/lease-red-flags-to-watch-for",
-                  title: "Lease Red Flags to Watch For",
-                  desc: "Some lease clauses look official but are actually unenforceable — or even illegal under Canadian provincial law. Here are 7 red flags to spot before you sign.",
-                },
-                {
-                  href: "/blog/moving-out-ontario-checklist",
-                  title: "Moving Out of Your Ontario Rental: A Complete Checklist",
-                  desc: "Moving out in Ontario requires 60 days proper notice, unit documentation, and knowing the LMR deposit rules. Follow this checklist to protect yourself and get your money back.",
+                  desc: "Not every eviction notice is valid. Learn what makes a notice invalid, your LTB rights, and how to file a T2 application for bad-faith eviction.",
                 },
               ].map((post) => (
                 <Link

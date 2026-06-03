@@ -23,10 +23,50 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/first-apartment-checklist-canada",
+    title: "First Apartment Checklist: 25 Things to Do Before and After Signing Your Lease",
+    excerpt:
+      "Moving into your first apartment in Canada? This complete checklist covers what to verify before signing, what to document at move-in, and your key rights as a new tenant.",
+    date: "May 20, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/above-guideline-rent-increase-ontario",
+    title: "Above-Guideline Rent Increases in Ontario: What They Are and How to Fight One",
+    excerpt:
+      "Ontario landlords can apply to the LTB to raise rent above the annual guideline — but only for specific reasons. Here's how AGIs work and how tenants can dispute them.",
+    date: "May 10, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/landlord-selling-property-tenant-rights",
+    title: "Landlord Selling the Property? Here's What Canadian Tenants Need to Know",
+    excerpt:
+      "Your lease survives a property sale in almost every Canadian province. Here's exactly what your rights are in Ontario, BC, and Alberta when your landlord sells.",
+    date: "May 1, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/n12-eviction-ontario",
+    title: "N12 Eviction in Ontario: Your Rights When a Landlord Wants Their Unit Back",
+    excerpt:
+      "Received an N12 notice? You are entitled to one month's compensation, 60 days notice, and the right to dispute at the LTB. Here's everything you need to know.",
+    date: "April 15, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/renoviction-canada-tenant-rights",
+    title: "Renoviction in Canada: How to Fight Back When Your Landlord Claims Renovations",
+    excerpt:
+      "N13 notices (Ontario) and Four Month Notices (BC) can be challenged. Learn your right of first refusal, what makes a renoviction valid, and how to spot bad-faith evictions.",
+    date: "April 20, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/ontario-rent-increase-guideline-2026",
     title: "Ontario Rent Increase Guideline 2026: What Tenants Need to Know",
     excerpt:
-      "Ontario's rent increase guideline for 2026 is set at 2.5%. Here's what that means for your rent, who is exempt, and what to do if your landlord goes over the limit.",
+      "Ontario's rent increase guideline for 2026 is 2.1%. Here's what that means for your rent, who is exempt from rent control, and what to do if your landlord exceeds the limit.",
     date: "January 15, 2026",
     category: "Ontario",
   },
@@ -34,7 +74,7 @@ const posts = [
     href: "/blog/bc-rent-increase-2026",
     title: "BC Rent Increase Limit 2026: Rules for BC Tenants",
     excerpt:
-      "British Columbia's 2026 rent increase cap is calculated using the CPI + 2% formula. Learn the rules, the required notice period, and how the RTB enforces limits.",
+      "BC's 2026 allowable rent increase is 3.0%. Learn the rules, the required 3-month notice period using RTB-7, and how the Residential Tenancy Branch enforces limits.",
     date: "February 1, 2026",
     category: "British Columbia",
   },

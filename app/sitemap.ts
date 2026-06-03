@@ -174,6 +174,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/blog/security-deposit-rules-canada",                0.8, "monthly"),
     url("/blog/lease-red-flags-to-watch-for",                 0.8, "monthly"),
     url("/blog/moving-out-ontario-checklist",                 0.8, "monthly"),
+    url("/blog/n12-eviction-ontario",                         0.8, "monthly"),
+    url("/blog/renoviction-canada-tenant-rights",             0.8, "monthly"),
+    url("/blog/landlord-selling-property-tenant-rights",      0.8, "monthly"),
+    url("/blog/above-guideline-rent-increase-ontario",        0.8, "monthly"),
+    url("/blog/first-apartment-checklist-canada",             0.8, "monthly"),
 
     // ── Company / utility ─────────────────────────────────────────────────────
     url("/faq",              0.6, "monthly"),

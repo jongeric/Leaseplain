@@ -179,6 +179,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/blog/landlord-selling-property-tenant-rights",      0.8, "monthly"),
     url("/blog/above-guideline-rent-increase-ontario",        0.8, "monthly"),
     url("/blog/first-apartment-checklist-canada",             0.8, "monthly"),
+    url("/blog/landlord-entry-notice-canada",                 0.8, "monthly"),
+    url("/blog/ontario-standard-lease-explained",             0.8, "monthly"),
+    url("/blog/month-to-month-vs-fixed-term-lease",           0.8, "monthly"),
+    url("/blog/landlord-repair-obligations-canada",           0.8, "monthly"),
 
     // ── Company / utility ─────────────────────────────────────────────────────
     url("/faq",              0.6, "monthly"),

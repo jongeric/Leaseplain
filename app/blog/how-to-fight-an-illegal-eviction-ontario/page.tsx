@@ -33,7 +33,40 @@ export const metadata: Metadata = {
   ],
 };
 
+const faqItems = [
+  {
+    q: "Can a landlord evict me without going to the LTB in Ontario?",
+    a: "No. A landlord cannot legally force you out of your home without an LTB eviction order, even after giving notice. Only a Sheriff can physically enforce an LTB order. If a landlord changes locks or removes your belongings without an order, that is an illegal eviction and grounds for a T2 application.",
+  },
+  {
+    q: "What happens if an eviction notice has errors on it?",
+    a: "Errors can make a notice invalid, but it depends on the nature and severity of the error. Material errors (wrong termination date, wrong form, wrong reason) typically void the notice. Minor clerical errors may not. If in doubt, use the LTB's dispute resolution process to raise the issue formally.",
+  },
+  {
+    q: "How long does the LTB eviction process take in Ontario?",
+    a: "LTB timelines vary considerably. For non-payment of rent (N4 pathway), hearings can be scheduled within 1–3 months. More complex matters like N12 bad-faith disputes can take 6–12 months or more given current LTB backlogs.",
+  },
+  {
+    q: "Do I have to move out after receiving an N12?",
+    a: "No, you do not have to move out simply because you received an N12. The landlord must still apply to the LTB for an eviction order, and you can attend the hearing to contest the notice. You should only vacate if the LTB issues an order against you.",
+  },
+  {
+    q: "Where can I get free help fighting an eviction in Ontario?",
+    a: "Community Legal Clinics across Ontario provide free legal advice to lower-income tenants facing eviction. Tenant Duty Counsel is available at LTB hearings. You can also call the LTB directly at 1-888-332-3234 for process information.",
+  },
+];
+
 export default function FightIllegalEvictionOntarioPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
       <ArticleSchema
@@ -41,7 +74,7 @@ export default function FightIllegalEvictionOntarioPage() {
         description="Learn what makes an eviction notice invalid in Ontario, what N4/N12/N13 notices mean, how to file a T2 application at the LTB, and what bad-faith eviction means for tenants."
         url="https://leaseplain.com/blog/how-to-fight-an-illegal-eviction-ontario"
         datePublished="2026-02-15"
-        dateModified="2026-02-15"
+        dateModified="2026-06-05"
         keywords={[
           "illegal eviction ontario",
           "fight eviction ontario",
@@ -55,6 +88,24 @@ export default function FightIllegalEvictionOntarioPage() {
         { name: "Blog", href: "https://leaseplain.com/blog" },
         { name: "How to Fight an Illegal Eviction", href: "https://leaseplain.com/blog/how-to-fight-an-illegal-eviction-ontario" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog/how-to-fight-an-illegal-eviction-ontario",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".speakable-summary"],
+            },
+          }).replace(/</g, "<"),
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -85,7 +136,7 @@ export default function FightIllegalEvictionOntarioPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 How to Fight an Illegal Eviction in Ontario
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Receiving an eviction notice is alarming — but not every notice is valid. Many
                 notices contain errors that make them unenforceable, and tenants have strong
                 legal protections at the Landlord and Tenant Board (LTB).
@@ -202,28 +253,7 @@ export default function FightIllegalEvictionOntarioPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                  <FAQAccordion items={[
-                    {
-                      q: "Can a landlord evict me without going to the LTB in Ontario?",
-                      a: "No. A landlord cannot legally force you out of your home without an LTB eviction order, even after giving notice. Only a Sheriff can physically enforce an LTB order. If a landlord changes locks or removes your belongings without an order, that is an illegal eviction and grounds for a T2 application.",
-                    },
-                    {
-                      q: "What happens if an eviction notice has errors on it?",
-                      a: "Errors can make a notice invalid, but it depends on the nature and severity of the error. Material errors (wrong termination date, wrong form, wrong reason) typically void the notice. Minor clerical errors may not. If in doubt, use the LTB's dispute resolution process to raise the issue formally.",
-                    },
-                    {
-                      q: "How long does the LTB eviction process take in Ontario?",
-                      a: "LTB timelines vary considerably. For non-payment of rent (N4 pathway), hearings can be scheduled within 1–3 months. More complex matters like N12 bad-faith disputes can take 6–12 months or more given current LTB backlogs.",
-                    },
-                    {
-                      q: "Do I have to move out after receiving an N12?",
-                      a: "No, you do not have to move out simply because you received an N12. The landlord must still apply to the LTB for an eviction order, and you can attend the hearing to contest the notice. You should only vacate if the LTB issues an order against you.",
-                    },
-                    {
-                      q: "Where can I get free help fighting an eviction in Ontario?",
-                      a: "Community Legal Clinics across Ontario provide free legal advice to lower-income tenants facing eviction. Tenant Duty Counsel is available at LTB hearings. You can also call the LTB directly at 1-888-332-3234 for process information.",
-                    },
-                  ]} />
+                  <FAQAccordion items={faqItems} />
                 </div>
               </div>
 

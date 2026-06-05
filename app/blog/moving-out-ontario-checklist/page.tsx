@@ -76,7 +76,40 @@ const checklistItems = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "How much notice do I need to give to move out in Ontario?",
+    a: "At least 60 days written notice using LTB Form N9, expiring on the last day of a rental period (usually the last day of the month).",
+  },
+  {
+    q: "Can my landlord keep my last month's rent deposit for cleaning or damage?",
+    a: "No. In Ontario, the last month's rent deposit can only be applied to rent — not cleaning, damage, or any other expense. If a landlord deducts for these reasons, you can file a T1 application with the LTB.",
+  },
+  {
+    q: "Do I have to pay rent for my last month if I paid a deposit?",
+    a: "No. Your last month's rent deposit is applied to your final month. You should not pay rent for that month — your deposit covers it.",
+  },
+  {
+    q: "What is Form N9 in Ontario?",
+    a: "Form N9 is the official LTB form a tenant must use to give notice of ending their tenancy. Informal notice (text, email, verbal) is not sufficient in Ontario.",
+  },
+  {
+    q: "What if my landlord won't accept my notice or give me a move-out inspection?",
+    a: "Document everything in writing. In Ontario, landlords are required to offer a move-out inspection. If they refuse, conduct your own inspection with dated photos and video. If disputes arise, the LTB can resolve them.",
+  },
+];
+
 export default function MovingOutOntarioChecklistPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
       <ArticleSchema
@@ -84,7 +117,7 @@ export default function MovingOutOntarioChecklistPage() {
         description="Moving out in Ontario involves more steps than most tenants realize. Follow this checklist to serve proper notice, document the unit, and protect your last month's rent deposit."
         url="https://leaseplain.com/blog/moving-out-ontario-checklist"
         datePublished="2026-04-01"
-        dateModified="2026-04-01"
+        dateModified="2026-06-05"
         keywords={[
           "moving out Ontario tenant checklist",
           "Ontario tenant notice to vacate",
@@ -96,6 +129,24 @@ export default function MovingOutOntarioChecklistPage() {
         { name: "Blog", href: "https://leaseplain.com/blog" },
         { name: "Moving Out Ontario Checklist", href: "https://leaseplain.com/blog/moving-out-ontario-checklist" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog/moving-out-ontario-checklist",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".speakable-summary"],
+            },
+          }).replace(/</g, "<"),
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -126,7 +177,7 @@ export default function MovingOutOntarioChecklistPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 Moving Out in Ontario: Tenant Checklist for Getting Your Deposit Back
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Moving out in Ontario involves more than packing boxes. You need to serve proper
                 written notice on the right form, conduct a move-out inspection, and understand
                 exactly how your last month&apos;s rent deposit works — or risk leaving money behind.
@@ -224,28 +275,7 @@ export default function MovingOutOntarioChecklistPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                  <FAQAccordion items={[
-                    {
-                      q: "How much notice do I need to give to move out in Ontario?",
-                      a: "At least 60 days written notice using LTB Form N9, expiring on the last day of a rental period (usually the last day of the month).",
-                    },
-                    {
-                      q: "Can my landlord keep my last month's rent deposit for cleaning or damage?",
-                      a: "No. In Ontario, the last month's rent deposit can only be applied to rent — not cleaning, damage, or any other expense. If a landlord deducts for these reasons, you can file a T1 application with the LTB.",
-                    },
-                    {
-                      q: "Do I have to pay rent for my last month if I paid a deposit?",
-                      a: "No. Your last month's rent deposit is applied to your final month. You should not pay rent for that month — your deposit covers it.",
-                    },
-                    {
-                      q: "What is Form N9 in Ontario?",
-                      a: "Form N9 is the official LTB form a tenant must use to give notice of ending their tenancy. Informal notice (text, email, verbal) is not sufficient in Ontario.",
-                    },
-                    {
-                      q: "What if my landlord won't accept my notice or give me a move-out inspection?",
-                      a: "Document everything in writing. In Ontario, landlords are required to offer a move-out inspection. If they refuse, conduct your own inspection with dated photos and video. If disputes arise, the LTB can resolve them.",
-                    },
-                  ]} />
+                  <FAQAccordion items={faqItems} />
                 </div>
               </div>
 

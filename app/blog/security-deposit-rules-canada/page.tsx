@@ -45,7 +45,40 @@ const provinceRules = [
   { province: "Newfoundland & Labrador", max: "75% of one month's rent", petDeposit: "No specific provision", returnDeadline: "15 days after tenancy end", interest: "No" },
 ];
 
+const faqItems = [
+  {
+    q: "Can a landlord charge a damage deposit in Ontario?",
+    a: "No. Ontario landlords can only collect a last month's rent deposit. A separate damage deposit is illegal under the Residential Tenancies Act. If charged, it must be returned.",
+  },
+  {
+    q: "Can a Quebec landlord charge any deposit at all?",
+    a: "No. Quebec law prohibits landlords from collecting security deposits, damage deposits, pet deposits, or any other form of advance payment beyond the first month's rent.",
+  },
+  {
+    q: "What happens if a landlord doesn't return my deposit on time?",
+    a: "You can apply to your provincial tenancy tribunal. In Ontario, file a T1 with the LTB. In BC, apply to the RTB. In Alberta, use the RTDRS. Penalties for late return vary by province.",
+  },
+  {
+    q: "Does my security deposit earn interest?",
+    a: "In Ontario, BC, Manitoba, PEI, Alberta, and Nova Scotia, deposits must be held and returned with interest. In Saskatchewan, New Brunswick, and Newfoundland, no interest is required.",
+  },
+  {
+    q: "Can a landlord use my deposit to cover unpaid rent in BC?",
+    a: "No. In BC, a security deposit cannot be applied to unpaid rent — it can only be used for damage claims. Unpaid rent must be pursued separately through the RTB.",
+  },
+];
+
 export default function SecurityDepositRulesCanadaPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
       <ArticleSchema
@@ -53,7 +86,7 @@ export default function SecurityDepositRulesCanadaPage() {
         description="Deposit rules vary dramatically across Canada — from no deposits at all in Quebec to one month's rent in Alberta. Here's a province-by-province breakdown of what landlords can and cannot charge."
         url="https://leaseplain.com/blog/security-deposit-rules-canada"
         datePublished="2026-03-01"
-        dateModified="2026-03-01"
+        dateModified="2026-06-05"
         keywords={[
           "security deposit Canada",
           "security deposit rules by province",
@@ -65,6 +98,24 @@ export default function SecurityDepositRulesCanadaPage() {
         { name: "Blog", href: "https://leaseplain.com/blog" },
         { name: "Security Deposit Rules by Province", href: "https://leaseplain.com/blog/security-deposit-rules-canada" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog/security-deposit-rules-canada",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".speakable-summary"],
+            },
+          }).replace(/</g, "<"),
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -95,7 +146,7 @@ export default function SecurityDepositRulesCanadaPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 Security Deposit Rules by Province: What Can Your Landlord Actually Charge?
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Security deposit rules across Canada vary more than most renters realize. Quebec
                 prohibits them entirely. Ontario only allows last month&apos;s rent. Alberta permits
                 up to one month. Here is exactly what landlords can legally charge in every province
@@ -195,28 +246,7 @@ export default function SecurityDepositRulesCanadaPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                  <FAQAccordion items={[
-                    {
-                      q: "Can a landlord charge a damage deposit in Ontario?",
-                      a: "No. Ontario landlords can only collect a last month's rent deposit. A separate damage deposit is illegal under the Residential Tenancies Act. If charged, it must be returned.",
-                    },
-                    {
-                      q: "Can a Quebec landlord charge any deposit at all?",
-                      a: "No. Quebec law prohibits landlords from collecting security deposits, damage deposits, pet deposits, or any other form of advance payment beyond the first month's rent.",
-                    },
-                    {
-                      q: "What happens if a landlord doesn't return my deposit on time?",
-                      a: "You can apply to your provincial tenancy tribunal. In Ontario, file a T1 with the LTB. In BC, apply to the RTB. In Alberta, use the RTDRS. Penalties for late return vary by province.",
-                    },
-                    {
-                      q: "Does my security deposit earn interest?",
-                      a: "In Ontario, BC, Manitoba, PEI, Alberta, and Nova Scotia, deposits must be held and returned with interest. In Saskatchewan, New Brunswick, and Newfoundland, no interest is required.",
-                    },
-                    {
-                      q: "Can a landlord use my deposit to cover unpaid rent in BC?",
-                      a: "No. In BC, a security deposit cannot be applied to unpaid rent — it can only be used for damage claims. Unpaid rent must be pursued separately through the RTB.",
-                    },
-                  ]} />
+                  <FAQAccordion items={faqItems} />
                 </div>
               </div>
 

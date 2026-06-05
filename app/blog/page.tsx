@@ -23,6 +23,38 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/landlord-repair-obligations-canada",
+    title: "How to Get Your Landlord to Fix Something: Repair Rights Across Canada",
+    excerpt:
+      "Your landlord is legally required to maintain your rental unit. Here's exactly how to escalate a repair request in Ontario, BC, Alberta, and Quebec — and what to do if they won't act.",
+    date: "June 5, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/month-to-month-vs-fixed-term-lease",
+    title: "Month-to-Month vs Fixed-Term Lease in Canada: Key Differences and Tenant Rights",
+    excerpt:
+      "Your fixed-term lease expiring does NOT mean you have to move out. Here's how Ontario's RTA s.38 auto-conversion works, what notice tenants need to give, and which lease type is better for you.",
+    date: "June 5, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/ontario-standard-lease-explained",
+    title: "Ontario Standard Lease Explained: What Every Section of Form 2229E Actually Means",
+    excerpt:
+      "Ontario's mandatory standard lease has 17 sections. Here's a plain-English breakdown of each one — including what landlords can add in Section 15 and what happens if they don't use the form.",
+    date: "June 5, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/landlord-entry-notice-canada",
+    title: "Can a Landlord Enter Without Notice in Canada? Your Right to Privacy",
+    excerpt:
+      "In Ontario, BC, Alberta, and Quebec, landlords must give 24 hours written notice before entering your unit — except in genuine emergencies. Here's what counts and what to do if they don't comply.",
+    date: "June 5, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/first-apartment-checklist-canada",
     title: "First Apartment Checklist: 25 Things to Do Before and After Signing Your Lease",
     excerpt:

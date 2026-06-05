@@ -32,7 +32,40 @@ export const metadata: Metadata = {
   ],
 };
 
+const faqItems = [
+  {
+    q: "What is Ontario's rent increase guideline for 2026?",
+    a: "The Ontario rent increase guideline for 2026 is 2.1%. Landlords of units subject to rent control cannot raise rent by more than this percentage in 2026 without LTB approval.",
+  },
+  {
+    q: "How much notice must a landlord give before raising rent in Ontario?",
+    a: "A landlord must provide at least 90 days written notice before a rent increase takes effect. The notice should be given on LTB Form N1.",
+  },
+  {
+    q: "Is my new apartment subject to rent control in Ontario?",
+    a: "If your unit was first occupied for residential purposes after November 15, 2018, it is exempt from Ontario's rent control guideline. If it was first occupied before that date, the guideline applies.",
+  },
+  {
+    q: "Can my landlord raise rent by more than 2.1% in 2026?",
+    a: "For units subject to rent control, no — not without LTB approval for an above-guideline increase. The 2026 guideline is 2.1%. For exempt units (first occupied after November 15, 2018), there is no cap on the percentage, but proper notice must still be given.",
+  },
+  {
+    q: "What if I already paid an illegal rent increase?",
+    a: "You can file a T1 application with the LTB to recover money paid above the guideline. There are deadlines for doing so, so act promptly.",
+  },
+];
+
 export default function OntarioRentIncrease2026Page() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
       <ArticleSchema
@@ -40,7 +73,7 @@ export default function OntarioRentIncrease2026Page() {
         description="Ontario's 2026 rent increase guideline is 2.1%. Learn who is exempt, how to check if your increase is valid, what Form N1 means, and what to do if your landlord exceeds the guideline."
         url="https://leaseplain.com/blog/ontario-rent-increase-guideline-2026"
         datePublished="2026-01-15"
-        dateModified="2026-01-15"
+        dateModified="2026-06-05"
         keywords={[
           "ontario rent increase 2026",
           "ontario rent guideline 2026",
@@ -54,6 +87,24 @@ export default function OntarioRentIncrease2026Page() {
         { name: "Blog", href: "https://leaseplain.com/blog" },
         { name: "Ontario Rent Increase Guideline 2026", href: "https://leaseplain.com/blog/ontario-rent-increase-guideline-2026" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog/ontario-rent-increase-guideline-2026",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".speakable-summary"],
+            },
+          }).replace(/</g, "<"),
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -84,7 +135,7 @@ export default function OntarioRentIncrease2026Page() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 Ontario Rent Increase Guideline 2026: What Tenants Need to Know
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Ontario&apos;s rent increase guideline for 2026 is set at 2.1%. If your landlord
                 has given you an increase notice, here is how to check whether it is valid — and
                 what your options are if it is not.
@@ -204,28 +255,7 @@ export default function OntarioRentIncrease2026Page() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                  <FAQAccordion items={[
-                    {
-                      q: "What is Ontario's rent increase guideline for 2026?",
-                      a: "The Ontario rent increase guideline for 2026 is 2.1%. Landlords of units subject to rent control cannot raise rent by more than this percentage in 2026 without LTB approval.",
-                    },
-                    {
-                      q: "How much notice must a landlord give before raising rent in Ontario?",
-                      a: "A landlord must provide at least 90 days written notice before a rent increase takes effect. The notice should be given on LTB Form N1.",
-                    },
-                    {
-                      q: "Is my new apartment subject to rent control in Ontario?",
-                      a: "If your unit was first occupied for residential purposes after November 15, 2018, it is exempt from Ontario's rent control guideline. If it was first occupied before that date, the guideline applies.",
-                    },
-                    {
-                      q: "Can my landlord raise rent by more than 2.1% in 2026?",
-                      a: "For units subject to rent control, no — not without LTB approval for an above-guideline increase. The 2026 guideline is 2.1%. For exempt units (first occupied after November 15, 2018), there is no cap on the percentage, but proper notice must still be given.",
-                    },
-                    {
-                      q: "What if I already paid an illegal rent increase?",
-                      a: "You can file a T1 application with the LTB to recover money paid above the guideline. There are deadlines for doing so, so act promptly.",
-                    },
-                  ]} />
+                  <FAQAccordion items={faqItems} />
                 </div>
               </div>
 

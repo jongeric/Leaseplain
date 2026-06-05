@@ -98,7 +98,40 @@ const redFlags = [
   },
 ];
 
+const faqItems = [
+  {
+    q: "What makes a lease clause illegal in Canada?",
+    a: "A clause is illegal if it conflicts with your province's residential tenancy legislation. The Residential Tenancies Act (or equivalent) in each province sets minimum rights that cannot be waived. Any clause that takes away those rights — even if signed — is void.",
+  },
+  {
+    q: "Can I still be forced to follow an illegal clause?",
+    a: "A landlord cannot legally enforce a void clause, but they may try to. If a landlord threatens action based on an illegal clause, you can refer the matter to your provincial tenancy tribunal (LTB in Ontario, RTB in BC, etc.) which can issue an order.",
+  },
+  {
+    q: "Should I still sign a lease with red flag clauses?",
+    a: "If the red flag clauses are void under provincial law, you are not bound by them even if you sign. However, it is a warning sign about the landlord's approach. Try to negotiate removal of the clauses, or at minimum document that you signed under protest.",
+  },
+  {
+    q: "Are late fees legal in Ontario?",
+    a: "No. Ontario's Residential Tenancies Act prohibits landlords from charging late payment fees. Any lease clause imposing them is void and unenforceable.",
+  },
+  {
+    q: "How can I check if my lease has red flags?",
+    a: "Use LeasePlain's Clause Red Flag Scanner to paste individual clauses, or upload your entire lease to the AI analyzer for a full review flagging potential violations of your provincial tenant rights.",
+  },
+];
+
 export default function LeaseRedFlagsPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
       <ArticleSchema
@@ -106,7 +139,7 @@ export default function LeaseRedFlagsPage() {
         description="Some lease clauses look official but are actually unenforceable — or even illegal under Canadian provincial law. Here are 7 red flags to spot before you sign."
         url="https://leaseplain.com/blog/lease-red-flags-to-watch-for"
         datePublished="2026-03-15"
-        dateModified="2026-03-15"
+        dateModified="2026-06-05"
         keywords={[
           "lease red flags Canada",
           "illegal lease clauses Ontario",
@@ -118,6 +151,24 @@ export default function LeaseRedFlagsPage() {
         { name: "Blog", href: "https://leaseplain.com/blog" },
         { name: "7 Lease Red Flags", href: "https://leaseplain.com/blog/lease-red-flags-to-watch-for" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://leaseplain.com/blog/lease-red-flags-to-watch-for",
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: ["h1", ".speakable-summary"],
+            },
+          }).replace(/</g, "<"),
+        }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -148,7 +199,7 @@ export default function LeaseRedFlagsPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 7 Lease Red Flags Every Canadian Renter Should Know Before Signing
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Some lease clauses look official but are actually unenforceable — or even illegal —
                 under Canadian provincial tenancy law. Knowing these red flags before you sign could
                 save you from a landlord who tries to enforce a clause that was never valid.
@@ -219,28 +270,7 @@ export default function LeaseRedFlagsPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                  <FAQAccordion items={[
-                    {
-                      q: "What makes a lease clause illegal in Canada?",
-                      a: "A clause is illegal if it conflicts with your province's residential tenancy legislation. The Residential Tenancies Act (or equivalent) in each province sets minimum rights that cannot be waived. Any clause that takes away those rights — even if signed — is void.",
-                    },
-                    {
-                      q: "Can I still be forced to follow an illegal clause?",
-                      a: "A landlord cannot legally enforce a void clause, but they may try to. If a landlord threatens action based on an illegal clause, you can refer the matter to your provincial tenancy tribunal (LTB in Ontario, RTB in BC, etc.) which can issue an order.",
-                    },
-                    {
-                      q: "Should I still sign a lease with red flag clauses?",
-                      a: "If the red flag clauses are void under provincial law, you are not bound by them even if you sign. However, it is a warning sign about the landlord's approach. Try to negotiate removal of the clauses, or at minimum document that you signed under protest.",
-                    },
-                    {
-                      q: "Are late fees legal in Ontario?",
-                      a: "No. Ontario's Residential Tenancies Act prohibits landlords from charging late payment fees. Any lease clause imposing them is void and unenforceable.",
-                    },
-                    {
-                      q: "How can I check if my lease has red flags?",
-                      a: "Use LeasePlain's Clause Red Flag Scanner to paste individual clauses, or upload your entire lease to the AI analyzer for a full review flagging potential violations of your provincial tenant rights.",
-                    },
-                  ]} />
+                  <FAQAccordion items={faqItems} />
                 </div>
               </div>
 

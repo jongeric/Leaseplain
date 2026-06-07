@@ -668,6 +668,10 @@ export default function FirstApartmentChecklistCanadaPage() {
                         label: "Move-In Cost Calculator",
                         href: "/tools/move-in-cost-calculator",
                       },
+                      {
+                        label: "Security Deposit Return Calculator",
+                        href: "/tools/deposit-calculator",
+                      },
                       { label: "Lease Red Flags", href: "/resources/lease-red-flags" },
                       {
                         label: "Questions to Ask Before Signing",

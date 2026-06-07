@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Estimate the Cost of Breaking Your Lease",
+  "description": "Use LeasePlain's Lease Break Cost Estimator to estimate your financial exposure if you need to end a fixed-term lease early, province by province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Choose your province so the estimator can apply the correct rules for early termination and a landlord's duty to re-rent." },
+    { "@type": "HowToStep", "position": 2, "name": "Enter your lease details", "text": "Provide your monthly rent and how many months remain on your fixed-term lease." },
+    { "@type": "HowToStep", "position": 3, "name": "Review your estimated exposure", "text": "See an estimate of what you may owe if you break your lease early, along with your rights — such as your landlord's legal duty to find a new tenant and minimize your costs." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -45,6 +57,7 @@ export default function LeaseBreakCalculatorPage() {
         { name: "Lease Break Calculator", href: "https://leaseplain.com/tools/lease-break-calculator" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <LeaseBreakClient />
     </>
   );

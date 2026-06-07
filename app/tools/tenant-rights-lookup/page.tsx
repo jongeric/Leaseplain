@@ -27,6 +27,18 @@ const speakableSchema = {
   "url": "https://leaseplain.com/tools/tenant-rights-lookup",
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Look Up Tenant Rights in Your Province",
+  "description": "Use LeasePlain's Tenant Rights Lookup to get an instant reference card covering deposits, rent control, notice periods, and tribunal contacts for any Canadian province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Choose the province you live in or are renting in from the list of all 10 Canadian provinces." },
+    { "@type": "HowToStep", "position": 2, "name": "View your reference card", "text": "Instantly see a summary of key tenant protections — deposit limits, rent control rules, required notice periods, and how to file a dispute." },
+    { "@type": "HowToStep", "position": 3, "name": "Use the tribunal links", "text": "Follow direct links to your province's tenancy tribunal (such as the LTB or RTB) to file an application or get more help." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -54,6 +66,7 @@ export default function TenantRightsLookupPage() {
         { name: "Tenant Rights Lookup", href: "https://leaseplain.com/tools/tenant-rights-lookup" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
       <TenantRightsLookupClient />
     </>

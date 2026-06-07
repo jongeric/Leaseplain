@@ -325,7 +325,8 @@ export default function OntarioStandardLeaseExplainedPage() {
                       { label: "Ontario Tenant Rights", href: "/tenant-rights/ontario" },
                       { label: "Lease Red Flags to Watch For", href: "/blog/lease-red-flags-to-watch-for" },
                       { label: "Check Before Signing", href: "/canada/ontario" },
-                      { label: "Clause Checker Tool", href: "/upload" },
+                      { label: "Lease Clause Red Flag Scanner", href: "/tools/clause-checker" },
+                      { label: "Notice Period Calculator", href: "/tools/notice-period-calculator" },
                     ].map((l) => (
                       <li key={l.href}>
                         <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

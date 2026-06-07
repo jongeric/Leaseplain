@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Calculate Your Total Move-In Costs",
+  "description": "Use LeasePlain's Move-In Cost Calculator to estimate your total upfront rental costs — including deposit, first month's rent, and pet deposit — by province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Choose your province so the calculator applies the correct deposit caps and rules for upfront charges." },
+    { "@type": "HowToStep", "position": 2, "name": "Enter your monthly rent", "text": "Type in the monthly rent for the unit you're considering so the calculator can compute deposit and first-month amounts." },
+    { "@type": "HowToStep", "position": 3, "name": "Add any pet or extra deposits", "text": "Indicate whether a pet deposit or other upfront fees apply, where permitted in your province." },
+    { "@type": "HowToStep", "position": 4, "name": "Review your total upfront cost", "text": "See a complete breakdown of everything you should expect to pay before move-in, and flag any charges that exceed your province's legal limits." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -44,6 +57,7 @@ export default function MoveInCostCalculatorPage() {
         { name: "Move-In Cost Calculator", href: "https://leaseplain.com/tools/move-in-cost-calculator" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <MoveInCostClient />
     </>
   );

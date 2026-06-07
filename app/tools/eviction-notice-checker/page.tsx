@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Check If an Eviction Notice Is Valid",
+  "description": "Use LeasePlain's Eviction Notice Validity Checker to find out whether an eviction notice you received follows the legal requirements for your province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Choose your province so the checker can apply the correct eviction notice rules and required forms." },
+    { "@type": "HowToStep", "position": 2, "name": "Select the notice type", "text": "Pick the type of eviction notice you received, such as for non-payment of rent, landlord's own use, or property sale." },
+    { "@type": "HowToStep", "position": 3, "name": "Enter the number of days given", "text": "Type in how many days of notice your landlord provided so the checker can compare it to the legal minimum." },
+    { "@type": "HowToStep", "position": 4, "name": "View the validity result", "text": "See whether the notice meets the legal requirements, what to do next, and where to dispute an invalid notice." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -45,6 +58,7 @@ export default function EvictionNoticeCheckerPage() {
         { name: "Eviction Notice Checker", href: "https://leaseplain.com/tools/eviction-notice-checker" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <EvictionNoticeClient />
     </>
   );

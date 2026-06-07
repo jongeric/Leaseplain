@@ -225,6 +225,19 @@ export default function RenovictionCanadaTenantRightsPage() {
                       qualify
                     </li>
                   </ul>
+                  <p className="text-slate-700 leading-relaxed mb-3">
+                    Not sure if the notice period or compensation your landlord offered matches
+                    what the law requires? Use our{" "}
+                    <Link href="/tools/eviction-notice-checker" className="text-blue-600 hover:underline">
+                      Eviction Notice Validity Checker
+                    </Link>{" "}
+                    or{" "}
+                    <Link href="/tools/notice-period-calculator" className="text-blue-600 hover:underline">
+                      Notice Period Calculator
+                    </Link>{" "}
+                    to confirm whether the notice you received meets your province&apos;s
+                    requirements.
+                  </p>
                   <p className="text-slate-700 leading-relaxed">
                     If the landlord cannot produce a building permit or cannot demonstrate that
                     the renovation genuinely requires an empty unit, the LTB will dismiss the
@@ -481,6 +494,14 @@ export default function RenovictionCanadaTenantRightsPage() {
                   <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related</h3>
                   <ul className="flex flex-col gap-2">
                     {[
+                      {
+                        label: "Eviction Notice Validity Checker",
+                        href: "/tools/eviction-notice-checker",
+                      },
+                      {
+                        label: "Notice Period Calculator",
+                        href: "/tools/notice-period-calculator",
+                      },
                       {
                         label: "Eviction Notices Explained",
                         href: "/tenant-rights/eviction-notices",

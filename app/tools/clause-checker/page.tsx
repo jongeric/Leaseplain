@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Scan a Lease Clause for Red Flags",
+  "description": "Use LeasePlain's Lease Clause Red Flag Scanner to paste any clause from your lease and instantly check it against common red-flag patterns.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Copy a clause from your lease", "text": "Find a clause in your lease agreement that seems unusual, one-sided, or unclear." },
+    { "@type": "HowToStep", "position": 2, "name": "Paste it into the scanner", "text": "Paste the clause text into the Lease Clause Red Flag Scanner box." },
+    { "@type": "HowToStep", "position": 3, "name": "Run the scan", "text": "Click scan to instantly check the clause against 19 common red-flag patterns seen in Canadian residential leases." },
+    { "@type": "HowToStep", "position": 4, "name": "Review the risk rating and explanation", "text": "See whether the clause may be unenforceable or illegal in your province, with a plain-English explanation of why." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -44,6 +57,7 @@ export default function ClauseCheckerPage() {
         { name: "Clause Red Flag Scanner", href: "https://leaseplain.com/tools/clause-checker" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <ClauseCheckerClient />
     </>
   );

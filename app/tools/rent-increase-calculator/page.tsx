@@ -17,6 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Check If Your Rent Increase Is Legal",
+  "description": "Use LeasePlain's Rent Increase Calculator to check whether your landlord's proposed rent increase is within the legal limit for your province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Select your province", "text": "Choose the Canadian province where your rental unit is located. Each province sets its own annual rent increase guideline or limit." },
+    { "@type": "HowToStep", "position": 2, "name": "Enter your current rent", "text": "Type in the amount you currently pay each month so the calculator can determine the maximum legal increase in dollars." },
+    { "@type": "HowToStep", "position": 3, "name": "Enter the proposed new rent", "text": "Enter the rent amount your landlord wants to charge so the calculator can compare it to the legal limit." },
+    { "@type": "HowToStep", "position": 4, "name": "Review your result", "text": "Instantly see whether the proposed increase is within the legal guideline, exceeds it, or requires special approval (such as an above-guideline increase application)." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -44,6 +57,7 @@ export default function RentIncreaseCalculatorPage() {
         { name: "Rent Increase Calculator", href: "https://leaseplain.com/tools/rent-increase-calculator" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <RentIncreaseClient />
     </>
   );

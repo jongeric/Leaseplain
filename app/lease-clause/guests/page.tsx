@@ -234,6 +234,8 @@ export default function GuestsClausePage() {
                   {[
                     { label: "Subletting", href: "/lease-clause/subletting" },
                     { label: "Early Termination", href: "/lease-clause/early-termination" },
+                    { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+                    { label: "Landlord Responsibilities", href: "/tenant-rights/landlord-responsibilities" },
                     { label: "All Lease Clauses", href: "/lease-clauses" },
                   ].map((l) => (
                     <li key={l.href}>

@@ -517,6 +517,11 @@ Sincerely,
                     tenant&apos;s own conduct (e.g., leaving food waste accessible). A landlord who
                     refuses to deal with a bedbug or cockroach infestation can face a T6 application
                     at the LTB with the same remedies available as for any other maintenance failure.
+                    Not sure whether your landlord&apos;s response (or lack of one) is legal? Try our{" "}
+                    <Link href="/tools/landlord-quiz" className="text-blue-600 hover:underline">
+                      &quot;Is My Landlord Allowed to Do This?&quot; quiz
+                    </Link>{" "}
+                    for a clear answer based on your province&apos;s tenancy laws.
                   </p>
                 </div>
 
@@ -548,12 +553,12 @@ Sincerely,
                   <ul className="flex flex-col gap-2">
                     {[
                       {
-                        label: "Maintenance & Repairs: Tenant Rights",
-                        href: "/tenant-rights/maintenance-repairs",
+                        label: "Is My Landlord Allowed to Do This?",
+                        href: "/tools/landlord-quiz",
                       },
                       {
-                        label: "T2 Application: Interference with Rights",
-                        href: "/tenant-rights/t2-application",
+                        label: "Lease Clause Red Flag Scanner",
+                        href: "/tools/clause-checker",
                       },
                       {
                         label: "Ontario Tenant Rights Guide",

@@ -225,6 +225,8 @@ export default function SecurityDepositPage() {
                     { label: "Late Fees", href: "/lease-clause/late-fees" },
                     { label: "Early Termination", href: "/lease-clause/early-termination" },
                     { label: "Maintenance Responsibilities", href: "/lease-clause/maintenance" },
+                    { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+                    { label: "Breaking a Lease", href: "/tenant-rights/breaking-a-lease" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

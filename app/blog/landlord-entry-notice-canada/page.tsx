@@ -388,6 +388,7 @@ export default function LandlordEntryNoticeCanadaPage() {
                   <ul className="flex flex-col gap-2">
                     {[
                       { label: "Tenant Rights Lookup", href: "/tools/tenant-rights-lookup" },
+                      { label: "Is My Landlord Allowed to Do This?", href: "/tools/landlord-quiz" },
                       { label: "Tenant Rights Ontario", href: "/tenant-rights/ontario" },
                       { label: "Quiet Enjoyment — Glossary", href: "/glossary/quiet-enjoyment" },
                       { label: "BC Tenant Rights", href: "/tenant-rights/british-columbia" },

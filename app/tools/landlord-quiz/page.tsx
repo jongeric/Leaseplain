@@ -17,6 +17,18 @@ export const metadata: Metadata = {
   },
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Find Out If Your Landlord's Action Is Legal",
+  "description": "Use LeasePlain's 'Is My Landlord Allowed to Do This?' quiz to get a clear Yes, No, or Depends answer about a specific landlord action in your province.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Pick a scenario", "text": "Choose the situation closest to what your landlord did or is asking to do — such as entering without notice, withholding your deposit, or raising rent." },
+    { "@type": "HowToStep", "position": 2, "name": "Select your province", "text": "Choose your province so the quiz can apply the correct provincial tenancy rules to your scenario." },
+    { "@type": "HowToStep", "position": 3, "name": "Get your answer", "text": "Receive a clear Yes, No, or Depends answer along with a plain-English explanation of the relevant law and what you can do next." }
+  ],
+};
+
 const schema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -44,6 +56,7 @@ export default function LandlordQuizPage() {
         { name: "Landlord Quiz", href: "https://leaseplain.com/tools/landlord-quiz" },
       ]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <LandlordQuizClient />
     </>
   );

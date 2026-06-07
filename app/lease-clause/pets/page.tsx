@@ -240,6 +240,8 @@ export default function PetsClausePage() {
                   {[
                     { label: "Security Deposit", href: "/lease-clause/security-deposit" },
                     { label: "Early Termination", href: "/lease-clause/early-termination" },
+                    { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+                    { label: "BC Tenant Rights", href: "/tenant-rights/british-columbia" },
                     { label: "All Lease Clauses", href: "/lease-clauses" },
                   ].map((l) => (
                     <li key={l.href}>

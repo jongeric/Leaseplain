@@ -245,6 +245,8 @@ export default function UtilitiesClausePage() {
                     { label: "Security Deposit", href: "/lease-clause/security-deposit" },
                     { label: "Late Fees", href: "/lease-clause/late-fees" },
                     { label: "Maintenance Responsibilities", href: "/lease-clause/maintenance" },
+                    { label: "Landlord Responsibilities", href: "/tenant-rights/landlord-responsibilities" },
+                    { label: "Repairs & Maintenance Rights", href: "/tenant-rights/repairs-maintenance" },
                     { label: "All Lease Clauses", href: "/lease-clauses" },
                   ].map((l) => (
                     <li key={l.href}>

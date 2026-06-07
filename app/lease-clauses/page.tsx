@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { FileText, ChevronRight, Upload, Shield, TrendingUp, DoorOpen, Wrench, Share2, DollarSign, Zap, Heart, Users, Hammer } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 
@@ -83,9 +84,53 @@ const clauses = [
   },
 ];
 
+const clausesFaqItems = [
+  { q: "What are the most important clauses to review in a Canadian lease?", a: "Focus on rent amount and due date, deposit terms, termination notice periods, maintenance responsibilities, subletting rights, pet policies, rent increase procedures, and any fees for things like parking, lockers, or amenities." },
+  { q: "Are all clauses in a signed lease enforceable?", a: "No. A clause that violates provincial tenancy law is automatically void, even if you signed the lease. Provincial legislation sets minimum rights that landlords cannot contract out of, no matter what the lease says." },
+  { q: "What is an illegal lease clause?", a: "An illegal clause is one that attempts to remove or restrict rights granted by provincial tenancy law. Examples include waiving notice periods, charging deposits beyond the legal limit, banning pets in Ontario, or waiving the right to a habitability standard." },
+  { q: "How does LeasePlain identify problem clauses?", a: "LeasePlain's AI reads your full lease text or PDF and flags clauses that are unusual, one-sided, or potentially illegal under your province's rules. It explains each clause in plain English so you can decide whether to negotiate or sign." },
+  { q: "Should I negotiate lease clauses before signing?", a: "Yes, especially in a tenant's market. Common negotiable items include rent amount, parking fees, early termination rights, pet permissions, and the inclusion of appliances or utilities. LeasePlain's negotiation suggestions can guide what to ask for." },
+];
+
+const clausesItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Lease Clause Guides — LeasePlain",
+  "url": "https://leaseplain.com/lease-clauses",
+  "itemListElement": clauses.map((clause, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": clause.name,
+    "url": `https://leaseplain.com${clause.href}`,
+    "description": clause.description,
+  })),
+};
+
 export default function LeaseClausesPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: clausesFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Lease Clauses", href: "https://leaseplain.com/lease-clauses" },
+      ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(clausesItemListSchema).replace(/</g, "<") }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -218,13 +263,7 @@ export default function LeaseClausesPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What are the most important clauses to review in a Canadian lease?", a: "Focus on rent amount and due date, deposit terms, termination notice periods, maintenance responsibilities, subletting rights, pet policies, rent increase procedures, and any fees for things like parking, lockers, or amenities." },
-                  { q: "Are all clauses in a signed lease enforceable?", a: "No. A clause that violates provincial tenancy law is automatically void, even if you signed the lease. Provincial legislation sets minimum rights that landlords cannot contract out of, no matter what the lease says." },
-                  { q: "What is an illegal lease clause?", a: "An illegal clause is one that attempts to remove or restrict rights granted by provincial tenancy law. Examples include waiving notice periods, charging deposits beyond the legal limit, banning pets in Ontario, or waiving the right to a habitability standard." },
-                  { q: "How does LeasePlain identify problem clauses?", a: "LeasePlain's AI reads your full lease text or PDF and flags clauses that are unusual, one-sided, or potentially illegal under your province's rules. It explains each clause in plain English so you can decide whether to negotiate or sign." },
-                  { q: "Should I negotiate lease clauses before signing?", a: "Yes, especially in a tenant's market. Common negotiable items include rent amount, parking fees, early termination rights, pet permissions, and the inclusion of appliances or utilities. LeasePlain's negotiation suggestions can guide what to ask for." }
-                ]} />
+                <FAQAccordion items={clausesFaqItems} />
               </div>
       </main>
 

@@ -51,6 +51,14 @@ const usVsCanada = [
   "US landlords may require renters' insurance as a lease condition more commonly than Canadian landlords do.",
 ];
 
+const faqItems = [
+                  { q: "Does the US have a national tenancy law?", a: "No. Like Canada, residential tenancy law in the United States is governed at the state level (and sometimes city level). There is no single federal residential tenancy act — each state sets its own rules for deposits, rent control, evictions, and notice periods." },
+                  { q: "Which US states have the strongest tenant protections?", a: "California, New York, and New Jersey are generally considered among the strongest. California and New York City have rent-control programs; many states have strong habitability and anti-retaliation protections. Always check your specific state's laws." },
+                  { q: "Can a US landlord evict a tenant without cause?", a: "This depends on the state and whether the tenancy is fixed-term or month-to-month. In states with just-cause eviction laws (California, Oregon, New York City), landlords need a legal reason. In at-will states, month-to-month tenants can be terminated with proper notice." },
+                  { q: "What is the standard security deposit limit in the US?", a: "Security deposit limits vary significantly. Most states cap deposits at 1–2 months' rent. Some cities (like Los Angeles) cap at 2 months. Landlords must return deposits within a set period (typically 14–30 days) with itemized deductions." },
+                  { q: "Can I use LeasePlain to analyze a US lease?", a: "Yes. LeasePlain's AI can analyze leases from any US state. While our detailed location guides focus on major states like California, New York, and Florida, the AI lease analyzer works for all US residential leases." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -65,6 +73,18 @@ const speakableSchema = {
 export default function UnitedStatesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -176,13 +196,7 @@ export default function UnitedStatesPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does the US have a national tenancy law?", a: "No. Like Canada, residential tenancy law in the United States is governed at the state level (and sometimes city level). There is no single federal residential tenancy act — each state sets its own rules for deposits, rent control, evictions, and notice periods." },
-                  { q: "Which US states have the strongest tenant protections?", a: "California, New York, and New Jersey are generally considered among the strongest. California and New York City have rent-control programs; many states have strong habitability and anti-retaliation protections. Always check your specific state's laws." },
-                  { q: "Can a US landlord evict a tenant without cause?", a: "This depends on the state and whether the tenancy is fixed-term or month-to-month. In states with just-cause eviction laws (California, Oregon, New York City), landlords need a legal reason. In at-will states, month-to-month tenants can be terminated with proper notice." },
-                  { q: "What is the standard security deposit limit in the US?", a: "Security deposit limits vary significantly. Most states cap deposits at 1–2 months' rent. Some cities (like Los Angeles) cap at 2 months. Landlords must return deposits within a set period (typically 14–30 days) with itemized deductions." },
-                  { q: "Can I use LeasePlain to analyze a US lease?", a: "Yes. LeasePlain's AI can analyze leases from any US state. While our detailed location guides focus on major states like California, New York, and Florida, the AI lease analyzer works for all US residential leases." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

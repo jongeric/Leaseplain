@@ -35,6 +35,14 @@ const cities = [
   { name: "Los Angeles", href: "/united-states/california/los-angeles", desc: "LA RSO, HCIDLA, rent stabilization for pre-1978 buildings" },
 ];
 
+const faqItems = [
+                  { q: "Does California have statewide rent control?", a: "Yes. AB 1482 (California Tenant Protection Act, 2019) caps annual rent increases at 5% plus local CPI (max 10%) for most multi-family buildings 15 years or older. Stricter local rent control applies in cities like Los Angeles, San Francisco, and Oakland." },
+                  { q: "What is the security deposit limit in California?", a: "As of July 1, 2024, AB 12 caps security deposits at 1 month's rent for all units (furnished and unfurnished), with a limited exception for qualifying small landlords (up to 2 months). Landlords must return the deposit (with itemized deductions) within 21 days of the tenant vacating." },
+                  { q: "What does 'just cause' eviction mean in California?", a: "Under AB 1482, landlords covered by California's tenant protection law can only evict tenants for specific reasons (just cause) — such as non-payment, criminal activity, or owner move-in. After 12 months of tenancy, no-fault evictions require relocation assistance." },
+                  { q: "What is California's habitability standard?", a: "California requires landlords to maintain rental units in habitable condition — including adequate heat, plumbing, weatherproofing, pest control, and structural safety. Tenants can repair and deduct (up to one month's rent) or withhold rent for serious habitability failures." },
+                  { q: "Do California tenants have the right to sublet?", a: "California tenants generally have the right to assign or sublet with the landlord's consent, which cannot be unreasonably withheld. A lease that prohibits all subletting may be enforceable, but blanket bans can be challenged if the landlord is being unreasonable." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -49,6 +57,18 @@ const speakableSchema = {
 export default function CaliforniaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -156,13 +176,7 @@ export default function CaliforniaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does California have statewide rent control?", a: "Yes. AB 1482 (California Tenant Protection Act, 2019) caps annual rent increases at 5% plus local CPI (max 10%) for most multi-family buildings 15 years or older. Stricter local rent control applies in cities like Los Angeles, San Francisco, and Oakland." },
-                  { q: "What is the security deposit limit in California?", a: "As of July 1, 2024, AB 12 caps security deposits at 1 month's rent for all units (furnished and unfurnished), with a limited exception for qualifying small landlords (up to 2 months). Landlords must return the deposit (with itemized deductions) within 21 days of the tenant vacating." },
-                  { q: "What does 'just cause' eviction mean in California?", a: "Under AB 1482, landlords covered by California's tenant protection law can only evict tenants for specific reasons (just cause) — such as non-payment, criminal activity, or owner move-in. After 12 months of tenancy, no-fault evictions require relocation assistance." },
-                  { q: "What is California's habitability standard?", a: "California requires landlords to maintain rental units in habitable condition — including adequate heat, plumbing, weatherproofing, pest control, and structural safety. Tenants can repair and deduct (up to one month's rent) or withhold rent for serious habitability failures." },
-                  { q: "Do California tenants have the right to sublet?", a: "California tenants generally have the right to assign or sublet with the landlord's consent, which cannot be unreasonably withheld. A lease that prohibits all subletting may be enforceable, but blanket bans can be challenged if the landlord is being unreasonable." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

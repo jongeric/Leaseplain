@@ -103,6 +103,14 @@ const keyFacts = [
   "Standard lease forms are mandatory in Ontario and Quebec; other provinces may use custom leases.",
 ];
 
+const faqItems = [
+  { q: "Does Canada have a national tenancy law?", a: "No. Residential tenancy law in Canada falls under provincial jurisdiction, so every province has its own legislation, deposit rules, notice periods, and dispute bodies. There is no single federal tenancy statute." },
+  { q: "Can a lease clause override provincial tenant-protection law?", a: "No. A clause that conflicts with provincial legislation is automatically void and unenforceable, even if both parties signed the lease. The provincial Residential Tenancies Act (or equivalent) always takes precedence." },
+  { q: "What is a security deposit and how much can a landlord charge in Canada?", a: "A security deposit is money held by the landlord to cover unpaid rent or damages. The maximum varies: Ontario only permits a last month's rent deposit (not a security deposit for damages), BC caps it at half a month's rent, and Alberta caps it at one month's rent. Quebec bans security deposits entirely." },
+  { q: "How do I dispute a problem with my landlord in Canada?", a: "File an application with your province's tenancy tribunal — the Ontario LTB, BC Residential Tenancy Branch, Alberta RTDRS, or Quebec TAL. Most hearings are free or very low cost for tenants and can be requested online." },
+  { q: "Can I use LeasePlain to check a Canadian lease?", a: "Yes. Upload your PDF or paste your lease text and our AI will flag clauses that may violate your province's tenant-protection rules and explain them in plain English." },
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -113,9 +121,20 @@ const speakableSchema = {
   "url": "https://leaseplain.com/canada",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function CanadaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -231,13 +250,7 @@ export default function CanadaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does Canada have a national tenancy law?", a: "No. Residential tenancy law in Canada falls under provincial jurisdiction, so every province has its own legislation, deposit rules, notice periods, and dispute bodies. There is no single federal tenancy statute." },
-                  { q: "Can a lease clause override provincial tenant-protection law?", a: "No. A clause that conflicts with provincial legislation is automatically void and unenforceable, even if both parties signed the lease. The provincial Residential Tenancies Act (or equivalent) always takes precedence." },
-                  { q: "What is a security deposit and how much can a landlord charge in Canada?", a: "A security deposit is money held by the landlord to cover unpaid rent or damages. The maximum varies: Ontario only permits a last month's rent deposit (not a security deposit for damages), BC caps it at half a month's rent, and Alberta caps it at one month's rent. Quebec bans security deposits entirely." },
-                  { q: "How do I dispute a problem with my landlord in Canada?", a: "File an application with your province's tenancy tribunal — the Ontario LTB, BC Residential Tenancy Branch, Alberta RTDRS, or Quebec TAL. Most hearings are free or very low cost for tenants and can be requested online." },
-                  { q: "Can I use LeasePlain to check a Canadian lease?", a: "Yes. Upload your PDF or paste your lease text and our AI will flag clauses that may violate your province's tenant-protection rules and explain them in plain English." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

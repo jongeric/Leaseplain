@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   BookOpen,
   CheckSquare,
@@ -124,9 +125,54 @@ const featured = [
   },
 ];
 
+const resourcesFaqItems = [
+  { q: "What resources does LeasePlain offer for tenants?", a: "LeasePlain provides AI-powered lease analysis, plain-English guides on tenant rights by province, lease clause explanations, province-specific legal information, and answers to common renting questions — all free." },
+  { q: "Is the information on LeasePlain specific to Canadian law?", a: "Yes, LeasePlain's content focuses heavily on Canadian provincial tenancy law (Ontario, BC, Alberta, Quebec, and more) as well as US state laws. Content is clearly labeled by jurisdiction." },
+  { q: "How is LeasePlain different from a Google search about tenant rights?", a: "LeasePlain analyzes your specific lease and flags problem clauses in context. Generic search results tell you the law but don't tell you whether your actual lease violates it. LeasePlain bridges that gap." },
+  { q: "Can I use LeasePlain to prepare for a lease negotiation?", a: "Yes. Upload or paste your proposed lease and LeasePlain will flag unusual terms and suggest specific negotiation points — giving you concrete talking points before you meet with a landlord." },
+  { q: "Does LeasePlain replace a lawyer?", a: "No. LeasePlain provides lease clarity and education, not legal advice. If you face eviction, a complex dispute, or need advice for a specific legal situation, consult a licensed lawyer or free tenant legal clinic." },
+];
+
+const resourcesItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Lease Resources — LeasePlain",
+  "url": "https://leaseplain.com/resources",
+  "itemListElement": categories.flatMap((cat, ci) =>
+    cat.links.map((link, li) => ({
+      "@type": "ListItem",
+      "position": ci * 10 + li + 1,
+      "name": link.label,
+      "url": `https://leaseplain.com${link.href}`,
+    }))
+  ),
+};
+
 export default function ResourcesPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: resourcesFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+      ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resourcesItemListSchema).replace(/</g, "<") }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -267,13 +313,7 @@ export default function ResourcesPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What resources does LeasePlain offer for tenants?", a: "LeasePlain provides AI-powered lease analysis, plain-English guides on tenant rights by province, lease clause explanations, province-specific legal information, and answers to common renting questions — all free." },
-                  { q: "Is the information on LeasePlain specific to Canadian law?", a: "Yes, LeasePlain's content focuses heavily on Canadian provincial tenancy law (Ontario, BC, Alberta, Quebec, and more) as well as US state laws. Content is clearly labeled by jurisdiction." },
-                  { q: "How is LeasePlain different from a Google search about tenant rights?", a: "LeasePlain analyzes your specific lease and flags problem clauses in context. Generic search results tell you the law but don't tell you whether your actual lease violates it. LeasePlain bridges that gap." },
-                  { q: "Can I use LeasePlain to prepare for a lease negotiation?", a: "Yes. Upload or paste your proposed lease and LeasePlain will flag unusual terms and suggest specific negotiation points — giving you concrete talking points before you meet with a landlord." },
-                  { q: "Does LeasePlain replace a lawyer?", a: "No. LeasePlain provides lease clarity and education, not legal advice. If you face eviction, a complex dispute, or need advice for a specific legal situation, consult a licensed lawyer or free tenant legal clinic." }
-                ]} />
+                <FAQAccordion items={resourcesFaqItems} />
               </div>
       </main>
       <Footer />

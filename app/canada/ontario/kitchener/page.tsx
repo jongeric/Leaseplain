@@ -38,6 +38,14 @@ const kitchenerLeaseIssues = [
   "Early termination incentives offered to tenants that are not compliant with the RTA's rules on ending a tenancy.",
 ];
 
+const faqItems = [
+                  { q: "What rental protections apply in Kitchener?", a: "Kitchener tenants are protected under Ontario's Residential Tenancies Act. This covers rent-increase limits, maintenance standards, deposit rules (last month's rent only), and access to the Landlord and Tenant Board for disputes." },
+                  { q: "Is Kitchener a good rental market for tenants?", a: "Kitchener-Waterloo has grown significantly due to tech-sector expansion. Rents have risen but remain lower than Toronto. The area has a mix of older apartment buildings (subject to rent control) and newer units (exempt)." },
+                  { q: "Can a Kitchener landlord terminate a lease early?", a: "Landlords can only terminate a tenancy for specific reasons listed in the RTA — such as non-payment, the landlord's own use, or major renovations. Simply wanting the unit back is not a valid reason." },
+                  { q: "What is LIV Student in Kitchener?", a: "LIV Student and similar purpose-built student housing providers are private landlords covered by the RTA. Students in these buildings have the same rights as any Ontario tenant, including LTB access." },
+                  { q: "How do I dispute a rent increase in Kitchener?", a: "If your landlord has already charged you an illegal amount, file a T1 application with the LTB to claim a rebate of money paid illegally. To challenge an unlawful rent increase before paying it, file a T2 (tenant rights application) or respond to the N1 notice at your hearing. If you believe your building was built after November 15, 2018, verify first — it may be exempt from rent control." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function KitchenerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -172,13 +192,7 @@ export default function KitchenerPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What rental protections apply in Kitchener?", a: "Kitchener tenants are protected under Ontario's Residential Tenancies Act. This covers rent-increase limits, maintenance standards, deposit rules (last month's rent only), and access to the Landlord and Tenant Board for disputes." },
-                  { q: "Is Kitchener a good rental market for tenants?", a: "Kitchener-Waterloo has grown significantly due to tech-sector expansion. Rents have risen but remain lower than Toronto. The area has a mix of older apartment buildings (subject to rent control) and newer units (exempt)." },
-                  { q: "Can a Kitchener landlord terminate a lease early?", a: "Landlords can only terminate a tenancy for specific reasons listed in the RTA — such as non-payment, the landlord's own use, or major renovations. Simply wanting the unit back is not a valid reason." },
-                  { q: "What is LIV Student in Kitchener?", a: "LIV Student and similar purpose-built student housing providers are private landlords covered by the RTA. Students in these buildings have the same rights as any Ontario tenant, including LTB access." },
-                  { q: "How do I dispute a rent increase in Kitchener?", a: "If your landlord has already charged you an illegal amount, file a T1 application with the LTB to claim a rebate of money paid illegally. To challenge an unlawful rent increase before paying it, file a T2 (tenant rights application) or respond to the N1 notice at your hearing. If you believe your building was built after November 15, 2018, verify first — it may be exempt from rent control." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

@@ -141,6 +141,18 @@ export default function RepairsMaintenancePage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "Repairs & Maintenance", href: "https://leaseplain.com/tenant-rights/repairs-maintenance" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "<") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",

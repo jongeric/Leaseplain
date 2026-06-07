@@ -38,6 +38,14 @@ const ottawaLeaseIssues = [
   "Informal side agreements not included in the written lease — always insist that all terms are in the signed lease.",
 ];
 
+const faqItems = [
+                  { q: "What rent-control rules apply in Ottawa?", a: "Ottawa follows Ontario's provincial rent-control rules: units first occupied before November 15, 2018 are subject to the annual guideline increase. Newer units are exempt. The LTB enforces these rules." },
+                  { q: "Is Ottawa cheaper to rent than Toronto?", a: "Yes, Ottawa's rental market is significantly more affordable than Toronto's, though it has tightened in recent years. Government employment helps support a stable rental demand, keeping vacancy rates relatively low." },
+                  { q: "How do Ottawa bilingualism rights affect my lease?", a: "You have the right to request government services in French, but private leases are governed by contract law. A lease written only in English is still valid; however, if your landlord is a government body or federally regulated, French services must be available." },
+                  { q: "What are Ottawa-specific tenant resources?", a: "In addition to the Ontario LTB, Ottawa has the Ottawa Community Housing and several legal aid clinics. Community Legal Services of Ottawa offers free advice to low-income tenants." },
+                  { q: "Can an Ottawa landlord charge for parking separately?", a: "Parking can be listed as a separate charge or included in rent. If parking is included in rent at the time of tenancy commencement, it becomes part of the rent and is subject to the same rent-increase rules as base rent." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function OttawaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -171,13 +191,7 @@ export default function OttawaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What rent-control rules apply in Ottawa?", a: "Ottawa follows Ontario's provincial rent-control rules: units first occupied before November 15, 2018 are subject to the annual guideline increase. Newer units are exempt. The LTB enforces these rules." },
-                  { q: "Is Ottawa cheaper to rent than Toronto?", a: "Yes, Ottawa's rental market is significantly more affordable than Toronto's, though it has tightened in recent years. Government employment helps support a stable rental demand, keeping vacancy rates relatively low." },
-                  { q: "How do Ottawa bilingualism rights affect my lease?", a: "You have the right to request government services in French, but private leases are governed by contract law. A lease written only in English is still valid; however, if your landlord is a government body or federally regulated, French services must be available." },
-                  { q: "What are Ottawa-specific tenant resources?", a: "In addition to the Ontario LTB, Ottawa has the Ottawa Community Housing and several legal aid clinics. Community Legal Services of Ottawa offers free advice to low-income tenants." },
-                  { q: "Can an Ottawa landlord charge for parking separately?", a: "Parking can be listed as a separate charge or included in rent. If parking is included in rent at the time of tenancy commencement, it becomes part of the rent and is subject to the same rent-increase rules as base rent." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

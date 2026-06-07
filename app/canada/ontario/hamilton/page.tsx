@@ -38,6 +38,14 @@ const hamiltonLeaseIssues = [
   "Basement apartment leases with clauses that purport to limit the landlord's maintenance obligations — these are void under the RTA.",
 ];
 
+const faqItems = [
+                  { q: "Is Hamilton affordable for renters compared to Toronto?", a: "Hamilton is generally more affordable than Toronto, though the GTA's housing pressure has pushed rents higher in recent years. Average one-bedroom units range widely by neighbourhood and building type." },
+                  { q: "What tenant protections apply in Hamilton?", a: "Hamilton tenants are protected by Ontario's Residential Tenancies Act, including rent-increase guidelines, maintenance obligations, and the right to file complaints with the Landlord and Tenant Board (LTB)." },
+                  { q: "What should I look for in a Hamilton lease?", a: "Check whether utilities are included or separate, what the parking situation is, whether the unit is in a legal building, what the notice period is, and whether there are any extra fees for amenities. LeasePlain can flag problem clauses automatically." },
+                  { q: "Does Hamilton have a tenant support organization?", a: "Yes. Hamilton Community Legal Clinic and Hamilton-Wentworth Tenant Legal Assistance offer free support to tenants facing eviction or maintenance issues. The Ontario LTB also accepts applications from Hamilton tenants." },
+                  { q: "Can a Hamilton landlord refuse to rent to someone on ODSP or Ontario Works?", a: "No. Under the Ontario Human Rights Code, source-of-income discrimination (including refusing ODSP or Ontario Works recipients) is prohibited. Landlords cannot reject a tenant solely because their income comes from social assistance." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function HamiltonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -171,13 +191,7 @@ export default function HamiltonPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Is Hamilton affordable for renters compared to Toronto?", a: "Hamilton is generally more affordable than Toronto, though the GTA's housing pressure has pushed rents higher in recent years. Average one-bedroom units range widely by neighbourhood and building type." },
-                  { q: "What tenant protections apply in Hamilton?", a: "Hamilton tenants are protected by Ontario's Residential Tenancies Act, including rent-increase guidelines, maintenance obligations, and the right to file complaints with the Landlord and Tenant Board (LTB)." },
-                  { q: "What should I look for in a Hamilton lease?", a: "Check whether utilities are included or separate, what the parking situation is, whether the unit is in a legal building, what the notice period is, and whether there are any extra fees for amenities. LeasePlain can flag problem clauses automatically." },
-                  { q: "Does Hamilton have a tenant support organization?", a: "Yes. Hamilton Community Legal Clinic and Hamilton-Wentworth Tenant Legal Assistance offer free support to tenants facing eviction or maintenance issues. The Ontario LTB also accepts applications from Hamilton tenants." },
-                  { q: "Can a Hamilton landlord refuse to rent to someone on ODSP or Ontario Works?", a: "No. Under the Ontario Human Rights Code, source-of-income discrimination (including refusing ODSP or Ontario Works recipients) is prohibited. Landlords cannot reject a tenant solely because their income comes from social assistance." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

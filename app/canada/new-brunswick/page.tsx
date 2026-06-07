@@ -46,6 +46,14 @@ const cities = [
   { name: "Saint John", href: "/canada/new-brunswick/saint-john", desc: "New Brunswick's oldest city — affordable rental market with heritage housing stock" },
 ];
 
+const faqItems = [
+                  { q: "Is there rent control in New Brunswick?", a: "Yes. New Brunswick introduced a 3% annual rent increase cap effective February 1, 2025. Landlords may apply to the Residential Tenancies Tribunal (RTT) for up to 9% with demonstrated renovation justification. Landlords must give tenants 6 months written notice before any rent increase takes effect." },
+                  { q: "What is the maximum security deposit in New Brunswick?", a: "New Brunswick caps security deposits at one month's rent. The landlord must remit the deposit to the Residential Tenancies Tribunal (RTT) within 15 days of collection — the landlord does not hold it. The deposit is returned within 7 days of the tenancy ending, minus any valid deductions." },
+                  { q: "How do I resolve a landlord-tenant dispute in New Brunswick?", a: "File a complaint with the Residential Tenancies Tribunal (RTT), administered by Service New Brunswick. The RTT mediates and adjudicates disputes at little or no cost, with fully bilingual services in English and French." },
+                  { q: "Can a New Brunswick landlord evict a tenant without cause?", a: "Yes, with proper notice. A landlord can terminate a month-to-month tenancy by giving at least 3 months' written notice without needing a specific reason. Eviction for cause (e.g., non-payment) requires shorter notice." },
+                  { q: "Is New Brunswick's tenancy law available in French?", a: "Yes. New Brunswick is Canada's only officially bilingual province. The Residential Tenancies Act and government services are fully available in both English and French." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -59,6 +67,18 @@ const speakableSchema = {
 export default function NewBrunswickPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -188,13 +208,7 @@ export default function NewBrunswickPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Is there rent control in New Brunswick?", a: "Yes. New Brunswick introduced a 3% annual rent increase cap effective February 1, 2025. Landlords may apply to the Residential Tenancies Tribunal (RTT) for up to 9% with demonstrated renovation justification. Landlords must give tenants 6 months written notice before any rent increase takes effect." },
-                  { q: "What is the maximum security deposit in New Brunswick?", a: "New Brunswick caps security deposits at one month's rent. The landlord must remit the deposit to the Residential Tenancies Tribunal (RTT) within 15 days of collection — the landlord does not hold it. The deposit is returned within 7 days of the tenancy ending, minus any valid deductions." },
-                  { q: "How do I resolve a landlord-tenant dispute in New Brunswick?", a: "File a complaint with the Residential Tenancies Tribunal (RTT), administered by Service New Brunswick. The RTT mediates and adjudicates disputes at little or no cost, with fully bilingual services in English and French." },
-                  { q: "Can a New Brunswick landlord evict a tenant without cause?", a: "Yes, with proper notice. A landlord can terminate a month-to-month tenancy by giving at least 3 months' written notice without needing a specific reason. Eviction for cause (e.g., non-payment) requires shorter notice." },
-                  { q: "Is New Brunswick's tenancy law available in French?", a: "Yes. New Brunswick is Canada's only officially bilingual province. The Residential Tenancies Act and government services are fully available in both English and French." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

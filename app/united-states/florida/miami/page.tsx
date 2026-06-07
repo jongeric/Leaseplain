@@ -21,6 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+                  {
+                    q: "Does Miami have rent control?",
+                    a: "No. Florida state law preempts local governments from enacting rent control or additional tenant protection ordinances. Miami and Miami-Dade County cannot cap rent increases. Miami-Dade's 2022 Tenant's Bill of Rights — which required advance notice of rent increases above 5% — was preempted by Florida HB 1417 (effective July 1, 2023) and is no longer enforceable.",
+                  },
+                  {
+                    q: "What is the 3-day notice in Florida and does it apply to Miami?",
+                    a: "Yes. Under Florida Statute 83.56, before a Miami landlord can file for eviction due to non-payment of rent, they must serve the tenant with a written 3-day notice to pay rent or vacate. The 3 days excludes weekends and legal holidays. If you pay the full amount owed within that 3-day window, the landlord cannot proceed with eviction. Keep written proof of any payment you make during this period.",
+                  },
+                  {
+                    q: "Does the Miami-Dade Tenant's Bill of Rights still protect me?",
+                    a: "No. The Miami-Dade Tenant's Bill of Rights (passed 2022) was preempted by Florida HB 1417, which took effect July 1, 2023. HB 1417 prohibits local governments from enacting ordinances that regulate landlord-tenant relationships beyond what state law provides. As a result, the Miami-Dade ordinance is no longer enforceable. Tenant protections in Miami are now governed exclusively by the Florida Residential Landlord and Tenant Act (Chapter 83).",
+                  },
+                  {
+                    q: "Can a Miami condo association rule override my lease?",
+                    a: "Condo association rules (bylaws and rules and regulations) apply to tenants in Miami condo buildings and are typically incorporated into your lease. They can restrict pets, parking, move-in hours, and other conduct. However, condo rules cannot override Florida state landlord-tenant law. For example, a condo association cannot impose a security deposit beyond what your lease states, and it cannot grant eviction rights the FRLTA does not authorize. Always request the full condo documents before signing a Miami condo lease.",
+                  },
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -62,6 +81,18 @@ const miamiResources = [
 export default function MiamiPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -232,24 +263,7 @@ export default function MiamiPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  {
-                    q: "Does Miami have rent control?",
-                    a: "No. Florida state law preempts local governments from enacting rent control or additional tenant protection ordinances. Miami and Miami-Dade County cannot cap rent increases. Miami-Dade's 2022 Tenant's Bill of Rights — which required advance notice of rent increases above 5% — was preempted by Florida HB 1417 (effective July 1, 2023) and is no longer enforceable.",
-                  },
-                  {
-                    q: "What is the 3-day notice in Florida and does it apply to Miami?",
-                    a: "Yes. Under Florida Statute 83.56, before a Miami landlord can file for eviction due to non-payment of rent, they must serve the tenant with a written 3-day notice to pay rent or vacate. The 3 days excludes weekends and legal holidays. If you pay the full amount owed within that 3-day window, the landlord cannot proceed with eviction. Keep written proof of any payment you make during this period.",
-                  },
-                  {
-                    q: "Does the Miami-Dade Tenant's Bill of Rights still protect me?",
-                    a: "No. The Miami-Dade Tenant's Bill of Rights (passed 2022) was preempted by Florida HB 1417, which took effect July 1, 2023. HB 1417 prohibits local governments from enacting ordinances that regulate landlord-tenant relationships beyond what state law provides. As a result, the Miami-Dade ordinance is no longer enforceable. Tenant protections in Miami are now governed exclusively by the Florida Residential Landlord and Tenant Act (Chapter 83).",
-                  },
-                  {
-                    q: "Can a Miami condo association rule override my lease?",
-                    a: "Condo association rules (bylaws and rules and regulations) apply to tenants in Miami condo buildings and are typically incorporated into your lease. They can restrict pets, parking, move-in hours, and other conduct. However, condo rules cannot override Florida state landlord-tenant law. For example, a condo association cannot impose a security deposit beyond what your lease states, and it cannot grant eviction rights the FRLTA does not authorize. Always request the full condo documents before signing a Miami condo lease.",
-                  },
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             </div>

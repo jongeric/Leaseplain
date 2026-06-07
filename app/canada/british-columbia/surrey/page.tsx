@@ -38,6 +38,14 @@ const surreyLeaseIssues = [
   "Unauthorized entry without 24 hours' written notice — a common issue in owner-occupied homes with a basement suite where the landlord lives on-site.",
 ];
 
+const faqItems = [
+                  { q: "Do BC rent-control rules apply in Surrey?", a: "Yes. Surrey follows BC's provincial Residential Tenancy Act. Rent increases are capped annually at the BC CPI rate. Landlords must give 3 months' written notice and can only raise rent once in a 12-month period." },
+                  { q: "What is the security deposit limit in Surrey?", a: "BC-wide, security deposits are capped at half a month's rent. Surrey landlords cannot collect more than this. A pet damage deposit of up to half a month's rent is permitted separately." },
+                  { q: "Is Surrey more affordable to rent than Vancouver?", a: "Generally yes. Surrey's rental market has been more affordable than central Vancouver, though prices have risen with the region's growth. Purpose-built rental buildings are increasing in areas like Surrey Central and Guildford." },
+                  { q: "Where can Surrey tenants get help with a dispute?", a: "File a dispute with the BC Residential Tenancy Branch (RTB) online at gov.bc.ca/landlordtenant. The Tenant Resource and Advisory Centre (TRAC) also provides free phone advice to BC tenants including those in Surrey." },
+                  { q: "Can a Surrey landlord refuse to accept pets?", a: "Yes. BC landlords can include no-pet clauses in their leases and generally can enforce them. However, they cannot refuse to accommodate a service animal needed by a tenant with a disability under the BC Human Rights Code." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function SurreyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -180,13 +200,7 @@ export default function SurreyPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Do BC rent-control rules apply in Surrey?", a: "Yes. Surrey follows BC's provincial Residential Tenancy Act. Rent increases are capped annually at the BC CPI rate. Landlords must give 3 months' written notice and can only raise rent once in a 12-month period." },
-                  { q: "What is the security deposit limit in Surrey?", a: "BC-wide, security deposits are capped at half a month's rent. Surrey landlords cannot collect more than this. A pet damage deposit of up to half a month's rent is permitted separately." },
-                  { q: "Is Surrey more affordable to rent than Vancouver?", a: "Generally yes. Surrey's rental market has been more affordable than central Vancouver, though prices have risen with the region's growth. Purpose-built rental buildings are increasing in areas like Surrey Central and Guildford." },
-                  { q: "Where can Surrey tenants get help with a dispute?", a: "File a dispute with the BC Residential Tenancy Branch (RTB) online at gov.bc.ca/landlordtenant. The Tenant Resource and Advisory Centre (TRAC) also provides free phone advice to BC tenants including those in Surrey." },
-                  { q: "Can a Surrey landlord refuse to accept pets?", a: "Yes. BC landlords can include no-pet clauses in their leases and generally can enforce them. However, they cannot refuse to accommodate a service animal needed by a tenant with a disability under the BC Human Rights Code." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

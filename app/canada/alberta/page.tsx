@@ -45,6 +45,14 @@ const cities = [
   { name: "Edmonton", href: "/canada/alberta/edmonton", desc: "Government hub, university market, affordable relative to other metros" },
 ];
 
+const faqItems = [
+                  { q: "Does Alberta have rent control?", a: "No. Alberta has no province-wide rent control. Landlords can increase rent by any amount, but must give tenants at least 3 months' written notice before any increase takes effect." },
+                  { q: "What is the security deposit limit in Alberta?", a: "Alberta landlords can charge a maximum security deposit equal to one month's rent. They cannot charge a separate damage deposit, pet deposit beyond that cap, or additional security fees." },
+                  { q: "How do I dispute a landlord-tenant issue in Alberta?", a: "You can apply to the Residential Tenancy Dispute Resolution Service (RTDRS) for a fast, affordable hearing, or file a claim in Provincial Court. The RTDRS is available throughout Alberta and often faster than court." },
+                  { q: "What notice does an Alberta landlord need to end a tenancy?", a: "For a month-to-month tenancy, landlords must give 3 months' notice to terminate without cause. For fixed-term leases, either party must give notice of non-renewal within the timeframe specified in the lease or in the Act." },
+                  { q: "Are Alberta lease clauses restricting pets enforceable?", a: "Yes. Unlike some provinces, Alberta allows landlords to prohibit pets in a lease. However, no-pet clauses do not override human rights protections for service animals and emotional support animals." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -58,6 +66,18 @@ const speakableSchema = {
 export default function AlbertaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -177,13 +197,7 @@ export default function AlbertaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does Alberta have rent control?", a: "No. Alberta has no province-wide rent control. Landlords can increase rent by any amount, but must give tenants at least 3 months' written notice before any increase takes effect." },
-                  { q: "What is the security deposit limit in Alberta?", a: "Alberta landlords can charge a maximum security deposit equal to one month's rent. They cannot charge a separate damage deposit, pet deposit beyond that cap, or additional security fees." },
-                  { q: "How do I dispute a landlord-tenant issue in Alberta?", a: "You can apply to the Residential Tenancy Dispute Resolution Service (RTDRS) for a fast, affordable hearing, or file a claim in Provincial Court. The RTDRS is available throughout Alberta and often faster than court." },
-                  { q: "What notice does an Alberta landlord need to end a tenancy?", a: "For a month-to-month tenancy, landlords must give 3 months' notice to terminate without cause. For fixed-term leases, either party must give notice of non-renewal within the timeframe specified in the lease or in the Act." },
-                  { q: "Are Alberta lease clauses restricting pets enforceable?", a: "Yes. Unlike some provinces, Alberta allows landlords to prohibit pets in a lease. However, no-pet clauses do not override human rights protections for service animals and emotional support animals." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

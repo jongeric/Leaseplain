@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Shield, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -54,6 +55,14 @@ const bcRedFlags = [
   "No mention of dispute resolution rights through the Residential Tenancy Branch",
 ];
 
+const faqItems = [
+  { q: "How much can a BC landlord charge for a security deposit?", a: "BC landlords can charge a security deposit of up to half a month's rent, plus a separate pet damage deposit of up to half a month's rent. Both must be returned within 15 days of the tenancy ending, with interest." },
+  { q: "How much notice does a BC landlord need to give before raising rent?", a: "Landlords must give at least 3 full months' written notice on the approved RTB form, and rent can only be raised once every 12 months. The increase is capped at the annual amount set by the BC government, tied to the Consumer Price Index." },
+  { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that resolves disputes between landlords and tenants in BC. Tenants can apply for dispute resolution online, and most hearings are conducted by phone or video conference at low or no cost." },
+  { q: "How much notice must a BC landlord give to end a tenancy?", a: "It depends on the reason: 3 months for landlord's or buyer's use of the property, 4 months for major renovations or demolition, and 10 days for unpaid rent (which the tenant can dispute or pay to cancel)." },
+  { q: "Can a BC landlord keep my deposit for normal wear and tear?", a: "No. Landlords can only deduct from a deposit for damage beyond normal wear and tear, unpaid rent, or other amounts owed under the tenancy agreement — and only with proper documentation, such as a move-in/move-out condition inspection report." },
+];
+
 export default function BritishColumbiaTenantRightsPage() {
   return (
     <>
@@ -70,6 +79,18 @@ export default function BritishColumbiaTenantRightsPage() {
         { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
         { name: "British Columbia", href: "https://leaseplain.com/tenant-rights/british-columbia" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "<") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -218,6 +239,11 @@ export default function BritishColumbiaTenantRightsPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={faqItems} />
               </div>
             </div>
 

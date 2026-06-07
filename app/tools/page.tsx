@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   TrendingUp, DollarSign, Clock, Home, FileX, Shield,
   HelpCircle, BookOpen, Search, ChevronRight,
@@ -129,6 +130,10 @@ const colorMap: Record<string, { bg: string; text: string }> = {
 export default function ToolsPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Free Tools", href: "https://leaseplain.com/tools" },
+      ]} />
       <Navbar />
 
       <main>

@@ -38,6 +38,14 @@ const edmontonLeaseIssues = [
   "Rental agreements drafted as \"license agreements\" or \"room rental agreements\" to evade the RTA — Alberta courts look at the substance of the arrangement, not the label.",
 ];
 
+const faqItems = [
+                  { q: "Does Edmonton have rent control?", a: "No. Like all of Alberta, Edmonton has no rent control. Landlords can increase rent by any amount, but must provide at least 3 months' written notice before any increase takes effect." },
+                  { q: "What security deposit rules apply in Edmonton?", a: "Edmonton landlords can collect a security deposit of up to one month's rent. They must provide a receipt and conduct a move-in inspection with the tenant before the tenancy starts." },
+                  { q: "How do Edmonton students handle off-campus leases?", a: "Students at the University of Alberta and other institutions renting off-campus have the same rights as any Alberta tenant. Watch for clauses with unusual damage fees, automatic renewal, or penalties for early departure — LeasePlain can flag these." },
+                  { q: "What is the RTDRS and how does it help Edmonton tenants?", a: "The Residential Tenancy Dispute Resolution Service (RTDRS) in Edmonton provides fast, inexpensive hearings for deposit disputes, illegal lockouts, lease breaches, and eviction challenges. Decisions are legally binding." },
+                  { q: "Can an Edmonton landlord keep my deposit for normal wear and tear?", a: "No. Under the Alberta Residential Tenancies Act, landlords can only deduct from a deposit for damages beyond normal wear and tear, unpaid rent, and unpaid utilities. A move-out inspection report supports any deduction claims." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function EdmontonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -172,13 +192,7 @@ export default function EdmontonPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does Edmonton have rent control?", a: "No. Like all of Alberta, Edmonton has no rent control. Landlords can increase rent by any amount, but must provide at least 3 months' written notice before any increase takes effect." },
-                  { q: "What security deposit rules apply in Edmonton?", a: "Edmonton landlords can collect a security deposit of up to one month's rent. They must provide a receipt and conduct a move-in inspection with the tenant before the tenancy starts." },
-                  { q: "How do Edmonton students handle off-campus leases?", a: "Students at the University of Alberta and other institutions renting off-campus have the same rights as any Alberta tenant. Watch for clauses with unusual damage fees, automatic renewal, or penalties for early departure — LeasePlain can flag these." },
-                  { q: "What is the RTDRS and how does it help Edmonton tenants?", a: "The Residential Tenancy Dispute Resolution Service (RTDRS) in Edmonton provides fast, inexpensive hearings for deposit disputes, illegal lockouts, lease breaches, and eviction challenges. Decisions are legally binding." },
-                  { q: "Can an Edmonton landlord keep my deposit for normal wear and tear?", a: "No. Under the Alberta Residential Tenancies Act, landlords can only deduct from a deposit for damages beyond normal wear and tear, unpaid rent, and unpaid utilities. A move-out inspection report supports any deduction claims." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

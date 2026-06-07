@@ -47,6 +47,14 @@ const cities = [
   { name: "Victoria", href: "/canada/british-columbia/victoria", desc: "BC capital, UVic student market, low vacancy rates" },
 ];
 
+const faqItems = [
+  { q: "How much can a BC landlord charge for a security deposit?", a: "In British Columbia, a security deposit cannot exceed half a month's rent. A separate pet deposit of up to half a month's rent is also permitted. Both are held in trust and earn interest." },
+  { q: "How is rent controlled in BC?", a: "BC ties annual rent increases to the BC Consumer Price Index (CPI). The Residential Tenancy Branch publishes the allowable increase each year. Landlords must give 3 months' written notice before any increase." },
+  { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that mediates and arbitrates landlord-tenant disputes in BC. Most hearings are conducted by phone or video and are free for tenants to apply." },
+  { q: "Can a BC landlord evict a tenant without cause?", a: "No. BC requires a legal reason (cause) for eviction — such as non-payment of rent, substantial damage, or the landlord's genuine need to reclaim the unit. Landlords must provide the correct written notice and form." },
+  { q: "Is a rental agreement required to be in writing in BC?", a: "BC strongly recommends written agreements and requires landlords to provide a copy of the standard RTB tenancy agreement form or their own written agreement. Verbal tenancies are valid but hard to enforce." },
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -60,6 +68,18 @@ const speakableSchema = {
 export default function BritishColumbiaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -182,13 +202,7 @@ export default function BritishColumbiaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "How much can a BC landlord charge for a security deposit?", a: "In British Columbia, a security deposit cannot exceed half a month's rent. A separate pet deposit of up to half a month's rent is also permitted. Both are held in trust and earn interest." },
-                  { q: "How is rent controlled in BC?", a: "BC ties annual rent increases to the BC Consumer Price Index (CPI). The Residential Tenancy Branch publishes the allowable increase each year. Landlords must give 3 months' written notice before any increase." },
-                  { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that mediates and arbitrates landlord-tenant disputes in BC. Most hearings are conducted by phone or video and are free for tenants to apply." },
-                  { q: "Can a BC landlord evict a tenant without cause?", a: "No. BC requires a legal reason (cause) for eviction — such as non-payment of rent, substantial damage, or the landlord's genuine need to reclaim the unit. Landlords must provide the correct written notice and form." },
-                  { q: "Is a rental agreement required to be in writing in BC?", a: "BC strongly recommends written agreements and requires landlords to provide a copy of the standard RTB tenancy agreement form or their own written agreement. Verbal tenancies are valid but hard to enforce." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

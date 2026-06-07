@@ -38,6 +38,14 @@ const bramptonLeaseIssues = [
   "Unauthorized restrictions on roommates or subletting — the RTA permits subletting with the landlord's consent, which cannot be unreasonably withheld.",
 ];
 
+const faqItems = [
+                  { q: "What are the rent-control rules in Brampton?", a: "Brampton follows Ontario provincial rules. Units occupied before November 15, 2018 are subject to the annual rent-increase guideline. Newer units are exempt. Landlords must give 90 days' written notice of any rent increase." },
+                  { q: "Is basement apartment renting common in Brampton?", a: "Yes, Brampton has a high concentration of basement apartments. Tenants in these units have the same RTA rights as those in full apartments, but should confirm the unit is a legal secondary suite to ensure proper fire and safety compliance." },
+                  { q: "What resources do Brampton tenants have?", a: "Brampton Legal Aid, Peel Community Legal Services, and the Ontario LTB all serve Brampton tenants. For free lease review, LeasePlain's AI can flag issues in minutes." },
+                  { q: "Can a Brampton landlord include a no-guest rule in a lease?", a: "Landlords can restrict guests, but extreme clauses limiting any overnight guests may be unenforceable under the RTA, which gives tenants the right to reasonable enjoyment of their unit. Review any guest policy carefully before signing." },
+                  { q: "How much notice does a Brampton landlord need to enter my unit?", a: "Under the Ontario RTA, landlords must give at least 24 hours' written notice before entering a tenant's unit for inspections, repairs, or other permitted purposes. Emergency entry is allowed without notice." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function BramptonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -172,13 +192,7 @@ export default function BramptonPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What are the rent-control rules in Brampton?", a: "Brampton follows Ontario provincial rules. Units occupied before November 15, 2018 are subject to the annual rent-increase guideline. Newer units are exempt. Landlords must give 90 days' written notice of any rent increase." },
-                  { q: "Is basement apartment renting common in Brampton?", a: "Yes, Brampton has a high concentration of basement apartments. Tenants in these units have the same RTA rights as those in full apartments, but should confirm the unit is a legal secondary suite to ensure proper fire and safety compliance." },
-                  { q: "What resources do Brampton tenants have?", a: "Brampton Legal Aid, Peel Community Legal Services, and the Ontario LTB all serve Brampton tenants. For free lease review, LeasePlain's AI can flag issues in minutes." },
-                  { q: "Can a Brampton landlord include a no-guest rule in a lease?", a: "Landlords can restrict guests, but extreme clauses limiting any overnight guests may be unenforceable under the RTA, which gives tenants the right to reasonable enjoyment of their unit. Review any guest policy carefully before signing." },
-                  { q: "How much notice does a Brampton landlord need to enter my unit?", a: "Under the Ontario RTA, landlords must give at least 24 hours' written notice before entering a tenant's unit for inspections, repairs, or other permitted purposes. Emergency entry is allowed without notice." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

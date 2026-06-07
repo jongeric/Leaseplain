@@ -44,6 +44,14 @@ const cities = [
   { name: "Halifax", href: "/canada/nova-scotia/halifax", desc: "Nova Scotia's largest and fastest-growing rental market — significant rent growth in recent years" },
 ];
 
+const faqItems = [
+                  { q: "Does Nova Scotia have rent control?", a: "Yes. Nova Scotia has a fixed 5% annual rent increase cap, legislated under the Interim Residential Rental Increase Cap Act and extended through the end of 2027. This cap applies to most residential tenancies and is enforced through the Residential Tenancies Program." },
+                  { q: "How are security deposits handled in Nova Scotia?", a: "Nova Scotia requires landlords to deposit the security deposit (up to half a month's rent) with the Director of Residential Tenancies, not hold it themselves. This protects tenants from landlords who spend the deposit." },
+                  { q: "What body handles landlord-tenant disputes in Nova Scotia?", a: "The Residential Tenancies Program administers disputes. The Director of Residential Tenancies hears applications for rent increases, evictions, deposit returns, and maintenance complaints." },
+                  { q: "How much notice must a Nova Scotia landlord give to end a tenancy?", a: "For non-payment of rent, landlords must give 15 days' notice. For other breaches, the notice period is generally longer. For a fixed-term lease, landlords must give 3 months' notice if they do not intend to renew." },
+                  { q: "Are pet clauses enforceable in Nova Scotia leases?", a: "Generally yes, but human rights legislation protects service animals. A no-pets clause in a Nova Scotia lease is usually valid for regular pets, though the Human Rights Act requires accommodation for animals assisting persons with disabilities." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -57,6 +65,18 @@ const speakableSchema = {
 export default function NovaScotiaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -187,13 +207,7 @@ export default function NovaScotiaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does Nova Scotia have rent control?", a: "Yes. Nova Scotia has a fixed 5% annual rent increase cap, legislated under the Interim Residential Rental Increase Cap Act and extended through the end of 2027. This cap applies to most residential tenancies and is enforced through the Residential Tenancies Program." },
-                  { q: "How are security deposits handled in Nova Scotia?", a: "Nova Scotia requires landlords to deposit the security deposit (up to half a month's rent) with the Director of Residential Tenancies, not hold it themselves. This protects tenants from landlords who spend the deposit." },
-                  { q: "What body handles landlord-tenant disputes in Nova Scotia?", a: "The Residential Tenancies Program administers disputes. The Director of Residential Tenancies hears applications for rent increases, evictions, deposit returns, and maintenance complaints." },
-                  { q: "How much notice must a Nova Scotia landlord give to end a tenancy?", a: "For non-payment of rent, landlords must give 15 days' notice. For other breaches, the notice period is generally longer. For a fixed-term lease, landlords must give 3 months' notice if they do not intend to renew." },
-                  { q: "Are pet clauses enforceable in Nova Scotia leases?", a: "Generally yes, but human rights legislation protects service animals. A no-pets clause in a Nova Scotia lease is usually valid for regular pets, though the Human Rights Act requires accommodation for animals assisting persons with disabilities." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

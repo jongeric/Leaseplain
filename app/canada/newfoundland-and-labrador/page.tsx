@@ -44,6 +44,14 @@ const cities = [
   { name: "St. John's", href: "/canada/newfoundland-and-labrador/st-johns", desc: "NL's largest city and capital — growing rental demand, historic housing stock, Service NL main office" },
 ];
 
+const faqItems = [
+                  { q: "Is there rent control in Newfoundland and Labrador?", a: "No. Newfoundland and Labrador does not have rent control. Landlords may raise rent by any amount but must give tenants at least 8 weeks' written notice before the increase takes effect." },
+                  { q: "What is the security deposit limit in Newfoundland?", a: "Newfoundland and Labrador caps security deposits at three-quarters (0.75×) of one month's rent — a unique limit compared to most other provinces. The deposit must be returned within 15 days of tenancy end." },
+                  { q: "How do I file a landlord-tenant complaint in Newfoundland?", a: "Contact the Residential Tenancies Section of Service NL. Tenants and landlords can file applications for hearings on rent disputes, deposits, evictions, and maintenance issues." },
+                  { q: "What happens if a NL landlord doesn't return my deposit?", a: "File a complaint with the Residential Tenancies Division within 60 days of the tenancy ending. An officer can order the landlord to return your deposit plus interest, and may award additional compensation for non-compliance." },
+                  { q: "What notice does a Newfoundland landlord need to terminate a tenancy?", a: "For non-payment of rent, landlords must give at least 30 days' notice. For other lease violations, notice periods vary. Month-to-month tenancies generally require 8 weeks' (2 months') notice to terminate without cause." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -57,6 +65,18 @@ const speakableSchema = {
 export default function NewfoundlandAndLabradorPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -188,13 +208,7 @@ export default function NewfoundlandAndLabradorPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Is there rent control in Newfoundland and Labrador?", a: "No. Newfoundland and Labrador does not have rent control. Landlords may raise rent by any amount but must give tenants at least 8 weeks' written notice before the increase takes effect." },
-                  { q: "What is the security deposit limit in Newfoundland?", a: "Newfoundland and Labrador caps security deposits at three-quarters (0.75×) of one month's rent — a unique limit compared to most other provinces. The deposit must be returned within 15 days of tenancy end." },
-                  { q: "How do I file a landlord-tenant complaint in Newfoundland?", a: "Contact the Residential Tenancies Section of Service NL. Tenants and landlords can file applications for hearings on rent disputes, deposits, evictions, and maintenance issues." },
-                  { q: "What happens if a NL landlord doesn't return my deposit?", a: "File a complaint with the Residential Tenancies Division within 60 days of the tenancy ending. An officer can order the landlord to return your deposit plus interest, and may award additional compensation for non-compliance." },
-                  { q: "What notice does a Newfoundland landlord need to terminate a tenancy?", a: "For non-payment of rent, landlords must give at least 30 days' notice. For other lease violations, notice periods vary. Month-to-month tenancies generally require 8 weeks' (2 months') notice to terminate without cause." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

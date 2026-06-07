@@ -46,6 +46,14 @@ const cities = [
   { name: "Laval", href: "/canada/quebec/laval", desc: "Montreal suburb, growing rental market, TAL jurisdiction" },
 ];
 
+const faqItems = [
+                  { q: "What is the Quebec standard lease (bail)?", a: "Quebec requires most residential leases to use the standard lease form (bail) issued by the Tribunal administratif du logement (TAL). Using a non-standard form does not invalidate the tenancy but tenants can request the standard form within 10 days of signing." },
+                  { q: "Does Quebec allow security deposits?", a: "No. Quebec law prohibits landlords from collecting a security deposit, damage deposit, or any advance rent beyond one month. Asking for a deposit is illegal." },
+                  { q: "How do rent increases work in Quebec?", a: "Landlords must send tenants a written notice of any proposed rent increase within the prescribed window: 3 to 6 months before lease renewal for leases of 12 months or more, or 1 to 2 months before lease renewal for leases under 12 months. Tenants can accept, negotiate, or refuse. If refused, the landlord can apply to the TAL to set a reasonable increase." },
+                  { q: "What is the Tribunal administratif du logement (TAL)?", a: "The TAL is Quebec's housing tribunal that handles disputes about rent increases, lease renewals, repairs, and evictions. Applications can be filed online at tal.gouv.qc.ca and are free for tenants." },
+                  { q: "What is July 1 moving day in Quebec?", a: "Historically, most Quebec leases expire on June 30 and renew July 1. This creates a mass moving day tradition. While less universal today, many Quebec leases still use this cycle." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -59,6 +67,18 @@ const speakableSchema = {
 export default function QuebecPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -179,13 +199,7 @@ export default function QuebecPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What is the Quebec standard lease (bail)?", a: "Quebec requires most residential leases to use the standard lease form (bail) issued by the Tribunal administratif du logement (TAL). Using a non-standard form does not invalidate the tenancy but tenants can request the standard form within 10 days of signing." },
-                  { q: "Does Quebec allow security deposits?", a: "No. Quebec law prohibits landlords from collecting a security deposit, damage deposit, or any advance rent beyond one month. Asking for a deposit is illegal." },
-                  { q: "How do rent increases work in Quebec?", a: "Landlords must send tenants a written notice of any proposed rent increase within the prescribed window: 3 to 6 months before lease renewal for leases of 12 months or more, or 1 to 2 months before lease renewal for leases under 12 months. Tenants can accept, negotiate, or refuse. If refused, the landlord can apply to the TAL to set a reasonable increase." },
-                  { q: "What is the Tribunal administratif du logement (TAL)?", a: "The TAL is Quebec's housing tribunal that handles disputes about rent increases, lease renewals, repairs, and evictions. Applications can be filed online at tal.gouv.qc.ca and are free for tenants." },
-                  { q: "What is July 1 moving day in Quebec?", a: "Historically, most Quebec leases expire on June 30 and renew July 1. This creates a mass moving day tradition. While less universal today, many Quebec leases still use this cycle." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

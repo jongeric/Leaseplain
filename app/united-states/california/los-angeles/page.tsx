@@ -21,6 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+                  {
+                    q: "Does LA's RSO apply to my apartment?",
+                    a: "The LA RSO applies to most rental units in buildings built on or before October 1, 1978 in the City of Los Angeles. Check the HCIDLA's online rental registry at housing.lacity.gov to confirm your unit's status. If your building is newer, California's AB 1482 may provide a statewide rent cap and just-cause protections after 12 months of tenancy.",
+                  },
+                  {
+                    q: "What is 'just cause' eviction and does it apply in LA?",
+                    a: "Just cause eviction means a landlord can only evict you for a legally recognized reason — such as non-payment of rent, a material lease violation, or the owner moving in. In Los Angeles, RSO buildings require just cause at all times. For non-RSO units, AB 1482 requires just cause after 12 months of tenancy. Without a qualifying reason, the eviction notice is invalid and you have grounds to fight it.",
+                  },
+                  {
+                    q: "What is the Ellis Act and how does it affect LA tenants?",
+                    a: "The Ellis Act is a California state law that allows landlords to remove all units in a building from the rental market (i.e., go out of the rental business entirely). In LA, Ellis Act evictions of RSO tenants require advance notice (120 days, or one year for seniors/disabled tenants) and payment of relocation assistance. Tenants also have a right of first refusal if the units return to the market within 10 years. Ellis Act abuse is a major issue in LA — contact HCIDLA or an attorney if you receive this notice.",
+                  },
+                  {
+                    q: "How much is the security deposit limit in Los Angeles?",
+                    a: "California law (as amended by AB 12 effective July 2024) caps security deposits at 1 month's rent for unfurnished units and 2 months' rent for furnished units. This limit applies to all LA landlords. The deposit must be returned within 21 days of move-out along with an itemized statement of any deductions. Landlords cannot deduct for normal wear and tear.",
+                  },
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -63,6 +82,18 @@ const laResources = [
 export default function LosAngelesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -186,24 +217,7 @@ export default function LosAngelesPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  {
-                    q: "Does LA's RSO apply to my apartment?",
-                    a: "The LA RSO applies to most rental units in buildings built on or before October 1, 1978 in the City of Los Angeles. Check the HCIDLA's online rental registry at housing.lacity.gov to confirm your unit's status. If your building is newer, California's AB 1482 may provide a statewide rent cap and just-cause protections after 12 months of tenancy.",
-                  },
-                  {
-                    q: "What is 'just cause' eviction and does it apply in LA?",
-                    a: "Just cause eviction means a landlord can only evict you for a legally recognized reason — such as non-payment of rent, a material lease violation, or the owner moving in. In Los Angeles, RSO buildings require just cause at all times. For non-RSO units, AB 1482 requires just cause after 12 months of tenancy. Without a qualifying reason, the eviction notice is invalid and you have grounds to fight it.",
-                  },
-                  {
-                    q: "What is the Ellis Act and how does it affect LA tenants?",
-                    a: "The Ellis Act is a California state law that allows landlords to remove all units in a building from the rental market (i.e., go out of the rental business entirely). In LA, Ellis Act evictions of RSO tenants require advance notice (120 days, or one year for seniors/disabled tenants) and payment of relocation assistance. Tenants also have a right of first refusal if the units return to the market within 10 years. Ellis Act abuse is a major issue in LA — contact HCIDLA or an attorney if you receive this notice.",
-                  },
-                  {
-                    q: "How much is the security deposit limit in Los Angeles?",
-                    a: "California law (as amended by AB 12 effective July 2024) caps security deposits at 1 month's rent for unfurnished units and 2 months' rent for furnished units. This limit applies to all LA landlords. The deposit must be returned within 21 days of move-out along with an itemized statement of any deductions. Landlords cannot deduct for normal wear and tear.",
-                  },
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             </div>

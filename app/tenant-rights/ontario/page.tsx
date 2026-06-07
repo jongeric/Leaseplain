@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ShieldCheck, CheckCircle, AlertTriangle, ChevronRight, Upload, BookOpen } from "lucide-react";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import FAQAccordion from "@/components/FAQAccordion";
 
 export const dynamic = "force-static";
 
@@ -51,6 +52,14 @@ const illegalLandlordActions = [
   "Retaliating against tenants who file LTB applications",
 ];
 
+const faqItems = [
+  { q: "What is the Ontario Residential Tenancies Act?", a: "The Residential Tenancies Act, 2006 (RTA) is Ontario's main law governing landlords and tenants. It sets out rules for rent, deposits, maintenance, evictions, and disputes, and establishes the Landlord and Tenant Board (LTB) to resolve them." },
+  { q: "How much can a landlord charge for a deposit in Ontario?", a: "Ontario landlords may only collect a rent deposit equal to one month's rent (applied to your last month). They cannot charge a separate damage or pet deposit, and the deposit must earn annual interest at the guideline rate." },
+  { q: "How much notice does a landlord need to give to raise rent in Ontario?", a: "Landlords must give 90 days' written notice using the proper form, and rent can only be increased once every 12 months. Most units are also capped at the annual provincial guideline unless the unit is exempt (first occupied after November 15, 2018)." },
+  { q: "Can my landlord evict me without going through the LTB?", a: "No. A landlord cannot change your locks, remove your belongings, or force you out. Every eviction in Ontario must go through the Landlord and Tenant Board, and only a court-appointed sheriff can physically enforce an eviction order." },
+  { q: "How do I file an application with Ontario's Landlord and Tenant Board?", a: "Applications can be filed online at tribunalsontario.ca/ltb. Filing fees are $48 online or $53 by paper, and fee waivers are available for low-income applicants. Common tenant applications include T2 (rights interference), T6 (maintenance), and T1 (illegal charges)." },
+];
+
 export default function OntarioTenantRightsPage() {
   return (
     <>
@@ -61,6 +70,18 @@ export default function OntarioTenantRightsPage() {
         datePublished="2025-01-15"
         dateModified="2026-05-15"
         keywords={["tenant rights Ontario", "Ontario RTA", "residential tenancies act Ontario", "LTB Ontario", "eviction rights Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "<") }}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
@@ -169,6 +190,11 @@ export default function OntarioTenantRightsPage() {
                   <li><strong>Legal Aid Ontario</strong> — <span className="text-slate-500">legalaid.on.ca</span> — legal representation for low-income tenants</li>
                   <li><strong>Ontario Human Rights Commission</strong> — <span className="text-slate-500">ohrc.on.ca</span> — for discrimination in housing</li>
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <FAQAccordion items={faqItems} />
               </div>
             </div>
 

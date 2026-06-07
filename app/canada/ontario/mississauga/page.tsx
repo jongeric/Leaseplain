@@ -38,6 +38,14 @@ const mississaugaLeaseIssues = [
   "No-pet clauses — in Ontario, a blanket no-pet clause in a lease is void; landlords can only seek eviction if a specific pet causes a problem.",
 ];
 
+const faqItems = [
+                  { q: "Does rent control apply to Mississauga rentals?", a: "Yes, Ontario's rent-control rules apply throughout Mississauga. Units first occupied before November 15, 2018 are subject to the provincial rent-increase guideline. Newer units (occupied after that date) have no rent-increase limit." },
+                  { q: "What lease rights do Mississauga condo tenants have?", a: "Condo tenants in Mississauga are protected by both the Ontario Residential Tenancies Act and the condo corporation's declaration and rules. Condo rules that are more restrictive than the RTA (e.g., no-smoking rules, quiet hours) are generally enforceable." },
+                  { q: "Are there tenant legal aid resources in Mississauga?", a: "Mississauga Legal Aid and Peel Community Legal Services offer free or low-cost assistance to tenants with LTB applications, eviction notices, and lease review." },
+                  { q: "What is the difference between a basement apartment and a legal secondary suite in Mississauga?", a: "A legal secondary suite meets Mississauga's zoning and building code requirements. Tenants in illegal units still have most RTA rights, but the unit may not have required fire safety features. Check with the City of Mississauga if uncertain." },
+                  { q: "Can a Mississauga landlord raise rent after lease expiry?", a: "After the first year, the landlord can raise rent by the provincial guideline amount with 90 days' written notice (N1 form). If the unit is exempt from rent control, any amount is permissible with 90 days' notice." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function MississaugaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -159,13 +179,7 @@ export default function MississaugaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does rent control apply to Mississauga rentals?", a: "Yes, Ontario's rent-control rules apply throughout Mississauga. Units first occupied before November 15, 2018 are subject to the provincial rent-increase guideline. Newer units (occupied after that date) have no rent-increase limit." },
-                  { q: "What lease rights do Mississauga condo tenants have?", a: "Condo tenants in Mississauga are protected by both the Ontario Residential Tenancies Act and the condo corporation's declaration and rules. Condo rules that are more restrictive than the RTA (e.g., no-smoking rules, quiet hours) are generally enforceable." },
-                  { q: "Are there tenant legal aid resources in Mississauga?", a: "Mississauga Legal Aid and Peel Community Legal Services offer free or low-cost assistance to tenants with LTB applications, eviction notices, and lease review." },
-                  { q: "What is the difference between a basement apartment and a legal secondary suite in Mississauga?", a: "A legal secondary suite meets Mississauga's zoning and building code requirements. Tenants in illegal units still have most RTA rights, but the unit may not have required fire safety features. Check with the City of Mississauga if uncertain." },
-                  { q: "Can a Mississauga landlord raise rent after lease expiry?", a: "After the first year, the landlord can raise rent by the provincial guideline amount with 90 days' written notice (N1 form). If the unit is exempt from rent control, any amount is permissible with 90 days' notice." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

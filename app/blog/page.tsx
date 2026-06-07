@@ -151,9 +151,27 @@ const categoryColor: Record<string, string> = {
   "Lease Tips": "bg-amber-50 text-amber-700 border-amber-100",
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tenant Rights Blog — LeasePlain",
+  "url": "https://leaseplain.com/blog",
+  "itemListElement": posts.map((post, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": post.title,
+    "url": `https://leaseplain.com${post.href}`,
+    "description": post.excerpt,
+  })),
+};
+
 export default function BlogPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, "<") }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

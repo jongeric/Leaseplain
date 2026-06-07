@@ -38,6 +38,14 @@ const londonLeaseIssues = [
   "Noise and guest clauses targeted at student behaviour that may conflict with RTA protections — tenants have the right to reasonable enjoyment of the unit.",
 ];
 
+const faqItems = [
+                  { q: "Is London Ontario a renter-friendly city?", a: "London has a relatively affordable rental market compared to Toronto and Ottawa. The Ontario LTB serves London tenants, providing access to dispute resolution for maintenance, rent, and eviction issues." },
+                  { q: "What are a London Ontario landlord's maintenance obligations?", a: "Under the Residential Tenancies Act, London landlords must maintain rental units in a good state of repair, fit for habitation, and compliant with health and safety standards. Tenants can file a T6 application with the LTB if maintenance is not done." },
+                  { q: "Does London have any student-specific rental protections?", a: "Students in London renting from private landlords have the same RTA protections as any tenant. University-managed housing (on-campus) is generally exempt from the RTA. Off-campus students should read their lease carefully." },
+                  { q: "Are there legal aid resources for London Ontario tenants?", a: "Middlesex London Legal Aid and Community Legal Services at Western University's law school both offer free or low-cost tenant assistance, including help with LTB applications and lease review." },
+                  { q: "Can a London Ontario landlord ask for first and last month's rent?", a: "Yes. Ontario landlords are permitted to collect first and last month's rent deposits only — no additional damage deposit. The last month's rent deposit must earn interest at the rent-increase guideline rate each year." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function LondonPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -172,13 +192,7 @@ export default function LondonPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Is London Ontario a renter-friendly city?", a: "London has a relatively affordable rental market compared to Toronto and Ottawa. The Ontario LTB serves London tenants, providing access to dispute resolution for maintenance, rent, and eviction issues." },
-                  { q: "What are a London Ontario landlord's maintenance obligations?", a: "Under the Residential Tenancies Act, London landlords must maintain rental units in a good state of repair, fit for habitation, and compliant with health and safety standards. Tenants can file a T6 application with the LTB if maintenance is not done." },
-                  { q: "Does London have any student-specific rental protections?", a: "Students in London renting from private landlords have the same RTA protections as any tenant. University-managed housing (on-campus) is generally exempt from the RTA. Off-campus students should read their lease carefully." },
-                  { q: "Are there legal aid resources for London Ontario tenants?", a: "Middlesex London Legal Aid and Community Legal Services at Western University's law school both offer free or low-cost tenant assistance, including help with LTB applications and lease review." },
-                  { q: "Can a London Ontario landlord ask for first and last month's rent?", a: "Yes. Ontario landlords are permitted to collect first and last month's rent deposits only — no additional damage deposit. The last month's rent deposit must earn interest at the rent-increase guideline rate each year." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

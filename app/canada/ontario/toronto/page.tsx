@@ -38,6 +38,14 @@ const torontoLeaseIssues = [
   "Short-notice entry clauses — landlords must give 24 hours written notice to enter for most reasons.",
 ];
 
+const faqItems = [
+                  { q: "Is rent controlled in Toronto?", a: "Toronto follows Ontario's rent-control rules under the Residential Tenancies Act. Units first occupied before November 15, 2018 are subject to the annual rent-increase guideline. Units built after that date are exempt from rent control." },
+                  { q: "What is the average rent in Toronto?", a: "Toronto is Canada's most expensive rental market. Average one-bedroom apartments have been around $2,300–$2,600/month in recent years, varying significantly by neighbourhood and building type. Always verify current market data before signing." },
+                  { q: "How do I file a complaint about my Toronto landlord?", a: "File an application with the Ontario Landlord and Tenant Board (LTB) at ontario.ca/LTB. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. You can apply for orders related to maintenance, rent, illegal entry, and more." },
+                  { q: "Can a Toronto landlord charge a pet deposit?", a: "No. Under Ontario's Residential Tenancies Act, landlords cannot charge a pet deposit or any deposit other than the last month's rent. However, landlords can evict tenants if a lease no-pet clause is violated and the pet causes issues." },
+                  { q: "What is the difference between a condo lease and an apartment lease in Toronto?", a: "The RTA applies to both, but condo leases may include condo corporation rules (which override parts of the lease). Condo rules about noise, amenity use, and move-in/move-out procedures are generally binding on tenants." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -52,6 +60,18 @@ const speakableSchema = {
 export default function TorontoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -171,13 +191,7 @@ export default function TorontoPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Is rent controlled in Toronto?", a: "Toronto follows Ontario's rent-control rules under the Residential Tenancies Act. Units first occupied before November 15, 2018 are subject to the annual rent-increase guideline. Units built after that date are exempt from rent control." },
-                  { q: "What is the average rent in Toronto?", a: "Toronto is Canada's most expensive rental market. Average one-bedroom apartments have been around $2,300–$2,600/month in recent years, varying significantly by neighbourhood and building type. Always verify current market data before signing." },
-                  { q: "How do I file a complaint about my Toronto landlord?", a: "File an application with the Ontario Landlord and Tenant Board (LTB) at ontario.ca/LTB. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. You can apply for orders related to maintenance, rent, illegal entry, and more." },
-                  { q: "Can a Toronto landlord charge a pet deposit?", a: "No. Under Ontario's Residential Tenancies Act, landlords cannot charge a pet deposit or any deposit other than the last month's rent. However, landlords can evict tenants if a lease no-pet clause is violated and the pet causes issues." },
-                  { q: "What is the difference between a condo lease and an apartment lease in Toronto?", a: "The RTA applies to both, but condo leases may include condo corporation rules (which override parts of the lease). Condo rules about noise, amenity use, and move-in/move-out procedures are generally binding on tenants." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

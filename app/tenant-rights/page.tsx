@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { ShieldCheck, ChevronRight, MapPin, BookOpen } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -94,9 +95,27 @@ const guides = [
   },
 ];
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tenant Rights Guides — LeasePlain",
+  "url": "https://leaseplain.com/tenant-rights",
+  "itemListElement": guides.map((guide, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": guide.title,
+    "url": `https://leaseplain.com${guide.href}`,
+    "description": guide.description,
+  })),
+};
+
 export default function TenantRightsIndexPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema).replace(/</g, "<") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -107,6 +126,10 @@ export default function TenantRightsIndexPage() {
         },
       }).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Tenant Rights", href: "https://leaseplain.com/tenant-rights" },
+      ]} />
       <Navbar />
 
       <main>

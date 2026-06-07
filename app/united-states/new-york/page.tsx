@@ -35,6 +35,14 @@ const cities = [
   { name: "New York City", href: "/united-states/new-york/new-york-city", desc: "Rent stabilization, DHCR, free right to counsel in evictions" },
 ];
 
+const faqItems = [
+                  { q: "Does New York have rent control?", a: "Yes. New York has one of the most extensive rent regulation systems in the US. New York City has rent-stabilized and rent-controlled apartments. The 2019 Housing Stability and Tenant Protection Act strengthened these protections significantly." },
+                  { q: "What is the security deposit limit in New York?", a: "New York caps security deposits at one month's rent for most residential tenancies under the 2019 tenant protection law. This applies statewide for most leases." },
+                  { q: "How does rent stabilization work in New York?", a: "Rent-stabilized apartments in New York City have regulated rents that can only increase by amounts set annually by the Rent Guidelines Board. Tenants have the right to lease renewals, and landlords cannot refuse to renew without legal cause." },
+                  { q: "What notice is required for eviction in New York?", a: "New York landlords must give proper written notice before starting eviction proceedings. For non-payment, a 14-day notice. For month-to-month tenancies, 30 days (for tenancies under one year) to 90 days (for tenancies over two years) depending on the length of tenancy." },
+                  { q: "What are tenant rights in New York regarding repairs?", a: "New York landlords must maintain apartments in a habitable condition. Tenants can file a complaint with the city's Department of Housing Preservation and Development (HPD) for serious violations. Serious code violations can result in civil penalties for landlords." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -49,6 +57,18 @@ const speakableSchema = {
 export default function NewYorkPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -156,13 +176,7 @@ export default function NewYorkPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does New York have rent control?", a: "Yes. New York has one of the most extensive rent regulation systems in the US. New York City has rent-stabilized and rent-controlled apartments. The 2019 Housing Stability and Tenant Protection Act strengthened these protections significantly." },
-                  { q: "What is the security deposit limit in New York?", a: "New York caps security deposits at one month's rent for most residential tenancies under the 2019 tenant protection law. This applies statewide for most leases." },
-                  { q: "How does rent stabilization work in New York?", a: "Rent-stabilized apartments in New York City have regulated rents that can only increase by amounts set annually by the Rent Guidelines Board. Tenants have the right to lease renewals, and landlords cannot refuse to renew without legal cause." },
-                  { q: "What notice is required for eviction in New York?", a: "New York landlords must give proper written notice before starting eviction proceedings. For non-payment, a 14-day notice. For month-to-month tenancies, 30 days (for tenancies under one year) to 90 days (for tenancies over two years) depending on the length of tenancy." },
-                  { q: "What are tenant rights in New York regarding repairs?", a: "New York landlords must maintain apartments in a habitable condition. Tenants can file a complaint with the city's Department of Housing Preservation and Development (HPD) for serious violations. Serious code violations can result in civil penalties for landlords." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

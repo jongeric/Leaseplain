@@ -44,6 +44,14 @@ const cities = [
   { name: "Winnipeg", href: "/canada/manitoba/winnipeg", desc: "Manitoba's capital and largest city — the RTB's main office serves Winnipeg renters directly" },
 ];
 
+const faqItems = [
+                  { q: "Does Manitoba have rent control?", a: "Yes. Manitoba applies an annual rent increase guideline set each year by the Residential Tenancies Branch. Landlords generally cannot raise rent above the guideline without branch approval." },
+                  { q: "What is the security deposit limit in Manitoba?", a: "Manitoba limits security deposits to half a month's rent. In Manitoba, landlords hold security deposits in trust. The deposit must be returned within 14 days of move-out if there is no dispute." },
+                  { q: "How do I file a tenancy dispute in Manitoba?", a: "Contact the Residential Tenancies Branch (RTB) in person, by phone, or online. The RTB handles rent increases, deposits, maintenance complaints, evictions, and other landlord-tenant disputes throughout Manitoba." },
+                  { q: "What notice is required to end a month-to-month tenancy in Manitoba?", a: "In Manitoba, tenants must give one full rental period notice (e.g., one month for monthly rentals). Landlords must give at least one rental period's notice unless evicting for cause, which may require a shorter or longer period." },
+                  { q: "Can I get my Manitoba security deposit back?", a: "Yes, provided you have no outstanding rent or damages above normal wear and tear. The Residential Tenancies Branch holds deposits and releases them after the tenancy ends, usually within 14–28 days of a claim." }
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -57,6 +65,18 @@ const speakableSchema = {
 export default function ManitobaPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -185,13 +205,7 @@ export default function ManitobaPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "Does Manitoba have rent control?", a: "Yes. Manitoba applies an annual rent increase guideline set each year by the Residential Tenancies Branch. Landlords generally cannot raise rent above the guideline without branch approval." },
-                  { q: "What is the security deposit limit in Manitoba?", a: "Manitoba limits security deposits to half a month's rent. In Manitoba, landlords hold security deposits in trust. The deposit must be returned within 14 days of move-out if there is no dispute." },
-                  { q: "How do I file a tenancy dispute in Manitoba?", a: "Contact the Residential Tenancies Branch (RTB) in person, by phone, or online. The RTB handles rent increases, deposits, maintenance complaints, evictions, and other landlord-tenant disputes throughout Manitoba." },
-                  { q: "What notice is required to end a month-to-month tenancy in Manitoba?", a: "In Manitoba, tenants must give one full rental period notice (e.g., one month for monthly rentals). Landlords must give at least one rental period's notice unless evicting for cause, which may require a shorter or longer period." },
-                  { q: "Can I get my Manitoba security deposit back?", a: "Yes, provided you have no outstanding rent or damages above normal wear and tear. The Residential Tenancies Branch holds deposits and releases them after the tenancy ends, usually within 14–28 days of a claim." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
 

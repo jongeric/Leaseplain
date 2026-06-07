@@ -21,6 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
+const faqItems = [
+                  {
+                    q: "How do I find out if my NYC apartment is rent-stabilized?",
+                    a: "Several methods work: (1) Check your lease — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) stating the legal regulated rent. (2) Search the DHCR's Rent Stabilization Lookup tool at apps.hcr.ny.gov/BuildingSearch. (3) Request your apartment's rent history from DHCR via a Freedom of Information Law (FOIL) request. Buildings built before 1974 with 6 or more units in NYC are generally covered unless they were deregulated.",
+                  },
+                  {
+                    q: "What is Good Cause Eviction and how does it apply in NYC?",
+                    a: "The Good Cause Eviction law, enacted in April 2024, applies automatically in New York City and covers most market-rate rental apartments not already covered by stronger local protections. It limits annual rent increases to 5% plus the local CPI (capped at 10%) and requires landlords to show a legally recognized reason (good cause) before refusing to renew a lease or commencing a nonpayment proceeding. In NYC, most units not covered by the RSO or other stronger laws fall under Good Cause — but single-family homes, condos, and some recently constructed buildings may be exempt. Consult a housing attorney to confirm your unit's coverage.",
+                  },
+                  {
+                    q: "My landlord is raising my stabilized rent by more than the RGB guideline — what can I do?",
+                    a: "You can file a rent overcharge complaint with the DHCR. Under HSTPA 2019, tenants can look back up to 6 years for overcharges. If the DHCR finds a willful overcharge, it can award treble damages (three times the overcharge amount) plus interest and attorney's fees. File your complaint promptly — the process takes time, but the lookback period protects you.",
+                  },
+                  {
+                    q: "Can a NYC landlord keep my security deposit for normal wear and tear?",
+                    a: "No. Under New York law, a landlord can only deduct from your security deposit for actual damages beyond normal wear and tear, unpaid rent, and certain cleaning costs if the unit was left in significantly worse condition than received. The deposit must be returned within 14 days of the tenancy ending with an itemized written statement. If the landlord fails to return the deposit within 14 days without a written itemization, they lose the right to retain any portion of it.",
+                  },
+];
+
 const speakableSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -63,6 +82,18 @@ const nycResources = [
 export default function NewYorkCityPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\u003c") }} />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
@@ -189,24 +220,7 @@ export default function NewYorkCityPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  {
-                    q: "How do I find out if my NYC apartment is rent-stabilized?",
-                    a: "Several methods work: (1) Check your lease — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) stating the legal regulated rent. (2) Search the DHCR's Rent Stabilization Lookup tool at apps.hcr.ny.gov/BuildingSearch. (3) Request your apartment's rent history from DHCR via a Freedom of Information Law (FOIL) request. Buildings built before 1974 with 6 or more units in NYC are generally covered unless they were deregulated.",
-                  },
-                  {
-                    q: "What is Good Cause Eviction and how does it apply in NYC?",
-                    a: "The Good Cause Eviction law, enacted in April 2024, applies automatically in New York City and covers most market-rate rental apartments not already covered by stronger local protections. It limits annual rent increases to 5% plus the local CPI (capped at 10%) and requires landlords to show a legally recognized reason (good cause) before refusing to renew a lease or commencing a nonpayment proceeding. In NYC, most units not covered by the RSO or other stronger laws fall under Good Cause — but single-family homes, condos, and some recently constructed buildings may be exempt. Consult a housing attorney to confirm your unit's coverage.",
-                  },
-                  {
-                    q: "My landlord is raising my stabilized rent by more than the RGB guideline — what can I do?",
-                    a: "You can file a rent overcharge complaint with the DHCR. Under HSTPA 2019, tenants can look back up to 6 years for overcharges. If the DHCR finds a willful overcharge, it can award treble damages (three times the overcharge amount) plus interest and attorney's fees. File your complaint promptly — the process takes time, but the lookback period protects you.",
-                  },
-                  {
-                    q: "Can a NYC landlord keep my security deposit for normal wear and tear?",
-                    a: "No. Under New York law, a landlord can only deduct from your security deposit for actual damages beyond normal wear and tear, unpaid rent, and certain cleaning costs if the unit was left in significantly worse condition than received. The deposit must be returned within 14 days of the tenancy ending with an itemized written statement. If the landlord fails to return the deposit within 14 days without a written itemization, they lose the right to retain any portion of it.",
-                  },
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             </div>

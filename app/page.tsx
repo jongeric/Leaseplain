@@ -462,11 +462,11 @@ export default function HomePage() {
                 { href: "/lease-clause/security-deposit", label: "Security Deposit Clause" },
                 { href: "/lease-clause/early-termination", label: "Early Termination Clause" },
                 { href: "/lease-clause/rent-increase", label: "Rent Increase Clause" },
-                { href: "/tenant-rights-ontario", label: "Tenant Rights in Ontario" },
-                { href: "/how-to-read-a-lease", label: "How to Read a Lease" },
+                { href: "/tenant-rights/ontario", label: "Tenant Rights in Ontario" },
+                { href: "/resources/how-to-read-a-lease", label: "How to Read a Lease" },
                 { href: "/lease-clause/subletting", label: "Subletting Clause" },
                 { href: "/lease-clause/maintenance", label: "Maintenance & Repairs" },
-                { href: "/lease-clause/pet-policy", label: "Pet Policy Clause" },
+                { href: "/lease-clause/pets", label: "Pet Policy Clause" },
               ].map((link) => (
                 <Link
                   key={link.href}

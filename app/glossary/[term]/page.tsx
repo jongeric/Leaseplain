@@ -70,7 +70,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
     relatedTerms: ["late-fees", "termination-clause", "habitability", "grace-period"],
     relatedClauses: [
       { label: "Security Deposit Clause Explained", href: "/lease-clause/security-deposit" },
-      { label: "Move-Out Conditions", href: "/lease-clause/move-out-conditions" },
+      { label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" },
     ],
   },
 
@@ -112,7 +112,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
     ],
     relatedTerms: ["guarantor", "termination-clause", "joint-and-several-liability"],
     relatedClauses: [
-      { label: "Subletting & Assignment Clause", href: "/lease-clause/subletting-assignment" },
+      { label: "Subletting Clause", href: "/lease-clause/subletting" },
     ],
   },
 
@@ -153,7 +153,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["joint-and-several-liability", "subletting", "security-deposit"],
-    relatedClauses: [{ label: "Guarantor Clause", href: "/lease-clause/guarantor-clause" }],
+    relatedClauses: [{ label: "Security Deposit Clause", href: "/lease-clause/security-deposit" }],
   },
 
   "rent-increase": {
@@ -233,7 +233,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["grace-period", "rent-increase", "security-deposit"],
-    relatedClauses: [{ label: "Rent Payment Clause", href: "/lease-clause/rent-payment" }],
+    relatedClauses: [{ label: "Late Fees Clause", href: "/lease-clause/late-fees" }],
   },
 
   "maintenance-clause": {
@@ -273,7 +273,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["habitability", "quiet-enjoyment", "termination-clause"],
-    relatedClauses: [{ label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance-repairs" }],
+    relatedClauses: [{ label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" }],
   },
 
   "occupancy-limits": {
@@ -309,7 +309,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["subletting", "habitability", "termination-clause"],
-    relatedClauses: [{ label: "Occupancy Clause", href: "/lease-clause/occupancy-clause" }],
+    relatedClauses: [{ label: "Guests Clause", href: "/lease-clause/guests" }],
   },
 
   "termination-clause": {
@@ -350,8 +350,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
     ],
     relatedTerms: ["holdover-tenant", "lease-renewal", "subletting"],
     relatedClauses: [
-      { label: "Termination Clause Explained", href: "/lease-clause/termination-clause" },
-      { label: "Notice to Vacate", href: "/lease-clause/notice-to-vacate" },
+      { label: "Early Termination Clause Explained", href: "/lease-clause/early-termination" },
     ],
   },
 
@@ -388,7 +387,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["termination-clause", "holdover-tenant", "rent-increase"],
-    relatedClauses: [{ label: "Renewal Clause", href: "/lease-clause/renewal-clause" }],
+    relatedClauses: [{ label: "Rent Increase Clause", href: "/lease-clause/rent-increase" }],
   },
 
   "grace-period": {
@@ -424,7 +423,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["late-fees", "rent-increase", "termination-clause"],
-    relatedClauses: [{ label: "Rent Payment Clause", href: "/lease-clause/rent-payment" }],
+    relatedClauses: [{ label: "Late Fees Clause", href: "/lease-clause/late-fees" }],
   },
 
   "holdover-tenant": {
@@ -460,7 +459,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["termination-clause", "lease-renewal", "rent-increase"],
-    relatedClauses: [{ label: "Holdover Clause", href: "/lease-clause/holdover-clause" }],
+    relatedClauses: [{ label: "Early Termination Clause", href: "/lease-clause/early-termination" }],
   },
 
   "force-majeure": {
@@ -496,7 +495,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["habitability", "termination-clause", "maintenance-clause"],
-    relatedClauses: [{ label: "Force Majeure Clause", href: "/lease-clause/force-majeure" }],
+    relatedClauses: [{ label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" }],
   },
 
   "quiet-enjoyment": {
@@ -532,7 +531,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["habitability", "maintenance-clause", "termination-clause"],
-    relatedClauses: [{ label: "Entry and Notice Clause", href: "/lease-clause/entry-notice" }],
+    relatedClauses: [{ label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" }],
   },
 
   "joint-and-several-liability": {
@@ -572,7 +571,7 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       },
     ],
     relatedTerms: ["guarantor", "subletting", "termination-clause"],
-    relatedClauses: [{ label: "Co-tenant Liability Clause", href: "/lease-clause/co-tenant-liability" }],
+    relatedClauses: [{ label: "Subletting Clause", href: "/lease-clause/subletting" }],
   },
 
   habitability: {
@@ -613,8 +612,8 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
     ],
     relatedTerms: ["maintenance-clause", "quiet-enjoyment", "termination-clause"],
     relatedClauses: [
-      { label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance-repairs" },
-      { label: "Health and Safety Clause", href: "/lease-clause/health-safety" },
+      { label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" },
+      { label: "Repairs Clause", href: "/lease-clause/repairs" },
     ],
   },
 };

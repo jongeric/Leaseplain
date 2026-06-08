@@ -309,7 +309,7 @@ export default function RentingInCanadaPage() {
                     { label: "Canadian Lease Laws", href: "/canadian-lease-laws" },
                     { label: "Lease Glossary", href: "/glossary" },
                     { label: "Common Lease Clauses", href: "/lease-clauses" },
-                    { label: "First-Time Renter Guide", href: "/first-time-renter-canada" },
+                    { label: "First-Time Renter Guide", href: "/resources/first-time-renter-guide" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

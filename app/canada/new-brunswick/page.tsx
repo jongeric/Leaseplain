@@ -41,9 +41,9 @@ const watchInLeases = [
 ];
 
 const cities = [
-  { name: "Moncton", href: "/canada/new-brunswick/moncton", desc: "New Brunswick's fastest-growing city — strong bilingual rental market, RTT office located here" },
-  { name: "Fredericton", href: "/canada/new-brunswick/fredericton", desc: "Provincial capital — government and university rental market, RTT main office in Fredericton" },
-  { name: "Saint John", href: "/canada/new-brunswick/saint-john", desc: "New Brunswick's oldest city — affordable rental market with heritage housing stock" },
+  { name: "Moncton", desc: "New Brunswick's fastest-growing city — strong bilingual rental market, RTT office located here" },
+  { name: "Fredericton", desc: "Provincial capital — government and university rental market, RTT main office in Fredericton" },
+  { name: "Saint John", desc: "New Brunswick's oldest city — affordable rental market with heritage housing stock" },
 ];
 
 const faqItems = [
@@ -187,19 +187,15 @@ export default function NewBrunswickPage() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-5">New Brunswick Cities</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {cities.map((c) => (
-                    <Link
-                      key={c.href}
-                      href={c.href}
-                      className="block bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all group"
+                    <div
+                      key={c.name}
+                      className="block bg-white border border-slate-200 rounded-2xl p-5"
                     >
-                      <div className="flex items-start justify-between mb-2">
-                        <h3 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                          {c.name}
-                        </h3>
-                        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors mt-0.5" aria-hidden="true" />
-                      </div>
+                      <h3 className="font-bold text-slate-900 mb-2">
+                        {c.name}
+                      </h3>
                       <p className="text-sm text-slate-600">{c.desc}</p>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -234,7 +230,7 @@ export default function NewBrunswickPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "New Brunswick Tenant Rights", href: "/tenant-rights/new-brunswick" },
+                    { label: "Canadian Tenant Rights Guide", href: "/tenant-rights/canada" },
                     { label: "Canada Overview", href: "/canada" },
                   ].map((l) => (
                     <li key={l.href}>

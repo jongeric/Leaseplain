@@ -42,8 +42,8 @@ const watchInLeases = [
 ];
 
 const cities = [
-  { name: "Saskatoon", href: "/canada/saskatchewan/saskatoon", desc: "Saskatchewan's largest city — growing rental market with a large university student population" },
-  { name: "Regina", href: "/canada/saskatchewan/regina", desc: "Provincial capital — government-employment rental market, ORT regional office located here" },
+  { name: "Saskatoon", desc: "Saskatchewan's largest city — growing rental market with a large university student population" },
+  { name: "Regina", desc: "Provincial capital — government-employment rental market, ORT regional office located here" },
 ];
 
 const speakableSchema = {
@@ -188,19 +188,15 @@ export default function SaskatchewanPage() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-5">Saskatchewan Cities</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {cities.map((c) => (
-                    <Link
-                      key={c.href}
-                      href={c.href}
-                      className="block bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all group"
+                    <div
+                      key={c.name}
+                      className="block bg-white border border-slate-200 rounded-2xl p-5"
                     >
-                      <div className="flex items-start justify-between mb-2">
-                        <h3 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                          {c.name}
-                        </h3>
-                        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors mt-0.5" aria-hidden="true" />
-                      </div>
+                      <h3 className="font-bold text-slate-900 mb-2">
+                        {c.name}
+                      </h3>
                       <p className="text-sm text-slate-600">{c.desc}</p>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -240,7 +236,7 @@ export default function SaskatchewanPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "Saskatchewan Tenant Rights", href: "/tenant-rights/saskatchewan" },
+                    { label: "Canadian Tenant Rights Guide", href: "/tenant-rights/canada" },
                     { label: "Canada Overview", href: "/canada" },
                   ].map((l) => (
                     <li key={l.href}>

@@ -241,8 +241,8 @@ export default function GlossaryPage() {
                 <ul className="space-y-1.5">
                   {[
                     { label: "Security Deposit Clause", href: "/lease-clause/security-deposit" },
-                    { label: "Termination Clause", href: "/lease-clause/termination-clause" },
-                    { label: "Maintenance & Repairs", href: "/lease-clause/maintenance-repairs" },
+                    { label: "Early Termination Clause", href: "/lease-clause/early-termination" },
+                    { label: "Maintenance & Repairs", href: "/lease-clause/maintenance" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-indigo-600 hover:underline">

@@ -86,7 +86,7 @@ export default function PrinceEdwardIslandPage() {
                   name: "What is the rent increase cap in Prince Edward Island?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "The annual rent increase cap in PEI is set each year by the Director of Residential Tenancy under the Residential Tenancy Act. Landlords cannot increase rent above this cap without applying to IRAC for approval. The landlord must give 3 months written notice of any increase, and only one increase per 12-month period is permitted.",
+                    text: "The annual rent increase cap in PEI is set each year by the Director of Residential Tenancy under the Residential Tenancy Act. For 2026, the cap is 2%. Landlords cannot increase rent above this cap without applying to IRAC for approval. The landlord must give 3 months written notice of any increase, and only one increase per 12-month period is permitted.",
                   },
                 },
                 {
@@ -183,7 +183,7 @@ export default function PrinceEdwardIslandPage() {
                   PEI reintroduced rent control under the <em>Residential Tenancy Act</em>. Annual
                   rent increases are now <strong>capped by the Director of Residential Tenancy</strong>.
                   The cap is announced each year and applies to all residential rental units in the
-                  province.
+                  province — the cap for 2026 is 2%.
                 </p>
                 <p className="text-slate-700 leading-relaxed mb-4">
                   Landlords who wish to increase rent above the annual cap must apply to IRAC and

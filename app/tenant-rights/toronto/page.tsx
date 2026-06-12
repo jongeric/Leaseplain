@@ -335,7 +335,7 @@ export default function TorontoTenantRightsPage() {
                 <ul className="flex flex-col gap-2">
                   {[
                     "Give written notice to the landlord before vacating that you intend to exercise your right of first refusal to return.",
-                    "The landlord must give you at least 3 months' notice for renovation eviction.",
+                    "The landlord must give you at least 120 days' notice for renovation eviction (Form N13).",
                     "You are entitled to compensation equal to 3 months' rent while displaced.",
                     "If the landlord refuses to let you return, file a T5 application at the LTB.",
                   ].map((item) => (

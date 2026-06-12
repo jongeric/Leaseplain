@@ -36,7 +36,7 @@ const keyFacts = [
   "Ontario's Residential Tenancies Act does not permit landlords to charge late fees as a general matter.",
   "Provisions in a lease imposing a financial penalty for late rent are generally unenforceable under the RTA.",
   "A landlord's remedy for late rent is to serve an N4 notice (non-payment of rent) — not to charge extra.",
-  "NSF (non-sufficient funds) charges: landlords may charge up to $20 for a returned cheque or failed payment.",
+  "NSF (non-sufficient funds) charges: landlords may charge an administration fee of up to $20 for a returned cheque or failed payment, in addition to recovering any actual bank charge they were charged as a result.",
   "Any clause charging daily penalties, percentage fees, or administrative fees on late rent is likely void.",
 ];
 
@@ -56,7 +56,7 @@ const whatToKnow = [
   },
   {
     q: "Can a landlord charge anything for late payment?",
-    a: "Only an NSF fee up to $20 if a cheque or payment bounced. No other financial penalties for late payment are legal under the RTA.",
+    a: "Only an NSF fee if a cheque or payment bounced — up to a $20 administration charge, plus the actual bank charge the landlord incurred. No other financial penalties for late payment are legal under the RTA.",
   },
   {
     q: "What if I signed a lease with a late fee clause?",
@@ -74,7 +74,7 @@ const faqs = [
   { q: "Are late fees legal in Canadian leases?", a: "Late fees are explicitly prohibited in Ontario (the RTA bans illegal charges). In BC and other provinces, the rules are stricter — any penalty fee not permitted by the tenancy act is generally void. Check your province's law before paying a late fee." },
   { q: "What can a landlord do if I pay rent late in Canada?", a: "The landlord can issue an eviction notice for non-payment of rent. In Ontario, this is an N4 notice, giving tenants 14 days to pay the arrears and void the notice. Most provinces have similar processes with a grace period." },
   { q: "How much late fee is too much?", a: "In provinces that do permit late fees (a minority), courts will not enforce punitive or exorbitant fees. A reasonable administrative charge proportional to actual administrative cost may be enforced; large percentage-based fees typically will not be." },
-  { q: "Can a landlord charge NSF fees for a bounced cheque?", a: "In Ontario, landlords may charge up to $20 for a returned cheque under the RTA — this is a statutory maximum, not a pass-through of actual bank fees." },
+  { q: "Can a landlord charge NSF fees for a bounced cheque?", a: "In Ontario, landlords may charge an administration fee of up to $20 for a returned cheque under the RTA, plus recover any actual bank charge they incurred as a result of the bounced payment." },
   { q: "What should I do if my lease includes a late fee clause?", a: "First, check whether late fees are permitted in your province. If they are not (as in Ontario), the clause is void even though you signed the lease. If you are charged an illegal late fee, dispute it with your province's tenancy tribunal." },
 ];
 

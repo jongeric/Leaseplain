@@ -65,7 +65,7 @@ const faqItems = [
   },
   {
     question: "What is the RTDRS and how do I file a claim?",
-    answer: "The Residential Tenancy Dispute Resolution Service (RTDRS) is Alberta's specialized tribunal for landlord-tenant disputes, established under the Residential Tenancies Act. It handles claims up to $100,000 (raised from $50,000 effective August 1, 2023). Filing fees are $75 for tenants and $100 for landlords. The RTDRS operates in Calgary, Edmonton, Red Deer, Lethbridge, and Grande Prairie; tenants in other areas can apply by written submission. Disputes are typically resolved within 30–60 days. The RTDRS can order: return of a security deposit, rent reductions, damages for breach of the lease, and termination of tenancy. Hearings are informal and parties can represent themselves without a lawyer.",
+    answer: "The Residential Tenancy Dispute Resolution Service (RTDRS) is Alberta's specialized tribunal for landlord-tenant disputes, established under the Residential Tenancies Act. It handles claims up to $100,000 (raised from $50,000 effective August 1, 2023). Filing fees are tiered by claim amount — $75 for claims up to $7,500 and $100 for claims above that. The RTDRS operates in Calgary, Edmonton, Red Deer, Lethbridge, and Grande Prairie; tenants in other areas can apply by written submission. Disputes are typically resolved within 30–60 days. The RTDRS can order: return of a security deposit, rent reductions, damages for breach of the lease, and termination of tenancy. Hearings are informal and parties can represent themselves without a lawyer.",
   },
   {
     question: "How much can a landlord charge as a security deposit in Alberta?",
@@ -238,7 +238,7 @@ export default function AlbertaTenantRightsPage() {
                 <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-5">
                   <p className="text-sm text-amber-800 font-semibold mb-1">No rent control — but notice rules are strict</p>
                   <p className="text-sm text-amber-700 leading-relaxed">
-                    Unlike Ontario (guideline of 2.5% for 2024) or BC (3% for 2024), Alberta imposes
+                    Unlike Ontario (guideline of 2.5% for 2024) or BC (3.5% for 2024), Alberta imposes
                     no cap on how much rent can increase. A landlord can raise rent by 10%, 30%, or
                     any amount — as long as they follow the required notice procedure. The 2023
                     amendment to the RTA added one important restriction: only one increase per
@@ -297,8 +297,8 @@ export default function AlbertaTenantRightsPage() {
                     <tbody>
                       {[
                         ["Maximum claim amount", "$100,000 (raised from $50,000 effective August 1, 2023)"],
-                        ["Tenant filing fee", "$75"],
-                        ["Landlord filing fee", "$100"],
+                        ["Filing fee (claims up to $7,500)", "$75"],
+                        ["Filing fee (claims over $7,500)", "$100"],
                         ["Typical resolution time", "30–60 days"],
                         ["Locations", "Calgary, Edmonton, Red Deer, Lethbridge, Grande Prairie"],
                         ["Other areas", "Written application process available"],
@@ -458,7 +458,7 @@ export default function AlbertaTenantRightsPage() {
                     { label: "Rent increase notice", value: "3 full months (periodic)" },
                     { label: "Non-payment notice", value: "14 days (voidable if paid)" },
                     { label: "RTDRS max claim", value: "$100,000" },
-                    { label: "RTDRS tenant filing fee", value: "$75" },
+                    { label: "RTDRS filing fee", value: "$75–$100 (by claim amount)" },
                   ].map((item) => (
                     <div key={item.label} className="flex flex-col">
                       <span className="font-semibold text-slate-800">{item.label}</span>

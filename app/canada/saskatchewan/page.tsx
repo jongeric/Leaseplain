@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const tenantProtections = [
   "Security deposits are capped at one month's rent and must be held in trust by the landlord — the deposit cannot be commingled with the landlord's personal funds.",
-  "An additional pet deposit of up to half a month's rent may be charged if pets are permitted — this is separate from the main security deposit.",
+  "If pets are permitted, the landlord may charge an additional pet deposit, but the combined security deposit and pet deposit cannot exceed one month's rent in total.",
   "Landlords must give at least one month's written notice before any rent increase takes effect for a periodic tenancy.",
   "Rent cannot be increased during a fixed-term lease unless the lease agreement itself contains an explicit clause permitting it.",
   "The Office of Residential Tenancies (ORT) resolves disputes through hearings conducted by Hearing Officers across the province.",
@@ -35,7 +35,7 @@ const tenantProtections = [
 
 const watchInLeases = [
   "Clauses allowing rent increases during a fixed-term lease without an explicit provision in the agreement — this is prohibited under the Residential Tenancies Act, 2006.",
-  "Deposits exceeding one month's rent (or a combined security and pet deposit exceeding 1.5 months' rent) — this exceeds Saskatchewan's legal maximum.",
+  "A combined security deposit and pet deposit exceeding one month's rent — this exceeds Saskatchewan's legal maximum.",
   "Entry provisions that do not include the required 24 hours written notice for non-emergency landlord entry.",
   "Provisions that attempt to waive or limit the tenant's right to apply to the Office of Residential Tenancies.",
   "Excessive re-letting fees or lease-break penalties that go beyond what is permitted under the Residential Tenancies Act, 2006.",
@@ -157,11 +157,11 @@ export default function SaskatchewanPage() {
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">
                 <h3 className="font-semibold text-blue-900 mb-3">Saskatchewan Deposits Explained</h3>
                 <p className="text-sm text-blue-800 leading-relaxed mb-3">
-                  Saskatchewan allows two types of deposits at the start of a tenancy. The standard{" "}
-                  <strong>security deposit</strong> is capped at one month's rent — this deposit covers
-                  damage beyond normal wear and tear at the end of the tenancy. If the landlord permits
-                  pets, they may also charge an additional <strong>pet deposit</strong> of up to half a
-                  month's rent.
+                  Saskatchewan allows landlords to collect a <strong>security deposit</strong> at the
+                  start of a tenancy, capped at one month's rent — this deposit covers damage beyond
+                  normal wear and tear at the end of the tenancy. If the landlord permits pets, they
+                  may also charge an additional <strong>pet deposit</strong>, but the combined
+                  security deposit and pet deposit cannot exceed one month's rent in total.
                 </p>
                 <p className="text-sm text-blue-800 leading-relaxed">
                   Both deposits must be held in trust and returned (with any applicable interest) within

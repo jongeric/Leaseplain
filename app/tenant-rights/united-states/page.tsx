@@ -394,7 +394,7 @@ export default function UnitedStatesTenantRightsPage() {
                       "HSTPA eliminated luxury decontrol — apartments can no longer be deregulated when rent exceeds a threshold or when a high-income tenant vacates",
                       "Major Capital Improvement (MCI) rent increases are now capped at 2% per year and must be removed from the rent after 30 years",
                       "Individual Apartment Improvement (IAI) increases are capped at $89/month per $15,000 of improvements (reset each tenancy)",
-                      "RGB annual guidelines 2024–2025 lease year: 2.75% (one-year lease), 5.25% (two-year lease)",
+                      "RGB annual guidelines for leases commencing Oct 1, 2025–Sept 30, 2026: 3% (one-year lease), 4.5% (two-year lease)",
                       "Security deposit: capped at 1 month's rent statewide for all residential tenancies",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2 text-sm text-slate-700 leading-relaxed">

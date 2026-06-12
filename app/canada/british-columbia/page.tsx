@@ -25,7 +25,7 @@ const bcProtections = [
   "Security deposits are capped at one-half (0.5x) of one month's rent.",
   "Pet deposits are also capped at 0.5x one month's rent — and cannot be combined with the security deposit to exceed that amount.",
   "Landlords must give one month's written notice to end a tenancy for most reasons; tenants must give one month's notice. Note: personal use (landlord or close family member) and purchaser occupancy evictions require 3 months' notice (RTB-32L/RTB-32 forms); renovations or demolitions requiring a permit require 4 months' notice.",
-  "Rent increases are limited to the annual allowable increase set by the province (tied to BC CPI).",
+  "Rent increases are limited to the annual allowable increase set by the province (tied to BC CPI). The allowable increase for 2026 is 2.3%, down from 3% in 2025.",
   "Landlords must give three months notice for rent increases tied to capital expenditures.",
   "Landlords must return security deposits within 15 days of tenancy end or the tenant's forwarding address being provided.",
   "Tenants can apply to the Residential Tenancy Branch (RTB) for dispute resolution at a low filing fee.",
@@ -49,7 +49,7 @@ const cities = [
 
 const faqItems = [
   { q: "How much can a BC landlord charge for a security deposit?", a: "In British Columbia, a security deposit cannot exceed half a month's rent. A separate pet deposit of up to half a month's rent is also permitted. Both are held in trust and earn interest." },
-  { q: "How is rent controlled in BC?", a: "BC ties annual rent increases to the BC Consumer Price Index (CPI). The Residential Tenancy Branch publishes the allowable increase each year. Landlords must give 3 months' written notice before any increase." },
+  { q: "How is rent controlled in BC?", a: "BC ties annual rent increases to the BC Consumer Price Index (CPI). The Residential Tenancy Branch publishes the allowable increase each year — 2.3% for 2026, down from 3% in 2025. Landlords must give 3 months' written notice before any increase." },
   { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that mediates and arbitrates landlord-tenant disputes in BC. Most hearings are conducted by phone or video and are free for tenants to apply." },
   { q: "Can a BC landlord evict a tenant without cause?", a: "No. BC requires a legal reason (cause) for eviction — such as non-payment of rent, substantial damage, or the landlord's genuine need to reclaim the unit. Landlords must provide the correct written notice and form." },
   { q: "Is a rental agreement required to be in writing in BC?", a: "BC strongly recommends written agreements and requires landlords to provide a copy of the standard RTB tenancy agreement form or their own written agreement. Verbal tenancies are valid but hard to enforce." },

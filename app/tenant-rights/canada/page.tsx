@@ -48,7 +48,7 @@ const provinces = [
     name: "British Columbia",
     legislation: "Residential Tenancy Act",
     body: "Residential Tenancy Branch (RTB)",
-    rentControl: "Annual allowable increase set by government (3.0% for 2025 & 2026); applies to all units",
+    rentControl: "Annual allowable increase set by government (2.3% for 2026, down from 3.0% in 2025); applies to all units",
     deposit: "Max 0.5 months rent (security deposit) + 0.5 months rent (pet deposit if allowed)",
     notice: "1 month from tenant; 1–4 months from landlord depending on reason",
     href: "/tenant-rights/british-columbia",
@@ -81,7 +81,7 @@ const provinces = [
     name: "Manitoba",
     legislation: "The Residential Tenancies Act",
     body: "Residential Tenancies Branch",
-    rentControl: "Annual guideline (3% in 2025); above-guideline applications permitted",
+    rentControl: "Annual guideline (1.8% for 2026, down from 3% in 2025); above-guideline applications permitted",
     deposit: "Maximum 0.5 months rent; interest required",
     notice: "1 month from tenant; varies by reason for landlord",
     href: "/canada/manitoba",
@@ -102,9 +102,9 @@ const provinces = [
 ];
 
 const tribunalTable = [
-  { province: "Ontario", tribunal: "Landlord and Tenant Board (LTB)", fee: "$48–$53", website: "tribunalsontario.ca/ltb" },
+  { province: "Ontario", tribunal: "Landlord and Tenant Board (LTB)", fee: "$186–$201", website: "tribunalsontario.ca/ltb" },
   { province: "British Columbia", tribunal: "Residential Tenancy Branch (RTB)", fee: "$100", website: "gov.bc.ca/tenants" },
-  { province: "Alberta", tribunal: "RTDRS", fee: "$75", website: "rtdrs.alberta.ca" },
+  { province: "Alberta", tribunal: "RTDRS", fee: "$75–$100", website: "rtdrs.alberta.ca" },
   { province: "Quebec", tribunal: "Tribunal administratif du logement (TAL)", fee: "Varies", website: "tal.gouv.qc.ca" },
   { province: "Manitoba", tribunal: "Residential Tenancies Branch", fee: "Free for tenants", website: "manitoba.ca/rtb" },
   { province: "Saskatchewan", tribunal: "Office of Residential Tenancies (ORT)", fee: "$50", website: "saskatchewan.ca/ort" },
@@ -167,7 +167,7 @@ const faqItems = [
   },
   {
     q: "How do I file a complaint against my landlord in Canada?",
-    a: "Each province has its own tribunal. In Ontario, file an application at the Landlord and Tenant Board (tribunalsontario.ca/ltb). In BC, apply for dispute resolution at the Residential Tenancy Branch (gov.bc.ca/tenants). In Alberta, file at the RTDRS (rtdrs.alberta.ca). In Quebec, file at the TAL (tal.gouv.qc.ca). Most applications can be filed online. Filing fees range from free (New Brunswick, Nova Scotia, PEI, Manitoba) to $48–$100 (Ontario, BC, Alberta). Gather all relevant documents — your lease, written notices, photographs, and any correspondence — before filing.",
+    a: "Each province has its own tribunal. In Ontario, file an application at the Landlord and Tenant Board (tribunalsontario.ca/ltb). In BC, apply for dispute resolution at the Residential Tenancy Branch (gov.bc.ca/tenants). In Alberta, file at the RTDRS (rtdrs.alberta.ca). In Quebec, file at the TAL (tal.gouv.qc.ca). Most applications can be filed online. Filing fees range from free (New Brunswick, Nova Scotia, PEI, Manitoba) to roughly $75–$200+ (Ontario, BC, Alberta). Gather all relevant documents — your lease, written notices, photographs, and any correspondence — before filing.",
   },
   {
     q: "Can a landlord evict me without going to a tribunal in Canada?",

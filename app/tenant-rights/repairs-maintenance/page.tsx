@@ -56,7 +56,7 @@ const requestSteps = [
   {
     step: "Step 5: File a T6 application with the LTB",
     detail:
-      "Form T6 (Tenant Application about Maintenance) is the primary remedy. You have up to one year from when you first learned of the issue to file. The LTB can order repairs, award a rent abatement, and compensate you for out-of-pocket costs. Filing fee is $53 online ($48 discounted).",
+      "Form T6 (Tenant Application about Maintenance) is the primary remedy. You have up to one year from when you first learned of the issue to file. The LTB can order repairs, award a rent abatement, and compensate you for out-of-pocket costs. Filing fee is $186 online ($201 in person).",
   },
 ];
 
@@ -113,7 +113,7 @@ const faqItems = [
   },
   {
     q: "What is a T6 application and how do I file one?",
-    a: "Form T6 (Tenant Application about Maintenance) is the LTB form you use when your landlord fails to maintain the unit. You can file online at tribunalsontario.ca/ltb for $48 (or $53 by mail/in person). The LTB can order the landlord to make repairs, award a rent abatement of up to 100% of rent for the period of the breach, and order compensation for out-of-pocket costs. You have one year from when you first became aware of the issue to file.",
+    a: "Form T6 (Tenant Application about Maintenance) is the LTB form you use when your landlord fails to maintain the unit. You can file online at tribunalsontario.ca/ltb for $186 (or $201 by mail/in person). The LTB can order the landlord to make repairs, award a rent abatement of up to 100% of rent for the period of the breach, and order compensation for out-of-pocket costs. You have one year from when you first became aware of the issue to file.",
   },
   {
     q: "Who is responsible for pest control in a rental?",
@@ -311,7 +311,7 @@ export default function RepairsMaintenancePage() {
                   <div className="grid sm:grid-cols-3 gap-4">
                     <div>
                       <p className="text-xs text-slate-500 mb-1">Filing Fee</p>
-                      <p className="font-semibold text-slate-900 text-sm">$48 online / $53 in person</p>
+                      <p className="font-semibold text-slate-900 text-sm">$186 online / $201 in person</p>
                     </div>
                     <div>
                       <p className="text-xs text-slate-500 mb-1">Time Limit</p>
@@ -546,7 +546,7 @@ export default function RepairsMaintenancePage() {
                 <p className="text-xs text-slate-500 leading-relaxed">
                   <strong>Form T6</strong> — Tenant Application about Maintenance
                   <br /><br />
-                  Available at <strong>tribunalsontario.ca/ltb</strong>. File online ($48) or in person ($53).
+                  Available at <strong>tribunalsontario.ca/ltb</strong>. File online ($186) or in person ($201).
                   <br /><br />
                   <strong>Form T2</strong> — Application About Tenant Rights (for illegal entry,
                   harassment, utility shutoffs, and interference with reasonable enjoyment).

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const vitalServices = [
-  "Heat (minimum 20°C from September 1 to June 15 under provincial rules; Toronto's bylaw requires 21°C from October 1 to May 15)",
+  "Heat (most Ontario municipal property standards bylaws require a minimum of 20°C from September 1 to June 15; Toronto's bylaw requires 21°C from October 1 to May 15)",
   "Electricity and hydro (if included in the rent)",
   "Hot and cold running water",
   "Fuel (natural gas, propane, or oil if the unit relies on it for heat or hot water)",

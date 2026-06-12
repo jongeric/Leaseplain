@@ -73,7 +73,7 @@ const provincialTable = [
   {
     province: "British Columbia",
     rentControl: "Yes (all units)",
-    currentCap: "3.0% (2025 & 2026)",
+    currentCap: "2.3% (2026)",
     noticePeriod: "3 full rental months",
     form: "RTB-7 or letter",
     disputeBody: "Residential Tenancy Branch (RTB)",
@@ -97,7 +97,7 @@ const provincialTable = [
   {
     province: "Manitoba",
     rentControl: "Yes",
-    currentCap: "3% (2025)",
+    currentCap: "1.8% (2026)",
     noticePeriod: "3 months minimum",
     form: "Written notice",
     disputeBody: "Residential Tenancies Branch",
@@ -129,7 +129,7 @@ const provincialTable = [
   {
     province: "PEI",
     rentControl: "Yes",
-    currentCap: "3% (2024 & 2025)",
+    currentCap: "2% (2026)",
     noticePeriod: "3 months",
     form: "Written notice",
     disputeBody: "Director of Residential Tenancy (IRAC)",
@@ -151,7 +151,7 @@ const faqItems = [
   },
   {
     q: "How do I dispute a rent increase in BC?",
-    a: "In British Columbia, if your landlord gives you a rent increase that exceeds the annual allowable increase set by the provincial government (3% for 2025 and 2026), you can dispute it with the Residential Tenancy Branch (RTB). File a dispute resolution application online at gov.bc.ca/tenants. The landlord must give you at least 3 full rental months notice in writing before the increase takes effect, and it can only happen once every 12 months. Keep all written notices as evidence.",
+    a: "In British Columbia, if your landlord gives you a rent increase that exceeds the annual allowable increase set by the provincial government (2.3% for 2026, down from 3% in 2025), you can dispute it with the Residential Tenancy Branch (RTB). File a dispute resolution application online at gov.bc.ca/tenants. The landlord must give you at least 3 full rental months notice in writing before the increase takes effect, and it can only happen once every 12 months. Keep all written notices as evidence.",
   },
   {
     q: "Which Canadian provinces have no rent control?",
@@ -350,7 +350,7 @@ export default function RentIncreaseRulesPage() {
                   {[
                     "BC rent control applies to ALL residential units — there is no new-unit exemption like Ontario.",
                     "The annual allowable increase is set each fall by the provincial government and takes effect January 1.",
-                    "2025 allowable increase: 3.0%. 2026 allowable increase: 3.0% (announced by BC government).",
+                    "2025 allowable increase: 3.0%. 2026 allowable increase: 2.3% (announced by BC government).",
                     "The increase was previously tied to BC CPI, but the formula was restructured — now it is simply the government-announced figure.",
                     "Rent can only be increased once every 12 months for the same tenant in the same unit.",
                     "Landlords must give at least 3 full rental months written notice before the increase takes effect. The effective date must be the last day of a rental period.",
@@ -437,7 +437,7 @@ export default function RentIncreaseRulesPage() {
                 <ul className="flex flex-col gap-3 mb-5">
                   {[
                     "Manitoba has provincial rent control through the Rent Stabilization Program.",
-                    "The annual guideline for 2025 is 3%.",
+                    "The annual guideline was 3% for 2025; for 2026 it dropped to 1.8%.",
                     "Landlords must give at least 3 months written notice before a rent increase takes effect.",
                     "Rent can only be raised once every 12 months.",
                     "Landlords may apply to the Residential Tenancies Branch for an above-guideline increase in exceptional circumstances.",
@@ -506,8 +506,8 @@ export default function RentIncreaseRulesPage() {
                     <p className="text-xs text-slate-500 mb-3">Rental of Residential Property Act · Director of Residential Tenancy (IRAC)</p>
                     <p className="text-sm text-slate-700 leading-relaxed">
                       The Director of Residential Tenancy (part of the Island Regulatory and Appeals Commission)
-                      sets annual increase caps. The cap was 3% for both 2024 and 2025. Landlords must give
-                      3 months written notice. Disputes are filed with IRAC at no cost.
+                      sets annual increase caps. The cap was 3% for both 2024 and 2025, dropping to 2% for
+                      2026. Landlords must give 3 months written notice. Disputes are filed with IRAC at no cost.
                     </p>
                   </div>
                 </div>
@@ -524,8 +524,8 @@ export default function RentIncreaseRulesPage() {
                     <p className="text-sm text-slate-700 leading-relaxed mb-3">
                       NYC's Rent Stabilization system covers approximately 1 million apartments, primarily in
                       buildings built before 1974 with 6+ units. The Rent Guidelines Board sets annual
-                      increases: for leases beginning in 2025, the increases are <strong>2.75% for 1-year
-                      leases</strong> and <strong>5.25% for 2-year leases</strong>. Landlords must renew
+                      increases: for leases commencing October 1, 2025 through September 30, 2026, the increases
+                      are <strong>3% for 1-year leases</strong> and <strong>4.5% for 2-year leases</strong>. Landlords must renew
                       stabilized leases at the legal regulated rent. Rent-controlled units (a separate,
                       older category) have even stronger protections.
                     </p>
@@ -546,8 +546,8 @@ export default function RentIncreaseRulesPage() {
                     <p className="text-sm text-slate-700 leading-relaxed">
                       <strong>Exempt from AB 1482:</strong> Single-family homes where the tenant received
                       written notice of the exemption; condominiums where the tenant received written notice;
-                      and buildings constructed after February 1, 1995 (in areas with local rent ordinances —
-                      the date varies by jurisdiction). Local ordinances in cities like Los Angeles, San
+                      and buildings with a certificate of occupancy issued within the last 15 years (a rolling
+                      cutoff — currently buildings first occupied after roughly 2011). Local ordinances in cities like Los Angeles, San
                       Francisco, Oakland, and San Jose provide <em>additional</em> protections on top of
                       state law.
                     </p>
@@ -557,8 +557,8 @@ export default function RentIncreaseRulesPage() {
                     <h3 className="font-semibold text-slate-900 mb-1">Los Angeles – RSO</h3>
                     <p className="text-sm text-slate-700 leading-relaxed">
                       The LA Rent Stabilization Ordinance (RSO) covers most residential units in buildings
-                      constructed on or before October 1, 1978. The allowable annual increase has recently
-                      been set at 4%. The Housing and Community Investment Department (HCIDLA) administers the
+                      constructed on or before October 1, 1978. The allowable annual increase for the
+                      July 1, 2025–June 30, 2026 period is 3%. The Housing and Community Investment Department (HCIDLA) administers the
                       RSO. Landlords must register RSO units and cannot raise rent above the allowable amount
                       without HCIDLA approval. San Francisco, Oakland, and San Jose each have their own
                       separate local rent control ordinances with distinct rules.

@@ -46,7 +46,7 @@ const cities = [
 
 const faqItems = [
                   { q: "Is there rent control in Newfoundland and Labrador?", a: "No. Newfoundland and Labrador does not have rent control. Landlords may raise rent by any amount but must give tenants at least 8 weeks' written notice before the increase takes effect." },
-                  { q: "What is the security deposit limit in Newfoundland?", a: "Newfoundland and Labrador caps security deposits at three-quarters (0.75×) of one month's rent — a unique limit compared to most other provinces. The deposit must be returned within 15 days of tenancy end." },
+                  { q: "What is the security deposit limit in Newfoundland?", a: "Newfoundland and Labrador caps security deposits at three-quarters (0.75×) of one month's rent — a unique limit compared to most other provinces. The deposit must be returned within 10 days of tenancy end." },
                   { q: "How do I file a landlord-tenant complaint in Newfoundland?", a: "Contact the Residential Tenancies Section of Service NL. Tenants and landlords can file applications for hearings on rent disputes, deposits, evictions, and maintenance issues." },
                   { q: "What happens if a NL landlord doesn't return my deposit?", a: "File a complaint with the Residential Tenancies Division within 60 days of the tenancy ending. An officer can order the landlord to return your deposit plus interest, and may award additional compensation for non-compliance." },
                   { q: "What notice does a Newfoundland landlord need to terminate a tenancy?", a: "For non-payment of rent, landlords must give at least 30 days' notice. For other lease violations, notice periods vary. Month-to-month tenancies generally require 8 weeks' (2 months') notice to terminate without cause." }
@@ -167,7 +167,7 @@ export default function NewfoundlandAndLabradorPage() {
                   deposit for tenants who have pets. The 75% cap applies to the total deposit,
                   regardless of whether the tenant has pets. Interest accrues on deposits held for
                   12 or more months at the prescribed rate, and deposits must be returned within
-                  15 days of the tenancy ending if there is no dispute.
+                  10 days of the tenancy ending if there is no dispute.
                 </p>
               </div>
 

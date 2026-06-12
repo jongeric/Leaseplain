@@ -36,7 +36,7 @@ const landlordDuties = [
   "Maintain the unit in a good state of repair, fit for habitation, at all times.",
   "Comply with all health, safety, housing, and maintenance standards.",
   "Repair damage not caused by the tenant, even if it was present before the tenancy began.",
-  "Ensure heating systems work and provide heat to at least 20°C (68°F) from September 1 to June 15.",
+  "Ensure heating systems work and provide adequate heat — most Ontario municipalities require a minimum of 20°C (68°F) during the heating season (commonly September 1 to June 15) under their property standards bylaws.",
   "Keep common areas (hallways, laundry, parking) clean and safe.",
   "Ensure the unit is free of pests and mould.",
 ];

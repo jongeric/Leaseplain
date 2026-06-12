@@ -57,7 +57,7 @@ const faqItems = [
   { q: "How much can a landlord charge for a deposit in Ontario?", a: "Ontario landlords may only collect a rent deposit equal to one month's rent (applied to your last month). They cannot charge a separate damage or pet deposit, and the deposit must earn annual interest at the guideline rate." },
   { q: "How much notice does a landlord need to give to raise rent in Ontario?", a: "Landlords must give 90 days' written notice using the proper form, and rent can only be increased once every 12 months. Most units are also capped at the annual provincial guideline unless the unit is exempt (first occupied after November 15, 2018)." },
   { q: "Can my landlord evict me without going through the LTB?", a: "No. A landlord cannot change your locks, remove your belongings, or force you out. Every eviction in Ontario must go through the Landlord and Tenant Board, and only a court-appointed sheriff can physically enforce an eviction order." },
-  { q: "How do I file an application with Ontario's Landlord and Tenant Board?", a: "Applications can be filed online at tribunalsontario.ca/ltb. Filing fees are $48 online or $53 by paper, and fee waivers are available for low-income applicants. Common tenant applications include T2 (rights interference), T6 (maintenance), and T1 (illegal charges)." },
+  { q: "How do I file an application with Ontario's Landlord and Tenant Board?", a: "Applications can be filed online at tribunalsontario.ca/ltb. Filing fees are $186 online or $201 by paper, and fee waivers are available for low-income applicants. Common tenant applications include T2 (rights interference), T6 (maintenance), and T1 (illegal charges)." },
 ];
 
 export default function OntarioTenantRightsPage() {
@@ -185,7 +185,7 @@ export default function OntarioTenantRightsPage() {
               <div className="bg-slate-50 border border-slate-100 rounded-xl p-6">
                 <h2 className="text-xl font-bold text-slate-900 mb-4">Key Resources for Ontario Tenants</h2>
                 <ul className="flex flex-col gap-3 text-sm text-slate-700">
-                  <li><strong>Landlord and Tenant Board (LTB)</strong> — <span className="text-slate-500">tribunalsontario.ca/ltb</span> — file applications, check forms, find adjudication hearings. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.</li>
+                  <li><strong>Landlord and Tenant Board (LTB)</strong> — <span className="text-slate-500">tribunalsontario.ca/ltb</span> — file applications, check forms, find adjudication hearings. Filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.</li>
                   <li><strong>Community Legal Education Ontario (CLEO)</strong> — <span className="text-slate-500">cleo.on.ca</span> — free legal guides for tenants</li>
                   <li><strong>Legal Aid Ontario</strong> — <span className="text-slate-500">legalaid.on.ca</span> — legal representation for low-income tenants</li>
                   <li><strong>Ontario Human Rights Commission</strong> — <span className="text-slate-500">ohrc.on.ca</span> — for discrimination in housing</li>

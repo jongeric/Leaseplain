@@ -107,7 +107,37 @@ export default function AboveGuidelineRentIncreaseOntarioPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/blog/above-guideline-rent-increase-ontario",
+        }).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Dispute an Above-Guideline Rent Increase in Ontario",
+          "description": "A step-by-step guide for Ontario tenants on how to challenge a landlord's above-guideline rent increase (AGI) application at the Landlord and Tenant Board.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Receive and read the LTB notice of the AGI application", "text": "When a landlord files a Form L5 (Application for Above Guideline Increase), the LTB notifies all affected tenants. Read the notice carefully to understand which units are covered, what grounds are claimed, and your deadline to respond." },
+            { "@type": "HowToStep", "position": 2, "name": "File a T3 motion within 30 days", "text": "Use the T3 (Tenant's Motion to Strike Out or Amend Grounds) to formally challenge the application. State why the claimed expenditures do not qualify — for example, that the work was routine maintenance rather than an extraordinary capital expenditure, or that costs were inflated." },
+            { "@type": "HowToStep", "position": 3, "name": "Attend the LTB hearing", "text": "Your presence at the hearing matters. An uncontested AGI hearing often proceeds quickly in the landlord's favour. Attending signals to the adjudicator that the claims will be scrutinized, and gives you the opportunity to present your evidence directly." },
+            { "@type": "HowToStep", "position": 4, "name": "Challenge the invoices and contractor relationships", "text": "Ask whether the contractors are real, arm's-length companies and whether the amounts are consistent with market rates. Inflated invoices from related parties, or from contractors with undisclosed relationships to the landlord, are grounds for dismissal of those cost items." },
+            { "@type": "HowToStep", "position": 5, "name": "Argue that claimed work was routine maintenance", "text": "The LTB will not approve an AGI for work the landlord was already obligated to do under the RTA. Cosmetic upgrades, routine repairs, and work that does not provide a lasting benefit to the building cannot support an above-guideline increase." },
+            { "@type": "HowToStep", "position": 6, "name": "Challenge whether the work was completed properly", "text": "If the work was done sloppily or remains unfinished, it does not meet the legal standard. Bring photos, written complaints to the landlord, and maintenance records as evidence of ongoing problems." },
+            { "@type": "HowToStep", "position": 7, "name": "Coordinate with other tenants in the building", "text": "An AGI application typically affects the whole building. Joining forces with neighbours lets you share the cost of legal advice, coordinate evidence, and strengthen the collective response. Tenant associations and duty counsel at the LTB can assist." },
+          ],
+        }).replace(/</g, "<") }}
       />
       <div className="flex flex-col min-h-full">
         <Navbar />
@@ -140,7 +170,7 @@ export default function AboveGuidelineRentIncreaseOntarioPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 Above-Guideline Rent Increases in Ontario: What They Are and How to Fight One
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Ontario&apos;s annual rent guideline caps how much your landlord can raise the rent
                 each year. But landlords can apply to the Landlord and Tenant Board for permission
                 to go higher. Here is what an above-guideline increase (AGI) is, when it is legally

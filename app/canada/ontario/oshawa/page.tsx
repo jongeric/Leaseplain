@@ -39,13 +39,26 @@ const cityLeaseIssues = [
 
 export default function OshawaPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Canada", href: "https://leaseplain.com/canada" },
         { name: "Ontario", href: "https://leaseplain.com/canada/ontario" },
         { name: "Oshawa", href: "https://leaseplain.com/canada/ontario/oshawa" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/canada/ontario/oshawa",
+        }).replace(/</g, "<") }}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -67,7 +80,7 @@ export default function OshawaPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Oshawa, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Oshawa is a growing Durham Region city drawing renters priced out of Toronto and
               Mississauga. Whether you're in a basement apartment, an older rental home, or a
               newer development, Ontario's RTA gives you full tenant protections.
@@ -240,6 +253,7 @@ export default function OshawaPage() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

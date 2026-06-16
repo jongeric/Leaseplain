@@ -96,6 +96,18 @@ export default function N12EvictionOntarioPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/blog/n12-eviction-ontario",
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -127,7 +139,7 @@ export default function N12EvictionOntarioPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 N12 Eviction in Ontario: Your Rights When a Landlord Wants Their Unit Back (2026 Guide)
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 An N12 notice can feel alarming — but receiving one does not mean you have to leave.
                 Ontario law gives tenants significant protections, including a right to compensation,
                 a right to dispute the eviction at the LTB, and a remedy if the eviction turns out to

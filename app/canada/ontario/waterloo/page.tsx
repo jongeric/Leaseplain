@@ -39,13 +39,26 @@ const cityLeaseIssues = [
 
 export default function WaterlooPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Canada", href: "https://leaseplain.com/canada" },
         { name: "Ontario", href: "https://leaseplain.com/canada/ontario" },
         { name: "Waterloo", href: "https://leaseplain.com/canada/ontario/waterloo" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/canada/ontario/waterloo",
+        }).replace(/</g, "<") }}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -67,7 +80,7 @@ export default function WaterlooPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Waterloo, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Waterloo's rental market is dominated by students at the University of Waterloo and
               Wilfrid Laurier — many of whom need to sublet during co-op work terms. Whether you're
               signing a 12-month lease or arranging a 4-month sublet, your Ontario RTA rights are
@@ -247,6 +260,7 @@ export default function WaterlooPage() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

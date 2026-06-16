@@ -103,6 +103,18 @@ export default function RenovictionCanadaTenantRightsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/blog/renoviction-canada-tenant-rights",
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -138,7 +150,7 @@ export default function RenovictionCanadaTenantRightsPage() {
                 Renoviction in Canada: How to Fight Back When Your Landlord Wants You Out for
                 Renovations
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Renovictions — evictions disguised as renovation notices — are rising in Toronto,
                 Vancouver, and across Canada. Landlords can legally evict tenants for major
                 renovations in limited circumstances, but the rules are strict and tenants have

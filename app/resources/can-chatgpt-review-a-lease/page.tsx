@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, XCircle, AlertTriangle, ChevronRight, Upload } from "lucide-react";
 
@@ -191,6 +192,23 @@ export default function CanChatGPTReviewALeasePage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Can ChatGPT Review a Lease?", href: "https://leaseplain.com/resources/can-chatgpt-review-a-lease" },
+      ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
       <div className="flex flex-col min-h-full">
         <Navbar />

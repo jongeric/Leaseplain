@@ -5,6 +5,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { CheckCircle, DollarSign, AlertTriangle, Scale } from "lucide-react";
 import Link from "next/link";
 
@@ -121,6 +122,23 @@ export default function ShouldYouPayLawyerReviewLeasePage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Should You Pay a Lawyer to Review Your Lease?", href: "https://leaseplain.com/resources/should-you-pay-lawyer-review-lease" },
+      ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
       <div className="flex flex-col min-h-full">
       <Navbar />

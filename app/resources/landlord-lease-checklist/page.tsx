@@ -80,6 +80,14 @@ const sections = [
   },
 ];
 
+const faqItems = [
+  { q: "What should a landlord include in a lease?", a: "A complete lease should include: both parties' names and contact info, property address and unit description, lease term (start and end dates), rent amount and due date, deposit amount and terms, entry notice procedures, maintenance responsibility, and any special rules." },
+  { q: "Should landlords use standard lease forms?", a: "Ontario and Quebec require standard lease forms by law. In other provinces, standard forms are recommended but not mandatory. Using a standard form reduces errors and ensures all legally required disclosures are included." },
+  { q: "How should a landlord document the condition of a unit?", a: "Conduct a written move-in inspection with the tenant before they take possession. Both parties sign the inspection report. Take dated photos or video. Store these records throughout the tenancy and use them to assess move-out condition." },
+  { q: "Can a landlord require tenants to have renters insurance?", a: "Most provinces do not require landlords to mandate renters insurance by law, but landlords can make it a lease condition. BC and Ontario allow lease clauses requiring tenants to carry liability insurance. It is generally good practice for both parties." },
+  { q: "What deposit rules should landlords follow?", a: "Collect only the permitted type and amount (e.g., last month's rent in Ontario; max half month in BC; max one month in Alberta). Provide a receipt. Pay interest where required. Return within the provincial deadline with an itemized statement of any deductions." },
+];
+
 export default function LandlordLeaseChecklistPage() {
   return (
     <>
@@ -110,6 +118,18 @@ export default function LandlordLeaseChecklistPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -190,13 +210,7 @@ export default function LandlordLeaseChecklistPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What should a landlord include in a lease?", a: "A complete lease should include: both parties' names and contact info, property address and unit description, lease term (start and end dates), rent amount and due date, deposit amount and terms, entry notice procedures, maintenance responsibility, and any special rules." },
-                  { q: "Should landlords use standard lease forms?", a: "Ontario and Quebec require standard lease forms by law. In other provinces, standard forms are recommended but not mandatory. Using a standard form reduces errors and ensures all legally required disclosures are included." },
-                  { q: "How should a landlord document the condition of a unit?", a: "Conduct a written move-in inspection with the tenant before they take possession. Both parties sign the inspection report. Take dated photos or video. Store these records throughout the tenancy and use them to assess move-out condition." },
-                  { q: "Can a landlord require tenants to have renters insurance?", a: "Most provinces do not require landlords to mandate renters insurance by law, but landlords can make it a lease condition. BC and Ontario allow lease clauses requiring tenants to carry liability insurance. It is generally good practice for both parties." },
-                  { q: "What deposit rules should landlords follow?", a: "Collect only the permitted type and amount (e.g., last month's rent in Ontario; max half month in BC; max one month in Alberta). Provide a receipt. Pay interest where required. Return within the provincial deadline with an itemized statement of any deductions." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
       </main>
       <Footer />

@@ -147,6 +147,21 @@ export default function MovingOutOntarioChecklistPage() {
           }).replace(/</g, "<"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Move Out of a Rental in Ontario",
+          "description": "A step-by-step checklist for Ontario tenants covering proper notice, move-out inspection, unit documentation, and protecting your last month's rent deposit.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Determine your correct notice date and serve Form N9", "text": "Calculate your 60-day notice period — it must expire on the last day of a rental period (usually the last day of the month). Complete LTB Form N9 (Tenant's Notice to Terminate the Tenancy) and deliver it to your landlord in writing (in person, by registered mail, or by courier). Keep proof of delivery. Informal notice by text or email is not sufficient in Ontario." },
+            { "@type": "HowToStep", "position": 2, "name": "Schedule a move-out inspection and document the unit", "text": "Two to four weeks before your move-out date, schedule a move-out inspection with your landlord — they are required to offer one in Ontario. Photograph every room, appliance, and surface with date-stamped photos. Repair any damage you caused beyond normal wear and tear before the inspection, and clean the unit thoroughly." },
+            { "@type": "HowToStep", "position": 3, "name": "Complete move-out day tasks", "text": "Return all keys, fobs, garage openers, and parking passes to the landlord. Conduct the move-out inspection together with the landlord if possible and get a written sign-off. Take a final video walkthrough of the unit — this is your strongest defence if a deposit dispute arises later. Get your landlord's contact address in writing for future correspondence." },
+            { "@type": "HowToStep", "position": 4, "name": "Handle your last month's rent deposit", "text": "Your last month's rent (LMR) deposit is automatically applied to your final month — do not pay rent for that month. The landlord must also return accumulated interest on the deposit (earned at the guideline rate each year). If the landlord claims deductions for anything other than rent arrears, or refuses to apply your LMR, file a T1 application with the LTB — Ontario has no damage deposit and any such deduction is illegal." },
+          ],
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

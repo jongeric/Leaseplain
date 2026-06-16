@@ -86,6 +86,50 @@ export default function FirstApartmentChecklistCanadaPage() {
           },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/blog/first-apartment-checklist-canada",
+        }).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Rent Your First Apartment in Canada",
+          "description": "A 25-step guide for first-time renters in Canada covering what to do before signing a lease, at move-in, during the first month, and which documents to keep for the entire tenancy.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Get the lease in writing", "text": "Never rent on a verbal agreement. Oral leases are almost impossible to enforce — always insist on a written lease. In Ontario, landlords must use the mandatory Standard Lease form for most residential tenancies." },
+            { "@type": "HowToStep", "position": 2, "name": "Read and understand every clause before signing", "text": "Pay close attention to rent amount, deposit required, utilities included, pet rules, subletting, parking, and storage. Check for red flags such as clauses prohibiting subletting entirely, illegal late fees, or purported waivers of your right to a habitable unit." },
+            { "@type": "HowToStep", "position": 3, "name": "Verify what deposit your landlord can legally charge", "text": "Deposit caps vary by province: Ontario permits only a last month's rent deposit; BC allows a maximum of 0.5 months' rent; Quebec permits no deposit at all. Anything above your province's cap is illegal — get a receipt for any deposit you pay." },
+            { "@type": "HowToStep", "position": 4, "name": "Check if your unit is rent-controlled", "text": "In Ontario, units first occupied for residential purposes after November 15, 2018 are exempt from the annual rent increase guideline. Know this before you sign — it affects how much your rent could increase at renewal." },
+            { "@type": "HowToStep", "position": 5, "name": "Do a thorough move-in walkthrough and document everything", "text": "Before or on the day you get the keys, walk through the unit with your landlord and note every imperfection. Take timestamped photos of every room, appliance, fixture, and any existing damage. Upload immediately to cloud storage you control. In BC, complete the legally required Condition Inspection Report (RTB-27) with your landlord." },
+            { "@type": "HowToStep", "position": 6, "name": "Email a move-in condition report to your landlord within 24 hours", "text": "Send a written record of the unit's condition — including any existing damage — to your landlord by email the same day or the next day. This creates a timestamped paper trail that protects you against deposit deduction claims at move-out." },
+            { "@type": "HowToStep", "position": 7, "name": "Set up rent payment reminders and a document folder", "text": "Put your rent due date in your calendar with a 5-day reminder. Create a dedicated folder — in email or cloud storage — for all landlord communications, lease documents, rent receipts, and repair requests. A complete paper trail is essential if a dispute ever goes to tribunal." },
+            { "@type": "HowToStep", "position": 8, "name": "Bookmark your province's tenant rights tribunal and local advocacy resources", "text": "Know where to go before you need to go there: Ontario's LTB (ltb.gov.on.ca), BC's RTB (gov.bc.ca/rtb), Alberta's RTDRS (alberta.ca/rtdrs), or Quebec's TAL (tal.gouv.qc.ca). Identify local tenant advocacy organizations such as ACTO (Ontario) or TRAC (BC) that provide free or low-cost help." },
+            { "@type": "HowToStep", "position": 9, "name": "Keep your lease, rent receipts, and move-in documentation for the full tenancy", "text": "Store your original signed lease (scanned and in cloud storage), all rent receipts or e-transfer records, and your move-in condition report and photos in a safe place. The limitation period for LTB applications is generally two years, so keep move-in documentation for at least two years after you move out." },
+          ],
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -122,7 +166,7 @@ export default function FirstApartmentChecklistCanadaPage() {
                 First Apartment Checklist: 25 Things to Do Before and After Signing Your Lease in
                 Canada
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Renting your first apartment in Canada involves a lot more than just signing on the
                 dotted line. This checklist walks you through 25 concrete action items — before you
                 sign, at move-in, and during your first month — so you protect yourself from day

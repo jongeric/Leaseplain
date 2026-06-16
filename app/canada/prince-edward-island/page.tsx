@@ -41,12 +41,25 @@ const watchInLeases = [
 
 export default function PrinceEdwardIslandPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Canada", href: "https://leaseplain.com/canada" },
         { name: "Prince Edward Island", href: "https://leaseplain.com/canada/prince-edward-island" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/canada/prince-edward-island",
+        }).replace(/</g, "<") }}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -118,7 +131,7 @@ export default function PrinceEdwardIslandPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               PEI Tenant Rights: Lease Help & Rental Laws in Prince Edward Island
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Prince Edward Island's <em>Residential Tenancy Act</em> (proclaimed April 2023) provides
               some of the strongest tenant protections in Atlantic Canada — including rent control,
               landlord-held deposits in trust, and a formal adjudication process for all evictions
@@ -316,6 +329,7 @@ export default function PrinceEdwardIslandPage() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

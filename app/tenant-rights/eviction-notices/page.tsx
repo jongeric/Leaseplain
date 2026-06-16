@@ -317,6 +317,24 @@ export default function EvictionNoticesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Respond to an Eviction Notice in Ontario",
+          "description": "A step-by-step guide for Ontario tenants on how to respond to an eviction notice, understand their rights, and navigate the Landlord and Tenant Board process.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Read the notice and identify the form", "text": "Determine which N-form you received (e.g., N4 for non-payment, N5 for damage or disturbance, N12 for landlord's own use). Each form has different grounds, notice periods, and voiding rights. Do not move out based on the notice alone — it is not an eviction order." },
+            { "@type": "HowToStep", "position": 2, "name": "Verify the notice is valid", "text": "Check that the correct form was used, that it was delivered properly (in person, by mail, or under the door), and that the termination date is legally valid (must end on the last day of a rental period for most notices). A defective notice can be challenged at the LTB." },
+            { "@type": "HowToStep", "position": 3, "name": "Act within the remedy period if applicable", "text": "For an N4 (non-payment): pay all rent owing within 14 days to void the notice. For a first N5 (damage or disturbance): resolve the issue within the first 7 days of the 20-day period. Voiding the notice stops the eviction process entirely." },
+            { "@type": "HowToStep", "position": 4, "name": "Wait for the LTB application and hearing notice", "text": "If you do not void the notice, the landlord must file an L1 or L2 application with the LTB. You will then receive a Notice of Hearing. You are not required to vacate until the LTB issues a signed eviction order — receiving a notice does not obligate you to leave." },
+            { "@type": "HowToStep", "position": 5, "name": "Prepare your response and attend the hearing", "text": "Gather documents, photos, receipts, and any other evidence to support your position. You can dispute the grounds, challenge the validity of the notice, propose a payment plan (for N4 hearings), or raise a landlord's failure to maintain the unit. Attend the hearing — duty counsel lawyers are often available for free at LTB locations." },
+            { "@type": "HowToStep", "position": 6, "name": "Request relief from eviction if needed", "text": "Even if the LTB finds grounds for eviction, ask the adjudicator to delay or refuse the eviction order based on hardship or other circumstances under RTA s. 83. If an order is made against you, you may request a review by a senior LTB adjudicator within 30 days." },
+            { "@type": "HowToStep", "position": 7, "name": "Know that only the Sheriff can enforce an eviction", "text": "If an eviction order is issued and you do not vacate, the landlord must request enforcement by the Court Enforcement Office (Sheriff). The landlord cannot change your locks, remove your belongings, or cut services — doing so is illegal and grounds for an urgent T2 application." },
+          ],
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

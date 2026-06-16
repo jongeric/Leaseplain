@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   keywords: ["upload lease for review", "AI lease review how it works", "lease PDF upload", "lease analysis tool", "LeasePlain how to use"],
 };
 
+const faqItems = [
+  { q: "What file formats can I upload to LeasePlain?", a: "LeasePlain accepts PDF files up to 10MB. You can also paste lease text directly into the text field if you don't have a PDF. Most lease PDFs from landlords or property management companies work without any conversion." },
+  { q: "How long does LeasePlain take to analyze a lease?", a: "Most analyses complete in 30–60 seconds. Complex or very long leases may take up to a minute. The AI reads the full document and generates a structured report with key terms, red flags, and negotiation suggestions." },
+  { q: "Is my lease data secure when I upload it?", a: "LeasePlain processes your lease to generate the analysis and stores results so you can access them later in your account. We do not sell or share your lease data. See our privacy policy for full details." },
+  { q: "Can I share my lease analysis with someone else?", a: "Yes. Once your analysis is complete, you can share the report link with a family member, friend, or legal advisor. The link provides read-only access to your analysis results." },
+  { q: "What if LeasePlain misses something in my lease?", a: "AI analysis is thorough but not infallible. Always review the full analysis, cross-reference with your province's tenancy law, and for any serious concerns, consult a tenant legal clinic or lawyer before signing." },
+];
+
 export default function UploadLeaseForReviewPage() {
   return (
     <>
@@ -53,6 +61,18 @@ export default function UploadLeaseForReviewPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -239,13 +259,7 @@ export default function UploadLeaseForReviewPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What file formats can I upload to LeasePlain?", a: "LeasePlain accepts PDF files up to 10MB. You can also paste lease text directly into the text field if you don't have a PDF. Most lease PDFs from landlords or property management companies work without any conversion." },
-                  { q: "How long does LeasePlain take to analyze a lease?", a: "Most analyses complete in 30–60 seconds. Complex or very long leases may take up to a minute. The AI reads the full document and generates a structured report with key terms, red flags, and negotiation suggestions." },
-                  { q: "Is my lease data secure when I upload it?", a: "LeasePlain processes your lease to generate the analysis and stores results so you can access them later in your account. We do not sell or share your lease data. See our privacy policy for full details." },
-                  { q: "Can I share my lease analysis with someone else?", a: "Yes. Once your analysis is complete, you can share the report link with a family member, friend, or legal advisor. The link provides read-only access to your analysis results." },
-                  { q: "What if LeasePlain misses something in my lease?", a: "AI analysis is thorough but not infallible. Always review the full analysis, cross-reference with your province's tenancy law, and for any serious concerns, consult a tenant legal clinic or lawyer before signing." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             <aside className="flex flex-col gap-5">

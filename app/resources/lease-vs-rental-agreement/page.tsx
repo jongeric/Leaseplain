@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   keywords: ["lease vs rental agreement", "fixed-term lease", "month-to-month tenancy", "lease difference Ontario", "rental agreement types Canada"],
 };
 
+const faqItems = [
+  { q: "What is the main difference between a lease and a rental agreement?", a: "A lease is a fixed-term contract (typically 12 months) that can only be ended by proper notice at renewal or for legal cause. A rental agreement is usually month-to-month, giving both parties more flexibility to terminate with the required notice." },
+  { q: "Which is better for a tenant — a fixed-term lease or month-to-month?", a: "It depends on your situation. A fixed-term lease provides stability and locks in your rent for the term. Month-to-month offers flexibility if you may need to move. In most provinces, a fixed-term lease converts to month-to-month at the end — giving you both stability and eventual flexibility." },
+  { q: "Can a landlord evict a tenant during a fixed-term lease?", a: "Only for legal cause (non-payment, damage, etc.) or if the landlord needs the unit for specific permitted reasons. A landlord generally cannot evict a tenant simply because they want them out during a fixed term." },
+  { q: "Does a month-to-month rental agreement provide the same protections as a lease?", a: "Yes. Provincial tenancy law applies equally to both. Month-to-month tenants have the same rights regarding maintenance, deposits, rent increases, and eviction protection as those on a fixed-term lease." },
+  { q: "What happens at the end of a fixed-term lease if I don't sign a new one?", a: "In most Canadian provinces, the tenancy automatically converts to a month-to-month arrangement under the same terms. You are NOT required to sign a new lease. The existing rent-control protections and rights continue." },
+];
+
 export default function LeaseVsRentalAgreementPage() {
   return (
     <>
@@ -53,6 +61,18 @@ export default function LeaseVsRentalAgreementPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -216,13 +236,7 @@ export default function LeaseVsRentalAgreementPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What is the main difference between a lease and a rental agreement?", a: "A lease is a fixed-term contract (typically 12 months) that can only be ended by proper notice at renewal or for legal cause. A rental agreement is usually month-to-month, giving both parties more flexibility to terminate with the required notice." },
-                  { q: "Which is better for a tenant — a fixed-term lease or month-to-month?", a: "It depends on your situation. A fixed-term lease provides stability and locks in your rent for the term. Month-to-month offers flexibility if you may need to move. In most provinces, a fixed-term lease converts to month-to-month at the end — giving you both stability and eventual flexibility." },
-                  { q: "Can a landlord evict a tenant during a fixed-term lease?", a: "Only for legal cause (non-payment, damage, etc.) or if the landlord needs the unit for specific permitted reasons. A landlord generally cannot evict a tenant simply because they want them out during a fixed term." },
-                  { q: "Does a month-to-month rental agreement provide the same protections as a lease?", a: "Yes. Provincial tenancy law applies equally to both. Month-to-month tenants have the same rights regarding maintenance, deposits, rent increases, and eviction protection as those on a fixed-term lease." },
-                  { q: "What happens at the end of a fixed-term lease if I don't sign a new one?", a: "In most Canadian provinces, the tenancy automatically converts to a month-to-month arrangement under the same terms. You are NOT required to sign a new lease. The existing rent-control protections and rights continue." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             <aside className="flex flex-col gap-5">

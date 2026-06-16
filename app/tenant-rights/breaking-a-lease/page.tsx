@@ -240,6 +240,22 @@ export default function BreakingALeasePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "<") }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to Break a Lease in Ontario",
+          "description": "A step-by-step guide to the five legal paths available to Ontario tenants who need to end a fixed-term lease early under the Residential Tenancies Act.",
+          "step": [
+            { "@type": "HowToStep", "position": 1, "name": "Consider subletting", "text": "If you plan to return, request the landlord's written consent to sublet the unit to a temporary subtenant. The landlord cannot arbitrarily refuse under RTA s. 97. You remain responsible for rent and any damage the subtenant causes." },
+            { "@type": "HowToStep", "position": 2, "name": "Pursue assignment", "text": "If you are permanently leaving, request the landlord's consent to assign the lease to a new tenant under RTA s. 95. If the landlord refuses without a valid reason, you may terminate with 30 days written notice." },
+            { "@type": "HowToStep", "position": 3, "name": "Negotiate a mutual agreement (N11)", "text": "Approach the landlord and negotiate an agreed exit date. Both parties sign LTB Form N11 (Agreement to End the Tenancy). This is the fastest route when the landlord is cooperative — consider offering to find a replacement tenant as an incentive." },
+            { "@type": "HowToStep", "position": 4, "name": "Terminate for cause or safety (N9 / N15)", "text": "If you have experienced domestic or sexual violence, serve Form N15 with supporting documentation for a 28-day termination under RTA s. 47.01. For other qualifying grounds (e.g., landlord breach of material obligations), serve Form N9 with at least 60 days notice." },
+            { "@type": "HowToStep", "position": 5, "name": "Let the fixed term expire", "text": "Serve Form N9 at least 60 days before the last day of the fixed term, ending on the last day of a rental period. This is the only route with zero risk of financial liability — no grounds are required at the end of a fixed term." },
+          ],
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 

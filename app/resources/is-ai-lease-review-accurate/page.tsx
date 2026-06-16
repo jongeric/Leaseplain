@@ -5,6 +5,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import ArticleSchema from "@/components/ArticleSchema";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { CheckCircle, XCircle, AlertTriangle, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
@@ -143,6 +144,23 @@ export default function IsAILeaseReviewAccuratePage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Resources", href: "https://leaseplain.com/resources" },
+        { name: "Is AI Lease Review Accurate?", href: "https://leaseplain.com/resources/is-ai-lease-review-accurate" },
+      ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
       <div className="flex flex-col min-h-full">
       <Navbar />

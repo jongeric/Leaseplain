@@ -96,6 +96,18 @@ export default function LandlordSellingPropertyTenantRightsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/blog/landlord-selling-property-tenant-rights",
+        }).replace(/</g, "<") }}
+      />
       <div className="flex flex-col min-h-full">
         <Navbar />
 
@@ -127,7 +139,7 @@ export default function LandlordSellingPropertyTenantRightsPage() {
               <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
                 What Happens to Your Lease When Your Landlord Sells? Tenant Rights in Canada
               </h1>
-              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 Your landlord just told you they are selling the property. You might be worried you
                 have to leave — but in most cases you do not. Your lease survives the sale. Here is
                 exactly what your rights are in Ontario, BC, and Alberta, and what to watch out for.

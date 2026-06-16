@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   keywords: ["AI lease analyzer", "what is AI lease review", "how lease AI works", "lease analysis tool", "LeasePlain AI"],
 };
 
+const faqItems = [
+  { q: "What is an AI lease analyzer?", a: "An AI lease analyzer is a tool that uses artificial intelligence to read a lease agreement and automatically identify important terms, unusual clauses, potential red flags, and items worth negotiating — all explained in plain English." },
+  { q: "How does LeasePlain's AI analyzer work?", a: "You upload a PDF or paste text. LeasePlain sends the document to Claude (Anthropic's AI model), which reads the full lease and generates a structured report covering financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions." },
+  { q: "What are the limitations of an AI lease analyzer?", a: "AI analyzers are excellent for flagging common problems and explaining legal language, but they are not lawyers. They cannot predict how a tribunal would rule on a specific clause, advise on strategy, or represent you in a dispute. Use AI review as a starting point, not a final answer." },
+  { q: "Is LeasePlain's AI trained on Canadian law?", a: "LeasePlain uses Claude, a general-purpose frontier AI model, guided by prompts specifically focused on Canadian and US residential tenancy law. The analysis reflects common provincial standards, though you should verify findings against your specific province's rules." },
+  { q: "How is LeasePlain different from ChatGPT for lease review?", a: "LeasePlain is purpose-built for lease review — it provides a structured report with specific sections (financial terms, red flags, negotiation tips), stores your analysis for future reference, and includes Canadian jurisdiction-specific context. A generic ChatGPT conversation lacks this structure and persistence." },
+];
+
 export default function WhatIsAILeaseAnalyzerPage() {
   return (
     <>
@@ -53,6 +61,18 @@ export default function WhatIsAILeaseAnalyzerPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -230,13 +250,7 @@ export default function WhatIsAILeaseAnalyzerPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What is an AI lease analyzer?", a: "An AI lease analyzer is a tool that uses artificial intelligence to read a lease agreement and automatically identify important terms, unusual clauses, potential red flags, and items worth negotiating — all explained in plain English." },
-                  { q: "How does LeasePlain's AI analyzer work?", a: "You upload a PDF or paste text. LeasePlain sends the document to Claude (Anthropic's AI model), which reads the full lease and generates a structured report covering financial terms, red flags, unclear clauses, questions to ask, and negotiation suggestions." },
-                  { q: "What are the limitations of an AI lease analyzer?", a: "AI analyzers are excellent for flagging common problems and explaining legal language, but they are not lawyers. They cannot predict how a tribunal would rule on a specific clause, advise on strategy, or represent you in a dispute. Use AI review as a starting point, not a final answer." },
-                  { q: "Is LeasePlain's AI trained on Canadian law?", a: "LeasePlain uses Claude, a general-purpose frontier AI model, guided by prompts specifically focused on Canadian and US residential tenancy law. The analysis reflects common provincial standards, though you should verify findings against your specific province's rules." },
-                  { q: "How is LeasePlain different from ChatGPT for lease review?", a: "LeasePlain is purpose-built for lease review — it provides a structured report with specific sections (financial terms, red flags, negotiation tips), stores your analysis for future reference, and includes Canadian jurisdiction-specific context. A generic ChatGPT conversation lacks this structure and persistence." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             <aside className="flex flex-col gap-5">

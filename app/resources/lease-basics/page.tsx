@@ -50,6 +50,14 @@ const articles = [
   },
 ];
 
+const faqItems = [
+  { q: "What is the most basic thing a lease must include?", a: "At minimum, a lease should identify the landlord and tenant, describe the rental property, state the rent amount and due date, and set out the lease term. Everything else builds on these fundamentals." },
+  { q: "What is a 'tenancy at will'?", a: "A tenancy at will is an informal arrangement with no fixed term, where either party can end the tenancy with very little notice. These are uncommon in Canada and provide the least protection for both landlords and tenants." },
+  { q: "How do I get a copy of my lease in Ontario?", a: "Ontario law requires landlords to give tenants a signed copy of the lease within 21 days of signing. If the landlord uses Ontario's standard lease form, they must provide a copy within that timeframe or risk the tenant withholding one month's rent." },
+  { q: "What is the Ontario standard lease form?", a: "Ontario requires most residential landlords to use the Residential Tenancy Agreement (Standard Form of Lease) available from the Ministry of Municipal Affairs and Housing. Using a different form is allowed if all RTA rights are preserved." },
+  { q: "Can a lease be emailed or signed electronically?", a: "Yes. Electronic leases and e-signatures are generally valid across Canada under electronic commerce laws. Ensure both parties have a clear record of the executed agreement, and confirm the signing platform complies with your province's requirements." },
+];
+
 export default function LeaseBasicsPage() {
   return (
     <>
@@ -79,6 +87,18 @@ export default function LeaseBasicsPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
     <div className="flex flex-col min-h-full">
       <Navbar />
@@ -155,13 +175,7 @@ export default function LeaseBasicsPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What is the most basic thing a lease must include?", a: "At minimum, a lease should identify the landlord and tenant, describe the rental property, state the rent amount and due date, and set out the lease term. Everything else builds on these fundamentals." },
-                  { q: "What is a 'tenancy at will'?", a: "A tenancy at will is an informal arrangement with no fixed term, where either party can end the tenancy with very little notice. These are uncommon in Canada and provide the least protection for both landlords and tenants." },
-                  { q: "How do I get a copy of my lease in Ontario?", a: "Ontario law requires landlords to give tenants a signed copy of the lease within 21 days of signing. If the landlord uses Ontario's standard lease form, they must provide a copy within that timeframe or risk the tenant withholding one month's rent." },
-                  { q: "What is the Ontario standard lease form?", a: "Ontario requires most residential landlords to use the Residential Tenancy Agreement (Standard Form of Lease) available from the Ministry of Municipal Affairs and Housing. Using a different form is allowed if all RTA rights are preserved." },
-                  { q: "Can a lease be emailed or signed electronically?", a: "Yes. Electronic leases and e-signatures are generally valid across Canada under electronic commerce laws. Ensure both parties have a clear record of the executed agreement, and confirm the signing platform complies with your province's requirements." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
       </main>
       <Footer />

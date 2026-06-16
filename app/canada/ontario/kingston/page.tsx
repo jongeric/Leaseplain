@@ -39,13 +39,26 @@ const cityLeaseIssues = [
 
 export default function KingstonPage() {
   return (
-    <div className="flex flex-col min-h-full">
+    <>
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
         { name: "Canada", href: "https://leaseplain.com/canada" },
         { name: "Ontario", href: "https://leaseplain.com/canada/ontario" },
         { name: "Kingston", href: "https://leaseplain.com/canada/ontario/kingston" },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", ".speakable-summary"],
+          },
+          "url": "https://leaseplain.com/canada/ontario/kingston",
+        }).replace(/</g, "<") }}
+      />
+      <div className="flex flex-col min-h-full">
       <Navbar />
 
       <main>
@@ -67,7 +80,7 @@ export default function KingstonPage() {
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
               Lease Help in Kingston, Ontario | Tenant Rights &amp; Lease Review
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Kingston is a historic city shaped by Queen's University, St. Lawrence College, and
               CFB Kingston. Its competitive student rental market comes with specific lease pitfalls —
               from non-standard contracts to end-of-lease cleaning disputes. Know your rights before
@@ -245,6 +258,7 @@ export default function KingstonPage() {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

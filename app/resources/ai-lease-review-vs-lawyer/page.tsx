@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   keywords: ["AI lease review vs lawyer", "lease review cost", "tenant legal advice", "AI vs lawyer lease"],
 };
 
+const faqItems = [
+  { q: "When should I use AI lease review vs. a lawyer?", a: "Use AI review for a quick check before signing a standard residential lease. Use a lawyer when you face eviction, have a complex multi-year commercial lease, need advice on a specific legal situation, or require someone who can represent you." },
+  { q: "How much does a lawyer charge to review a lease in Canada?", a: "Lawyers typically charge $150–$350/hour for lease review. A basic residential lease review may take 1–2 hours. Free tenant legal clinics exist in most provinces for those who qualify based on income." },
+  { q: "Can LeasePlain catch the same problems a lawyer would?", a: "LeasePlain is effective at flagging common red flags, illegal clauses, and one-sided terms. Lawyers provide deeper analysis, professional accountability, and can advise on negotiation strategy and legal remedies — things AI cannot do." },
+  { q: "What are free legal resources for Canadian tenants?", a: "Each province has legal aid and tenant clinics: Ontario's Community Legal Clinics, BC's TRAC, Alberta's Student Legal Services, and others. Many offer free or subsidized lease review and LTB/RTB application help." },
+  { q: "Is there a middle ground between AI review and a full lawyer?", a: "Yes. Many tenants use LeasePlain first to understand their lease, then consult a legal clinic or lawyer only for the most serious flagged issues. This saves time and money while ensuring the biggest risks are professionally reviewed." },
+];
+
 export default function AILeaseReviewVsLawyerPage() {
   return (
     <>
@@ -53,6 +61,18 @@ export default function AILeaseReviewVsLawyerPage() {
             }
           }).replace(/</g, "\u003c")
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }).replace(/</g, "\u003c") }}
       />
       <div className="flex flex-col min-h-full">
       <Navbar />
@@ -212,13 +232,7 @@ export default function AILeaseReviewVsLawyerPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "When should I use AI lease review vs. a lawyer?", a: "Use AI review for a quick check before signing a standard residential lease. Use a lawyer when you face eviction, have a complex multi-year commercial lease, need advice on a specific legal situation, or require someone who can represent you." },
-                  { q: "How much does a lawyer charge to review a lease in Canada?", a: "Lawyers typically charge $150–$350/hour for lease review. A basic residential lease review may take 1–2 hours. Free tenant legal clinics exist in most provinces for those who qualify based on income." },
-                  { q: "Can LeasePlain catch the same problems a lawyer would?", a: "LeasePlain is effective at flagging common red flags, illegal clauses, and one-sided terms. Lawyers provide deeper analysis, professional accountability, and can advise on negotiation strategy and legal remedies — things AI cannot do." },
-                  { q: "What are free legal resources for Canadian tenants?", a: "Each province has legal aid and tenant clinics: Ontario's Community Legal Clinics, BC's TRAC, Alberta's Student Legal Services, and others. Many offer free or subsidized lease review and LTB/RTB application help." },
-                  { q: "Is there a middle ground between AI review and a full lawyer?", a: "Yes. Many tenants use LeasePlain first to understand their lease, then consult a legal clinic or lawyer only for the most serious flagged issues. This saves time and money while ensuring the biggest risks are professionally reviewed." }
-                ]} />
+                <FAQAccordion items={faqItems} />
               </div>
 
             <aside className="flex flex-col gap-5">

@@ -35,6 +35,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Locations hub ─────────────────────────────────────────────────────────
     url("/locations",           0.9, "monthly"),
 
+    // ── Lease Review hub ──────────────────────────────────────────────────────
+    url("/lease-review",            0.9, "monthly"),
+    url("/lease-review/ontario",    0.9, "monthly"),
+    url("/lease-review/toronto",    0.8, "monthly"),
+    url("/lease-review/vancouver",  0.8, "monthly"),
+    url("/lease-review/alberta",    0.8, "monthly"),
+    url("/lease-review/quebec",     0.8, "monthly"),
+
     // Canada — provinces
     url("/canada",                         0.9, "monthly"),
     url("/canada/ontario",                 0.9, "monthly"),

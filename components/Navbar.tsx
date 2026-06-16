@@ -57,6 +57,17 @@ const NAV_LOCATIONS = {
   },
 };
 
+const NAV_LEASE_REVIEW = {
+  hub: { label: "All Lease Review", href: "/lease-review" },
+  links: [
+    { label: "Ontario", href: "/lease-review/ontario" },
+    { label: "Toronto", href: "/lease-review/toronto" },
+    { label: "Vancouver", href: "/lease-review/vancouver" },
+    { label: "Alberta", href: "/lease-review/alberta" },
+    { label: "Quebec", href: "/lease-review/quebec" },
+  ],
+};
+
 const NAV_TOOLS = [
   { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator", desc: "Is the increase legal?" },
   { label: "Deposit Return Calculator", href: "/tools/deposit-calculator", desc: "How much do I get back?" },
@@ -234,7 +245,7 @@ function MegaMenu({ label, isActive, children }: MegaMenuProps) {
 
 function LocationsPanel({ close }: { close: () => void }) {
   return (
-    <div className="flex gap-0 px-1" style={{ width: 700 }}>
+    <div className="flex gap-0 px-1" style={{ width: 880 }}>
       {/* Canada provinces */}
       <div className="px-4" style={{ minWidth: 180 }}>
         <Link
@@ -343,6 +354,35 @@ function LocationsPanel({ close }: { close: () => void }) {
               → {s.city.label}
             </Link>
           </div>
+        ))}
+      </div>
+
+      <div className="w-px bg-slate-100 mx-1" />
+
+      {/* Lease Review */}
+      <div className="px-4" style={{ minWidth: 160 }}>
+        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+          Lease Review
+        </p>
+        <Link
+          href={NAV_LEASE_REVIEW.hub.href}
+          role="menuitem"
+          onClick={close}
+          className="flex items-center gap-1 text-sm font-semibold text-blue-600 hover:underline mb-2"
+        >
+          {NAV_LEASE_REVIEW.hub.label}
+          <ChevronRight className="w-3 h-3" aria-hidden="true" />
+        </Link>
+        {NAV_LEASE_REVIEW.links.map((l) => (
+          <Link
+            key={l.href}
+            href={l.href}
+            role="menuitem"
+            onClick={close}
+            className="block px-1 py-1 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-colors"
+          >
+            {l.label}
+          </Link>
         ))}
       </div>
     </div>
@@ -530,7 +570,7 @@ export default function Navbar() {
 
   const toggle = (key: string) => setExpanded((v) => (v === key ? null : key));
 
-  const isLocationActive = pathname.startsWith("/canada") || pathname.startsWith("/united-states") || pathname === "/locations";
+  const isLocationActive = pathname.startsWith("/canada") || pathname.startsWith("/united-states") || pathname === "/locations" || pathname.startsWith("/lease-review");
   const isClausesActive = pathname.startsWith("/lease-clause");
   const isRightsActive = pathname.startsWith("/tenant-rights");
   const isResourcesActive = pathname.startsWith("/resources");
@@ -579,6 +619,8 @@ export default function Navbar() {
               { label: `  → ${s.city.label}`, href: s.city.href },
             ]),
           ]} />
+          <p className="ml-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2 mb-1">Lease Review</p>
+          <MobileLinks links={[NAV_LEASE_REVIEW.hub, ...NAV_LEASE_REVIEW.links]} />
         </>
       ),
     },

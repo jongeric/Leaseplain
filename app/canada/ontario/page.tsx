@@ -25,7 +25,7 @@ const tenantProtections = [
   "A fixed-term lease expires on its end date without any notice required — the tenancy automatically converts to month-to-month if neither party acts. If a tenant on a month-to-month tenancy wishes to end the tenancy, they must give 60 days written notice (Form N9).",
   "Rent increases are limited to the provincial guideline (announced each year by the Ministry of Municipal Affairs and Housing).",
   "Landlords must use the standard Ontario lease form for most residential tenancies.",
-  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
   "A landlord cannot evict a tenant for personal use without filing a valid Form N12 and paying one month's compensation — this applies regardless of notice period length.",
   "Above-guideline rent increases (AGI) require a formal LTB application by the landlord with documented evidence.",
   "Tenants have the right to sublet their unit — a landlord cannot unreasonably withhold consent.",
@@ -57,7 +57,7 @@ const faqItems = [
   { q: "What is the Ontario Residential Tenancies Act?", a: "The Residential Tenancies Act (RTA) is Ontario's main landlord-tenant law. It governs rent increases, deposits, evictions, maintenance obligations, and dispute resolution through the Landlord and Tenant Board (LTB)." },
   { q: "How much can a landlord charge for a security deposit in Ontario?", a: "Ontario landlords may only collect a rent deposit equal to the last month's rent. They cannot charge a separate damage deposit. The deposit must earn interest at the annual rent-increase guideline rate." },
   { q: "What is Ontario's rent increase guideline?", a: "Each year the Ontario government sets a rent-increase guideline — the maximum a landlord can raise rent for most sitting tenants without LTB approval. Units first occupied after November 15, 2018 are exempt from rent control." },
-  { q: "How do I file a complaint with the Ontario Landlord and Tenant Board?", a: "Applications are filed at ontario.ca/LTB or in person at an LTB office. Filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants. Common applications include T2 (rights interference), T6 (maintenance), and T3 (vital services)." },
+  { q: "How do I file a complaint with the Ontario Landlord and Tenant Board?", a: "Applications are filed at ontario.ca/LTB or in person at an LTB office. Filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants. Common applications include T2 (rights interference), T6 (maintenance), and T3 (vital services)." },
   { q: "What notice must an Ontario landlord give to end a tenancy?", a: "The required notice depends on the reason: 60 days for landlord's own use, 60 days for purchaser's own use, or the prescribed notice for non-payment of rent (N4) plus the right to void the notice by paying within 14 days." },
 ];
 
@@ -116,7 +116,7 @@ export default function OntarioPage() {
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               Ontario's <em>Residential Tenancies Act</em> (RTA) provides some of the strongest tenant
-              protections in North America. From rent increase caps to accessible LTB hearings (filing fees are $48 online or $53 by paper; fee waivers available for low-income applicants), Ontario
+              protections in North America. From rent increase caps to accessible LTB hearings (filing fees are $186 online or $201 by paper; fee waivers available for low-income applicants), Ontario
               renters have significant rights — but only if they know them.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function OntarioPage() {
                   evictions, and a wide range of tenancy issues.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
-                  Tenants pay a filing fee of $48 online or $53 by paper when applying to the LTB; fee waivers are available for low-income applicants. Landlords also pay a filing fee. Applications can be
+                  Tenants pay a filing fee of $186 online or $201 by paper when applying to the LTB; fee waivers are available for low-income applicants. Landlords also pay a filing fee. Applications can be
                   filed online through the Tribunals Ontario portal, and hearings are typically conducted
                   via videoconference. The LTB has authority to order rent abatements, repairs, and in
                   some cases dismiss eviction applications.

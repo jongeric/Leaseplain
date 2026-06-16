@@ -25,7 +25,7 @@ const ottawaRights = [
   "The Ontario Residential Tenancies Act (RTA) applies in full to all private residential rentals in Ottawa.",
   "Rent increases are capped at the Ontario provincial guideline — no exceptions without an LTB above-guideline application.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Ottawa tenants can file applications with the LTB — filing fees are $48 online or $53 by paper; fee waivers are available for low-income applicants.",
+  "Ottawa tenants can file applications with the LTB — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
   "Tenants cannot be evicted mid-lease without a valid LTB order — even if they fail to pay rent, the LTB process must be followed.",
   "Student housing in private rentals is covered by the RTA; university-owned residence is typically not.",
 ];

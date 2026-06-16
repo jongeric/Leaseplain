@@ -151,10 +151,10 @@ const riskCategories = [
 ];
 
 const provinceProtections = [
-  { province: "Ontario", href: "/canada/ontario", note: "Residential Tenancies Act — rent increase guideline, LTB process, N4/N12/N13 notices." },
-  { province: "British Columbia", href: "/canada/british-columbia", note: "Residential Tenancy Act — RTB dispute resolution, annual rent cap, Four Month Notice rules." },
-  { province: "Alberta", href: "/canada/alberta", note: "Residential Tenancies Act — RTDRS process, no rent cap, security deposit interest rules." },
-  { province: "Quebec", href: "/canada/quebec", note: "Civil Code & TAL — rent increase grid, right of first refusal, lease assignment rights." },
+  { province: "Ontario", href: "/lease-review/ontario", note: "Residential Tenancies Act — rent increase guideline, LTB process, N4/N12/N13 notices." },
+  { province: "British Columbia", href: "/lease-review/vancouver", note: "Residential Tenancy Act — RTB dispute resolution, annual rent cap, Four Month Notice rules." },
+  { province: "Alberta", href: "/lease-review/alberta", note: "Residential Tenancies Act — RTDRS process, no rent cap, security deposit interest rules." },
+  { province: "Quebec", href: "/lease-review/quebec", note: "Civil Code & TAL — rent increase grid, right of first refusal, lease assignment rights." },
 ];
 
 const comparisonRows = [

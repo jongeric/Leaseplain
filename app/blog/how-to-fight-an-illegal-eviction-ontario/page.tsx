@@ -218,7 +218,7 @@ export default function FightIllegalEvictionOntarioPage() {
                   <ol className="list-decimal list-inside space-y-2 text-slate-700 leading-relaxed mb-3">
                     <li>Download Form T2 from the LTB website (tribunalsontario.ca/ltb).</li>
                     <li>Complete the form with specific details of the landlord&apos;s conduct and the remedy you are seeking.</li>
-                    <li>Pay the filing fee (currently $48 when filed online through the Tribunals Ontario Portal, or $53 by paper/in-person; fee waivers available for financial hardship).</li>
+                    <li>Pay the filing fee (currently $186 when filed online through the Tribunals Ontario Portal, or $201 by paper/in-person; fee waivers available for financial hardship).</li>
                     <li>File online through the Tribunals Ontario Portal or in person at an LTB service location.</li>
                     <li>Serve a copy of the application on your landlord according to the LTB&apos;s service rules.</li>
                   </ol>

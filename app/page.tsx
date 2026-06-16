@@ -12,25 +12,24 @@ import {
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Lease Analyzer | Understand Your Lease in Plain English",
+  title: "Protect Yourself Before Signing a Lease | LeasePlain",
   description:
-    "Upload your lease and get a simple explanation. Identify hidden clauses, risks, and key terms instantly.",
+    "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
   keywords: [
-    "analyze lease agreement", "lease agreement explained", "AI lease review",
-    "tenant rights Ontario", "lease clause explained", "how to read a lease",
-    "residential lease analysis", "rental agreement review Canada",
+    "lease risk score", "hidden lease fees", "illegal lease clause Canada", "tenant protection tool",
+    "is my lease legal", "landlord red flags", "tenant rights Ontario", "rental agreement review Canada",
   ],
   openGraph: {
-    title: "Lease Analyzer | Understand Your Lease in Plain English",
+    title: "Protect Yourself Before Signing a Lease | LeasePlain",
     description:
-      "Upload your lease and get a simple explanation. Identify hidden clauses, risks, and key terms instantly.",
+      "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
     type: "website",
     url: "https://leaseplain.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lease Analyzer | Understand Your Lease in Plain English",
-    description: "Upload your lease and get a simple explanation. Identify hidden clauses, risks, and key terms instantly.",
+    title: "Protect Yourself Before Signing a Lease | LeasePlain",
+    description: "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
   },
   alternates: { canonical: "https://leaseplain.com" },
 };
@@ -144,6 +143,29 @@ const analyzeFeatures = [
   { icon: ShieldCheck, title: "Legal Compliance Check", bullets: ["Ontario Standard Lease alignment", "Rent Increase Guideline compliance", "Entry notice requirements", "Deposit limits under provincial law", "Repair obligation standards"] },
 ];
 
+const riskCategories = [
+  { icon: TrendingUp, title: "Lease Risk Score", desc: "Every lease gets an overall risk score from 0–100, so you know at a glance whether you're looking at a clean lease or one stacked against you." },
+  { icon: DollarSign, title: "Hidden Fees", desc: "We surface fees buried in dense clauses — admin charges, non-refundable deposits, key replacement costs — before they catch you off guard." },
+  { icon: AlertTriangle, title: "Unusual Clauses", desc: "Terms that fall outside what's typical for your province get flagged immediately, with plain-English context on why they're unusual." },
+  { icon: ShieldCheck, title: "Potential Legal Issues", desc: "Clauses that may conflict with your province's tenancy laws are flagged so you can raise them before signing, not after." },
+];
+
+const provinceProtections = [
+  { province: "Ontario", href: "/canada/ontario", note: "Residential Tenancies Act — rent increase guideline, LTB process, N4/N12/N13 notices." },
+  { province: "British Columbia", href: "/canada/british-columbia", note: "Residential Tenancy Act — RTB dispute resolution, annual rent cap, Four Month Notice rules." },
+  { province: "Alberta", href: "/canada/alberta", note: "Residential Tenancies Act — RTDRS process, no rent cap, security deposit interest rules." },
+  { province: "Quebec", href: "/canada/quebec", note: "Civil Code & TAL — rent increase grid, right of first refusal, lease assignment rights." },
+];
+
+const comparisonRows = [
+  { feature: "Province-specific tenancy law", leaseplain: true, generic: false },
+  { feature: "Lease risk scoring", leaseplain: true, generic: false },
+  { feature: "Illegal clause detection", leaseplain: true, generic: false },
+  { feature: "Negotiation suggestions tailored to your lease", leaseplain: true, generic: false },
+  { feature: "Built for tenant protection, not general Q&A", leaseplain: true, generic: false },
+  { feature: "General explanation of lease language", leaseplain: true, generic: true },
+];
+
 const howToSteps = [
   { step: "1", title: "Upload Your Lease", desc: "Drop in your PDF or paste your lease text. Supports all standard Canadian residential lease formats." },
   { step: "2", title: "AI Reads Every Clause", desc: "Our AI analyzes every paragraph, identifies key terms, flags risks, and structures a full plain-English report." },
@@ -244,16 +266,16 @@ export default function HomePage() {
         <section className="flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32 bg-gradient-to-b from-slate-50 to-white">
           <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 border border-indigo-100">
             <Zap className="w-3.5 h-3.5" />
-            AI lease review — results in under 30 seconds
+            Lease risk analysis — results in under 30 seconds
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 max-w-3xl leading-tight">
-            Understand Your Lease{" "}
-            <span className="text-indigo-600">Before You Sign It</span>
+            Before You Sign That Lease,{" "}
+            <span className="text-indigo-600">Make Sure It Isn&apos;t Costing You Thousands</span>
           </h1>
 
           <p className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
-            Upload your lease and get a clear, plain-English breakdown of every clause, risk, and hidden term — in seconds.
+            Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues — in minutes.
           </p>
 
           <p className="mt-3 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-100 px-4 py-2 rounded-full">
@@ -265,19 +287,19 @@ export default function HomePage() {
               href="/upload"
               className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-indigo-700 transition-colors shadow-sm text-base"
             >
-              Upload Your Lease <ChevronRight className="w-4 h-4" />
+              Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
             </Link>
             <Link
               href="/analysis/demo"
               className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors text-base"
             >
-              See Example Breakdown
+              See My Lease Risk Score
             </Link>
           </div>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs text-slate-400">
             <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Your document is private and never stored</span>
-            <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Designed for renters in Canada</span>
+            <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renter protection across Canada</span>
             <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
           </div>
         </section>
@@ -318,6 +340,27 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── RISK DETECTION ───────────────────────────────────────────────── */}
+        <section className="py-20 px-4 bg-white" id="risk-detection">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Built to Catch What You&apos;d Miss</h2>
+            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+              LeasePlain doesn&apos;t just summarize your lease — it actively looks for the things that cost renters money and rights.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {riskCategories.map((r) => (
+                <div key={r.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
+                    <r.icon className="w-5 h-5 text-indigo-600" />
+                  </div>
+                  <h3 className="font-semibold text-slate-900 mb-2 text-sm">{r.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{r.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="how-it-works">
           <div className="max-w-5xl mx-auto">
@@ -338,7 +381,7 @@ export default function HomePage() {
             </div>
             <div className="mt-12 flex justify-center">
               <Link href="/upload" className="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-indigo-700 transition-colors shadow-sm">
-                Analyze My Lease Free <ChevronRight className="w-4 h-4" />
+                Analyze My Lease <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -368,6 +411,71 @@ export default function HomePage() {
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── PROVINCE-SPECIFIC PROTECTION ─────────────────────────────────── */}
+        <section className="py-20 px-4 bg-white" id="provinces">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Province-Specific Protection</h2>
+            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+              Tenancy law varies significantly across Canada. LeasePlain checks your lease against the rules that actually apply to you.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {provinceProtections.map((p) => (
+                <Link
+                  key={p.href}
+                  href={p.href}
+                  className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <MapPin className="w-4 h-4 text-indigo-500" />
+                    <h3 className="font-semibold text-slate-900 text-sm">{p.province}</h3>
+                  </div>
+                  <p className="text-slate-500 text-xs leading-relaxed">{p.note}</p>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center mt-8 text-slate-500 text-sm">
+              <Link href="/canada" className="text-indigo-600 font-semibold hover:underline">
+                See protection details for all 10 provinces →
+              </Link>
+            </p>
+          </div>
+        </section>
+
+        {/* ── WHY LEASEPLAIN VS CHATGPT ────────────────────────────────────── */}
+        <section className="py-20 px-4 bg-slate-50" id="comparison">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Why Not Just Use ChatGPT?</h2>
+            <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">
+              Generic AI can explain language. LeasePlain is built specifically to protect tenants.
+            </p>
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              <table className="w-full text-sm">
+                <caption className="sr-only">Comparison of LeasePlain and generic AI chatbots for lease review</caption>
+                <thead>
+                  <tr className="border-b border-slate-100 bg-slate-50">
+                    <th scope="col" className="text-left px-6 py-3 font-semibold text-slate-700">Feature</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-indigo-600 text-center">LeasePlain</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-slate-500 text-center">Generic AI</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row) => (
+                    <tr key={row.feature} className="border-b border-slate-50 last:border-0">
+                      <td className="px-6 py-3.5 text-slate-700">{row.feature}</td>
+                      <td className="px-4 py-3.5 text-center">
+                        {row.leaseplain ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
+                      </td>
+                      <td className="px-4 py-3.5 text-center">
+                        {row.generic ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -409,17 +517,17 @@ export default function HomePage() {
               Don&apos;t sign until you understand every line.
             </h2>
             <Link href="/upload" className="inline-flex items-center gap-2 bg-white text-indigo-700 font-semibold px-7 py-3 rounded-xl hover:bg-indigo-50 transition-colors shadow-sm">
-              Upload Your Lease Free <ChevronRight className="w-4 h-4" />
+              Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
 
-        {/* ── EXAMPLE OUTPUT ───────────────────────────────────────────────── */}
+        {/* ── INTERACTIVE DEMO ─────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-slate-50" id="example">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Example Analysis Output</h2>
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">See It Work on a Real Clause</h2>
             <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">
-              Here&apos;s what your plain-English lease report looks like. Every clause explained, every risk highlighted.
+              Original clause in, plain-English risk breakdown out. Here&apos;s a sample from a real Ontario lease.
             </p>
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <div className="bg-indigo-600 px-6 py-4 flex items-center gap-2">
@@ -428,19 +536,24 @@ export default function HomePage() {
               </div>
               <div className="p-6 space-y-5">
                 <div className="p-4 bg-green-50 border border-green-100 rounded-xl">
-                  <p className="text-green-800 font-semibold text-sm mb-1">✓ Rent &amp; Financials</p>
+                  <p className="text-green-800 font-semibold text-xs uppercase tracking-wide mb-1">Risk Level: Low</p>
+                  <p className="text-green-800 font-semibold text-sm mb-1">Rent &amp; Financials</p>
                   <p className="text-green-700 text-sm">Rent: $2,200/month due on the 1st. Late fee: $50 after 5 days. Security deposit: $2,200 (1 month — within Ontario legal limit). Last month&apos;s rent: $2,200 collected upfront.</p>
                 </div>
                 <div className="p-4 bg-red-50 border border-red-100 rounded-xl">
-                  <p className="text-red-800 font-semibold text-sm mb-1">⚠ Red Flag Detected — Early Termination Penalty</p>
-                  <p className="text-red-700 text-sm">Clause 14b requires you to pay 3 months&apos; rent ($6,600) if you end the lease early. This is above the Ontario standard. Consider negotiating this down to 1–2 months before signing.</p>
+                  <p className="text-red-800 font-semibold text-xs uppercase tracking-wide mb-1">Risk Level: High</p>
+                  <p className="text-red-800 font-semibold text-sm mb-1">Original Clause 14b: &ldquo;Tenant shall pay three (3) months&apos; rent as liquidated damages for early termination.&rdquo;</p>
+                  <p className="text-red-700 text-sm mb-2">Plain English: You&apos;d owe $6,600 to end this lease early — above what&apos;s typical in Ontario.</p>
+                  <p className="text-red-700 text-sm font-medium">Recommended action: Negotiate this down to 1–2 months before signing.</p>
                 </div>
                 <div className="p-4 bg-amber-50 border border-amber-100 rounded-xl">
-                  <p className="text-amber-800 font-semibold text-sm mb-1">⚡ Unclear Term — Maintenance Responsibilities</p>
-                  <p className="text-amber-700 text-sm">Clause 9 states "tenant is responsible for general upkeep" without defining what this includes. Ask your landlord to specify which repairs are tenant vs. landlord responsibility before signing.</p>
+                  <p className="text-amber-800 font-semibold text-xs uppercase tracking-wide mb-1">Risk Level: Medium</p>
+                  <p className="text-amber-800 font-semibold text-sm mb-1">Original Clause 9: &ldquo;Tenant is responsible for general upkeep.&rdquo;</p>
+                  <p className="text-amber-700 text-sm mb-2">Plain English: This doesn&apos;t define what &ldquo;general upkeep&rdquo; covers, which could be used to push landlord repairs onto you.</p>
+                  <p className="text-amber-700 text-sm font-medium">Recommended action: Ask your landlord to specify which repairs are tenant vs. landlord responsibility, in writing.</p>
                 </div>
                 <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
-                  <p className="text-blue-800 font-semibold text-sm mb-1">💬 Suggested Question to Ask</p>
+                  <p className="text-blue-800 font-semibold text-sm mb-1">Suggested Question to Ask</p>
                   <p className="text-blue-700 text-sm">&ldquo;Can we define in writing which repairs I am responsible for, and what the landlord will handle within what timeframe?&rdquo;</p>
                 </div>
               </div>
@@ -609,7 +722,12 @@ export default function HomePage() {
         {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">What Renters Say</h2>
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">What Renters Say</h2>
+            <p className="text-slate-500 text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
+              LeasePlain checks every lease against the tenancy laws of the applicable Canadian province, flags clauses that deviate
+              from what&apos;s typical or legally enforceable, and never stores your document after your report is generated.
+              LeasePlain is an informational tool, not a law firm, and does not provide legal advice.
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { quote: "I finally understood my lease before signing. It flagged a clause that could have cost me my entire security deposit.", name: "Maria T.", location: "Renter, Toronto ON" },
@@ -638,14 +756,14 @@ export default function HomePage() {
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-indigo-300 text-sm font-medium mb-3">Takes less than 30 seconds · Free to start</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Understand Every Line of Your Lease Before You Sign
+              Don&apos;t Sign Until You Know What&apos;s Hiding in the Fine Print
             </h2>
             <p className="text-indigo-200 mb-8 max-w-lg mx-auto">
-              Don&apos;t let a confusing clause cost you thousands. Get your plain-English lease analysis now — no legal knowledge required.
+              Don&apos;t let a confusing clause cost you thousands. See your lease risk score now — no legal knowledge required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/upload" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-colors shadow-sm text-base">
-                Upload Your Lease <ChevronRight className="w-4 h-4" />
+                See My Lease Risk Score <ChevronRight className="w-4 h-4" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center gap-2 bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl border border-indigo-500 hover:bg-indigo-600 transition-colors text-base">
                 View Pricing

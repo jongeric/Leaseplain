@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { TrendingUp, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -66,6 +67,30 @@ const faqs = [
 
 export default function RentIncreasePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Rent Increase Clause Explained – Rules, Notice & Your Rights"
+        description="Learn how rent increase clauses work in Ontario. Understand the annual guideline, how much notice is required, and when a rent increase is illegal."
+        url="https://leaseplain.com/lease-clause/rent-increase"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["rent increase clause Ontario", "rent increase guideline Canada", "how much notice rent increase", "above guideline increase LTB", "illegal rent increase Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Rent Increase Clause",
+          "description": "A rent increase clause is a lease provision that outlines when and by how much a landlord may raise a tenant's rent. In Ontario, rent increases are strictly regulated — landlords must give 90 days written notice, can only increase rent once every 12 months, and must stay within the provincial Rent Increase Guideline unless an exemption applies.",
+          "url": "https://leaseplain.com/lease-clause/rent-increase",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -242,5 +267,6 @@ export default function RentIncreasePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

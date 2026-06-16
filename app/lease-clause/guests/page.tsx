@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Users, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -65,6 +66,30 @@ const faqs = [
 
 export default function GuestsClausePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Guest Clause in a Lease: How Long Can Guests Stay?"
+        description="What does a guest clause in a lease mean? Learn the difference between guests and occupants in Ontario, whether guest restrictions are enforceable, and what red flags to avoid."
+        url="https://leaseplain.com/lease-clause/guests"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["guest clause lease", "how long can guests stay rental", "guest vs occupant Ontario", "tenant guest rights Canada", "overnight guest lease rules"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Guest Clause",
+          "description": "A guest clause is a lease provision that defines who counts as a temporary visitor versus a permanent occupant, and sets limits on how long guests may stay in a rental unit. In Ontario, overly restrictive guest clauses that interfere with a tenant's right to peaceful enjoyment are generally unenforceable.",
+          "url": "https://leaseplain.com/lease-clause/guests",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -254,5 +279,6 @@ export default function GuestsClausePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

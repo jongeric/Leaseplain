@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Users, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -65,6 +66,30 @@ const questions = [
 
 export default function SublettingPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Subletting Clause Explained – Your Rights to Sublet in Ontario"
+        description="Understand subletting and assignment clauses in your lease. Learn when your landlord can and cannot refuse a sublet request in Ontario."
+        url="https://leaseplain.com/lease-clause/subletting"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["subletting clause Ontario", "tenant right to sublet Canada", "lease assignment Ontario", "landlord refuse sublet RTA", "sublease agreement Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Subletting Clause",
+          "description": "A subletting clause is a lease provision that governs a tenant's right to temporarily transfer possession of their unit to a subtenant, or permanently assign the lease to a new tenant. In Ontario, blanket prohibitions on subletting are unenforceable — landlords must have reasonable grounds to refuse a sublet or assignment request.",
+          "url": "https://leaseplain.com/lease-clause/subletting",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -253,5 +278,6 @@ export default function SublettingPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

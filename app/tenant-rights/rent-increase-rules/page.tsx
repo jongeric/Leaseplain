@@ -259,6 +259,7 @@ export default function RentIncreaseRulesPage() {
                 </p>
                 <div className="overflow-hidden rounded-xl border border-slate-100 shadow-sm mb-2">
                   <table className="w-full text-sm">
+                    <caption className="sr-only">Ontario Annual Rent Increase Guidelines by Year</caption>
                     <thead>
                       <tr className="bg-slate-50 border-b border-slate-100">
                         <th className="text-left px-5 py-3 font-semibold text-slate-700">Year</th>
@@ -572,6 +573,7 @@ export default function RentIncreaseRulesPage() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-5">Canadian Province Comparison Table</h2>
                 <div className="overflow-x-auto rounded-xl border border-slate-100 shadow-sm">
                   <table className="w-full text-xs">
+                    <caption className="sr-only">Canadian Province Rent Increase Rules Comparison</caption>
                     <thead>
                       <tr className="bg-slate-50 border-b border-slate-100">
                         <th className="text-left px-4 py-3 font-semibold text-slate-700">Province</th>

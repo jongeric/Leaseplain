@@ -114,6 +114,42 @@ export default function FirstApartmentChecklistCanadaPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "First Apartment Checklist for Canada",
+          "description": "Key steps and items to check when renting your first apartment in Canada.",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Get the lease in writing" },
+            { "@type": "ListItem", "position": 2, "name": "In Ontario: request the Standard Lease form" },
+            { "@type": "ListItem", "position": 3, "name": "Read every clause carefully before signing" },
+            { "@type": "ListItem", "position": 4, "name": "Check if your unit is rent-controlled" },
+            { "@type": "ListItem", "position": 5, "name": "Research the building's RentSafeTO score (Toronto)" },
+            { "@type": "ListItem", "position": 6, "name": "Ask what deposits are required and verify the legal cap for your province" },
+            { "@type": "ListItem", "position": 7, "name": "Confirm who is responsible for which utilities" },
+            { "@type": "ListItem", "position": 8, "name": "Check for red flags in the lease" },
+            { "@type": "ListItem", "position": 9, "name": "Run a quick online check on the landlord" },
+            { "@type": "ListItem", "position": 10, "name": "Get renters insurance quotes" },
+            { "@type": "ListItem", "position": 11, "name": "Do a thorough walkthrough with your landlord before accepting the keys" },
+            { "@type": "ListItem", "position": 12, "name": "Take timestamped photos of every room" },
+            { "@type": "ListItem", "position": 13, "name": "Test everything that should work" },
+            { "@type": "ListItem", "position": 14, "name": "Document existing damage in writing and email it to your landlord" },
+            { "@type": "ListItem", "position": 15, "name": "In BC: complete a Condition Inspection Report (RTB-27)" },
+            { "@type": "ListItem", "position": 16, "name": "Get a receipt for your deposit and first month's rent" },
+            { "@type": "ListItem", "position": 17, "name": "Confirm your landlord's contact details and emergency repair contact" },
+            { "@type": "ListItem", "position": 18, "name": "Read the lease one more time now that you're in the unit" },
+            { "@type": "ListItem", "position": 19, "name": "Set up a dedicated folder for all landlord communications" },
+            { "@type": "ListItem", "position": 20, "name": "Put your rent due date in your calendar with a 5-day reminder" },
+            { "@type": "ListItem", "position": 21, "name": "Bookmark your province's tenant rights tribunal" },
+            { "@type": "ListItem", "position": 22, "name": "Identify local tenant advocacy resources" },
+            { "@type": "ListItem", "position": 23, "name": "Keep your original signed lease — always" },
+            { "@type": "ListItem", "position": 24, "name": "Keep all rent receipts (or e-transfer records) for the full tenancy" },
+            { "@type": "ListItem", "position": 25, "name": "Keep your move-in condition report and photos until at least 2 years after you move out" },
+          ],
+        }).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "HowTo",
           "name": "How to Rent Your First Apartment in Canada",
           "description": "A 25-step guide for first-time renters in Canada covering what to do before signing a lease, at move-in, during the first month, and which documents to keep for the entire tenancy.",

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Clock, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -80,6 +81,30 @@ const faqs = [
 
 export default function LateFeesPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Late Fee Clause Explained – Are Late Fees Legal in Ontario?"
+        description="Understand late fee clauses in your lease. Learn whether your landlord can legally charge late fees in Ontario and what the law actually allows."
+        url="https://leaseplain.com/lease-clause/late-fees"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["late fee clause lease", "are late fees legal Ontario", "late rent fee Canada", "RTA late payment rules", "landlord late fee enforceable"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Late Fee Clause",
+          "description": "A late fee clause is a lease provision that imposes a financial penalty on a tenant for paying rent after the due date. In Ontario, late fee clauses are generally void under the Residential Tenancies Act, which does not permit landlords to charge penalties beyond the statutory N4 notice process.",
+          "url": "https://leaseplain.com/lease-clause/late-fees",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -254,5 +279,6 @@ export default function LateFeesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

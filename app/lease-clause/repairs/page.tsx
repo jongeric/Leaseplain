@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Wrench, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -80,6 +81,30 @@ const faqs = [
 
 export default function RepairsClausePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Repairs Clause in a Lease: Landlord vs. Tenant Responsibilities"
+        description="Who is responsible for repairs in a rental unit in Ontario? Learn what the RTA says about your landlord's duty to repair and what red flags to watch for in repair clauses."
+        url="https://leaseplain.com/lease-clause/repairs"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["repairs clause lease Ontario", "landlord duty to repair Canada", "tenant repair rights RTA", "who pays repairs rental", "T6 application LTB repairs"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Repairs Clause",
+          "description": "A repairs clause is a lease provision that allocates responsibility for fixing defects and maintaining the rental unit between the landlord and tenant. Under section 20 of Ontario's Residential Tenancies Act, landlords must keep the unit in a good state of repair regardless of what the lease says, and cannot shift that duty to tenants.",
+          "url": "https://leaseplain.com/lease-clause/repairs",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -287,5 +312,6 @@ export default function RepairsClausePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

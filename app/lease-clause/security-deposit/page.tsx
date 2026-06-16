@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ShieldCheck, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -58,6 +59,30 @@ const questions = [
 
 export default function SecurityDepositPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Security Deposit Clause Explained – What Tenants Need to Know"
+        description="Understand what a security deposit clause means, how much your landlord can legally charge, and when you're entitled to get it back — with interest."
+        url="https://leaseplain.com/lease-clause/security-deposit"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["security deposit clause", "rental deposit rules Ontario", "last month rent Ontario", "deposit return Canada", "damage deposit illegal Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Security Deposit Clause",
+          "description": "A security deposit clause is a lease provision specifying the upfront money a tenant pays to a landlord before moving in, held to cover potential unpaid rent or damage beyond normal wear and tear. In Ontario, landlords may only collect a last month's rent deposit — a separate damage deposit is illegal under the Residential Tenancies Act.",
+          "url": "https://leaseplain.com/lease-clause/security-deposit",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -253,5 +278,6 @@ export default function SecurityDepositPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

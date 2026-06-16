@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Zap, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -64,6 +65,30 @@ const redFlags = [
 
 export default function UtilitiesClausePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Utilities Clause in a Lease: Who Pays for What?"
+        description="Understand what a utilities clause covers in an Ontario rental lease — hydro, gas, water, heat, and internet — and your rights when utilities are included in rent."
+        url="https://leaseplain.com/lease-clause/utilities"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["utilities clause lease Ontario", "who pays utilities rental Canada", "hydro included rent Ontario", "vital services landlord RTA", "utilities rental agreement"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Utilities Clause",
+          "description": "A utilities clause is a lease provision that specifies which utility services — such as hydro, gas, water, and heat — are included in rent and which the tenant must arrange and pay for independently. In Ontario, utilities designated as vital services cannot be interrupted by a landlord even if a tenant is in rent arrears.",
+          "url": "https://leaseplain.com/lease-clause/utilities",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -274,5 +299,6 @@ export default function UtilitiesClausePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

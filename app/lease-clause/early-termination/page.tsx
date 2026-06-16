@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { LogOut, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -67,6 +68,30 @@ const faqs = [
 
 export default function EarlyTerminationPage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Early Termination Clause Explained – Breaking a Lease Legally"
+        description="Understand early termination clauses in your lease. Learn when you can legally break a lease in Ontario, what notice is required, and what penalties are enforceable."
+        url="https://leaseplain.com/lease-clause/early-termination"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["early termination clause", "break a lease Ontario", "lease break fee Canada", "tenant rights early exit", "ending tenancy early Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Early Termination Clause",
+          "description": "An early termination clause is a lease provision that sets the rules and penalties for a tenant who wishes to leave before the end of the lease term. In Ontario, large flat-fee lease-break penalties are often unenforceable, as landlords have a duty to mitigate by re-renting the unit.",
+          "url": "https://leaseplain.com/lease-clause/early-termination",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -227,5 +252,6 @@ export default function EarlyTerminationPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

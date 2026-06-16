@@ -151,6 +151,33 @@ export default function MovingOutOntarioChecklistPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Ontario Move-Out Checklist",
+          "description": "Step-by-step checklist for Ontario tenants moving out of a rental unit, covering notice, inspection, documentation, and deposit rules.",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Determine your correct notice date — notice must end on the last day of a rental period" },
+            { "@type": "ListItem", "position": 2, "name": "Complete LTB Form N9 (Tenant's Notice to Terminate Tenancy)" },
+            { "@type": "ListItem", "position": 3, "name": "Deliver N9 to your landlord in writing and keep proof of delivery" },
+            { "@type": "ListItem", "position": 4, "name": "Confirm notice period is at least 60 days before the last day of tenancy" },
+            { "@type": "ListItem", "position": 5, "name": "Schedule a move-out inspection with your landlord" },
+            { "@type": "ListItem", "position": 6, "name": "Photograph every room, appliance, and surface with date-stamped photos" },
+            { "@type": "ListItem", "position": 7, "name": "Repair any damage beyond normal wear and tear before the inspection" },
+            { "@type": "ListItem", "position": 8, "name": "Clean the unit thoroughly, focusing on oven, fridge, bathroom, and high-use areas" },
+            { "@type": "ListItem", "position": 9, "name": "Cancel utilities, internet, and mail forwarding effective on your move-out date" },
+            { "@type": "ListItem", "position": 10, "name": "Return all keys, fobs, garage openers, and parking passes to the landlord" },
+            { "@type": "ListItem", "position": 11, "name": "Conduct the move-out inspection together with the landlord and get a written sign-off" },
+            { "@type": "ListItem", "position": 12, "name": "Take a final walkthrough with video as your strongest defence against deposit disputes" },
+            { "@type": "ListItem", "position": 13, "name": "Get your landlord's contact address in writing for future correspondence" },
+            { "@type": "ListItem", "position": 14, "name": "Apply your last month's rent deposit to your final month — do not pay rent for that month" },
+            { "@type": "ListItem", "position": 15, "name": "Ensure the landlord returns LMR deposit interest earned at the guideline rate" },
+            { "@type": "ListItem", "position": 16, "name": "If the landlord claims illegal deposit deductions, file a T1 application with the LTB" },
+          ],
+        }).replace(/</g, "<") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "HowTo",
           "name": "How to Move Out of a Rental in Ontario",
           "description": "A step-by-step checklist for Ontario tenants covering proper notice, move-out inspection, unit documentation, and protecting your last month's rent deposit.",

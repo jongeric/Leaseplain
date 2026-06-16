@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Heart, ChevronRight, Upload, AlertTriangle, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -72,6 +73,30 @@ const faqs = [
 
 export default function PetsClausePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Pet Clause in a Lease: Can a Landlord Refuse Pets in Ontario?"
+        description="Ontario law makes 'no pets' clauses void. Learn what landlords can and cannot require around pets in a lease, and what red flags to watch for in pet clauses."
+        url="https://leaseplain.com/lease-clause/pets"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["pet clause lease Ontario", "no pets clause void RTA", "landlord refuse pets Canada", "pet deposit illegal Ontario", "tenant pet rights Ontario"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Pet Clause",
+          "description": "A pet clause is a lease provision that governs whether tenants may keep animals in their rental unit and under what conditions. In Ontario, clauses that prohibit pets outright are void under section 14 of the Residential Tenancies Act — though landlords may still pursue eviction if a pet causes damage or disturbs other tenants.",
+          "url": "https://leaseplain.com/lease-clause/pets",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -269,5 +294,6 @@ export default function PetsClausePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

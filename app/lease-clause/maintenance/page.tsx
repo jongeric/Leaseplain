@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Wrench, AlertTriangle, CheckCircle, ChevronRight, Upload } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ArticleSchema from "@/components/ArticleSchema";
 
 export const dynamic = "force-static";
 
@@ -75,6 +76,30 @@ const faqs = [
 
 export default function MaintenancePage() {
   return (
+    <>
+      <ArticleSchema
+        headline="Maintenance Responsibilities Clause Explained"
+        description="Understand who is responsible for repairs and maintenance in your lease. Learn what your landlord must fix, what you're responsible for, and your rights when repairs are ignored."
+        url="https://leaseplain.com/lease-clause/maintenance"
+        datePublished="2025-01-01"
+        dateModified="2026-06-16"
+        keywords={["maintenance clause lease", "landlord maintenance obligations Ontario", "tenant repair responsibilities Canada", "who fixes repairs rental unit", "RTA maintenance duties"]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "DefinedTerm",
+          "name": "Maintenance Responsibilities Clause",
+          "description": "A maintenance responsibilities clause is a lease provision that defines which party — landlord or tenant — is responsible for keeping the rental unit in good repair. In Ontario, the Residential Tenancies Act imposes a non-negotiable duty on landlords to maintain the unit to health and safety standards, which cannot be contracted away.",
+          "url": "https://leaseplain.com/lease-clause/maintenance",
+          "inDefinedTermSet": {
+            "@type": "DefinedTermSet",
+            "name": "LeasePlain Lease Clause Library",
+            "url": "https://leaseplain.com/glossary",
+          },
+        }).replace(/</g, "<") }}
+      />
     <div className="flex flex-col min-h-full">
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -242,5 +267,6 @@ export default function MaintenancePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

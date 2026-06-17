@@ -19,28 +19,28 @@ const plans = [
     highlight: false,
     features: [
       "1 lease analysis per month",
-      "Plain-English summary",
-      "Key financial terms",
-      "Red flag detection",
+      "Plain-English lease summary",
+      "Lease risk score & risk level",
       "PDF or text upload",
     ],
-    missing: ["Analysis history", "Priority processing", "Email support"],
+    missing: ["Full red flag breakdown", "Negotiation suggestions", "Analysis history"],
   },
   {
     key: "pro" as const,
     name: "Pro",
     price: "$9",
     period: "per month",
-    description: "For active renters who need unlimited analysis and history.",
+    description: "For active renters who need the full risk assessment before signing.",
     highlight: true,
     badge: "Most Popular",
     features: [
       "Unlimited lease analyses",
-      "Full analysis report (all 6 sections)",
+      "Full red flag breakdown with severity levels",
+      "Unclear & missing clause detection",
+      "Negotiation suggestions tailored to your lease",
+      "Questions to ask your landlord",
       "Analysis history & saved reports",
-      "PDF and text upload",
       "Priority AI processing",
-      "Email support",
     ],
     missing: [],
   },
@@ -183,6 +183,30 @@ export default function PricingClient() {
             ))}
           </div>
 
+          {/* Coming Soon — future subscription tier */}
+          <div className="mt-14 bg-white rounded-2xl border border-dashed border-slate-200 p-8 text-center">
+            <span className="inline-block bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-full mb-4">
+              Coming Soon
+            </span>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">Ongoing Tenant Protection</h2>
+            <p className="text-slate-500 text-sm max-w-md mx-auto mb-6">
+              A future subscription tier for renters who want support that doesn&apos;t stop at signing.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-3xl mx-auto text-left">
+              {[
+                "Rent increase notice review",
+                "Eviction notice review",
+                "Tenant rights assistant",
+                "Ongoing lease support",
+              ].map((f) => (
+                <div key={f} className="flex items-start gap-2 bg-slate-50 rounded-xl p-3 text-sm text-slate-600">
+                  <Check className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
+                  {f}
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-10 text-center text-sm text-slate-400 max-w-xl mx-auto">
             <p>
               <strong className="text-slate-500">Not legal advice.</strong>{" "}
@@ -191,7 +215,7 @@ export default function PricingClient() {
             </p>
           </div>
         </div>
-      
+
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>

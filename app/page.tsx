@@ -290,7 +290,7 @@ export default function HomePage() {
               Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/analysis/demo"
+              href="/example-report"
               className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors text-base"
             >
               See My Lease Risk Score

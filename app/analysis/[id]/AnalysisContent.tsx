@@ -4,9 +4,22 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   FileText, DollarSign, AlertTriangle, HelpCircle,
-  Lightbulb, ShieldCheck, CheckCircle, Lock, Loader2, Info,
+  Lightbulb, ShieldCheck, CheckCircle, Lock, Loader2, Info, Gauge,
 } from "lucide-react";
 import { LeaseAnalysis } from "@/lib/types";
+import { computeRiskScore } from "@/lib/riskScore";
+
+const riskLevelColors = {
+  Low: "text-green-700 bg-green-50 border-green-200",
+  Medium: "text-amber-700 bg-amber-50 border-amber-200",
+  High: "text-red-700 bg-red-50 border-red-200",
+};
+
+const riskLevelRing = {
+  Low: "stroke-green-500",
+  Medium: "stroke-amber-500",
+  High: "stroke-red-500",
+};
 
 const severityColors = {
   high: "bg-red-50 border-red-200 text-red-800",
@@ -120,6 +133,10 @@ export default function AnalysisContent({
     );
   }
 
+  const risk = computeRiskScore(analysis.redFlags, analysis.unclearClauses);
+  const circumference = 2 * Math.PI * 36;
+  const dashOffset = circumference * (1 - risk.score / 100);
+
   return (
     <div className="flex flex-col gap-4">
       {ruleBasedFallback && (
@@ -131,6 +148,35 @@ export default function AnalysisContent({
           </span>
         </div>
       )}
+
+      {/* 0. Lease Risk Score — always visible, free and Pro */}
+      <section className={`rounded-2xl border p-6 flex items-center gap-5 ${riskLevelColors[risk.level]}`}>
+        <div className="relative w-20 h-20 flex-shrink-0">
+          <svg viewBox="0 0 80 80" className="w-20 h-20 -rotate-90">
+            <circle cx="40" cy="40" r="36" fill="none" strokeWidth="6" className="stroke-current opacity-15" />
+            <circle
+              cx="40" cy="40" r="36" fill="none" strokeWidth="6" strokeLinecap="round"
+              className={riskLevelRing[risk.level]}
+              strokeDasharray={circumference}
+              strokeDashoffset={dashOffset}
+            />
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-bold text-lg">{risk.score}</span>
+          </div>
+        </div>
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <Gauge className="w-4 h-4" />
+            <span className="font-bold text-sm">Lease Risk Score: {risk.level}</span>
+          </div>
+          <p className="text-sm opacity-90 leading-relaxed">
+            Based on {analysis.redFlags.length} flagged clause{analysis.redFlags.length === 1 ? "" : "s"} and{" "}
+            {analysis.unclearClauses.length} unclear term{analysis.unclearClauses.length === 1 ? "" : "s"} found in this lease.
+            {isTeaser && " Upgrade to Pro to see exactly which clauses are driving this score."}
+          </p>
+        </div>
+      </section>
 
       {/* 1. Plain-English Summary — always visible */}
       <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">

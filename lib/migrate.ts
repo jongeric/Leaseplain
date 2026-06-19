@@ -65,4 +65,24 @@ export async function ensureTables(d1: any): Promise<void> {
   for (const sql of stmts) {
     await d1.prepare(sql).run();
   }
+
+  // CREATE TABLE IF NOT EXISTS is a no-op against a table created by an
+  // earlier schema version, so columns added later (e.g. plan,
+  // stripeCustomerId) never get backfilled — every insert referencing them
+  // then fails. Add any columns that are missing from existing tables.
+  await ensureColumns(d1, "user", [
+    { name: "plan", ddl: "plan TEXT NOT NULL DEFAULT 'free'" },
+    { name: "stripeCustomerId", ddl: "stripeCustomerId TEXT" },
+  ]);
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function ensureColumns(d1: any, table: string, columns: { name: string; ddl: string }[]): Promise<void> {
+  const info = await d1.prepare(`PRAGMA table_info(${table})`).all();
+  const existing = new Set((info.results as { name: string }[]).map((r) => r.name));
+  for (const col of columns) {
+    if (!existing.has(col.name)) {
+      await d1.prepare(`ALTER TABLE ${table} ADD COLUMN ${col.ddl}`).run();
+    }
+  }
 }

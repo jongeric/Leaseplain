@@ -6,6 +6,7 @@ import { analyzeLeaseRuleBased } from "@/lib/ruleBasedAnalysis";
 import { saveAnalysis, isUserPro } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getSessionCookie } from "better-auth/cookies";
 // PDFParse is imported dynamically inside the PDF path to avoid a module-level
 // crash if the package fails to initialize in the CF Worker environment.
 
@@ -37,10 +38,11 @@ function classifyApiError(msg: string): string {
 async function getUserIdFromSession(req: NextRequest, d1: any): Promise<string | null> {
   if (!d1) return null;
   try {
-    const cookieHeader = req.headers.get("cookie") ?? "";
-    const match = cookieHeader.match(/better-auth\.session_token=([^;]+)/);
-    if (!match) return null;
-    const token = decodeURIComponent(match[1]);
+    const rawCookie = getSessionCookie(req);
+    if (!rawCookie) return null;
+    // Session cookie value is "<token>.<signature>" — D1 stores only the raw token.
+    const sigIdx = rawCookie.lastIndexOf(".");
+    const token = sigIdx > 0 ? rawCookie.slice(0, sigIdx) : rawCookie;
     const row = await d1
       .prepare("SELECT userId FROM session WHERE token = ? AND expiresAt > ? LIMIT 1")
       .bind(token, new Date().toISOString())

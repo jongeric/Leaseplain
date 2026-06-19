@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import DisclaimerBanner from "@/components/DisclaimerBanner";
-import { auth } from "@/lib/auth";
+import { getServerSession } from "@/lib/auth";
 import { listAnalysesByUser } from "@/lib/db";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { LeaseAnalysis } from "@/lib/types";
@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export default async function DashboardPage() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await getServerSession(await headers());
 
   if (!session) redirect("/login?redirect=/dashboard");
 

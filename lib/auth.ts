@@ -3,6 +3,8 @@ import { memoryAdapter } from "@better-auth/memory-adapter";
 import { kyselyAdapter } from "@better-auth/kysely-adapter";
 import { Kysely } from "kysely";
 import { D1Dialect } from "kysely-d1";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { ensureTables } from "@/lib/migrate";
 
 // In-memory store for dev / non-D1 environments.
 // Data is ephemeral — for production, provision a Cloudflare D1 database.
@@ -72,9 +74,30 @@ export function createAuth(d1?: any, overrides?: { secret?: string }) {
   });
 }
 
-// Singleton used by server components / middleware for session checks.
-// The route handler creates its own instance with the D1 binding when available.
+// Singleton kept only for type inference (`Session`/`User` below) — do NOT use
+// its `.api` for real session checks, it has no D1 binding and reads from an
+// empty in-memory store. Use `getServerSession` instead.
 export const auth = createAuth();
 
 export type Session = typeof auth.$Infer.Session;
 export type User = typeof auth.$Infer.Session.user;
+
+// Resolves the D1-backed auth instance (matching the one used by the sign-in
+// route handler) and returns the current session, for use in server
+// components and route handlers outside of /api/auth/[...all].
+export async function getServerSession(headers: Headers) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let d1: any = undefined;
+  let secret: string | undefined;
+  try {
+    const ctx = await getCloudflareContext({ async: true });
+    const env = ctx.env as Record<string, unknown>;
+    d1 = env.DB;
+    if (typeof env.BETTER_AUTH_SECRET === "string" && env.BETTER_AUTH_SECRET.length > 0) {
+      secret = env.BETTER_AUTH_SECRET;
+    }
+    if (d1) await ensureTables(d1);
+  } catch { /* local dev — no CF context */ }
+
+  return createAuth(d1, { secret }).api.getSession({ headers });
+}

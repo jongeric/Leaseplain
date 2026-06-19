@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { getServerSession } from "@/lib/auth";
 import { stripe, PLANS, PlanKey } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
-  const session = await auth.api.getSession({ headers: req.headers });
+  const session = await getServerSession(req.headers);
 
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

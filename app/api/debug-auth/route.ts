@@ -33,6 +33,20 @@ export async function GET(req: NextRequest) {
   result.auth_mode = "D1";
 
   try {
+    const userCols = await d1.prepare("PRAGMA table_info(user)").all();
+    result.user_columns = (userCols.results as { name: string; type: string; notnull: number; dflt_value: unknown }[]);
+  } catch (e) {
+    result.user_columns_error = String(e);
+  }
+
+  try {
+    const accountCols = await d1.prepare("PRAGMA table_info(account)").all();
+    result.account_columns = (accountCols.results as { name: string; type: string; notnull: number; dflt_value: unknown }[]);
+  } catch (e) {
+    result.account_columns_error = String(e);
+  }
+
+  try {
     const userCount = await d1
       .prepare("SELECT COUNT(*) as n FROM user")
       .first() as { n: number } | null;
@@ -70,6 +84,27 @@ export async function GET(req: NextRequest) {
       }
     } catch (e) {
       result.email_check_error = String(e);
+    }
+  }
+
+  // Pass ?action=test_insert to attempt a throwaway user insert and surface
+  // the real underlying D1 error (better-auth swallows it as a generic
+  // "Failed to create user" message).
+  if (url.searchParams.get("action") === "test_insert") {
+    const id = `debug-${Date.now()}`;
+    const now = new Date().toISOString();
+    try {
+      await d1
+        .prepare(
+          `INSERT INTO user (id, name, email, emailVerified, createdAt, updatedAt, plan)
+           VALUES (?, ?, ?, ?, ?, ?, ?)`
+        )
+        .bind(id, "Debug Probe", `${id}@debug.local`, 0, now, now, "free")
+        .run();
+      result.test_insert_ok = true;
+      await d1.prepare("DELETE FROM user WHERE id = ?").bind(id).run();
+    } catch (e) {
+      result.test_insert_error = String(e);
     }
   }
 

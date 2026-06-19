@@ -1,0 +1,20 @@
+name: D1 Diagnostic Query
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "SQL to run against the remote leaseplain D1 database"
+        required: true
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: d1 execute leaseplain --remote --yes --command "${{ inputs.command }}"

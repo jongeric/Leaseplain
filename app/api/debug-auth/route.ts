@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { ensureTables } from "@/lib/migrate";
 
 export const runtime = "nodejs";
 
@@ -105,6 +106,39 @@ export async function GET(req: NextRequest) {
       await d1.prepare("DELETE FROM user WHERE id = ?").bind(id).run();
     } catch (e) {
       result.test_insert_error = String(e);
+    }
+  }
+
+  // Pass ?action=fix_schema to drop the legacy snake_case auth tables and
+  // let ensureTables() recreate them with the camelCase schema better-auth's
+  // kyselyAdapter requires. Only drops tables that are empty (count === 0),
+  // so it refuses to touch anything with real rows in it.
+  if (url.searchParams.get("action") === "fix_schema") {
+    const tables = ["user", "session", "account", "verification"];
+    const dropped: string[] = [];
+    const skipped: string[] = [];
+    for (const table of tables) {
+      try {
+        const count = await d1
+          .prepare(`SELECT COUNT(*) as n FROM ${table}`)
+          .first() as { n: number } | null;
+        if ((count?.n ?? 0) > 0) {
+          skipped.push(table);
+          continue;
+        }
+        await d1.prepare(`DROP TABLE IF EXISTS ${table}`).run();
+        dropped.push(table);
+      } catch (e) {
+        skipped.push(`${table} (${String(e)})`);
+      }
+    }
+    result.fix_schema_dropped = dropped;
+    result.fix_schema_skipped_nonempty = skipped;
+    try {
+      await ensureTables(d1);
+      result.fix_schema_recreated = true;
+    } catch (e) {
+      result.fix_schema_recreate_error = String(e);
     }
   }
 

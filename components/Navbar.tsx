@@ -765,7 +765,7 @@ export default function Navbar() {
             href="/upload"
             className="inline-flex items-center gap-1.5 bg-blue-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
           >
-            Upload Lease
+            Check My Lease
           </Link>
         </div>
 
@@ -847,7 +847,7 @@ export default function Navbar() {
                 onClick={closeMobile}
                 className="flex items-center justify-center gap-2 bg-blue-600 text-white text-sm font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 w-full"
               >
-                Upload Lease
+                Check My Lease
               </Link>
             </div>
           </nav>

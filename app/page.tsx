@@ -206,49 +206,6 @@ const softwareSchema = {
   description: "AI-powered lease analysis tool that explains residential lease agreements in plain English.",
   offers: { "@type": "Offer", price: "0", priceCurrency: "CAD" },
   url: "https://leaseplain.com",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "127",
-    reviewCount: "127",
-  },
-};
-
-const reviewsSchema = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  name: "LeasePlain Lease Analyzer",
-  description: "AI-powered lease analysis tool that explains residential lease agreements in plain English.",
-  url: "https://leaseplain.com",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "127",
-  },
-  review: [
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Maria T." },
-      reviewBody: "I finally understood my lease before signing. It flagged a clause that could have cost me my entire security deposit.",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "James K." },
-      reviewBody: "Used LeasePlain on three apartments. Saved me hours of confusion and helped me negotiate lower fees each time.",
-    },
-    {
-      "@type": "Review",
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      author: { "@type": "Person", name: "Priya N." },
-      reviewBody: "The red flags section caught a penalty clause my landlord quietly added. Total game changer.",
-    },
-  ],
 };
 
 export default function HomePage() {
@@ -257,7 +214,6 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema).replace(/</g, "\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema).replace(/</g, "\u003c") }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema).replace(/</g, "\u003c") }} />
 
       <div className="flex flex-col min-h-full">
         <Navbar />
@@ -308,10 +264,9 @@ export default function HomePage() {
         <section className="py-5 px-4 bg-slate-50 border-b border-slate-100">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-0 gap-y-3 divide-x divide-slate-200">
             {[
-              { icon: Users, stat: "10,000+", label: "leases analyzed" },
               { icon: MapPin, stat: "All 10", label: "Canadian provinces covered" },
-              { icon: CheckCircle, stat: "Trusted", label: "by renters across Canada" },
-              { icon: Star, stat: "4.8/5", label: "rating from verified users" },
+              { icon: Lock, stat: "Private", label: "your document is never stored" },
+              { icon: Clock, stat: "Under 30s", label: "to a full risk breakdown" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2 px-6 first:pl-0 last:pr-0">
                 <item.icon className="w-4 h-4 text-indigo-500 shrink-0" aria-hidden="true" />
@@ -326,11 +281,10 @@ export default function HomePage() {
         <section className="py-8 px-4 bg-white border-y border-slate-100">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-4">
             {[
-              { icon: Users, label: "Trusted by thousands of Canadian renters" },
-              { icon: Clock, label: "Analysis in under 30 seconds" },
               { icon: ShieldCheck, label: "Private & secure — document never stored" },
+              { icon: Clock, label: "Analysis in under 30 seconds" },
               { icon: Eye, label: "Plain English, zero legal jargon" },
-              { icon: TrendingUp, label: "AI trained on Canadian residential leases" },
+              { icon: MapPin, label: "Checked against province-specific tenancy rules" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2 text-slate-500 text-sm">
                 <item.icon className="w-4 h-4 text-indigo-500 shrink-0" />
@@ -719,32 +673,27 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
+        {/* ── TRUST & METHODOLOGY ──────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">What Renters Say</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Built for Privacy, Clarity, and Renter Confidence</h2>
             <p className="text-slate-500 text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
-              LeasePlain checks every lease against the tenancy laws of the applicable Canadian province, flags clauses that deviate
-              from what&apos;s typical or legally enforceable, and never stores your document after your report is generated.
-              LeasePlain is an informational tool, not a law firm, and does not provide legal advice.
+              LeasePlain checks your lease against the tenancy rules of the applicable Canadian province and flags clauses
+              that deviate from what&apos;s typical or legally enforceable. Your document is processed in real time and never
+              stored after your report is generated.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { quote: "I finally understood my lease before signing. It flagged a clause that could have cost me my entire security deposit.", name: "Maria T.", location: "Renter, Toronto ON" },
-                { quote: "Used LeasePlain on three apartments. Saved me hours of confusion and helped me negotiate lower fees each time.", name: "James K.", location: "Renter, Vancouver BC" },
-                { quote: "The red flags section caught a penalty clause my landlord quietly added. Total game changer.", name: "Priya N.", location: "Renter, Ottawa ON" },
+                { icon: ShieldCheck, title: "How we review your lease", body: "Every clause is checked against general tenancy norms and the rules published by your province's tenancy authority. Results are informational, not a legal determination." },
+                { icon: Lock, title: "Your document stays private", body: "Leases are processed to generate your report and are not retained afterward. We don't sell or share uploaded documents." },
+                { icon: ShieldCheck, title: "Not a law firm", body: "LeasePlain provides lease education and risk information for renters. It is not a law firm and does not provide legal advice. For legal decisions or disputes, consult a qualified legal professional or your provincial tenancy authority." },
               ].map((t) => (
-                <div key={t.name} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                  <div className="flex gap-1 mb-3">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
+                <div key={t.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
+                    <t.icon className="w-5 h-5 text-indigo-600" />
                   </div>
-                  <p className="text-slate-700 text-sm leading-relaxed mb-4">&ldquo;{t.quote}&rdquo;</p>
-                  <div>
-                    <p className="font-semibold text-slate-900 text-sm">{t.name}</p>
-                    <p className="text-slate-400 text-xs">{t.location}</p>
-                  </div>
+                  <p className="font-semibold text-slate-900 text-sm mb-2">{t.title}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed">{t.body}</p>
                 </div>
               ))}
             </div>

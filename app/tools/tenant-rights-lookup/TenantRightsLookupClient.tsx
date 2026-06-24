@@ -25,6 +25,10 @@ interface ProvinceData {
   key_protections: string[];
 }
 
+// Only these provinces have a dedicated /tenant-rights/[slug] page; the rest
+// link to their /canada/[slug] hub page instead, which exists for every province.
+const HAS_DEDICATED_TENANT_RIGHTS_PAGE = new Set(["ontario", "british-columbia", "alberta", "quebec"]);
+
 const PROVINCES: Record<string, ProvinceData> = {
   ON: {
     name: "Ontario",
@@ -221,7 +225,7 @@ const PROVINCES: Record<string, ProvinceData> = {
   },
   NL: {
     name: "Newfoundland & Labrador",
-    slug: "newfoundland-labrador",
+    slug: "newfoundland-and-labrador",
     legislation: "Residential Tenancies Act, 2018",
     tribunal: "Residential Tenancies Division",
     tribunal_url: "assembly.nl.ca/legislation/sr/statutes/r14-2.htm",
@@ -383,7 +387,11 @@ export default function TenantRightsLookupClient() {
                 {/* Footer link */}
                 <div className="border-t border-slate-100 pt-4">
                   <Link
-                    href={`/tenant-rights/${data.slug}`}
+                    href={
+                      HAS_DEDICATED_TENANT_RIGHTS_PAGE.has(data.slug)
+                        ? `/tenant-rights/${data.slug}`
+                        : `/canada/${data.slug}`
+                    }
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800"
                   >
                     Full {data.name} Tenant Rights Guide →

@@ -75,7 +75,7 @@ const canadaProvinces = [
     name: "New Brunswick",
     href: "/canada/new-brunswick",
     law: "Residential Tenancies Act",
-    highlight: "No rent control, Rentalsman disputes",
+    highlight: "3% annual rent cap, Residential Tenancies Tribunal disputes",
   },
   {
     name: "Saskatchewan",

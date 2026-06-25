@@ -9,14 +9,14 @@ import Link from "next/link";
 
 const PROVINCE_LIMITS: Record<string, { year: number; limit: number | null; note: string }> = {
   ON: { year: 2026, limit: 2.1, note: "Ontario Rent Increase Guideline" },
-  BC: { year: 2025, limit: 3.0, note: "BC Allowable Rent Increase" },
+  BC: { year: 2026, limit: 2.3, note: "BC Allowable Rent Increase" },
   AB: { year: 2025, limit: null, note: "Alberta has no rent increase cap — any amount is legal with 3 months' notice" },
   QC: { year: 2025, limit: null, note: "Quebec uses a complex TAL formula — contact the TAL for your specific allowable amount" },
   MB: { year: 2025, limit: null, note: "Manitoba: increases must be reasonable; guideline varies annually" },
   SK: { year: 2025, limit: null, note: "Saskatchewan has no provincial cap on rent increases" },
-  NS: { year: 2025, limit: null, note: "Nova Scotia: annual cap varies; check current Residential Tenancies guidance" },
-  NB: { year: 2025, limit: null, note: "New Brunswick has no rent increase cap" },
-  PE: { year: 2025, limit: 0.0, note: "PEI has a rent freeze in place — increases require Island Regulatory and Appeals Commission approval" },
+  NS: { year: 2025, limit: 5.0, note: "Nova Scotia has a 5% annual rent increase cap, extended through 2027" },
+  NB: { year: 2025, limit: 3.0, note: "New Brunswick has a 3% annual rent increase cap (effective Feb 1, 2025), up to 9% with Tribunal approval for renovations" },
+  PE: { year: 2026, limit: 2.0, note: "PEI's maximum allowable rent increase for 2026 is 2%, set by the Director of Residential Tenancy" },
   NL: { year: 2025, limit: null, note: "Newfoundland & Labrador has no rent increase cap" },
 };
 

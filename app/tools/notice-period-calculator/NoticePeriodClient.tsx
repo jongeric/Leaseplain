@@ -253,14 +253,14 @@ const NOTICE_DATA: Record<string, Record<NoticeType, NoticeInfo>> = {
   },
   NB: {
     "rent-increase": {
-      period: "No cap (amount unrestricted)",
-      legalBasis: "Residential Tenancies Act (New Brunswick), s. 14 — written notice required but no statutory cap on amount.",
+      period: "3 months written notice",
+      legalBasis: "Residential Tenancies Act (New Brunswick), s. 14 — written notice required; rent increases are capped at 3% annually (effective Feb 1, 2025), up to 9% with Tribunal approval for renovations.",
       nonComplianceNote: "Notice without proper written form may be invalid. Tenant should document all communications.",
     },
     "landlord-entry": {
       period: "24 hours",
       legalBasis: "Residential Tenancies Act (New Brunswick), s. 5 — 24 hours written notice required for non-emergency entry.",
-      nonComplianceNote: "Unauthorized entry may be raised as a complaint with Rentalsman.",
+      nonComplianceNote: "Unauthorized entry may be raised as a complaint with the Residential Tenancies Tribunal.",
     },
     "tenant-ending": {
       period: "1 month",
@@ -275,12 +275,12 @@ const NOTICE_DATA: Record<string, Record<NoticeType, NoticeInfo>> = {
     "eviction-nonpayment": {
       period: "15 days",
       legalBasis: "Residential Tenancies Act (New Brunswick), s. 16 — 15 days written notice for non-payment of rent.",
-      nonComplianceNote: "Tenant may apply to the Rentalsman to dispute. Physical eviction requires a formal order.",
+      nonComplianceNote: "Tenant may apply to the Residential Tenancies Tribunal to dispute. Physical eviction requires a formal order.",
     },
     "eviction-cause": {
       period: "30 days",
       legalBasis: "Residential Tenancies Act (New Brunswick), s. 16 — 30 days for breach of tenancy obligations.",
-      nonComplianceNote: "Landlord must obtain a Rentalsman order; self-help eviction is prohibited.",
+      nonComplianceNote: "Landlord must obtain a Residential Tenancies Tribunal order; self-help eviction is prohibited.",
     },
   },
   PE: {

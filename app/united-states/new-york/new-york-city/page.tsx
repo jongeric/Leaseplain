@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const faqItems = [
                   {
                     q: "How do I find out if my NYC apartment is rent-stabilized?",
-                    a: "Several methods work: (1) Check your lease — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) stating the legal regulated rent. (2) Search the DHCR's Rent Stabilization Lookup tool at apps.hcr.ny.gov/BuildingSearch. (3) Request your apartment's rent history from DHCR via a Freedom of Information Law (FOIL) request. Buildings built before 1974 with 6 or more units in NYC are generally covered unless they were deregulated.",
+                    a: "Several methods work: (1) Check your lease — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RA-LR1) stating the legal regulated rent. (2) Search the DHCR's Rent Stabilization Lookup tool at apps.hcr.ny.gov/BuildingSearch. (3) Request your apartment's rent history from DHCR via a Freedom of Information Law (FOIL) request. Buildings built before 1974 with 6 or more units in NYC are generally covered unless they were deregulated.",
                   },
                   {
                     q: "What is Good Cause Eviction and how does it apply in NYC?",
@@ -63,7 +63,7 @@ const nycRights = [
 ];
 
 const nycLeaseRedFlags = [
-  "Missing rent stabilization rider — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RTP-8) disclosing the legal regulated rent. If your lease omits this, you may have grounds to challenge the rent being charged.",
+  "Missing rent stabilization rider — rent-stabilized leases must include a Rent Stabilization Lease Rider (form RA-LR1) disclosing the legal regulated rent. If your lease omits this, you may have grounds to challenge the rent being charged.",
   "Preferential rent clauses — some stabilized leases set rent below the legal regulated rent (a 'preferential rent'). After HSTPA 2019, landlords can no longer jump to the full legal rent at renewal — they can only raise by the RGB guideline amount. Beware of pre-2019 leases with preferential rent language.",
   "Deregulation attempts through substantial rehabilitation — landlords sometimes claim units were 'substantially rehabilitated' to exit rent stabilization. This claim requires DHCR approval and must meet strict legal standards; review any such claim carefully.",
   "High amenity and building service fees in luxury buildings — market-rate leases in new luxury buildings often include monthly fees for amenities (gym, concierge, package room) that are not separately regulated. Confirm whether these fees are included in rent for Good Cause purposes.",
@@ -182,8 +182,10 @@ export default function NewYorkCityPage() {
                   the cost of building-wide improvements (MCIs — e.g., new boiler, roof, windows). After
                   HSTPA 2019, MCI increases are <strong>temporary</strong> — they expire once the cost is
                   recovered — and are capped at 2% of the regulated rent per year. IAIs (work in individual
-                  apartments) can also support rent increases, but HSTPA capped total IAI increases to
-                  $30 per $1 spent on improvements, reduced from prior law. Tenants have the right to
+                  apartments) can also support rent increases, but HSTPA capped IAI rent increases to 1/168th
+                  of the cost per month (1/180th for buildings with 35+ units), up to a maximum of
+                  $15,000 in eligible improvements over a 15-year period, and the increase expires
+                  after 30 years. Tenants have the right to
                   challenge both MCI and IAI applications at DHCR by submitting written objections during
                   the comment period.
                 </p>

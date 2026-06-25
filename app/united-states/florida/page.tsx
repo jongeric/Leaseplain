@@ -26,10 +26,10 @@ const cities = [
 ];
 
 const faqItems = [
-                  { q: "Does Florida have rent control?", a: "No. Florida preempts local rent control — cities and counties cannot enact rent control ordinances. Landlords can raise rent by any amount with proper notice (at least 15 days for month-to-month, 60 days for year-to-year tenancies)." },
+                  { q: "Does Florida have rent control?", a: "No. Florida preempts local rent control — cities and counties cannot enact rent control ordinances. Landlords can raise rent by any amount with proper notice (at least 30 days for month-to-month, 60 days for year-to-year tenancies)." },
                   { q: "What is the security deposit limit in Florida?", a: "Florida has no cap on security deposits for residential leases. Landlords must hold deposits in a separate bank account (or post a surety bond) and return them within 15–60 days of tenancy end, depending on whether deductions are claimed." },
                   { q: "What are Florida tenants' rights regarding repairs?", a: "Florida landlords must maintain units in a condition that complies with building codes and is fit for human habitation. Tenants must give written notice of needed repairs; if not fixed within 7 days, tenants have legal remedies including rent withholding or termination." },
-                  { q: "How much notice does a Florida landlord need to give to end a tenancy?", a: "For month-to-month tenancies, either party can terminate with 15 days' notice before the rent due date. For year-to-year leases, 60 days' notice is required. For non-payment, landlords must give 3 days to pay or vacate." },
+                  { q: "How much notice does a Florida landlord need to give to end a tenancy?", a: "For month-to-month tenancies, either party can terminate with 30 days' notice before the end of the monthly period. For year-to-year leases, 60 days' notice is required. For non-payment, landlords must give 3 days to pay or vacate." },
                   { q: "Can a Florida landlord charge an application fee?", a: "Yes, but Florida law requires that if a landlord rejects an applicant, any fees beyond actual screening costs must be refunded. Landlords must disclose what the application fee covers." }
 ];
 
@@ -146,7 +146,7 @@ export default function FloridaPage() {
                 },
                 {
                   title: "Notice to Terminate",
-                  body: "Month-to-month tenancies require 15 days&apos; notice to terminate in Florida. Fixed-term leases end on the agreed date unless renewed.",
+                  body: "Month-to-month tenancies require 30 days&apos; notice to terminate in Florida. Fixed-term leases end on the agreed date unless renewed.",
                 },
                 {
                   title: "Landlord Entry",

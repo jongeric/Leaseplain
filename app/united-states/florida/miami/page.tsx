@@ -250,7 +250,7 @@ export default function MiamiPage() {
                   </li>
                   <li className="flex items-start gap-3 text-slate-700 text-sm leading-relaxed">
                     <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
-                    <span><strong>End of lease term / no cause:</strong> For month-to-month tenancies, at least 15 days written notice before the end of the monthly period. For annual leases with no renewal, proper written notice as specified in the lease or statute.</span>
+                    <span><strong>End of lease term / no cause:</strong> For month-to-month tenancies, at least 30 days written notice before the end of the monthly period. For annual leases with no renewal, proper written notice as specified in the lease or statute.</span>
                   </li>
                 </ul>
                 <p className="text-slate-700 leading-relaxed text-sm">

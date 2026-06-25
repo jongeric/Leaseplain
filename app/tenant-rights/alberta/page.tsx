@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const depositRules = [
-  "Maximum: one month's rent at the time the deposit is collected (RTA s.34) — this cap cannot be exceeded even if a landlord labels additional amounts as 'pet fees' or 'admin fees'",
+  "Maximum: one month's rent at the time the deposit is collected (RTA s.43) — this cap cannot be exceeded even if a landlord labels additional amounts as 'pet fees' or 'admin fees'",
   "Pet deposits are permitted but the combined total of security deposit plus any pet deposit cannot exceed one month's rent",
   "Landlord must hold the deposit in trust — it cannot be co-mingled with operating funds",
   "Interest must be paid annually at the prescribed rate (set by regulation each year — typically 0.1–1% in recent years); interest accrues from the date the deposit is received",
@@ -42,7 +42,7 @@ const noticePeriods = [
 ];
 
 const albertaRedFlags = [
-  "Security deposit exceeding one month's rent (RTA s.34) — illegal; excess must be returned",
+  "Security deposit exceeding one month's rent (RTA s.43) — illegal; excess must be returned",
   "Pet deposit that when added to security deposit brings the total above one month's rent",
   "Clause not addressing where and how the deposit will be held in trust",
   "Lease purporting to increase rent during a fixed-term without explicit permission written into the original lease",
@@ -452,7 +452,7 @@ export default function AlbertaTenantRightsPage() {
                     { label: "Governing law", value: "Residential Tenancies Act, RSA 2000, c R-17.1" },
                     { label: "2023 key change", value: "Max 1 rent increase per 365 days" },
                     { label: "Rent control", value: "None — any amount permitted" },
-                    { label: "Security deposit cap", value: "1 month's rent (RTA s.34)" },
+                    { label: "Security deposit cap", value: "1 month's rent (RTA s.43)" },
                     { label: "Deposit return (no deductions)", value: "10 days" },
                     { label: "Deposit statement (deductions)", value: "30 days" },
                     { label: "Rent increase notice", value: "3 full months (periodic)" },

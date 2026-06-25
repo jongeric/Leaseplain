@@ -12,12 +12,12 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "BC Rent Increase Limit 2026: Rules for BC Tenants | LeasePlain",
   description:
-    "BC's 2026 rent increase cap is 3.0%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
+    "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
   alternates: { canonical: "https://leaseplain.com/blog/bc-rent-increase-2026" },
   openGraph: {
     title: "BC Rent Increase Limit 2026: Rules for BC Tenants | LeasePlain",
     description:
-      "BC's 2026 rent increase cap is 3.0%, based on BC CPI only. Learn the notice requirements and what to do if your landlord charges more.",
+      "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements and what to do if your landlord charges more.",
     url: "https://leaseplain.com/blog/bc-rent-increase-2026",
     type: "article",
     publishedTime: "2026-02-01T00:00:00Z",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "How is BC's rent increase limit calculated for 2026?",
-    a: "Since 2019, BC caps rent increases at BC CPI only — the former CPI + 2% formula was abolished in 2018. For 2026, the allowable increase is 3.0%. The provincial government announces the exact figure annually based on inflation data.",
+    a: "Since 2019, BC caps rent increases at BC CPI only — the former CPI + 2% formula was abolished in 2018. For 2026, the allowable increase is 2.3%. The provincial government announces the exact figure annually based on inflation data.",
   },
   {
     q: "Do new buildings in BC have a rent increase exemption?",
@@ -70,7 +70,7 @@ export default function BCRentIncrease2026Page() {
     <>
       <ArticleSchema
         headline="BC Rent Increase Limit 2026: Rules for BC Tenants"
-        description="BC's 2026 rent increase cap is 3.0%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more."
+        description="BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more."
         url="https://leaseplain.com/blog/bc-rent-increase-2026"
         datePublished="2026-02-01"
         dateModified="2026-06-05"
@@ -137,7 +137,7 @@ export default function BCRentIncrease2026Page() {
               </h1>
               <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
                 British Columbia caps rent increases at BC CPI each year — no additional buffer.
-                The 2026 allowable increase is <strong>3.0%</strong>. Here is what that means,
+                The 2026 allowable increase is <strong>2.3%</strong>. Here is what that means,
                 what notice your landlord must give, and what to do if the increase exceeds the
                 allowed amount.
               </p>
@@ -156,7 +156,7 @@ export default function BCRentIncrease2026Page() {
                     increase equals <strong>BC CPI only</strong> — a &quot;CPI + 2%&quot; buffer formula
                     was abolished in 2018 and no longer applies. The provincial government announces
                     the exact figure each year, typically in the fall for increases taking effect the
-                    following year. For 2026, the cap is <strong>3.0%</strong>.
+                    following year. For 2026, the cap is <strong>2.3%</strong>.
                   </p>
                   <p className="text-slate-700 leading-relaxed">
                     The BC CPI-only formula ensures rents rise strictly in line with inflation, without

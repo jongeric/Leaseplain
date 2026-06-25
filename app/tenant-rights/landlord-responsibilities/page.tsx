@@ -64,7 +64,7 @@ const faqItems = [
   },
   {
     q: "What happens if my landlord doesn't give me a proper lease?",
-    a: "Under RTA s. 12, most private residential tenancies in Ontario that start on or after April 30, 2018 must use the Ontario Standard Lease. If your landlord fails to provide the Standard Lease after your written request, you may withhold one month's rent after 21 days have passed without receiving it. Once the landlord provides the lease, you must pay the withheld rent within 30 days. If you believe your lease contains illegal clauses, those clauses are void under the RTA even if you signed them.",
+    a: "Under RTA s. 12.1, most private residential tenancies in Ontario that start on or after April 30, 2018 must use the Ontario Standard Lease. If your landlord fails to provide the Standard Lease after your written request, you may withhold one month's rent after 21 days have passed without receiving it. Once the landlord provides the lease, you must pay the withheld rent within 30 days. If you believe your lease contains illegal clauses, those clauses are void under the RTA even if you signed them.",
   },
   {
     q: "Can a landlord increase rent whenever they want?",
@@ -355,7 +355,7 @@ export default function LandlordResponsibilitiesPage() {
                   <span className="flex items-center gap-2">
                     <span className="w-1.5 h-6 bg-blue-600 rounded-full inline-block" aria-hidden="true" />
                     <FileText className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                    Ontario Standard Lease (RTA s. 12)
+                    Ontario Standard Lease (RTA s. 12.1)
                   </span>
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-4">

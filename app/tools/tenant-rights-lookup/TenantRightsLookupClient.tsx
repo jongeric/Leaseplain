@@ -59,7 +59,7 @@ const PROVINCES: Record<string, ProvinceData> = {
     tribunal: "Residential Tenancy Branch (RTB)",
     tribunal_url: "gov.bc.ca/landlordtenant",
     deposit: "Security deposit: max 0.5x monthly rent. Pet deposit: max 0.5x monthly rent (separate).",
-    rent_control: "3.0% allowable increase (2025), tied to BC CPI.",
+    rent_control: "2.3% allowable increase (2026), tied to BC CPI.",
     notice_rent_increase: "3 full calendar months written notice",
     notice_entry: "24 hours written notice",
     notice_eviction_nonpayment: "10 days",

@@ -30,7 +30,7 @@ const checks = [
 ];
 
 const whatWeCheck = [
-  "Security deposit clauses — capped at one month's rent (RTA s.34), must be held in trust, and must earn interest at the prescribed rate.",
+  "Security deposit clauses — capped at one month's rent (RTA s.43), must be held in trust, and must earn interest at the prescribed rate.",
   "Rent increase clauses — Alberta has no rent control, but increases are limited to once per 365-day period and require at least 3 full months' written notice.",
   "Mid-term rent increase language — a fixed-term lease cannot allow a rent increase during the term unless the original lease explicitly permits it.",
   "Notice provisions — landlord entry, termination for non-payment (14 days), and personal-use termination (3 full months) must match RTA minimums.",

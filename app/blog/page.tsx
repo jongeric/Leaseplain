@@ -106,7 +106,7 @@ const posts = [
     href: "/blog/bc-rent-increase-2026",
     title: "BC Rent Increase Limit 2026: Rules for BC Tenants",
     excerpt:
-      "BC's 2026 allowable rent increase is 3.0%. Learn the rules, the required 3-month notice period using RTB-7, and how the Residential Tenancy Branch enforces limits.",
+      "BC's 2026 allowable rent increase is 2.3%. Learn the rules, the required 3-month notice period using RTB-7, and how the Residential Tenancy Branch enforces limits.",
     date: "February 1, 2026",
     category: "British Columbia",
   },

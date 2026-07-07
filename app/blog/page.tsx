@@ -23,6 +23,30 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/tenant-repair-responsibilities-canada",
+    title: "What Repairs Are Tenants Responsible For in Canada?",
+    excerpt:
+      "Canadian landlords must maintain the rental unit — but tenants are legally responsible for damage they cause. Here is a province-by-province breakdown of what falls on you versus your landlord.",
+    date: "July 7, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/normal-wear-and-tear-vs-damage-canada",
+    title: "Normal Wear and Tear vs. Damage in Canadian Rentals: What Tenants Need to Know",
+    excerpt:
+      "Landlords cannot charge tenants for normal wear and tear — ever. Learn exactly which marks, scuffs, and deterioration count as wear and tear vs. chargeable damage, with a room-by-room guide.",
+    date: "July 7, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/tenant-maintenance-duties-ontario",
+    title: "Tenant Maintenance Duties in Ontario: What You Are Legally Required to Upkeep",
+    excerpt:
+      "Ontario's RTA s.33 and s.34 require tenants to keep the unit ordinarily clean and pay for damage they — or their guests — cause. Failing either obligation can result in an N5 notice and eviction proceedings.",
+    date: "July 7, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/landlord-repair-obligations-canada",
     title: "How to Get Your Landlord to Fix Something: Repair Rights Across Canada",
     excerpt:

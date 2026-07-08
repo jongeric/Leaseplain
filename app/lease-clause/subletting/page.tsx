@@ -227,7 +227,7 @@ export default function SublettingPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
+                <FAQAccordion includeSchema={false} items={[
                   { q: "What is subletting and how does it differ from assigning a lease?", a: "Subletting means you (the original tenant) temporarily move out, a subtenant takes over, but you remain liable under the original lease. Assignment means you transfer the entire lease to someone else and leave permanently. Assignment requires the landlord's consent in most provinces." },
                   { q: "Can my landlord refuse to let me sublet?", a: "Canadian landlords generally cannot unreasonably withhold consent to sublet. They may reject a specific subtenant if they have good reason (e.g., the subtenant cannot afford rent), but they cannot simply say 'no subletting allowed.'" },
                   { q: "Am I still responsible if my subtenant doesn't pay rent?", a: "Yes. As the head tenant, you remain liable to the landlord for rent and damages caused by your subtenant. If your subtenant defaults, the landlord can pursue you — so choose your subtenant carefully and ideally sign a written sublease." },

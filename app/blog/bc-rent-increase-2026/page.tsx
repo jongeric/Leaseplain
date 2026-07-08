@@ -10,18 +10,18 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "BC Rent Increase Limit 2026: Rules for BC Tenants | LeasePlain",
+  title: "BC Rent Increase Limit 2026 (2.3%) | LeasePlain",
   description:
     "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
   alternates: { canonical: "https://leaseplain.com/blog/bc-rent-increase-2026" },
   openGraph: {
-    title: "BC Rent Increase Limit 2026: Rules for BC Tenants | LeasePlain",
+    title: "BC Rent Increase Limit 2026 (2.3%) | LeasePlain",
     description:
       "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements and what to do if your landlord charges more.",
     url: "https://leaseplain.com/blog/bc-rent-increase-2026",
     type: "article",
     publishedTime: "2026-02-01T00:00:00Z",
-    modifiedTime: "2026-06-05T00:00:00Z",
+    modifiedTime: "2026-07-08T00:00:00Z",
   },
   keywords: [
     "bc rent increase 2026",
@@ -73,7 +73,7 @@ export default function BCRentIncrease2026Page() {
         description="BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more."
         url="https://leaseplain.com/blog/bc-rent-increase-2026"
         datePublished="2026-02-01"
-        dateModified="2026-06-05"
+        dateModified="2026-07-08"
         keywords={[
           "bc rent increase 2026",
           "british columbia rent cap 2026",

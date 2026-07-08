@@ -258,7 +258,7 @@ export default function RepairsClausePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={faqs} />
+                <FAQAccordion items={faqs} includeSchema={false} />
               </div>
 
             <aside className="flex flex-col gap-5">

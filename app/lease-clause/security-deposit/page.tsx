@@ -216,7 +216,7 @@ export default function SecurityDepositPage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
+                <FAQAccordion includeSchema={false} items={[
                   { q: "What is a security deposit?", a: "A security deposit is money paid to the landlord before moving in, held to cover potential damages beyond normal wear and tear or unpaid rent. Most Canadian provinces cap the amount at one month's rent or half a month's rent." },
                   { q: "Can a landlord keep my entire security deposit?", a: "No. Landlords can only deduct for damages that exceed normal wear and tear, unpaid rent, or unpaid utilities — they must provide an itemized written statement. Taking the entire deposit without documentation is illegal in every Canadian province." },
                   { q: "What is the difference between a security deposit and last month's rent?", a: "A security deposit is for damages; last month's rent is applied to your final month of tenancy. Ontario only permits last month's rent (not a separate damage deposit). Other provinces (like BC and Alberta) allow a separate security deposit." },

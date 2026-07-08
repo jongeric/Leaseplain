@@ -10,12 +10,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Above-Guideline Rent Increases in Ontario: What They Are and How to Fight One | LeasePlain",
+  title: "Above-Guideline Rent Increases (AGI) in Ontario | LeasePlain",
   description:
     "Ontario landlords can apply for rent increases above the annual guideline — but only for specific reasons. Here's how AGIs work, what grounds are allowed, and how tenants can dispute them.",
   alternates: { canonical: "https://leaseplain.com/blog/above-guideline-rent-increase-ontario" },
   openGraph: {
-    title: "Above-Guideline Rent Increases in Ontario: What They Are and How to Fight One | LeasePlain",
+    title: "Above-Guideline Rent Increases (AGI) in Ontario | LeasePlain",
     description:
       "Ontario landlords can apply for rent increases above the annual guideline — but only for specific reasons. Here's how AGIs work, what grounds are allowed, and how tenants can dispute them.",
     url: "https://leaseplain.com/blog/above-guideline-rent-increase-ontario",

@@ -10,12 +10,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Can a Landlord Enter Without Notice in Canada? Your Right to Privacy | LeasePlain",
+  title: "Can a Landlord Enter Without Notice in Canada? | LeasePlain",
   description:
     "Every province requires 24 hours written notice before a landlord can enter your rental unit. Learn your rights in Ontario, BC, Alberta, Quebec, and more — and what to do if your landlord enters illegally.",
   alternates: { canonical: "https://leaseplain.com/blog/landlord-entry-notice-canada" },
   openGraph: {
-    title: "Can a Landlord Enter Without Notice in Canada? Your Right to Privacy | LeasePlain",
+    title: "Can a Landlord Enter Without Notice in Canada? | LeasePlain",
     description:
       "Every province requires 24 hours written notice before a landlord can enter your rental unit. Learn your rights in Ontario, BC, Alberta, Quebec, and more — and what to do if your landlord enters illegally.",
     url: "https://leaseplain.com/blog/landlord-entry-notice-canada",

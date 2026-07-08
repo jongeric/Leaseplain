@@ -10,14 +10,14 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Landlord Selling the Property? Here's What Canadian Tenants Need to Know | LeasePlain",
+  title: "Landlord Selling? Canadian Tenant Rights Explained | LeasePlain",
   description:
     "Your landlord just told you they're selling. Do you have to leave? In most cases, no. Your lease survives the sale. Here's exactly what your rights are in Ontario, BC, and Alberta.",
   alternates: {
     canonical: "https://leaseplain.com/blog/landlord-selling-property-tenant-rights",
   },
   openGraph: {
-    title: "Landlord Selling the Property? Here's What Canadian Tenants Need to Know | LeasePlain",
+    title: "Landlord Selling? Canadian Tenant Rights Explained | LeasePlain",
     description:
       "Your landlord just told you they're selling. Do you have to leave? In most cases, no. Your lease survives the sale. Here's exactly what your rights are in Ontario, BC, and Alberta.",
     url: "https://leaseplain.com/blog/landlord-selling-property-tenant-rights",

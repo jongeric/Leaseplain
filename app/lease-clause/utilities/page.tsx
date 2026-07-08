@@ -237,7 +237,7 @@ export default function UtilitiesClausePage() {
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
+                <FAQAccordion includeSchema={false} items={[
                   { q: "What utilities should be included in a Canadian rental?", a: "There is no standard requirement — it depends on what is negotiated in the lease. Common arrangements include all-inclusive (heat, water, electricity), or heat and water included with tenant paying electricity. Always clarify in writing before signing." },
                   { q: "Can a landlord pass on utility cost increases to tenants mid-lease?", a: "Only if the lease specifically provides for it. If utilities are included in a fixed rent, the landlord cannot suddenly charge extra for rising costs without a proper rent increase following provincial notice rules." },
                   { q: "What happens if utilities are cut off in my rental?", a: "Cutting off utilities is illegal in most Canadian provinces. File an emergency application with your province's tenancy tribunal. In Ontario, tenants can apply for a T2 order for interference with vital services, which can result in fines and rent abatements." },

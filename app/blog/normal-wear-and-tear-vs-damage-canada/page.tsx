@@ -123,6 +123,7 @@ export default function NormalWearAndTearVsDamageCanadaPage() {
           "tenant damage vs wear and tear",
           "what is normal wear and tear in rental Canada",
         ]}
+        imageUrl="https://leaseplain.com/blog/normal-wear-and-tear-vs-damage-canada/opengraph-image"
       />
       <BreadcrumbSchema
         items={[
@@ -222,6 +223,21 @@ export default function NormalWearAndTearVsDamageCanadaPage() {
                     repeatedly dragging a refrigerator across the floor is not.
                   </p>
                 </div>
+
+                <figure>
+                  <img
+                    src="/blog/normal-wear-and-tear-vs-damage-canada/opengraph-image"
+                    alt="Side-by-side comparison for Canadian rentals: normal wear and tear (faded paint, worn carpet, minor scuffs — landlord's cost) versus tenant damage (holes in walls, burns, pet damage, large stains — tenant's cost)"
+                    width={1200}
+                    height={630}
+                    loading="lazy"
+                    className="w-full h-auto rounded-xl border border-slate-200"
+                  />
+                  <figcaption className="text-sm text-slate-500 mt-2">
+                    The dividing line at a glance — and even for genuine damage, tenants owe
+                    depreciated value, not new-item replacement cost.
+                  </figcaption>
+                </figure>
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">

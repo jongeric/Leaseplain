@@ -81,6 +81,7 @@ export default function OntarioRentIncrease2026Page() {
           "N1 form ontario",
           "LTB rent increase",
         ]}
+        imageUrl="https://leaseplain.com/blog/ontario-rent-increase-guideline-2026/opengraph-image"
       />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -162,6 +163,20 @@ export default function OntarioRentIncrease2026Page() {
                     landlord can only raise rent once every 12 months, and must provide at least
                     90 days written notice beforehand.
                   </p>
+                  <figure className="mt-5">
+                    <img
+                      src="/blog/ontario-rent-increase-guideline-2026/opengraph-image"
+                      alt="Bar chart of Ontario's annual rent increase guideline from 2020 to 2026: 2.2% in 2020, 0% rent freeze in 2021, 1.2% in 2022, 2.5% in 2023 through 2025, and 2.1% in 2026"
+                      width={1200}
+                      height={630}
+                      loading="lazy"
+                      className="w-full h-auto rounded-xl border border-slate-200"
+                    />
+                    <figcaption className="text-sm text-slate-500 mt-2">
+                      Ontario&apos;s rent increase guideline, 2020–2026. The 2021 freeze was a
+                      COVID-era measure; the guideline is capped at 2.5% by law.
+                    </figcaption>
+                  </figure>
                 </div>
 
                 <div>

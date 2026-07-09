@@ -118,6 +118,7 @@ export default function TenantRepairResponsibilitiesCanadaPage() {
           "what does tenant have to fix in rental",
           "tenant maintenance obligations Canada",
         ]}
+        imageUrl="https://leaseplain.com/blog/tenant-repair-responsibilities-canada/opengraph-image"
       />
       <BreadcrumbSchema
         items={[
@@ -231,6 +232,20 @@ export default function TenantRepairResponsibilitiesCanadaPage() {
                     regardless of who caused the wear.
                   </p>
                 </div>
+
+                <figure>
+                  <img
+                    src="/blog/tenant-repair-responsibilities-canada/opengraph-image"
+                    alt="Decision flowchart for Canadian rentals: if damage was caused by the tenant, a guest, or misuse, the tenant pays for the repair; if it is normal wear and tear, aging, or a building system failure, the landlord must repair it"
+                    width={1200}
+                    height={630}
+                    loading="lazy"
+                    className="w-full h-auto rounded-xl border border-slate-200"
+                  />
+                  <figcaption className="text-sm text-slate-500 mt-2">
+                    The one-question test that decides most repair disputes in Canadian rentals.
+                  </figcaption>
+                </figure>
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">

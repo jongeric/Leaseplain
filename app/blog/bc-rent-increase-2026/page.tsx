@@ -81,6 +81,7 @@ export default function BCRentIncrease2026Page() {
           "RTB rent increase",
           "bc tenant rights rent",
         ]}
+        imageUrl="https://leaseplain.com/blog/bc-rent-increase-2026/opengraph-image"
       />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -164,6 +165,20 @@ export default function BCRentIncrease2026Page() {
                     Residential Tenancy Act (RTA) are subject to this cap — unlike Ontario, there is
                     no post-2018 exemption for newer buildings.
                   </p>
+                  <figure className="mt-5">
+                    <img
+                      src="/blog/bc-rent-increase-2026/opengraph-image"
+                      alt="Bar chart of British Columbia's maximum allowable rent increase from 2022 to 2026: 1.5% in 2022, 2.0% in 2023, 3.5% in 2024, 3.0% in 2025, and 2.3% in 2026"
+                      width={1200}
+                      height={630}
+                      loading="lazy"
+                      className="w-full h-auto rounded-xl border border-slate-200"
+                    />
+                    <figcaption className="text-sm text-slate-500 mt-2">
+                      BC&apos;s maximum allowable rent increase, 2022–2026. The cap has tracked
+                      BC CPI since the CPI+2% formula was abolished in 2018.
+                    </figcaption>
+                  </figure>
                 </div>
 
                 <div>

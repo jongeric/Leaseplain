@@ -137,6 +137,20 @@ export default function QuebecPage() {
                 </p>
               </div>
 
+              <figure className="mb-8">
+                <img
+                  src="/canada/quebec/opengraph-image"
+                  alt="Quebec renting key facts: security deposits are prohibited entirely, landlords must use the TAL standard lease form (the bail), tenants may refuse a rent increase and stay, and the Tribunal administratif du logement resolves disputes"
+                  width={1200}
+                  height={630}
+                  loading="lazy"
+                  className="w-full h-auto rounded-xl border border-slate-200"
+                />
+                <figcaption className="text-sm text-slate-500 mt-2">
+                  Quebec's key rental facts under the Civil Code of Quebec.
+                </figcaption>
+              </figure>
+
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Key Tenant Protections in Quebec</h2>
                 <ul className="flex flex-col gap-3">

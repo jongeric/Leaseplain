@@ -92,6 +92,7 @@ export default function SecurityDepositRulesCanadaPage() {
           "security deposit rules by province",
           "how much security deposit can landlord charge",
         ]}
+        imageUrl="https://leaseplain.com/blog/security-deposit-rules-canada/opengraph-image"
       />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -175,6 +176,20 @@ export default function SecurityDepositRulesCanadaPage() {
                     province allows landlords to hold money specifically to cover potential damage.
                   </p>
                 </div>
+
+                <figure className="mb-8">
+                  <img
+                    src="/blog/security-deposit-rules-canada/opengraph-image"
+                    alt="Maximum security deposit by Canadian province: Quebec none permitted, Ontario last month's rent only, BC half a month plus half a month pet deposit, Manitoba and Nova Scotia half a month, Newfoundland and Labrador 75% of a month, Alberta, Saskatchewan, New Brunswick and PEI one month"
+                    width={1200}
+                    height={630}
+                    loading="lazy"
+                    className="w-full h-auto rounded-xl border border-slate-200"
+                  />
+                  <figcaption className="text-sm text-slate-500 mt-2">
+                    Deposit caps at a glance — full return deadlines and interest rules in the table below.
+                  </figcaption>
+                </figure>
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Deposit Rules at a Glance</h2>

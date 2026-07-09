@@ -138,6 +138,20 @@ export default function BritishColumbiaPage() {
                 </p>
               </div>
 
+              <figure className="mb-8">
+                <img
+                  src="/canada/british-columbia/opengraph-image"
+                  alt="British Columbia renting key numbers: 2.3% is the 2026 maximum allowable rent increase, 3 full months notice before a rent increase, security deposits capped at half a month's rent plus half a month for pets, and deposits returned within 15 days"
+                  width={1200}
+                  height={630}
+                  loading="lazy"
+                  className="w-full h-auto rounded-xl border border-slate-200"
+                />
+                <figcaption className="text-sm text-slate-500 mt-2">
+                  BC's key rental numbers under the Residential Tenancy Act.
+                </figcaption>
+              </figure>
+
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Key Tenant Protections in BC</h2>
                 <ul className="flex flex-col gap-3">

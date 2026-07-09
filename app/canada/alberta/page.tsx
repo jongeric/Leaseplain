@@ -147,6 +147,20 @@ export default function AlbertaPage() {
                 </p>
               </div>
 
+              <figure className="mb-8">
+                <img
+                  src="/canada/alberta/opengraph-image"
+                  alt="Alberta renting key numbers: no rent increase cap but increases only once every 12 months, 3 months written notice before a rent increase, security deposits capped at one month's rent, and deposits returned within 10 days"
+                  width={1200}
+                  height={630}
+                  loading="lazy"
+                  className="w-full h-auto rounded-xl border border-slate-200"
+                />
+                <figcaption className="text-sm text-slate-500 mt-2">
+                  Alberta's key rental numbers under the Residential Tenancies Act.
+                </figcaption>
+              </figure>
+
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Key Tenant Protections in Alberta</h2>
                 <ul className="flex flex-col gap-3">

@@ -23,6 +23,30 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/right-to-rent-canada",
+    title: "Your Right to Rent in Canada: When Can a Landlord Refuse You?",
+    excerpt:
+      "Landlords cannot refuse you housing based on race, citizenship, family status, disability, or receiving public assistance. Here is what is illegal in tenant screening — and what to do if you are turned away.",
+    date: "July 14, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/renting-without-credit-history-canada",
+    title: "Renting in Canada With No Credit History: A Guide for Newcomers and Students",
+    excerpt:
+      "No Canadian credit file? Landlords cannot treat that as bad credit. How newcomers and students can prove reliability — and which landlord demands (12 months upfront, your SIN, immigration papers) are illegal.",
+    date: "July 14, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/right-to-rent-uk-vs-canada",
+    title: "What Is \"Right to Rent\"? UK Immigration Checks vs Canadian Tenant Rights",
+    excerpt:
+      "\"Right to rent\" means opposite things in the UK and Canada. In England, landlords must verify immigration status by law. In Canada, demanding immigration documents is illegal discrimination.",
+    date: "July 14, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/tenant-repair-responsibilities-canada",
     title: "What Repairs Are Tenants Responsible For in Canada?",
     excerpt:

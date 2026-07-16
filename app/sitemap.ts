@@ -158,6 +158,9 @@ const LAST_MODIFIED: Record<string, string> = {
   "/blog/tenant-repair-responsibilities-canada": "2026-07-07T00:00:00+00:00",
   "/blog/normal-wear-and-tear-vs-damage-canada": "2026-07-07T00:00:00+00:00",
   "/blog/tenant-maintenance-duties-ontario": "2026-07-07T00:00:00+00:00",
+  "/blog/right-to-rent-canada": "2026-07-14T00:00:00+00:00",
+  "/blog/renting-without-credit-history-canada": "2026-07-14T00:00:00+00:00",
+  "/blog/right-to-rent-uk-vs-canada": "2026-07-14T00:00:00+00:00",
   "/faq": "2026-05-19T19:31:53+00:00",
   "/about": "2026-05-25T18:55:52+00:00",
   "/contact": "2026-05-19T19:31:53+00:00",
@@ -366,6 +369,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/blog/tenant-repair-responsibilities-canada",        0.8, "monthly"),
     url("/blog/normal-wear-and-tear-vs-damage-canada",        0.8, "monthly"),
     url("/blog/tenant-maintenance-duties-ontario",            0.8, "monthly"),
+    url("/blog/right-to-rent-canada",                         0.8, "monthly"),
+    url("/blog/renting-without-credit-history-canada",        0.8, "monthly"),
+    url("/blog/right-to-rent-uk-vs-canada",                   0.8, "monthly"),
 
     // ── Company / utility ─────────────────────────────────────────────────────
     url("/faq",              0.6, "monthly"),

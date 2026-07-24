@@ -447,6 +447,7 @@ export default function TenantMaintenanceDutiesOntarioPage() {
                       { label: "Tenant Repair Responsibilities in Canada", href: "/blog/tenant-repair-responsibilities-canada" },
                       { label: "Normal Wear and Tear vs. Damage in Canada", href: "/blog/normal-wear-and-tear-vs-damage-canada" },
                       { label: "How to Get Your Landlord to Fix Something", href: "/blog/landlord-repair-obligations-canada" },
+                      { label: "Can a Landlord Enter Without Notice?", href: "/blog/landlord-entry-notice-canada" },
                       { label: "Moving Out in Ontario: Deposit Checklist", href: "/blog/moving-out-ontario-checklist" },
                       { label: "Ontario Tenant Rights Guide", href: "/tenant-rights/ontario" },
                     ].map((l) => (

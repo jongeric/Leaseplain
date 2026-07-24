@@ -66,6 +66,8 @@ const categories = [
       { label: "Can AI Explain a Lease?", href: "/resources/can-ai-explain-a-lease" },
       { label: "Is AI Lease Review Accurate?", href: "/resources/is-ai-lease-review-accurate" },
       { label: "LeasePlain vs ChatGPT", href: "/resources/leaseplain-vs-chatgpt" },
+      { label: "Can ChatGPT Review a Lease?", href: "/resources/can-chatgpt-review-a-lease" },
+      { label: "Free Lease Review Online", href: "/resources/free-lease-review-online" },
       { label: "Upload Lease for Review", href: "/resources/upload-lease-for-review" },
     ],
   },

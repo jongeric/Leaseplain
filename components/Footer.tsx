@@ -22,6 +22,8 @@ const FOOTER_COLUMNS = [
       { label: "Alberta", href: "/canada/alberta" },
       { label: "Quebec", href: "/canada/quebec" },
       { label: "United States", href: "/united-states" },
+      { label: "Canadian Lease Laws", href: "/canadian-lease-laws" },
+      { label: "Renting in Canada", href: "/renting-in-canada" },
     ],
   },
   {
@@ -56,6 +58,7 @@ const FOOTER_COLUMNS = [
       { label: "AI Lease Review", href: "/resources/ai-lease-review" },
       { label: "Tenant Guides", href: "/resources/tenant-guides" },
       { label: "Landlord Guides", href: "/resources/landlord-guides" },
+      { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
     ],
   },
@@ -64,6 +67,8 @@ const FOOTER_COLUMNS = [
     links: [
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
+      { label: "Editorial Policy", href: "/editorial-policy" },
+      { label: "Methodology", href: "/methodology" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Use", href: "/terms" },
       { label: "Legal Disclaimer", href: "/disclaimer" },

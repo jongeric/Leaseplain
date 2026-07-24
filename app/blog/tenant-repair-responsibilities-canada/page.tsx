@@ -436,6 +436,7 @@ export default function TenantRepairResponsibilitiesCanadaPage() {
                       { label: "Normal Wear and Tear vs. Damage in Canada", href: "/blog/normal-wear-and-tear-vs-damage-canada" },
                       { label: "Tenant Maintenance Duties in Ontario", href: "/blog/tenant-maintenance-duties-ontario" },
                       { label: "Moving Out in Ontario: Deposit Checklist", href: "/blog/moving-out-ontario-checklist" },
+                      { label: "Month-to-Month vs Fixed-Term Lease", href: "/blog/month-to-month-vs-fixed-term-lease" },
                       { label: "Lease Red Flags to Watch For", href: "/blog/lease-red-flags-to-watch-for" },
                     ].map((l) => (
                       <li key={l.href}>

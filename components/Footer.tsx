@@ -9,6 +9,8 @@ const FOOTER_COLUMNS = [
       { label: "Example Report", href: "/example-report" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Embed Our Tools", href: "/widgets" },
+      { label: "Partner With Us", href: "/partners" },
     ],
   },
   {

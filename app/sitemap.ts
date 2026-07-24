@@ -15,6 +15,7 @@ const LAST_MODIFIED: Record<string, string> = {
   "/login": "2026-05-19T19:31:53+00:00",
   "/tools": "2026-06-07T03:28:25+00:00",
   "/widgets": "2026-07-15T00:00:00+00:00",
+  "/partners": "2026-07-15T00:00:00+00:00",
   "/tools/rent-increase-calculator": "2026-07-08T00:00:00+00:00",
   "/tools/deposit-calculator": "2026-06-07T03:50:11+00:00",
   "/tools/notice-period-calculator": "2026-07-08T00:00:00+00:00",
@@ -219,6 +220,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Free Tools ────────────────────────────────────────────────────────────
     url("/tools",                                    0.9, "monthly"),
     url("/widgets",                                  0.7, "monthly"),
+    url("/partners",                                 0.6, "monthly"),
     url("/tools/rent-increase-calculator",           0.9, "monthly"),
     url("/tools/deposit-calculator",                 0.9, "monthly"),
     url("/tools/notice-period-calculator",           0.9, "monthly"),

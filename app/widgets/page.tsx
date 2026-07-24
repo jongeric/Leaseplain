@@ -112,7 +112,7 @@ export default function WidgetsPage() {
               <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 text-center">
                 <p className="text-slate-700 text-sm">
                   Want a widget we don&apos;t offer yet, or a co-branded version for your organization?{" "}
-                  <Link href="/contact" className="text-indigo-700 font-semibold hover:underline">Get in touch</Link>.
+                  <Link href="/partners" className="text-indigo-700 font-semibold hover:underline">Partner with us</Link>.
                 </p>
               </div>
             </div>

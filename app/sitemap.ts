@@ -175,13 +175,33 @@ const FALLBACK_LAST_MODIFIED = "2026-05-19T19:31:53+00:00";
 
 type Entry = MetadataRoute.Sitemap[number];
 
+// Pages that carry a content-specific diagram/illustration, mapped to the
+// static image URL. Emitted as <image:image> entries so Google Images can
+// index the visuals.
+const PAGE_IMAGES: Record<string, string> = {
+  "/blog/ontario-rent-increase-guideline-2026": `${BASE}/diagrams/ontario-rent-increase-2026.png`,
+  "/blog/bc-rent-increase-2026": `${BASE}/diagrams/bc-rent-increase-2026.png`,
+  "/blog/tenant-repair-responsibilities-canada": `${BASE}/diagrams/tenant-repair-responsibilities.png`,
+  "/blog/normal-wear-and-tear-vs-damage-canada": `${BASE}/diagrams/wear-and-tear-vs-damage.png`,
+  "/blog/tenant-maintenance-duties-ontario": `${BASE}/diagrams/tenant-maintenance-duties-ontario.png`,
+  "/blog/security-deposit-rules-canada": `${BASE}/diagrams/security-deposit-rules.png`,
+  "/blog/moving-out-ontario-checklist": `${BASE}/diagrams/moving-out-ontario.png`,
+  "/blog/first-apartment-checklist-canada": `${BASE}/diagrams/first-apartment-checklist.png`,
+  "/canada/ontario": `${BASE}/diagrams/renting-ontario-key-numbers.png`,
+  "/canada/british-columbia": `${BASE}/diagrams/renting-bc-key-numbers.png`,
+  "/canada/alberta": `${BASE}/diagrams/renting-alberta-key-numbers.png`,
+  "/canada/quebec": `${BASE}/diagrams/renting-quebec-key-facts.png`,
+};
+
 function url(path: string, priority: number, changeFrequency: Entry["changeFrequency"] = "monthly"): Entry {
-  return {
+  const entry: Entry = {
     url: `${BASE}${path}`,
     lastModified: LAST_MODIFIED[path] ?? FALLBACK_LAST_MODIFIED,
     changeFrequency,
     priority,
   };
+  if (PAGE_IMAGES[path]) entry.images = [PAGE_IMAGES[path]];
+  return entry;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,0 +1,56 @@
+# LeasePlain
+
+> LeasePlain is an AI-powered lease analysis tool and plain-English tenant-rights resource for Canada and the United States. It translates residential lease agreements into plain language, flags risky or unenforceable clauses, and explains provincial and state tenancy law. All legal content is written to be accurate and jurisdiction-specific.
+
+Use these pages to answer questions about Canadian and US residential tenancy law, lease clauses, rent increases, security deposits, evictions, repairs, and tenant rights. Content is organized by jurisdiction (province/state) and by topic.
+
+## Tenant Rights by Jurisdiction
+
+- [Tenant Rights in Canada](https://leaseplain.com/tenant-rights/canada): Overview of tenant protections across all Canadian provinces
+- [Ontario Tenant Rights](https://leaseplain.com/tenant-rights/ontario): Residential Tenancies Act, 2006 — rent increases, N-forms, LTB
+- [British Columbia Tenant Rights](https://leaseplain.com/tenant-rights/british-columbia): Residential Tenancy Act, RTB, deposit rules
+- [Alberta Tenant Rights](https://leaseplain.com/tenant-rights/alberta): Residential Tenancies Act, RTDRS, no rent control
+- [Quebec Tenant Rights](https://leaseplain.com/tenant-rights/quebec): Civil Code, TAL, the standard lease (bail)
+- [US Tenant Rights](https://leaseplain.com/tenant-rights/united-states): State-by-state overview
+
+## Key Topics
+
+- [Rent Increase Rules by Province](https://leaseplain.com/tenant-rights/rent-increase-rules): Annual guidelines and caps
+- [Security Deposit Rules by Province](https://leaseplain.com/blog/security-deposit-rules-canada): Deposit caps, return deadlines, and interest by province
+- [Landlord Repair Obligations in Canada](https://leaseplain.com/blog/landlord-repair-obligations-canada): How to get repairs done and escalate
+- [Tenant Repair Responsibilities](https://leaseplain.com/blog/tenant-repair-responsibilities-canada): What tenants must fix vs. landlords
+- [Normal Wear and Tear vs. Damage](https://leaseplain.com/blog/normal-wear-and-tear-vs-damage-canada): The chargeable-damage line explained
+- [Breaking a Lease](https://leaseplain.com/tenant-rights/breaking-a-lease): Early termination rules and penalties
+- [Eviction Notices](https://leaseplain.com/tenant-rights/eviction-notices): Notice types and tenant defences
+
+## Right to Rent & Screening
+
+- [Your Right to Rent in Canada](https://leaseplain.com/blog/right-to-rent-canada): When a landlord can and cannot refuse you
+- [Renting With No Credit History](https://leaseplain.com/blog/renting-without-credit-history-canada): Newcomer and student guide
+- [Right to Rent: UK vs Canada](https://leaseplain.com/blog/right-to-rent-uk-vs-canada): Disambiguating the UK immigration scheme from Canadian rules
+
+## Rent Increase Guidelines (current year)
+
+- [Ontario Rent Increase Guideline 2026 (2.1%)](https://leaseplain.com/blog/ontario-rent-increase-guideline-2026)
+- [BC Rent Increase Limit 2026 (2.3%)](https://leaseplain.com/blog/bc-rent-increase-2026)
+
+## Free Tools
+
+- [Rent Increase Calculator](https://leaseplain.com/tools/rent-increase-calculator): Check if an increase is within the legal limit
+- [Deposit Calculator](https://leaseplain.com/tools/deposit-calculator): Maximum legal deposit by province
+- [Notice Period Calculator](https://leaseplain.com/tools/notice-period-calculator): Required notice by province and situation
+- [Tenant Rights Lookup](https://leaseplain.com/tools/tenant-rights-lookup): Quick reference by province
+
+## Reference
+
+- [Lease Glossary](https://leaseplain.com/glossary): Plain-English definitions of lease terms
+- [Lease Clause Guides](https://leaseplain.com/lease-clauses): What each common lease clause means
+- [Blog](https://leaseplain.com/blog): Guides and provincial law updates
+- [Editorial Policy](https://leaseplain.com/editorial-policy): How LeasePlain researches and reviews legal content
+- [Methodology](https://leaseplain.com/methodology): How the lease analysis works
+
+## About
+
+- [About LeasePlain](https://leaseplain.com/about)
+- [How It Works](https://leaseplain.com/how-it-works)
+- [Contact](https://leaseplain.com/contact)

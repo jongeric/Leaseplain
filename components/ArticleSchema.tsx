@@ -31,6 +31,9 @@ export default function ArticleSchema({
       "@type": "Organization",
       name: "LeasePlain Editorial Team",
       url: "https://leaseplain.com/about",
+      // Transparency signal for YMYL legal content: bylines point at the
+      // documented research/review process rather than a bare name.
+      publishingPrinciples: "https://leaseplain.com/editorial-policy",
     },
     publisher: {
       "@type": "Organization",

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import GlossarySearch from "@/components/GlossarySearch";
 import { BookOpen, AlertTriangle, CheckCircle, TrendingDown } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -180,6 +181,9 @@ export default function GlossaryPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-4 py-12 space-y-10">
+          {/* Search (powers the WebSite SearchAction / sitelinks search box) */}
+          <GlossarySearch terms={terms} />
+
           {/* Categories */}
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-4">Browse by Category</h2>
@@ -302,7 +306,7 @@ export default function GlossaryPage() {
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
             <h2 className="text-xl font-bold text-slate-900 mb-6">Common Questions</h2>
-            <FAQAccordion items={faqs} />
+            <FAQAccordion items={faqs} includeSchema={false} />
           </section>
         </div>
       </main>

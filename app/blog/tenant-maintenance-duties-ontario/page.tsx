@@ -166,7 +166,7 @@ export default function TenantMaintenanceDutiesOntarioPage() {
           "tenant responsible for repairs Ontario",
           "Ontario RTA tenant damage liability",
         ]}
-        imageUrl="https://leaseplain.com/blog/tenant-maintenance-duties-ontario/opengraph-image"
+        imageUrl="https://leaseplain.com/diagrams/tenant-maintenance-duties-ontario.png"
       />
       <BreadcrumbSchema
         items={[
@@ -309,7 +309,7 @@ export default function TenantMaintenanceDutiesOntarioPage() {
 
                   <figure className="mb-5">
                     <img
-                      src="/blog/tenant-maintenance-duties-ontario/opengraph-image"
+                      src="/diagrams/tenant-maintenance-duties-ontario.png"
                       alt="Timeline of Ontario's N5 notice process: day 0 the N5 is served, days 1 to 7 are the voiding window where the tenant can repair damage or clean to void the notice, from day 8 the landlord may file an L2 application with the LTB, and a second N5 within 6 months cannot be voided"
                       width={1200}
                       height={630}

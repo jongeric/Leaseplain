@@ -123,7 +123,7 @@ export default function MovingOutOntarioChecklistPage() {
           "Ontario tenant notice to vacate",
           "last month rent deposit Ontario",
         ]}
-        imageUrl="https://leaseplain.com/blog/moving-out-ontario-checklist/opengraph-image"
+        imageUrl="https://leaseplain.com/diagrams/moving-out-ontario.png"
       />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -234,7 +234,7 @@ export default function MovingOutOntarioChecklistPage() {
 
                 <figure className="mb-8">
                   <img
-                    src="/blog/moving-out-ontario-checklist/opengraph-image"
+                    src="/diagrams/moving-out-ontario.png"
                     alt="Timeline for moving out in Ontario: 60 or more days before, serve Form N9 written notice expiring on the last day of a rental period; final weeks, photograph the unit and book the elevator; final month, the last month's rent deposit is applied so you do not pay rent twice; move-out day, return keys and provide a forwarding address"
                     width={1200}
                     height={630}

@@ -123,7 +123,7 @@ export default function NormalWearAndTearVsDamageCanadaPage() {
           "tenant damage vs wear and tear",
           "what is normal wear and tear in rental Canada",
         ]}
-        imageUrl="https://leaseplain.com/blog/normal-wear-and-tear-vs-damage-canada/opengraph-image"
+        imageUrl="https://leaseplain.com/diagrams/wear-and-tear-vs-damage.png"
       />
       <BreadcrumbSchema
         items={[
@@ -226,7 +226,7 @@ export default function NormalWearAndTearVsDamageCanadaPage() {
 
                 <figure>
                   <img
-                    src="/blog/normal-wear-and-tear-vs-damage-canada/opengraph-image"
+                    src="/diagrams/wear-and-tear-vs-damage.png"
                     alt="Side-by-side comparison for Canadian rentals: normal wear and tear (faded paint, worn carpet, minor scuffs — landlord's cost) versus tenant damage (holes in walls, burns, pet damage, large stains — tenant's cost)"
                     width={1200}
                     height={630}

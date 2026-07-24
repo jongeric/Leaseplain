@@ -145,7 +145,7 @@ export default function OntarioPage() {
 
               <figure className="mb-8">
                 <img
-                  src="/canada/ontario/opengraph-image"
+                  src="/diagrams/renting-ontario-key-numbers.png"
                   alt="Ontario renting key numbers: 2.1% is the 2026 rent increase guideline, 90 days written notice before a rent increase, deposits limited to last month's rent with no damage deposit allowed, and 24 hours written notice before landlord entry"
                   width={1200}
                   height={630}

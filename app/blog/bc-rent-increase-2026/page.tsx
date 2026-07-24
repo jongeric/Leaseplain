@@ -81,7 +81,7 @@ export default function BCRentIncrease2026Page() {
           "RTB rent increase",
           "bc tenant rights rent",
         ]}
-        imageUrl="https://leaseplain.com/blog/bc-rent-increase-2026/opengraph-image"
+        imageUrl="https://leaseplain.com/diagrams/bc-rent-increase-2026.png"
       />
       <BreadcrumbSchema items={[
         { name: "Home", href: "https://leaseplain.com" },
@@ -167,7 +167,7 @@ export default function BCRentIncrease2026Page() {
                   </p>
                   <figure className="mt-5">
                     <img
-                      src="/blog/bc-rent-increase-2026/opengraph-image"
+                      src="/diagrams/bc-rent-increase-2026.png"
                       alt="Bar chart of British Columbia's maximum allowable rent increase from 2022 to 2026: 1.5% in 2022, 2.0% in 2023, 3.5% in 2024, 3.0% in 2025, and 2.3% in 2026"
                       width={1200}
                       height={630}

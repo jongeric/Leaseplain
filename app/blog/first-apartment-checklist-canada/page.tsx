@@ -75,7 +75,7 @@ export default function FirstApartmentChecklistCanadaPage() {
           "tenant checklist Canada",
           "first time renter checklist",
         ]}
-        imageUrl="https://leaseplain.com/blog/first-apartment-checklist-canada/opengraph-image"
+        imageUrl="https://leaseplain.com/diagrams/first-apartment-checklist.png"
       />
       <BreadcrumbSchema
         items={[
@@ -220,7 +220,7 @@ export default function FirstApartmentChecklistCanadaPage() {
                 {/* Section 1 */}
                 <figure className="mb-8">
                   <img
-                    src="/blog/first-apartment-checklist-canada/opengraph-image"
+                    src="/diagrams/first-apartment-checklist.png"
                     alt="First apartment checklist for Canadian renters in three phases: before signing (read every clause, verify the landlord, check deposit limits), at move-in (photograph every room, complete a condition inspection report, email a copy to the landlord), and keep on file (lease, photos, and all written communication for at least two years after moving out)"
                     width={1200}
                     height={630}

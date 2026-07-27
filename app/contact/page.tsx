@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, HelpCircle, ChevronRight } from "lucide-react";
+import { Mail, ChevronRight } from "lucide-react";
 
 export const dynamic = "force-static";
+
+const CONTACT_EMAIL = "jf@directroutedesign.com";
 
 export const metadata: Metadata = {
   title: "Contact LeasePlain | LeasePlain",
   description:
-    "Get in touch with LeasePlain. Questions about your analysis, your account, or the product — we're here to help.",
+    "Get in touch with LeasePlain. Questions or concerns about your analysis, your account, or the product — email us and we'll respond within one business day.",
   alternates: { canonical: "https://leaseplain.com/contact" },
   openGraph: {
     title: "Contact LeasePlain | LeasePlain",
-    description: "Get in touch with LeasePlain. Questions about your analysis, your account, or the product — we're here to help.",
+    description: "Get in touch with LeasePlain. Questions or concerns about your analysis, your account, or the product — we're here to help.",
     url: "https://leaseplain.com/contact",
     type: "website",
   },
@@ -25,18 +27,12 @@ const contactSchema = {
   "@id": "https://leaseplain.com/contact",
   "name": "Contact LeasePlain",
   "url": "https://leaseplain.com/contact",
-  "description": "Get in touch with LeasePlain — questions about your analysis, account, or the product.",
+  "description": "Get in touch with LeasePlain — questions or concerns about your analysis, account, or the product.",
   "contactOption": [
     {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "email": "support@leaseplain.com",
-      "availableLanguage": "English",
-    },
-    {
-      "@type": "ContactPoint",
-      "contactType": "general inquiry",
-      "email": "hello@leaseplain.com",
+      "email": CONTACT_EMAIL,
       "availableLanguage": "English",
     },
   ],
@@ -51,21 +47,6 @@ const speakableSchema = {
     "cssSelector": ["h1", ".speakable-summary"],
   },
 };
-
-const contactOptions = [
-  {
-    icon: Mail,
-    title: "General Inquiries",
-    description: "Questions about LeasePlain, the product, or how it works.",
-    contact: "hello@leaseplain.com",
-  },
-  {
-    icon: HelpCircle,
-    title: "Support",
-    description: "Issues with your account, billing, or a specific analysis.",
-    contact: "support@leaseplain.com",
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -85,7 +66,8 @@ export default function ContactPage() {
             />
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">Contact Us</h1>
             <p className="speakable-summary text-lg text-slate-600 max-w-xl leading-relaxed">
-              We're a small team. We read every message and respond within one business day.
+              Have a question or concern? We&apos;re a small team, we read every message, and we
+              respond within one business day.
             </p>
           </div>
         </section>
@@ -93,19 +75,22 @@ export default function ContactPage() {
         <section className="py-14 px-4 bg-white">
           <div className="max-w-3xl mx-auto space-y-10">
 
-            <div className="grid sm:grid-cols-2 gap-5">
-              {contactOptions.map((opt) => (
-                <div key={opt.title} className="bg-slate-50 border border-slate-100 rounded-xl p-6">
-                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                    <opt.icon className="w-5 h-5 text-blue-600" aria-hidden="true" />
-                  </div>
-                  <h2 className="font-semibold text-slate-900 mb-1">{opt.title}</h2>
-                  <p className="text-sm text-slate-500 mb-3 leading-relaxed">{opt.description}</p>
-                  <a href={`mailto:${opt.contact}`} className="text-sm font-medium text-blue-600 hover:underline">
-                    {opt.contact}
-                  </a>
-                </div>
-              ))}
+            <div className="bg-slate-50 border border-slate-100 rounded-xl p-8 text-center">
+              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5 mx-auto">
+                <Mail className="w-6 h-6 text-blue-600" aria-hidden="true" />
+              </div>
+              <h2 className="font-semibold text-slate-900 mb-1 text-lg">Email us</h2>
+              <p className="text-sm text-slate-500 mb-5 leading-relaxed max-w-md mx-auto">
+                Questions, feedback, account or billing issues, privacy requests, or anything
+                about a specific analysis — send it our way.
+              </p>
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=LeasePlain%20enquiry`}
+                className="inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors"
+              >
+                <Mail className="w-4 h-4" aria-hidden="true" />
+                {CONTACT_EMAIL}
+              </a>
             </div>
 
             <div className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
@@ -131,11 +116,11 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-6">
-              <h2 className="font-semibold text-slate-900 mb-2">Legal & Compliance</h2>
+              <h2 className="font-semibold text-slate-900 mb-2">Privacy &amp; Legal</h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                For privacy requests, data deletion, or legal inquiries, please email{" "}
-                <a href="mailto:legal@leaseplain.com" className="text-blue-600 hover:underline">
-                  legal@leaseplain.com
+                For privacy requests, data deletion, or legal inquiries, email{" "}
+                <a href={`mailto:${CONTACT_EMAIL}?subject=Privacy%20request`} className="text-blue-600 hover:underline">
+                  {CONTACT_EMAIL}
                 </a>
                 . We respond to verified privacy requests within 30 days.
               </p>

@@ -165,7 +165,7 @@ const LAST_MODIFIED: Record<string, string> = {
   "/blog/right-to-rent-uk-vs-canada": "2026-07-14T00:00:00+00:00",
   "/faq": "2026-05-19T19:31:53+00:00",
   "/about": "2026-05-25T18:55:52+00:00",
-  "/contact": "2026-05-19T19:31:53+00:00",
+  "/contact": "2026-07-27T00:00:00+00:00",
   "/methodology": "2026-05-25T18:55:52+00:00",
   "/editorial-policy": "2026-05-25T18:55:52+00:00",
   "/privacy": "2026-05-25T18:55:52+00:00",

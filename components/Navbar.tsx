@@ -729,6 +729,15 @@ export default function Navbar() {
           >
             Pricing
           </Link>
+
+          <Link
+            href="/contact"
+            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
+              pathname === "/contact" ? "text-blue-600" : "text-slate-600"
+            }`}
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Desktop right */}
@@ -818,6 +827,10 @@ export default function Navbar() {
 
             <Link href="/pricing" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
               Pricing
+            </Link>
+
+            <Link href="/contact" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
+              Contact
             </Link>
 
             {user ? (

@@ -23,6 +23,46 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/ltb-wait-times-2026",
+    title: "How Long Does the LTB Take in 2026? The Backlog, Explained for Tenants",
+    excerpt:
+      "Ontario's Landlord and Tenant Board backlog shapes how long every dispute takes — including tenant T2 and T6 applications. Here's what wait times look like in 2026 and how to keep your case moving.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/notice-to-move-out-ontario",
+    title: "How Much Notice Do You Have to Give to Move Out in Ontario?",
+    excerpt:
+      "The answer is 60 days — but when those days end matters just as much, and fixed-term leases carry a trap that catches renters every year. How to give notice on Form N9 that actually holds up.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/subletting-assignment-ontario",
+    title: "Subletting and Assigning Your Lease in Ontario: A Tenant's Guide",
+    excerpt:
+      "Need to leave early or fill your unit while away? Ontario gives tenants a real right to sublet or assign — and limits what a landlord can do to block it. The key differences and how to do each properly.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/no-pet-clause-ontario",
+    title: "Can Your Landlord Say \"No Pets\" in Ontario? What the Law Actually Says",
+    excerpt:
+      "In Ontario, a \"no pets\" clause in your lease is void — legally meaningless — even if you signed it. But that's not a blank cheque. Here's exactly where the line sits, including the condo exception.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/last-months-rent-deposit-ontario",
+    title: "Last Month's Rent Deposit in Ontario: Rules, Interest, and Getting It Back",
+    excerpt:
+      "Your Ontario landlord can only collect a last month's rent deposit — never a damage or cleaning deposit. What it can be used for, the interest you're owed every year, and how to recover what you're owed.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/right-to-rent-canada",
     title: "Your Right to Rent in Canada: When Can a Landlord Refuse You?",
     excerpt:

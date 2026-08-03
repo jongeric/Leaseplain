@@ -23,6 +23,46 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/n4-non-payment-rent-ontario",
+    title: "Got an N4 in Ontario? Eviction for Non-Payment of Rent, Explained",
+    excerpt:
+      "An N4 is not an eviction — and it doesn't mean you have to leave. How the 14-day window works, how to void the notice, your 'pay and stay' right, and how to ask for a payment plan at the LTB.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/landlord-heat-air-conditioning-ontario",
+    title: "Is Your Landlord Required to Provide Heat and Air Conditioning in Ontario?",
+    excerpt:
+      "Heat is a vital service your landlord must provide and can never shut off. Air conditioning is treated very differently. The minimum-temperature rules, your right to install a unit, and what to do if the heat fails.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/post-2018-rent-control-exemption-ontario",
+    title: "Why Isn't My Rent Capped? The Post-November 2018 Rent Control Exemption",
+    excerpt:
+      "If your unit was first occupied after November 15, 2018, it's exempt from Ontario's rent increase guideline — the landlord can raise rent by any amount. How the exemption and vacancy decontrol work, and what still protects you.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/withholding-rent-repairs-ontario",
+    title: "Can I Withhold Rent if My Landlord Won't Make Repairs in Ontario?",
+    excerpt:
+      "Withholding rent over repairs can get you evicted in Ontario. Here's the route that actually works — the T6 application and rent abatement — which can even get you money back, without risking your tenancy.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/bad-faith-n12-t5-compensation-ontario",
+    title: "Bad-Faith N12: What If Your Landlord Didn't Actually Move In?",
+    excerpt:
+      "Evicted for a landlord's 'own use' but they re-rented instead? The T5 application can win you rent-difference, moving costs, and more. How the one-year rule and the bad-faith presumption work in your favour.",
+    date: "August 3, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/ltb-wait-times-2026",
     title: "How Long Does the LTB Take in 2026? The Backlog, Explained for Tenants",
     excerpt:

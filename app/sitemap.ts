@@ -168,6 +168,11 @@ const LAST_MODIFIED: Record<string, string> = {
   "/blog/subletting-assignment-ontario": "2026-08-03T00:00:00+00:00",
   "/blog/notice-to-move-out-ontario": "2026-08-03T00:00:00+00:00",
   "/blog/ltb-wait-times-2026": "2026-08-03T00:00:00+00:00",
+  "/blog/n4-non-payment-rent-ontario": "2026-08-03T00:00:00+00:00",
+  "/blog/landlord-heat-air-conditioning-ontario": "2026-08-03T00:00:00+00:00",
+  "/blog/post-2018-rent-control-exemption-ontario": "2026-08-03T00:00:00+00:00",
+  "/blog/withholding-rent-repairs-ontario": "2026-08-03T00:00:00+00:00",
+  "/blog/bad-faith-n12-t5-compensation-ontario": "2026-08-03T00:00:00+00:00",
   "/faq": "2026-05-19T19:31:53+00:00",
   "/about": "2026-05-25T18:55:52+00:00",
   "/contact": "2026-07-27T00:00:00+00:00",
@@ -406,6 +411,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/blog/subletting-assignment-ontario",                0.8, "monthly"),
     url("/blog/notice-to-move-out-ontario",                   0.8, "monthly"),
     url("/blog/ltb-wait-times-2026",                          0.8, "monthly"),
+    url("/blog/n4-non-payment-rent-ontario",                  0.8, "monthly"),
+    url("/blog/landlord-heat-air-conditioning-ontario",       0.8, "monthly"),
+    url("/blog/post-2018-rent-control-exemption-ontario",     0.8, "monthly"),
+    url("/blog/withholding-rent-repairs-ontario",             0.8, "monthly"),
+    url("/blog/bad-faith-n12-t5-compensation-ontario",        0.8, "monthly"),
 
     // ── Company / utility ─────────────────────────────────────────────────────
     url("/faq",              0.6, "monthly"),

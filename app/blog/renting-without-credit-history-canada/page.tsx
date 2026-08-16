@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock, CheckCircle, AlertTriangle } from "lucide-react";
+import ReviewedByline from "@/components/ReviewedByline";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -200,6 +201,7 @@ export default function RentingWithoutCreditHistoryCanadaPage() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-10">
+                <ReviewedByline updated="August 2026" />
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">

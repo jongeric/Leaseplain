@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
-
-// Submissions go to the email tied to the Web3Forms access key (set that
-// account's email to jf@directroutedesign.com). The destination address is
-// never exposed in the page source. Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY to
-// enable sending.
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+import { submitForm } from "@/lib/submitForm";
 
 export default function PartnerForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -15,33 +10,16 @@ export default function PartnerForm() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!ACCESS_KEY) {
-      setStatus("error");
-      setErrorMsg("The form isn't configured yet. Please email us via the contact page.");
-      return;
-    }
     setStatus("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("access_key", ACCESS_KEY);
-    data.append("subject", "New LeasePlain partner / widget enquiry");
-    data.append("from_name", "LeasePlain Partners");
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data,
-      });
-      const json = await res.json();
-      if (json.success) {
-        setStatus("sent");
-        form.reset();
-      } else {
-        setStatus("error");
-        setErrorMsg(json.message ?? "Something went wrong. Please try again.");
-      }
-    } catch {
+    const result = await submitForm(data, { subject: "New LeasePlain partner / widget enquiry" });
+    if (result.ok) {
+      setStatus("sent");
+      form.reset();
+    } else {
       setStatus("error");
-      setErrorMsg("Network error. Please try again, or use the contact page.");
+      setErrorMsg(result.message ?? "Something went wrong. Please try again.");
     }
   };
 
@@ -58,7 +36,7 @@ export default function PartnerForm() {
   return (
     <form onSubmit={onSubmit} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm space-y-4">
       {/* Honeypot */}
-      <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+      <input type="checkbox" name="_honey" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div>

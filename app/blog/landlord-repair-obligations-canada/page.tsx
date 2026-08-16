@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock, Wrench } from "lucide-react";
 import ReviewedByline from "@/components/ReviewedByline";
+import TableOfContents from "@/components/TableOfContents";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -167,6 +168,7 @@ export default function LandlordRepairObligationsCanadaPage() {
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-10">
                 <ReviewedByline updated="August 2026" />
+                <TableOfContents />
 
                 <div>
                   <div className="flex items-center gap-2 mb-3">

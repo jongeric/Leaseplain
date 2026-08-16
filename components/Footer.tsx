@@ -57,6 +57,7 @@ const FOOTER_COLUMNS = [
     heading: "Resources",
     links: [
       { label: "Resources", href: "/resources" },
+      { label: "Tenant Q&A", href: "/answers" },
       { label: "Lease Basics", href: "/resources/lease-basics" },
       { label: "Before You Sign", href: "/resources/before-you-sign" },
       { label: "AI Lease Review", href: "/resources/ai-lease-review" },

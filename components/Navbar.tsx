@@ -723,6 +723,15 @@ export default function Navbar() {
           </Link>
 
           <Link
+            href="/for-lawyers"
+            className={`px-2 py-1 text-sm font-semibold transition-colors rounded ${
+              pathname === "/for-lawyers" ? "text-brand" : "text-brand hover:text-brand-hover"
+            }`}
+          >
+            For Lawyers
+          </Link>
+
+          <Link
             href="/partners"
             className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
               pathname === "/partners" ? "text-blue-600" : "text-slate-600"
@@ -828,6 +837,10 @@ export default function Navbar() {
 
             <Link href="/blog" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
               Blog
+            </Link>
+
+            <Link href="/for-lawyers" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-semibold text-brand hover:bg-brand-soft">
+              For Lawyers
             </Link>
 
             <Link href="/partners" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">

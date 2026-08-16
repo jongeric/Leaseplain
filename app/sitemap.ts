@@ -99,6 +99,7 @@ const LAST_MODIFIED: Record<string, string> = {
   "/glossary/joint-and-several-liability": "2026-06-08T19:29:06+00:00",
   "/glossary/habitability": "2026-06-08T19:29:06+00:00",
   "/tenant-rights": "2026-06-07T03:28:25+00:00",
+  "/for-lawyers": "2026-08-16T00:00:00+00:00",
   "/tenant-lawyer": "2026-08-16T00:00:00+00:00",
   "/tenant-lawyer/toronto": "2026-08-16T00:00:00+00:00",
   "/tenant-lawyer/ottawa": "2026-08-16T00:00:00+00:00",
@@ -372,6 +373,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Tenant Rights ─────────────────────────────────────────────────────────
     url("/tenant-rights",                            0.9, "monthly"),
+    url("/for-lawyers",                             0.9, "monthly"),
     url("/tenant-lawyer",                            0.8, "monthly"),
     url("/tenant-lawyer/toronto",                    0.7, "monthly"),
     url("/tenant-lawyer/ottawa",                     0.7, "monthly"),

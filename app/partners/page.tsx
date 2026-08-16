@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PartnerForm from "@/components/PartnerForm";
-import { ChevronRight, Handshake, Code2, BookOpen, Users } from "lucide-react";
+import { ChevronRight, Handshake, Code2, BookOpen, Users, Scale } from "lucide-react";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
@@ -57,6 +57,14 @@ export default function PartnersPage() {
                 If you serve renters, you can put them to work on your own site — no cost, no
                 catch. Tell us what you need and we&apos;ll help you set it up.
               </p>
+              <div className="mt-6 flex items-start gap-3 rounded-xl bg-brand-soft border border-line p-4 max-w-2xl">
+                <Scale className="w-5 h-5 text-brand flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <p className="text-sm text-ink">
+                  <strong>Are you a tenant-rights lawyer or paralegal?</strong> Get listed in our
+                  directory and reach renters who need representation —{" "}
+                  <Link href="/for-lawyers" className="text-brand font-semibold hover:underline">see options for legal professionals</Link>.
+                </p>
+              </div>
             </div>
           </section>
 

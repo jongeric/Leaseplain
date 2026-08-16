@@ -148,6 +148,10 @@ export default function TenantLawyerHubPage() {
                   <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0" aria-hidden="true" /> We verify LSO licensing before any listing goes live.</li>
                   <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-indigo-500 mt-0.5 flex-shrink-0" aria-hidden="true" /> Free during launch.</li>
                 </ul>
+                <p className="mt-4 text-sm text-slate-600">
+                  Want priority placement or to sponsor a city?{" "}
+                  <Link href="/for-lawyers" className="text-indigo-700 font-semibold hover:underline">See all options for legal professionals →</Link>
+                </p>
               </div>
               <GetListedForm />
             </div>

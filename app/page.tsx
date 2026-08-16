@@ -7,6 +7,7 @@ import {
   FileText, ShieldCheck, Zap, AlertTriangle, DollarSign,
   Lightbulb, ChevronRight, Star, CheckCircle, Lock, MapPin,
   Clock, Eye, Users, TrendingUp, XCircle, HelpCircle,
+  Scale, Check,
 } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -696,6 +697,48 @@ export default function HomePage() {
                   <p className="text-slate-500 text-sm leading-relaxed">{t.body}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── FOR LAWYERS ──────────────────────────────────────────────────── */}
+        <section className="py-16 px-4 bg-surface-2 border-y border-line">
+          <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-brand-soft text-brand rounded-full px-3.5 py-1.5 text-xs font-bold mb-4">
+                <Scale className="w-3.5 h-3.5" aria-hidden="true" />
+                For tenant-rights lawyers &amp; paralegals
+              </div>
+              <h2 className="text-3xl font-bold text-ink mb-3">Defend renters&apos; rights? Get in front of the people who need you.</h2>
+              <p className="text-muted leading-relaxed mb-6 max-w-xl">
+                Every day, Ontario renters come here facing evictions, illegal rent increases, and
+                repairs their landlord won&apos;t make. Get listed in our directory and reach clients
+                at the moment they&apos;re ready to act — while building your authority defending tenants.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/for-lawyers" className="inline-flex items-center gap-2 bg-brand text-brand-fg font-semibold px-6 py-3 rounded-xl hover:bg-brand-hover transition-colors">
+                  List your practice <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+                <Link href="/tenant-lawyer" className="inline-flex items-center gap-2 border border-line text-ink font-semibold px-6 py-3 rounded-xl hover:bg-surface-3 transition-colors">
+                  Browse the directory
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-line bg-card p-6 shadow-sm">
+              <ul className="space-y-4">
+                {[
+                  ["High-intent clients", "Renters find you when they're facing a real problem."],
+                  ["Verified & credible", "We confirm LSO licensing before any listing goes live."],
+                  ["Authority & reach", "A profile on a trusted, tenant-focused platform."],
+                ].map(([t, d]) => (
+                  <li key={t} className="flex items-start gap-3">
+                    <span className="w-6 h-6 rounded-full bg-brand-soft flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
+                    </span>
+                    <span><span className="font-semibold text-ink">{t}.</span> <span className="text-muted text-sm">{d}</span></span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

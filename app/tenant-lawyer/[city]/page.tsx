@@ -6,8 +6,10 @@ import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQAccordion from "@/components/FAQAccordion";
 import GetListedForm from "@/components/GetListedForm";
-import { ChevronRight, Scale, Phone, Info } from "lucide-react";
-import { DIRECTORY_CITIES, HELP_OPTIONS, getCity } from "@/lib/legalHelp";
+import LawyerCard from "@/components/LawyerCard";
+import LeadRequestForm from "@/components/LeadRequestForm";
+import { ChevronRight, Scale, Phone, Info, Star, Users } from "lucide-react";
+import { DIRECTORY_CITIES, HELP_OPTIONS, getCity, getListingsByCity } from "@/lib/legalHelp";
 
 export const dynamic = "force-static";
 
@@ -70,6 +72,7 @@ export default async function TenantLawyerCityPage({
   if (!c) notFound();
 
   const faqs = cityFaqs(c.name);
+  const listings = getListingsByCity(c.slug);
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -107,6 +110,57 @@ export default async function TenantLawyerCityPage({
                 {c.blurb} If you&apos;re dealing with a rent increase, an eviction notice, or a repair
                 dispute in {c.name}, here&apos;s how to get help — starting with the free options.
               </p>
+            </div>
+          </section>
+
+          {/* Featured professionals */}
+          <section className="py-12 px-4 bg-surface border-b border-line">
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center gap-2 mb-2">
+                <Star className="w-5 h-5 text-brand" aria-hidden="true" />
+                <h2 className="text-2xl font-bold text-ink">Tenant-rights professionals in {c.name}</h2>
+              </div>
+              {listings.length > 0 ? (
+                <>
+                  <p className="text-muted mb-6">Verified paralegals and lawyers who take tenant matters in {c.name}.</p>
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {listings.map((l) => <LawyerCard key={l.name} listing={l} />)}
+                  </div>
+                </>
+              ) : (
+                <div className="rounded-2xl border border-dashed border-line bg-surface-2 p-8 text-center">
+                  <p className="text-ink font-semibold mb-1">This spot is open.</p>
+                  <p className="text-muted text-sm mb-5 max-w-md mx-auto">
+                    We&apos;re verifying tenant-rights lawyers and paralegals in {c.name} now. In the
+                    meantime, use the free options below — or, if you&apos;re a professional, be the first
+                    featured here.
+                  </p>
+                  <Link href="/for-lawyers" className="inline-flex items-center gap-2 bg-brand text-brand-fg font-semibold px-5 py-2.5 rounded-xl hover:bg-brand-hover transition-colors text-sm">
+                    Get featured in {c.name} <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                  </Link>
+                </div>
+              )}
+            </div>
+          </section>
+
+          {/* Get matched (tenant lead routing) */}
+          <section className="py-14 px-4 bg-surface-2 border-b border-line">
+            <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+              <div>
+                <div className="inline-flex items-center gap-2 text-brand font-semibold text-sm mb-3">
+                  <Users className="w-4 h-4" aria-hidden="true" /> Get matched
+                </div>
+                <h2 className="text-2xl font-bold text-ink mb-3">Need help now? We&apos;ll point you in the right direction.</h2>
+                <p className="text-muted leading-relaxed mb-4">
+                  Tell us what&apos;s happening in {c.name} and we&apos;ll help connect you with a
+                  tenant-rights professional or the right free service. It only takes a minute.
+                </p>
+                <p className="text-sm text-subtle">
+                  LeasePlain is not a law firm and this isn&apos;t legal advice — we help renters find the
+                  right help.
+                </p>
+              </div>
+              <LeadRequestForm city={c.name} />
             </div>
           </section>
 

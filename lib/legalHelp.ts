@@ -28,6 +28,29 @@ export function getCity(slug: string): DirectoryCity | undefined {
   return DIRECTORY_CITIES.find((c) => c.slug === slug);
 }
 
+// ── Directory listings ───────────────────────────────────────────────────────
+// Verified professionals appear here. We only publish real, LSO-verified
+// listings submitted through the "get listed" flow — no placeholder firms.
+// `featured` controls priority placement and the badge (the paid tier).
+export interface DirectoryListing {
+  name: string;         // person or practice name
+  role: "Paralegal" | "Lawyer" | "Community legal clinic";
+  cities: string[];     // city slugs served
+  blurb: string;
+  contactUrl?: string;  // website or booking link
+  featured?: boolean;
+}
+
+export const LISTINGS: DirectoryListing[] = [
+  // Populated as verified professionals join. Featured listings render first.
+];
+
+export function getListingsByCity(citySlug: string): DirectoryListing[] {
+  return LISTINGS.filter((l) => l.cities.includes(citySlug)).sort(
+    (a, b) => Number(b.featured) - Number(a.featured)
+  );
+}
+
 // The "ladder" of tenant legal help in Ontario, cheapest/most-accessible first.
 // All contact points are province-wide and stable.
 export interface HelpOption {

@@ -1,25 +1,142 @@
 @import "tailwindcss";
 
+/* ── Dark mode: class-based (html.dark), set before paint by a no-flash script ── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Design tokens. Semantic names flip between light and dark. Refreshed
+   components use the Tailwind utilities generated from these (bg-surface,
+   text-ink, text-brand, border-line, …). Legacy pages are remapped further down.
+   ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --surface: #ffffff;        /* page background */
+  --surface-2: #f6f7fb;      /* subtle sections */
+  --surface-3: #eef0f7;      /* nested / hover */
+  --card: #ffffff;           /* cards */
+  --ink: #0d1220;            /* primary text */
+  --muted: #4a5568;          /* secondary text */
+  --subtle: #8a93a6;         /* tertiary text */
+  --line: #e4e7ef;           /* borders */
+  --line-2: #eef0f6;         /* subtle borders */
+
+  /* Bolder brand: electric indigo primary + warm coral accent */
+  --brand: #4f46e5;
+  --brand-hover: #4338ca;
+  --brand-fg: #ffffff;
+  --brand-soft: #eef0fe;     /* tinted brand background */
+  --accent: #f97362;         /* warm coral for highlights */
+  --ring: #a5b4fc;
+}
+
+.dark {
+  --surface: #0a0f1c;
+  --surface-2: #0f1626;
+  --surface-3: #182236;
+  --card: #111a2e;
+  --ink: #e8ecf5;
+  --muted: #9aa6bd;
+  --subtle: #6b7690;
+  --line: #223049;
+  --line-2: #1a2740;
+
+  --brand: #7c83ff;
+  --brand-hover: #9aa0ff;
+  --brand-fg: #0a0f1c;
+  --brand-soft: #1a2140;
+  --accent: #ff8a7a;
+  --ring: #4f46e5;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-sora);
+
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-fg: var(--brand-fg);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--surface);
+  color: var(--ink);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display font for headings — gives the refresh its confident, modern feel */
+h1, h2, h3, .font-display {
+  font-family: var(--font-sora), var(--font-geist-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Smooth theme transition (respect reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  body, header, footer, section, article, aside, .themed {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+::selection { background: color-mix(in srgb, var(--brand) 25%, transparent); }
+
+/* Accessible focus ring across the site */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Legacy dark-mode compatibility. Existing pages hardcode slate/white utility
+   classes. These descendant rules (higher specificity than the base utilities)
+   remap the common ones under .dark so the whole site darkens coherently
+   without editing hundreds of files. Refreshed pages should prefer the semantic
+   tokens above and won't depend on this layer.
+   ───────────────────────────────────────────────────────────────────────────── */
+.dark .bg-white { background-color: var(--card); }
+.dark .bg-slate-50 { background-color: var(--surface-2); }
+.dark .bg-slate-100 { background-color: var(--surface-3); }
+.dark .bg-gray-50 { background-color: var(--surface-2); }
+.dark .bg-gray-100 { background-color: var(--surface-3); }
+
+.dark .text-slate-900 { color: var(--ink); }
+.dark .text-slate-800 { color: var(--ink); }
+.dark .text-slate-700 { color: var(--muted); }
+.dark .text-slate-600 { color: var(--muted); }
+.dark .text-slate-500 { color: var(--subtle); }
+.dark .text-slate-400 { color: var(--subtle); }
+.dark .text-gray-900 { color: var(--ink); }
+.dark .text-gray-700 { color: var(--muted); }
+.dark .text-gray-600 { color: var(--muted); }
+.dark .text-gray-500 { color: var(--subtle); }
+
+.dark .border-slate-100 { border-color: var(--line-2); }
+.dark .border-slate-200 { border-color: var(--line); }
+.dark .border-slate-300 { border-color: var(--line); }
+.dark .border-gray-100 { border-color: var(--line-2); }
+.dark .border-gray-200 { border-color: var(--line); }
+.dark .divide-slate-100 > * { border-color: var(--line-2); }
+.dark .divide-slate-200 > * { border-color: var(--line); }
+
+.dark .hover\:bg-slate-50:hover { background-color: var(--surface-3); }
+.dark .hover\:bg-slate-100:hover { background-color: var(--surface-3); }
+
+/* Inputs read correctly in dark */
+.dark input, .dark textarea, .dark select { color: var(--ink); }
+.dark ::placeholder { color: var(--subtle); }

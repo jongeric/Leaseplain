@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { useSession, signOut } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 // ─── Navigation data ────────────────────────────────────────────────────────
 
@@ -742,6 +743,7 @@ export default function Navbar() {
 
         {/* Desktop right */}
         <div className="hidden xl:flex items-center gap-3">
+          <ThemeToggle />
           {user ? (
             <>
               <Link
@@ -778,17 +780,20 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
+        {/* Mobile controls */}
+        <div className="xl:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <button
           type="button"
-          className="xl:hidden p-2 text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          className="p-2 text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
         >
           {mobileOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

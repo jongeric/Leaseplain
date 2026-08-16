@@ -8,6 +8,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import { DIRECTORY_CITIES } from "@/lib/legalHelp";
 import {
   Scale, BadgeCheck, TrendingUp, Users, Star, MapPin, Check, ChevronRight, Handshake, Search,
+  BookOpen, FileText, HelpCircle,
 } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -292,6 +293,46 @@ export default function ForLawyersPage() {
                 </ul>
               </div>
               <GetListedForm />
+            </div>
+          </section>
+
+          {/* Authority */}
+          <section className="py-16 px-4 bg-surface">
+            <div className="max-w-5xl mx-auto">
+              <div className="max-w-2xl mb-10">
+                <h2 className="text-3xl font-bold text-ink mb-3">A platform built on real tenant-rights expertise</h2>
+                <p className="text-muted leading-relaxed">
+                  You&apos;re not listing on a generic lead site. LeasePlain publishes accurate,
+                  jurisdiction-specific tenant-rights content — reviewed against Ontario&apos;s
+                  Residential Tenancies Act — that renters and search engines trust. Being listed here
+                  associates your practice with that authority.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {[
+                  { icon: FileText, label: "In-depth guides", href: "/blog", desc: "Plain-English coverage of N4s, N12s, rent control, deposits, and more." },
+                  { icon: HelpCircle, label: "Tenant Q&A", href: "/answers", desc: "Direct answers to the exact questions renters ask." },
+                  { icon: TrendingUp, label: "Rent-increase data", href: "/ontario-rent-increase-history", desc: "A citable reference of Ontario's guideline history." },
+                  { icon: BookOpen, label: "Lease glossary", href: "/glossary", desc: "Definitions for every term in a residential lease." },
+                ].map((c) => (
+                  <Link key={c.href} href={c.href} className="group rounded-2xl border border-line bg-card p-5 hover:border-brand transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-brand-soft flex items-center justify-center mb-3">
+                      <c.icon className="w-5 h-5 text-brand" aria-hidden="true" />
+                    </div>
+                    <p className="font-bold text-ink group-hover:text-brand mb-1">{c.label}</p>
+                    <p className="text-xs text-muted leading-relaxed">{c.desc}</p>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-8 flex items-start gap-3 rounded-xl border border-line bg-surface-2 p-5 max-w-3xl">
+                <BadgeCheck className="w-5 h-5 text-brand flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <p className="text-sm text-muted">
+                  <span className="font-semibold text-ink">Contribute your expertise.</span> Featured
+                  members and sponsors can be credited as reviewers on relevant guides — real E-E-A-T
+                  authority that benefits both your practice and the renters we serve. Ask us about it
+                  when you apply.
+                </p>
+              </div>
             </div>
           </section>
 

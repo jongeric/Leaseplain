@@ -140,3 +140,29 @@ h1, h2, h3, .font-display {
 /* Inputs read correctly in dark */
 .dark input, .dark textarea, .dark select { color: var(--ink); }
 .dark ::placeholder { color: var(--subtle); }
+
+/* ── Dark mode: tinted callouts ────────────────────────────────────────────────
+   Legacy pages use light tint backgrounds (bg-blue-50 …) with colored text for
+   callouts, badges, and risk boxes. In dark mode we swap the tint for a dark
+   equivalent and lighten the colored text so contrast stays readable.
+   ───────────────────────────────────────────────────────────────────────────── */
+.dark .bg-blue-50, .dark .bg-indigo-50, .dark .bg-sky-50, .dark .bg-violet-50, .dark .bg-blue-100, .dark .bg-indigo-100 { background-color: #172136; }
+.dark .bg-green-50, .dark .bg-emerald-50, .dark .bg-teal-50, .dark .bg-green-100, .dark .bg-emerald-100 { background-color: #0f2820; }
+.dark .bg-amber-50, .dark .bg-yellow-50, .dark .bg-orange-50, .dark .bg-amber-100 { background-color: #2a2110; }
+.dark .bg-red-50, .dark .bg-rose-50, .dark .bg-red-100 { background-color: #2c1618; }
+
+.dark .text-blue-600, .dark .text-blue-700, .dark .text-blue-800, .dark .text-blue-900,
+.dark .text-indigo-600, .dark .text-indigo-700, .dark .text-sky-700, .dark .text-violet-700 { color: #a9c1ff; }
+.dark .text-green-600, .dark .text-green-700, .dark .text-green-800, .dark .text-green-900,
+.dark .text-emerald-600, .dark .text-emerald-700, .dark .text-teal-700 { color: #7fe0a6; }
+.dark .text-amber-600, .dark .text-amber-700, .dark .text-amber-800, .dark .text-yellow-700, .dark .text-orange-700 { color: #f0be6b; }
+.dark .text-red-600, .dark .text-red-700, .dark .text-red-800, .dark .text-rose-700 { color: #fca5a5; }
+
+.dark .border-blue-100, .dark .border-blue-200, .dark .border-indigo-100, .dark .border-indigo-200, .dark .border-violet-100 { border-color: #26365a; }
+.dark .border-green-100, .dark .border-green-200, .dark .border-emerald-100, .dark .border-emerald-200 { border-color: #1c3d30; }
+.dark .border-amber-100, .dark .border-amber-200, .dark .border-yellow-100 { border-color: #3d3016; }
+.dark .border-red-100, .dark .border-red-200, .dark .border-rose-200 { border-color: #45222697; }
+
+/* Colored icon accents stay legible (e.g. text-indigo-500 markers) */
+.dark .text-blue-500, .dark .text-indigo-500, .dark .text-sky-500 { color: #8fa9f0; }
+.dark .text-green-500, .dark .text-emerald-500 { color: #5fce8f; }

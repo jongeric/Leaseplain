@@ -51,6 +51,7 @@ const FOOTER_COLUMNS = [
       { label: "Breaking a Lease", href: "/tenant-rights/breaking-a-lease" },
       { label: "Find a Tenant Lawyer", href: "/tenant-lawyer" },
       { label: "For Lawyers: Get Listed", href: "/for-lawyers" },
+      { label: "LTB Forms Explained", href: "/ltb-forms" },
     ],
   },
   {

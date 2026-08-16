@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search, X, CornerDownLeft } from "lucide-react";
 import { searchDocs, type SearchDoc, type SearchType } from "@/lib/searchIndex";
 
-const TYPE_ORDER: SearchType[] = ["Answer", "Guide", "Tool", "Letter", "Checklist", "Legal help", "Glossary", "Page"];
+const TYPE_ORDER: SearchType[] = ["Answer", "LTB form", "Guide", "Tool", "Letter", "Checklist", "Legal help", "Glossary", "Page"];
 
 const TYPE_STYLE: Record<SearchType, string> = {
   Answer: "bg-indigo-100 text-indigo-700",
@@ -14,6 +14,7 @@ const TYPE_STYLE: Record<SearchType, string> = {
   Letter: "bg-amber-100 text-amber-700",
   Checklist: "bg-teal-100 text-teal-700",
   "Legal help": "bg-violet-100 text-violet-700",
+  "LTB form": "bg-rose-100 text-rose-700",
   Glossary: "bg-slate-100 text-slate-600",
   Page: "bg-slate-100 text-slate-600",
 };

@@ -7,9 +7,10 @@ import { ANSWERS } from "@/lib/answers";
 import { LETTERS } from "@/lib/letters";
 import { CHECKLISTS } from "@/lib/checklists";
 import { DIRECTORY_CITIES } from "@/lib/legalHelp";
+import { LTB_FORMS } from "@/lib/ltbForms";
 
 export type SearchType =
-  | "Page" | "Guide" | "Answer" | "Tool" | "Letter" | "Checklist" | "Legal help" | "Glossary";
+  | "Page" | "Guide" | "Answer" | "Tool" | "Letter" | "Checklist" | "Legal help" | "Glossary" | "LTB form";
 
 export interface SearchDoc {
   title: string;
@@ -73,6 +74,7 @@ export function getSearchIndex(): SearchDoc[] {
     ...CHECKLISTS.map((c): SearchDoc => ({ type: "Checklist", title: c.h1, url: `/checklists/${c.slug}`, description: c.metaDescription, keywords: c.keywords.join(" ") })),
     ...DIRECTORY_CITIES.map((c): SearchDoc => ({ type: "Legal help", title: `Tenant Lawyers & Paralegals in ${c.name}`, url: `/tenant-lawyer/${c.slug}`, description: `Get tenant legal help in ${c.name}, Ontario.`, keywords: `${c.region} lawyer paralegal` })),
     ...GLOSSARY_TERMS.map(([slug, term]): SearchDoc => ({ type: "Glossary", title: term, url: `/glossary/${slug}`, description: `Plain-English definition of ${term}.` })),
+    ...LTB_FORMS.map((fm): SearchDoc => ({ type: "LTB form", title: `${fm.code} — ${fm.name}`, url: `/ltb-forms/${fm.slug}`, description: fm.purpose, keywords: fm.keywords.join(" ") })),
   ];
   cached = docs;
   return docs;

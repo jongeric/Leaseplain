@@ -220,44 +220,50 @@ export default function HomePage() {
         <Navbar />
 
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
-        <section className="flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32 bg-gradient-to-b from-slate-50 to-white">
-          <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 border border-indigo-100">
-            <Zap className="w-3.5 h-3.5" />
-            Lease risk analysis — results in under 30 seconds
+        <section className="relative overflow-hidden bg-surface">
+          {/* Decorative brand glow */}
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full opacity-[0.10] blur-3xl" style={{ background: "radial-gradient(closest-side, var(--brand), transparent)" }} />
           </div>
+          <div className="relative flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32">
+            <div className="inline-flex items-center gap-2 bg-brand-soft text-brand text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-line">
+              <Zap className="w-3.5 h-3.5" />
+              Lease risk analysis — results in under 30 seconds
+            </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 max-w-3xl leading-tight">
-            Before You Sign That Lease,{" "}
-            <span className="text-indigo-600">Make Sure It Isn&apos;t Costing You Thousands</span>
-          </h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink max-w-3xl leading-[1.08] text-balance">
+              Before You Sign That Lease,{" "}
+              <span className="text-brand">Make Sure It Isn&apos;t Costing You Thousands</span>
+            </h1>
 
-          <p className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed">
-            Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues — in minutes.
-          </p>
+            <p className="mt-6 text-lg text-muted max-w-xl leading-relaxed text-pretty">
+              Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues — in minutes.
+            </p>
 
-          <p className="mt-3 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-100 px-4 py-2 rounded-full">
-            Most renters sign leases they don&apos;t fully understand. Don&apos;t be one of them.
-          </p>
+            <p className="mt-4 text-sm font-medium text-amber-600 bg-amber-500/10 border border-amber-500/25 px-4 py-2 rounded-full">
+              Most renters sign leases they don&apos;t fully understand. Don&apos;t be one of them.
+            </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/upload"
-              className="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-indigo-700 transition-colors shadow-sm text-base"
-            >
-              Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/example-report"
-              className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 font-semibold px-7 py-3.5 rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors text-base"
-            >
-              See My Lease Risk Score
-            </Link>
-          </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/upload"
+                className="inline-flex items-center justify-center gap-2 bg-brand text-brand-fg font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20 text-base"
+              >
+                Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/example-report"
+                className="inline-flex items-center justify-center gap-2 bg-card text-ink font-semibold px-7 py-3.5 rounded-xl border border-line hover:bg-surface-3 transition-colors text-base"
+              >
+                See a Sample Report
+              </Link>
+            </div>
 
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs text-slate-400">
-            <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Your document is private and never stored</span>
-            <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renter protection across Canada</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs text-subtle">
+              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Private &amp; never stored</span>
+              <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters across Canada</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
+            </div>
           </div>
         </section>
 

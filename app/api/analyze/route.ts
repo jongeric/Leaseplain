@@ -3,7 +3,7 @@ import { randomUUID } from "crypto";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { analyzeLeaseWithClaude, analyzeLeaseWithClaudePDF } from "@/lib/claude";
 import { analyzeLeaseRuleBased } from "@/lib/ruleBasedAnalysis";
-import { saveAnalysis, isUserPro } from "@/lib/db";
+import { saveAnalysis } from "@/lib/db";
 import { uploadPDF } from "@/lib/r2";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { getSessionCookie } from "better-auth/cookies";
@@ -74,9 +74,9 @@ async function handlePOST(req: NextRequest): Promise<NextResponse> {
     "| key prefix:", anthropicApiKey?.slice(0, 7) ?? "n/a",
   );
 
-  // ── 2. Session / pro status ─────────────────────────────────────────────────
+  // ── 2. Session ──────────────────────────────────────────────────────────────
+  // LeasePlain is free — every analysis is saved and returned in full.
   const userId = await getUserIdFromSession(req, d1) ?? undefined;
-  const isPro = userId ? await isUserPro(userId) : false;
 
   // ── 3. Parse form data ──────────────────────────────────────────────────────
   let formData: FormData;
@@ -126,7 +126,7 @@ async function handlePOST(req: NextRequest): Promise<NextResponse> {
     }
 
     try {
-      await saveAnalysis({ id, createdAt, userId, rawText: leaseText, teaser: !isPro, ...analysisData });
+      await saveAnalysis({ id, createdAt, userId, rawText: leaseText, teaser: false, ...analysisData });
     } catch (err) {
       console.error("[analyze] saveAnalysis error (text):", err);
       // non-fatal — analysis was successful, just not persisted
@@ -224,7 +224,7 @@ async function handlePOST(req: NextRequest): Promise<NextResponse> {
     }
 
     try {
-      await saveAnalysis({ id, createdAt, filename, pdfKey, userId, teaser: !isPro, ...analysisData });
+      await saveAnalysis({ id, createdAt, filename, pdfKey, userId, teaser: false, ...analysisData });
     } catch (err) {
       console.error("[analyze] saveAnalysis error (PDF):", err);
       // non-fatal
@@ -234,7 +234,7 @@ async function handlePOST(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: "Please provide lease text or a PDF file." }, { status: 400 });
   }
 
-  return NextResponse.json({ id, teaser: !isPro, usedRealAnalysis, ruleBasedFallback, analysis: analysisData });
+  return NextResponse.json({ id, teaser: false, usedRealAnalysis, ruleBasedFallback, analysis: analysisData });
 }
 
 export async function POST(req: NextRequest) {

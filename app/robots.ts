@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/dashboard", "/billing", "/analysis/", "/embed/"],
+      disallow: ["/api/", "/dashboard", "/analysis/", "/embed/"],
     },
     sitemap: "https://leaseplain.com/sitemap.xml",
   };

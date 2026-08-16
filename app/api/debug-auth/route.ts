@@ -97,10 +97,10 @@ export async function GET(req: NextRequest) {
     try {
       await d1
         .prepare(
-          `INSERT INTO user (id, name, email, emailVerified, createdAt, updatedAt, plan)
-           VALUES (?, ?, ?, ?, ?, ?, ?)`
+          `INSERT INTO user (id, name, email, emailVerified, createdAt, updatedAt)
+           VALUES (?, ?, ?, ?, ?, ?)`
         )
-        .bind(id, "Debug Probe", `${id}@debug.local`, 0, now, now, "free")
+        .bind(id, "Debug Probe", `${id}@debug.local`, 0, now, now)
         .run();
       result.test_insert_ok = true;
       await d1.prepare("DELETE FROM user WHERE id = ?").bind(id).run();

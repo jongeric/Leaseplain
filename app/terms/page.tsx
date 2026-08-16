@@ -97,20 +97,15 @@ export default function TermsPage() {
                 <li>Attempt to reverse engineer, scrape, or copy the service</li>
                 <li>Use automated tools to generate bulk analyses without written permission</li>
                 <li>Misrepresent our analysis as legal advice</li>
-                <li>Attempt to circumvent any payment or access restriction</li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-slate-900 mb-3">6. Subscriptions and Billing</h2>
-              <p className="mb-3">
-                Paid subscriptions are billed monthly. You may cancel at any time through your
-                billing settings. Cancellation takes effect at the end of the current billing period —
-                no refunds are issued for partial months.
-              </p>
+              <h2 className="text-xl font-bold text-slate-900 mb-3">6. Cost</h2>
               <p>
-                We reserve the right to change pricing with 30 days advance notice to subscribers.
-                Continued use after a price change constitutes acceptance of the new pricing.
+                LeasePlain is provided free of charge. There are no paid plans, subscriptions, or
+                fees to use the service. We may introduce optional paid features in the future; if we
+                do, they will be clearly identified and never applied retroactively to free use.
               </p>
             </div>
 

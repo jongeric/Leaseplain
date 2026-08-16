@@ -42,20 +42,6 @@ export function createAuth(d1?: any, overrides?: { secret?: string }) {
         maxAge: 60 * 5,
       },
     },
-    user: {
-      additionalFields: {
-        plan: {
-          type: "string" as const,
-          defaultValue: "free",
-          input: false,
-        },
-        stripeCustomerId: {
-          type: "string" as const,
-          required: false,
-          input: false,
-        },
-      },
-    },
   };
 
   if (d1) {

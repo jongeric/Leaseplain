@@ -66,7 +66,6 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>To provide the lease analysis service</li>
                 <li>To maintain your account and report history</li>
-                <li>To process billing and subscription management (via Stripe)</li>
                 <li>To improve our product through aggregated, anonymized usage data</li>
                 <li>To respond to support requests</li>
               </ul>
@@ -92,7 +91,6 @@ export default function PrivacyPage() {
               <p className="mb-3">We use the following third-party services:</p>
               <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li><strong>Anthropic (Claude API):</strong> Our AI analysis is powered by Anthropic's API. Lease content processed through the API is subject to Anthropic's data handling policies. We use the API in a manner that does not permit Anthropic to retain or train on your data.</li>
-                <li><strong>Stripe:</strong> Payment processing. We do not store credit card information. Stripe is PCI-DSS compliant.</li>
                 <li><strong>Google Tag Manager / Analytics:</strong> Aggregated, anonymized traffic and usage analytics.</li>
               </ul>
             </div>

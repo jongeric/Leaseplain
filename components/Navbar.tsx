@@ -9,6 +9,7 @@ import {
 import { useSession, signOut } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import SiteSearch from "@/components/SiteSearch";
 
 // ─── Navigation data ────────────────────────────────────────────────────────
 
@@ -752,6 +753,7 @@ export default function Navbar() {
 
         {/* Desktop right */}
         <div className="hidden xl:flex items-center gap-3">
+          <SiteSearch variant="bar" />
           <ThemeToggle />
           {user ? (
             <>
@@ -791,6 +793,7 @@ export default function Navbar() {
 
         {/* Mobile controls */}
         <div className="xl:hidden flex items-center gap-1">
+          <SiteSearch variant="icon" />
           <ThemeToggle />
           <button
           type="button"

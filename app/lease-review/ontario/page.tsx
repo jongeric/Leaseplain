@@ -42,7 +42,7 @@ const faqItems = [
   { q: "How does an Ontario lease review work?", a: "Upload your lease as a PDF or paste the text. LeasePlain reads every clause, compares it against the Residential Tenancies Act, 2006, and returns a plain-English report with a risk score, flagged clauses, and suggested questions for your landlord." },
   { q: "Can a lease review tell me if my Ontario lease is legal?", a: "LeasePlain flags clauses that appear to conflict with the RTA or fall outside what's typical for Ontario leases. It is an informational tool, not legal advice — for a binding legal opinion, consult a tenant duty counsel or paralegal." },
   { q: "Is my lease document kept private?", a: "Yes. Your lease is processed in real time and never stored on our servers." },
-  { q: "How much does an Ontario lease review cost?", a: "A basic lease summary and risk indicators are free. Full risk assessment, illegal clause detection, and negotiation suggestions are available on paid plans — see /pricing for details." },
+  { q: "How much does an Ontario lease review cost?", a: "A basic lease summary and risk indicators are free. The full risk assessment, illegal clause detection, and negotiation suggestions are all free too — LeasePlain is completely free, with no paywall." },
   { q: "What's the difference between this and asking ChatGPT to review my lease?", a: "LeasePlain is built specifically around Ontario tenancy law and produces a structured risk score and clause-by-clause flags, rather than a general-purpose explanation." },
 ];
 
@@ -154,7 +154,7 @@ export default function OntarioLeaseReviewPage() {
                 <div className="bg-blue-600 rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">See your lease risk score</h3>
                   <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                    Free summary and basic risk indicators. Upgrade for full RTA compliance checks and negotiation suggestions.
+                    Full RTA compliance checks, risk indicators, and negotiation suggestions — all free.
                   </p>
                   <Link
                     href="/upload"

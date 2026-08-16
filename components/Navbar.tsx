@@ -722,12 +722,12 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/pricing"
+            href="/partners"
             className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              pathname === "/pricing" ? "text-blue-600" : "text-slate-600"
+              pathname === "/partners" ? "text-blue-600" : "text-slate-600"
             }`}
           >
-            Pricing
+            Partners
           </Link>
 
           <Link
@@ -825,8 +825,8 @@ export default function Navbar() {
               Blog
             </Link>
 
-            <Link href="/pricing" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
-              Pricing
+            <Link href="/partners" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">
+              Partners
             </Link>
 
             <Link href="/contact" onClick={closeMobile} className="py-2.5 px-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50">

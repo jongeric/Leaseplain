@@ -43,7 +43,7 @@ const faqItems = [
   { q: "Can a lease review catch hidden condo fees in my Toronto lease?", a: "Yes. LeasePlain looks for parking, locker, key fob, and amenity charges bundled into your lease and flags whether they're itemized clearly and consistent with what's enforceable under the RTA." },
   { q: "Is rent control different for Toronto condos?", a: "It can be. Condo units first occupied on or after November 15, 2018 are exempt from Ontario's rent-increase guideline. LeasePlain checks your lease's occupancy date language to flag whether your unit is rent-controlled or not." },
   { q: "Why are LTB hearing backlogs relevant to my lease review?", a: "Toronto's Landlord and Tenant Board has faced significant hearing delays in recent years. Knowing your lease is RTA-compliant before you sign reduces the chance you'll ever need to rely on a slow-moving LTB process to fix a problem." },
-  { q: "How much does a Toronto lease review cost?", a: "A basic lease summary and risk indicators are free. Full risk assessment, illegal clause detection, and negotiation suggestions are available on paid plans — see /pricing for details." },
+  { q: "How much does a Toronto lease review cost?", a: "A basic lease summary and risk indicators are free. The full risk assessment, illegal clause detection, and negotiation suggestions are all free too — LeasePlain is completely free, with no paywall." },
 ];
 
 const speakableSchema = {
@@ -170,7 +170,7 @@ export default function TorontoLeaseReviewPage() {
                 <div className="bg-blue-600 rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">See your lease risk score</h3>
                   <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                    Free summary and basic risk indicators. Upgrade for full RTA compliance checks and negotiation suggestions.
+                    Full RTA compliance checks, risk indicators, and negotiation suggestions — all free.
                   </p>
                   <Link
                     href="/upload"

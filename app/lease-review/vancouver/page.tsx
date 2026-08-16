@@ -43,7 +43,7 @@ const faqItems = [
   { q: "What is the maximum security deposit a Vancouver landlord can charge?", a: "Under BC's Residential Tenancy Act, a security deposit cannot exceed half a month's rent. A separate pet damage deposit of up to half a month's rent is also allowed, but the two together cannot be used to get around the cap." },
   { q: "What is BC's rent increase cap for 2026?", a: "The allowable annual rent increase for 2026 is 2.3%, down from 3% in 2025. Landlords must give at least 3 months' written notice on the approved RTB form before any increase takes effect." },
   { q: "Can a Vancouver landlord evict me with a Four Month Notice for renovations?", a: "Yes. A landlord can issue a Four Month Notice to End Tenancy for major renovations or demolition that require a permit and vacant possession. Tenants generally have a right of first refusal to return to the unit at the same rent once the work is complete." },
-  { q: "How much does a Vancouver lease review cost?", a: "A basic lease summary and risk indicators are free. Full risk assessment, illegal clause detection, and negotiation suggestions are available on paid plans — see /pricing for details." },
+  { q: "How much does a Vancouver lease review cost?", a: "A basic lease summary and risk indicators are free. The full risk assessment, illegal clause detection, and negotiation suggestions are all free too — LeasePlain is completely free, with no paywall." },
 ];
 
 const speakableSchema = {
@@ -172,7 +172,7 @@ export default function VancouverLeaseReviewPage() {
                 <div className="bg-blue-600 rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">See your lease risk score</h3>
                   <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                    Free summary and basic risk indicators. Upgrade for full RTA compliance checks and negotiation suggestions.
+                    Full RTA compliance checks, risk indicators, and negotiation suggestions — all free.
                   </p>
                   <Link
                     href="/upload"

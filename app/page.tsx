@@ -121,7 +121,7 @@ const faqs = [
   },
   {
     q: "How much does LeasePlain cost?",
-    a: "LeasePlain offers a free analysis for first-time users. Pro and Team plans are available for agents, property managers, and frequent renters who need unlimited analyses and advanced features.",
+    a: "LeasePlain is completely free. You can analyze your lease, use every tool, generate letters, and read every guide at no cost — no account required and no paywall.",
   },
 ];
 
@@ -703,7 +703,7 @@ export default function HomePage() {
         {/* ── FINAL CTA ────────────────────────────────────────────────────── */}
         <section className="py-24 px-4 bg-gradient-to-br from-indigo-600 to-indigo-800">
           <div className="max-w-2xl mx-auto text-center">
-            <p className="text-indigo-300 text-sm font-medium mb-3">Takes less than 30 seconds · Free to start</p>
+            <p className="text-indigo-300 text-sm font-medium mb-3">Takes less than 30 seconds · 100% free</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Don&apos;t Sign Until You Know What&apos;s Hiding in the Fine Print
             </h2>
@@ -714,8 +714,8 @@ export default function HomePage() {
               <Link href="/upload" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-colors shadow-sm text-base">
                 See My Lease Risk Score <ChevronRight className="w-4 h-4" />
               </Link>
-              <Link href="/pricing" className="inline-flex items-center justify-center gap-2 bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl border border-indigo-500 hover:bg-indigo-600 transition-colors text-base">
-                View Pricing
+              <Link href="/tools" className="inline-flex items-center justify-center gap-2 bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl border border-indigo-500 hover:bg-indigo-600 transition-colors text-base">
+                Explore Free Tools
               </Link>
             </div>
             <p className="mt-5 text-indigo-300 text-xs">

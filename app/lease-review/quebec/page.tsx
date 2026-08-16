@@ -43,7 +43,7 @@ const faqItems = [
   { q: "Can my landlord ask for a security deposit in Quebec?", a: "No. Under article 1904 of the Civil Code of Quebec, landlords are prohibited from collecting a security deposit, damage deposit, or key deposit of any kind. If your lease includes a deposit clause, LeasePlain will flag it as likely unenforceable." },
   { q: "Can I sublet or assign my Quebec lease?", a: "Generally yes. Quebec tenants have a right to assign their lease or sublet, and a landlord cannot unreasonably refuse — though the landlord can refuse for serious reasons and may have a right of first refusal in certain assignment situations. LeasePlain checks your lease's assignment and subletting clauses against these rules." },
   { q: "What if my landlord and I disagree about a rent increase?", a: "Quebec does not impose a hard rent cap, but it does give tenants the right to refuse a proposed rent increase. If you refuse, the landlord must apply to the Tribunal administratif du logement (TAL) to have the increase authorized, where it is assessed using an annual calculation guide based on the building's actual costs." },
-  { q: "How much does a Quebec lease review cost?", a: "A basic lease summary and risk indicators are free. Full risk assessment, illegal clause detection, and negotiation suggestions are available on paid plans — see /pricing for details." },
+  { q: "How much does a Quebec lease review cost?", a: "A basic lease summary and risk indicators are free. The full risk assessment, illegal clause detection, and negotiation suggestions are all free too — LeasePlain is completely free, with no paywall." },
 ];
 
 const speakableSchema = {
@@ -155,7 +155,7 @@ export default function QuebecLeaseReviewPage() {
                 <div className="bg-blue-600 rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">See your lease risk score</h3>
                   <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                    Free summary and basic risk indicators. Upgrade for full Civil Code compliance checks and negotiation suggestions.
+                    Full Civil Code compliance checks, risk indicators, and negotiation suggestions — all free.
                   </p>
                   <Link
                     href="/upload"

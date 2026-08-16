@@ -8,7 +8,6 @@ const FOOTER_COLUMNS = [
       { label: "Upload Lease", href: "/upload" },
       { label: "Example Report", href: "/example-report" },
       { label: "How It Works", href: "/how-it-works" },
-      { label: "Pricing", href: "/pricing" },
       { label: "Letter Templates", href: "/letters" },
       { label: "Embed Our Tools", href: "/widgets" },
       { label: "Partner With Us", href: "/partners" },

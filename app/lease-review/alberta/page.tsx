@@ -43,7 +43,7 @@ const faqItems = [
   { q: "Does Alberta have rent control?", a: "No. Alberta has no provincial rent control — a landlord can raise rent by any amount. The only protections are a minimum 3-full-months written notice period and a limit of one increase per 365-day period per tenant. LeasePlain checks that any rent increase clause in your lease respects these notice and frequency rules." },
   { q: "Can a lease review tell me if my Alberta lease is legal?", a: "LeasePlain flags clauses that appear to conflict with the Residential Tenancies Act or fall outside what's typical for Alberta leases — such as a security deposit over one month's rent. It is an informational tool, not legal advice — for a binding legal opinion, consult a tenant advocacy service or lawyer." },
   { q: "What if my landlord and I end up in a dispute?", a: "Alberta disputes are handled by the Residential Tenancy Dispute Resolution Service (RTDRS), which hears claims up to $100,000. Filing fees are $75 for claims up to $7,500 and $100 for claims above that. LeasePlain's review highlights clauses likely to cause disputes so you can address them before signing." },
-  { q: "How much does an Alberta lease review cost?", a: "A basic lease summary and risk indicators are free. Full risk assessment, illegal clause detection, and negotiation suggestions are available on paid plans — see /pricing for details." },
+  { q: "How much does an Alberta lease review cost?", a: "A basic lease summary and risk indicators are free. The full risk assessment, illegal clause detection, and negotiation suggestions are all free too — LeasePlain is completely free, with no paywall." },
 ];
 
 const speakableSchema = {
@@ -155,7 +155,7 @@ export default function AlbertaLeaseReviewPage() {
                 <div className="bg-blue-600 rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2">See your lease risk score</h3>
                   <p className="text-blue-100 text-sm mb-5 leading-relaxed">
-                    Free summary and basic risk indicators. Upgrade for full RTA compliance checks and negotiation suggestions.
+                    Full RTA compliance checks, risk indicators, and negotiation suggestions — all free.
                   </p>
                   <Link
                     href="/upload"

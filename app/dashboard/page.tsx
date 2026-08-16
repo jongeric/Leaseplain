@@ -9,7 +9,7 @@ import { listAnalysesByUser } from "@/lib/db";
 import { MOCK_ANALYSIS } from "@/lib/mockAnalysis";
 import { LeaseAnalysis } from "@/lib/types";
 import {
-  FileText, Plus, Clock, AlertTriangle, CheckCircle, CreditCard,
+  FileText, Plus, Clock, AlertTriangle, CheckCircle,
 } from "lucide-react";
 
 export default async function DashboardPage() {
@@ -26,7 +26,6 @@ export default async function DashboardPage() {
 
   const redFlagTotal = analyses.reduce((sum, a) => sum + a.redFlags.length, 0);
   const cleanCount = analyses.filter((a) => a.redFlags.length === 0).length;
-  const plan = (session.user as { plan?: string }).plan ?? "free";
 
   return (
     <div className="flex flex-col min-h-full">
@@ -53,22 +52,10 @@ export default async function DashboardPage() {
 
           <DisclaimerBanner />
 
-          {/* Plan badge */}
-          <div className="mt-4 mb-6 flex items-center justify-between bg-white border border-slate-100 rounded-xl px-4 py-3 shadow-sm">
-            <div className="flex items-center gap-2 text-sm text-slate-600">
-              <span className="font-medium text-slate-900 capitalize">{plan} Plan</span>
-              {plan === "free" && (
-                <span className="text-slate-400">· 1 analysis/month</span>
-              )}
-            </div>
-            {plan === "free" && (
-              <Link
-                href="/pricing"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:underline"
-              >
-                <CreditCard className="w-3.5 h-3.5" /> Upgrade to Pro
-              </Link>
-            )}
+          {/* Everything is free */}
+          <div className="mt-4 mb-6 flex items-center gap-2 bg-white border border-slate-100 rounded-xl px-4 py-3 shadow-sm text-sm text-slate-600">
+            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" aria-hidden="true" />
+            <span><span className="font-medium text-slate-900">All features free</span> · unlimited analyses, full reports</span>
           </div>
 
           {/* Mock data notice */}

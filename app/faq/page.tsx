@@ -95,16 +95,16 @@ const faqs = [
     category: "Billing & Account",
     questions: [
       {
-        q: "What does the free plan include?",
-        a: "The free plan includes one lease analysis per month. You get a full report including plain-English summary, financial terms, and red flags.",
+        q: "How much does LeasePlain cost?",
+        a: "Nothing — LeasePlain is completely free. Every lease analysis includes the full report with all sections, and there's no limit on how many leases you can analyze.",
       },
       {
-        q: "What does Pro include?",
-        a: "Pro ($9/month) includes unlimited lease analyses, full reports with all six sections, analysis history, priority processing, and email support.",
+        q: "Is there a paid plan or premium tier?",
+        a: "No. There's no paywall and no premium tier. All tools, letter generators, checklists, and guides are free for everyone.",
       },
       {
-        q: "Can I cancel my subscription?",
-        a: "Yes, you can cancel anytime from your billing settings. Your access continues until the end of your current billing period.",
+        q: "Do I need an account or credit card?",
+        a: "No account or payment is required to analyze a lease. You can create a free account if you'd like to save your analysis history, but it's optional.",
       },
     ],
   },

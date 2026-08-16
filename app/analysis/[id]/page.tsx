@@ -6,7 +6,7 @@ import DisclaimerBanner from "@/components/DisclaimerBanner";
 import AnalysisContent from "./AnalysisContent";
 import ShareButton from "./ShareButton";
 import { getAnalysisById } from "@/lib/db";
-import { FileText, ArrowLeft, Lock } from "lucide-react";
+import { FileText, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Lease Analysis Report | LeasePlain",
@@ -16,17 +16,15 @@ export const metadata: Metadata = {
 
 export default async function AnalysisPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ teaser?: string }>;
 }) {
   const { id } = await params;
-  const { teaser: teaserParam } = await searchParams;
 
-  // Try to get metadata from D1 (filename, createdAt, teaser flag)
+  // Try to get metadata from D1 (filename, createdAt)
   const fromDB = await getAnalysisById(id);
-  const isTeaser = teaserParam === "1" || fromDB?.teaser === true || (!fromDB && teaserParam !== "0");
+  // LeasePlain is free — every analysis is shown in full, no paywall.
+  const isTeaser = false;
 
   const filename = fromDB?.filename;
   const createdAt = fromDB?.createdAt ?? new Date().toISOString();
@@ -64,17 +62,6 @@ export default async function AnalysisPage({
                 </p>
               </div>
             </div>
-
-            {isTeaser && (
-              <div className="mt-4 flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-xl px-4 py-3 text-sm text-blue-800">
-                <Lock className="w-4 h-4 flex-shrink-0" />
-                <span>
-                  You&apos;re viewing a <strong>free preview</strong>.{" "}
-                  <Link href="/pricing" className="underline font-semibold">Upgrade to Pro</Link>{" "}
-                  to unlock financial terms, red flags, unclear clauses, and negotiation tips.
-                </span>
-              </div>
-            )}
           </div>
 
           <DisclaimerBanner />
@@ -85,15 +72,9 @@ export default async function AnalysisPage({
 
           {/* Actions */}
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            {isTeaser ? (
-              <Link href="/pricing" className="flex-1 text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm">
-                Upgrade to Pro for Full Analysis
-              </Link>
-            ) : (
-              <Link href="/upload" className="flex-1 text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm">
-                Analyze Another Lease
-              </Link>
-            )}
+            <Link href="/upload" className="flex-1 text-center bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition-colors text-sm">
+              Analyze Another Lease
+            </Link>
             <ShareButton id={id} />
             <Link href="/dashboard" className="flex-1 text-center bg-white border border-slate-200 text-slate-700 font-semibold py-3 rounded-xl hover:bg-slate-50 transition-colors text-sm">
               Back to Dashboard

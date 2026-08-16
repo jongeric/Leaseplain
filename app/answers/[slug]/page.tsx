@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import ReviewedByline from "@/components/ReviewedByline";
 import { ChevronRight } from "lucide-react";
 import { ANSWERS, getAnswer } from "@/lib/answers";
 
@@ -101,6 +102,10 @@ export default async function AnswerPage({
               {/* Featured short answer */}
               <div className="rounded-2xl border-l-4 border-indigo-500 bg-indigo-50/50 p-6 mb-8">
                 <p className="text-lg text-slate-800 leading-relaxed speakable-summary font-medium">{a.shortAnswer}</p>
+              </div>
+
+              <div className="mb-8">
+                <ReviewedByline updated="August 2026" />
               </div>
 
               <div className="space-y-4 mb-10">

@@ -137,7 +137,7 @@ export default function ToolsPage() {
       <Navbar />
 
       <main>
-        <section className="bg-slate-50 border-b border-slate-100 py-16 px-4">
+        <section className="bg-surface-2 border-b border-line py-16 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 text-xs font-semibold text-blue-700 mb-4">
               <Link href="/" className="hover:underline">Home</Link>
@@ -156,10 +156,10 @@ export default function ToolsPage() {
               type="application/ld+json"
               dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema).replace(/</g, "\\u003c") }}
             />
-            <h1 className="text-4xl font-bold text-slate-900 mb-4 leading-tight">
+            <h1 className="text-4xl font-bold text-ink mb-4 leading-tight">
               Free Tools for Canadian Renters
             </h1>
-            <p className="speakable-summary text-lg text-slate-600 max-w-2xl leading-relaxed">
+            <p className="speakable-summary text-lg text-muted max-w-2xl leading-relaxed">
               9 free calculators and reference tools covering rent increases, notice periods, lease
               breaks, eviction notices, deposits, and more. No sign-up required.
             </p>
@@ -170,21 +170,21 @@ export default function ToolsPage() {
           <div className="max-w-5xl mx-auto">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {tools.map(({ href, icon: Icon, color, title, description }) => {
-                const c = colorMap[color] ?? { bg: "bg-slate-50", text: "text-slate-600" };
+                const c = colorMap[color] ?? { bg: "bg-surface-2", text: "text-muted" };
                 return (
                   <Link
                     key={href}
                     href={href}
-                    className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 flex flex-col gap-3 hover:border-blue-200 hover:shadow-md transition-all group"
+                    className="bg-white rounded-2xl border border-line shadow-sm p-6 flex flex-col gap-3 hover:border-blue-200 hover:shadow-md transition-all group"
                   >
                     <div className={`w-11 h-11 rounded-xl ${c.bg} flex items-center justify-center flex-shrink-0`}>
                       <Icon className={`w-5 h-5 ${c.text}`} aria-hidden="true" />
                     </div>
                     <div>
-                      <h2 className="font-bold text-slate-900 mb-1.5 group-hover:text-blue-700 transition-colors leading-snug">
+                      <h2 className="font-bold text-ink mb-1.5 group-hover:text-blue-700 transition-colors leading-snug">
                         {title}
                       </h2>
-                      <p className="text-sm text-slate-500 leading-relaxed">{description}</p>
+                      <p className="text-sm text-muted leading-relaxed">{description}</p>
                     </div>
                     <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-blue-600">
                       Open tool

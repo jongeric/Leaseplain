@@ -268,24 +268,24 @@ export default function HomePage() {
         </section>
 
         {/* ── SOCIAL PROOF STRIP ───────────────────────────────────────────── */}
-        <section className="py-5 px-4 bg-slate-50 border-b border-slate-100">
-          <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-0 gap-y-3 divide-x divide-slate-200">
+        <section className="py-5 px-4 bg-surface-2 border-b border-line">
+          <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-0 gap-y-3 divide-x divide-line">
             {[
               { icon: MapPin, stat: "All 10", label: "Canadian provinces covered" },
               { icon: Lock, stat: "Private", label: "your document is never stored" },
               { icon: Clock, stat: "Under 30s", label: "to a full risk breakdown" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2 px-6 first:pl-0 last:pr-0">
-                <item.icon className="w-4 h-4 text-indigo-500 shrink-0" aria-hidden="true" />
-                <span className="text-slate-800 text-xs font-semibold">{item.stat}</span>
-                <span className="text-slate-500 text-xs">{item.label}</span>
+                <item.icon className="w-4 h-4 text-brand shrink-0" aria-hidden="true" />
+                <span className="text-ink text-xs font-semibold">{item.stat}</span>
+                <span className="text-muted text-xs">{item.label}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── TRUST STRIP ──────────────────────────────────────────────────── */}
-        <section className="py-8 px-4 bg-white border-y border-slate-100">
+        <section className="py-8 px-4 bg-white border-y border-line">
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-4">
             {[
               { icon: ShieldCheck, label: "Private & secure — document never stored" },
@@ -293,8 +293,8 @@ export default function HomePage() {
               { icon: Eye, label: "Plain English, zero legal jargon" },
               { icon: MapPin, label: "Checked against province-specific tenancy rules" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-slate-500 text-sm">
-                <item.icon className="w-4 h-4 text-indigo-500 shrink-0" />
+              <div key={item.label} className="flex items-center gap-2 text-muted text-sm">
+                <item.icon className="w-4 h-4 text-brand shrink-0" />
                 <span>{item.label}</span>
               </div>
             ))}
@@ -304,18 +304,18 @@ export default function HomePage() {
         {/* ── RISK DETECTION ───────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="risk-detection">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Built to Catch What You&apos;d Miss</h2>
-            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Built to Catch What You&apos;d Miss</h2>
+            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
               LeasePlain doesn&apos;t just summarize your lease — it actively looks for the things that cost renters money and rights.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {riskCategories.map((r) => (
-                <div key={r.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
-                    <r.icon className="w-5 h-5 text-indigo-600" />
+                <div key={r.title} className="bg-surface-2 rounded-2xl p-6 border border-line">
+                  <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">
+                    <r.icon className="w-5 h-5 text-brand" />
                   </div>
-                  <h3 className="font-semibold text-slate-900 mb-2 text-sm">{r.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{r.desc}</p>
+                  <h3 className="font-semibold text-ink mb-2 text-sm">{r.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{r.desc}</p>
                 </div>
               ))}
             </div>
@@ -325,23 +325,23 @@ export default function HomePage() {
         {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="how-it-works">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">How It Works</h2>
-            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">How It Works</h2>
+            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
               Three steps between you and a lease you actually understand. Takes less than 30 seconds.
             </p>
             <div className="grid md:grid-cols-3 gap-10">
               {howToSteps.map((item) => (
                 <div key={item.step} className="flex flex-col items-center text-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-indigo-600 text-white font-bold text-xl flex items-center justify-center shadow-md">
+                  <div className="w-14 h-14 rounded-full bg-brand text-brand-fg font-bold text-xl flex items-center justify-center shadow-md">
                     {item.step}
                   </div>
-                  <h3 className="font-semibold text-slate-900 text-lg">{item.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="font-semibold text-ink text-lg">{item.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <Link href="/upload" className="inline-flex items-center gap-2 bg-indigo-600 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-indigo-700 transition-colors shadow-sm">
+              <Link href="/upload" className="inline-flex items-center gap-2 bg-brand text-brand-fg font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-hover transition-colors shadow-sm">
                 Analyze My Lease <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -349,22 +349,22 @@ export default function HomePage() {
         </section>
 
         {/* ── WHAT WE ANALYZE ──────────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-slate-50" id="features">
+        <section className="py-20 px-4 bg-surface-2" id="features">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">What We Analyze</h2>
-            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">What We Analyze</h2>
+            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
               A structured report covering every section of your residential lease agreement — explained in plain English.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {analyzeFeatures.map((f) => (
-                <div key={f.title} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center mb-4">
-                    <f.icon className="w-5 h-5 text-indigo-600" />
+                <div key={f.title} className="bg-white rounded-2xl p-6 border border-line shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">
+                    <f.icon className="w-5 h-5 text-brand" />
                   </div>
-                  <h3 className="font-semibold text-slate-900 mb-3">{f.title}</h3>
+                  <h3 className="font-semibold text-ink mb-3">{f.title}</h3>
                   <ul className="space-y-1.5">
                     {f.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-slate-500 text-sm">
+                      <li key={b} className="flex items-start gap-2 text-muted text-sm">
                         <CheckCircle className="w-3.5 h-3.5 text-indigo-400 mt-0.5 shrink-0" />
                         {b}
                       </li>
@@ -379,8 +379,8 @@ export default function HomePage() {
         {/* ── PROVINCE-SPECIFIC PROTECTION ─────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="provinces">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Province-Specific Protection</h2>
-            <p className="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Province-Specific Protection</h2>
+            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
               Tenancy law varies significantly across Canada. LeasePlain checks your lease against the rules that actually apply to you.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -388,18 +388,18 @@ export default function HomePage() {
                 <Link
                   key={p.href}
                   href={p.href}
-                  className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all"
+                  className="bg-white rounded-2xl p-6 border border-line shadow-sm hover:shadow-md hover:border-indigo-200 transition-all"
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <MapPin className="w-4 h-4 text-indigo-500" />
-                    <h3 className="font-semibold text-slate-900 text-sm">{p.province}</h3>
+                    <MapPin className="w-4 h-4 text-brand" />
+                    <h3 className="font-semibold text-ink text-sm">{p.province}</h3>
                   </div>
-                  <p className="text-slate-500 text-xs leading-relaxed">{p.note}</p>
+                  <p className="text-muted text-xs leading-relaxed">{p.note}</p>
                 </Link>
               ))}
             </div>
-            <p className="text-center mt-8 text-slate-500 text-sm">
-              <Link href="/canada" className="text-indigo-600 font-semibold hover:underline">
+            <p className="text-center mt-8 text-muted text-sm">
+              <Link href="/canada" className="text-brand font-semibold hover:underline">
                 See protection details for all 10 provinces →
               </Link>
             </p>
@@ -407,31 +407,31 @@ export default function HomePage() {
         </section>
 
         {/* ── WHY LEASEPLAIN VS CHATGPT ────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-slate-50" id="comparison">
+        <section className="py-20 px-4 bg-surface-2" id="comparison">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Why Not Just Use ChatGPT?</h2>
-            <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Why Not Just Use ChatGPT?</h2>
+            <p className="text-muted text-center mb-10 max-w-xl mx-auto">
               Generic AI can explain language. LeasePlain is built specifically to protect tenants.
             </p>
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-2xl border border-line shadow-sm overflow-hidden">
               <table className="w-full text-sm">
                 <caption className="sr-only">Comparison of LeasePlain and generic AI chatbots for lease review</caption>
                 <thead>
-                  <tr className="border-b border-slate-100 bg-slate-50">
-                    <th scope="col" className="text-left px-6 py-3 font-semibold text-slate-700">Feature</th>
-                    <th scope="col" className="px-4 py-3 font-semibold text-indigo-600 text-center">LeasePlain</th>
-                    <th scope="col" className="px-4 py-3 font-semibold text-slate-500 text-center">Generic AI</th>
+                  <tr className="border-b border-line bg-surface-2">
+                    <th scope="col" className="text-left px-6 py-3 font-semibold text-muted">Feature</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-brand text-center">LeasePlain</th>
+                    <th scope="col" className="px-4 py-3 font-semibold text-muted text-center">Generic AI</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonRows.map((row) => (
                     <tr key={row.feature} className="border-b border-slate-50 last:border-0">
-                      <td className="px-6 py-3.5 text-slate-700">{row.feature}</td>
+                      <td className="px-6 py-3.5 text-muted">{row.feature}</td>
                       <td className="px-4 py-3.5 text-center">
-                        {row.leaseplain ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
+                        {row.leaseplain ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-subtle mx-auto" />}
                       </td>
                       <td className="px-4 py-3.5 text-center">
-                        {row.generic ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-slate-300 mx-auto" />}
+                        {row.generic ? <CheckCircle className="w-4 h-4 text-green-500 mx-auto" /> : <XCircle className="w-4 h-4 text-subtle mx-auto" />}
                       </td>
                     </tr>
                   ))}
@@ -445,8 +445,8 @@ export default function HomePage() {
         <section className="py-20 px-4 bg-white" id="red-flags">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900 mb-3">Common Lease Red Flags</h2>
-              <p className="text-slate-500 max-w-xl mx-auto">
+              <h2 className="text-3xl font-bold text-ink mb-3">Common Lease Red Flags</h2>
+              <p className="text-muted max-w-xl mx-auto">
                 These clauses appear in thousands of Canadian leases every year. Most renters sign without noticing them.
               </p>
             </div>
@@ -455,15 +455,15 @@ export default function HomePage() {
                 <div key={r.flag} className="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-xl">
                   <XCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-slate-900 text-sm">{r.flag}</p>
-                    <p className="text-slate-500 text-xs mt-1 leading-relaxed">{r.why}</p>
+                    <p className="font-semibold text-ink text-sm">{r.flag}</p>
+                    <p className="text-muted text-xs mt-1 leading-relaxed">{r.why}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-center mt-8 text-slate-500 text-sm">
+            <p className="text-center mt-8 text-muted text-sm">
               LeasePlain flags all of these automatically.{" "}
-              <Link href="/upload" className="text-indigo-600 font-semibold hover:underline">
+              <Link href="/upload" className="text-brand font-semibold hover:underline">
                 Analyze your lease now →
               </Link>
             </p>
@@ -477,20 +477,20 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-white mb-4">
               Don&apos;t sign until you understand every line.
             </h2>
-            <Link href="/upload" className="inline-flex items-center gap-2 bg-white text-indigo-700 font-semibold px-7 py-3 rounded-xl hover:bg-indigo-50 transition-colors shadow-sm">
+            <Link href="/upload" className="inline-flex items-center gap-2 bg-white text-indigo-700 font-semibold px-7 py-3 rounded-xl hover:bg-brand-soft transition-colors shadow-sm">
               Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
 
         {/* ── INTERACTIVE DEMO ─────────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-slate-50" id="example">
+        <section className="py-20 px-4 bg-surface-2" id="example">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">See It Work on a Real Clause</h2>
-            <p className="text-slate-500 text-center mb-10 max-w-xl mx-auto">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">See It Work on a Real Clause</h2>
+            <p className="text-muted text-center mb-10 max-w-xl mx-auto">
               Original clause in, plain-English risk breakdown out. Here&apos;s a sample from a real Ontario lease.
             </p>
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-2xl border border-line shadow-sm overflow-hidden">
               <div className="bg-indigo-600 px-6 py-4 flex items-center gap-2">
                 <FileText className="w-5 h-5 text-white" />
                 <span className="text-white font-semibold text-sm">Sample Lease Report — 123 Main St, Toronto ON</span>
@@ -518,8 +518,8 @@ export default function HomePage() {
                   <p className="text-blue-700 text-sm">&ldquo;Can we define in writing which repairs I am responsible for, and what the landlord will handle within what timeframe?&rdquo;</p>
                 </div>
               </div>
-              <div className="px-6 py-4 border-t border-slate-100 text-center">
-                <Link href="/upload" className="text-indigo-600 font-semibold text-sm hover:underline">
+              <div className="px-6 py-4 border-t border-line text-center">
+                <Link href="/upload" className="text-brand font-semibold text-sm hover:underline">
                   Get this analysis for your lease →
                 </Link>
               </div>
@@ -528,9 +528,9 @@ export default function HomePage() {
         </section>
 
         {/* ── INTERNAL LINKS ───────────────────────────────────────────────── */}
-        <section className="py-12 px-4 bg-white border-y border-slate-100">
+        <section className="py-12 px-4 bg-white border-y border-line">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-lg font-semibold text-slate-900 mb-6 text-center">Lease Clause Guides</h2>
+            <h2 className="text-lg font-semibold text-ink mb-6 text-center">Lease Clause Guides</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {[
                 { href: "/lease-clause/security-deposit", label: "Security Deposit Clause" },
@@ -545,7 +545,7 @@ export default function HomePage() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex items-center gap-2 px-4 py-3 rounded-lg border border-slate-100 text-slate-600 text-sm hover:border-indigo-200 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-3 rounded-lg border border-line text-muted text-sm hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                   {link.label}
@@ -556,11 +556,11 @@ export default function HomePage() {
         </section>
 
         {/* ── LATEST ARTICLES ──────────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-slate-50" id="blog">
+        <section className="py-20 px-4 bg-surface-2" id="blog">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-slate-900 mb-3">Latest from the Blog</h2>
-              <p className="text-slate-500 max-w-xl mx-auto">
+              <h2 className="text-3xl font-bold text-ink mb-3">Latest from the Blog</h2>
+              <p className="text-muted max-w-xl mx-auto">
                 Guides and resources to help Canadian renters understand their rights, read leases, and navigate rental laws.
               </p>
             </div>
@@ -600,13 +600,13 @@ export default function HomePage() {
                 <Link
                   key={post.href}
                   href={post.href}
-                  className="group bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all flex flex-col gap-3"
+                  className="group bg-white rounded-xl p-6 border border-line shadow-sm hover:shadow-md hover:border-indigo-200 transition-all flex flex-col gap-3"
                 >
-                  <h3 className="font-semibold text-slate-900 text-base leading-snug group-hover:text-indigo-600 transition-colors">
+                  <h3 className="font-semibold text-ink text-base leading-snug group-hover:text-brand transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed flex-1">{post.desc}</p>
-                  <span className="text-indigo-600 text-sm font-semibold flex items-center gap-1 mt-1">
+                  <p className="text-muted text-sm leading-relaxed flex-1">{post.desc}</p>
+                  <span className="text-brand text-sm font-semibold flex items-center gap-1 mt-1">
                     Read <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </span>
                 </Link>
@@ -615,7 +615,7 @@ export default function HomePage() {
             <div className="mt-10 flex justify-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 bg-white text-slate-700 font-semibold px-7 py-3 rounded-xl border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-colors text-sm"
+                className="inline-flex items-center gap-2 bg-white text-muted font-semibold px-7 py-3 rounded-xl border border-line hover:border-indigo-300 hover:text-brand hover:bg-brand-soft transition-colors text-sm"
               >
                 View all articles <ChevronRight className="w-4 h-4" />
               </Link>
@@ -627,9 +627,9 @@ export default function HomePage() {
         <EmailCapture />
 
         {/* ── PRESS & RECOGNITION ──────────────────────────────────────────── */}
-        <section className="py-12 px-4 bg-white border-y border-slate-100">
+        <section className="py-12 px-4 bg-white border-y border-line">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-subtle mb-6">
               Featured In
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-6">
@@ -642,36 +642,36 @@ export default function HomePage() {
               ].map((badge) => (
                 <span
                   key={badge}
-                  className="px-3.5 py-1.5 text-xs font-semibold tracking-wide uppercase rounded-md border border-slate-200 text-slate-400 bg-white"
+                  className="px-3.5 py-1.5 text-xs font-semibold tracking-wide uppercase rounded-md border border-line text-subtle bg-white"
                 >
                   {badge}
                 </span>
               ))}
             </div>
-            <p className="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
+            <p className="text-xs text-subtle max-w-lg mx-auto leading-relaxed">
               LeasePlain has been referenced in tenant communities and housing coverage across Canada.
             </p>
           </div>
         </section>
 
         {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section className="py-20 px-4 bg-slate-50" id="faq">
+        <section className="py-20 px-4 bg-surface-2" id="faq">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Frequently Asked Questions</h2>
-            <p className="text-slate-500 text-center mb-12">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Frequently Asked Questions</h2>
+            <p className="text-muted text-center mb-12">
               Everything you need to know about lease agreements and how LeasePlain works.
             </p>
             <div className="space-y-4">
               {faqs.map((f) => (
                 <details
                   key={f.q}
-                  className="group bg-white border border-slate-100 rounded-xl shadow-sm overflow-hidden"
+                  className="group bg-white border border-line rounded-xl shadow-sm overflow-hidden"
                 >
-                  <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer font-semibold text-slate-900 text-sm list-none">
+                  <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer font-semibold text-ink text-sm list-none">
                     {f.q}
-                    <ChevronRight className="w-4 h-4 text-slate-400 shrink-0 transition-transform group-open:rotate-90" />
+                    <ChevronRight className="w-4 h-4 text-subtle shrink-0 transition-transform group-open:rotate-90" />
                   </summary>
-                  <div className="px-6 pb-5 text-slate-500 text-sm leading-relaxed border-t border-slate-50 pt-3">
+                  <div className="px-6 pb-5 text-muted text-sm leading-relaxed border-t border-slate-50 pt-3">
                     {f.a}
                   </div>
                 </details>
@@ -683,8 +683,8 @@ export default function HomePage() {
         {/* ── TRUST & METHODOLOGY ──────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-3">Built for Privacy, Clarity, and Renter Confidence</h2>
-            <p className="text-slate-500 text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Built for Privacy, Clarity, and Renter Confidence</h2>
+            <p className="text-muted text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
               LeasePlain checks your lease against the tenancy rules of the applicable Canadian province and flags clauses
               that deviate from what&apos;s typical or legally enforceable. Your document is processed in real time and never
               stored after your report is generated.
@@ -695,12 +695,12 @@ export default function HomePage() {
                 { icon: Lock, title: "Your document stays private", body: "Leases are processed to generate your report and are not retained afterward. We don't sell or share uploaded documents." },
                 { icon: ShieldCheck, title: "Not a law firm", body: "LeasePlain provides lease education and risk information for renters. It is not a law firm and does not provide legal advice. For legal decisions or disputes, consult a qualified legal professional or your provincial tenancy authority." },
               ].map((t) => (
-                <div key={t.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
-                    <t.icon className="w-5 h-5 text-indigo-600" />
+                <div key={t.title} className="bg-surface-2 rounded-2xl p-6 border border-line">
+                  <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">
+                    <t.icon className="w-5 h-5 text-brand" />
                   </div>
-                  <p className="font-semibold text-slate-900 text-sm mb-2">{t.title}</p>
-                  <p className="text-slate-500 text-sm leading-relaxed">{t.body}</p>
+                  <p className="font-semibold text-ink text-sm mb-2">{t.title}</p>
+                  <p className="text-muted text-sm leading-relaxed">{t.body}</p>
                 </div>
               ))}
             </div>
@@ -760,7 +760,7 @@ export default function HomePage() {
               Don&apos;t let a confusing clause cost you thousands. See your lease risk score now — no legal knowledge required.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/upload" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-colors shadow-sm text-base">
+              <Link href="/upload" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 font-semibold px-8 py-3.5 rounded-xl hover:bg-brand-soft transition-colors shadow-sm text-base">
                 See My Lease Risk Score <ChevronRight className="w-4 h-4" />
               </Link>
               <Link href="/tools" className="inline-flex items-center justify-center gap-2 bg-indigo-700 text-white font-semibold px-8 py-3.5 rounded-xl border border-indigo-500 hover:bg-indigo-600 transition-colors text-base">

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ChevronRight, Tag, Calendar, Clock } from "lucide-react";
 import ReviewedByline from "@/components/ReviewedByline";
 import TableOfContents from "@/components/TableOfContents";
+import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -112,6 +113,7 @@ export default function LandlordSellingPropertyTenantRightsPage() {
       />
       <div className="flex flex-col min-h-full">
         <Navbar />
+        <ReadingProgress />
 
         <main>
           {/* Hero */}

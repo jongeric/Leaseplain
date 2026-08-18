@@ -587,7 +587,7 @@ export default function Navbar() {
             key={l.href}
             href={l.href}
             onClick={closeMobile}
-            className="py-2 px-2 rounded-md text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+            className="py-2 px-2 rounded-md text-sm text-muted hover:text-ink hover:bg-slate-50"
           >
             {l.label}
           </Link>
@@ -661,7 +661,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+    <header className="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-line">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
         {/* Logo */}
@@ -679,19 +679,11 @@ export default function Navbar() {
         <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-1">
           <Link
             href="/lease-analyzer"
-            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              pathname === "/lease-analyzer" ? "text-blue-600" : "text-slate-600"
+            className={`px-2.5 py-1.5 text-sm font-medium transition-colors hover:text-ink rounded ${
+              pathname === "/lease-analyzer" ? "text-brand" : "text-muted"
             }`}
           >
             Lease Analyzer
-          </Link>
-          <Link
-            href="/how-it-works"
-            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              pathname === "/how-it-works" ? "text-blue-600" : "text-slate-600"
-            }`}
-          >
-            How It Works
           </Link>
 
           <MegaMenu label="Free Tools" isActive={isToolsActive}>
@@ -716,8 +708,8 @@ export default function Navbar() {
 
           <Link
             href="/blog"
-            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              isBlogActive ? "text-blue-600" : "text-slate-600"
+            className={`px-2.5 py-1.5 text-sm font-medium transition-colors hover:text-ink rounded ${
+              isBlogActive ? "text-brand" : "text-muted"
             }`}
           >
             Blog
@@ -725,7 +717,7 @@ export default function Navbar() {
 
           <Link
             href="/for-lawyers"
-            className={`px-2 py-1 text-sm font-semibold transition-colors rounded ${
+            className={`px-2.5 py-1.5 text-sm font-semibold transition-colors rounded ${
               pathname === "/for-lawyers" ? "text-brand" : "text-brand hover:text-brand-hover"
             }`}
           >
@@ -733,18 +725,9 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/partners"
-            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              pathname === "/partners" ? "text-blue-600" : "text-slate-600"
-            }`}
-          >
-            Partners
-          </Link>
-
-          <Link
             href="/contact"
-            className={`px-2 py-1 text-sm font-medium transition-colors hover:text-slate-900 rounded ${
-              pathname === "/contact" ? "text-blue-600" : "text-slate-600"
+            className={`px-2.5 py-1.5 text-sm font-medium transition-colors hover:text-ink rounded ${
+              pathname === "/contact" ? "text-brand" : "text-muted"
             }`}
           >
             Contact
@@ -759,7 +742,7 @@ export default function Navbar() {
             <>
               <Link
                 href="/dashboard"
-                className={`text-sm font-medium flex items-center gap-1.5 transition-colors hover:text-slate-900 ${
+                className={`text-sm font-medium flex items-center gap-1.5 transition-colors hover:text-ink ${
                   pathname === "/dashboard" ? "text-blue-600" : "text-slate-600"
                 }`}
               >
@@ -769,7 +752,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="text-sm font-medium flex items-center gap-1.5 text-slate-600 hover:text-slate-900 transition-colors"
+                className="text-sm font-medium flex items-center gap-1.5 text-muted hover:text-ink transition-colors"
               >
                 <LogOut className="w-4 h-4" aria-hidden="true" />
                 Sign out
@@ -778,14 +761,14 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              className="text-sm font-medium text-muted hover:text-ink transition-colors"
             >
               Log in
             </Link>
           )}
           <Link
             href="/upload"
-            className="inline-flex items-center gap-1.5 bg-blue-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-blue-700 active:bg-blue-800 transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-1.5 bg-brand text-brand-fg text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             Check My Lease
           </Link>
@@ -797,7 +780,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
           type="button"
-          className="p-2 text-slate-600 hover:text-slate-900 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          className="p-2 text-muted hover:text-ink rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
@@ -879,7 +862,7 @@ export default function Navbar() {
               <Link
                 href="/upload"
                 onClick={closeMobile}
-                className="flex items-center justify-center gap-2 bg-blue-600 text-white text-sm font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 w-full"
+                className="flex items-center justify-center gap-2 bg-brand text-brand-fg text-sm font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 w-full"
               >
                 Check My Lease
               </Link>

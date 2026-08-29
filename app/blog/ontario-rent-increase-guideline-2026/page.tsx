@@ -41,6 +41,10 @@ const faqItems = [
     a: "The Ontario rent increase guideline for 2026 is 2.1%. Landlords of units subject to rent control cannot raise rent by more than this percentage in 2026 without LTB approval.",
   },
   {
+    q: "What is Ontario's rent increase guideline for 2027?",
+    a: "Ontario has announced a 2027 rent increase guideline of 1.9% — the lowest since the 2021 rent freeze. It applies to increases that take effect in 2027, subject to the usual 90-day notice and once-every-12-months rules.",
+  },
+  {
     q: "How much notice must a landlord give before raising rent in Ontario?",
     a: "A landlord must provide at least 90 days written notice before a rent increase takes effect. The notice should be given on LTB Form N1.",
   },
@@ -169,6 +173,15 @@ export default function OntarioRentIncrease2026Page() {
                     landlord can only raise rent once every 12 months, and must provide at least
                     90 days written notice beforehand.
                   </p>
+                  <div className="mt-4 flex items-start gap-3 rounded-xl bg-blue-50 border border-blue-100 p-4">
+                    <Tag className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <p className="text-sm text-blue-900">
+                      <strong>Looking ahead to 2027:</strong> Ontario has announced a{" "}
+                      <strong>1.9%</strong> guideline for 2027 — the lowest since the 2021 freeze. It
+                      applies to increases that take effect in 2027. See the full{" "}
+                      <Link href="/ontario-rent-increase-history" className="font-semibold underline">guideline history</Link>.
+                    </p>
+                  </div>
                   <figure className="mt-5">
                     <img
                       src="/diagrams/ontario-rent-increase-2026.png"

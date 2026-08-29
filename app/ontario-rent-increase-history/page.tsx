@@ -10,14 +10,14 @@ import { TrendingUp, ChevronRight } from "lucide-react";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Ontario Rent Increase Guideline History (2020–2026) | LeasePlain",
+  title: "Ontario Rent Increase Guideline History (2020–2027) | LeasePlain",
   description:
-    "Every Ontario rent increase guideline from 2020 to 2026 in one table — including the 2021 rent freeze and the 2.5% legal cap. A citable reference for tenants, journalists, and researchers.",
+    "Every Ontario rent increase guideline from 2020 to 2027 in one table — including the 2021 rent freeze and the 2.5% legal cap. A citable reference for tenants, journalists, and researchers.",
   alternates: { canonical: "https://leaseplain.com/ontario-rent-increase-history" },
   openGraph: {
-    title: "Ontario Rent Increase Guideline History (2020–2026) | LeasePlain",
+    title: "Ontario Rent Increase Guideline History (2020–2027) | LeasePlain",
     description:
-      "Every Ontario rent increase guideline from 2020 to 2026, with context on the freeze and the 2.5% cap.",
+      "Every Ontario rent increase guideline from 2020 to 2027, with context on the freeze and the 2.5% cap.",
     url: "https://leaseplain.com/ontario-rent-increase-history",
     type: "article",
     images: [{ url: "https://leaseplain.com/diagrams/ontario-rent-increase-2026.png", width: 1200, height: 630 }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   keywords: [
     "ontario rent increase guideline history",
     "ontario rent increase by year",
-    "ontario rent guideline 2020 2021 2022 2023 2024 2025 2026",
+    "ontario rent guideline 2020 2021 2022 2023 2024 2025 2026 2027",
     "ontario rent freeze 2021",
   ],
 };
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 // law; 2021 was a legislated freeze. Figures match LeasePlain's published
 // coverage of the guideline.
 const GUIDELINE_HISTORY: Array<{ year: string; pct: string; note: string }> = [
+  { year: "2027", pct: "1.9%", note: "Set from CPI; the lowest since the 2021 freeze." },
   { year: "2026", pct: "2.1%", note: "Set from CPI; below the 2.5% cap." },
   { year: "2025", pct: "2.5%", note: "Held at the legal maximum." },
   { year: "2024", pct: "2.5%", note: "Held at the legal maximum." },
@@ -44,6 +45,10 @@ const GUIDELINE_HISTORY: Array<{ year: string; pct: string; note: string }> = [
 ];
 
 const faqItems = [
+  {
+    q: "What is the Ontario rent increase guideline for 2027?",
+    a: "The 2027 guideline is 1.9% — the lowest since the 2021 rent freeze. It applies to rent increases that take effect in 2027 for most units covered by rent control.",
+  },
   {
     q: "What is the Ontario rent increase guideline for 2026?",
     a: "The 2026 guideline is 2.1%. It applies to most units covered by rent control and is the maximum a landlord can increase rent without approval from the Landlord and Tenant Board.",
@@ -66,9 +71,9 @@ export default function OntarioRentIncreaseHistoryPage() {
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: "Ontario Rent Increase Guideline History (2020–2026)",
+    name: "Ontario Rent Increase Guideline History (2020–2027)",
     description:
-      "The annual Ontario rent increase guideline for each year from 2020 to 2026, including the 2021 rent freeze.",
+      "The annual Ontario rent increase guideline for each year from 2020 to 2027, including the 2021 rent freeze.",
     url: "https://leaseplain.com/ontario-rent-increase-history",
     creator: { "@type": "Organization", name: "LeasePlain", url: "https://leaseplain.com" },
     keywords: ["Ontario", "rent increase guideline", "rent control"],
@@ -94,7 +99,7 @@ export default function OntarioRentIncreaseHistoryPage() {
                 <h1 className="text-4xl font-bold text-slate-900">Ontario Rent Increase Guideline History</h1>
               </div>
               <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
-                Every Ontario rent increase guideline from 2020 to 2026 in one place — including the
+                Every Ontario rent increase guideline from 2020 to 2027 in one place — including the
                 2021 rent freeze and the years the guideline was held at its 2.5% legal cap. Free to
                 reference and cite.
               </p>
@@ -137,7 +142,8 @@ export default function OntarioRentIncreaseHistoryPage() {
                   className="w-full h-auto rounded-xl border border-slate-200"
                 />
                 <figcaption className="text-sm text-slate-500 mt-2">
-                  Ontario&apos;s rent increase guideline, 2020–2026. The guideline is capped at 2.5% by law.
+                  Ontario&apos;s rent increase guideline, 2020–2026 (the 2027 guideline is 1.9% — see the
+                  table above). The guideline is capped at 2.5% by law.
                 </figcaption>
               </figure>
 

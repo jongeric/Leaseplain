@@ -11,6 +11,54 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/how-to-break-a-lease-ontario",
+    title: "How to Break a Lease in Ontario (Legally)",
+    excerpt:
+      "You can't just give notice and walk away from a fixed term. The real legal exits — assignment, subletting, an N11 agreement, and the landlord's duty to mitigate — plus what a lease break can actually cost you.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/bed-bugs-pests-landlord-ontario",
+    title: "Bed Bugs and Pests in a Rental: Who's Responsible in Ontario?",
+    excerpt:
+      "Bed bugs, cockroaches, mice — dealing with pests is almost always the landlord's job in Ontario, even if nobody knows how they got in. Your rights, how to report it, and how to force action with a T6.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/roommates-co-tenants-ontario",
+    title: "Roommates and Co-Tenants in Ontario: Who's Liable for What?",
+    excerpt:
+      "If your roommate stops paying or moves out, are you on the hook? It hinges on whether you're co-tenants on one lease or a tenant with a roommate. Joint liability, deposits, and how to leave cleanly.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/illegal-basement-apartment-ontario",
+    title: "Renting an Illegal Basement Apartment in Ontario: What Are Your Rights?",
+    excerpt:
+      "An unregistered basement unit doesn't strip you of tenant rights. The Residential Tenancies Act protects you regardless — you can't be evicted just because the unit is 'illegal.' The real risks to weigh.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/landlord-harassment-ontario",
+    title: "Landlord Harassment in Ontario: What Counts and How to Stop It",
+    excerpt:
+      "Surprise visits, shut-off utilities, threats, pressure to leave — that's illegal in Ontario, and you can be compensated. What counts as harassment, how to document it, and how to file a T2.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/tenant-insurance-ontario",
+    title: "Is Tenant Insurance Mandatory in Ontario?",
+    excerpt:
+      "No law requires it — but your landlord can, and often does, in the lease. What tenant insurance covers, why the landlord's policy won't save your belongings, and whether the clause is enforceable.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/n4-non-payment-rent-ontario",
     title: "Got an N4 in Ontario? Eviction for Non-Payment of Rent, Explained",
     excerpt:

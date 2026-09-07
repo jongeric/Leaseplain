@@ -19,6 +19,12 @@ const posts = [
   ["post-2018-rent-control-exemption-ontario", "Why Isn't My Rent Capped? The Post-2018 Exemption"],
   ["withholding-rent-repairs-ontario", "Can I Withhold Rent Over Repairs in Ontario?"],
   ["bad-faith-n12-t5-compensation-ontario", "Bad-Faith N12: What If Your Landlord Didn't Move In?"],
+  ["how-to-break-a-lease-ontario", "How to Break a Lease in Ontario (Legally)"],
+  ["bed-bugs-pests-landlord-ontario", "Bed Bugs & Pests: Who's Responsible in Ontario?"],
+  ["roommates-co-tenants-ontario", "Roommates & Co-Tenants: Who's Liable in Ontario?"],
+  ["illegal-basement-apartment-ontario", "Illegal Basement Apartment: Your Rights in Ontario"],
+  ["landlord-harassment-ontario", "Landlord Harassment in Ontario: How to Stop It"],
+  ["tenant-insurance-ontario", "Is Tenant Insurance Mandatory in Ontario?"],
 ];
 
 function card(title, category = "Ontario") {

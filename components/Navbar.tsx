@@ -73,6 +73,8 @@ const NAV_LEASE_REVIEW = {
 const NAV_TOOLS = [
   { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator", desc: "Is the increase legal?" },
   { label: "Deposit Return Calculator", href: "/tools/deposit-calculator", desc: "How much do I get back?" },
+  { label: "Deposit Interest Calculator", href: "/tools/deposit-interest-calculator", desc: "Interest owed on your deposit" },
+  { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker", desc: "Is the increase legal?" },
   { label: "Notice Period Calculator", href: "/tools/notice-period-calculator", desc: "How much notice is required?" },
   { label: "Move-In Cost Calculator", href: "/tools/move-in-cost-calculator", desc: "Total upfront cost" },
   { label: "Lease Break Estimator", href: "/tools/lease-break-calculator", desc: "Breaking lease early?" },

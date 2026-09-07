@@ -11,6 +11,14 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/cash-for-keys-ontario",
+    title: "Cash for Keys in Ontario: Should You Take the Deal?",
+    excerpt:
+      "Your landlord is offering money to move out. It's legal in Ontario and can be worth it — but only on your terms. How much to ask for, what to get in writing, and when to just say no.",
+    date: "September 7, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/how-to-break-a-lease-ontario",
     title: "How to Break a Lease in Ontario (Legally)",
     excerpt:

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   TrendingUp, DollarSign, Clock, Home, FileX, Shield,
-  HelpCircle, BookOpen, Search, ChevronRight,
+  HelpCircle, BookOpen, Search, ChevronRight, Percent, Scale,
 } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -36,6 +36,20 @@ const tools = [
     color: "green",
     title: "Security Deposit Return Calculator",
     description: "Find out how much of your deposit you should get back and your landlord's legal deadline.",
+  },
+  {
+    href: "/tools/deposit-interest-calculator",
+    icon: Percent,
+    color: "indigo",
+    title: "Deposit Interest Calculator",
+    description: "See the interest your Ontario landlord owes on your last month's rent deposit, year by year.",
+  },
+  {
+    href: "/tools/agi-checker",
+    icon: Scale,
+    color: "amber",
+    title: "Above-Guideline Increase Checker",
+    description: "Is your rent increase within the guideline, above it (needing LTB approval), or exempt?",
   },
   {
     href: "/tools/notice-period-calculator",

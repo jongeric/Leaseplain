@@ -56,6 +56,12 @@ export default function LTBFormsHubPage() {
                 something yourself? Here&apos;s every Ontario Landlord and Tenant Board form in plain
                 English: what it means, and what to do next.
               </p>
+              <p className="text-sm text-muted mt-4">
+                Wondering what filing costs and how long it takes?{" "}
+                <Link href="/ltb-fees-timeline" className="text-blue-600 hover:underline font-medium">
+                  See LTB application fees &amp; wait times
+                </Link>.
+              </p>
             </div>
           </section>
 

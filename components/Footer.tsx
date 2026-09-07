@@ -52,6 +52,7 @@ const FOOTER_COLUMNS = [
       { label: "Find a Tenant Lawyer", href: "/tenant-lawyer" },
       { label: "For Lawyers: Get Listed", href: "/for-lawyers" },
       { label: "LTB Forms Explained", href: "/ltb-forms" },
+      { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
     ],
   },
   {

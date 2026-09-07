@@ -25,6 +25,7 @@ const posts = [
   ["illegal-basement-apartment-ontario", "Illegal Basement Apartment: Your Rights in Ontario"],
   ["landlord-harassment-ontario", "Landlord Harassment in Ontario: How to Stop It"],
   ["tenant-insurance-ontario", "Is Tenant Insurance Mandatory in Ontario?"],
+  ["cash-for-keys-ontario", "Cash for Keys in Ontario: Should You Take the Deal?"],
 ];
 
 function card(title, category = "Ontario") {

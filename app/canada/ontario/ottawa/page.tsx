@@ -25,7 +25,7 @@ const ottawaRights = [
   "The Ontario Residential Tenancies Act (RTA) applies in full to all private residential rentals in Ottawa.",
   "Rent increases are capped at the Ontario provincial guideline — no exceptions without an LTB above-guideline application.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Ottawa tenants can file applications with the LTB — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
+  "Ottawa tenants can file applications with the LTB — most tenant applications (T1, T2, T6) cost $53 to file, and fee waivers are available for low-income applicants.",
   "Tenants cannot be evicted mid-lease without a valid LTB order — even if they fail to pay rent, the LTB process must be followed.",
   "Student housing in private rentals is covered by the RTA; university-owned residence is typically not.",
 ];
@@ -42,7 +42,8 @@ const faqItems = [
                   { q: "What rent-control rules apply in Ottawa?", a: "Ottawa follows Ontario's provincial rent-control rules: units first occupied before November 15, 2018 are subject to the annual guideline increase. Newer units are exempt. The LTB enforces these rules." },
                   { q: "Is Ottawa cheaper to rent than Toronto?", a: "Yes, Ottawa's rental market is significantly more affordable than Toronto's, though it has tightened in recent years. Government employment helps support a stable rental demand, keeping vacancy rates relatively low." },
                   { q: "How do Ottawa bilingualism rights affect my lease?", a: "You have the right to request government services in French, but private leases are governed by contract law. A lease written only in English is still valid; however, if your landlord is a government body or federally regulated, French services must be available." },
-                  { q: "What are Ottawa-specific tenant resources?", a: "In addition to the Ontario LTB, Ottawa has the Ottawa Community Housing and several legal aid clinics. Community Legal Services of Ottawa offers free advice to low-income tenants." },
+                  { q: "What are Ottawa-specific tenant resources?", a: "In addition to the Ontario LTB, Ottawa has Ottawa Community Housing and several legal aid clinics — Community Legal Services Ottawa Centre and other neighbourhood clinics offer free advice to low-income tenants. For maintenance and property-standards problems, call 311 to reach the City of Ottawa's Property Standards and By-law Services." },
+                  { q: "How do I report a bad landlord to the City of Ottawa?", a: "Call 311 (or use the City of Ottawa's online service requests) to report property-standards and maintenance violations — things like no heat, pests, or unsafe conditions. By-law Services can inspect and order the landlord to comply. This runs separately from an LTB application, and you can pursue both at once." },
                   { q: "Can an Ottawa landlord charge for parking separately?", a: "Parking can be listed as a separate charge or included in rent. If parking is included in rent at the time of tenancy commencement, it becomes part of the rent and is subject to the same rent-increase rules as base rent." }
 ];
 
@@ -151,6 +152,35 @@ export default function OttawaPage() {
                   becomes a month-to-month tenancy under the Ontario RTA — the landlord cannot require
                   you to vacate simply because the original term has ended. No notice is required by either party at the point of natural expiry. To end the resulting month-to-month tenancy, a tenant must give 60 days notice (Form N9), or the landlord must follow the proper LTB process for a valid reason.
                 </p>
+                <p className="text-sm text-blue-800 leading-relaxed mt-3">
+                  Signed a lease but need to leave before the term is up (a co-op term, a job change)? See{" "}
+                  <Link href="/blog/how-to-break-a-lease-ontario" className="font-semibold underline">how to break a lease in Ontario</Link>{" "}
+                  and the roommate rules in our{" "}
+                  <Link href="/blog/roommates-co-tenants-ontario" className="font-semibold underline">co-tenant liability guide</Link>.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Reporting Problems to the City of Ottawa</h2>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  The LTB isn&apos;t your only route. For maintenance, heat, pest, and property-standards
+                  problems, the City of Ottawa can order your landlord to comply — often faster than a
+                  hearing:
+                </p>
+                <ul className="flex flex-col gap-3 text-sm text-slate-700 leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Call 311</strong> (or use the City&apos;s online service requests) to report property-standards violations to By-law Services. An officer can inspect and issue an order to the landlord.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Heat.</strong> Ottawa&apos;s property-standards bylaw sets a minimum indoor temperature during the heating season. A landlord can&apos;t withhold or fail to provide adequate heat.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span>Pursue a city complaint and an LTB <strong>T6 (maintenance)</strong> application at the same time — a city order is strong evidence at the Board.</span>
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -216,8 +246,11 @@ export default function OttawaPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "Deposit Interest Calculator", href: "/tools/deposit-interest-calculator" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Toronto Lease Help", href: "/canada/ontario/toronto" },
+                    { label: "Hamilton Lease Help", href: "/canada/ontario/hamilton" },
                     { label: "Ontario Tenant Rights Guide", href: "/tenant-rights/ontario" },
                   ].map((l) => (
                     <li key={l.href}>

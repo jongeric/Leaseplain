@@ -25,7 +25,7 @@ const torontoRights = [
   "The Ontario RTA applies in full to all private residential rentals in Toronto, including condominiums.",
   "Rent increases are limited to the provincial guideline — your landlord cannot raise rent by more than the guideline without an LTB order.",
   "Above-guideline rent increases (AGI) require the landlord to apply to the LTB, citing extraordinary cost increases for capital work.",
-  "Toronto tenants can file applications at the LTB — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants. The Etobicoke or Toronto hearing centres handle local cases.",
+  "Toronto tenants can file applications at the LTB — most tenant applications (T1, T2, T6) cost $53 to file, and fee waivers are available for low-income applicants. Landlord applications (L1/L2) cost more.",
   "New condominium units built after November 15, 2018 are exempt from rent control under Ontario's 2018 RTA amendments.",
   "Condo landlords are bound by the condo corporation's rules, but they cannot pass these to you as enforceable lease obligations beyond what the RTA permits.",
 ];
@@ -41,7 +41,8 @@ const torontoLeaseIssues = [
 const faqItems = [
                   { q: "Is rent controlled in Toronto?", a: "Toronto follows Ontario's rent-control rules under the Residential Tenancies Act. Units first occupied before November 15, 2018 are subject to the annual rent-increase guideline. Units built after that date are exempt from rent control." },
                   { q: "What is the average rent in Toronto?", a: "Toronto is Canada's most expensive rental market. Average one-bedroom apartments have been around $2,300–$2,600/month in recent years, varying significantly by neighbourhood and building type. Always verify current market data before signing." },
-                  { q: "How do I file a complaint about my Toronto landlord?", a: "File an application with the Ontario Landlord and Tenant Board (LTB) at ontario.ca/LTB. Filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants. You can apply for orders related to maintenance, rent, illegal entry, and more." },
+                  { q: "How do I file a complaint about my Toronto landlord?", a: "For maintenance and property-standards problems, you can call 311 to reach Toronto's Municipal Licensing & Standards, and larger apartment buildings are covered by RentSafeTO. For rent, illegal entry, harassment, or eviction disputes, file an application with the Ontario Landlord and Tenant Board (LTB) — most tenant applications cost $53, with fee waivers for low-income applicants." },
+                  { q: "What is RentSafeTO?", a: "RentSafeTO is Toronto's bylaw program that requires owners of apartment buildings with three or more storeys and 10 or more units to register and meet maintenance standards. If your building qualifies and your landlord isn't keeping up common areas or your unit, you can call 311 to have the city investigate — separately from any LTB application." },
                   { q: "Can a Toronto landlord charge a pet deposit?", a: "No. Under Ontario's Residential Tenancies Act, landlords cannot charge a pet deposit or any deposit other than the last month's rent. However, landlords can evict tenants if a lease no-pet clause is violated and the pet causes issues." },
                   { q: "What is the difference between a condo lease and an apartment lease in Toronto?", a: "The RTA applies to both, but condo leases may include condo corporation rules (which override parts of the lease). Condo rules about noise, amenity use, and move-in/move-out procedures are generally binding on tenants." }
 ];
@@ -151,6 +152,33 @@ export default function TorontoPage() {
                   if the landlord meets a strict evidentiary threshold. You can obtain free help from
                   the Tenant Duty Counsel program at LTB hearings.
                 </p>
+                <p className="text-sm text-blue-800 leading-relaxed mt-3">
+                  Not sure whether a proposed increase is even legal? Run the numbers through our{" "}
+                  <Link href="/tools/agi-checker" className="font-semibold underline">Above-Guideline Increase Checker</Link>{" "}
+                  before you agree to anything.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">RentSafeTO &amp; Municipal Enforcement</h2>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  Toronto runs one of Canada&apos;s most developed municipal enforcement systems for rentals.
+                  Beyond the LTB, the city can order landlords to fix problems directly:
+                </p>
+                <ul className="flex flex-col gap-3 text-sm text-slate-700 leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>RentSafeTO</strong> covers apartment buildings of three or more storeys and 10 or more units. Registered buildings are audited and must meet maintenance standards for common areas, pests, heat, and more.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Call 311</strong> to report a maintenance or property-standards issue to Municipal Licensing &amp; Standards. This is often faster than the LTB for urgent repairs, and you can do it alongside a T6 application.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Heat.</strong> Toronto&apos;s bylaw requires landlords to maintain a minimum indoor temperature during the cold-weather months — a shut-off or chronic under-heating is both a bylaw and an RTA violation.</span>
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -216,10 +244,12 @@ export default function TorontoPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "Deposit Interest Calculator", href: "/tools/deposit-interest-calculator" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Ontario Tenant Rights Guide", href: "/tenant-rights/ontario" },
                     { label: "Ottawa Lease Help", href: "/canada/ontario/ottawa" },
-                    { label: "Canada Overview", href: "/canada" },
+                    { label: "Hamilton Lease Help", href: "/canada/ontario/hamilton" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

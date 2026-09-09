@@ -25,7 +25,7 @@ const hamiltonRights = [
   "The Ontario Residential Tenancies Act (RTA) applies fully to all private residential rentals in Hamilton.",
   "Rent increases are limited to the Ontario annual guideline — no exceptions without an LTB above-guideline application.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — most tenant applications (T1, T2, T6) cost $53 to file, and fee waivers are available for low-income applicants.",
   "Hamilton tenants have the right to request repairs; failure to maintain a unit allows tenants to apply for a rent abatement.",
   "Older rental stock (pre-2018) benefits from full rent control; newer builds after November 15, 2018 are exempt from the guideline.",
 ];
@@ -42,7 +42,8 @@ const faqItems = [
                   { q: "Is Hamilton affordable for renters compared to Toronto?", a: "Hamilton is generally more affordable than Toronto, though the GTA's housing pressure has pushed rents higher in recent years. Average one-bedroom units range widely by neighbourhood and building type." },
                   { q: "What tenant protections apply in Hamilton?", a: "Hamilton tenants are protected by Ontario's Residential Tenancies Act, including rent-increase guidelines, maintenance obligations, and the right to file complaints with the Landlord and Tenant Board (LTB)." },
                   { q: "What should I look for in a Hamilton lease?", a: "Check whether utilities are included or separate, what the parking situation is, whether the unit is in a legal building, what the notice period is, and whether there are any extra fees for amenities. LeasePlain can flag problem clauses automatically." },
-                  { q: "Does Hamilton have a tenant support organization?", a: "Yes. Hamilton Community Legal Clinic and Hamilton-Wentworth Tenant Legal Assistance offer free support to tenants facing eviction or maintenance issues. The Ontario LTB also accepts applications from Hamilton tenants." },
+                  { q: "Does Hamilton have a tenant support organization?", a: "Yes. The Hamilton Community Legal Clinic offers free support to tenants facing eviction or maintenance issues, and ACORN Hamilton is an active tenant-organizing group. The Ontario LTB also accepts applications from Hamilton tenants." },
+                  { q: "How do I report a maintenance problem to the City of Hamilton?", a: "Call the City of Hamilton (311) to reach Municipal Law Enforcement / Property Standards. An officer can inspect and order your landlord to fix property-standards violations like no heat, pests, or unsafe conditions. You can do this alongside an LTB T6 maintenance application — a city order is useful evidence at the Board." },
                   { q: "Can a Hamilton landlord refuse to rent to someone on ODSP or Ontario Works?", a: "No. Under the Ontario Human Rights Code, source-of-income discrimination (including refusing ODSP or Ontario Works recipients) is prohibited. Landlords cannot reject a tenant solely because their income comes from social assistance." }
 ];
 
@@ -151,6 +152,36 @@ export default function HamiltonPage() {
                   offering you the right of first refusal to return at your previous rent. If you
                   receive an N13 notice, seek legal advice immediately.
                 </p>
+                <p className="text-sm text-blue-800 leading-relaxed mt-3">
+                  Learn the full playbook in our{" "}
+                  <Link href="/blog/renoviction-canada-tenant-rights" className="font-semibold underline">renoviction guide</Link>.
+                  If a landlord instead offers you money to leave voluntarily, read{" "}
+                  <Link href="/blog/cash-for-keys-ontario" className="font-semibold underline">cash for keys: should you take the deal?</Link>{" "}
+                  before signing anything.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">Older Housing Stock &amp; City Enforcement</h2>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  Much of Hamilton&apos;s rental supply is in older houses and low-rise buildings, where
+                  maintenance and habitability problems are common. The city can order landlords to fix
+                  them:
+                </p>
+                <ul className="flex flex-col gap-3 text-sm text-slate-700 leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Call 311</strong> to report property-standards violations to the City of Hamilton&apos;s Municipal Law Enforcement. An officer can inspect and issue an order to your landlord.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Basement and second units.</strong> Renting an unregistered basement apartment doesn&apos;t strip you of tenant rights — see our <Link href="/blog/illegal-basement-apartment-ontario" className="text-blue-700 underline">illegal basement apartment guide</Link>.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                    <span><strong>Heat and pests</strong> are the landlord&apos;s responsibility. Pair a 311 complaint with an LTB <strong>T6 (maintenance)</strong> application for a rent abatement.</span>
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -216,9 +247,11 @@ export default function HamiltonPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
-                    { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "Deposit Interest Calculator", href: "/tools/deposit-interest-calculator" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Toronto Lease Help", href: "/canada/ontario/toronto" },
-                    { label: "Mississauga Lease Help", href: "/canada/ontario/mississauga" },
+                    { label: "Ottawa Lease Help", href: "/canada/ontario/ottawa" },
                     { label: "Ontario Tenant Rights Guide", href: "/tenant-rights/ontario" },
                   ].map((l) => (
                     <li key={l.href}>

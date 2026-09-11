@@ -26,6 +26,18 @@ const posts = [
   ["landlord-harassment-ontario", "Landlord Harassment in Ontario: How to Stop It"],
   ["tenant-insurance-ontario", "Is Tenant Insurance Mandatory in Ontario?"],
   ["cash-for-keys-ontario", "Cash for Keys in Ontario: Should You Take the Deal?"],
+  ["bc-security-deposit-rules", "BC Security Deposit Rules: Getting It Back"],
+  ["bc-notice-to-end-tenancy", "How Much Notice to End a Tenancy in BC?"],
+  ["bc-eviction-notices-rtb", "Can My Landlord Evict Me in BC?"],
+  ["bc-rent-increase-rules", "BC Rent Increase Rules: Limits & Notice"],
+  ["bc-breaking-a-lease", "Breaking a Lease in BC"],
+  ["bc-landlord-repairs-maintenance", "Landlord Repairs & Maintenance in BC"],
+  ["alberta-security-deposit-rules", "Alberta Security Deposit Rules & Refunds"],
+  ["alberta-rent-increase-rules", "Alberta Rent Increase Rules: No Cap, Real Limits"],
+  ["alberta-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Alberta?"],
+  ["alberta-eviction-process", "The Alberta Eviction Process Explained"],
+  ["alberta-breaking-a-lease", "Breaking a Lease in Alberta"],
+  ["alberta-landlord-repairs-maintenance", "Landlord Repairs & Maintenance in Alberta"],
 ];
 
 function card(title, category = "Ontario") {

@@ -11,6 +11,102 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/bc-security-deposit-rules",
+    title: "BC Security Deposit Rules: Damage Deposits & Getting It Back",
+    excerpt:
+      "BC lets landlords collect a real deposit — capped at half a month's rent (plus a pet damage deposit). The deduction rules, the 15-day return deadline, and when the landlord owes you double.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/bc-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in BC?",
+    excerpt:
+      "One month if you're leaving; four months (plus compensation) if the landlord wants the unit. Tenant notice, landlord's use, the four-month notice, and what makes a notice invalid in British Columbia.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/bc-eviction-notices-rtb",
+    title: "Can My Landlord Evict Me in BC? Notices & the RTB Process",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, the short deadlines to dispute at the Residential Tenancy Branch, and why only an order of possession can remove you.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/bc-rent-increase-rules",
+    title: "BC Rent Increase Rules: Limits, Notice & Disputes",
+    excerpt:
+      "In BC rent can rise only once a year, up to the province's annual limit, with three full months' notice. How the cap works, why there's no vacancy control, and how to fight an illegal increase.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/bc-breaking-a-lease",
+    title: "Breaking a Lease in BC: How to End a Fixed Term Early",
+    excerpt:
+      "You can't just give notice on a fixed term — but you can assign, sublet, agree to end, or rely on the landlord's duty to re-rent. Plus the special exits BC law allows.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/bc-landlord-repairs-maintenance",
+    title: "Landlord Repairs & Maintenance in BC: Your Rights",
+    excerpt:
+      "Your BC landlord must keep the unit repaired, heated, and pest-free — it can't be waived by a lease. Emergency repairs, how to demand fixes, and how to get a rent reduction if they don't act.",
+    date: "September 11, 2026",
+    category: "British Columbia",
+  },
+  {
+    href: "/blog/alberta-security-deposit-rules",
+    title: "Alberta Security Deposit Rules: Damage Deposits & Refunds",
+    excerpt:
+      "In Alberta a damage deposit can't exceed one month's rent, must earn interest in a trust account, and has to be returned within 10 days. Deductions, inspections, and how to dispute unfair claims.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
+    href: "/blog/alberta-rent-increase-rules",
+    title: "Alberta Rent Increase Rules: No Cap, But Real Limits",
+    excerpt:
+      "Alberta has no rent control — no percentage cap — but rent can still rise only once a year, never in the first year, and only with proper notice. How the timing rules protect you.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
+    href: "/blog/alberta-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in Alberta?",
+    excerpt:
+      "How much notice you must give to move out, and how much your landlord must give you. Periodic notice, the 90-day landlord notice, fixed-term rules, and what makes a notice valid in Alberta.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
+    href: "/blog/alberta-eviction-process",
+    title: "The Alberta Eviction Process: Notices, RTDRS & Your Rights",
+    excerpt:
+      "The notice types (14-day, 24-hour, 90-day), how to respond, the RTDRS vs court, and why only a civil enforcement bailiff — never the landlord — can actually remove you.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
+    href: "/blog/alberta-breaking-a-lease",
+    title: "Breaking a Lease in Alberta: How to End a Fixed Term Early",
+    excerpt:
+      "You can't just walk away from a fixed term — but you can assign, sublet, agree to end, or rely on the landlord's duty to re-rent. Plus the situations that end a tenancy early.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
+    href: "/blog/alberta-landlord-repairs-maintenance",
+    title: "Landlord Repairs & Maintenance in Alberta: Your Rights",
+    excerpt:
+      "Alberta landlords must meet Minimum Housing and Health Standards — heat and essential services included. What they must maintain, how to escalate to public health, and how to get repairs done.",
+    date: "September 11, 2026",
+    category: "Alberta",
+  },
+  {
     href: "/blog/cash-for-keys-ontario",
     title: "Cash for Keys in Ontario: Should You Take the Deal?",
     excerpt:

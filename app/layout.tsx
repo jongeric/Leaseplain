@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Sora } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -23,13 +23,19 @@ const sora = Sora({
 // Set the theme class before first paint to avoid a flash of the wrong theme.
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`;
 
+export const viewport: Viewport = {
+  themeColor: "#1e40af",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://leaseplain.com"),
   title: "LeasePlain – Understand Your Lease in Plain English",
-  themeColor: "#1e40af",
   description:
     "Upload your residential lease and get a clear, plain-English breakdown of what you're signing. Not legal advice.",
   keywords: ["lease analysis", "rental agreement", "tenant rights", "lease review"],
+  alternates: {
+    types: { "application/rss+xml": "https://leaseplain.com/feed.xml" },
+  },
   openGraph: {
     siteName: "LeasePlain",
     type: "website",

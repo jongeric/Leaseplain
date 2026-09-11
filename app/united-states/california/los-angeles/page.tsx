@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Los Angeles Tenant Rights & Lease Review | LA Rent Control Explained | LeasePlain",
   description:
     "Understand your rights as an LA renter: LA Rent Stabilization Ordinance (RSO), AB 1482 statewide rent cap, just cause eviction, security deposit limits, and HCIDLA resources.",

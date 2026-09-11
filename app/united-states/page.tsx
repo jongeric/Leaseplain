@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "US Tenant Rights & Lease Help — Coming to LeasePlain | LeasePlain",
   description:
     "LeasePlain is expanding to the United States. Learn about US tenant rights by state — New York, California, Florida, and more — and how US leases differ from Canadian ones.",

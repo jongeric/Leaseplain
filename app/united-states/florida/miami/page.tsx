@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Miami Tenant Rights & Lease Review | Florida Landlord-Tenant Law | LeasePlain",
   description:
     "Understand your rights as a Miami renter under Florida's Residential Landlord and Tenant Act. Security deposit rules, Miami-Dade tenant protections, eviction notices, and lease red flags explained.",

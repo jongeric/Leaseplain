@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Florida Lease Review: AI Lease Analyzer for FL Renters | LeasePlain",
   description:
     "Understand your Florida residential lease in plain English. AI-powered analysis covering FL landlord-tenant law, security deposits, early termination, and tenant rights.",

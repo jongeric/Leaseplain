@@ -9,6 +9,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "NYC Tenant Rights: Rent Stabilization, DHCR & Lease Help | LeasePlain",
   description:
     "Know your rights as a New York City renter: rent stabilization, DHCR complaints, Good Cause Eviction law, 1-month security deposit cap, and free right to counsel in Housing Court.",

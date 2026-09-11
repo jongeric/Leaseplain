@@ -396,13 +396,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url("/renting-in-canada",    0.8, "monthly"),
 
     // United States — states
-    url("/united-states",                        0.8, "monthly"),
-    url("/united-states/new-york",               0.7, "monthly"),
-    url("/united-states/new-york/new-york-city", 0.7, "monthly"),
-    url("/united-states/california",             0.7, "monthly"),
-    url("/united-states/california/los-angeles", 0.7, "monthly"),
-    url("/united-states/florida",                0.7, "monthly"),
-    url("/united-states/florida/miami",          0.7, "monthly"),
 
     // ── Lease Clauses ─────────────────────────────────────────────────────────
     url("/lease-clauses",                  0.9, "monthly"),

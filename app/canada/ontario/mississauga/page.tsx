@@ -25,7 +25,7 @@ const mississaugaRights = [
   "The Ontario Residential Tenancies Act (RTA) applies fully to all private residential rentals in Mississauga.",
   "Rent increases are capped at the Ontario provincial guideline — no above-guideline increase is permitted without an LTB order.",
   "Landlords must use the Ontario standard lease form for most residential tenancies.",
-  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — most tenant applications (T1, T2, T6) cost $53 to file, with fee waivers available for low-income applicants.",
   "Condominium investor-landlords are bound by the RTA, even if the condo corporation has additional rules.",
   "Units built after November 15, 2018 are exempt from Ontario rent control but all other RTA protections apply.",
 ];
@@ -205,6 +205,8 @@ export default function MississaugaPage() {
                 <ul className="flex flex-col gap-2">
                   {[
                     { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Toronto Lease Help", href: "/canada/ontario/toronto" },
                     { label: "Hamilton Lease Help", href: "/canada/ontario/hamilton" },
                     { label: "Ontario Tenant Rights Guide", href: "/tenant-rights/ontario" },

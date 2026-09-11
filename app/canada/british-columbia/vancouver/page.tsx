@@ -211,9 +211,12 @@ export default function VancouverPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "BC Rent Increase Rules", href: "/blog/bc-rent-increase-rules" },
+                    { label: "BC Security Deposit Rules", href: "/blog/bc-security-deposit-rules" },
+                    { label: "BC Eviction Notices & the RTB", href: "/blog/bc-eviction-notices-rtb" },
+                    { label: "BC Rent Increase History", href: "/bc-rent-increase-history" },
                     { label: "BC Tenant Rights", href: "/canada/british-columbia" },
                     { label: "BC Tenant Rights Guide", href: "/tenant-rights/british-columbia" },
-                    { label: "Canada Overview", href: "/canada" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

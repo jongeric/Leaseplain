@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const londonRights = [
   "The Ontario RTA applies to all residential rentals in London, including student housing near Western University and Fanshawe College.",
-  "Tenants can file applications with the Landlord and Tenant Board (LTB) — filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants. File through the Tribunals Ontario portal.",
+  "Tenants can file applications with the Landlord and Tenant Board (LTB) — most tenant applications (T1, T2, T6) cost $53 to file, with fee waivers available for low-income applicants. File through the Tribunals Ontario portal.",
   "Student tenants have full RTA protection regardless of student status — being a student does not affect your rights under the Act.",
   "Joint tenancies are common in student houses — each tenant who signs the lease has individual rights and obligations under the RTA.",
   "Only a last month's rent deposit is permitted — the maximum a landlord can collect upfront is one month's rent.",
@@ -218,6 +218,8 @@ export default function LondonPage() {
                 <ul className="flex flex-col gap-2">
                   {[
                     { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Kitchener Lease Help", href: "/canada/ontario/kitchener" },
                     { label: "Toronto Lease Help", href: "/canada/ontario/toronto" },
                   ].map((l) => (

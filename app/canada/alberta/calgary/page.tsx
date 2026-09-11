@@ -216,6 +216,9 @@ export default function CalgaryPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "Alberta Rent Increase Rules", href: "/blog/alberta-rent-increase-rules" },
+                    { label: "Alberta Security Deposit Rules", href: "/blog/alberta-security-deposit-rules" },
+                    { label: "The Alberta Eviction Process", href: "/blog/alberta-eviction-process" },
                     { label: "Alberta Tenant Rights", href: "/canada/alberta" },
                     { label: "Edmonton Lease Help", href: "/canada/alberta/edmonton" },
                     { label: "Alberta Tenant Rights Guide", href: "/tenant-rights/alberta" },

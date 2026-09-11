@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const kitchenerRights = [
   "The Ontario RTA applies in full to all private residential rentals in Kitchener.",
-  "The LTB now conducts most hearings by videoconference through Tribunals Ontario — Waterloo Region tenants file online at tribunalsontario.ca. Filing fees are $186 online or $201 by paper; fee waivers are available for low-income applicants.",
+  "The LTB now conducts most hearings by videoconference through Tribunals Ontario — Waterloo Region tenants file online at tribunalsontario.ca. Most tenant applications (T1, T2, T6) cost $53 to file, with fee waivers for low-income applicants.",
   "Above-guideline increase (AGI) applications are increasing with older building stock — tenants have the right to participate and respond at LTB hearings.",
   "Landlords must use the standard Ontario lease form for all most residential tenancies in Kitchener.",
   "Tenants have the right to sublet their unit under the RTA — a landlord cannot unreasonably withhold consent.",
@@ -218,6 +218,8 @@ export default function KitchenerPage() {
                 <ul className="flex flex-col gap-2">
                   {[
                     { label: "Ontario Tenant Rights", href: "/canada/ontario" },
+                    { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                    { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                     { label: "Waterloo Lease Help", href: "/canada/ontario/waterloo" },
                     { label: "London Lease Help", href: "/canada/ontario/london" },
                   ].map((l) => (

@@ -11,6 +11,46 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/mould-in-a-rental-ontario",
+    title: "Mould in a Rental in Ontario: Whose Problem Is It?",
+    excerpt:
+      "Mould from a leak or poor ventilation is almost always the landlord's job to fix in Ontario. How to report it, escalate to the city, claim a rent abatement — and why you shouldn't just stop paying rent.",
+    date: "September 11, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/no-written-lease-tenant-rights-ontario",
+    title: "No Written Lease in Ontario? You Still Have Full Rights",
+    excerpt:
+      "A verbal or handshake tenancy is fully covered by the RTA. Your rights without a written lease, the Ontario Standard Lease rule, and the one-month-rent remedy when a landlord won't provide one.",
+    date: "September 11, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/rooming-house-tenant-rights-ontario",
+    title: "Rooming House & Shared Housing Tenant Rights in Ontario",
+    excerpt:
+      "Renting a room usually gives you full RTA rights — with one key exception when you share a kitchen or bathroom with the owner. What you're entitled to, and the illegal-rooming-house trap.",
+    date: "September 11, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/rent-bank-arrears-help-ontario",
+    title: "Behind on Rent in Ontario? Rent Banks & Arrears Help",
+    excerpt:
+      "Falling behind doesn't have to mean eviction. Rent banks, the Canada-Ontario Housing Benefit, emergency assistance, and LTB payment plans — how to act before an N4 becomes an eviction order.",
+    date: "September 11, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/how-to-dispute-a-rent-increase-ontario",
+    title: "How to Dispute a Rent Increase in Ontario",
+    excerpt:
+      "Many increases are invalid — wrong notice, wrong timing, or above the guideline. How to check validity, respond to an N1 or AGI, keep your tenancy safe, and recover money you were wrongly charged.",
+    date: "September 11, 2026",
+    category: "Ontario",
+  },
+  {
     href: "/blog/bc-security-deposit-rules",
     title: "BC Security Deposit Rules: Damage Deposits & Getting It Back",
     excerpt:

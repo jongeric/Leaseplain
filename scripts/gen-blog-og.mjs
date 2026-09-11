@@ -38,6 +38,11 @@ const posts = [
   ["alberta-eviction-process", "The Alberta Eviction Process Explained"],
   ["alberta-breaking-a-lease", "Breaking a Lease in Alberta"],
   ["alberta-landlord-repairs-maintenance", "Landlord Repairs & Maintenance in Alberta"],
+  ["mould-in-a-rental-ontario", "Mould in a Rental: Whose Problem Is It?"],
+  ["no-written-lease-tenant-rights-ontario", "No Written Lease in Ontario? Your Rights"],
+  ["rooming-house-tenant-rights-ontario", "Rooming House Tenant Rights in Ontario"],
+  ["rent-bank-arrears-help-ontario", "Behind on Rent? Rent Banks & Arrears Help"],
+  ["how-to-dispute-a-rent-increase-ontario", "How to Dispute a Rent Increase in Ontario"],
 ];
 
 function card(title, category = "Ontario") {

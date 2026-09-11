@@ -6,6 +6,7 @@ const DATE_LABEL = "September 11, 2026";
 
 const BC = "British Columbia";
 const AB = "Alberta";
+const ON = "Ontario";
 
 export const POSTS = [
   // ---------------------------------------------------------------- BC cluster
@@ -561,6 +562,237 @@ export const POSTS = [
       { label: "Bed Bugs & Pests: Who's Responsible?", href: "/blog/bed-bugs-pests-landlord-ontario" },
       { label: "Alberta Eviction Process", href: "/blog/alberta-eviction-process" },
       { label: "Alberta Tenant Rights", href: "/canada/alberta" },
+    ],
+  },
+
+  // ------------------------------------------------ Ontario high-intent gaps
+  {
+    slug: "mould-in-a-rental-ontario",
+    category: ON,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Mould in a Rental in Ontario: Whose Problem Is It?",
+    headline: "Mould in a Rental in Ontario: Your Landlord's Responsibility",
+    h1: "Mould in a Rental in Ontario: Whose Problem Is It?",
+    crumb: "Mould in a Rental in Ontario",
+    description: "Mould in your Ontario rental is almost always the landlord's responsibility to fix — especially when it comes from a leak or poor ventilation. How to report it, escalate to the city, and claim a rent abatement.",
+    ogDescription: "Who's responsible for mould in an Ontario rental, how to report it, and how to force a fix.",
+    keywords: ["mould in rental ontario", "black mold apartment ontario landlord", "mould tenant rights ontario", "landlord won't fix mould ontario", "is landlord responsible for mold ontario"],
+    lead: "A patch of black mould on the bathroom ceiling or behind a leaky window is more than ugly — it's a health hazard, and in Ontario it's almost always your landlord's job to fix. Here's how to make that happen.",
+    sections: [
+      { h2: "The Landlord Has to Deal With It", paras: [
+        "Under the Residential Tenancies Act, your landlord must keep the unit **in a good state of repair and fit for habitation** and comply with health and safety standards. Mould caused by a **maintenance defect** — a roof or plumbing leak, failed window seals, poor ventilation — is squarely the landlord's responsibility to remediate, at their cost.",
+      ] },
+      { h2: "When Could It Be on You?", paras: [
+        "The narrow exception is mould that results from a tenant's own **negligence** — for example, never using the bathroom fan, blocking vents, or failing to report an obvious leak for months. Even then, the landlord usually has to fix the underlying problem; the dispute is about who pays. Reporting promptly protects you.",
+      ] },
+      { h2: "Report It in Writing — Immediately", paras: [
+        "Tell your landlord **in writing** (text or email) as soon as you see mould, with photos and the date. Keep the copy. A written record is what turns a he-said/she-said into a winnable case, and it starts the clock on the landlord's duty to act.",
+      ] },
+      { h2: "Escalate If They Ignore You", paras: ["You have more than one lever, and can use them together:"], list: [
+        "**Municipal property standards / 311:** the city can inspect and order remediation, often faster than the LTB.",
+        "**Public health:** significant mould can be a health-hazard complaint.",
+        "**File a T6 at the LTB:** ask for an order to remediate plus a **rent abatement** for the time you lived with it.",
+      ] },
+      { h2: "Don't Just Stop Paying Rent", paras: [
+        "Withholding rent on your own can put you at risk of an N4 and eviction. Instead, document everything, escalate through the city and the LTB, and let a T6 application recover an abatement. See [can I withhold rent over repairs?](/blog/withholding-rent-repairs-ontario) for why the formal route is safer.",
+      ] },
+    ],
+    faqs: [
+      { q: "Is my landlord responsible for mould in Ontario?", a: "Almost always, yes. Landlords must keep the unit in a good state of repair and fit for habitation. Mould from a leak, failed seals, or poor ventilation is the landlord's responsibility to remediate at their cost, even if it's unclear exactly when it started." },
+      { q: "What do I do if my landlord won't remove mould?", a: "Report it in writing with photos and keep a copy. If the landlord doesn't act, call 311 for municipal property standards, consider a public-health complaint, and file a T6 application at the LTB for an order to remediate plus a rent abatement." },
+      { q: "Can I break my lease because of mould in Ontario?", a: "Mould alone isn't an automatic right to leave, but if the unit becomes uninhabitable and the landlord won't act, that can support a T6, a rent abatement, and in serious cases an argument to end the tenancy. Get advice from a tenant clinic first." },
+      { q: "Can I get money back for living with mould?", a: "Yes. Through a T6 application the LTB can order a rent abatement — a partial refund — for the period you lived with an unremediated hazard, on top of ordering the landlord to fix it." },
+    ],
+    cta: { title: "Landlord ignoring the problem?", blurb: "Send a clear, dated repair request that puts them on notice.", href: "/letters/repair-request-letter", label: "Repair Request Letter" },
+    related: [
+      { label: "Can I Withhold Rent Over Repairs?", href: "/blog/withholding-rent-repairs-ontario" },
+      { label: "Bed Bugs & Pests: Who's Responsible?", href: "/blog/bed-bugs-pests-landlord-ontario" },
+      { label: "Landlord Repair Obligations", href: "/blog/landlord-repair-obligations-canada" },
+      { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+    ],
+  },
+  {
+    slug: "no-written-lease-tenant-rights-ontario",
+    category: ON,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "No Written Lease in Ontario? You Still Have Full Rights",
+    headline: "No Written Lease in Ontario? Your Rights With a Verbal Tenancy",
+    h1: "No Written Lease in Ontario? You Still Have Full Rights",
+    crumb: "No Written Lease in Ontario",
+    description: "A handshake or verbal rental deal in Ontario is a real tenancy with full protection under the Residential Tenancies Act. Your rights without a written lease, the Standard Lease rule, and the one-month-rent remedy.",
+    ogDescription: "Verbal tenancies are fully covered by the RTA. Your rights without a written lease in Ontario.",
+    keywords: ["no written lease ontario", "verbal lease ontario tenant rights", "no lease agreement rights ontario", "ontario standard lease not provided", "month to month no lease ontario"],
+    lead: "No paper, no problem — at least not for your rights. In Ontario a verbal or handshake tenancy is fully valid and protected by the Residential Tenancies Act. In fact, the law gives you a powerful tool when a landlord won't give you a proper written lease.",
+    sections: [
+      { h2: "A Verbal Tenancy Is a Real Tenancy", paras: [
+        "If you pay rent and the landlord accepts it, you have a tenancy — written lease or not. Every core RTA protection applies: **security of tenure, rent-increase limits, proper notice, the right to repairs, and protection from illegal eviction**. A landlord can't treat you as having fewer rights because nothing was signed.",
+      ] },
+      { h2: "The Ontario Standard Lease Rule", paras: [
+        "For most tenancies, landlords must use the **Ontario Standard Lease** form. If you don't have one, you can **ask for it in writing**. If the landlord doesn't provide it within **21 days**, you may **withhold one month's rent** — and if they still don't provide it within 30 days after that, you may not have to repay that month at all.",
+      ] },
+      { h2: "Prove the Terms", paras: [
+        "The catch with a verbal deal is proving what was agreed. Protect yourself:",
+      ], list: [
+        "Keep records of **rent payments** — e-transfers are ideal.",
+        "Save **texts and emails** discussing rent, repairs, or move-in.",
+        "Note the **rent amount, due date, and what's included** (utilities, parking).",
+      ] },
+      { h2: "Your Rent Is Still Protected", paras: [
+        "Even without a signed lease, the landlord can only raise your rent by the guideline (unless the unit is exempt), once every 12 months, with **90 days' written notice on Form N1**. A verbal 'agreement' to a bigger increase isn't binding.",
+      ] },
+      { h2: "Ending a Verbal Tenancy", paras: [
+        "A verbal periodic tenancy is treated as month-to-month. To leave, give **60 days' written notice on Form N9**. The landlord can only end it for a valid reason through the LTB — never by simply telling you to go.",
+      ] },
+    ],
+    faqs: [
+      { q: "Do I have rights without a written lease in Ontario?", a: "Yes — full rights. A verbal or unwritten tenancy is completely covered by the Residential Tenancies Act, including security of tenure, rent-increase limits, notice rules, repairs, and protection from illegal eviction." },
+      { q: "My landlord never gave me a Standard Lease — what can I do?", a: "Ask for it in writing. If the landlord doesn't provide the Ontario Standard Lease within 21 days, you can withhold one month's rent. If they still don't provide it within 30 days after that, you may not have to repay that withheld month." },
+      { q: "Can my landlord raise rent if I have no lease in Ontario?", a: "Only under the normal rules: by the guideline (unless the unit is exempt), once every 12 months, with 90 days' written notice on Form N1. A verbal agreement to a larger increase isn't enforceable." },
+      { q: "How do I end a tenancy with no written lease?", a: "A verbal tenancy is treated as month-to-month, so you give 60 days' written notice on Form N9. The landlord can only end it for a valid reason through the LTB." },
+    ],
+    cta: { title: "Check what a lease really says", blurb: "Have a written lease now? Paste it and get a plain-English breakdown, free.", href: "/tools/clause-checker", label: "Free Clause Checker" },
+    related: [
+      { label: "Ontario Standard Lease Explained", href: "/blog/ontario-standard-lease-explained" },
+      { label: "Month-to-Month vs Fixed-Term", href: "/blog/month-to-month-vs-fixed-term-lease" },
+      { label: "How Much Notice to Move Out", href: "/blog/notice-to-move-out-ontario" },
+      { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+    ],
+  },
+  {
+    slug: "rooming-house-tenant-rights-ontario",
+    category: ON,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Rooming House & Shared Housing Tenant Rights in Ontario",
+    headline: "Rooming House and Shared Housing Tenant Rights in Ontario",
+    h1: "Rooming House & Shared Housing Tenant Rights in Ontario",
+    crumb: "Rooming House Rights in Ontario",
+    description: "Renting a room in a rooming or boarding house in Ontario? You usually have full Residential Tenancies Act rights — with one key exception for sharing a kitchen or bathroom with the owner. Your rights explained.",
+    ogDescription: "When rooming-house and shared-housing renters are covered by the RTA in Ontario — and the owner-sharing exception.",
+    keywords: ["rooming house tenant rights ontario", "renting a room ontario rights", "boarding house rights ontario", "shared kitchen bathroom landlord ontario", "single room occupancy ontario"],
+    lead: "Renting a single room is one of the most affordable ways to live in Ontario's cities — and one of the most misunderstood. Most roomers have the same rights as any tenant, but one specific living arrangement changes everything.",
+    sections: [
+      { h2: "Most Roomers Are Full Tenants", paras: [
+        "If you rent a room in a rooming or boarding house, you're usually a **tenant under the Residential Tenancies Act**, with the same core rights as anyone: proper notice, rent-increase limits, the right to repairs, receipts on request, and protection from illegal eviction. The landlord can't just change your lock or put your things on the curb.",
+      ] },
+      { h2: "The One Big Exception", paras: [
+        "The RTA does **not** apply if you share a **kitchen or bathroom with the owner** (or the owner's close family member) who lives in the building. In that situation you're not covered by the Act, and different, weaker rules apply. This exception is specifically about sharing with the **owner** — not with other roomers or tenants.",
+      ] },
+      { h2: "Sharing With Other Tenants Is Fine", paras: [
+        "If you share a kitchen or bathroom with **other renters** (but not the owner), you're still a full tenant under the Act. A house full of roomers who each rent their own room, sharing common areas, are generally all covered.",
+      ] },
+      { h2: "Your Everyday Rights as a Roomer", paras: ["When you're covered, you're entitled to:"], list: [
+        "**Rent receipts** on request, for free.",
+        "**Proper notice** before the landlord enters your room (24 hours, in writing, for most reasons).",
+        "**Rent-increase protection** — the guideline, once a year, with 90 days' notice.",
+        "**A real eviction process** — only the LTB and Sheriff can remove you.",
+      ] },
+      { h2: "Watch for Illegal Rooming Houses", paras: [
+        "Some rooming houses aren't licensed or up to fire code. As with an [illegal basement apartment](/blog/illegal-basement-apartment-ontario), that doesn't strip your tenant rights — but do check you have working smoke and carbon-monoxide alarms and a safe exit.",
+      ] },
+    ],
+    faqs: [
+      { q: "Do I have tenant rights renting a room in Ontario?", a: "Usually yes. If you rent a room in a rooming or boarding house, you're generally a full tenant under the Residential Tenancies Act — unless you share a kitchen or bathroom with the owner (or their close family) who lives in the building." },
+      { q: "What is the shared-kitchen-or-bathroom exception?", a: "The RTA doesn't apply if you share a kitchen or bathroom with the owner or the owner's close family member living in the same building. Sharing with other tenants or roomers (not the owner) doesn't remove your coverage." },
+      { q: "Can a rooming-house landlord evict me without the LTB?", a: "If you're covered by the RTA, no — only the Landlord and Tenant Board can order an eviction, enforced by the Sheriff. A landlord who locks you out or removes your belongings is acting illegally." },
+      { q: "Does the landlord have to give me a receipt for room rent?", a: "Yes, if you're covered by the RTA. On request, the landlord must provide a free rent receipt, including for up to 12 months after you move out." },
+    ],
+    cta: { title: "Know your rights by province", blurb: "Get an instant reference card for deposits, notice, and rent rules.", href: "/tools/tenant-rights-lookup", label: "Tenant Rights Lookup" },
+    related: [
+      { label: "Illegal Basement Apartments in Ontario", href: "/blog/illegal-basement-apartment-ontario" },
+      { label: "Roommates & Co-Tenants in Ontario", href: "/blog/roommates-co-tenants-ontario" },
+      { label: "Landlord Entry & Notice Rules", href: "/blog/landlord-entry-notice-canada" },
+      { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+    ],
+  },
+  {
+    slug: "rent-bank-arrears-help-ontario",
+    category: ON,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Behind on Rent in Ontario? Rent Banks & Arrears Help",
+    headline: "Behind on Rent in Ontario? Rent Banks and Arrears Help",
+    h1: "Behind on Rent in Ontario? Rent Banks &amp; Arrears Help",
+    crumb: "Rent Banks & Arrears Help",
+    description: "Falling behind on rent in Ontario doesn't have to mean eviction. Rent banks, the Canada-Ontario Housing Benefit, LTB payment plans, and how to act before an N4 becomes an eviction order.",
+    ogDescription: "Rent banks, housing benefits, and LTB payment plans for tenants behind on rent in Ontario.",
+    keywords: ["rent bank ontario", "help paying rent arrears ontario", "behind on rent ontario", "emergency rent assistance ontario", "can't pay rent ontario help"],
+    lead: "If you've fallen behind on rent, the worst thing you can do is nothing. Ontario has real programs — rent banks, benefits, and payment plans — that can stop a missed month from turning into an eviction. Here's where to turn, fast.",
+    sections: [
+      { h2: "First: An N4 Is Not an Eviction", paras: [
+        "If your landlord serves an **N4** for unpaid rent, you can **void it by paying the full amount owing** within the notice period — and even later, you can often 'pay and stay' right up to the eviction. So the goal is to find the money or a plan. See [got an N4?](/blog/n4-non-payment-rent-ontario) for exactly how the timeline works.",
+      ] },
+      { h2: "Rent Banks", paras: [
+        "Many Ontario municipalities fund **rent banks** — programs that provide grants or interest-free loans to cover rent arrears for tenants at risk of eviction. Eligibility varies by area, but they're designed precisely for a short-term shortfall. Contact your municipality or 211 Ontario to find the rent bank serving your area.",
+      ] },
+      { h2: "The Canada-Ontario Housing Benefit", paras: [
+        "The **Canada-Ontario Housing Benefit (COHB)** is a portable monthly benefit that helps eligible households with rent. It's not instant, but if your income is low relative to your rent, it can make your housing sustainable going forward. Ask your local service manager how to be considered.",
+      ] },
+      { h2: "Other Emergency Help", paras: ["Depending on your situation, you may also qualify for:"], list: [
+        "**Ontario Works / ODSP** emergency or discretionary housing assistance.",
+        "**Community and charitable funds** for one-time rent help (ask 211).",
+        "**Utility arrears programs** like LEAP, which free up cash for rent.",
+      ] },
+      { h2: "Ask the LTB for a Payment Plan", paras: [
+        "If your case reaches the Landlord and Tenant Board, you can ask for a **repayment plan** to clear the arrears over time and keep your home. Bring a realistic budget. Tenant Duty Counsel at the hearing can help you request one — don't skip the hearing.",
+      ] },
+    ],
+    faqs: [
+      { q: "What is a rent bank in Ontario?", a: "A rent bank is a municipally funded program that provides grants or interest-free loans to cover rent arrears for tenants at risk of eviction. Eligibility and amounts vary by area — contact your municipality or 211 Ontario to find yours." },
+      { q: "Can I get help paying rent arrears in Ontario?", a: "Yes. Options include local rent banks, the Canada-Ontario Housing Benefit, Ontario Works/ODSP emergency assistance, community funds through 211, and utility-arrears programs. Acting early, before an N4 becomes an eviction order, gives you the most options." },
+      { q: "Will I be evicted if I miss one month's rent in Ontario?", a: "Not automatically. A missed payment can lead to an N4, but you can void it by paying what's owed within the notice period, and you can often pay and stay even later. Rent banks and payment plans exist to help you catch up." },
+      { q: "Can I set up a payment plan with the LTB?", a: "Yes. At a hearing you can ask the Landlord and Tenant Board for a repayment plan to clear arrears over time and keep your tenancy. Bring a realistic budget, and use Tenant Duty Counsel for free help." },
+    ],
+    cta: { title: "Facing an N4 or hearing?", blurb: "See how the non-payment timeline works and how to void the notice.", href: "/blog/n4-non-payment-rent-ontario", label: "N4 Non-Payment Guide" },
+    related: [
+      { label: "Got an N4? Non-Payment Explained", href: "/blog/n4-non-payment-rent-ontario" },
+      { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
+      { label: "How to Fight an Illegal Eviction", href: "/blog/how-to-fight-an-illegal-eviction-ontario" },
+      { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
+    ],
+  },
+  {
+    slug: "how-to-dispute-a-rent-increase-ontario",
+    category: ON,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "How to Dispute a Rent Increase in Ontario",
+    headline: "How to Dispute an Illegal or Above-Guideline Rent Increase in Ontario",
+    h1: "How to Dispute a Rent Increase in Ontario",
+    crumb: "Dispute a Rent Increase in Ontario",
+    description: "Think your Ontario rent increase is too high or invalid? When an increase is illegal, how to respond to an N1 or an above-guideline (AGI) application, and how to recover money you were wrongly charged.",
+    ogDescription: "When an Ontario rent increase is invalid, how to respond, and how to recover an illegal charge.",
+    keywords: ["how to dispute rent increase ontario", "illegal rent increase ontario", "fight rent increase ontario", "n1 rent increase ontario", "above guideline increase dispute ontario"],
+    lead: "A rent increase notice isn't the final word. In Ontario, plenty of increases are invalid — wrong notice, wrong timing, or above what's allowed — and you have clear ways to push back without risking your tenancy.",
+    sections: [
+      { h2: "First, Check If It's Even Valid", paras: [
+        "Many increases fail on the basics. An increase is **not valid** unless it uses proper **written notice (Form N1)** given at least **90 days** ahead, comes no more than **once every 12 months**, and (for rent-controlled units) stays at or below the **annual guideline**. If any of those is off, the increase doesn't take effect.",
+      ] },
+      { h2: "Is Your Unit Exempt?", paras: [
+        "Units first occupied after **November 15, 2018** are exempt from the guideline, so there's no percentage cap — but the 90-day notice and once-a-year rules still apply. Confirm your unit's status before assuming an increase is illegal. Our [AGI checker](/tools/agi-checker) walks through this in seconds.",
+      ] },
+      { h2: "Above-Guideline Increases (AGIs)", paras: [
+        "If the increase is above the guideline, the landlord **must apply to the LTB** for an above-guideline increase order (usually for major capital work or big cost increases). You'll get notice and the right to participate in the hearing. **Don't pay the excess** unless and until the LTB approves it.",
+      ] },
+      { h2: "How to Respond", paras: ["A calm, documented response wins:"], list: [
+        "**Put your objection in writing** and keep a copy — our [dispute letter](/letters/rent-increase-dispute-letter) gives you a template.",
+        "**Keep paying your lawful rent** (the old amount, or the valid guideline amount) so you're never in arrears.",
+        "**Gather evidence:** the notice, your lease, and payment history.",
+        "For an AGI, **attend the hearing** and use Tenant Duty Counsel.",
+      ] },
+      { h2: "Recovering an Illegal Increase", paras: [
+        "If you already paid an increase that turns out to be invalid, you can apply to the LTB (a **T1**) to recover the overpayment. There are time limits, so act rather than waiting. An illegal increase doesn't become legal just because you paid it for a while.",
+      ] },
+    ],
+    faqs: [
+      { q: "When is a rent increase illegal in Ontario?", a: "An increase is invalid if it lacks proper written notice (Form N1) at least 90 days ahead, happens more than once in 12 months, or exceeds the annual guideline for a rent-controlled unit without LTB approval. Any of these makes the increase ineffective." },
+      { q: "How do I dispute a rent increase in Ontario?", a: "Check the notice, timing, and amount first. Put your objection in writing, keep paying your lawful rent, and gather your lease and payment records. For an above-guideline increase, participate in the LTB hearing; if you already overpaid an invalid increase, file a T1 to recover it." },
+      { q: "Do I have to pay an above-guideline increase in Ontario?", a: "Not unless the Landlord and Tenant Board approves it. A landlord must apply to the LTB for an above-guideline increase, and you can dispute it. Don't pay the portion above the guideline until there's an order." },
+      { q: "Can I get back rent I overpaid on an illegal increase?", a: "Yes. You can file a T1 application at the LTB to recover money collected through an illegal rent increase, subject to time limits — so it's best to act promptly rather than letting it continue." },
+    ],
+    cta: { title: "Is your increase legal?", blurb: "Check any proposed increase in seconds with our free AGI checker.", href: "/tools/agi-checker", label: "AGI Checker" },
+    related: [
+      { label: "Above-Guideline Rent Increases", href: "/blog/above-guideline-rent-increase-ontario" },
+      { label: "2026 Rent Increase Guideline", href: "/blog/ontario-rent-increase-guideline-2026" },
+      { label: "The Post-2018 Exemption", href: "/blog/post-2018-rent-control-exemption-ontario" },
+      { label: "Rent Increase Dispute Letter", href: "/letters/rent-increase-dispute-letter" },
     ],
   },
 ];

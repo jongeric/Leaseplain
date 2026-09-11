@@ -202,6 +202,300 @@ export const ANSWERS: AnswerDef[] = [
     ],
     keywords: ["can i sublet ontario", "assign lease ontario"],
   },
+
+  // ---- Ontario: additional high-intent questions ----
+  {
+    slug: "does-my-landlord-have-to-give-me-a-rent-receipt-ontario",
+    question: "Does my landlord have to give me a rent receipt in Ontario?",
+    category: "Rent",
+    shortAnswer:
+      "Yes. On request, your Ontario landlord must give you a free rent receipt — and this applies even after you've moved out, for up to 12 months after the tenancy ends. They can't charge you for it.",
+    blocks: [
+      { type: "p", text: "A receipt should show the address, what the payment was for, the amount, the date, and the landlord's name. Receipts are useful proof for the LTB, for benefits and taxes, and if a payment is ever disputed." },
+    ],
+    related: [
+      { label: "Last month's rent deposit rules", href: "/blog/last-months-rent-deposit-ontario" },
+    ],
+    keywords: ["rent receipt ontario", "does landlord have to give receipt ontario"],
+  },
+  {
+    slug: "can-my-landlord-show-my-unit-to-buyers-ontario",
+    question: "Can my landlord show my apartment to buyers or new tenants in Ontario?",
+    category: "Privacy",
+    shortAnswer:
+      "Yes, but generally only with at least 24 hours' written notice stating a time between 8 a.m. and 8 p.m. — unless you agree to a specific showing. If the unit is being sold, the landlord (or their agent) can show it, but your privacy rights and the notice rules still apply.",
+    blocks: [
+      { type: "p", text: "There is a narrow exception: once either party has given notice to end the tenancy, a landlord can show the unit to prospective tenants with only reasonable effort to tell you, though good landlords still give proper notice." },
+    ],
+    related: [
+      { label: "Landlord entry & notice rules", href: "/blog/landlord-entry-notice-canada" },
+      { label: "When your landlord sells", href: "/blog/landlord-selling-property-tenant-rights" },
+    ],
+    keywords: ["landlord showing apartment ontario", "landlord entry to show unit ontario"],
+  },
+  {
+    slug: "how-long-does-an-eviction-take-ontario",
+    question: "How long does an eviction take in Ontario?",
+    category: "Eviction",
+    shortAnswer:
+      "Usually several months. The landlord must first serve the correct notice, then apply to the LTB, wait for a hearing, and obtain an order — and only the Sheriff can actually enforce it. Backlogs at the LTB have made the process take many months in recent years.",
+    blocks: [
+      { type: "p", text: "You cannot be removed the day a notice expires. Each stage has its own timeline, and you have the right to a hearing and to respond before any eviction order is made or enforced." },
+    ],
+    related: [
+      { label: "LTB wait times in 2026", href: "/blog/ltb-wait-times-2026" },
+      { label: "How to fight an illegal eviction", href: "/blog/how-to-fight-an-illegal-eviction-ontario" },
+    ],
+    keywords: ["how long does eviction take ontario", "ontario eviction timeline"],
+  },
+  {
+    slug: "can-my-landlord-charge-me-for-repairs-ontario",
+    question: "Can my landlord charge me for repairs in Ontario?",
+    category: "Repairs",
+    shortAnswer:
+      "Only for damage you (or your guests) caused deliberately or through negligence — not for normal wear and tear or for the landlord's own maintenance obligations. Routine repairs and upkeep are the landlord's responsibility and can't be billed to you.",
+    blocks: [
+      { type: "p", text: "If a landlord claims you owe for damage, they must be able to prove it. Faded paint, worn carpet, and minor marks are normal wear and tear, which you can never be charged for." },
+    ],
+    related: [
+      { label: "Landlord repair obligations", href: "/blog/landlord-repair-obligations-canada" },
+      { label: "Normal wear and tear vs damage", href: "/blog/normal-wear-and-tear-vs-damage-canada" },
+    ],
+    keywords: ["can landlord charge for repairs ontario", "who pays for repairs ontario"],
+  },
+  {
+    slug: "can-my-landlord-charge-a-late-fee-ontario",
+    question: "Can my landlord charge a late fee for rent in Ontario?",
+    category: "Rent",
+    shortAnswer:
+      "No. Ontario landlords cannot charge late fees, interest, or penalties for rent paid late. A lease clause imposing a late fee is not enforceable under the Residential Tenancies Act.",
+    blocks: [
+      { type: "p", text: "Persistent late payment can be a ground for the landlord to apply to end the tenancy (Form N8), but they still can't add monetary late-payment penalties. If you've been charged one, you can dispute it." },
+    ],
+    related: [
+      { label: "Got an N4? Non-payment explained", href: "/blog/n4-non-payment-rent-ontario" },
+    ],
+    keywords: ["late fee rent ontario", "can landlord charge late fee ontario"],
+  },
+  {
+    slug: "can-my-landlord-refuse-to-return-my-last-months-rent-ontario",
+    question: "Can my landlord keep my last month's rent deposit in Ontario?",
+    category: "Deposits",
+    shortAnswer:
+      "No — the last month's rent (LMR) deposit must be applied to your actual last month of rent. A landlord can't keep it for cleaning, damage, or any other purpose, and they owe you interest on it every year at the rent-increase guideline rate.",
+    blocks: [
+      { type: "p", text: "If your rent has increased since you paid the deposit, the landlord can ask you to top it up, or apply the annual interest toward that. They can't use the LMR deposit as a damage deposit." },
+    ],
+    related: [
+      { label: "Last month's rent deposit rules", href: "/blog/last-months-rent-deposit-ontario" },
+      { label: "Deposit interest calculator", href: "/tools/deposit-interest-calculator" },
+    ],
+    keywords: ["last months rent deposit ontario", "can landlord keep lmr deposit ontario"],
+  },
+  {
+    slug: "what-is-the-rent-increase-guideline-for-2027-ontario",
+    question: "What is the Ontario rent increase guideline for 2027?",
+    category: "Rent",
+    shortAnswer:
+      "The 2027 rent increase guideline is 1.9% — the lowest since the 2021 freeze. It's the most a landlord can raise rent on most rent-controlled units in 2027 without LTB approval, with 90 days' written notice and only once every 12 months.",
+    blocks: [
+      { type: "p", text: "Units first occupied after November 15, 2018 are exempt from the guideline, so there's no percentage cap on them — but the 90-day notice and once-a-year rules still apply." },
+    ],
+    related: [
+      { label: "Ontario rent increase history (2020–2027)", href: "/ontario-rent-increase-history" },
+      { label: "2026 rent increase guideline", href: "/blog/ontario-rent-increase-guideline-2026" },
+    ],
+    keywords: ["ontario rent increase guideline 2027", "rent increase 2027 ontario"],
+  },
+  {
+    slug: "can-my-landlord-increase-rent-on-a-new-building-ontario",
+    question: "Why can my landlord raise my rent by any amount in Ontario?",
+    category: "Rent",
+    shortAnswer:
+      "If your unit was first occupied for residential purposes after November 15, 2018, it's exempt from Ontario's rent-increase guideline, so there's no percentage cap. The landlord still needs to give 90 days' written notice and can only increase once every 12 months.",
+    blocks: [
+      { type: "p", text: "This exemption is why many tenants in newer buildings face large increases. Your security of tenure and all other RTA protections still apply — the exemption is only from the guideline percentage." },
+    ],
+    related: [
+      { label: "The post-2018 rent control exemption", href: "/blog/post-2018-rent-control-exemption-ontario" },
+    ],
+    keywords: ["post 2018 rent exemption ontario", "no rent cap new building ontario"],
+  },
+
+  // ---- British Columbia ----
+  {
+    slug: "how-much-can-my-landlord-raise-my-rent-in-bc",
+    question: "How much can my landlord raise my rent in BC?",
+    category: "Rent",
+    shortAnswer:
+      "No more than the maximum allowable rent increase BC sets each year, and only once every 12 months, with at least three full months' written notice on the approved form. There's no percentage increase allowed above the annual limit except in narrow RTB-approved cases.",
+    blocks: [
+      { type: "p", text: "The cap applies while you stay in the unit. BC has no vacancy control, so a landlord can set any rent for a new tenant once you move out." },
+    ],
+    related: [
+      { label: "BC rent increase rules", href: "/blog/bc-rent-increase-rules" },
+      { label: "BC 2026 rent increase guide", href: "/blog/bc-rent-increase-2026" },
+    ],
+    keywords: ["how much can landlord raise rent bc", "bc rent increase limit"],
+  },
+  {
+    slug: "how-much-notice-to-move-out-bc",
+    question: "How much notice do I have to give to move out in BC?",
+    category: "Moving",
+    shortAnswer:
+      "For a month-to-month tenancy, at least one full month's written notice, and it must be received before the day rent is due. A fixed-term lease commits you until the end date unless you assign, sublet, or reach an agreement to end early.",
+    blocks: [
+      { type: "p", text: "To leave at the end of a month, give notice before the first day of the preceding month. Keep proof of when you gave notice." },
+    ],
+    related: [
+      { label: "How much notice to end a tenancy in BC", href: "/blog/bc-notice-to-end-tenancy" },
+      { label: "Breaking a lease in BC", href: "/blog/bc-breaking-a-lease" },
+    ],
+    keywords: ["how much notice to move out bc", "notice to end tenancy bc"],
+  },
+  {
+    slug: "how-much-deposit-can-a-landlord-charge-in-bc",
+    question: "How much deposit can a landlord charge in BC?",
+    category: "Deposits",
+    shortAnswer:
+      "A security deposit can be no more than half of one month's rent. If pets are allowed, the landlord can also collect a pet damage deposit of up to another half month's rent — but the two together can't exceed one month's rent.",
+    blocks: [
+      { type: "p", text: "Landlords can't charge extra cleaning, key, or administration deposits. Any deposit must be returned within 15 days of the tenancy ending and your giving a forwarding address, or the landlord may owe you double." },
+    ],
+    related: [
+      { label: "BC security deposit rules", href: "/blog/bc-security-deposit-rules" },
+    ],
+    keywords: ["how much deposit can landlord charge bc", "damage deposit bc"],
+  },
+  {
+    slug: "when-do-i-get-my-deposit-back-in-bc",
+    question: "When does my landlord have to return my deposit in BC?",
+    category: "Deposits",
+    shortAnswer:
+      "Within 15 days of the later of the day your tenancy ends and the day you give your forwarding address in writing. Within that window the landlord must return the deposit (with interest) or apply to the RTB to keep part of it — otherwise they generally owe you double.",
+    blocks: [
+      { type: "p", text: "Give your forwarding address in writing and keep proof of the date — that's what starts the 15-day clock." },
+    ],
+    related: [
+      { label: "BC security deposit rules", href: "/blog/bc-security-deposit-rules" },
+    ],
+    keywords: ["when do i get my deposit back bc", "deposit return 15 days bc"],
+  },
+  {
+    slug: "can-my-landlord-evict-me-without-a-reason-bc",
+    question: "Can my landlord evict me without a reason in BC?",
+    category: "Eviction",
+    shortAnswer:
+      "No. A BC landlord can only end your tenancy for a reason allowed by the Residential Tenancy Act, using the correct notice — and you can only be removed by an order of possession from the RTB, enforced by a court bailiff. Most notices can be disputed within a short deadline.",
+    blocks: [
+      { type: "p", text: "For the landlord's own use or renovations, longer notice and compensation apply. If they don't follow through on the stated reason, you may be entitled to significant compensation." },
+    ],
+    related: [
+      { label: "BC eviction notices & the RTB", href: "/blog/bc-eviction-notices-rtb" },
+    ],
+    keywords: ["can landlord evict without reason bc", "no fault eviction bc"],
+  },
+  {
+    slug: "can-my-landlord-enter-without-notice-bc",
+    question: "Can my landlord enter my unit without notice in BC?",
+    category: "Privacy",
+    shortAnswer:
+      "Generally no. A BC landlord must give at least 24 hours' written notice stating the reason and a time between 8 a.m. and 9 p.m., unless you agree, it's an emergency, or you've abandoned the unit. Repeated entry without proper notice is a violation of your rights.",
+    blocks: [
+      { type: "p", text: "If a landlord keeps entering without notice, document each time and apply to the RTB — the Branch can order them to stop and award compensation." },
+    ],
+    related: [
+      { label: "Landlord entry & notice rules", href: "/blog/landlord-entry-notice-canada" },
+    ],
+    keywords: ["landlord enter without notice bc", "landlord entry rules bc"],
+  },
+
+  // ---- Alberta ----
+  {
+    slug: "is-there-rent-control-in-alberta",
+    question: "Is there rent control in Alberta?",
+    category: "Rent",
+    shortAnswer:
+      "No. Alberta has no rent control, so there's no percentage cap on how much a landlord can raise the rent. However, rent can only be increased once every 12 months, never during the first year of a tenancy, and only with proper written notice.",
+    blocks: [
+      { type: "p", text: "Because there's no cap, a fixed-term lease (which locks your rent for the whole term) can be valuable protection in a rising market." },
+    ],
+    related: [
+      { label: "Alberta rent increase rules", href: "/blog/alberta-rent-increase-rules" },
+    ],
+    keywords: ["is there rent control in alberta", "rent increase cap alberta"],
+  },
+  {
+    slug: "how-much-notice-for-a-rent-increase-in-alberta",
+    question: "How much notice does my landlord need to raise rent in Alberta?",
+    category: "Rent",
+    shortAnswer:
+      "For a month-to-month tenancy, at least three full tenancy months' written notice. For a weekly tenancy, at least 12 tenancy weeks' notice. Rent can't be raised at all during a fixed term, and only once every 12 months.",
+    blocks: [
+      { type: "p", text: "There's no cap on the amount in Alberta, so the timing and notice rules — plus your option to move at the end of the term — are your main protections." },
+    ],
+    related: [
+      { label: "Alberta rent increase rules", href: "/blog/alberta-rent-increase-rules" },
+    ],
+    keywords: ["rent increase notice alberta", "how much notice rent increase alberta"],
+  },
+  {
+    slug: "how-much-notice-to-move-out-alberta",
+    question: "How much notice do I have to give to move out in Alberta?",
+    category: "Moving",
+    shortAnswer:
+      "For a month-to-month tenancy, at least one full tenancy month's written notice, received before the first day of that month. A weekly tenancy needs one tenancy week. A fixed-term lease ends on its last day without notice, unless your agreement says otherwise.",
+    blocks: [
+      { type: "p", text: "Leaving a fixed term early is breaking the lease — you'll want to assign, sublet, or agree with the landlord to limit what you owe." },
+    ],
+    related: [
+      { label: "How much notice to end a tenancy in Alberta", href: "/blog/alberta-notice-to-end-tenancy" },
+      { label: "Breaking a lease in Alberta", href: "/blog/alberta-breaking-a-lease" },
+    ],
+    keywords: ["how much notice to move out alberta", "notice to end tenancy alberta"],
+  },
+  {
+    slug: "how-much-deposit-can-a-landlord-charge-in-alberta",
+    question: "How much deposit can a landlord charge in Alberta?",
+    category: "Deposits",
+    shortAnswer:
+      "No more than one month's rent as of the start of the tenancy. Alberta doesn't allow a separate additional pet deposit on top — the total security (damage) deposit is capped at one month's rent, and it must be held in an interest-bearing trust account.",
+    blocks: [
+      { type: "p", text: "The landlord must pay interest at the prescribed rate, and generally return the deposit or provide a written statement of deductions within 10 days of move-out." },
+    ],
+    related: [
+      { label: "Alberta security deposit rules", href: "/blog/alberta-security-deposit-rules" },
+    ],
+    keywords: ["how much deposit can landlord charge alberta", "damage deposit alberta"],
+  },
+  {
+    slug: "when-do-i-get-my-deposit-back-in-alberta",
+    question: "When do I get my security deposit back in Alberta?",
+    category: "Deposits",
+    shortAnswer:
+      "Generally within 10 days of moving out, your landlord must either return the deposit (with interest) or give you a written statement of any deductions along with the remaining balance. Deductions are only allowed for unpaid rent or damage beyond normal wear and tear.",
+    blocks: [
+      { type: "p", text: "If you disagree with a deduction, ask for the itemized statement and file a claim through the RTDRS or Provincial Court. Move-out photos and the inspection report are strong evidence." },
+    ],
+    related: [
+      { label: "Alberta security deposit rules", href: "/blog/alberta-security-deposit-rules" },
+    ],
+    keywords: ["when do i get deposit back alberta", "deposit return 10 days alberta"],
+  },
+  {
+    slug: "can-my-landlord-evict-me-without-a-reason-alberta",
+    question: "Can my landlord evict me without a reason in Alberta?",
+    category: "Eviction",
+    shortAnswer:
+      "For a periodic tenancy, a landlord can end it for specified reasons (like moving in, major renovation, or sale to an occupying buyer) with the required notice — usually 90 days. For non-payment or a substantial breach, shorter notice applies. Only a court order and a bailiff can actually remove you.",
+    blocks: [
+      { type: "p", text: "A fixed-term lease simply ends on its last day. In all cases, a landlord can't lock you out or remove your belongings without an order from the RTDRS or the Court." },
+    ],
+    related: [
+      { label: "The Alberta eviction process", href: "/blog/alberta-eviction-process" },
+    ],
+    keywords: ["can landlord evict without reason alberta", "no fault eviction alberta"],
+  },
 ];
 
 export function getAnswer(slug: string): AnswerDef | undefined {

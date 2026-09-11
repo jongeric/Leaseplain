@@ -164,8 +164,8 @@ export default function BcRentIncreaseRulesPage() {
                   <ul className="flex flex-col gap-2">
                     {[
                       { label: "BC 2026 Rent Increase Guide", href: "/blog/bc-rent-increase-2026" },
+                      { label: "BC Rent Increase History (2019–2026)", href: "/bc-rent-increase-history" },
                       { label: "How Much Notice to End a Tenancy in BC", href: "/blog/bc-notice-to-end-tenancy" },
-                      { label: "BC Security Deposit Rules", href: "/blog/bc-security-deposit-rules" },
                       { label: "BC Tenant Rights", href: "/canada/british-columbia" },
                     ].map((l) => (
                       <li key={l.href}>

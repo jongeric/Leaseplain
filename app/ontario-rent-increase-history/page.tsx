@@ -183,6 +183,7 @@ export default function OntarioRentIncreaseHistoryPage() {
                     { label: "2026 rent increase guideline explained", href: "/blog/ontario-rent-increase-guideline-2026" },
                     { label: "Why isn't my rent capped? (post-2018)", href: "/blog/post-2018-rent-control-exemption-ontario" },
                     { label: "Above-guideline increases", href: "/blog/above-guideline-rent-increase-ontario" },
+                    { label: "BC rent increase history", href: "/bc-rent-increase-history" },
                     { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator" },
                   ].map((r) => (
                     <li key={r.href}>

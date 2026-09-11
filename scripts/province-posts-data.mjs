@@ -190,8 +190,8 @@ export const POSTS = [
     cta: { title: "Is your rent increase legal?", blurb: "Check any proposed increase against the rules with our free calculator.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
     related: [
       { label: "BC 2026 Rent Increase Guide", href: "/blog/bc-rent-increase-2026" },
+      { label: "BC Rent Increase History (2019–2026)", href: "/bc-rent-increase-history" },
       { label: "How Much Notice to End a Tenancy in BC", href: "/blog/bc-notice-to-end-tenancy" },
-      { label: "BC Security Deposit Rules", href: "/blog/bc-security-deposit-rules" },
       { label: "BC Tenant Rights", href: "/canada/british-columbia" },
     ],
   },

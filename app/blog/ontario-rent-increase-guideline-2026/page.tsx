@@ -315,6 +315,8 @@ export default function OntarioRentIncrease2026Page() {
                       { label: "Renting in Ontario", href: "/canada/ontario" },
                       { label: "BC Rent Increase Limit 2026", href: "/blog/bc-rent-increase-2026" },
                       { label: "How to Fight an Illegal Eviction", href: "/blog/how-to-fight-an-illegal-eviction-ontario" },
+                      { label: "How to Dispute a Rent Increase", href: "/blog/how-to-dispute-a-rent-increase-ontario" },
+                      { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
                       { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                     ].map((l) => (
                       <li key={l.href}>

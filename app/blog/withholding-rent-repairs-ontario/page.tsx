@@ -234,6 +234,7 @@ export default function WithholdingRentRepairsOntarioPage() {
                       { label: "How to Get Your Landlord to Make Repairs", href: "/blog/landlord-repair-obligations-canada" },
                       { label: "Got an N4? Non-Payment of Rent", href: "/blog/n4-non-payment-rent-ontario" },
                       { label: "Heat and Air Conditioning in Ontario", href: "/blog/landlord-heat-air-conditioning-ontario" },
+                      { label: "Mould in a Rental: Whose Problem?", href: "/blog/mould-in-a-rental-ontario" },
                       { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                     ].map((l) => (
                       <li key={l.href}>

@@ -257,6 +257,7 @@ export default function LastMonthsRentDepositOntarioPage() {
                       { label: "Security Deposit Rules by Province", href: "/blog/security-deposit-rules-canada" },
                       { label: "Normal Wear and Tear vs. Damage", href: "/blog/normal-wear-and-tear-vs-damage-canada" },
                       { label: "Moving Out in Ontario: Deposit Checklist", href: "/blog/moving-out-ontario-checklist" },
+                      { label: "Deposit Interest Calculator", href: "/tools/deposit-interest-calculator" },
                       { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                     ].map((l) => (
                       <li key={l.href}>

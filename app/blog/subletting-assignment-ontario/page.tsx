@@ -252,6 +252,8 @@ export default function SublettingAssignmentOntarioPage() {
                       { label: "Month-to-Month vs Fixed-Term Lease", href: "/blog/month-to-month-vs-fixed-term-lease" },
                       { label: "How Much Notice to Give When Moving Out", href: "/blog/notice-to-move-out-ontario" },
                       { label: "Ontario Standard Lease Explained", href: "/blog/ontario-standard-lease-explained" },
+                      { label: "How to Break a Lease in Ontario", href: "/blog/how-to-break-a-lease-ontario" },
+                      { label: "Roommates & Co-Tenants in Ontario", href: "/blog/roommates-co-tenants-ontario" },
                       { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                     ].map((l) => (
                       <li key={l.href}>

@@ -245,6 +245,8 @@ export default function N4NonPaymentRentOntarioPage() {
                       { label: "How to Fight an Illegal Eviction", href: "/blog/how-to-fight-an-illegal-eviction-ontario" },
                       { label: "How Long Does the LTB Take in 2026?", href: "/blog/ltb-wait-times-2026" },
                       { label: "Can I Withhold Rent Over Repairs?", href: "/blog/withholding-rent-repairs-ontario" },
+                      { label: "Behind on Rent? Rent Banks & Help", href: "/blog/rent-bank-arrears-help-ontario" },
+                      { label: "LTB Fees & Wait Times", href: "/ltb-fees-timeline" },
                       { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                     ].map((l) => (
                       <li key={l.href}>

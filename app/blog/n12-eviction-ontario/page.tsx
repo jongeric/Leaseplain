@@ -385,6 +385,7 @@ export default function N12EvictionOntarioPage() {
                       { label: "Ontario Tenant Rights", href: "/tenant-rights/ontario" },
                       { label: "Eviction Notices in Ontario", href: "/tenant-rights/eviction-notices" },
                       { label: "Eviction Notice Checker", href: "/tools/eviction-notice-checker" },
+                      { label: "Cash for Keys: Should You Take the Deal?", href: "/blog/cash-for-keys-ontario" },
                       { label: "How to Fight an Illegal Eviction", href: "/blog/how-to-fight-an-illegal-eviction-ontario" },
                     ].map((l) => (
                       <li key={l.href}>

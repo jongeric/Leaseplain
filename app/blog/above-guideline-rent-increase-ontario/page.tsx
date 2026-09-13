@@ -490,6 +490,8 @@ export default function AboveGuidelineRentIncreaseOntarioPage() {
                       { label: "Ontario Rent Increase Guideline 2026", href: "/blog/ontario-rent-increase-guideline-2026" },
                       { label: "Rent Increase Rules", href: "/tenant-rights/rent-increase-rules" },
                       { label: "Ontario Tenant Rights", href: "/tenant-rights/ontario" },
+                      { label: "Above-Guideline Increase Checker", href: "/tools/agi-checker" },
+                      { label: "How to Dispute a Rent Increase", href: "/blog/how-to-dispute-a-rent-increase-ontario" },
                       { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator" },
                     ].map((l) => (
                       <li key={l.href}>

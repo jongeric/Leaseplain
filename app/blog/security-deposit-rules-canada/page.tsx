@@ -293,6 +293,8 @@ export default function SecurityDepositRulesCanadaPage() {
                       { label: "Move-In Cost Calculator", href: "/tools/move-in-cost-calculator" },
                       { label: "Tenant Rights Lookup", href: "/tools/tenant-rights-lookup" },
                       { label: "Lease Red Flags", href: "/resources/lease-red-flags" },
+                      { label: "BC Security Deposit Rules", href: "/blog/bc-security-deposit-rules" },
+                      { label: "Alberta Security Deposit Rules", href: "/blog/alberta-security-deposit-rules" },
                       { label: "Canada Overview", href: "/canada" },
                     ].map((l) => (
                       <li key={l.href}>

@@ -9,8 +9,8 @@ export default function OrganizationSchema() {
       logo: {
         "@type": "ImageObject",
         url: "https://leaseplain.com/logo.png",
-        width: 200,
-        height: 60,
+        width: 400,
+        height: 120,
       },
       description:
         "LeasePlain is an AI-powered lease analysis tool that translates complex rental agreements into plain English, helping tenants understand what they're signing.",
@@ -34,14 +34,6 @@ export default function OrganizationSchema() {
       publisher: {
         "@id": "https://leaseplain.com/#organization",
       },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://leaseplain.com/glossary?q={search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@context": "https://schema.org",
@@ -55,7 +47,7 @@ export default function OrganizationSchema() {
       offers: {
         "@type": "Offer",
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "CAD",
         description: "Free lease analysis",
       },
       publisher: {

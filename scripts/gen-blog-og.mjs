@@ -43,6 +43,12 @@ const posts = [
   ["rooming-house-tenant-rights-ontario", "Rooming House Tenant Rights in Ontario"],
   ["rent-bank-arrears-help-ontario", "Behind on Rent? Rent Banks & Arrears Help"],
   ["how-to-dispute-a-rent-increase-ontario", "How to Dispute a Rent Increase in Ontario"],
+  ["quebec-security-deposit-rules", "Can a Landlord Ask for a Deposit in Quebec?"],
+  ["quebec-rent-increase-rules", "Quebec Rent Increase Rules: Refuse & Stay"],
+  ["quebec-ending-your-lease", "Ending a Lease in Quebec"],
+  ["quebec-repossession-eviction", "Repossession & Eviction in Quebec"],
+  ["quebec-lease-assignment-sublet", "Assigning or Subletting a Lease in Quebec"],
+  ["quebec-landlord-repairs", "Landlord Repairs & Maintenance in Quebec"],
 ];
 
 function card(title, category = "Ontario") {

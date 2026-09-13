@@ -7,6 +7,7 @@ const DATE_LABEL = "September 11, 2026";
 const BC = "British Columbia";
 const AB = "Alberta";
 const ON = "Ontario";
+const QC = "Quebec";
 
 export const POSTS = [
   // ---------------------------------------------------------------- BC cluster
@@ -793,6 +794,271 @@ export const POSTS = [
       { label: "2026 Rent Increase Guideline", href: "/blog/ontario-rent-increase-guideline-2026" },
       { label: "The Post-2018 Exemption", href: "/blog/post-2018-rent-control-exemption-ontario" },
       { label: "Rent Increase Dispute Letter", href: "/letters/rent-increase-dispute-letter" },
+    ],
+  },
+
+  // ----------------------------------------------------------- Quebec cluster
+  {
+    slug: "quebec-security-deposit-rules",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Can a Landlord Ask for a Deposit in Quebec? (No)",
+    headline: "Security Deposits in Quebec: Why Your Landlord Can't Ask for One",
+    h1: "Can a Landlord Ask for a Deposit in Quebec?",
+    crumb: "Quebec Security Deposits",
+    description: "In Quebec, security deposits are illegal. A landlord cannot demand a damage deposit, last month's rent, a pet deposit, or post-dated cheques — only the first month's rent in advance. Your rights under article 1904 of the Civil Code.",
+    ogDescription: "Quebec bans security deposits. What a landlord can and can't ask for, and how to get an illegal deposit back.",
+    keywords: ["quebec security deposit", "deposit illegal quebec", "damage deposit quebec", "last month rent quebec", "can landlord ask deposit quebec"],
+    lead: "Coming from another province? Here's a pleasant surprise: in Quebec, your landlord can't ask you for a security deposit at all. Not for damage, not for the last month, not for keys. Here's the rule and what it means for you.",
+    sections: [
+      { h2: "Deposits Are Illegal in Quebec", paras: [
+        "Under **article 1904 of the Civil Code of Québec**, a landlord **cannot require any deposit** or advance payment beyond the **first month's rent**. That means no damage deposit, no last month's rent, no pet deposit, no key deposit, and no requirement to hand over post-dated cheques for the year.",
+        "The most a landlord can ask before you move in is the **first month's rent** — and only once the lease has started, not as a condition of applying.",
+      ] },
+      { h2: "What About Post-Dated Cheques?", paras: [
+        "A landlord can **accept** post-dated cheques or pre-authorized payments if you offer them, but they **cannot require** them. Paying by the method you choose is your right.",
+      ] },
+      { h2: "If You Already Paid a Deposit", paras: [
+        "If a landlord demanded and you paid a deposit, you can ask for it back — and if they refuse, apply to the **Tribunal administratif du logement (TAL)** for an order to return it. Landlords who demand illegal deposits can also face penalties.",
+      ] },
+      { h2: "Why This Matters", paras: [
+        "Because there's no deposit, disputes about damage in Quebec are handled differently: the landlord must prove any damage you're responsible for and claim it through the TAL, rather than simply withholding money they're already holding. Document the unit's condition at move-in and move-out to protect yourself.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can a landlord ask for a security deposit in Quebec?", a: "No. Article 1904 of the Civil Code of Québec prohibits any deposit or advance beyond the first month's rent — no damage deposit, last month's rent, pet deposit, or key deposit. A landlord can only ask for the first month's rent." },
+      { q: "Can my Quebec landlord require post-dated cheques?", a: "No. A landlord can accept post-dated cheques if you choose to offer them, but cannot require them or any other specific payment method as a condition of the lease." },
+      { q: "I paid a deposit in Quebec — can I get it back?", a: "Yes. Demanding a deposit is illegal, so you can ask the landlord to return it and, if they refuse, apply to the Tribunal administratif du logement (TAL) for an order. The landlord may also face penalties." },
+      { q: "How are damages handled in Quebec without a deposit?", a: "The landlord must prove any damage beyond normal wear and tear and claim compensation through the TAL — they can't withhold a deposit because there isn't one. Photos at move-in and move-out are your best protection." },
+    ],
+    cta: { title: "Check your Quebec lease", blurb: "Paste your lease and get a plain-English breakdown of every clause, free.", href: "/tools/clause-checker", label: "Free Clause Checker" },
+    related: [
+      { label: "Quebec Rent Increase Rules", href: "/blog/quebec-rent-increase-rules" },
+      { label: "Ending Your Lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+    ],
+  },
+  {
+    slug: "quebec-rent-increase-rules",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Quebec Rent Increase Rules: How to Refuse and Stay",
+    headline: "Quebec Rent Increase Rules: Your Right to Refuse and Stay",
+    h1: "Quebec Rent Increase Rules: How to Refuse and Stay",
+    crumb: "Quebec Rent Increase Rules",
+    description: "Quebec has no fixed rent cap, but tenants have a powerful right: you can refuse a rent increase and stay in your home. How notice works, the one-month window to refuse, and how the TAL fixes the rent.",
+    ogDescription: "In Quebec you can refuse a rent increase and stay. How the notice, the refusal window, and the TAL process work.",
+    keywords: ["quebec rent increase rules", "refuse rent increase quebec", "tal rent increase", "how much can landlord raise rent quebec", "rent increase notice quebec"],
+    lead: "Quebec doesn't cap rent increases with a single percentage — but it gives tenants something arguably stronger: the right to say no to an increase and keep your home while a tribunal decides what's fair.",
+    sections: [
+      { h2: "No Fixed Cap — But a Real Check", paras: [
+        "There's no province-wide percentage cap in Quebec. Instead, the **Tribunal administratif du logement (TAL)** publishes an annual method and estimate for reasonable increases, based on inflation, taxes, insurance, and building expenses. For leases renewing in the 2026–2027 cycle, the TAL's suggested basic increase is around 3.1%, but the real limit is what's justified for your building.",
+      ] },
+      { h2: "The Notice You Get", paras: [
+        "For a lease of 12 months or more, the landlord must send written notice of an increase (and any other change) **three to six months before the lease ends**. The notice must state the new rent. For shorter leases, the notice period is shorter.",
+      ] },
+      { h2: "Your Right to Refuse", paras: [
+        "This is the heart of Quebec's system. Once you receive the notice, you have **one month to refuse it in writing**. If you refuse:",
+      ], list: [
+        "You **do not have to move out** — your tenancy continues.",
+        "The landlord must apply to the **TAL** to have the rent fixed if they still want the increase.",
+        "While the TAL decides, you keep paying your **existing rent**.",
+        "The TAL sets the increase based on the landlord's documented costs — often less than they asked for.",
+      ] },
+      { h2: "If You Do Nothing", paras: [
+        "Silence is treated as acceptance: if you neither refuse nor move, the lease renews at the new rent. So if an increase seems too high, **respond in writing within the month** — don't let the deadline pass.",
+      ] },
+      { h2: "The Exception: New Buildings", paras: [
+        "Units in buildings that are **five years old or newer** (and certain newly-created units) can carry an **\"F\" clause** on the lease that removes your right to contest an increase for that period. Check whether your lease has one before you rely on the refusal right.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord raise rent in Quebec?", a: "There's no fixed percentage cap. The TAL publishes an annual estimate (around 3.1% for the 2026–2027 cycle), but the real limit is what's justified by the landlord's building costs. Crucially, you can refuse an increase and stay while the TAL decides what's fair." },
+      { q: "Can I refuse a rent increase in Quebec?", a: "Yes. Within one month of receiving the notice, you can refuse in writing. You don't have to move — your tenancy continues, and the landlord must apply to the TAL to fix the rent, which is often set lower than requested." },
+      { q: "How much notice does my landlord give for a rent increase in Quebec?", a: "For a lease of 12 months or more, three to six months before the lease ends, in writing, stating the new rent. You then have one month to accept or refuse." },
+      { q: "What if my building is new?", a: "Units in buildings five years old or newer may have an 'F' clause that removes the right to contest a rent increase during that period. Check your lease — if it has one, the refusal right doesn't apply yet." },
+    ],
+    cta: { title: "Know your Quebec rights", blurb: "See the full picture of Quebec tenant protections under the Civil Code.", href: "/canada/quebec", label: "Quebec Tenant Rights" },
+    related: [
+      { label: "Ending Your Lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Repossession & Eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+      { label: "Can a Landlord Ask for a Deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+    ],
+  },
+  {
+    slug: "quebec-ending-your-lease",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Ending a Lease in Quebec: Renewal, Notice & Early Exit",
+    headline: "Ending a Lease in Quebec: Automatic Renewal, Notice & Early Exit",
+    h1: "Ending a Lease in Quebec: Renewal, Notice &amp; Early Exit",
+    crumb: "Ending a Lease in Quebec",
+    description: "Quebec leases renew automatically — so to leave, you must give notice in a specific window. The 3-to-6-month non-renewal rule, why you usually can't just break a fixed lease, and the limited grounds for early exit.",
+    ogDescription: "How Quebec's automatic lease renewal works, the notice to not renew, and when you can end a lease early.",
+    keywords: ["ending lease quebec", "quebec lease renewal notice", "break lease quebec", "quebec lease automatic renewal", "how to end lease quebec"],
+    lead: "Quebec leases don't just end on the last day — they renew themselves. If you want to leave, the burden is on you to give notice at the right time. Miss the window and you're locked in for another term.",
+    sections: [
+      { h2: "Leases Renew Automatically", paras: [
+        "In Quebec, a residential lease **renews on its own** at the end of the term, on the same conditions (subject to any rent change the landlord properly notices). The landlord doesn't have to offer renewal, and you don't have to sign anything — it just continues. To stop that, **you** must give notice.",
+      ] },
+      { h2: "Notice to Not Renew", paras: [
+        "To end a lease at its term, give written notice within the correct window:",
+      ], list: [
+        "**Lease of 12 months or more:** between **three and six months** before the end date.",
+        "**Fixed-term lease of less than 12 months:** one to two months before the end.",
+        "**Month-to-month (indeterminate):** one to two months before the date you want to leave.",
+      ] },
+      { h2: "You Usually Can't Break a Fixed Lease Early", paras: [
+        "A Quebec lease binds you for its term. You generally **can't end a fixed-term lease early** just by giving notice. If you must leave before the term ends, your main options are to **assign** the lease or **sublet** — see our [Quebec assignment and sublet guide](/blog/quebec-lease-assignment-sublet).",
+      ] },
+      { h2: "The Limited Early-Exit Grounds", paras: ["The Civil Code allows a tenant to end a lease early in specific situations, including:"], list: [
+        "Being **allocated low-rental (subsidized) housing**.",
+        "Moving to a **residence for seniors** or a facility because you can no longer live independently.",
+        "Leaving because your **safety or a child's is threatened** by violence or a sexual assault.",
+        "In these cases, specific notice and confirmation rules apply.",
+      ] },
+      { h2: "Assignment Often Beats Subletting", paras: [
+        "If you need out for good, **assigning** the lease (cession de bail) transfers it entirely and releases you from future obligations — usually the cleanest exit. Subletting keeps you on the hook. Either way, the landlord can only refuse for a serious reason.",
+      ] },
+    ],
+    faqs: [
+      { q: "Do Quebec leases renew automatically?", a: "Yes. A residential lease in Quebec renews on its own at the end of its term on the same conditions, unless you give proper notice not to renew or the landlord properly changes a condition like rent. The onus is on the tenant to give notice to leave." },
+      { q: "How much notice do I give to end my lease in Quebec?", a: "For a lease of 12 months or more, between three and six months before it ends. For a fixed term under 12 months, one to two months. For a month-to-month lease, one to two months before the date you want to leave." },
+      { q: "Can I break a fixed-term lease early in Quebec?", a: "Usually not just by giving notice. You can assign or sublet the lease, and the Civil Code allows early termination in specific situations — being allocated subsidized housing, moving to a seniors'/care residence, or leaving due to violence or a threat to safety." },
+      { q: "What's the difference between assigning and subletting in Quebec?", a: "Assigning (cession de bail) transfers the lease entirely and releases you from future obligations. Subletting puts someone in temporarily while you remain responsible. For a permanent exit, assignment is usually better — and the landlord can only refuse for a serious reason." },
+    ],
+    cta: { title: "Need to leave early?", blurb: "Learn how assigning or subletting your Quebec lease works.", href: "/blog/quebec-lease-assignment-sublet", label: "Assignment & Sublet in Quebec" },
+    related: [
+      { label: "Assignment & Sublet in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+      { label: "Quebec Rent Increase Rules", href: "/blog/quebec-rent-increase-rules" },
+      { label: "Repossession & Eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+    ],
+  },
+  {
+    slug: "quebec-repossession-eviction",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Repossession & Eviction in Quebec: Your Rights",
+    headline: "Repossession and Eviction in Quebec: Reprise de Logement Explained",
+    h1: "Repossession &amp; Eviction in Quebec: Your Rights",
+    crumb: "Repossession & Eviction in Quebec",
+    description: "In Quebec a landlord can repossess your unit for family use, or evict for major work — but only with long notice, compensation, and your right to contest at the TAL. How reprise de logement and eviction really work.",
+    ogDescription: "Reprise de logement and eviction in Quebec: notice, compensation, and your right to refuse at the TAL.",
+    keywords: ["repossession quebec", "reprise de logement", "eviction quebec tenant rights", "landlord wants unit back quebec", "quebec eviction notice"],
+    lead: "Quebec tenants have some of Canada's strongest security of tenure. A landlord can take back your unit or evict you only in narrow situations — with long notice, compensation, and your right to fight it before the tribunal.",
+    sections: [
+      { h2: "Two Different Things: Repossession vs Eviction", paras: [
+        "Quebec law separates **repossession (reprise de logement)** — taking the unit back to house the landlord or close family — from **eviction** — ending the lease to **subdivide, demolish, enlarge, or change the use** of the dwelling. Each has its own rules, but both protect the tenant heavily.",
+      ] },
+      { h2: "Who a Landlord Can Repossess For", paras: [
+        "A landlord (who must be an individual, not a company) can repossess the unit only to house themselves or a **close family member** — a parent, child, or someone for whom they are the main support — or a former spouse they still support. They can't repossess simply to re-rent at a higher price.",
+      ] },
+      { h2: "The Notice and Compensation", paras: [
+        "For a lease with a fixed term of **more than six months**, the landlord must give **six months' notice** before the end of the lease. For eviction (major work), the tenant is entitled to **compensation** — generally the equivalent of three months' rent plus reasonable moving expenses, or more if the TAL orders it.",
+      ] },
+      { h2: "You Can Refuse — and Make Them Prove It", paras: [
+        "You don't have to simply accept a repossession notice. If you **don't consent**, the landlord must apply to the **TAL**, which decides whether the repossession is genuine and in good faith. Bad-faith repossession — taking the unit back and then re-renting it — can lead to **damages and penalties** in your favour.",
+      ] },
+      { h2: "Extra Protection for Older and Long-Term Tenants", paras: [
+        "Quebec gives added protection to some tenants — for example, older tenants who have lived in the unit for a long time and have modest income can be **protected from eviction and repossession** in many cases. If you're a senior or long-term tenant, get advice before agreeing to leave.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can a landlord take back my apartment in Quebec?", a: "Only in limited cases. An individual landlord can repossess (reprise de logement) to house themselves or a close family member, with six months' notice for a lease over six months. You can refuse, and the landlord must then get the TAL's approval." },
+      { q: "How much notice and compensation for eviction in Quebec?", a: "For eviction to subdivide, demolish, enlarge, or change the use of a dwelling, the landlord must give notice (six months for a lease over six months) and pay compensation — generally three months' rent plus moving expenses, or more if the TAL orders it." },
+      { q: "Can I fight a repossession in Quebec?", a: "Yes. If you don't consent, the landlord must apply to the Tribunal administratif du logement (TAL), which decides whether the repossession is genuine and in good faith. If a landlord repossesses in bad faith, you may be awarded damages and penalties." },
+      { q: "Are older tenants protected in Quebec?", a: "Often, yes. Quebec gives added protection against eviction and repossession to certain tenants — for example, long-term senior tenants with modest income. If this may apply to you, get advice before agreeing to leave." },
+    ],
+    cta: { title: "Facing a notice?", blurb: "Understand your Quebec tenant rights before you respond to anything.", href: "/canada/quebec", label: "Quebec Tenant Rights" },
+    related: [
+      { label: "Ending Your Lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Quebec Rent Increase Rules", href: "/blog/quebec-rent-increase-rules" },
+      { label: "Assignment & Sublet in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+    ],
+  },
+  {
+    slug: "quebec-lease-assignment-sublet",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Assigning or Subletting Your Lease in Quebec",
+    headline: "Assigning or Subletting Your Lease in Quebec (Cession de Bail)",
+    h1: "Assigning or Subletting Your Lease in Quebec",
+    crumb: "Assignment & Sublet in Quebec",
+    description: "Quebec gives tenants a strong right to assign or sublet — and a landlord can only refuse for a serious reason. How cession de bail differs from subletting, the 15-day rule, and why assignment is often the cleanest exit.",
+    ogDescription: "Cession de bail vs subletting in Quebec: your rights, the 15-day landlord-response rule, and which to choose.",
+    keywords: ["cession de bail", "assign lease quebec", "sublet quebec", "lease assignment quebec rights", "subletting quebec rules"],
+    lead: "Need to leave your Quebec apartment before the lease ends? You have a strong right to hand it off — and your landlord can't unreasonably say no. Here's how assignment and subletting work.",
+    sections: [
+      { h2: "Assignment vs Subletting", paras: [
+        "**Assignment (cession de bail)** transfers your entire lease to a new tenant, who takes over your rights and obligations — and, importantly, **releases you** from future obligations under the lease. **Subletting** puts someone in the unit temporarily while **you remain the tenant** and stay responsible to the landlord.",
+        "For a permanent move, **assignment is usually the better choice** because it gets you off the hook.",
+      ] },
+      { h2: "The Landlord Can Only Refuse for a Serious Reason", paras: [
+        "You must notify the landlord of your intention to assign or sublet, and the name and contact of the proposed new tenant. The landlord then has **15 days to respond**. They can only refuse for a **serious reason** (for example, a genuine concern about the candidate) — not just because they'd prefer a new lease at higher rent.",
+      ] },
+      { h2: "Silence Means Consent", paras: [
+        "If the landlord **doesn't respond within 15 days**, they're deemed to have **consented**. If they refuse, they must give their reason — and if you think it isn't serious, the **TAL** can decide.",
+      ] },
+      { h2: "What It Can Cost You", paras: [
+        "The landlord can only charge you their **reasonable expenses** related to the assignment or sublet (such as a credit check) — they can't demand a fee or a higher rent from you for agreeing. In an assignment, the new tenant simply takes over your existing rent.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can I sublet or assign my lease in Quebec?", a: "Yes. Quebec tenants have a strong right to assign (cession de bail) or sublet. You notify the landlord with the proposed tenant's details, and they have 15 days to respond. They can only refuse for a serious reason." },
+      { q: "What happens if my Quebec landlord doesn't respond in 15 days?", a: "If the landlord doesn't respond to your assignment or sublet request within 15 days, they are deemed to have consented. If they refuse, they must give a serious reason, and the TAL can decide if it's valid." },
+      { q: "Does assigning my lease release me in Quebec?", a: "Yes. An assignment (cession de bail) transfers the lease entirely to the new tenant and releases you from future obligations — unlike a sublet, where you remain responsible to the landlord." },
+      { q: "Can my landlord charge a fee to assign or sublet in Quebec?", a: "No. The landlord can only recover reasonable expenses directly related to the assignment or sublet, such as a credit check. They can't charge a fee or demand higher rent from you for consenting." },
+    ],
+    cta: { title: "Leaving your lease?", blurb: "See all your options for ending a Quebec lease the right way.", href: "/blog/quebec-ending-your-lease", label: "Ending a Lease in Quebec" },
+    related: [
+      { label: "Ending Your Lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Repossession & Eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+      { label: "Can a Landlord Ask for a Deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
+    ],
+  },
+  {
+    slug: "quebec-landlord-repairs",
+    category: QC,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Landlord Repairs & Maintenance in Quebec: Your Rights",
+    headline: "Landlord Repairs and Maintenance in Quebec: Your Rights",
+    h1: "Landlord Repairs &amp; Maintenance in Quebec: Your Rights",
+    crumb: "Landlord Repairs in Quebec",
+    description: "Your Quebec landlord must deliver and maintain a dwelling in good, habitable condition. What they must repair, your right to make urgent repairs, and how to force action through the TAL.",
+    ogDescription: "Repairs, habitability, urgent repairs, and the TAL — your Quebec landlord's maintenance obligations.",
+    keywords: ["landlord repairs quebec", "quebec habitability", "urgent repairs quebec", "landlord won't repair quebec", "tal repairs"],
+    lead: "In Quebec your landlord is legally bound to hand over a home in good condition and keep it that way. Here's what they must fix, what you can do yourself in an emergency, and how to make them act.",
+    sections: [
+      { h2: "The Landlord's Core Obligation", paras: [
+        "The Civil Code requires the landlord to **deliver the dwelling in good habitable condition** and to **maintain it that way** throughout the lease. This covers the structure, plumbing, heating, and anything needed for the unit to be fit to live in. A lease clause can't sign these duties away.",
+      ] },
+      { h2: "Urgent and Necessary Repairs", paras: [
+        "If an **urgent and necessary** repair is needed to keep the unit habitable — a burst pipe, no heat in winter — and you can't reach the landlord after reasonable attempts, you may **carry out the repair yourself** and be reimbursed for reasonable costs. Keep receipts and notify the landlord as soon as you can.",
+      ] },
+      { h2: "Report It in Writing", paras: [
+        "Always ask for repairs **in writing** and keep a copy, with dates and photos. A clear record is what wins at the tribunal if the landlord drags their feet.",
+      ] },
+      { h2: "Going to the TAL", paras: [
+        "If the landlord won't act, you can apply to the **Tribunal administratif du logement (TAL)** for an order forcing the repairs, a **rent reduction** for the period the unit fell short, and damages where appropriate. Don't just stop paying rent — use the tribunal so you stay protected.",
+      ] },
+    ],
+    faqs: [
+      { q: "Is my landlord responsible for repairs in Quebec?", a: "Yes. Under the Civil Code, the landlord must deliver the dwelling in good habitable condition and maintain it that way for the whole lease, including structure, heating, and plumbing. This can't be waived by a lease clause." },
+      { q: "Can I make urgent repairs myself in Quebec?", a: "Yes, for urgent and necessary repairs needed to keep the unit habitable, if you can't reach the landlord after reasonable attempts. Keep receipts and notify the landlord as soon as possible so you can be reimbursed for reasonable costs." },
+      { q: "What if my Quebec landlord won't make repairs?", a: "Request the repair in writing and keep records. If the landlord doesn't act, apply to the Tribunal administratif du logement (TAL) for an order to complete the repairs, a rent reduction for the affected period, and damages where appropriate." },
+      { q: "Can I withhold rent for repairs in Quebec?", a: "It's risky to simply stop paying. Instead, document the problem and apply to the TAL, which can order repairs and reduce your rent for the period the unit wasn't up to standard, keeping you protected." },
+    ],
+    cta: { title: "Landlord ignoring repairs?", blurb: "Send a clear, dated repair request they can't say they never received.", href: "/letters/repair-request-letter", label: "Repair Request Letter" },
+    related: [
+      { label: "Can a Landlord Ask for a Deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+      { label: "Quebec Rent Increase Rules", href: "/blog/quebec-rent-increase-rules" },
+      { label: "Repossession & Eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+      { label: "Quebec Tenant Rights", href: "/canada/quebec" },
     ],
   },
 ];

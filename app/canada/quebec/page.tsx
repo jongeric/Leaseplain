@@ -209,6 +209,29 @@ export default function QuebecPage() {
                 <p className="mt-4 text-sm text-slate-500">More Quebec cities coming soon — Gatineau, Sherbrooke, and others.</p>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Quebec Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "Can a Landlord Ask for a Deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+                    { label: "Quebec Rent Increase Rules (Refuse & Stay)", href: "/blog/quebec-rent-increase-rules" },
+                    { label: "Ending a Lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+                    { label: "Repossession & Eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+                    { label: "Assigning or Subletting in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+                    { label: "Landlord Repairs & Maintenance in Quebec", href: "/blog/quebec-landlord-repairs" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

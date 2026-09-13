@@ -11,6 +11,54 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/quebec-security-deposit-rules",
+    title: "Can a Landlord Ask for a Deposit in Quebec? (No)",
+    excerpt:
+      "In Quebec, security deposits are illegal — no damage deposit, last month's rent, pet deposit, or required post-dated cheques. Only the first month's rent. Your rights under article 1904 of the Civil Code.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
+    href: "/blog/quebec-rent-increase-rules",
+    title: "Quebec Rent Increase Rules: How to Refuse and Stay",
+    excerpt:
+      "Quebec has no fixed rent cap, but you can refuse an increase and stay in your home. How notice works, the one-month window to refuse, and how the TAL fixes a fair rent.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
+    href: "/blog/quebec-ending-your-lease",
+    title: "Ending a Lease in Quebec: Renewal, Notice & Early Exit",
+    excerpt:
+      "Quebec leases renew automatically, so to leave you must give notice in a set window. The 3-to-6-month non-renewal rule, why you usually can't break a fixed lease, and the limited early-exit grounds.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
+    href: "/blog/quebec-repossession-eviction",
+    title: "Repossession & Eviction in Quebec: Your Rights",
+    excerpt:
+      "A Quebec landlord can repossess for family use or evict for major work — but only with long notice, compensation, and your right to contest at the TAL. How reprise de logement really works.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
+    href: "/blog/quebec-lease-assignment-sublet",
+    title: "Assigning or Subletting Your Lease in Quebec",
+    excerpt:
+      "Quebec gives tenants a strong right to assign (cession de bail) or sublet — the landlord can only refuse for a serious reason, and silence for 15 days means consent. Which option releases you.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
+    href: "/blog/quebec-landlord-repairs",
+    title: "Landlord Repairs & Maintenance in Quebec: Your Rights",
+    excerpt:
+      "Your Quebec landlord must deliver and maintain a habitable dwelling. What they must repair, your right to make urgent repairs and be reimbursed, and how to force action through the TAL.",
+    date: "September 11, 2026",
+    category: "Quebec",
+  },
+  {
     href: "/blog/mould-in-a-rental-ontario",
     title: "Mould in a Rental in Ontario: Whose Problem Is It?",
     excerpt:

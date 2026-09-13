@@ -15,7 +15,6 @@ export default function OrganizationSchema() {
       description:
         "LeasePlain is an AI-powered lease analysis tool that translates complex rental agreements into plain English, helping tenants understand what they're signing.",
       sameAs: [
-        "https://www.linkedin.com/company/leaseplain",
         "https://twitter.com/leaseplain",
       ],
       contactPoint: {

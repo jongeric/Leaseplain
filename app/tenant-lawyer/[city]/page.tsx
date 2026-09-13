@@ -44,7 +44,7 @@ export async function generateMetadata({
   };
 }
 
-function cityFaqs(name: string, province: "ON" | "BC" | "AB") {
+function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC") {
   const p = PROVINCE_META[province];
   if (province === "ON") {
     return [
@@ -68,7 +68,14 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB") {
   }
   const rep = province === "BC"
     ? "You don't need a lawyer for the Residential Tenancy Branch (RTB) — its process is designed to be used without one, and you can bring an agent or advocate to help."
-    : "You don't need a lawyer for the Residential Tenancy Dispute Resolution Service (RTDRS) — it's built to be accessible, and you can bring an agent or advocate to help.";
+    : province === "AB"
+    ? "You don't need a lawyer for the Residential Tenancy Dispute Resolution Service (RTDRS) — it's built to be accessible, and you can bring an agent or advocate to help."
+    : "You don't need a lawyer for the Tribunal administratif du logement (TAL) — many tenants present their own case, often with help from a local housing committee (comité logement).";
+  const freeHelp = province === "BC"
+    ? `Start with TRAC (the Tenant Resource & Advisory Centre) for information and templates, and Access Pro Bono for a free legal advice clinic. Local tenant advocates and Legal Aid BC can help eligible lower-income renters in ${name}.`
+    : province === "AB"
+    ? `Start with CPLEA's plain-language guides, and free clinics like Student Legal Services (Edmonton), Student Legal Assistance (Calgary), Calgary Legal Guidance, or the Edmonton Community Legal Centre. Legal Aid Alberta can help eligible lower-income renters in ${name}.`
+    : `Start with your local comité logement (housing committee) and Éducaloi's plain-language guides. Quebec's legal aid (aide juridique) can help eligible lower-income renters in ${name}, and housing committees can help you prepare for the TAL.`;
   return [
     {
       q: `Do I need a lawyer to deal with a tenancy dispute in ${name}?`,
@@ -76,9 +83,7 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB") {
     },
     {
       q: `Where can I get free tenant legal help in ${name}?`,
-      a: province === "BC"
-        ? `Start with TRAC (the Tenant Resource & Advisory Centre) for information and templates, and Access Pro Bono for a free legal advice clinic. Local tenant advocates and Legal Aid BC can help eligible lower-income renters in ${name}.`
-        : `Start with CPLEA's plain-language guides, and free clinics like Student Legal Services (Edmonton), Student Legal Assistance (Calgary), Calgary Legal Guidance, or the Edmonton Community Legal Centre. Legal Aid Alberta can help eligible lower-income renters in ${name}.`,
+      a: freeHelp,
     },
     {
       q: `How much does it cost to file a tenancy dispute in ${name}?`,
@@ -86,7 +91,7 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB") {
     },
     {
       q: `Can someone represent me at the ${p.tribunal} in ${name}?`,
-      a: `Yes. Unlike Ontario, ${p.name} doesn't have a licensed-paralegal regime, but you can bring an agent or advocate to represent you at the ${p.tribunal}, and a lawyer for complex matters. Free advocates and clinics assist eligible tenants.`,
+      a: `Yes. Unlike Ontario, ${p.name} doesn't have a licensed-paralegal regime, but you can get help from advocates or a lawyer, and present your case at the ${p.tribunal}. Free advocates and clinics assist eligible tenants.`,
     },
   ];
 }

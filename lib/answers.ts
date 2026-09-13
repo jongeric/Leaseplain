@@ -496,6 +496,79 @@ export const ANSWERS: AnswerDef[] = [
     ],
     keywords: ["can landlord evict without reason alberta", "no fault eviction alberta"],
   },
+
+  // ---- Quebec ----
+  {
+    slug: "can-a-landlord-ask-for-a-deposit-in-quebec",
+    question: "Can a landlord ask for a security deposit in Quebec?",
+    category: "Deposits",
+    shortAnswer:
+      "No. Under article 1904 of the Civil Code of Québec, a landlord can't require any deposit — no damage deposit, last month's rent, pet deposit, or key deposit — and can't require post-dated cheques. The most they can ask for is the first month's rent.",
+    blocks: [
+      { type: "p", text: "If you paid a deposit that was demanded, you can ask for it back and, if refused, apply to the Tribunal administratif du logement (TAL). Landlords who demand illegal deposits can face penalties." },
+    ],
+    related: [
+      { label: "Can a landlord ask for a deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+    ],
+    keywords: ["deposit illegal quebec", "can landlord ask deposit quebec"],
+  },
+  {
+    slug: "can-i-refuse-a-rent-increase-in-quebec",
+    question: "Can I refuse a rent increase in Quebec?",
+    category: "Rent",
+    shortAnswer:
+      "Yes. Within one month of receiving the notice, you can refuse a rent increase in writing and stay in your home. Your tenancy continues at the existing rent, and the landlord must apply to the TAL to have the rent fixed — which is often set lower than they asked.",
+    blocks: [
+      { type: "p", text: "Quebec has no fixed percentage cap; the TAL sets a fair increase based on the landlord's documented costs. Note that units in buildings five years old or newer may carry an 'F' clause that removes the right to contest for that period." },
+    ],
+    related: [
+      { label: "Quebec rent increase rules", href: "/blog/quebec-rent-increase-rules" },
+    ],
+    keywords: ["refuse rent increase quebec", "how much can landlord raise rent quebec"],
+  },
+  {
+    slug: "how-much-notice-to-end-my-lease-in-quebec",
+    question: "How much notice do I give to end my lease in Quebec?",
+    category: "Moving",
+    shortAnswer:
+      "Quebec leases renew automatically, so you must give written notice not to renew: for a lease of 12 months or more, between three and six months before it ends; for a shorter fixed term, one to two months; for a month-to-month lease, one to two months.",
+    blocks: [
+      { type: "p", text: "You generally can't break a fixed-term lease early just by giving notice. Your main options are to assign (cession de bail) or sublet, or to use one of the Civil Code's specific early-termination grounds (subsidized housing, a seniors'/care residence, or a threat to your safety)." },
+    ],
+    related: [
+      { label: "Ending a lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Assigning or subletting in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+    ],
+    keywords: ["notice to end lease quebec", "quebec lease non-renewal notice"],
+  },
+  {
+    slug: "can-my-landlord-take-back-my-apartment-in-quebec",
+    question: "Can my landlord take back my apartment in Quebec?",
+    category: "Eviction",
+    shortAnswer:
+      "Only in limited cases. An individual landlord can repossess (reprise de logement) to house themselves or a close family member, with six months' notice for a lease over six months. You can refuse, and the landlord must then get the TAL's approval — and bad-faith repossession can lead to damages in your favour.",
+    blocks: [
+      { type: "p", text: "Eviction to subdivide, demolish, enlarge, or change the use of a dwelling is separate and entitles you to compensation. Long-term senior tenants with modest income often have added protection from repossession and eviction." },
+    ],
+    related: [
+      { label: "Repossession & eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+    ],
+    keywords: ["reprise de logement", "landlord take back apartment quebec"],
+  },
+  {
+    slug: "can-i-sublet-or-assign-my-lease-in-quebec",
+    question: "Can I sublet or assign my lease in Quebec?",
+    category: "Moving",
+    shortAnswer:
+      "Yes. You notify the landlord with the proposed tenant's details, and they have 15 days to respond. They can only refuse for a serious reason — and if they don't respond in 15 days, they're deemed to consent. Assigning (cession de bail) releases you from the lease; subletting keeps you responsible.",
+    blocks: [
+      { type: "p", text: "The landlord can only charge reasonable expenses (like a credit check), not a fee or higher rent for agreeing. For a permanent move, assignment is usually the better choice because it ends your obligations." },
+    ],
+    related: [
+      { label: "Assigning or subletting in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+    ],
+    keywords: ["cession de bail", "sublet quebec"],
+  },
 ];
 
 export function getAnswer(slug: string): AnswerDef | undefined {

@@ -4,7 +4,7 @@
 // "get listed" form. The per-city pages explain the real routes to tenant
 // legal help in Ontario and invite professionals to be listed.
 
-export type Province = "ON" | "BC" | "AB";
+export type Province = "ON" | "BC" | "AB" | "QC";
 
 export interface DirectoryCity {
   slug: string;
@@ -34,6 +34,10 @@ export const DIRECTORY_CITIES: DirectoryCity[] = [
   // Alberta
   { slug: "calgary", name: "Calgary", province: "AB", region: "Southern Alberta", blurb: "A large market with no rent control, where deposit and notice disputes go to the RTDRS." },
   { slug: "edmonton", name: "Edmonton", province: "AB", region: "Central Alberta", blurb: "Alberta's capital, with a big student and government-worker rental population." },
+  // Quebec
+  { slug: "montreal", name: "Montreal", province: "QC", region: "Greater Montreal", blurb: "Quebec's largest rental market, with strong tenant protections and an active network of housing committees." },
+  { slug: "quebec-city", name: "Quebec City", province: "QC", region: "Capitale-Nationale", blurb: "A stable rental market where repossession and rent-increase disputes go to the TAL." },
+  { slug: "laval", name: "Laval", province: "QC", region: "Greater Montreal", blurb: "A large suburban market next to Montreal, covered by the same Civil Code protections." },
 ];
 
 export function getCity(slug: string): DirectoryCity | undefined {
@@ -104,6 +108,23 @@ export const PROVINCE_META: Record<Province, ProvinceMeta> = {
       { label: "Notice to end a tenancy in Alberta", href: "/blog/alberta-notice-to-end-tenancy" },
       { label: "Breaking a lease in Alberta", href: "/blog/alberta-breaking-a-lease" },
       { label: "All Alberta tenant rights", href: "/tenant-rights/alberta" },
+    ],
+  },
+  QC: {
+    code: "QC",
+    name: "Quebec",
+    tribunal: "TAL",
+    tribunalFull: "Tribunal administratif du logement",
+    lawSociety: "Barreau du Québec",
+    legalAid: "Commission des services juridiques (legal aid)",
+    systemNote: "Quebec's tenant-help system is province-wide, built around the Civil Code and the TAL, with a strong network of housing committees.",
+    guides: [
+      { label: "Can a landlord ask for a deposit in Quebec?", href: "/blog/quebec-security-deposit-rules" },
+      { label: "Quebec rent increase rules", href: "/blog/quebec-rent-increase-rules" },
+      { label: "Repossession & eviction in Quebec", href: "/blog/quebec-repossession-eviction" },
+      { label: "Ending a lease in Quebec", href: "/blog/quebec-ending-your-lease" },
+      { label: "Assigning or subletting in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+      { label: "All Quebec tenant rights", href: "/tenant-rights/quebec" },
     ],
   },
 };
@@ -256,6 +277,44 @@ export const HELP_OPTIONS_BY_PROVINCE: Record<Province, HelpOption[]> = {
       detail:
         "For complex matters, large claims, or Provincial Court, a lawyer may be the right call. The Law Society of Alberta's Lawyer Referral Service can connect you for a short initial consultation.",
       contact: "Law Society of Alberta Lawyer Referral Service",
+    },
+  ],
+  QC: [
+    {
+      title: "Comités logement (housing committees)",
+      who: "Free tenant advice and advocacy",
+      cost: "Free",
+      detail:
+        "Quebec has a strong network of local comités logement and tenant associations that give free advice, help you understand your rights, prepare your file, and sometimes accompany you to the Tribunal administratif du logement (TAL). This is the first stop for most Quebec tenants.",
+    },
+    {
+      title: "Éducaloi & self-help information",
+      who: "Understand your rights before you act",
+      cost: "Free",
+      detail:
+        "Éducaloi and the TAL publish clear, plain-language information on Quebec tenancy law. Because the TAL is designed to be accessible, many tenants handle straightforward cases with good preparation and free advice.",
+    },
+    {
+      title: "Legal aid (aide juridique)",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Quebec's legal aid network provides advice and representation to eligible lower-income tenants. Coverage of tenancy matters varies, but it can point you to the right service and represent you in qualifying cases.",
+    },
+    {
+      title: "Representing yourself at the TAL",
+      who: "Common at the housing tribunal",
+      cost: "Low fee (waivers available)",
+      detail:
+        "Many tenants present their own case at the TAL, often with a housing committee's help to prepare. Filing carries a modest fee, and evidence — your lease, photos, and written communications — is what decides the case.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes, large claims, or an appeal, a lawyer may be worth it. The Barreau du Québec's referral service can connect you with a lawyer for an initial consultation.",
+      contact: "Barreau du Québec lawyer referral service",
     },
   ],
 };

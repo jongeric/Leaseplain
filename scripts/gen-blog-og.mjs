@@ -49,6 +49,10 @@ const posts = [
   ["quebec-repossession-eviction", "Repossession & Eviction in Quebec"],
   ["quebec-lease-assignment-sublet", "Assigning or Subletting a Lease in Quebec"],
   ["quebec-landlord-repairs", "Landlord Repairs & Maintenance in Quebec"],
+  ["manitoba-security-deposit-rules", "Manitoba Security Deposit Rules"],
+  ["manitoba-rent-increase-rules", "Manitoba Rent Increase Rules & Guideline"],
+  ["manitoba-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Manitoba?"],
+  ["manitoba-eviction-process", "The Manitoba Eviction Process"],
 ];
 
 function card(title, category = "Ontario") {

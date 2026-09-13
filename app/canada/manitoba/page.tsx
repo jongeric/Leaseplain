@@ -197,6 +197,27 @@ export default function ManitobaPage() {
                 </div>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Manitoba Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "Manitoba Rent Increase Rules", href: "/blog/manitoba-rent-increase-rules" },
+                    { label: "Manitoba Security Deposit Rules", href: "/blog/manitoba-security-deposit-rules" },
+                    { label: "Notice to End a Tenancy in Manitoba", href: "/blog/manitoba-notice-to-end-tenancy" },
+                    { label: "The Manitoba Eviction Process", href: "/blog/manitoba-eviction-process" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

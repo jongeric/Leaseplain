@@ -11,6 +11,38 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/manitoba-security-deposit-rules",
+    title: "Manitoba Security Deposit Rules: Half a Month & Getting It Back",
+    excerpt:
+      "In Manitoba a deposit can't exceed half a month's rent, must earn interest, and has to be returned within 14 days. What a landlord can deduct and how to recover your deposit.",
+    date: "September 13, 2026",
+    category: "Manitoba",
+  },
+  {
+    href: "/blog/manitoba-rent-increase-rules",
+    title: "Manitoba Rent Increase Rules: The Guideline & Your Rights",
+    excerpt:
+      "Manitoba's 2026 rent guideline is 1.8%, with increases limited to once a year and three months' notice. How the guideline works, what's exempt, and how to object.",
+    date: "September 13, 2026",
+    category: "Manitoba",
+  },
+  {
+    href: "/blog/manitoba-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in Manitoba?",
+    excerpt:
+      "One month if you're leaving; three months for owner-occupation; about five days for unpaid rent. Tenant and landlord notice periods and what makes a notice valid in Manitoba.",
+    date: "September 13, 2026",
+    category: "Manitoba",
+  },
+  {
+    href: "/blog/manitoba-eviction-process",
+    title: "The Manitoba Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, how to dispute one through the Residential Tenancies Branch, and why only the proper process can force you out.",
+    date: "September 13, 2026",
+    category: "Manitoba",
+  },
+  {
     href: "/blog/quebec-security-deposit-rules",
     title: "Can a Landlord Ask for a Deposit in Quebec? (No)",
     excerpt:

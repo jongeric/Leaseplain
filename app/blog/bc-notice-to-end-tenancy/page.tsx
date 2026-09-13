@@ -36,11 +36,11 @@ const faqItems = [
   },
   {
     q: "How much notice does my landlord have to give me in BC?",
-    a: "It depends on the reason: four months (plus one month's compensation) for the landlord's own use, renovations, or demolition; one month for cause; and a 10-day notice for unpaid rent that you can cancel by paying within 5 days.",
+    a: "It depends on the reason: three months (plus one month's compensation) for the landlord's or a purchaser's own use; four months for renovations or demolition; one month for cause; and a 10-day notice for unpaid rent that you can cancel by paying within 5 days.",
   },
   {
     q: "Can my landlord evict me to move in a family member?",
-    a: "Yes, but only with a four-month written notice, one month's compensation, and a genuine intention to occupy. If they don't follow through, you may be entitled to significant additional compensation.",
+    a: "Yes, but only with a three-month written notice on form RTB-32L, one month's compensation, and a genuine intention to occupy the unit for at least 12 months. If they don't follow through, you may be entitled to 12 months' rent in compensation.",
   },
   {
     q: "Do I have to leave when a fixed-term lease ends in BC?",
@@ -126,7 +126,7 @@ export default function BcNoticeToEndTenancyPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">Landlord&apos;s Notice for Their Own Use</h2>
-                  <p className="text-slate-700 leading-relaxed">If a landlord wants the unit for themselves or a close family member (or a buyer who will move in), they must give <strong>four months&apos; written notice</strong> and pay you <strong>one month&apos;s rent in compensation</strong>. You also have the right to dispute the notice at the RTB within the time limit, and to move out earlier by giving 10 days&apos; notice.</p>
+                  <p className="text-slate-700 leading-relaxed">If a landlord wants the unit for themselves or a close family member (or a buyer who will move in), they must give <strong>three months&apos; written notice</strong> — generated on form RTB-32L through the RTB portal since June 18, 2025 (previously four months) — and pay you <strong>one month&apos;s rent in compensation</strong>. You can dispute the notice at the RTB within 30 days, and move out earlier by giving 10 days&apos; notice. If the landlord doesn&apos;t actually use the unit for the stated purpose for at least 12 months, you may be owed <strong>12 months&apos; rent</strong> in compensation.</p>
                 </div>
 
                 <div>

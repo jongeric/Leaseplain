@@ -40,7 +40,7 @@ const faqItems = [
   },
   {
     q: "When do I get my deposit back in Alberta?",
-    a: "Generally within 10 days of moving out, the landlord must return the deposit or provide a written statement of any deductions along with the remaining balance. Deductions are only allowed for unpaid rent and damage beyond normal wear and tear.",
+    a: "Generally within 10 days of moving out, the landlord must return the deposit or provide a statement of any deductions with the balance (or a good-faith estimate). A final statement and any money owing must reach you within 30 days of the tenancy ending. Deductions are only allowed for unpaid rent and damage beyond normal wear and tear.",
   },
   {
     q: "What can I do if my Alberta landlord keeps my deposit unfairly?",
@@ -135,7 +135,7 @@ export default function AlbertaSecurityDepositRulesPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">The 10-Day Refund Rule</h2>
-                  <p className="text-slate-700 leading-relaxed">After you move out, the landlord generally has <strong>10 days</strong> to return your deposit, or to provide a <strong>written statement of deductions</strong> with any remaining balance. They can deduct for unpaid rent and damage beyond normal wear and tear — but must account for it.</p>
+                  <p className="text-slate-700 leading-relaxed">After you move out, the landlord generally has <strong>10 days</strong> to return your deposit, or — if there are deductions — to provide a <strong>statement of account</strong> with any balance owing (or a good-faith estimate). A <strong>final statement and any remaining money</strong> must reach you within <strong>30 days</strong> of the tenancy ending. They can deduct for unpaid rent and damage beyond normal wear and tear, but must account for every dollar.</p>
                 </div>
 
                 <div>

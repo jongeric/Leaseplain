@@ -75,7 +75,7 @@ export const POSTS = [
         "In a **fixed-term lease**, you generally can't just give notice and leave early — you're committed until the end date. See [breaking a lease in BC](/blog/bc-breaking-a-lease) for your legal options.",
       ] },
       { h2: "Landlord's Notice for Their Own Use", paras: [
-        "If a landlord wants the unit for themselves or a close family member (or a buyer who will move in), they must give **four months' written notice** and pay you **one month's rent in compensation**. You also have the right to dispute the notice at the RTB within the time limit, and to move out earlier by giving 10 days' notice.",
+        "If a landlord wants the unit for themselves or a close family member (or a buyer who will move in), they must give **three months' written notice** — generated on form RTB-32L through the RTB portal since June 18, 2025 (previously four months) — and pay you **one month's rent in compensation**. You can dispute the notice at the RTB within 30 days, and move out earlier by giving 10 days' notice. If the landlord doesn't actually use the unit for the stated purpose for at least 12 months, you may be owed **12 months' rent** in compensation.",
       ] },
       { h2: "The Four-Month Notice for Renovations or Demolition", paras: [
         "To end a tenancy for major renovations, demolition, or converting the unit, the landlord must give **four months' notice**, hold the necessary permits, and pay compensation. For significant renovations, you may have a **right of first refusal** to move back in at a rent set by the guideline — if you tell the landlord in writing that you want it.",
@@ -93,8 +93,8 @@ export const POSTS = [
     ],
     faqs: [
       { q: "How much notice do I give to move out in BC?", a: "For a month-to-month tenancy, at least one full month's written notice, received before the day rent is due. To leave at the end of a month, give notice before the first day of the preceding month." },
-      { q: "How much notice does my landlord have to give me in BC?", a: "It depends on the reason: four months (plus one month's compensation) for the landlord's own use, renovations, or demolition; one month for cause; and a 10-day notice for unpaid rent that you can cancel by paying within 5 days." },
-      { q: "Can my landlord evict me to move in a family member?", a: "Yes, but only with a four-month written notice, one month's compensation, and a genuine intention to occupy. If they don't follow through, you may be entitled to significant additional compensation." },
+      { q: "How much notice does my landlord have to give me in BC?", a: "It depends on the reason: three months (plus one month's compensation) for the landlord's or a purchaser's own use; four months for renovations or demolition; one month for cause; and a 10-day notice for unpaid rent that you can cancel by paying within 5 days." },
+      { q: "Can my landlord evict me to move in a family member?", a: "Yes, but only with a three-month written notice on form RTB-32L, one month's compensation, and a genuine intention to occupy the unit for at least 12 months. If they don't follow through, you may be entitled to 12 months' rent in compensation." },
       { q: "Do I have to leave when a fixed-term lease ends in BC?", a: "Usually no. Most fixed-term leases continue as month-to-month after the end date unless you and the landlord agree otherwise or a limited vacate clause applies. You can't be forced out just because the term ended." },
     ],
     cta: { title: "Ending your lease early?", blurb: "See what breaking a fixed-term lease in BC could involve and cost.", href: "/blog/bc-breaking-a-lease", label: "Breaking a Lease in BC" },
@@ -124,8 +124,8 @@ export const POSTS = [
       { h2: "The Main Types of Notice", paras: ["The type of notice tells you your rights and your deadline to respond:"], list: [
         "**10-Day Notice (unpaid rent or utilities):** you can cancel it entirely by paying the full amount owing within **5 days**.",
         "**One-Month Notice (for cause):** for serious problems like repeated late rent, significant damage, or unreasonable disturbance — you have **10 days** to dispute.",
-        "**Two-Month Notice (landlord's use):** replaced in most cases by longer notice requirements — check the current form and compensation rules.",
-        "**Four-Month Notice (renovation/demolition/landlord use):** longer notice plus compensation, and sometimes a right of first refusal.",
+        "**Three-Month Notice (landlord's or purchaser's use):** for the landlord, a close family member, or a buyer to move in — form RTB-32L, with one month's compensation. Since June 18, 2025 this is three months (previously four).",
+        "**Four-Month Notice (renovation or demolition):** requires valid permits and one month's compensation, with a right of first refusal for major renovations.",
       ] },
       { h2: "Disputing a Notice at the RTB", paras: [
         "To fight a notice you apply for **dispute resolution** through the RTB, usually online, before your deadline. The RTB holds a hearing (often by phone) where both sides present evidence. If you miss the dispute deadline, you may be treated as having accepted the notice — so act fast.",
@@ -312,7 +312,7 @@ export const POSTS = [
         "Alberta requires a **move-in and move-out inspection report**. The landlord must give you the chance to be present for both, and complete a written report. Without a proper inspection, it's much harder for a landlord to justify keeping your deposit for damage. Always get a copy and note existing damage at move-in.",
       ] },
       { h2: "The 10-Day Refund Rule", paras: [
-        "After you move out, the landlord generally has **10 days** to return your deposit, or to provide a **written statement of deductions** with any remaining balance. They can deduct for unpaid rent and damage beyond normal wear and tear — but must account for it.",
+        "After you move out, the landlord generally has **10 days** to return your deposit, or — if there are deductions — to provide a **statement of account** with any balance owing (or a good-faith estimate). A **final statement and any remaining money** must reach you within **30 days** of the tenancy ending. They can deduct for unpaid rent and damage beyond normal wear and tear, but must account for every dollar.",
       ] },
       { h2: "Disputing Deductions", paras: [
         "If you think a deduction is unfair, ask for the itemized statement and compare it against what's actually allowed. You can bring a claim through the **Residential Tenancy Dispute Resolution Service (RTDRS)** or Provincial Court to recover money wrongly withheld. Photos from move-out are powerful evidence.",
@@ -321,7 +321,7 @@ export const POSTS = [
     faqs: [
       { q: "How much can a landlord charge for a deposit in Alberta?", a: "No more than one month's rent as of the start of the tenancy. Alberta doesn't allow a separate additional pet deposit stacked on top — the total security deposit is capped at one month's rent." },
       { q: "Does my deposit earn interest in Alberta?", a: "Yes. Security deposits must be held in an interest-bearing trust account, and the landlord must pay interest at the province's prescribed rate, paid annually or at the end of the tenancy depending on your agreement." },
-      { q: "When do I get my deposit back in Alberta?", a: "Generally within 10 days of moving out, the landlord must return the deposit or provide a written statement of any deductions along with the remaining balance. Deductions are only allowed for unpaid rent and damage beyond normal wear and tear." },
+      { q: "When do I get my deposit back in Alberta?", a: "Generally within 10 days of moving out, the landlord must return the deposit or provide a statement of any deductions with the balance (or a good-faith estimate). A final statement and any money owing must reach you within 30 days of the tenancy ending. Deductions are only allowed for unpaid rent and damage beyond normal wear and tear." },
       { q: "What can I do if my Alberta landlord keeps my deposit unfairly?", a: "Request the itemized statement of deductions, then file a claim through the Residential Tenancy Dispute Resolution Service (RTDRS) or Provincial Court. Move-out photos and the inspection report are strong evidence." },
     ],
     cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund and the landlord's deadline with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },

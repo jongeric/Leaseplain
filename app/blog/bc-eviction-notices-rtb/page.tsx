@@ -129,8 +129,8 @@ export default function BcEvictionNoticesRtbPage() {
                   <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed">
                     <li><strong>10-Day Notice (unpaid rent or utilities):</strong> you can cancel it entirely by paying the full amount owing within <strong>5 days</strong>.</li>
                     <li><strong>One-Month Notice (for cause):</strong> for serious problems like repeated late rent, significant damage, or unreasonable disturbance — you have <strong>10 days</strong> to dispute.</li>
-                    <li><strong>Two-Month Notice (landlord&apos;s use):</strong> replaced in most cases by longer notice requirements — check the current form and compensation rules.</li>
-                    <li><strong>Four-Month Notice (renovation/demolition/landlord use):</strong> longer notice plus compensation, and sometimes a right of first refusal.</li>
+                    <li><strong>Three-Month Notice (landlord&apos;s or purchaser&apos;s use):</strong> for the landlord, a close family member, or a buyer to move in — form RTB-32L, with one month&apos;s compensation. Since June 18, 2025 this is three months (previously four).</li>
+                    <li><strong>Four-Month Notice (renovation or demolition):</strong> requires valid permits and one month&apos;s compensation, with a right of first refusal for major renovations.</li>
                   </ul>
                 </div>
 

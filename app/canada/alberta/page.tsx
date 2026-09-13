@@ -207,6 +207,29 @@ export default function AlbertaPage() {
                 <p className="mt-4 text-sm text-slate-500">More Alberta cities coming soon — Red Deer, Lethbridge, Fort McMurray, and others.</p>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Alberta Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "Alberta Rent Increase Rules", href: "/blog/alberta-rent-increase-rules" },
+                    { label: "Alberta Security Deposit Rules", href: "/blog/alberta-security-deposit-rules" },
+                    { label: "How Much Notice to End a Tenancy in Alberta", href: "/blog/alberta-notice-to-end-tenancy" },
+                    { label: "The Alberta Eviction Process", href: "/blog/alberta-eviction-process" },
+                    { label: "Breaking a Lease in Alberta", href: "/blog/alberta-breaking-a-lease" },
+                    { label: "Landlord Repairs & Maintenance in Alberta", href: "/blog/alberta-landlord-repairs-maintenance" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

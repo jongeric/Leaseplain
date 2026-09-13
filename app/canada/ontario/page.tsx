@@ -213,6 +213,33 @@ export default function OntarioPage() {
                 </div>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Ontario Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "2026 Rent Increase Guideline", href: "/blog/ontario-rent-increase-guideline-2026" },
+                    { label: "How to Dispute a Rent Increase", href: "/blog/how-to-dispute-a-rent-increase-ontario" },
+                    { label: "Got an N4? Non-Payment Explained", href: "/blog/n4-non-payment-rent-ontario" },
+                    { label: "N12: Landlord's Own Use Eviction", href: "/blog/n12-eviction-ontario" },
+                    { label: "How to Break a Lease in Ontario", href: "/blog/how-to-break-a-lease-ontario" },
+                    { label: "Last Month's Rent Deposit Rules", href: "/blog/last-months-rent-deposit-ontario" },
+                    { label: "Landlord Harassment: How to Stop It", href: "/blog/landlord-harassment-ontario" },
+                    { label: "Behind on Rent? Rent Banks & Help", href: "/blog/rent-bank-arrears-help-ontario" },
+                    { label: "No Written Lease? Your Rights", href: "/blog/no-written-lease-tenant-rights-ontario" },
+                    { label: "Every LTB Form Explained", href: "/ltb-forms" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

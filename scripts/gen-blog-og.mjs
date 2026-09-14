@@ -53,6 +53,14 @@ const posts = [
   ["manitoba-rent-increase-rules", "Manitoba Rent Increase Rules & Guideline"],
   ["manitoba-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Manitoba?"],
   ["manitoba-eviction-process", "The Manitoba Eviction Process"],
+  ["nova-scotia-security-deposit-rules", "Nova Scotia Security Deposit Rules"],
+  ["nova-scotia-rent-increase-rules", "Nova Scotia Rent Increase Rules: The 5% Cap"],
+  ["nova-scotia-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Nova Scotia?"],
+  ["nova-scotia-eviction-process", "The Nova Scotia Eviction Process"],
+  ["saskatchewan-security-deposit-rules", "Saskatchewan Security Deposit Rules"],
+  ["saskatchewan-rent-increase-rules", "Saskatchewan Rent Increase Rules"],
+  ["saskatchewan-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Saskatchewan?"],
+  ["saskatchewan-eviction-process", "The Saskatchewan Eviction Process"],
 ];
 
 function card(title, category = "Ontario") {

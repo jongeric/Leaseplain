@@ -44,7 +44,7 @@ export async function generateMetadata({
   };
 }
 
-function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC" | "MB") {
+function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC" | "MB" | "NS" | "SK") {
   const p = PROVINCE_META[province];
   if (province === "ON") {
     return [
@@ -72,6 +72,10 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC" | "MB") {
     ? "You don't need a lawyer for the Residential Tenancy Dispute Resolution Service (RTDRS) — it's built to be accessible, and you can bring an agent or advocate to help."
     : province === "MB"
     ? "You don't need a lawyer for the Residential Tenancies Branch (RTB) — it's designed to be accessible, and tenant advocates can help you prepare."
+    : province === "NS"
+    ? "You don't need a lawyer for the Residential Tenancies Program — it's designed to be accessible, and community legal services can help you prepare."
+    : province === "SK"
+    ? "You don't need a lawyer for the Office of Residential Tenancies (ORT) — it's built to be accessible, and free clinics can help you prepare."
     : "You don't need a lawyer for the Tribunal administratif du logement (TAL) — many tenants present their own case, often with help from a local housing committee (comité logement).";
   const freeHelp = province === "BC"
     ? `Start with TRAC (the Tenant Resource & Advisory Centre) for information and templates, and Access Pro Bono for a free legal advice clinic. Local tenant advocates and Legal Aid BC can help eligible lower-income renters in ${name}.`
@@ -79,6 +83,10 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC" | "MB") {
     ? `Start with CPLEA's plain-language guides, and free clinics like Student Legal Services (Edmonton), Student Legal Assistance (Calgary), Calgary Legal Guidance, or the Edmonton Community Legal Centre. Legal Aid Alberta can help eligible lower-income renters in ${name}.`
     : province === "MB"
     ? `Start with the Residential Tenancies Branch for information and dispute resolution, and tenant advocates such as the Community Unemployed Help Centre. Legal Aid Manitoba can help eligible lower-income renters in ${name}.`
+    : province === "NS"
+    ? `Start with the Residential Tenancies Program for information, and Dalhousie Legal Aid Service and Nova Scotia Legal Aid for advice. Community services can help eligible renters in ${name} prepare their case.`
+    : province === "SK"
+    ? `Start with the Office of Residential Tenancies (ORT) for information and forms, and free clinics like CLASSIC and Pro Bono Law Saskatchewan. Legal Aid Saskatchewan can help eligible lower-income renters in ${name}.`
     : `Start with your local comité logement (housing committee) and Éducaloi's plain-language guides. Quebec's legal aid (aide juridique) can help eligible lower-income renters in ${name}, and housing committees can help you prepare for the TAL.`;
   return [
     {

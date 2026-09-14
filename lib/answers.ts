@@ -627,6 +627,94 @@ export const ANSWERS: AnswerDef[] = [
     ],
     keywords: ["can landlord evict without reason manitoba", "eviction manitoba"],
   },
+
+  // ---- Nova Scotia ----
+  {
+    slug: "how-much-can-my-landlord-raise-my-rent-in-nova-scotia",
+    question: "How much can my landlord raise my rent in Nova Scotia?",
+    category: "Rent",
+    shortAnswer:
+      "No more than 5% a year — a temporary rent cap extended through December 31, 2027 — and only once every 12 months, with at least four months' written notice.",
+    blocks: [
+      { type: "p", text: "The cap applies during your tenancy. When a new tenant moves in, the landlord can set a new starting rent, as there's no vacancy control. An increase above 5%, more than once a year, or without four months' notice isn't valid." },
+    ],
+    related: [
+      { label: "Nova Scotia rent increase rules", href: "/blog/nova-scotia-rent-increase-rules" },
+    ],
+    keywords: ["nova scotia rent cap 2026", "how much can landlord raise rent nova scotia"],
+  },
+  {
+    slug: "how-much-deposit-can-a-landlord-charge-in-nova-scotia",
+    question: "How much deposit can a landlord charge in Nova Scotia?",
+    category: "Deposits",
+    shortAnswer:
+      "No more than half of one month's rent. It must earn interest and be returned within 10 days of the tenancy ending if the landlord has no claim — otherwise they must apply to the Residential Tenancies Program to keep it.",
+    blocks: [
+      { type: "p", text: "Landlords can't charge extra cleaning, key, or pet deposits on top of the security deposit." },
+    ],
+    related: [
+      { label: "Nova Scotia security deposit rules", href: "/blog/nova-scotia-security-deposit-rules" },
+    ],
+    keywords: ["how much deposit nova scotia", "damage deposit nova scotia"],
+  },
+  {
+    slug: "how-much-notice-to-move-out-nova-scotia",
+    question: "How much notice do I have to give to move out in Nova Scotia?",
+    category: "Moving",
+    shortAnswer:
+      "For a month-to-month tenancy, at least one month's written notice using Form C, received before the day rent is due. Year-to-year tenancies need about three months' notice before the anniversary date.",
+    blocks: [
+      { type: "p", text: "In specific situations — fleeing domestic violence or needing long-term care — you can end a fixed-term tenancy early using Form G or Form H with the required confirmation." },
+    ],
+    related: [
+      { label: "Notice to end a tenancy in Nova Scotia", href: "/blog/nova-scotia-notice-to-end-tenancy" },
+    ],
+    keywords: ["notice to quit nova scotia", "how much notice to move out nova scotia"],
+  },
+
+  // ---- Saskatchewan ----
+  {
+    slug: "is-there-rent-control-in-saskatchewan",
+    question: "Is there rent control in Saskatchewan?",
+    category: "Rent",
+    shortAnswer:
+      "No. Saskatchewan has no rent control, so there's no percentage cap on rent increases. However, rent can only be increased once every 12 months, not during a fixed term, and only with proper written notice.",
+    blocks: [
+      { type: "p", text: "A fixed-term lease locks your rent for the whole term, which can be valuable protection in a rising market." },
+    ],
+    related: [
+      { label: "Saskatchewan rent increase rules", href: "/blog/saskatchewan-rent-increase-rules" },
+    ],
+    keywords: ["is there rent control in saskatchewan", "rent increase cap saskatchewan"],
+  },
+  {
+    slug: "how-much-deposit-can-a-landlord-charge-in-saskatchewan",
+    question: "How much deposit can a landlord charge in Saskatchewan?",
+    category: "Deposits",
+    shortAnswer:
+      "No more than one month's rent, and it can often be paid in instalments rather than all upfront. It must be returned within 7 business days of move-out if the landlord has no claim, or with a statement of any deductions.",
+    blocks: [
+      { type: "p", text: "Deductions are only allowed for unpaid rent or utilities and damage beyond normal wear and tear. Disputes go to the Office of Residential Tenancies (ORT)." },
+    ],
+    related: [
+      { label: "Saskatchewan security deposit rules", href: "/blog/saskatchewan-security-deposit-rules" },
+    ],
+    keywords: ["how much deposit saskatchewan", "damage deposit saskatchewan"],
+  },
+  {
+    slug: "how-much-notice-to-move-out-saskatchewan",
+    question: "How much notice do I have to give to move out in Saskatchewan?",
+    category: "Moving",
+    shortAnswer:
+      "For a month-to-month tenancy, at least one full month's written notice, received before the last day of the preceding month. A fixed-term lease ends on its end date and otherwise continues month-to-month.",
+    blocks: [
+      { type: "p", text: "Give notice in writing and keep a copy. For a landlord to end a tenancy for owner occupancy, at least two months' notice is required, served through the ORT process." },
+    ],
+    related: [
+      { label: "Notice to end a tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
+    ],
+    keywords: ["notice to move out saskatchewan", "notice to end tenancy saskatchewan"],
+  },
 ];
 
 export function getAnswer(slug: string): AnswerDef | undefined {

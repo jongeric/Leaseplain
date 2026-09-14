@@ -9,6 +9,8 @@ const AB = "Alberta";
 const ON = "Ontario";
 const QC = "Quebec";
 const MB = "Manitoba";
+const NS = "Nova Scotia";
+const SK = "Saskatchewan";
 
 export const POSTS = [
   // ---------------------------------------------------------------- BC cluster
@@ -1241,6 +1243,354 @@ export const POSTS = [
       { label: "Manitoba Rent Increase Rules", href: "/blog/manitoba-rent-increase-rules" },
       { label: "Manitoba Security Deposit Rules", href: "/blog/manitoba-security-deposit-rules" },
       { label: "Manitoba Tenant Rights", href: "/canada/manitoba" },
+    ],
+  },
+
+  // ----------------------------------------------------- Nova Scotia cluster
+  {
+    slug: "nova-scotia-security-deposit-rules",
+    category: NS,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Nova Scotia Security Deposit Rules: Half a Month & Refunds",
+    headline: "Nova Scotia Security Deposit Rules: How Much, Interest & Refunds",
+    h1: "Nova Scotia Security Deposit Rules: Half a Month &amp; Refunds",
+    crumb: "Nova Scotia Security Deposits",
+    description: "In Nova Scotia a security deposit can't exceed half a month's rent, must earn interest, and has to be returned within 10 days of the tenancy ending. The rules on deductions and how to get it back.",
+    ogDescription: "Deposit cap, interest, and the 10-day return rule in Nova Scotia, plus what a landlord can deduct.",
+    keywords: ["nova scotia security deposit", "damage deposit nova scotia", "getting deposit back nova scotia", "how much deposit nova scotia", "security deposit rules ns"],
+    lead: "Nova Scotia caps what a landlord can hold and sets a tight deadline to return it. Here's what a landlord can charge, what they can keep, and how to recover your deposit through the Residential Tenancies Program.",
+    sections: [
+      { h2: "How Much Can They Charge?", paras: [
+        "In Nova Scotia a **security deposit can't exceed half of one month's rent**. A landlord can't demand more, and can't stack extra cleaning, key, or pet deposits on top.",
+      ] },
+      { h2: "Your Deposit Earns Interest", paras: [
+        "The landlord must hold your deposit and pay **interest** at the rate set by the province. It's added when the deposit is returned.",
+      ] },
+      { h2: "The 10-Day Return Rule", paras: [
+        "After your tenancy ends, the landlord generally has **10 days** to return your deposit if they have no claim. If they want to keep some or all of it, they must apply to the **Residential Tenancies Program** — they can't simply hold it.",
+      ] },
+      { h2: "What They Can Deduct", paras: ["Deductions are limited to:"], list: [
+        "**Unpaid rent** owing at the end of the tenancy.",
+        "**Damage** beyond normal wear and tear.",
+        "**Not** normal wear and tear — faded paint, worn carpet, minor marks.",
+      ] },
+      { h2: "If There's a Dispute", paras: [
+        "If the landlord won't return your deposit, apply to the **Residential Tenancies Program** (Director of Residential Tenancies). Photos at move-in and move-out are your strongest evidence.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord charge for a deposit in Nova Scotia?", a: "No more than half of one month's rent. Landlords can't charge additional cleaning, key, or pet deposits on top of the security deposit." },
+      { q: "When do I get my deposit back in Nova Scotia?", a: "Within 10 days of the tenancy ending if the landlord has no claim. If they want to keep part of it, they must apply to the Residential Tenancies Program rather than just withholding it." },
+      { q: "Does my deposit earn interest in Nova Scotia?", a: "Yes. The landlord must pay interest at the province's set rate, added when the deposit is returned." },
+      { q: "What if my landlord won't return my deposit in Nova Scotia?", a: "Apply to the Residential Tenancies Program. Move-in and move-out photos and any inspection notes are strong evidence." },
+    ],
+    cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund and the landlord's deadline with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },
+    related: [
+      { label: "Nova Scotia Rent Increase Rules", href: "/blog/nova-scotia-rent-increase-rules" },
+      { label: "Notice to End a Tenancy in Nova Scotia", href: "/blog/nova-scotia-notice-to-end-tenancy" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "Nova Scotia Tenant Rights", href: "/canada/nova-scotia" },
+    ],
+  },
+  {
+    slug: "nova-scotia-rent-increase-rules",
+    category: NS,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 6,
+    title: "Nova Scotia Rent Increase Rules: The 5% Cap Explained",
+    headline: "Nova Scotia Rent Increase Rules: The 5% Cap and Your Rights",
+    h1: "Nova Scotia Rent Increase Rules: The 5% Cap Explained",
+    crumb: "Nova Scotia Rent Increase Rules",
+    description: "Nova Scotia caps annual rent increases at 5% through the end of 2027, with increases allowed only once a year and four months' written notice. How the cap works and how to respond.",
+    ogDescription: "Nova Scotia's 5% rent cap (extended to end of 2027), the once-a-year rule, and the 4-month notice.",
+    keywords: ["nova scotia rent increase 2026", "nova scotia rent cap 5 percent", "how much can landlord raise rent nova scotia", "rent increase notice nova scotia", "ns rent control"],
+    lead: "Nova Scotia has a temporary rent cap that limits how much your rent can rise — one of the province's strongest tenant protections. Here's the current cap, the notice you're owed, and what to do if a landlord exceeds it.",
+    sections: [
+      { h2: "The 5% Cap", paras: [
+        "Nova Scotia limits annual rent increases to **5%**, and this cap has been **extended through December 31, 2027**. It applies to existing tenancies — a landlord can't raise your rent above 5% in a 12-month period while the cap is in place.",
+      ] },
+      { h2: "Once a Year, With Four Months' Notice", paras: [
+        "Rent can be increased **only once every 12 months**, and the landlord must give at least **four months' written notice** before the increase takes effect. Short notice or a second increase within the year isn't valid.",
+      ] },
+      { h2: "No Vacancy Control", paras: [
+        "The cap applies while you stay. When a tenancy ends and a **new tenant** moves in, the landlord can set a new starting rent — Nova Scotia doesn't have vacancy control. Staying put protects a below-market rent.",
+      ] },
+      { h2: "If the Increase Is Too High", paras: [
+        "If a landlord tries to raise rent above 5%, more than once a year, or without four months' notice, the increase isn't valid. Put your objection in writing, keep paying your lawful rent, and apply to the **Residential Tenancies Program** if needed.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can my landlord raise rent in Nova Scotia?", a: "No more than 5% a year — a temporary cap extended through December 31, 2027 — and only once every 12 months, with four months' written notice." },
+      { q: "How much notice for a rent increase in Nova Scotia?", a: "At least four months' written notice before the increase takes effect, and only once in a 12-month period." },
+      { q: "Does the Nova Scotia rent cap apply to new tenants?", a: "No. The 5% cap applies during an existing tenancy. When a new tenant moves in, the landlord can set any starting rent — there's no vacancy control." },
+      { q: "What if my landlord raises rent above 5% in Nova Scotia?", a: "The increase isn't valid while the cap is in place. Object in writing, keep paying your lawful rent, and apply to the Residential Tenancies Program if the landlord insists." },
+    ],
+    cta: { title: "Is your increase within the cap?", blurb: "Check a proposed increase against the rules with our free calculator.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
+    related: [
+      { label: "Nova Scotia Security Deposit Rules", href: "/blog/nova-scotia-security-deposit-rules" },
+      { label: "Notice to End a Tenancy in Nova Scotia", href: "/blog/nova-scotia-notice-to-end-tenancy" },
+      { label: "The Nova Scotia Eviction Process", href: "/blog/nova-scotia-eviction-process" },
+      { label: "Nova Scotia Tenant Rights", href: "/canada/nova-scotia" },
+    ],
+  },
+  {
+    slug: "nova-scotia-notice-to-end-tenancy",
+    category: NS,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "How Much Notice to End a Tenancy in Nova Scotia?",
+    headline: "How Much Notice to End a Tenancy in Nova Scotia?",
+    h1: "How Much Notice to End a Tenancy in Nova Scotia?",
+    crumb: "Notice to End a Tenancy in Nova Scotia",
+    description: "How much notice you must give to move out of a Nova Scotia rental, and how much your landlord must give you. Month-to-month notice (Form C), year-to-year rules, and what makes a notice valid.",
+    ogDescription: "Tenant and landlord notice to quit periods in Nova Scotia, explained.",
+    keywords: ["notice to quit nova scotia", "how much notice to move out nova scotia", "form c nova scotia", "ending tenancy nova scotia", "notice period nova scotia"],
+    lead: "Ending a tenancy in Nova Scotia means giving the right notice, on the right form, at the right time. Here's how much notice you owe, what your landlord owes you, and how to do it properly.",
+    sections: [
+      { h2: "If You Want to Move Out (Month-to-Month)", paras: [
+        "For a **month-to-month tenancy**, you must give at least **one month's written notice** using **Form C (Tenant's Notice to Quit)**, and it has to be received before the day rent is due. So to leave at the end of a month, give notice before that month begins.",
+      ] },
+      { h2: "Year-to-Year and Fixed Terms", paras: [
+        "**Year-to-year** tenancies need longer notice (generally three months before the anniversary date). A **fixed-term lease** ends on its end date; Nova Scotia has specific forms and timelines for leaving at the end of a term — use the right one.",
+      ] },
+      { h2: "When the Landlord Ends a Tenancy", paras: ["A landlord needs a valid reason and the right notice, for example:"], list: [
+        "**Unpaid rent:** a **15-day notice (Form D)** — you can usually stop it by paying what's owed.",
+        "**Other grounds** (renovation, owner use, breach): specific longer notice periods apply.",
+        "The notice must be on the correct form, dated, and state the reason.",
+      ] },
+      { h2: "Early Termination for Safety or Care", paras: [
+        "Nova Scotia lets a tenant end a fixed-term tenancy early in specific situations — including fleeing domestic violence or needing continuing/long-term care — using the province's early-termination forms (Form G and Form H) with the required confirmation.",
+      ] },
+      { h2: "What Makes a Notice Valid", paras: [
+        "Any notice to quit must be **in writing** on the correct form, dated, and give the proper termination date. A defective notice can be challenged through the **Residential Tenancies Program** — so read it carefully before you act.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much notice do I give to move out in Nova Scotia?", a: "For a month-to-month tenancy, at least one month's written notice on Form C, received before the day rent is due. Year-to-year tenancies need about three months' notice before the anniversary date." },
+      { q: "What is Form C in Nova Scotia?", a: "Form C is the Tenant's Notice to Quit used to end a month-to-month tenancy. It must be in writing, dated, and give at least one month's notice ending on the correct date." },
+      { q: "Can I end my lease early in Nova Scotia?", a: "In specific situations — such as fleeing domestic violence or needing long-term/continuing care — a tenant can end a fixed-term tenancy early using Form G or Form H with the required confirmation." },
+      { q: "How much notice does my landlord give for unpaid rent?", a: "A 15-day notice (Form D). You can usually stop the eviction by paying the overdue rent within that window." },
+    ],
+    cta: { title: "Leaving your rental?", blurb: "Generate a clear notice to end your tenancy the right way.", href: "/letters/notice-to-end-tenancy-letter", label: "Notice to End Tenancy Letter" },
+    related: [
+      { label: "The Nova Scotia Eviction Process", href: "/blog/nova-scotia-eviction-process" },
+      { label: "Nova Scotia Security Deposit Rules", href: "/blog/nova-scotia-security-deposit-rules" },
+      { label: "Nova Scotia Rent Increase Rules", href: "/blog/nova-scotia-rent-increase-rules" },
+      { label: "Nova Scotia Tenant Rights", href: "/canada/nova-scotia" },
+    ],
+  },
+  {
+    slug: "nova-scotia-eviction-process",
+    category: NS,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "The Nova Scotia Eviction Process: Notices & Your Rights",
+    headline: "The Nova Scotia Eviction Process: Notices, the Program & Your Rights",
+    h1: "The Nova Scotia Eviction Process: Notices &amp; Your Rights",
+    crumb: "Nova Scotia Eviction Process",
+    description: "An eviction notice in Nova Scotia isn't an automatic removal. The notice types, the 15-day pay-and-stay window for unpaid rent, and how to dispute through the Residential Tenancies Program.",
+    ogDescription: "Nova Scotia eviction notice types, the Form D 15-day window, and the Residential Tenancies Program process.",
+    keywords: ["nova scotia eviction process", "form d nova scotia", "how to fight eviction nova scotia", "residential tenancies program nova scotia", "eviction notice ns"],
+    lead: "A notice to quit in Nova Scotia is the start of a process, not the end of your tenancy. Knowing the notice types and your right to dispute — or simply pay and stay — can change the outcome.",
+    sections: [
+      { h2: "A Notice Is Not an Eviction", paras: [
+        "In Nova Scotia, a landlord can serve a notice to quit, but they **can't remove you themselves**. Disputes and orders go through the **Residential Tenancies Program** (Director of Residential Tenancies), with appeals to Small Claims Court. Only that process — not the landlord — can end your tenancy over your objection.",
+      ] },
+      { h2: "The Main Notice Types", paras: ["What you're facing depends on the notice:"], list: [
+        "**Unpaid rent — Form D:** a **15-day notice**; you can usually stop it by paying the overdue amount within the window.",
+        "**Other cause** (damage, breach): specific notice periods apply.",
+        "**Renovation, owner use, or sale:** longer notice periods, using the correct forms.",
+      ] },
+      { h2: "How to Dispute", paras: [
+        "If you disagree with a notice, apply to the **Residential Tenancies Program** before the deadline — don't just move out. For unpaid rent, paying what you owe usually cancels the notice. The Director reviews the case and both sides present evidence.",
+      ] },
+      { h2: "Build Your Evidence", paras: [
+        "Keep the notice, your rent payment records, texts and emails, photos, and any witnesses. Documentation is what decides a disputed eviction.",
+      ] },
+      { h2: "Where to Get Help", paras: [
+        "Nova Scotia tenants can get help from the Residential Tenancies Program, Dalhousie Legal Aid Service, and Nova Scotia Legal Aid. Get advice early if the stakes are high.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can my landlord evict me without the Residential Tenancies Program in Nova Scotia?", a: "No. A landlord can serve a notice to quit, but ending a tenancy over your objection goes through the Residential Tenancies Program, with appeals to Small Claims Court. Locking you out is illegal." },
+      { q: "How long is an eviction notice for unpaid rent in Nova Scotia?", a: "Fifteen days (Form D). You can usually stop the eviction by paying the full overdue amount within that window." },
+      { q: "How do I fight an eviction in Nova Scotia?", a: "Apply to the Residential Tenancies Program before the deadline, gather your lease and payment records, and present your evidence. For unpaid rent, paying what's owed usually cancels the notice." },
+      { q: "Where can I get free tenant help in Nova Scotia?", a: "The Residential Tenancies Program provides information, and Dalhousie Legal Aid Service and Nova Scotia Legal Aid can help eligible tenants." },
+    ],
+    cta: { title: "Is your notice valid?", blurb: "Check the notice type and days given against the rules with our free checker.", href: "/tools/eviction-notice-checker", label: "Eviction Notice Checker" },
+    related: [
+      { label: "Notice to End a Tenancy in Nova Scotia", href: "/blog/nova-scotia-notice-to-end-tenancy" },
+      { label: "Nova Scotia Rent Increase Rules", href: "/blog/nova-scotia-rent-increase-rules" },
+      { label: "Nova Scotia Security Deposit Rules", href: "/blog/nova-scotia-security-deposit-rules" },
+      { label: "Nova Scotia Tenant Rights", href: "/canada/nova-scotia" },
+    ],
+  },
+
+  // ----------------------------------------------------- Saskatchewan cluster
+  {
+    slug: "saskatchewan-security-deposit-rules",
+    category: SK,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Saskatchewan Security Deposit Rules: Damage Deposits & Refunds",
+    headline: "Saskatchewan Security Deposit Rules: How Much, Instalments & Refunds",
+    h1: "Saskatchewan Security Deposit Rules: Damage Deposits &amp; Refunds",
+    crumb: "Saskatchewan Security Deposits",
+    description: "In Saskatchewan a security (damage) deposit can't exceed one month's rent, can be paid in instalments, and must be returned within 7 business days of move-out. Deductions and how to get it back.",
+    ogDescription: "Deposit cap, instalments, and the 7-business-day return rule in Saskatchewan.",
+    keywords: ["saskatchewan security deposit", "damage deposit saskatchewan", "getting deposit back saskatchewan", "how much deposit saskatchewan", "security deposit rules sk"],
+    lead: "Saskatchewan lets landlords collect a damage deposit up to one month's rent, but caps it, lets you pay it in instalments, and sets a fast return deadline. Here's what a landlord can charge and keep.",
+    sections: [
+      { h2: "How Much Can They Charge?", paras: [
+        "In Saskatchewan, a **security (damage) deposit can't exceed one month's rent**. You can often pay it in **instalments** — commonly half at move-in and the rest over the following months — rather than all at once.",
+      ] },
+      { h2: "The 7-Business-Day Return Rule", paras: [
+        "After you move out, the landlord generally has **7 business days** to return your deposit (with any interest) if they have no claim, or to provide a statement of deductions. They can deduct for unpaid rent, unpaid utilities, or damage beyond normal wear and tear.",
+      ] },
+      { h2: "What They Can (and Can't) Deduct", paras: ["Deductions are limited to:"], list: [
+        "**Unpaid rent or utilities** you owe.",
+        "**Damage** beyond normal wear and tear.",
+        "**Not** normal wear and tear — faded paint, worn carpet, minor marks.",
+      ] },
+      { h2: "If There's a Dispute", paras: [
+        "If the landlord won't return your deposit, apply to the **Office of Residential Tenancies (ORT)**. A move-in and move-out inspection and photos are your strongest evidence.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord charge for a deposit in Saskatchewan?", a: "No more than one month's rent. It can often be paid in instalments rather than all upfront, and can't be topped up with extra cleaning or key deposits." },
+      { q: "When do I get my deposit back in Saskatchewan?", a: "Generally within 7 business days of moving out, the landlord must return the deposit or provide a statement of deductions. Deductions are only for unpaid rent/utilities and damage beyond normal wear." },
+      { q: "Can I pay my Saskatchewan damage deposit in instalments?", a: "Often yes — landlords commonly collect part at move-in and the balance over the following months. Confirm the schedule in writing." },
+      { q: "What if my landlord won't return my deposit in Saskatchewan?", a: "Apply to the Office of Residential Tenancies (ORT). A move-in/move-out inspection report and photos are strong evidence." },
+    ],
+    cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund and the landlord's deadline with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },
+    related: [
+      { label: "Saskatchewan Rent Increase Rules", href: "/blog/saskatchewan-rent-increase-rules" },
+      { label: "Notice to End a Tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "Saskatchewan Tenant Rights", href: "/canada/saskatchewan" },
+    ],
+  },
+  {
+    slug: "saskatchewan-rent-increase-rules",
+    category: SK,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Saskatchewan Rent Increase Rules: No Cap, But Real Limits",
+    headline: "Saskatchewan Rent Increase Rules: How Much and How Often",
+    h1: "Saskatchewan Rent Increase Rules: No Cap, But Real Limits",
+    crumb: "Saskatchewan Rent Increase Rules",
+    description: "Saskatchewan has no rent control, so there's no percentage cap — but rent can rise only once a year and only with proper written notice. How the timing and notice rules protect you.",
+    ogDescription: "Saskatchewan has no rent cap, but strict once-a-year timing and notice rules still apply.",
+    keywords: ["saskatchewan rent increase rules", "is there rent control in saskatchewan", "how much can landlord raise rent saskatchewan", "rent increase notice saskatchewan", "sk rent increase"],
+    lead: "Saskatchewan is one of the provinces with no rent control — there's no percentage limit on increases. But timing and notice rules still apply, and they're your main protection.",
+    sections: [
+      { h2: "No Cap on the Amount", paras: [
+        "Saskatchewan has **no rent control**, so there's no legal maximum percentage for a rent increase. The **timing and notice rules** — plus your ability to negotiate or move — are the real protections.",
+      ] },
+      { h2: "Only Once Every 12 Months", paras: [
+        "Rent can't be increased **more than once in a 12-month period**, and not during a fixed term. The clock runs from the start of the tenancy or the last increase.",
+      ] },
+      { h2: "The Notice You Must Get", paras: [
+        "For a periodic (month-to-month) tenancy, the landlord must give **proper written notice** well ahead of the increase — in Saskatchewan this is a longer period than a single month. Rent can't be increased during a fixed term; it can only change on renewal, with notice. Members of a tenants' association may have additional notice protections.",
+      ] },
+      { h2: "Your Real Leverage", paras: [
+        "Because there's no cap, the market and your lease are the main checks. A fixed-term lease locks your rent for the whole term — useful in a rising market. If an increase is unaffordable, you can give notice and move at the end of your term.",
+      ] },
+    ],
+    faqs: [
+      { q: "Is there rent control in Saskatchewan?", a: "No. There's no percentage cap on rent increases. However, rent can only be increased once every 12 months, not during a fixed term, and only with proper written notice." },
+      { q: "How often can my rent go up in Saskatchewan?", a: "Only once in any 12-month period, and not during a fixed term. An increase within that window, or without proper notice, isn't valid." },
+      { q: "How much notice for a rent increase in Saskatchewan?", a: "The landlord must give proper written notice well ahead of the increase for a periodic tenancy, and can't raise rent at all during a fixed term. Confirm the exact period with the Office of Residential Tenancies." },
+      { q: "Can my landlord raise rent during my lease in Saskatchewan?", a: "No. Rent is fixed for the duration of a fixed-term lease. A new rent can only take effect on renewal or in a periodic tenancy, with notice." },
+    ],
+    cta: { title: "Check your increase timing", blurb: "Confirm whether an increase's timing and notice are valid with our free tool.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
+    related: [
+      { label: "Saskatchewan Security Deposit Rules", href: "/blog/saskatchewan-security-deposit-rules" },
+      { label: "Notice to End a Tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
+      { label: "The Saskatchewan Eviction Process", href: "/blog/saskatchewan-eviction-process" },
+      { label: "Saskatchewan Tenant Rights", href: "/canada/saskatchewan" },
+    ],
+  },
+  {
+    slug: "saskatchewan-notice-to-end-tenancy",
+    category: SK,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "How Much Notice to End a Tenancy in Saskatchewan?",
+    headline: "How Much Notice to End a Tenancy in Saskatchewan?",
+    h1: "How Much Notice to End a Tenancy in Saskatchewan?",
+    crumb: "Notice to End a Tenancy in Saskatchewan",
+    description: "How much notice you must give to move out of a Saskatchewan rental, and how much your landlord must give you. Month-to-month notice, owner-occupancy, fixed terms, and what makes a notice valid.",
+    ogDescription: "Tenant and landlord notice periods to end a tenancy in Saskatchewan, explained.",
+    keywords: ["how much notice to move out saskatchewan", "notice to end tenancy saskatchewan", "one month notice saskatchewan", "landlord notice saskatchewan", "ending tenancy sk"],
+    lead: "Ending a tenancy in Saskatchewan depends on the type of tenancy and who's ending it. Getting the timing right is what makes a notice count. Here's how it works.",
+    sections: [
+      { h2: "If You Want to Move Out (Month-to-Month)", paras: [
+        "For a **month-to-month tenancy**, you must give at least **one full month's written notice**, received **before the last day of the preceding month**. So to leave at the end of a month, the landlord must have your notice before that month begins.",
+      ] },
+      { h2: "Fixed-Term Leases", paras: [
+        "A **fixed-term lease** ends on its end date. If you stay past it without a new agreement, it usually continues as a **month-to-month** tenancy with the same one-month notice rules.",
+      ] },
+      { h2: "When the Landlord Ends a Tenancy", paras: ["A landlord needs a valid reason and the right notice, for example:"], list: [
+        "**Owner or family occupancy:** at least **two months' notice**.",
+        "**Unpaid rent:** notice once rent is 15 days late (you can usually pay to remedy).",
+        "**Other grounds:** specific notice periods apply, served through the ORT's process.",
+      ] },
+      { h2: "What Makes a Notice Valid", paras: [
+        "Any notice must be **in writing**, dated, name the rental, and give the correct termination date. Landlord notices are served through the **Office of Residential Tenancies (ORT)**. A defective notice can be disputed — read it carefully before acting.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much notice do I give to move out in Saskatchewan?", a: "For a month-to-month tenancy, at least one full month's written notice, received before the last day of the preceding month. A fixed-term lease ends on its end date and otherwise continues month-to-month." },
+      { q: "How much notice does my landlord give in Saskatchewan?", a: "For owner or family occupancy, at least two months. For unpaid rent, notice once rent is 15 days late (which you can usually remedy by paying). Other grounds have their own notice periods." },
+      { q: "Do I have to move out when my fixed-term lease ends in Saskatchewan?", a: "Not necessarily. If you stay without signing a new term, the tenancy usually continues month-to-month. A landlord still needs a valid reason and proper notice to end it." },
+      { q: "Where are eviction notices handled in Saskatchewan?", a: "Through the Office of Residential Tenancies (ORT), which resolves disputes and issues orders. Only that process, not the landlord directly, can force you out." },
+    ],
+    cta: { title: "Leaving your rental?", blurb: "Generate a clear notice to end your tenancy the right way.", href: "/letters/notice-to-end-tenancy-letter", label: "Notice to End Tenancy Letter" },
+    related: [
+      { label: "The Saskatchewan Eviction Process", href: "/blog/saskatchewan-eviction-process" },
+      { label: "Saskatchewan Security Deposit Rules", href: "/blog/saskatchewan-security-deposit-rules" },
+      { label: "Saskatchewan Rent Increase Rules", href: "/blog/saskatchewan-rent-increase-rules" },
+      { label: "Saskatchewan Tenant Rights", href: "/canada/saskatchewan" },
+    ],
+  },
+  {
+    slug: "saskatchewan-eviction-process",
+    category: SK,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "The Saskatchewan Eviction Process: Notices & Your Rights",
+    headline: "The Saskatchewan Eviction Process: Notices, the ORT & Your Rights",
+    h1: "The Saskatchewan Eviction Process: Notices &amp; Your Rights",
+    crumb: "Saskatchewan Eviction Process",
+    description: "An eviction notice in Saskatchewan isn't an automatic removal. The notice types, how to remedy unpaid rent, and how the Office of Residential Tenancies process really works.",
+    ogDescription: "Saskatchewan eviction notice types, the ORT process, and how to dispute a notice.",
+    keywords: ["saskatchewan eviction process", "eviction notice saskatchewan", "how to fight eviction saskatchewan", "office of residential tenancies", "eviction sk"],
+    lead: "Getting an eviction notice in Saskatchewan is the start of a process, not the end of your tenancy. Knowing the notice types and your right to remedy or dispute can change the outcome.",
+    sections: [
+      { h2: "A Notice Is Not an Eviction", paras: [
+        "In Saskatchewan, a landlord can serve a notice, but they **can't remove you themselves**. Ending a tenancy over your objection runs through the **Office of Residential Tenancies (ORT)**, and only an order — enforced by a sheriff — can lead to actual removal. Locking you out or removing your belongings is illegal.",
+      ] },
+      { h2: "The Main Notice Types", paras: ["What you're facing depends on the notice:"], list: [
+        "**Unpaid rent:** once rent is **15 days late**, the landlord can serve notice; you can usually remedy it by paying what you owe.",
+        "**Serious breach or safety issues:** shorter, sometimes immediate, notice.",
+        "**Owner occupancy:** at least two months' notice.",
+      ] },
+      { h2: "How to Respond", paras: [
+        "If you disagree with a notice, don't just move out. For unpaid rent, paying what's owed can remedy it. Otherwise, make your case at the **ORT**, which holds hearings and issues binding orders.",
+      ] },
+      { h2: "Build Your Evidence", paras: [
+        "Gather the notice, your rent records, texts and emails, photos, and any witnesses. If the landlord claims a breach you dispute, or an owner-occupancy reason you doubt, documentation is what wins.",
+      ] },
+      { h2: "Where to Get Help", paras: [
+        "Saskatchewan tenants can get help from the ORT, Pro Bono Law Saskatchewan, CLASSIC (Community Legal Assistance Services for Saskatoon Inner City), and Legal Aid Saskatchewan. Get advice early if the stakes are high.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can my landlord evict me without the ORT in Saskatchewan?", a: "No. A landlord can serve a notice, but removing you over your objection requires an order from the Office of Residential Tenancies, enforced by a sheriff. Lockouts are illegal." },
+      { q: "How long before a landlord can evict for unpaid rent in Saskatchewan?", a: "A landlord can serve notice once rent is 15 days late. You can usually remedy the situation by paying what you owe, and then apply to or attend the ORT if there's a dispute." },
+      { q: "How do I fight an eviction in Saskatchewan?", a: "Respond before the deadline and make your case at the Office of Residential Tenancies, with your lease, payment records, and evidence. For unpaid rent, paying the arrears usually remedies it." },
+      { q: "Where can I get free tenant help in Saskatchewan?", a: "The ORT provides information, and Pro Bono Law Saskatchewan, CLASSIC, and Legal Aid Saskatchewan can help eligible tenants." },
+    ],
+    cta: { title: "Is your notice valid?", blurb: "Check the notice type and days given against the rules with our free checker.", href: "/tools/eviction-notice-checker", label: "Eviction Notice Checker" },
+    related: [
+      { label: "Notice to End a Tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
+      { label: "Saskatchewan Rent Increase Rules", href: "/blog/saskatchewan-rent-increase-rules" },
+      { label: "Saskatchewan Security Deposit Rules", href: "/blog/saskatchewan-security-deposit-rules" },
+      { label: "Saskatchewan Tenant Rights", href: "/canada/saskatchewan" },
     ],
   },
 ];

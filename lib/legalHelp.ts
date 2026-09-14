@@ -4,7 +4,7 @@
 // "get listed" form. The per-city pages explain the real routes to tenant
 // legal help in Ontario and invite professionals to be listed.
 
-export type Province = "ON" | "BC" | "AB" | "QC" | "MB";
+export type Province = "ON" | "BC" | "AB" | "QC" | "MB" | "NS" | "SK";
 
 export interface DirectoryCity {
   slug: string;
@@ -41,6 +41,12 @@ export const DIRECTORY_CITIES: DirectoryCity[] = [
   // Manitoba
   { slug: "winnipeg", name: "Winnipeg", province: "MB", region: "Manitoba", blurb: "Manitoba's largest rental market, with rent-guideline and deposit disputes handled by the Residential Tenancies Branch." },
   { slug: "brandon", name: "Brandon", province: "MB", region: "Westman", blurb: "Manitoba's second city, with a steady student and family rental population." },
+  // Nova Scotia
+  { slug: "halifax", name: "Halifax", province: "NS", region: "Halifax Regional Municipality", blurb: "Nova Scotia's largest and fastest-rising rental market, where the 5% rent cap and deposit disputes are common." },
+  { slug: "dartmouth", name: "Dartmouth", province: "NS", region: "Halifax Regional Municipality", blurb: "Part of the Halifax region, covered by the same Residential Tenancies Program." },
+  // Saskatchewan
+  { slug: "regina", name: "Regina", province: "SK", region: "Southern Saskatchewan", blurb: "Saskatchewan's capital, where deposit and notice disputes go to the Office of Residential Tenancies." },
+  { slug: "saskatoon", name: "Saskatoon", province: "SK", region: "Central Saskatchewan", blurb: "Saskatchewan's largest city, with a big student and newcomer rental population." },
 ];
 
 export function getCity(slug: string): DirectoryCity | undefined {
@@ -144,6 +150,38 @@ export const PROVINCE_META: Record<Province, ProvinceMeta> = {
       { label: "Manitoba security deposit rules", href: "/blog/manitoba-security-deposit-rules" },
       { label: "Notice to end a tenancy in Manitoba", href: "/blog/manitoba-notice-to-end-tenancy" },
       { label: "All Manitoba tenant rights", href: "/canada/manitoba" },
+    ],
+  },
+  NS: {
+    code: "NS",
+    name: "Nova Scotia",
+    tribunal: "Residential Tenancies",
+    tribunalFull: "Residential Tenancies Program",
+    lawSociety: "Nova Scotia Barristers' Society",
+    legalAid: "Nova Scotia Legal Aid",
+    systemNote: "Nova Scotia's tenant-help system is province-wide, run through the Residential Tenancies Program, with appeals to Small Claims Court.",
+    guides: [
+      { label: "Nova Scotia rent increase rules (5% cap)", href: "/blog/nova-scotia-rent-increase-rules" },
+      { label: "The Nova Scotia eviction process", href: "/blog/nova-scotia-eviction-process" },
+      { label: "Nova Scotia security deposit rules", href: "/blog/nova-scotia-security-deposit-rules" },
+      { label: "Notice to end a tenancy in Nova Scotia", href: "/blog/nova-scotia-notice-to-end-tenancy" },
+      { label: "All Nova Scotia tenant rights", href: "/canada/nova-scotia" },
+    ],
+  },
+  SK: {
+    code: "SK",
+    name: "Saskatchewan",
+    tribunal: "ORT",
+    tribunalFull: "Office of Residential Tenancies",
+    lawSociety: "Law Society of Saskatchewan",
+    legalAid: "Legal Aid Saskatchewan",
+    systemNote: "Saskatchewan's tenant-help system is province-wide, centred on the Office of Residential Tenancies (ORT).",
+    guides: [
+      { label: "Saskatchewan rent increase rules", href: "/blog/saskatchewan-rent-increase-rules" },
+      { label: "The Saskatchewan eviction process", href: "/blog/saskatchewan-eviction-process" },
+      { label: "Saskatchewan security deposit rules", href: "/blog/saskatchewan-security-deposit-rules" },
+      { label: "Notice to end a tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
+      { label: "All Saskatchewan tenant rights", href: "/canada/saskatchewan" },
     ],
   },
 };
@@ -372,6 +410,82 @@ export const HELP_OPTIONS_BY_PROVINCE: Record<Province, HelpOption[]> = {
       detail:
         "For complex disputes or an appeal to the Residential Tenancies Commission or court, a lawyer may help. The Law Society of Manitoba's referral service can connect you for an initial consultation.",
       contact: "Law Society of Manitoba lawyer referral service",
+    },
+  ],
+  NS: [
+    {
+      title: "Residential Tenancies Program",
+      who: "Free information and dispute resolution",
+      cost: "Free",
+      detail:
+        "Nova Scotia's Residential Tenancies Program (Access Nova Scotia) provides information and resolves disputes over rent, deposits, and evictions, with decisions by the Director and appeals to Small Claims Court.",
+    },
+    {
+      title: "Dalhousie Legal Aid Service & community help",
+      who: "Free advice and advocacy",
+      cost: "Free (income-tested)",
+      detail:
+        "Dalhousie Legal Aid Service and community organizations help tenants understand their rights, prepare their case, and navigate the Residential Tenancies Program, especially in the Halifax area.",
+    },
+    {
+      title: "Nova Scotia Legal Aid",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Nova Scotia Legal Aid can provide advice and, in qualifying cases, representation. Coverage of tenancy matters is limited, but it can point you to the right service.",
+    },
+    {
+      title: "Representing yourself",
+      who: "Common in the Residential Tenancies Program",
+      cost: "Low fee (waivers available)",
+      detail:
+        "The Program is designed to be used without a lawyer. Your lease, rent records, photos, and written communications are what decide a case.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes or an appeal to Small Claims Court, a lawyer may help. The Nova Scotia Barristers' Society Lawyer Referral Service can connect you for an initial consultation.",
+      contact: "Nova Scotia Barristers' Society Lawyer Referral Service",
+    },
+  ],
+  SK: [
+    {
+      title: "Office of Residential Tenancies (ORT)",
+      who: "Free information and dispute resolution",
+      cost: "Free info; low filing fee",
+      detail:
+        "Saskatchewan's Office of Residential Tenancies handles most tenancy disputes — rent, deposits, and evictions — with hearings and binding orders. Its website has plain-language guides and forms.",
+    },
+    {
+      title: "Free legal clinics",
+      who: "Free help for eligible tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "CLASSIC (Community Legal Assistance Services for Saskatoon Inner City) and Pro Bono Law Saskatchewan offer free legal help, including on tenancy issues, for eligible residents.",
+    },
+    {
+      title: "Legal Aid Saskatchewan",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Legal Aid Saskatchewan can provide advice and, in qualifying cases, representation, and can direct you to the right service for a tenancy matter.",
+    },
+    {
+      title: "Representing yourself at the ORT",
+      who: "Common at the Office",
+      cost: "Low fee (waivers available)",
+      detail:
+        "The ORT is built to be accessible without a lawyer. Preparation and evidence — your lease, payment records, and inspection photos — matter most.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex disputes and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex matters or an appeal, a lawyer may help. The Law Society of Saskatchewan's referral service can connect you for an initial consultation.",
+      contact: "Law Society of Saskatchewan lawyer referral service",
     },
   ],
 };

@@ -11,6 +11,70 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/nova-scotia-security-deposit-rules",
+    title: "Nova Scotia Security Deposit Rules: Half a Month & Refunds",
+    excerpt:
+      "In Nova Scotia a deposit can't exceed half a month's rent, must earn interest, and has to be returned within 10 days. What a landlord can deduct and how to get it back.",
+    date: "September 14, 2026",
+    category: "Nova Scotia",
+  },
+  {
+    href: "/blog/nova-scotia-rent-increase-rules",
+    title: "Nova Scotia Rent Increase Rules: The 5% Cap Explained",
+    excerpt:
+      "Nova Scotia caps annual rent increases at 5% through the end of 2027, once a year, with four months' notice. How the cap works and what to do if a landlord exceeds it.",
+    date: "September 14, 2026",
+    category: "Nova Scotia",
+  },
+  {
+    href: "/blog/nova-scotia-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in Nova Scotia?",
+    excerpt:
+      "One month on Form C if you're leaving month-to-month; 15 days (Form D) for unpaid rent. Tenant and landlord notice periods and what makes a notice valid in Nova Scotia.",
+    date: "September 14, 2026",
+    category: "Nova Scotia",
+  },
+  {
+    href: "/blog/nova-scotia-eviction-process",
+    title: "The Nova Scotia Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, the 15-day pay-and-stay window for unpaid rent, and how to dispute through the Residential Tenancies Program.",
+    date: "September 14, 2026",
+    category: "Nova Scotia",
+  },
+  {
+    href: "/blog/saskatchewan-security-deposit-rules",
+    title: "Saskatchewan Security Deposit Rules: Damage Deposits & Refunds",
+    excerpt:
+      "In Saskatchewan a damage deposit can't exceed one month's rent, can be paid in instalments, and must be returned within 7 business days. Deductions and how to get it back.",
+    date: "September 14, 2026",
+    category: "Saskatchewan",
+  },
+  {
+    href: "/blog/saskatchewan-rent-increase-rules",
+    title: "Saskatchewan Rent Increase Rules: No Cap, But Real Limits",
+    excerpt:
+      "Saskatchewan has no rent control — no percentage cap — but rent can still rise only once a year, never during a fixed term, and only with proper notice. How the rules protect you.",
+    date: "September 14, 2026",
+    category: "Saskatchewan",
+  },
+  {
+    href: "/blog/saskatchewan-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in Saskatchewan?",
+    excerpt:
+      "One month if you're leaving month-to-month; two months for owner occupancy. Tenant and landlord notice periods and what makes a notice valid in Saskatchewan.",
+    date: "September 14, 2026",
+    category: "Saskatchewan",
+  },
+  {
+    href: "/blog/saskatchewan-eviction-process",
+    title: "The Saskatchewan Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, how to remedy unpaid rent (15 days late), and how the Office of Residential Tenancies process works.",
+    date: "September 14, 2026",
+    category: "Saskatchewan",
+  },
+  {
     href: "/blog/manitoba-security-deposit-rules",
     title: "Manitoba Security Deposit Rules: Half a Month & Getting It Back",
     excerpt:

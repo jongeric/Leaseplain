@@ -65,6 +65,7 @@ const FOOTER_COLUMNS = [
       { label: "Rent Increase Rules by Province", href: "/rent-increase-rules-canada" },
       { label: "Deposit Limits by Province", href: "/security-deposit-limits-canada" },
       { label: "Eviction Notice Periods by Province", href: "/eviction-notice-periods-canada" },
+      { label: "Average Rent by City", href: "/average-rent-by-city-canada" },
       { label: "Lease Basics", href: "/resources/lease-basics" },
       { label: "Before You Sign", href: "/resources/before-you-sign" },
       { label: "AI Lease Review", href: "/resources/ai-lease-review" },

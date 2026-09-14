@@ -6,6 +6,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import {
   TrendingUp, DollarSign, Clock, Home, FileX, Shield,
   HelpCircle, BookOpen, Search, ChevronRight, Percent, Scale,
+  CalendarClock, CalendarCheck,
 } from "lucide-react";
 
 export const dynamic = "force-static";
@@ -50,6 +51,20 @@ const tools = [
     color: "amber",
     title: "Above-Guideline Increase Checker",
     description: "Is your rent increase within the guideline, above it (needing LTB approval), or exempt?",
+  },
+  {
+    href: "/tools/rent-increase-date-calculator",
+    icon: CalendarClock,
+    color: "indigo",
+    title: "When Can My Rent Be Raised?",
+    description: "Find the earliest date your rent can legally increase and your landlord's notice deadline, by province.",
+  },
+  {
+    href: "/tools/move-out-notice-calculator",
+    icon: CalendarCheck,
+    color: "emerald",
+    title: "Move-Out Notice Date Calculator",
+    description: "Find the last day to give proper notice to end a month-to-month tenancy, by province.",
   },
   {
     href: "/tools/notice-period-calculator",

@@ -183,6 +183,7 @@ export default function RentIncreaseRulesCanadaPage() {
                     { label: "Rent Increase Calculator", href: "/tools/rent-increase-calculator" },
                     { label: "Ontario rent increase history", href: "/ontario-rent-increase-history" },
                     { label: "Security deposit limits by province", href: "/security-deposit-limits-canada" },
+                    { label: "Eviction notice periods by province", href: "/eviction-notice-periods-canada" },
                   ].map((r) => (
                     <li key={r.href}>
                       <Link href={r.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

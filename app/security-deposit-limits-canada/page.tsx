@@ -181,6 +181,7 @@ export default function SecurityDepositLimitsCanadaPage() {
                     { label: "Manitoba security deposit rules", href: "/blog/manitoba-security-deposit-rules" },
                     { label: "Deposit return calculator", href: "/tools/deposit-calculator" },
                     { label: "Rent increase rules by province", href: "/rent-increase-rules-canada" },
+                    { label: "Eviction notice periods by province", href: "/eviction-notice-periods-canada" },
                   ].map((r) => (
                     <li key={r.href}>
                       <Link href={r.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

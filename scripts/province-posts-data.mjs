@@ -11,6 +11,9 @@ const QC = "Quebec";
 const MB = "Manitoba";
 const NS = "Nova Scotia";
 const SK = "Saskatchewan";
+const NB = "New Brunswick";
+const PE = "Prince Edward Island";
+const NL = "Newfoundland & Labrador";
 
 export const POSTS = [
   // ---------------------------------------------------------------- BC cluster
@@ -1591,6 +1594,508 @@ export const POSTS = [
       { label: "Saskatchewan Rent Increase Rules", href: "/blog/saskatchewan-rent-increase-rules" },
       { label: "Saskatchewan Security Deposit Rules", href: "/blog/saskatchewan-security-deposit-rules" },
       { label: "Saskatchewan Tenant Rights", href: "/canada/saskatchewan" },
+    ],
+  },
+
+  // --------------------------------------------------- New Brunswick cluster
+  {
+    slug: "new-brunswick-security-deposit-rules",
+    category: NB,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "New Brunswick Security Deposit Rules: What a Landlord Can Charge",
+    headline: "New Brunswick Security Deposit Rules: Limits, Holding & Refunds",
+    h1: "New Brunswick Security Deposit Rules: What a Landlord Can Charge",
+    crumb: "New Brunswick Security Deposits",
+    description: "In New Brunswick a security deposit is capped (one month's rent for most leases), and the landlord must send it to the Tenant and Landlord Relations Office to hold. The rules on limits, holding, and refunds.",
+    ogDescription: "Deposit limits, the Tenant and Landlord Relations Office, and refunds in New Brunswick.",
+    keywords: ["new brunswick security deposit", "damage deposit new brunswick", "security deposit refund new brunswick", "how much deposit new brunswick", "rental deposit nb"],
+    lead: "New Brunswick handles deposits differently: the landlord can't keep your money in their own account — it goes to a government office for safekeeping. Here's what a landlord can charge and how you get it back.",
+    sections: [
+      { h2: "How Much Can They Charge?", paras: [
+        "In New Brunswick a security deposit is capped at **one month's rent** for most leases (one week's rent for a weekly tenancy; higher for a mobile-home site). A landlord can't demand more or add extra deposits on top.",
+      ] },
+      { h2: "The Deposit Is Held by the Government", paras: [
+        "This is the key difference: a landlord who collects a deposit must **remit it to the Tenant and Landlord Relations Office** (part of Service New Brunswick) within **15 days** — they don't hold it themselves. It earns interest while held.",
+      ] },
+      { h2: "Getting It Back", paras: [
+        "At the end of the tenancy, the deposit (with interest) is returned once the landlord and tenant agree, or the Residential Tenancies Tribunal decides any dispute. A landlord can only claim it for unpaid rent or damage beyond normal wear and tear — not routine cleaning or wear.",
+      ] },
+      { h2: "If There's a Dispute", paras: [
+        "Because the money is held by the government, a landlord can't simply keep it. If you disagree with a claim, the **Residential Tenancies Tribunal** decides. Move-in and move-out photos are your strongest evidence.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord charge for a deposit in New Brunswick?", a: "For most leases, one month's rent (one week's rent for weekly tenancies). Landlords can't demand more or stack extra deposits on top." },
+      { q: "Who holds my deposit in New Brunswick?", a: "The landlord must send it to the Tenant and Landlord Relations Office (Service New Brunswick) within 15 days — they can't hold it themselves. It earns interest while held." },
+      { q: "How do I get my deposit back in New Brunswick?", a: "It's returned with interest when both sides agree, or when the Residential Tenancies Tribunal decides a dispute. Deductions are only for unpaid rent or damage beyond normal wear and tear." },
+      { q: "Can my landlord keep my deposit for cleaning?", a: "No — not for routine cleaning or normal wear and tear. Only genuine damage or unpaid rent can be claimed, and the Tribunal decides disputes." },
+    ],
+    cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },
+    related: [
+      { label: "New Brunswick Rent Increase Rules", href: "/blog/new-brunswick-rent-increase-rules" },
+      { label: "Notice to End a Tenancy in New Brunswick", href: "/blog/new-brunswick-notice-to-end-tenancy" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "New Brunswick Tenant Rights", href: "/canada/new-brunswick" },
+    ],
+  },
+  {
+    slug: "new-brunswick-rent-increase-rules",
+    category: NB,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "New Brunswick Rent Increase Rules: Notice & How to Dispute",
+    headline: "New Brunswick Rent Increase Rules: Notice and How to Challenge One",
+    h1: "New Brunswick Rent Increase Rules: Notice & How to Dispute",
+    crumb: "New Brunswick Rent Increase Rules",
+    description: "New Brunswick has no fixed rent cap, but rent can rise only once a year with proper notice — and unreasonable increases can be challenged at the Residential Tenancies Tribunal. How the rules work.",
+    ogDescription: "New Brunswick's rent-increase notice rules and how to dispute an unreasonable increase.",
+    keywords: ["new brunswick rent increase", "how much can landlord raise rent new brunswick", "rent increase notice new brunswick", "dispute rent increase nb", "nb rent control"],
+    lead: "New Brunswick doesn't set a hard percentage cap on rent — but it does give tenants notice rights and, importantly, a way to challenge an increase that's out of line. Here's how it works.",
+    sections: [
+      { h2: "No Fixed Cap — But Real Rules", paras: [
+        "New Brunswick has **no set percentage cap** on rent increases. Instead, protection comes from the **once-a-year rule, the required notice, and the right to challenge** an unreasonable increase at the Residential Tenancies Tribunal.",
+      ] },
+      { h2: "Once a Year, With Notice", paras: [
+        "Rent can only be increased **once every 12 months**, and the landlord must give proper **written notice well in advance** — generally at least a few months for a month-to-month tenancy. Rent can't be raised during a fixed term.",
+      ] },
+      { h2: "You Can Challenge an Unreasonable Increase", paras: [
+        "This is New Brunswick's key protection: if you think an increase is **unreasonable**, you can dispute it with the **Residential Tenancies Tribunal**, which can review it against comparable units and market conditions and adjust or phase it in.",
+      ] },
+      { h2: "How to Respond", paras: [
+        "Don't ignore an increase you think is unfair. Put your objection in writing, keep paying your existing lawful rent, and contact the Tribunal promptly — there are time limits to dispute.",
+      ] },
+    ],
+    faqs: [
+      { q: "Is there rent control in New Brunswick?", a: "There's no fixed percentage cap, but rent can only rise once every 12 months with proper notice, and you can challenge an unreasonable increase at the Residential Tenancies Tribunal." },
+      { q: "How often can rent go up in New Brunswick?", a: "Only once in any 12-month period, and not during a fixed term. A second increase within that window, or one without proper notice, isn't valid." },
+      { q: "Can I dispute a rent increase in New Brunswick?", a: "Yes. If an increase is unreasonable, you can bring it to the Residential Tenancies Tribunal, which can review it and adjust or phase it in. Act within the time limits and keep paying your lawful rent." },
+      { q: "Can my landlord raise rent during my lease in New Brunswick?", a: "No. Rent is fixed for the term of a fixed-term lease. A new rent can only take effect on renewal or in a periodic tenancy, with proper notice." },
+    ],
+    cta: { title: "Think your increase is unfair?", blurb: "Check a proposed increase and your options with our free calculator.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
+    related: [
+      { label: "New Brunswick Security Deposit Rules", href: "/blog/new-brunswick-security-deposit-rules" },
+      { label: "Notice to End a Tenancy in New Brunswick", href: "/blog/new-brunswick-notice-to-end-tenancy" },
+      { label: "The New Brunswick Eviction Process", href: "/blog/new-brunswick-eviction-process" },
+      { label: "New Brunswick Tenant Rights", href: "/canada/new-brunswick" },
+    ],
+  },
+  {
+    slug: "new-brunswick-notice-to-end-tenancy",
+    category: NB,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "How Much Notice to End a Tenancy in New Brunswick?",
+    headline: "How Much Notice to End a Tenancy in New Brunswick?",
+    h1: "How Much Notice to End a Tenancy in New Brunswick?",
+    crumb: "Notice to End a Tenancy in New Brunswick",
+    description: "How much notice you must give to move out of a New Brunswick rental, and how much your landlord must give you. Month-to-month notice, fixed terms, and what makes a notice valid.",
+    ogDescription: "Tenant and landlord notice periods to end a tenancy in New Brunswick, explained.",
+    keywords: ["notice to end tenancy new brunswick", "how much notice to move out new brunswick", "notice to quit nb", "ending tenancy new brunswick", "one month notice nb"],
+    lead: "Ending a tenancy in New Brunswick means giving the right notice at the right time. Here's how much notice you owe, what your landlord owes you, and how to do it properly.",
+    sections: [
+      { h2: "If You Want to Move Out (Month-to-Month)", paras: [
+        "For a **month-to-month tenancy**, you must give at least **one month's written notice**, ending at the end of a rental period. Give it before the month you want to leave begins.",
+      ] },
+      { h2: "Fixed-Term Leases", paras: [
+        "A **fixed-term lease** ends on its end date. If you stay past it without a new agreement, it typically continues as a month-to-month tenancy under the same one-month notice rules.",
+      ] },
+      { h2: "When the Landlord Ends a Tenancy", paras: ["A landlord needs a valid reason and the right notice, for example:"], list: [
+        "**Unpaid rent:** a Notice to Vacate of at least **15 days** — you can usually cancel it by paying within **7 days**.",
+        "**Other grounds** (owner use, breach): set notice periods apply.",
+        "The notice must be in writing, dated, and state the reason.",
+      ] },
+      { h2: "What Makes a Notice Valid", paras: [
+        "Any notice must be **in writing**, dated, name the rental, and give the correct end date. A defective notice can be challenged through the **Residential Tenancies Tribunal** — read it carefully before acting.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much notice do I give to move out in New Brunswick?", a: "For a month-to-month tenancy, at least one month's written notice ending at the end of a rental period. A fixed-term lease ends on its end date and otherwise continues month-to-month." },
+      { q: "How much notice for unpaid rent in New Brunswick?", a: "A Notice to Vacate of at least 15 days, which you can usually cancel by paying the overdue rent within 7 days of being served." },
+      { q: "Do I have to move out when my fixed-term lease ends in New Brunswick?", a: "Not necessarily — if you stay without a new agreement, the tenancy usually continues month-to-month. The landlord still needs a valid reason and proper notice to end it." },
+      { q: "Where are tenancy disputes decided in New Brunswick?", a: "By the Residential Tenancies Tribunal (Service New Brunswick), which resolves disputes and issues decisions. A landlord can't force you out without the proper process." },
+    ],
+    cta: { title: "Leaving your rental?", blurb: "Generate a clear notice to end your tenancy the right way.", href: "/letters/notice-to-end-tenancy-letter", label: "Notice to End Tenancy Letter" },
+    related: [
+      { label: "The New Brunswick Eviction Process", href: "/blog/new-brunswick-eviction-process" },
+      { label: "New Brunswick Security Deposit Rules", href: "/blog/new-brunswick-security-deposit-rules" },
+      { label: "New Brunswick Rent Increase Rules", href: "/blog/new-brunswick-rent-increase-rules" },
+      { label: "New Brunswick Tenant Rights", href: "/canada/new-brunswick" },
+    ],
+  },
+  {
+    slug: "new-brunswick-eviction-process",
+    category: NB,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "The New Brunswick Eviction Process: Notices & Your Rights",
+    headline: "The New Brunswick Eviction Process: Notices, the Tribunal & Your Rights",
+    h1: "The New Brunswick Eviction Process: Notices &amp; Your Rights",
+    crumb: "New Brunswick Eviction Process",
+    description: "An eviction notice in New Brunswick isn't an automatic removal. The notice types, the 15-day/7-day pay window for unpaid rent, and how the Residential Tenancies Tribunal decides disputes.",
+    ogDescription: "New Brunswick eviction notice types, pay windows, and the Residential Tenancies Tribunal process.",
+    keywords: ["new brunswick eviction process", "notice to vacate new brunswick", "how to fight eviction new brunswick", "residential tenancies tribunal nb", "eviction nb"],
+    lead: "A notice to vacate in New Brunswick is the start of a process, not the end of your tenancy. Knowing the notice types and your right to pay or dispute can change the outcome.",
+    sections: [
+      { h2: "A Notice Is Not an Eviction", paras: [
+        "In New Brunswick, a landlord can serve a notice, but they **can't remove you themselves**. The **Residential Tenancies Tribunal** (Service New Brunswick) decides disputes and issues orders. Only that process — not the landlord — can end your tenancy over your objection.",
+      ] },
+      { h2: "The Main Notice Types", paras: ["What you're facing depends on the notice:"], list: [
+        "**Unpaid rent:** a Notice to Vacate of at least **15 days**; you can usually cancel it by paying within **7 days**.",
+        "**Other cause** (breach, damage): set notice periods apply.",
+        "**Owner use or other grounds:** longer notice, with the reason stated.",
+      ] },
+      { h2: "How to Respond", paras: [
+        "Don't just move out. For unpaid rent, paying within the window cancels the notice. Otherwise, you can dispute it with the **Residential Tenancies Tribunal**, which reviews the evidence from both sides.",
+      ] },
+      { h2: "Build Your Evidence", paras: [
+        "Keep the notice, your rent records, texts and emails, photos, and any witnesses. Documentation is what decides a disputed eviction.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can my landlord evict me without the Tribunal in New Brunswick?", a: "No. A landlord can serve a notice, but removing you over your objection goes through the Residential Tenancies Tribunal. Locking you out or removing your belongings is illegal." },
+      { q: "How long is an eviction notice for unpaid rent in New Brunswick?", a: "A Notice to Vacate of at least 15 days, which you can usually cancel by paying the overdue rent within 7 days of being served." },
+      { q: "How do I fight an eviction in New Brunswick?", a: "Respond before the deadline and make your case to the Residential Tenancies Tribunal, with your lease, payment records, and evidence. For unpaid rent, paying within the window cancels the notice." },
+      { q: "Who runs residential tenancies in New Brunswick?", a: "The Residential Tenancies Tribunal, part of Service New Brunswick, which also holds security deposits and resolves disputes." },
+    ],
+    cta: { title: "Is your notice valid?", blurb: "Check the notice type and days given against the rules with our free checker.", href: "/tools/eviction-notice-checker", label: "Eviction Notice Checker" },
+    related: [
+      { label: "Notice to End a Tenancy in New Brunswick", href: "/blog/new-brunswick-notice-to-end-tenancy" },
+      { label: "New Brunswick Rent Increase Rules", href: "/blog/new-brunswick-rent-increase-rules" },
+      { label: "New Brunswick Security Deposit Rules", href: "/blog/new-brunswick-security-deposit-rules" },
+      { label: "New Brunswick Tenant Rights", href: "/canada/new-brunswick" },
+    ],
+  },
+
+  // ---------------------------------------------- Prince Edward Island cluster
+  {
+    slug: "pei-security-deposit-rules",
+    category: PE,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "PEI Security Deposit Rules: Limits, Interest & Refunds",
+    headline: "PEI Security Deposit Rules: Limits, Interest & Refunds",
+    h1: "PEI Security Deposit Rules: Limits, Interest &amp; Refunds",
+    crumb: "PEI Security Deposits",
+    description: "In Prince Edward Island a security deposit can't exceed one month's rent, earns interest, and must be returned within 15 days of the tenancy ending. Deductions and how to get it back through IRAC.",
+    ogDescription: "Deposit cap, interest, and the 15-day return rule in PEI, plus what a landlord can deduct.",
+    keywords: ["pei security deposit", "damage deposit pei", "getting deposit back pei", "how much deposit pei", "security deposit rules prince edward island"],
+    lead: "Prince Edward Island caps the deposit a landlord can hold and sets a clear deadline to return it. Here's what a landlord can charge, what they can keep, and how to recover your deposit through IRAC.",
+    sections: [
+      { h2: "How Much Can They Charge?", paras: [
+        "In PEI a **security deposit can't exceed one month's rent**. A landlord can't demand more, or add extra cleaning, key, or pet deposits on top.",
+      ] },
+      { h2: "Interest and Where It's Held", paras: [
+        "The deposit is held pending the end of the tenancy and **earns interest** at the set rate. Any dispute over it goes to the **Residential Tenancy Office**, part of the Island Regulatory and Appeals Commission (IRAC).",
+      ] },
+      { h2: "The 15-Day Return Rule", paras: [
+        "After your tenancy ends, the landlord generally has **15 days** to return your deposit if they have no claim. If they want to keep some or all of it, they must apply to IRAC rather than simply holding it.",
+      ] },
+      { h2: "What They Can Deduct", paras: ["Deductions are limited to:"], list: [
+        "**Unpaid rent** owing at the end of the tenancy.",
+        "**Damage** beyond normal wear and tear.",
+        "**Not** normal wear and tear — faded paint, worn carpet, minor marks.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord charge for a deposit in PEI?", a: "No more than one month's rent. Landlords can't demand more or add extra cleaning, key, or pet deposits." },
+      { q: "When do I get my deposit back in PEI?", a: "Generally within 15 days of the tenancy ending if the landlord has no claim. If they want to keep part of it, they must apply to IRAC's Residential Tenancy Office." },
+      { q: "Does my PEI deposit earn interest?", a: "Yes, at the set rate, added when the deposit is returned." },
+      { q: "What if my landlord won't return my deposit in PEI?", a: "Apply to the Residential Tenancy Office (IRAC). Move-in and move-out photos are strong evidence." },
+    ],
+    cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },
+    related: [
+      { label: "PEI Rent Increase Rules", href: "/blog/pei-rent-increase-rules" },
+      { label: "Notice to End a Tenancy in PEI", href: "/blog/pei-notice-to-end-tenancy" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "PEI Tenant Rights", href: "/canada/prince-edward-island" },
+    ],
+  },
+  {
+    slug: "pei-rent-increase-rules",
+    category: PE,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "PEI Rent Increase Rules: The IRAC Allowable Increase",
+    headline: "PEI Rent Increase Rules: The IRAC Allowable Increase and Your Rights",
+    h1: "PEI Rent Increase Rules: The IRAC Allowable Increase",
+    crumb: "PEI Rent Increase Rules",
+    description: "PEI sets an annual allowable rent increase through IRAC — 2% for 2026, capped at 3% by law — with increases allowed once a year and three months' notice. How the cap works and how to respond.",
+    ogDescription: "PEI's 2026 allowable rent increase (2%), the once-a-year rule, and the 3-month notice.",
+    keywords: ["pei rent increase 2026", "irac allowable rent increase", "how much can landlord raise rent pei", "rent increase notice pei", "pei rent control"],
+    lead: "Prince Edward Island is rent-controlled: an independent regulator sets the maximum increase each year. Here's the 2026 figure, the notice you're owed, and what to do if a landlord asks for more.",
+    sections: [
+      { h2: "The Annual Allowable Increase", paras: [
+        "PEI's Residential Tenancy Office (part of **IRAC**) sets a **maximum allowable rent increase** each year. For **2026 it's 2%**, and by law the annual allowable increase can't exceed **3%**. A landlord can't charge more without IRAC's approval.",
+      ] },
+      { h2: "Once a Year, With Three Months' Notice", paras: [
+        "Rent can be increased **only once every 12 months**, and the landlord must give at least **three months' written notice** on the proper form.",
+      ] },
+      { h2: "Above the Allowable Amount", paras: [
+        "A landlord who wants more than the allowable increase must **apply to IRAC** and justify it. You're notified and can object — don't pay above the allowable amount unless IRAC approves it.",
+      ] },
+      { h2: "If the Increase Is Wrong", paras: [
+        "If a landlord exceeds the allowable increase without approval, skips the notice, or increases more than once a year, it isn't valid. Object in writing, keep paying your lawful rent, and apply to IRAC.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can my landlord raise rent in PEI in 2026?", a: "No more than 2% for 2026 — the allowable increase set by IRAC — unless IRAC approves a higher amount. By law the annual allowable increase can't exceed 3%." },
+      { q: "How much notice for a rent increase in PEI?", a: "At least three months' written notice, and only once every 12 months." },
+      { q: "Can a landlord charge more than the allowable increase in PEI?", a: "Only if IRAC approves it. Otherwise the allowable amount applies, and you shouldn't pay more until there's an order." },
+      { q: "Who sets rent rules in PEI?", a: "The Residential Tenancy Office, part of the Island Regulatory and Appeals Commission (IRAC), which sets the annual allowable increase and decides disputes." },
+    ],
+    cta: { title: "Is your increase within the limit?", blurb: "Check a proposed increase against the rules with our free calculator.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
+    related: [
+      { label: "PEI Security Deposit Rules", href: "/blog/pei-security-deposit-rules" },
+      { label: "Notice to End a Tenancy in PEI", href: "/blog/pei-notice-to-end-tenancy" },
+      { label: "The PEI Eviction Process", href: "/blog/pei-eviction-process" },
+      { label: "PEI Tenant Rights", href: "/canada/prince-edward-island" },
+    ],
+  },
+  {
+    slug: "pei-notice-to-end-tenancy",
+    category: PE,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "How Much Notice to End a Tenancy in PEI?",
+    headline: "How Much Notice to End a Tenancy in PEI?",
+    h1: "How Much Notice to End a Tenancy in PEI?",
+    crumb: "Notice to End a Tenancy in PEI",
+    description: "How much notice you must give to move out of a PEI rental, and how much your landlord must give you. Month-to-month notice, fixed terms, and what makes a notice valid through IRAC.",
+    ogDescription: "Tenant and landlord notice periods to end a tenancy in Prince Edward Island, explained.",
+    keywords: ["notice to end tenancy pei", "how much notice to move out pei", "notice to quit pei", "ending tenancy prince edward island", "one month notice pei"],
+    lead: "Ending a tenancy in PEI means giving the right notice at the right time, using IRAC's forms. Here's how much notice you owe, what your landlord owes you, and how to do it properly.",
+    sections: [
+      { h2: "If You Want to Move Out (Month-to-Month)", paras: [
+        "For a **month-to-month tenancy**, you must give at least **one month's written notice** before the end of a rental period. Use the Residential Tenancy Office form and keep a copy.",
+      ] },
+      { h2: "Fixed-Term and Year-to-Year", paras: [
+        "A **fixed-term lease** ends on its end date. **Year-to-year** tenancies require longer notice (typically a few months before the anniversary). If you stay past a fixed term without a new agreement, the tenancy usually continues.",
+      ] },
+      { h2: "When the Landlord Ends a Tenancy", paras: ["A landlord needs a valid reason and the right notice, for example:"], list: [
+        "**Unpaid rent:** Form 4A — a **10-day** notice; you can void it by paying within 10 days.",
+        "**Other grounds** (owner use, renovation, sale): longer notice on the proper form.",
+        "Notices are filed through IRAC's Residential Tenancy Office.",
+      ] },
+      { h2: "What Makes a Notice Valid", paras: [
+        "Any notice must be **in writing** on the correct form, dated, and give the proper end date. A defective notice can be disputed at **IRAC** — read it carefully before you act.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much notice do I give to move out in PEI?", a: "For a month-to-month tenancy, at least one month's written notice before the end of a rental period, on the Residential Tenancy Office form." },
+      { q: "How much notice for unpaid rent in PEI?", a: "A Form 4A notice gives 10 days; you can void it by paying the overdue rent within 10 days." },
+      { q: "Do I have to move out when my fixed-term lease ends in PEI?", a: "Not necessarily — if you stay without a new agreement, the tenancy usually continues. The landlord still needs a valid reason and proper notice to end it." },
+      { q: "Where are tenancy disputes decided in PEI?", a: "By the Residential Tenancy Office, part of the Island Regulatory and Appeals Commission (IRAC)." },
+    ],
+    cta: { title: "Leaving your rental?", blurb: "Generate a clear notice to end your tenancy the right way.", href: "/letters/notice-to-end-tenancy-letter", label: "Notice to End Tenancy Letter" },
+    related: [
+      { label: "The PEI Eviction Process", href: "/blog/pei-eviction-process" },
+      { label: "PEI Security Deposit Rules", href: "/blog/pei-security-deposit-rules" },
+      { label: "PEI Rent Increase Rules", href: "/blog/pei-rent-increase-rules" },
+      { label: "PEI Tenant Rights", href: "/canada/prince-edward-island" },
+    ],
+  },
+  {
+    slug: "pei-eviction-process",
+    category: PE,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "The PEI Eviction Process: Notices & Your Rights",
+    headline: "The PEI Eviction Process: Notices, IRAC & Your Rights",
+    h1: "The PEI Eviction Process: Notices &amp; Your Rights",
+    crumb: "PEI Eviction Process",
+    description: "An eviction notice in PEI isn't an automatic removal. The notice types, the 10-day pay-and-stay window for unpaid rent (Form 4A), and how to dispute through IRAC's Residential Tenancy Office.",
+    ogDescription: "PEI eviction notice types, the Form 4A 10-day window, and the IRAC process.",
+    keywords: ["pei eviction process", "form 4a pei", "how to fight eviction pei", "residential tenancy office pei", "eviction prince edward island"],
+    lead: "A notice of eviction in PEI is the start of a process, not the end of your tenancy. Knowing the notice types and your right to pay or dispute can change the outcome.",
+    sections: [
+      { h2: "A Notice Is Not an Eviction", paras: [
+        "In PEI, a landlord can serve a notice, but they **can't remove you themselves**. The **Residential Tenancy Office** (part of IRAC) decides disputes and issues orders. Only that process — not the landlord — can end your tenancy over your objection.",
+      ] },
+      { h2: "The Main Notice Types", paras: ["What you're facing depends on the notice:"], list: [
+        "**Unpaid rent — Form 4A:** a **10-day** notice; you can void it by paying within 10 days, and you have 10 days to dispute.",
+        "**Other cause** (breach, damage): set notice periods apply.",
+        "**Owner use, renovation, or sale:** longer notice on the proper form.",
+      ] },
+      { h2: "How to Respond", paras: [
+        "Don't just move out. For unpaid rent, paying within the window voids the notice. Otherwise you can dispute it at the **Residential Tenancy Office** within the time limit — appeals go to IRAC.",
+      ] },
+      { h2: "Build Your Evidence", paras: [
+        "Keep the notice, your rent records, texts and emails, photos, and any witnesses. Documentation is what decides a disputed eviction.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can my landlord evict me without IRAC in PEI?", a: "No. A landlord can serve a notice, but removing you over your objection goes through the Residential Tenancy Office (IRAC). Locking you out is illegal." },
+      { q: "What is Form 4A in PEI?", a: "Form 4A is the notice of eviction for non-payment of rent. It gives 10 days; you can void it by paying the overdue rent, and you have 10 days to dispute." },
+      { q: "How do I fight an eviction in PEI?", a: "Respond before the deadline and make your case to the Residential Tenancy Office, with your lease, payment records, and evidence. Appeals go to IRAC." },
+      { q: "Who runs residential tenancies in PEI?", a: "The Residential Tenancy Office, part of the Island Regulatory and Appeals Commission (IRAC)." },
+    ],
+    cta: { title: "Is your notice valid?", blurb: "Check the notice type and days given against the rules with our free checker.", href: "/tools/eviction-notice-checker", label: "Eviction Notice Checker" },
+    related: [
+      { label: "Notice to End a Tenancy in PEI", href: "/blog/pei-notice-to-end-tenancy" },
+      { label: "PEI Rent Increase Rules", href: "/blog/pei-rent-increase-rules" },
+      { label: "PEI Security Deposit Rules", href: "/blog/pei-security-deposit-rules" },
+      { label: "PEI Tenant Rights", href: "/canada/prince-edward-island" },
+    ],
+  },
+
+  // ------------------------------------------ Newfoundland & Labrador cluster
+  {
+    slug: "newfoundland-security-deposit-rules",
+    category: NL,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Newfoundland Security Deposit Rules: Limits & Refunds",
+    headline: "Newfoundland & Labrador Security Deposit Rules: Limits & Refunds",
+    h1: "Newfoundland Security Deposit Rules: Limits &amp; Refunds",
+    crumb: "Newfoundland Security Deposits",
+    description: "In Newfoundland and Labrador a security deposit is capped (three-quarters of a month's rent for monthly tenancies) and must be returned within 10 days of move-out. The rules on limits and refunds.",
+    ogDescription: "Deposit limits and the 10-day return rule in Newfoundland & Labrador.",
+    keywords: ["newfoundland security deposit", "damage deposit newfoundland", "getting deposit back newfoundland", "how much deposit nl", "security deposit rules newfoundland labrador"],
+    lead: "Newfoundland and Labrador caps what a landlord can hold as a deposit and sets a quick deadline to return it. Here's what a landlord can charge and how to get it back.",
+    sections: [
+      { h2: "How Much Can They Charge?", paras: [
+        "In Newfoundland and Labrador a security deposit is capped at **three-quarters (¾) of one month's rent** for a monthly or fixed-term tenancy (about **two weeks' rent** for a week-to-week tenancy). A landlord can't demand more.",
+      ] },
+      { h2: "The 10-Day Return Rule", paras: [
+        "After you move out, the landlord generally has **10 days** to return your deposit (with interest) unless they have a claim for unpaid rent or damage beyond normal wear and tear.",
+      ] },
+      { h2: "What They Can Deduct", paras: ["Deductions are limited to:"], list: [
+        "**Unpaid rent** owing at the end of the tenancy.",
+        "**Damage** beyond normal wear and tear.",
+        "**Not** normal wear and tear — faded paint, worn carpet, minor marks.",
+      ] },
+      { h2: "If There's a Dispute", paras: [
+        "If the landlord won't return your deposit, apply to **Residential Tenancies** (Service NL). A move-in and move-out record and photos are your strongest evidence.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much can a landlord charge for a deposit in Newfoundland?", a: "Up to three-quarters of one month's rent for a monthly or fixed-term tenancy (about two weeks' rent for week-to-week). Landlords can't demand more." },
+      { q: "When do I get my deposit back in Newfoundland?", a: "Generally within 10 days of moving out, with interest, unless the landlord has a claim for unpaid rent or damage beyond normal wear and tear." },
+      { q: "What can a landlord deduct from my deposit in Newfoundland?", a: "Only unpaid rent and damage beyond normal wear and tear — not routine cleaning or ordinary wear." },
+      { q: "Where do I dispute a deposit in Newfoundland?", a: "Through Residential Tenancies (Service NL), which resolves disputes and issues decisions." },
+    ],
+    cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },
+    related: [
+      { label: "Newfoundland Rent Increase Rules", href: "/blog/newfoundland-rent-increase-rules" },
+      { label: "Notice to End a Tenancy in Newfoundland", href: "/blog/newfoundland-notice-to-end-tenancy" },
+      { label: "Security Deposit Rules Across Canada", href: "/blog/security-deposit-rules-canada" },
+      { label: "Newfoundland Tenant Rights", href: "/canada/newfoundland-and-labrador" },
+    ],
+  },
+  {
+    slug: "newfoundland-rent-increase-rules",
+    category: NL,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "Newfoundland Rent Increase Rules: No Cap, But Real Limits",
+    headline: "Newfoundland & Labrador Rent Increase Rules: How Much and How Often",
+    h1: "Newfoundland Rent Increase Rules: No Cap, But Real Limits",
+    crumb: "Newfoundland Rent Increase Rules",
+    description: "Newfoundland and Labrador has no rent control, so there's no percentage cap — but rent can rise only once a year with long written notice. How the timing and notice rules protect you.",
+    ogDescription: "Newfoundland has no rent cap, but the once-a-year rule and long notice still apply.",
+    keywords: ["newfoundland rent increase", "is there rent control in newfoundland", "how much can landlord raise rent newfoundland", "rent increase notice nl", "nl rent control"],
+    lead: "Newfoundland and Labrador is one of the provinces with no rent control — there's no percentage limit on increases. But timing and notice rules still apply, and they're your main protection.",
+    sections: [
+      { h2: "No Cap on the Amount", paras: [
+        "Newfoundland and Labrador has **no rent control**, so there's no legal maximum percentage for a rent increase. The **timing and notice rules** — plus your ability to move — are the real protections.",
+      ] },
+      { h2: "Only Once Every 12 Months", paras: [
+        "Rent can't be increased **more than once in a 12-month period**, and not during a fixed term.",
+      ] },
+      { h2: "Long Written Notice", paras: [
+        "The landlord must give substantial written notice: **at least 8 weeks** for a month-to-month tenancy, and **6 months** for a yearly tenancy. Short notice isn't valid.",
+      ] },
+      { h2: "Your Real Leverage", paras: [
+        "Because there's no cap, the market and your lease are the main checks. A fixed-term lease locks your rent for the whole term. If an increase is unaffordable, you can give notice and move at the end of your term.",
+      ] },
+    ],
+    faqs: [
+      { q: "Is there rent control in Newfoundland?", a: "No. There's no percentage cap on rent increases. However, rent can only rise once every 12 months, not during a fixed term, and only with long written notice." },
+      { q: "How much notice for a rent increase in Newfoundland?", a: "At least 8 weeks for a month-to-month tenancy, and 6 months for a yearly tenancy. Short notice isn't valid." },
+      { q: "How often can rent go up in Newfoundland?", a: "Only once in any 12-month period, and not during a fixed term." },
+      { q: "Can my landlord raise rent during my lease in Newfoundland?", a: "No. Rent is fixed for the term of a fixed-term lease; a new rent can only take effect on renewal or in a periodic tenancy, with proper notice." },
+    ],
+    cta: { title: "Check your increase timing", blurb: "Confirm whether an increase's timing and notice are valid with our free tool.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
+    related: [
+      { label: "Newfoundland Security Deposit Rules", href: "/blog/newfoundland-security-deposit-rules" },
+      { label: "Notice to End a Tenancy in Newfoundland", href: "/blog/newfoundland-notice-to-end-tenancy" },
+      { label: "The Newfoundland Eviction Process", href: "/blog/newfoundland-eviction-process" },
+      { label: "Newfoundland Tenant Rights", href: "/canada/newfoundland-and-labrador" },
+    ],
+  },
+  {
+    slug: "newfoundland-notice-to-end-tenancy",
+    category: NL,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "How Much Notice to End a Tenancy in Newfoundland?",
+    headline: "How Much Notice to End a Tenancy in Newfoundland & Labrador?",
+    h1: "How Much Notice to End a Tenancy in Newfoundland?",
+    crumb: "Notice to End a Tenancy in Newfoundland",
+    description: "How much notice you must give to move out of a Newfoundland and Labrador rental, and how much your landlord must give you. Month-to-month notice, fixed terms, and what makes a notice valid.",
+    ogDescription: "Tenant and landlord notice periods to end a tenancy in Newfoundland & Labrador, explained.",
+    keywords: ["notice to end tenancy newfoundland", "how much notice to move out newfoundland", "notice to quit nl", "ending tenancy newfoundland labrador", "one month notice nl"],
+    lead: "Ending a tenancy in Newfoundland and Labrador means giving the right notice at the right time. Here's how much notice you owe, what your landlord owes you, and how to do it properly.",
+    sections: [
+      { h2: "If You Want to Move Out (Month-to-Month)", paras: [
+        "For a **month-to-month tenancy**, you must give at least **one month's written notice**. For a **week-to-week** tenancy, at least one week. Keep a copy of your notice.",
+      ] },
+      { h2: "Fixed-Term Leases", paras: [
+        "A **fixed-term lease** ends on its end date. If you stay past it without a new agreement, it usually continues as a month-to-month tenancy under the same one-month notice rules.",
+      ] },
+      { h2: "When the Landlord Ends a Tenancy", paras: ["A landlord needs a valid reason and the right notice, for example:"], list: [
+        "**Periodic tenancy (no fault):** the landlord may give **3 months'** notice.",
+        "**Unpaid rent:** once rent is about **5 days** late, the landlord can start the process, leading to a **10-day** notice to vacate.",
+        "The notice must be in writing, dated, and state the reason.",
+      ] },
+      { h2: "What Makes a Notice Valid", paras: [
+        "Any notice must be **in writing**, dated, name the rental, and give the correct end date. A defective notice can be challenged through **Residential Tenancies** (Service NL) — read it carefully before acting.",
+      ] },
+    ],
+    faqs: [
+      { q: "How much notice do I give to move out in Newfoundland?", a: "For a month-to-month tenancy, at least one month's written notice; for week-to-week, at least one week. A fixed-term lease ends on its end date and otherwise continues month-to-month." },
+      { q: "How much notice does my landlord give in Newfoundland?", a: "For a no-fault end to a periodic tenancy, the landlord may give three months' notice. For unpaid rent, a 10-day notice to vacate after rent is about 5 days late." },
+      { q: "Do I have to move out when my fixed-term lease ends in Newfoundland?", a: "Not necessarily — if you stay without a new agreement, the tenancy usually continues month-to-month, with the same notice rules." },
+      { q: "Where are tenancy disputes decided in Newfoundland?", a: "Through Residential Tenancies (Service NL), which resolves disputes and issues decisions." },
+    ],
+    cta: { title: "Leaving your rental?", blurb: "Generate a clear notice to end your tenancy the right way.", href: "/letters/notice-to-end-tenancy-letter", label: "Notice to End Tenancy Letter" },
+    related: [
+      { label: "The Newfoundland Eviction Process", href: "/blog/newfoundland-eviction-process" },
+      { label: "Newfoundland Security Deposit Rules", href: "/blog/newfoundland-security-deposit-rules" },
+      { label: "Newfoundland Rent Increase Rules", href: "/blog/newfoundland-rent-increase-rules" },
+      { label: "Newfoundland Tenant Rights", href: "/canada/newfoundland-and-labrador" },
+    ],
+  },
+  {
+    slug: "newfoundland-eviction-process",
+    category: NL,
+    date: DATE, dateLabel: DATE_LABEL, readMins: 5,
+    title: "The Newfoundland Eviction Process: Notices & Your Rights",
+    headline: "The Newfoundland & Labrador Eviction Process: Notices & Your Rights",
+    h1: "The Newfoundland Eviction Process: Notices &amp; Your Rights",
+    crumb: "Newfoundland Eviction Process",
+    description: "An eviction notice in Newfoundland and Labrador isn't an automatic removal. The notice types, the pay-and-stay window for unpaid rent, and how Residential Tenancies (Service NL) decides disputes.",
+    ogDescription: "Newfoundland eviction notice types, pay windows, and the Residential Tenancies process.",
+    keywords: ["newfoundland eviction process", "eviction notice newfoundland", "how to fight eviction newfoundland", "residential tenancies newfoundland", "eviction nl"],
+    lead: "An eviction notice in Newfoundland and Labrador is the start of a process, not the end of your tenancy. Knowing the notice types and your right to pay or dispute can change the outcome.",
+    sections: [
+      { h2: "A Notice Is Not an Eviction", paras: [
+        "In Newfoundland and Labrador, a landlord can serve a notice, but they **can't remove you themselves**. **Residential Tenancies** (Service NL) decides disputes and issues orders. Only that process — not the landlord — can end your tenancy over your objection.",
+      ] },
+      { h2: "The Main Notice Types", paras: ["What you're facing depends on the notice:"], list: [
+        "**Unpaid rent:** once rent is about **5 days** late, the landlord can serve a **10-day** notice to vacate; paying what you owe usually stops it.",
+        "**Other cause** (breach, damage): set notice periods apply.",
+        "**No-fault end of a periodic tenancy:** the landlord may give **3 months'** notice.",
+      ] },
+      { h2: "How to Respond", paras: [
+        "Don't just move out. For unpaid rent, paying within the window usually stops the eviction. Otherwise you can dispute it through **Residential Tenancies**, which reviews the evidence.",
+      ] },
+      { h2: "Build Your Evidence", paras: [
+        "Keep the notice, your rent records, texts and emails, photos, and any witnesses. Documentation is what decides a disputed eviction.",
+      ] },
+    ],
+    faqs: [
+      { q: "Can my landlord evict me without Residential Tenancies in Newfoundland?", a: "No. A landlord can serve a notice, but removing you over your objection goes through Residential Tenancies (Service NL). Locking you out is illegal." },
+      { q: "How long is an eviction notice for unpaid rent in Newfoundland?", a: "Once rent is about 5 days late, the landlord can serve a 10-day notice to vacate. Paying what you owe usually stops the eviction." },
+      { q: "How do I fight an eviction in Newfoundland?", a: "Respond before the deadline and make your case to Residential Tenancies, with your lease, payment records, and evidence. For unpaid rent, paying the arrears usually stops it." },
+      { q: "Who runs residential tenancies in Newfoundland?", a: "Residential Tenancies, administered through Service NL (Digital Government and Service NL)." },
+    ],
+    cta: { title: "Is your notice valid?", blurb: "Check the notice type and days given against the rules with our free checker.", href: "/tools/eviction-notice-checker", label: "Eviction Notice Checker" },
+    related: [
+      { label: "Notice to End a Tenancy in Newfoundland", href: "/blog/newfoundland-notice-to-end-tenancy" },
+      { label: "Newfoundland Rent Increase Rules", href: "/blog/newfoundland-rent-increase-rules" },
+      { label: "Newfoundland Security Deposit Rules", href: "/blog/newfoundland-security-deposit-rules" },
+      { label: "Newfoundland Tenant Rights", href: "/canada/newfoundland-and-labrador" },
     ],
   },
 ];

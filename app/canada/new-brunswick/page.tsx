@@ -200,6 +200,27 @@ export default function NewBrunswickPage() {
                 </div>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">New Brunswick Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "New Brunswick Rent Increase Rules", href: "/blog/new-brunswick-rent-increase-rules" },
+                    { label: "New Brunswick Security Deposit Rules", href: "/blog/new-brunswick-security-deposit-rules" },
+                    { label: "Notice to End a Tenancy in New Brunswick", href: "/blog/new-brunswick-notice-to-end-tenancy" },
+                    { label: "The New Brunswick Eviction Process", href: "/blog/new-brunswick-eviction-process" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

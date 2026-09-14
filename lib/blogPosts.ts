@@ -11,6 +11,102 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/new-brunswick-security-deposit-rules",
+    title: "New Brunswick Security Deposit Rules: What a Landlord Can Charge",
+    excerpt:
+      "In New Brunswick a deposit is capped (one month's rent for most leases) and must be sent to the Tenant and Landlord Relations Office to hold. Limits, holding, and refunds.",
+    date: "September 14, 2026",
+    category: "New Brunswick",
+  },
+  {
+    href: "/blog/new-brunswick-rent-increase-rules",
+    title: "New Brunswick Rent Increase Rules: Notice & How to Dispute",
+    excerpt:
+      "No fixed cap, but rent rises only once a year with notice — and unreasonable increases can be challenged at the Residential Tenancies Tribunal. How the rules work.",
+    date: "September 14, 2026",
+    category: "New Brunswick",
+  },
+  {
+    href: "/blog/new-brunswick-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in New Brunswick?",
+    excerpt:
+      "One month if you're leaving month-to-month; 15-day Notice to Vacate (7 days to pay) for unpaid rent. Tenant and landlord notice periods in New Brunswick.",
+    date: "September 14, 2026",
+    category: "New Brunswick",
+  },
+  {
+    href: "/blog/new-brunswick-eviction-process",
+    title: "The New Brunswick Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, the 15-day/7-day pay window, and how the Residential Tenancies Tribunal decides disputes.",
+    date: "September 14, 2026",
+    category: "New Brunswick",
+  },
+  {
+    href: "/blog/pei-security-deposit-rules",
+    title: "PEI Security Deposit Rules: Limits, Interest & Refunds",
+    excerpt:
+      "In PEI a deposit can't exceed one month's rent, earns interest, and must be returned within 15 days. What a landlord can deduct and how to recover it through IRAC.",
+    date: "September 14, 2026",
+    category: "Prince Edward Island",
+  },
+  {
+    href: "/blog/pei-rent-increase-rules",
+    title: "PEI Rent Increase Rules: The IRAC Allowable Increase",
+    excerpt:
+      "PEI sets an annual allowable increase through IRAC — 2% for 2026, capped at 3% by law — once a year with three months' notice. How the cap works and how to respond.",
+    date: "September 14, 2026",
+    category: "Prince Edward Island",
+  },
+  {
+    href: "/blog/pei-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in PEI?",
+    excerpt:
+      "One month if you're leaving month-to-month; Form 4A 10-day notice for unpaid rent. Tenant and landlord notice periods and what makes a notice valid in PEI.",
+    date: "September 14, 2026",
+    category: "Prince Edward Island",
+  },
+  {
+    href: "/blog/pei-eviction-process",
+    title: "The PEI Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, the Form 4A 10-day pay-and-stay window, and how to dispute through IRAC's Residential Tenancy Office.",
+    date: "September 14, 2026",
+    category: "Prince Edward Island",
+  },
+  {
+    href: "/blog/newfoundland-security-deposit-rules",
+    title: "Newfoundland Security Deposit Rules: Limits & Refunds",
+    excerpt:
+      "In Newfoundland & Labrador a deposit is capped at three-quarters of a month's rent for monthly tenancies and must be returned within 10 days. Limits and refunds.",
+    date: "September 14, 2026",
+    category: "Newfoundland & Labrador",
+  },
+  {
+    href: "/blog/newfoundland-rent-increase-rules",
+    title: "Newfoundland Rent Increase Rules: No Cap, But Real Limits",
+    excerpt:
+      "No rent control — no percentage cap — but rent rises only once a year, with long notice (8 weeks month-to-month, 6 months yearly). How the rules protect you.",
+    date: "September 14, 2026",
+    category: "Newfoundland & Labrador",
+  },
+  {
+    href: "/blog/newfoundland-notice-to-end-tenancy",
+    title: "How Much Notice to End a Tenancy in Newfoundland?",
+    excerpt:
+      "One month if you're leaving month-to-month; the landlord's no-fault notice is 3 months. Tenant and landlord notice periods and what makes a notice valid.",
+    date: "September 14, 2026",
+    category: "Newfoundland & Labrador",
+  },
+  {
+    href: "/blog/newfoundland-eviction-process",
+    title: "The Newfoundland Eviction Process: Notices & Your Rights",
+    excerpt:
+      "An eviction notice isn't an eviction. The notice types, the 10-day pay-and-stay window for unpaid rent, and how Residential Tenancies (Service NL) decides disputes.",
+    date: "September 14, 2026",
+    category: "Newfoundland & Labrador",
+  },
+  {
     href: "/blog/nova-scotia-security-deposit-rules",
     title: "Nova Scotia Security Deposit Rules: Half a Month & Refunds",
     excerpt:

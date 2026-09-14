@@ -61,6 +61,18 @@ const posts = [
   ["saskatchewan-rent-increase-rules", "Saskatchewan Rent Increase Rules"],
   ["saskatchewan-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Saskatchewan?"],
   ["saskatchewan-eviction-process", "The Saskatchewan Eviction Process"],
+  ["new-brunswick-security-deposit-rules", "New Brunswick Security Deposit Rules"],
+  ["new-brunswick-rent-increase-rules", "New Brunswick Rent Increase Rules"],
+  ["new-brunswick-notice-to-end-tenancy", "How Much Notice to End a Tenancy in New Brunswick?"],
+  ["new-brunswick-eviction-process", "The New Brunswick Eviction Process"],
+  ["pei-security-deposit-rules", "PEI Security Deposit Rules"],
+  ["pei-rent-increase-rules", "PEI Rent Increase Rules: The IRAC Allowable Increase"],
+  ["pei-notice-to-end-tenancy", "How Much Notice to End a Tenancy in PEI?"],
+  ["pei-eviction-process", "The PEI Eviction Process"],
+  ["newfoundland-security-deposit-rules", "Newfoundland Security Deposit Rules"],
+  ["newfoundland-rent-increase-rules", "Newfoundland Rent Increase Rules"],
+  ["newfoundland-notice-to-end-tenancy", "How Much Notice to End a Tenancy in Newfoundland?"],
+  ["newfoundland-eviction-process", "The Newfoundland Eviction Process"],
 ];
 
 function card(title, category = "Ontario") {

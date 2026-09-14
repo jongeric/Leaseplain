@@ -4,7 +4,7 @@
 // "get listed" form. The per-city pages explain the real routes to tenant
 // legal help in Ontario and invite professionals to be listed.
 
-export type Province = "ON" | "BC" | "AB" | "QC" | "MB" | "NS" | "SK";
+export type Province = "ON" | "BC" | "AB" | "QC" | "MB" | "NS" | "SK" | "NB" | "PE" | "NL";
 
 export interface DirectoryCity {
   slug: string;
@@ -47,6 +47,14 @@ export const DIRECTORY_CITIES: DirectoryCity[] = [
   // Saskatchewan
   { slug: "regina", name: "Regina", province: "SK", region: "Southern Saskatchewan", blurb: "Saskatchewan's capital, where deposit and notice disputes go to the Office of Residential Tenancies." },
   { slug: "saskatoon", name: "Saskatoon", province: "SK", region: "Central Saskatchewan", blurb: "Saskatchewan's largest city, with a big student and newcomer rental population." },
+  // New Brunswick
+  { slug: "moncton", name: "Moncton", province: "NB", region: "New Brunswick", blurb: "New Brunswick's largest city, where deposits are held by the Tenant and Landlord Relations Office." },
+  { slug: "fredericton", name: "Fredericton", province: "NB", region: "New Brunswick", blurb: "New Brunswick's capital, with a large student and government-worker rental population." },
+  { slug: "saint-john", name: "Saint John", province: "NB", region: "New Brunswick", blurb: "A historic port city covered by the same Residential Tenancies Tribunal." },
+  // Prince Edward Island
+  { slug: "charlottetown", name: "Charlottetown", province: "PE", region: "Prince Edward Island", blurb: "PEI's capital and largest rental market, home to the IRAC Residential Tenancy Office." },
+  // Newfoundland & Labrador
+  { slug: "st-johns", name: "St. John's", province: "NL", region: "Newfoundland & Labrador", blurb: "Newfoundland's capital and largest rental market, covered by Residential Tenancies (Service NL)." },
 ];
 
 export function getCity(slug: string): DirectoryCity | undefined {
@@ -182,6 +190,54 @@ export const PROVINCE_META: Record<Province, ProvinceMeta> = {
       { label: "Saskatchewan security deposit rules", href: "/blog/saskatchewan-security-deposit-rules" },
       { label: "Notice to end a tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
       { label: "All Saskatchewan tenant rights", href: "/canada/saskatchewan" },
+    ],
+  },
+  NB: {
+    code: "NB",
+    name: "New Brunswick",
+    tribunal: "RTT",
+    tribunalFull: "Residential Tenancies Tribunal",
+    lawSociety: "Law Society of New Brunswick",
+    legalAid: "Legal Aid New Brunswick",
+    systemNote: "New Brunswick's tenant-help system is province-wide, run through the Residential Tenancies Tribunal (Service New Brunswick), which also holds deposits.",
+    guides: [
+      { label: "New Brunswick rent increase rules", href: "/blog/new-brunswick-rent-increase-rules" },
+      { label: "The New Brunswick eviction process", href: "/blog/new-brunswick-eviction-process" },
+      { label: "New Brunswick security deposit rules", href: "/blog/new-brunswick-security-deposit-rules" },
+      { label: "Notice to end a tenancy in New Brunswick", href: "/blog/new-brunswick-notice-to-end-tenancy" },
+      { label: "All New Brunswick tenant rights", href: "/canada/new-brunswick" },
+    ],
+  },
+  PE: {
+    code: "PE",
+    name: "Prince Edward Island",
+    tribunal: "IRAC",
+    tribunalFull: "Residential Tenancy Office (IRAC)",
+    lawSociety: "Law Society of Prince Edward Island",
+    legalAid: "Community Legal Information (PEI)",
+    systemNote: "PEI's tenant-help system is province-wide, run through the Residential Tenancy Office of the Island Regulatory and Appeals Commission (IRAC).",
+    guides: [
+      { label: "PEI rent increase rules (IRAC allowable)", href: "/blog/pei-rent-increase-rules" },
+      { label: "The PEI eviction process", href: "/blog/pei-eviction-process" },
+      { label: "PEI security deposit rules", href: "/blog/pei-security-deposit-rules" },
+      { label: "Notice to end a tenancy in PEI", href: "/blog/pei-notice-to-end-tenancy" },
+      { label: "All PEI tenant rights", href: "/canada/prince-edward-island" },
+    ],
+  },
+  NL: {
+    code: "NL",
+    name: "Newfoundland & Labrador",
+    tribunal: "Residential Tenancies",
+    tribunalFull: "Residential Tenancies (Service NL)",
+    lawSociety: "Law Society of Newfoundland and Labrador",
+    legalAid: "Newfoundland and Labrador Legal Aid",
+    systemNote: "Newfoundland and Labrador's tenant-help system is province-wide, run through Residential Tenancies (Service NL).",
+    guides: [
+      { label: "Newfoundland rent increase rules", href: "/blog/newfoundland-rent-increase-rules" },
+      { label: "The Newfoundland eviction process", href: "/blog/newfoundland-eviction-process" },
+      { label: "Newfoundland security deposit rules", href: "/blog/newfoundland-security-deposit-rules" },
+      { label: "Notice to end a tenancy in Newfoundland", href: "/blog/newfoundland-notice-to-end-tenancy" },
+      { label: "All Newfoundland tenant rights", href: "/canada/newfoundland-and-labrador" },
     ],
   },
 };
@@ -486,6 +542,99 @@ export const HELP_OPTIONS_BY_PROVINCE: Record<Province, HelpOption[]> = {
       detail:
         "For complex matters or an appeal, a lawyer may help. The Law Society of Saskatchewan's referral service can connect you for an initial consultation.",
       contact: "Law Society of Saskatchewan lawyer referral service",
+    },
+  ],
+  NB: [
+    {
+      title: "Residential Tenancies Tribunal",
+      who: "Free information and dispute resolution",
+      cost: "Free",
+      detail:
+        "New Brunswick's Residential Tenancies Tribunal (Service New Brunswick) provides information, holds deposits, mediates, and issues decisions on rent, deposits, and evictions. It's the first stop for most tenant questions.",
+    },
+    {
+      title: "PLEIS-NB & community legal info",
+      who: "Free plain-language legal information",
+      cost: "Free",
+      detail:
+        "The Public Legal Education and Information Service of New Brunswick (PLEIS-NB) publishes clear guides on tenant rights and the Tribunal process, in English and French.",
+    },
+    {
+      title: "Legal Aid New Brunswick",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Legal Aid New Brunswick can provide advice and, in qualifying cases, representation, and can point you to the right service for a tenancy matter.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes or an appeal, a lawyer may help. The Law Society of New Brunswick's referral service can connect you for an initial consultation.",
+      contact: "Law Society of New Brunswick referral service",
+    },
+  ],
+  PE: [
+    {
+      title: "Residential Tenancy Office (IRAC)",
+      who: "Free information and dispute resolution",
+      cost: "Free info; low filing fee",
+      detail:
+        "PEI's Residential Tenancy Office, part of the Island Regulatory and Appeals Commission (IRAC), sets the allowable rent increase, provides forms, and decides disputes on rent, deposits, and evictions.",
+    },
+    {
+      title: "Community Legal Information (PEI)",
+      who: "Free plain-language legal information",
+      cost: "Free",
+      detail:
+        "Community Legal Information PEI publishes guides on tenant rights and the IRAC process to help you understand and prepare your case.",
+    },
+    {
+      title: "Legal Aid & clinics",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "PEI Legal Aid and community services can provide advice and direct you to the right help for a tenancy matter.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes or an appeal to IRAC, a lawyer may help. The Law Society of PEI can connect you with one.",
+      contact: "Law Society of Prince Edward Island",
+    },
+  ],
+  NL: [
+    {
+      title: "Residential Tenancies (Service NL)",
+      who: "Free information and dispute resolution",
+      cost: "Free info; low filing fee",
+      detail:
+        "Newfoundland and Labrador's Residential Tenancies section (Service NL) provides information and forms and decides disputes on rent, deposits, and evictions.",
+    },
+    {
+      title: "Public Legal Information (PLIAN)",
+      who: "Free plain-language legal information",
+      cost: "Free",
+      detail:
+        "The Public Legal Information Association of Newfoundland and Labrador (PLIAN) publishes guides and runs a legal information line to help tenants understand their rights.",
+    },
+    {
+      title: "Newfoundland and Labrador Legal Aid",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Legal Aid can provide advice and, in qualifying cases, representation, and can direct you to the right service.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes or an appeal, a lawyer may help. The Law Society of Newfoundland and Labrador can connect you with one.",
+      contact: "Law Society of Newfoundland and Labrador",
     },
   ],
 };

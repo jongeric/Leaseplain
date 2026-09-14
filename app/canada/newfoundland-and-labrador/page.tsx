@@ -200,6 +200,27 @@ export default function NewfoundlandAndLabradorPage() {
                 </div>
               </div>
 
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Newfoundland &amp; Labrador Renter Guides</h2>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    { label: "Newfoundland Rent Increase Rules", href: "/blog/newfoundland-rent-increase-rules" },
+                    { label: "Newfoundland Security Deposit Rules", href: "/blog/newfoundland-security-deposit-rules" },
+                    { label: "Notice to End a Tenancy in Newfoundland", href: "/blog/newfoundland-notice-to-end-tenancy" },
+                    { label: "The Newfoundland Eviction Process", href: "/blog/newfoundland-eviction-process" },
+                  ].map((g) => (
+                    <Link
+                      key={g.href}
+                      href={g.href}
+                      className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:border-blue-300 hover:text-blue-700 hover:shadow-sm transition-all"
+                    >
+                      <ChevronRight className="w-4 h-4 text-slate-400 flex-shrink-0" aria-hidden="true" />
+                      {g.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
             </div>
 
               <div>

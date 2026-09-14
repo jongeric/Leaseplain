@@ -45,11 +45,11 @@ const ROWS: Array<{
   { prov: "Alberta", href: "/blog/alberta-rent-increase-rules", control: "No cap", max2026: "No limit", notice: "3 months (periodic)", note: "No rent control, but only once per 12 months and not in the first year." },
   { prov: "Quebec", href: "/blog/quebec-rent-increase-rules", control: "Mediated", max2026: "No fixed cap (TAL ~3.1%)", notice: "3–6 months", note: "No hard cap, but you can refuse an increase and stay while the TAL fixes a fair rent." },
   { prov: "Manitoba", href: "/blog/manitoba-rent-increase-rules", control: "Yes (guideline)", max2026: "1.8%", notice: "3 months", note: "Some newer buildings and higher-rent units are exempt." },
-  { prov: "Saskatchewan", control: "No cap", max2026: "No limit", notice: "Varies", note: "No rent control; once per 12 months with written notice." },
+  { prov: "Saskatchewan", control: "No cap", max2026: "No limit", notice: "12 months", note: "No rent control, but periodic tenancies need 12 months' notice (6 months if the landlord is in a prescribed association) — once per 12 months." },
   { prov: "Nova Scotia", control: "Yes (temporary cap)", max2026: "5%", notice: "4 months", note: "The 5% cap is extended through December 31, 2027." },
   { prov: "New Brunswick", control: "No formal cap", max2026: "No set limit", notice: "Varies", note: "No fixed cap; large increases can be reviewed by the tribunal." },
   { prov: "Prince Edward Island", control: "Yes (IRAC)", max2026: "2%", notice: "3 months", note: "Set annually by IRAC; capped at 3% by law." },
-  { prov: "Newfoundland & Labrador", control: "No cap", max2026: "No limit", notice: "Varies", note: "No rent control; notice required and generally once per year." },
+  { prov: "Newfoundland & Labrador", control: "No cap", max2026: "No limit", notice: "8 wks–6 mo", note: "No rent control; once per 12 months with 8 weeks' notice (month-to-month) or 6 months (yearly)." },
 ];
 
 const faqItems = [

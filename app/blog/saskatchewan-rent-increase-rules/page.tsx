@@ -40,7 +40,7 @@ const faqItems = [
   },
   {
     q: "How much notice for a rent increase in Saskatchewan?",
-    a: "The landlord must give proper written notice well ahead of the increase for a periodic tenancy, and can't raise rent at all during a fixed term. Confirm the exact period with the Office of Residential Tenancies.",
+    a: "For a periodic (month-to-month) tenancy, 12 months' written notice — or 6 months if the landlord belongs to a prescribed landlord association. Rent can't be raised at all during a fixed term.",
   },
   {
     q: "Can my landlord raise rent during my lease in Saskatchewan?",
@@ -130,7 +130,7 @@ export default function SaskatchewanRentIncreaseRulesPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">The Notice You Must Get</h2>
-                  <p className="text-slate-700 leading-relaxed">For a periodic (month-to-month) tenancy, the landlord must give <strong>proper written notice</strong> well ahead of the increase — in Saskatchewan this is a longer period than a single month. Rent can&apos;t be increased during a fixed term; it can only change on renewal, with notice. Members of a tenants&apos; association may have additional notice protections.</p>
+                  <p className="text-slate-700 leading-relaxed">Saskatchewan requires <strong>long notice</strong> for an increase on a periodic (month-to-month) tenancy: <strong>12 months&apos; written notice</strong> — or <strong>6 months</strong> if the landlord belongs to a prescribed landlord association. Rent can&apos;t be increased during a fixed term; it can only change on renewal, with notice. That long lead time is one of the province&apos;s strongest rent protections.</p>
                 </div>
 
                 <div>

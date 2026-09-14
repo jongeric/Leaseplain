@@ -40,7 +40,7 @@ const faqItems = [
   },
   {
     q: "How do I get my deposit back in New Brunswick?",
-    a: "It's returned with interest when both sides agree, or when the Residential Tenancies Tribunal decides a dispute. Deductions are only for unpaid rent or damage beyond normal wear and tear.",
+    a: "Apply to Service New Brunswick for your refund. The landlord then has about 7 days to file a claim; if they don't, the deposit (with interest) is returned to you. Deductions are only for unpaid rent or damage beyond normal wear and tear, and the Tribunal decides any dispute.",
   },
   {
     q: "Can my landlord keep my deposit for cleaning?",
@@ -130,7 +130,7 @@ export default function NewBrunswickSecurityDepositRulesPage() {
 
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-3">Getting It Back</h2>
-                  <p className="text-slate-700 leading-relaxed">At the end of the tenancy, the deposit (with interest) is returned once the landlord and tenant agree, or the Residential Tenancies Tribunal decides any dispute. A landlord can only claim it for unpaid rent or damage beyond normal wear and tear — not routine cleaning or wear.</p>
+                  <p className="text-slate-700 leading-relaxed">At the end of the tenancy you apply to Service New Brunswick for your refund. The <strong>landlord then has about 7 days to file a claim</strong> against the deposit — if they don&apos;t, the money (with interest) is returned to you. A landlord can only claim it for unpaid rent or damage beyond normal wear and tear, and the Residential Tenancies Tribunal decides any dispute.</p>
                 </div>
 
                 <div>

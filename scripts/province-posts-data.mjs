@@ -1489,7 +1489,7 @@ export const POSTS = [
         "Rent can't be increased **more than once in a 12-month period**, and not during a fixed term. The clock runs from the start of the tenancy or the last increase.",
       ] },
       { h2: "The Notice You Must Get", paras: [
-        "For a periodic (month-to-month) tenancy, the landlord must give **proper written notice** well ahead of the increase — in Saskatchewan this is a longer period than a single month. Rent can't be increased during a fixed term; it can only change on renewal, with notice. Members of a tenants' association may have additional notice protections.",
+        "Saskatchewan requires **long notice** for an increase on a periodic (month-to-month) tenancy: **12 months' written notice** — or **6 months** if the landlord belongs to a prescribed landlord association. Rent can't be increased during a fixed term; it can only change on renewal, with notice. That long lead time is one of the province's strongest rent protections.",
       ] },
       { h2: "Your Real Leverage", paras: [
         "Because there's no cap, the market and your lease are the main checks. A fixed-term lease locks your rent for the whole term — useful in a rising market. If an increase is unaffordable, you can give notice and move at the end of your term.",
@@ -1498,7 +1498,7 @@ export const POSTS = [
     faqs: [
       { q: "Is there rent control in Saskatchewan?", a: "No. There's no percentage cap on rent increases. However, rent can only be increased once every 12 months, not during a fixed term, and only with proper written notice." },
       { q: "How often can my rent go up in Saskatchewan?", a: "Only once in any 12-month period, and not during a fixed term. An increase within that window, or without proper notice, isn't valid." },
-      { q: "How much notice for a rent increase in Saskatchewan?", a: "The landlord must give proper written notice well ahead of the increase for a periodic tenancy, and can't raise rent at all during a fixed term. Confirm the exact period with the Office of Residential Tenancies." },
+      { q: "How much notice for a rent increase in Saskatchewan?", a: "For a periodic (month-to-month) tenancy, 12 months' written notice — or 6 months if the landlord belongs to a prescribed landlord association. Rent can't be raised at all during a fixed term." },
       { q: "Can my landlord raise rent during my lease in Saskatchewan?", a: "No. Rent is fixed for the duration of a fixed-term lease. A new rent can only take effect on renewal or in a periodic tenancy, with notice." },
     ],
     cta: { title: "Check your increase timing", blurb: "Confirm whether an increase's timing and notice are valid with our free tool.", href: "/tools/rent-increase-calculator", label: "Rent Increase Calculator" },
@@ -1618,7 +1618,7 @@ export const POSTS = [
         "This is the key difference: a landlord who collects a deposit must **remit it to the Tenant and Landlord Relations Office** (part of Service New Brunswick) within **15 days** — they don't hold it themselves. It earns interest while held.",
       ] },
       { h2: "Getting It Back", paras: [
-        "At the end of the tenancy, the deposit (with interest) is returned once the landlord and tenant agree, or the Residential Tenancies Tribunal decides any dispute. A landlord can only claim it for unpaid rent or damage beyond normal wear and tear — not routine cleaning or wear.",
+        "At the end of the tenancy you apply to Service New Brunswick for your refund. The **landlord then has about 7 days to file a claim** against the deposit — if they don't, the money (with interest) is returned to you. A landlord can only claim it for unpaid rent or damage beyond normal wear and tear, and the Residential Tenancies Tribunal decides any dispute.",
       ] },
       { h2: "If There's a Dispute", paras: [
         "Because the money is held by the government, a landlord can't simply keep it. If you disagree with a claim, the **Residential Tenancies Tribunal** decides. Move-in and move-out photos are your strongest evidence.",
@@ -1627,7 +1627,7 @@ export const POSTS = [
     faqs: [
       { q: "How much can a landlord charge for a deposit in New Brunswick?", a: "For most leases, one month's rent (one week's rent for weekly tenancies). Landlords can't demand more or stack extra deposits on top." },
       { q: "Who holds my deposit in New Brunswick?", a: "The landlord must send it to the Tenant and Landlord Relations Office (Service New Brunswick) within 15 days — they can't hold it themselves. It earns interest while held." },
-      { q: "How do I get my deposit back in New Brunswick?", a: "It's returned with interest when both sides agree, or when the Residential Tenancies Tribunal decides a dispute. Deductions are only for unpaid rent or damage beyond normal wear and tear." },
+      { q: "How do I get my deposit back in New Brunswick?", a: "Apply to Service New Brunswick for your refund. The landlord then has about 7 days to file a claim; if they don't, the deposit (with interest) is returned to you. Deductions are only for unpaid rent or damage beyond normal wear and tear, and the Tribunal decides any dispute." },
       { q: "Can my landlord keep my deposit for cleaning?", a: "No — not for routine cleaning or normal wear and tear. Only genuine damage or unpaid rent can be claimed, and the Tribunal decides disputes." },
     ],
     cta: { title: "How much should you get back?", blurb: "Estimate your deposit refund with our free calculator.", href: "/tools/deposit-calculator", label: "Deposit Return Calculator" },

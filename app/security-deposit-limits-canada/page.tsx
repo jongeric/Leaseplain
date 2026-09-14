@@ -47,7 +47,7 @@ const ROWS: Array<{
   { prov: "Manitoba", href: "/blog/manitoba-security-deposit-rules", max: "½ month", deadline: "14 days", interest: "Yes (set rate)", note: "Calculated on the full rent, not a promotional rate." },
   { prov: "Saskatchewan", max: "1 month", deadline: "7 business days", interest: "Yes", note: "Often collected in instalments over the first months." },
   { prov: "Nova Scotia", max: "½ month", deadline: "10 days", interest: "Yes", note: "Disputes go to the Residential Tenancies Program." },
-  { prov: "New Brunswick", max: "1 month (most leases); 1 week for weekly", deadline: "Varies (claim-based)", interest: "Yes", note: "Deposit is held by the Tenant and Landlord Relations Office (Service NB)." },
+  { prov: "New Brunswick", max: "1 month (most leases); 1 week for weekly", deadline: "~7 days for landlord to claim after you request it", interest: "Yes", note: "Deposit is held by the Tenant and Landlord Relations Office (Service NB); on a refund request the landlord has about 7 days to file a claim or it's returned." },
   { prov: "Prince Edward Island", max: "1 month", deadline: "15 days", interest: "Yes", note: "Held pending any claim through the tribunal." },
   { prov: "Newfoundland & Labrador", max: "¾ of first month (monthly); 2 weeks (weekly)", deadline: "10 days", interest: "Yes", note: "Return unless the landlord has a claim." },
 ];

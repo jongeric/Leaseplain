@@ -44,7 +44,7 @@ export async function generateMetadata({
   };
 }
 
-function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC") {
+function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC" | "MB") {
   const p = PROVINCE_META[province];
   if (province === "ON") {
     return [
@@ -70,11 +70,15 @@ function cityFaqs(name: string, province: "ON" | "BC" | "AB" | "QC") {
     ? "You don't need a lawyer for the Residential Tenancy Branch (RTB) — its process is designed to be used without one, and you can bring an agent or advocate to help."
     : province === "AB"
     ? "You don't need a lawyer for the Residential Tenancy Dispute Resolution Service (RTDRS) — it's built to be accessible, and you can bring an agent or advocate to help."
+    : province === "MB"
+    ? "You don't need a lawyer for the Residential Tenancies Branch (RTB) — it's designed to be accessible, and tenant advocates can help you prepare."
     : "You don't need a lawyer for the Tribunal administratif du logement (TAL) — many tenants present their own case, often with help from a local housing committee (comité logement).";
   const freeHelp = province === "BC"
     ? `Start with TRAC (the Tenant Resource & Advisory Centre) for information and templates, and Access Pro Bono for a free legal advice clinic. Local tenant advocates and Legal Aid BC can help eligible lower-income renters in ${name}.`
     : province === "AB"
     ? `Start with CPLEA's plain-language guides, and free clinics like Student Legal Services (Edmonton), Student Legal Assistance (Calgary), Calgary Legal Guidance, or the Edmonton Community Legal Centre. Legal Aid Alberta can help eligible lower-income renters in ${name}.`
+    : province === "MB"
+    ? `Start with the Residential Tenancies Branch for information and dispute resolution, and tenant advocates such as the Community Unemployed Help Centre. Legal Aid Manitoba can help eligible lower-income renters in ${name}.`
     : `Start with your local comité logement (housing committee) and Éducaloi's plain-language guides. Quebec's legal aid (aide juridique) can help eligible lower-income renters in ${name}, and housing committees can help you prepare for the TAL.`;
   return [
     {

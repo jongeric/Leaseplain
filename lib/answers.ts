@@ -569,6 +569,64 @@ export const ANSWERS: AnswerDef[] = [
     ],
     keywords: ["cession de bail", "sublet quebec"],
   },
+
+  // ---- Manitoba ----
+  {
+    slug: "how-much-can-my-landlord-raise-my-rent-in-manitoba",
+    question: "How much can my landlord raise my rent in Manitoba?",
+    category: "Rent",
+    shortAnswer:
+      "For most units, no more than the annual rent increase guideline — 1.8% for 2026 — once every 12 months, with at least three months' written notice. Some newer buildings and higher-rent units are exempt from the guideline.",
+    blocks: [
+      { type: "p", text: "A landlord who wants more than the guideline must apply to the Residential Tenancies Branch and justify it. You can object, and shouldn't pay above the guideline unless it's approved." },
+    ],
+    related: [
+      { label: "Manitoba rent increase rules", href: "/blog/manitoba-rent-increase-rules" },
+    ],
+    keywords: ["manitoba rent increase 2026", "how much can landlord raise rent manitoba"],
+  },
+  {
+    slug: "how-much-deposit-can-a-landlord-charge-in-manitoba",
+    question: "How much deposit can a landlord charge in Manitoba?",
+    category: "Deposits",
+    shortAnswer:
+      "No more than half of one month's rent, calculated on the full rent. It must be held in trust and earn interest, and returned within 14 days of the tenancy ending if the landlord has no claim against it.",
+    blocks: [
+      { type: "p", text: "Landlords can't charge extra cleaning, key, or pet deposits on top. If your deposit isn't returned, contact the Residential Tenancies Branch." },
+    ],
+    related: [
+      { label: "Manitoba security deposit rules", href: "/blog/manitoba-security-deposit-rules" },
+    ],
+    keywords: ["how much deposit manitoba", "damage deposit manitoba"],
+  },
+  {
+    slug: "how-much-notice-to-move-out-manitoba",
+    question: "How much notice do I have to give to move out in Manitoba?",
+    category: "Moving",
+    shortAnswer:
+      "For a month-to-month tenancy, at least one full month's written notice, ending on the last day of a rental period. A fixed-term lease ends on its end date and otherwise continues month-to-month.",
+    blocks: [
+      { type: "p", text: "Give notice in writing and keep a copy. To leave at the end of a month, the landlord must receive your notice before that month begins." },
+    ],
+    related: [
+      { label: "Notice to end a tenancy in Manitoba", href: "/blog/manitoba-notice-to-end-tenancy" },
+    ],
+    keywords: ["notice to move out manitoba", "notice to end tenancy manitoba"],
+  },
+  {
+    slug: "can-my-landlord-evict-me-without-a-reason-manitoba",
+    question: "Can my landlord evict me without a reason in Manitoba?",
+    category: "Eviction",
+    shortAnswer:
+      "No. A landlord can only end a tenancy for a permitted reason with the correct notice — about five days for unpaid rent (which you can usually stop by paying), or at least three months for owner-occupation. Only the Residential Tenancies Branch process can force you out.",
+    blocks: [
+      { type: "p", text: "A landlord can't lock you out or remove your belongings without going through the Branch (and the Residential Tenancies Commission on appeal)." },
+    ],
+    related: [
+      { label: "The Manitoba eviction process", href: "/blog/manitoba-eviction-process" },
+    ],
+    keywords: ["can landlord evict without reason manitoba", "eviction manitoba"],
+  },
 ];
 
 export function getAnswer(slug: string): AnswerDef | undefined {

@@ -4,7 +4,7 @@
 // "get listed" form. The per-city pages explain the real routes to tenant
 // legal help in Ontario and invite professionals to be listed.
 
-export type Province = "ON" | "BC" | "AB" | "QC";
+export type Province = "ON" | "BC" | "AB" | "QC" | "MB";
 
 export interface DirectoryCity {
   slug: string;
@@ -38,6 +38,9 @@ export const DIRECTORY_CITIES: DirectoryCity[] = [
   { slug: "montreal", name: "Montreal", province: "QC", region: "Greater Montreal", blurb: "Quebec's largest rental market, with strong tenant protections and an active network of housing committees." },
   { slug: "quebec-city", name: "Quebec City", province: "QC", region: "Capitale-Nationale", blurb: "A stable rental market where repossession and rent-increase disputes go to the TAL." },
   { slug: "laval", name: "Laval", province: "QC", region: "Greater Montreal", blurb: "A large suburban market next to Montreal, covered by the same Civil Code protections." },
+  // Manitoba
+  { slug: "winnipeg", name: "Winnipeg", province: "MB", region: "Manitoba", blurb: "Manitoba's largest rental market, with rent-guideline and deposit disputes handled by the Residential Tenancies Branch." },
+  { slug: "brandon", name: "Brandon", province: "MB", region: "Westman", blurb: "Manitoba's second city, with a steady student and family rental population." },
 ];
 
 export function getCity(slug: string): DirectoryCity | undefined {
@@ -125,6 +128,22 @@ export const PROVINCE_META: Record<Province, ProvinceMeta> = {
       { label: "Ending a lease in Quebec", href: "/blog/quebec-ending-your-lease" },
       { label: "Assigning or subletting in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
       { label: "All Quebec tenant rights", href: "/tenant-rights/quebec" },
+    ],
+  },
+  MB: {
+    code: "MB",
+    name: "Manitoba",
+    tribunal: "RTB",
+    tribunalFull: "Residential Tenancies Branch",
+    lawSociety: "Law Society of Manitoba",
+    legalAid: "Legal Aid Manitoba",
+    systemNote: "Manitoba's tenant-help system is province-wide, centred on the Residential Tenancies Branch and its Commission.",
+    guides: [
+      { label: "Manitoba rent increase rules", href: "/blog/manitoba-rent-increase-rules" },
+      { label: "The Manitoba eviction process", href: "/blog/manitoba-eviction-process" },
+      { label: "Manitoba security deposit rules", href: "/blog/manitoba-security-deposit-rules" },
+      { label: "Notice to end a tenancy in Manitoba", href: "/blog/manitoba-notice-to-end-tenancy" },
+      { label: "All Manitoba tenant rights", href: "/canada/manitoba" },
     ],
   },
 };
@@ -315,6 +334,44 @@ export const HELP_OPTIONS_BY_PROVINCE: Record<Province, HelpOption[]> = {
       detail:
         "For complex disputes, large claims, or an appeal, a lawyer may be worth it. The Barreau du Québec's referral service can connect you with a lawyer for an initial consultation.",
       contact: "Barreau du Québec lawyer referral service",
+    },
+  ],
+  MB: [
+    {
+      title: "Residential Tenancies Branch",
+      who: "Free information and dispute resolution",
+      cost: "Free",
+      detail:
+        "Manitoba's Residential Tenancies Branch (RTB) provides information, mediates disputes, and issues orders on rent, repairs, and deposits. It's the first stop for most tenant questions and claims, with the Residential Tenancies Commission handling appeals.",
+    },
+    {
+      title: "Tenant advocates & community services",
+      who: "Free help preparing your case",
+      cost: "Free",
+      detail:
+        "Organizations such as the Community Unemployed Help Centre and other Winnipeg-area services help tenants understand their rights, prepare documents, and navigate RTB hearings.",
+    },
+    {
+      title: "Legal Aid Manitoba",
+      who: "Legal help for lower-income tenants",
+      cost: "Free (income-tested)",
+      detail:
+        "Legal Aid Manitoba can provide advice and, in qualifying cases, representation. Coverage of tenancy matters is limited, but it can direct you to the right service.",
+    },
+    {
+      title: "Representing yourself at the RTB",
+      who: "Common at the Branch",
+      cost: "Free",
+      detail:
+        "The RTB is designed to be used without a lawyer. Preparation and evidence — your lease, rent records, photos, and written communications — matter more than formal representation.",
+    },
+    {
+      title: "Tenant lawyers",
+      who: "For complex matters and appeals",
+      cost: "Paid (varies)",
+      detail:
+        "For complex disputes or an appeal to the Residential Tenancies Commission or court, a lawyer may help. The Law Society of Manitoba's referral service can connect you for an initial consultation.",
+      contact: "Law Society of Manitoba lawyer referral service",
     },
   ],
 };

@@ -123,6 +123,7 @@ export default function TenantLawyerHubPage() {
                 { code: "BC", label: "British Columbia" },
                 { code: "AB", label: "Alberta" },
                 { code: "QC", label: "Quebec" },
+                { code: "MB", label: "Manitoba" },
               ] as const).map((prov) => (
                 <div key={prov.code} className="mb-8 last:mb-0">
                   <h3 className="text-sm font-bold uppercase tracking-wide text-slate-500 mb-3">{prov.label}</h3>

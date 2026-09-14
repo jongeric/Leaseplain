@@ -616,6 +616,267 @@ const GLOSSARY_DATA: Record<string, GlossaryEntry> = {
       { label: "Repairs Clause", href: "/lease-clause/repairs" },
     ],
   },
+
+  "last-months-rent": {
+    slug: "last-months-rent",
+    term: "Last Month's Rent (LMR) Deposit",
+    definition:
+      "A deposit, permitted in some provinces, that a landlord collects at the start of a tenancy and applies to the tenant's final month of rent rather than holding as damage security.",
+    plainEnglish:
+      "A last month's rent (LMR) deposit is money you pay upfront that goes toward your actual last month in the unit — not a damage deposit. In Ontario, it's the only rent deposit a landlord can collect, it can't be used for damage or cleaning, and it must earn you interest every year at the rent-increase guideline rate. When you're on your way out, it pays your final month; you don't pay that month separately.",
+    whyItMatters:
+      "Tenants routinely lose money by confusing an LMR deposit with a damage deposit, or by never claiming the annual interest they're owed. In Ontario the interest can add up over a long tenancy, and a landlord can't lawfully keep the LMR for anything other than the last month's rent.",
+    riskLevel: "medium",
+    riskExplanation:
+      "Medium risk because the rules are clear but widely misunderstood. Landlords sometimes try to treat the LMR as a damage deposit, or fail to pay the required annual interest — both are violations a tenant can challenge.",
+    exampleClause:
+      "The Tenant shall pay a last month's rent deposit of $2,000 upon signing, to be applied by the Landlord to the rent for the final month of the tenancy. The deposit shall accrue interest annually at the rate prescribed by the Residential Tenancies Act.",
+    commonMistakes: [
+      "Confusing the LMR deposit with a damage deposit — in Ontario they are not the same",
+      "Never claiming the annual interest owed on the deposit",
+      "Letting a landlord apply the LMR to cleaning or damage, which isn't permitted",
+    ],
+    provinceConsiderations:
+      "Ontario allows only an LMR deposit (capped at one month) and requires annual interest at the guideline rate — a separate damage deposit is illegal. Quebec bans deposits entirely. BC, Alberta, Manitoba, and most other provinces instead allow a security/damage deposit rather than a dedicated LMR deposit.",
+    faqs: [
+      { q: "Can my landlord use my last month's rent deposit for damage?", a: "In Ontario, no. The LMR deposit can only be applied to your final month of rent. Damage claims must be pursued separately through the Landlord and Tenant Board." },
+      { q: "Do I earn interest on my LMR deposit?", a: "In Ontario, yes — the landlord must pay interest each year at the rent-increase guideline rate, or apply it toward topping up the deposit to one month's current rent." },
+    ],
+    relatedTerms: ["security-deposit", "rent-increase", "habitability"],
+    relatedClauses: [{ label: "Security Deposit Clause", href: "/lease-clause/security-deposit" }],
+  },
+
+  "lease-assignment": {
+    slug: "lease-assignment",
+    term: "Lease Assignment",
+    definition:
+      "The transfer of a tenant's entire interest in a lease to a new tenant, who takes over all rights and obligations, generally releasing the original tenant from future liability.",
+    plainEnglish:
+      "Assigning your lease means handing it off completely to someone else. Unlike subletting — where you stay on the hook — a proper assignment gets you out for good: the new tenant steps into your shoes and you're released from future obligations. In most provinces the landlord's consent is needed but can't be unreasonably refused, and in Quebec (cession de bail) the landlord has only a short window to object for a serious reason.",
+    whyItMatters:
+      "Assignment is usually the cleanest way to leave a fixed-term lease early without owing the rest of the rent. Knowing the landlord can't unreasonably refuse — and the difference from subletting — can save you months of rent.",
+    riskLevel: "medium",
+    riskExplanation:
+      "Medium risk because the value depends on doing it correctly: an informal 'assignment' that isn't approved, or is actually a sublet, can leave you still liable. Get the landlord's consent and the release in writing.",
+    exampleClause:
+      "The Tenant may assign this Lease with the consent of the Landlord, such consent not to be unreasonably withheld. Upon a valid assignment, the assigning Tenant shall be released from obligations arising after the effective date of the assignment.",
+    commonMistakes: [
+      "Confusing assignment (you're released) with subletting (you stay liable)",
+      "Assuming a landlord can refuse an assignment for any reason — usually they can't",
+      "Not getting the landlord's consent and your release in writing",
+    ],
+    provinceConsiderations:
+      "In Ontario, a landlord can't arbitrarily refuse an assignment; if they refuse unreasonably or don't respond within seven days, the tenant may give 30 days' notice to end. Quebec's cession de bail requires notifying the landlord, who has 15 days to refuse for a serious reason (silence means consent). BC and Alberta also require consent that generally can't be unreasonably withheld.",
+    faqs: [
+      { q: "What's the difference between assigning and subletting?", a: "Assignment transfers the whole lease and releases you from future obligations. Subletting puts someone in temporarily while you remain the tenant and stay responsible to the landlord." },
+      { q: "Can my landlord refuse to let me assign my lease?", a: "Generally only for a reasonable or serious reason. An unreasonable refusal often gives you the right to end the tenancy on shorter notice — check your province's rules." },
+    ],
+    relatedTerms: ["subletting", "termination-clause", "joint-and-several-liability"],
+    relatedClauses: [{ label: "Subletting Clause", href: "/lease-clause/subletting" }],
+  },
+
+  "above-guideline-increase": {
+    slug: "above-guideline-increase",
+    term: "Above-Guideline Increase (AGI)",
+    definition:
+      "A rent increase larger than the annual guideline that a landlord may charge only with approval from the tenancy tribunal, typically to recover major capital or cost increases.",
+    plainEnglish:
+      "An above-guideline increase is when a landlord wants to raise your rent by more than the yearly cap. They can't just do it — in rent-controlled provinces they have to apply to the tribunal and prove costs like major repairs or big tax increases. You get notice and a chance to dispute it, and you shouldn't pay the extra amount unless and until it's approved.",
+    whyItMatters:
+      "AGIs can push rent up well beyond the guideline, sometimes for years. Knowing that they require approval — and that you can participate in the hearing and object — is often the difference between a fair increase and an unjustified one.",
+    riskLevel: "high",
+    riskExplanation:
+      "High risk because the financial impact is large and ongoing. Tenants who don't realize an AGI needs approval sometimes pay increases that were never authorized.",
+    exampleClause:
+      "The Landlord has applied to the Board for an increase above the guideline of an additional 3% based on eligible capital expenditures. This increase is not payable unless and until ordered by the Board.",
+    commonMistakes: [
+      "Paying an above-guideline amount before the tribunal has approved it",
+      "Not participating in the hearing where you can dispute the landlord's costs",
+      "Assuming the full requested increase is automatic — the tribunal often grants less",
+    ],
+    provinceConsiderations:
+      "Ontario landlords must apply to the Landlord and Tenant Board for an AGI, usually for capital work, security costs, or municipal tax hikes. BC and Manitoba have their own limited above-guideline processes. Alberta, Saskatchewan, New Brunswick, and Newfoundland have no rent cap, so there's no AGI concept. Post-2018 Ontario units are exempt from the guideline entirely.",
+    faqs: [
+      { q: "Do I have to pay an above-guideline increase?", a: "Not unless the tribunal approves it. The landlord must apply and justify the increase, and you can dispute it. Don't pay the portion above the guideline until there's an order." },
+      { q: "What reasons justify an AGI?", a: "Typically major capital repairs, large increases in municipal taxes, or significant new security-service costs — not ordinary maintenance or a desire for higher rent." },
+    ],
+    relatedTerms: ["rent-increase", "rent-control", "last-months-rent"],
+    relatedClauses: [{ label: "Rent Increase Clause", href: "/lease-clause/rent-increase" }],
+  },
+
+  "rent-control": {
+    slug: "rent-control",
+    term: "Rent Control",
+    definition:
+      "A set of legal limits on how much and how often a landlord can increase rent for an existing tenant, usually expressed as an annual guideline percentage.",
+    plainEnglish:
+      "Rent control caps how fast your rent can rise while you stay in a unit. In controlled provinces the government sets a yearly guideline, and a landlord can't exceed it without special approval. It usually applies only during your tenancy — most provinces have no 'vacancy control,' so the landlord can reset the rent for the next tenant. Some provinces (and newer buildings) aren't covered at all.",
+    whyItMatters:
+      "Whether your unit is rent-controlled is one of the biggest factors in your long-term housing cost. It determines if a landlord can raise your rent by 2% or by any amount — and often makes staying put far cheaper than moving.",
+    riskLevel: "high",
+    riskExplanation:
+      "High risk because exemptions are easy to miss. A tenant who assumes they're protected — but is in an exempt newer unit or an uncontrolled province — can face an unexpected, uncapped increase.",
+    exampleClause:
+      "Rent increases shall not exceed the annual guideline published by the applicable provincial authority, except where the unit is exempt from rent control or where an above-guideline increase has been approved.",
+    commonMistakes: [
+      "Assuming every unit is rent-controlled — many newer buildings are exempt",
+      "Not realizing there's no vacancy control, so a new tenancy can start at any rent",
+      "Confusing 'rent control' with a total freeze — it's a cap, not a freeze",
+    ],
+    provinceConsiderations:
+      "Ontario, BC, Manitoba, and PEI set annual guidelines; Nova Scotia has a temporary cap; Quebec has no fixed cap but lets tenants refuse increases. Alberta, Saskatchewan, New Brunswick, and Newfoundland have no rent control. Ontario exempts units first occupied after November 15, 2018.",
+    faqs: [
+      { q: "How do I know if my unit is rent-controlled?", a: "Check your province and, in Ontario, when the unit was first occupied (post-Nov 15, 2018 units are exempt). Alberta, Saskatchewan, New Brunswick, and Newfoundland have no rent control at all." },
+      { q: "Does rent control apply when a new tenant moves in?", a: "Usually no. Most provinces don't have vacancy control, so the landlord can set any starting rent for a new tenancy — the cap applies while you stay." },
+    ],
+    relatedTerms: ["rent-increase", "above-guideline-increase", "lease-renewal"],
+    relatedClauses: [{ label: "Rent Increase Clause", href: "/lease-clause/rent-increase" }],
+  },
+
+  "notice-to-end-tenancy": {
+    slug: "notice-to-end-tenancy",
+    term: "Notice to End Tenancy",
+    definition:
+      "A formal written notice, given by a tenant or landlord, that states the intention to end a tenancy on a specified date in accordance with the required notice period.",
+    plainEnglish:
+      "A notice to end tenancy is the official document that starts the clock on ending a rental. As a tenant, you use it to give the required notice before moving out (often one to two months, on a specific form). From a landlord, it's a claim that they want the tenancy to end — but it's not an eviction by itself; only a tribunal order can actually force you out.",
+    whyItMatters:
+      "Timing and form are everything. Give notice too late or on the wrong form and it may not count, costing you an extra month. Receive a landlord's notice and you need to know whether it's even valid and how to respond.",
+    riskLevel: "high",
+    riskExplanation:
+      "High risk because a defective notice — wrong date, wrong form, or short notice — can be challenged, and missing a deadline can leave a tenant liable for extra rent or wrongly believing they must leave.",
+    exampleClause:
+      "Either party may end a periodic tenancy by giving written notice in the approved form no later than the required number of days before the termination date, which must be the last day of a rental period.",
+    commonMistakes: [
+      "Giving notice verbally instead of in writing on the correct form",
+      "Miscounting the notice period or not ending on the last day of a rental period",
+      "Assuming a landlord's notice is an eviction — only a tribunal order can remove you",
+    ],
+    provinceConsiderations:
+      "Ontario tenants give 60 days on Form N9; BC, Alberta, Manitoba and most provinces require one full month for month-to-month tenancies. Quebec leases auto-renew, with a 3–6 month non-renewal notice. Landlord notice periods and grounds differ by province and reason.",
+    faqs: [
+      { q: "How much notice do I give to move out?", a: "For a month-to-month tenancy, 60 days in Ontario and one full month in most other provinces, ending on the last day of a rental period. Quebec uses a 3–6 month non-renewal notice." },
+      { q: "Is a landlord's notice to end tenancy an eviction?", a: "No. It's a claim that the tenancy should end. Only an order from the tribunal or court, enforced by a sheriff or bailiff, can actually evict you." },
+    ],
+    relatedTerms: ["termination-clause", "eviction", "lease-renewal"],
+    relatedClauses: [{ label: "Early Termination Clause", href: "/lease-clause/early-termination" }],
+  },
+
+  eviction: {
+    slug: "eviction",
+    term: "Eviction",
+    definition:
+      "The legal process by which a landlord ends a tenancy and removes a tenant, requiring a valid reason, proper notice, and — over the tenant's objection — an order from the tenancy tribunal or court.",
+    plainEnglish:
+      "Eviction is the formal, legal way a landlord can make a tenant leave — and it's a process, not a single act. The landlord needs a valid reason (like unpaid rent or their own use), must serve the right notice, and if you don't agree, must get an order from the tribunal. Only then can an official (sheriff or bailiff) enforce it. A landlord who changes the locks or removes your things without an order is acting illegally.",
+    whyItMatters:
+      "Understanding that eviction requires due process is a tenant's strongest protection. Many 'evictions' tenants comply with were never valid — and for non-payment, paying what you owe within the window often cancels the whole thing.",
+    riskLevel: "high",
+    riskExplanation:
+      "High risk because it threatens your housing. But the process has many checkpoints where a tenant can pay, dispute, or defend — knowing them changes outcomes.",
+    exampleClause:
+      "The Landlord may terminate this tenancy only for a reason permitted by residential tenancy legislation, and may not recover possession of the unit except by order of the tribunal or court.",
+    commonMistakes: [
+      "Moving out when a notice period expires, before any tribunal order exists",
+      "Not paying arrears within the window that would cancel a non-payment eviction",
+      "Ignoring a hearing notice instead of attending to present a defence",
+    ],
+    provinceConsiderations:
+      "Every province requires a tribunal or court order to evict over a tenant's objection — the LTB (Ontario), RTB (BC), RTDRS (Alberta), TAL (Quebec), and equivalents elsewhere. Non-payment notice periods and pay-and-stay rights vary; see our eviction notice periods comparison.",
+    faqs: [
+      { q: "Can my landlord evict me without going to a tribunal?", a: "No. Over your objection, a landlord needs an order from the provincial tribunal or court, enforced by a sheriff or bailiff. Lockouts and self-help evictions are illegal." },
+      { q: "Can I stop an eviction for unpaid rent?", a: "Usually yes — paying the full overdue amount within the notice window generally cancels a non-payment eviction. Deadlines are short, so act quickly and keep proof." },
+    ],
+    relatedTerms: ["notice-to-end-tenancy", "renoviction", "termination-clause"],
+    relatedClauses: [{ label: "Early Termination Clause", href: "/lease-clause/early-termination" }],
+  },
+
+  renoviction: {
+    slug: "renoviction",
+    term: "Renoviction",
+    definition:
+      "An eviction in which a landlord ends a tenancy on the stated ground of major renovations or repairs, sometimes used in bad faith to remove a below-market tenant and re-rent at a higher price.",
+    plainEnglish:
+      "A 'renoviction' is when a landlord evicts you to do major renovations. It can be legitimate — some work genuinely requires an empty unit — but it's also a common tactic to push out long-term tenants paying below-market rent. The law usually requires real permits, proper notice, compensation, and often a right of first refusal to move back at a similar rent once the work is done.",
+    whyItMatters:
+      "Renovictions are one of the main ways affordable tenancies disappear. Knowing your rights — to compensation, to return, and to challenge a bad-faith renoviction — can save your home or win you significant compensation.",
+    riskLevel: "high",
+    riskExplanation:
+      "High risk because a wrongful renoviction ends a valuable tenancy. But tenants have strong tools: permit requirements, compensation, right of first refusal, and bad-faith penalties.",
+    exampleClause:
+      "The Landlord requires vacant possession to carry out extensive renovations requiring a building permit. The Tenant is entitled to compensation and the right of first refusal to re-occupy the unit at the previously lawful rent upon completion.",
+    commonMistakes: [
+      "Leaving without confirming the landlord has the required permits",
+      "Not giving written notice that you want the right of first refusal to return",
+      "Not claiming compensation or challenging a renoviction that looks like a pretext",
+    ],
+    provinceConsiderations:
+      "Ontario uses Form N13 with compensation and a right to return at the same rent; bad-faith cases can bring a T5 claim. BC requires a four-month notice, permits, and compensation, with a right of first refusal for major renovations. Rules vary elsewhere — get advice before agreeing to leave.",
+    faqs: [
+      { q: "Can my landlord evict me to renovate?", a: "Only for genuinely major work that needs the unit empty, with proper notice, permits, and compensation. You often have a right to return at your old rent once the work is finished." },
+      { q: "What if the renoviction is a pretext?", a: "If the landlord didn't really renovate, or re-rented at a higher price instead, you may be entitled to significant compensation. Ontario tenants can file a T5; other provinces have similar remedies." },
+    ],
+    relatedTerms: ["eviction", "notice-to-end-tenancy", "rent-control"],
+    relatedClauses: [{ label: "Early Termination Clause", href: "/lease-clause/early-termination" }],
+  },
+
+  "tenant-insurance": {
+    slug: "tenant-insurance",
+    term: "Tenant Insurance",
+    definition:
+      "An insurance policy that covers a renter's personal belongings, personal liability, and additional living expenses — distinct from the landlord's insurance, which covers only the building.",
+    plainEnglish:
+      "Tenant (renter's) insurance protects your stuff and your liability, not the building. If a fire or flood destroys your furniture, or a guest is injured in your unit, your policy responds — the landlord's insurance won't. No province legally requires it, but landlords are allowed to make it a condition of your lease, and many do.",
+    whyItMatters:
+      "A common, costly misunderstanding is assuming the landlord's insurance covers your belongings — it doesn't. Liability coverage is the part tenants most underestimate: if you accidentally cause damage to the building, you could be on the hook without it.",
+    riskLevel: "low",
+    riskExplanation:
+      "Low risk to arrange and inexpensive, but going without it is a real financial exposure. A lease requirement to carry it is generally enforceable.",
+    exampleClause:
+      "The Tenant shall obtain and maintain tenant's liability and contents insurance for the duration of the tenancy and provide proof of coverage to the Landlord on request.",
+    commonMistakes: [
+      "Assuming the landlord's insurance covers your personal belongings",
+      "Letting a lease-required policy lapse, which can breach the lease",
+      "Underinsuring — especially personal liability coverage",
+    ],
+    provinceConsiderations:
+      "No Canadian province mandates tenant insurance by law, but a lease can require it, and that requirement is generally enforceable. The landlord's policy never covers a tenant's contents or personal liability.",
+    faqs: [
+      { q: "Is tenant insurance mandatory?", a: "Not by law, but your landlord can require it in the lease — and that clause is generally enforceable. Either way, it's inexpensive and covers what the landlord's policy doesn't." },
+      { q: "Does my landlord's insurance cover my belongings?", a: "No. It covers the building and the landlord's liability. Only your own tenant insurance covers your possessions and personal liability." },
+    ],
+    relatedTerms: ["habitability", "security-deposit", "maintenance-clause"],
+    relatedClauses: [{ label: "Maintenance & Repairs Clause", href: "/lease-clause/maintenance" }],
+  },
+
+  "condition-inspection-report": {
+    slug: "condition-inspection-report",
+    term: "Condition Inspection Report",
+    definition:
+      "A written record of the state of a rental unit, completed by the landlord and tenant together at move-in and move-out, used to determine responsibility for any damage.",
+    plainEnglish:
+      "A condition inspection report is the move-in/move-out checklist you and your landlord fill out to document the unit's state. It's your best defence against unfair deposit deductions: if the report shows a scuff was there when you arrived, you can't be charged for it later. In several provinces, if the landlord skips the proper inspection, they can lose the right to claim against your deposit.",
+    whyItMatters:
+      "Deposit disputes usually come down to evidence. A signed inspection report — plus your own dated photos — is what turns a he-said/she-said into a win. In some provinces the report is legally required for the landlord to keep any of your deposit.",
+    riskLevel: "medium",
+    riskExplanation:
+      "Medium risk: skipping or ignoring the inspection is where tenants lose deposits. Doing it properly is simple and highly protective.",
+    exampleClause:
+      "The Landlord and Tenant shall complete a joint condition inspection report at the start and end of the tenancy. A copy shall be provided to the Tenant. Failure to comply may affect the Landlord's right to claim against the deposit.",
+    commonMistakes: [
+      "Not completing or getting a copy of the move-in and move-out report",
+      "Relying on the report alone without taking your own dated photos",
+      "Signing a report that doesn't note existing damage",
+    ],
+    provinceConsiderations:
+      "BC requires move-in and move-out inspection reports, and a landlord who doesn't offer the required opportunities can lose the right to claim against the deposit. Alberta and Manitoba also use inspection reports. Ontario has no mandatory form, but photos and a written record are strongly advised. Quebec has no deposit, but a move-in record still helps.",
+    faqs: [
+      { q: "What happens if my landlord skips the inspection?", a: "In provinces like BC, failing to complete the required move-out inspection can cost the landlord the right to claim against your deposit. Always ask for the inspection and a copy of the report." },
+      { q: "Do I still need photos if we do a report?", a: "Yes. Dated move-in and move-out photos back up the report and are powerful evidence if a deduction is later disputed." },
+    ],
+    relatedTerms: ["security-deposit", "habitability", "maintenance-clause"],
+    relatedClauses: [{ label: "Security Deposit Clause", href: "/lease-clause/security-deposit" }],
+  },
 };
 
 function getRiskBadge(riskLevel: "high" | "medium" | "low") {

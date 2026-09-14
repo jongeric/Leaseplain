@@ -39,6 +39,15 @@ const terms = [
   { slug: "force-majeure", term: "Force Majeure", category: "Special Clauses", risk: "low" },
   { slug: "quiet-enjoyment", term: "Quiet Enjoyment", category: "Special Clauses", risk: "low" },
   { slug: "habitability", term: "Habitability", category: "Special Clauses", risk: "low" },
+  { slug: "last-months-rent", term: "Last Month's Rent (LMR) Deposit", category: "Financial", risk: "medium" },
+  { slug: "above-guideline-increase", term: "Above-Guideline Increase (AGI)", category: "Financial", risk: "high" },
+  { slug: "rent-control", term: "Rent Control", category: "Financial", risk: "high" },
+  { slug: "tenant-insurance", term: "Tenant Insurance", category: "Financial", risk: "low" },
+  { slug: "lease-assignment", term: "Lease Assignment", category: "Obligations", risk: "medium" },
+  { slug: "condition-inspection-report", term: "Condition Inspection Report", category: "Obligations", risk: "medium" },
+  { slug: "notice-to-end-tenancy", term: "Notice to End Tenancy", category: "Duration", risk: "high" },
+  { slug: "eviction", term: "Eviction", category: "Duration", risk: "high" },
+  { slug: "renoviction", term: "Renoviction", category: "Duration", risk: "high" },
 ];
 
 const categories = [

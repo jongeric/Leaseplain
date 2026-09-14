@@ -62,6 +62,8 @@ const FOOTER_COLUMNS = [
       { label: "Tenant Q&A", href: "/answers" },
       { label: "Printable Checklists", href: "/checklists" },
       { label: "Rent Increase History", href: "/ontario-rent-increase-history" },
+      { label: "Rent Increase Rules by Province", href: "/rent-increase-rules-canada" },
+      { label: "Deposit Limits by Province", href: "/security-deposit-limits-canada" },
       { label: "Lease Basics", href: "/resources/lease-basics" },
       { label: "Before You Sign", href: "/resources/before-you-sign" },
       { label: "AI Lease Review", href: "/resources/ai-lease-review" },

@@ -555,6 +555,89 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── FREE TOOLS & DATA ────────────────────────────────────────────── */}
+        <section className="py-14 px-4 bg-surface-2 border-b border-line" id="tools-data">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-bold text-ink mb-2">Free Tools &amp; Cross-Canada Data</h2>
+              <p className="text-muted max-w-xl mx-auto text-sm">
+                Compare the rules across every province, or run the numbers on your own rent, deposit, and notice dates — all free, no account.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3">Compare by province</h3>
+                <div className="grid gap-2">
+                  {[
+                    { href: "/rent-increase-rules-canada", label: "Rent increase rules by province" },
+                    { href: "/security-deposit-limits-canada", label: "Security deposit limits by province" },
+                    { href: "/eviction-notice-periods-canada", label: "Eviction notice periods by province" },
+                    { href: "/average-rent-by-city-canada", label: "Average rent by city in Canada" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="flex items-center gap-2 px-4 py-3 rounded-lg border border-line bg-white text-muted text-sm hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3">Run the numbers</h3>
+                <div className="grid gap-2">
+                  {[
+                    { href: "/tools/rent-increase-calculator", label: "Rent increase calculator" },
+                    { href: "/tools/deposit-calculator", label: "Deposit return calculator" },
+                    { href: "/tools/rent-increase-date-calculator", label: "Rent increase date calculator" },
+                    { href: "/tools/move-out-notice-calculator", label: "Move-out notice calculator" },
+                    { href: "/tools", label: "See all free tools →" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="flex items-center gap-2 px-4 py-3 rounded-lg border border-line bg-white text-muted text-sm hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3 text-center">Tenant rights by province</h3>
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  { href: "/canada/ontario", label: "Ontario" },
+                  { href: "/canada/british-columbia", label: "British Columbia" },
+                  { href: "/canada/alberta", label: "Alberta" },
+                  { href: "/canada/quebec", label: "Quebec" },
+                  { href: "/canada/manitoba", label: "Manitoba" },
+                  { href: "/canada/nova-scotia", label: "Nova Scotia" },
+                  { href: "/canada/saskatchewan", label: "Saskatchewan" },
+                  { href: "/canada/new-brunswick", label: "New Brunswick" },
+                  { href: "/canada/prince-edward-island", label: "PEI" },
+                  { href: "/canada/newfoundland-and-labrador", label: "Newfoundland" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-3.5 py-1.5 rounded-full border border-line bg-white text-muted text-xs font-medium hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── LATEST ARTICLES ──────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-surface-2" id="blog">
           <div className="max-w-6xl mx-auto">

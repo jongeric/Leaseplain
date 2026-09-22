@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What is a security deposit clause?",
-    a: "A security deposit clause outlines how much you must pay upfront, the conditions under which it can be withheld, and the timeframe for its return. In Ontario, the maximum security deposit is one month's rent and must be returned within 72 hours after move-out unless there is damage.",
+    a: "A security deposit clause outlines how much you must pay upfront, the conditions under which it can be withheld, and the timeframe for its return. Deposit rules vary sharply by province. Ontario and Quebec don't allow a damage or security deposit at all — Ontario permits only a last month's rent (LMR) deposit, applied to your final month. Other provinces cap deposits at half to one month's rent, with return deadlines from 7 to 15 days after move-out.",
   },
   {
     q: "What is an early termination clause?",

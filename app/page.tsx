@@ -709,30 +709,29 @@ export default function HomePage() {
         {/* ── EMAIL CAPTURE ────────────────────────────────────────────────── */}
         <EmailCapture />
 
-        {/* ── PRESS & RECOGNITION ──────────────────────────────────────────── */}
+        {/* ── WHY RENTERS TRUST LEASEPLAIN ─────────────────────────────────── */}
         <section className="py-12 px-4 bg-white border-y border-line">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <p className="text-xs font-semibold uppercase tracking-widest text-subtle mb-6">
-              Featured In
+              Why renters trust LeasePlain
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-left">
               {[
-                "Product Hunt",
-                "Reddit r/PersonalFinanceCanada",
-                "Canadian Tenant Advocacy Community",
-                "Toronto Star — Real Estate",
-                "CBC Housing Coverage",
-              ].map((badge) => (
-                <span
-                  key={badge}
-                  className="px-3.5 py-1.5 text-xs font-semibold tracking-wide uppercase rounded-md border border-line text-subtle bg-white"
-                >
-                  {badge}
-                </span>
+                { icon: MapPin, title: "All 10 provinces", body: "Guidance and data for every Canadian province, kept jurisdiction-specific." },
+                { icon: ShieldCheck, title: "Checked against the law", body: "Content is verified against provincial tenancy authorities and dated when reviewed." },
+                { icon: DollarSign, title: "Free, no account", body: "Every tool, guide, and letter is free — no paywall, no signup, no upsell." },
+                { icon: Lock, title: "Private by design", body: "Uploaded leases are analyzed in real time and never stored." },
+              ].map((item) => (
+                <div key={item.title} className="bg-surface-2 rounded-xl p-5 border border-line">
+                  <item.icon className="w-5 h-5 text-brand mb-3" aria-hidden="true" />
+                  <p className="font-semibold text-ink text-sm mb-1">{item.title}</p>
+                  <p className="text-muted text-xs leading-relaxed">{item.body}</p>
+                </div>
               ))}
             </div>
             <p className="text-xs text-subtle max-w-lg mx-auto leading-relaxed">
-              LeasePlain has been referenced in tenant communities and housing coverage across Canada.
+              Read how we research and review our guides in our{" "}
+              <Link href="/editorial-policy" className="text-brand font-medium hover:underline">editorial standards</Link>.
             </p>
           </div>
         </section>

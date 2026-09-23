@@ -56,6 +56,12 @@ const schema = {
       name: "LeasePlain",
       url: "https://leaseplain.com",
       foundingDate: "2024",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://leaseplain.com/logo.png",
+        width: 400,
+        height: 120,
+      },
       description:
         "LeasePlain is an educational platform that uses AI to translate residential lease agreements into plain English, helping tenants understand what they're signing before they commit.",
       knowsAbout: [
@@ -67,6 +73,13 @@ const schema = {
         "US Residential Tenancy",
       ],
       areaServed: ["Canada", "United States"],
+      sameAs: ["https://twitter.com/leaseplain"],
+      publishingPrinciples: "https://leaseplain.com/editorial-policy",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        url: "https://leaseplain.com/contact",
+      },
     },
   ],
 };
@@ -479,6 +492,40 @@ export default function AboutPage() {
                 Tenant rights database integrated directly into clause explanations
               </li>
             </ul>
+          </section>
+
+          {/* Editorial Standards & Accountability */}
+          <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Editorial Standards &amp; Accountability</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Our guides are researched and maintained by the LeasePlain editorial team. Every
+              province-specific figure — rent-increase guidelines, deposit limits, notice periods —
+              is checked against the relevant provincial tenancy authority and dated with a
+              &ldquo;last reviewed&rdquo; note so you always know how current it is. When rules change
+              or we find an error, we correct the page and update that date.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/editorial-policy"
+                className="flex items-start gap-3 bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-indigo-200 transition-colors"
+              >
+                <BookOpen className="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>
+                  <span className="block font-semibold text-slate-900 text-sm mb-0.5">Our editorial standards</span>
+                  <span className="block text-xs text-slate-600 leading-relaxed">How we research, source, review, and correct our tenant-rights content.</span>
+                </span>
+              </Link>
+              <Link
+                href="/contact"
+                className="flex items-start gap-3 bg-slate-50 border border-slate-100 rounded-xl p-4 hover:border-indigo-200 transition-colors"
+              >
+                <MessageSquare className="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <span>
+                  <span className="block font-semibold text-slate-900 text-sm mb-0.5">Spotted something wrong?</span>
+                  <span className="block text-xs text-slate-600 leading-relaxed">Tell us and we&apos;ll review it — accuracy corrections are always welcome.</span>
+                </span>
+              </Link>
+            </div>
           </section>
 
           {/* FAQ */}

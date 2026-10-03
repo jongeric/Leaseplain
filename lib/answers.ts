@@ -11,7 +11,7 @@ export interface AnswerBlock {
 export interface AnswerDef {
   slug: string;
   question: string;
-  category: "Rent" | "Eviction" | "Deposits" | "Repairs" | "Privacy" | "Moving";
+  category: "Rent" | "Eviction" | "Deposits" | "Repairs" | "Privacy" | "Moving" | "Pets";
   shortAnswer: string; // the snippet — 1-3 sentences, direct
   blocks: AnswerBlock[];
   related: Array<{ label: string; href: string }>;
@@ -714,6 +714,165 @@ export const ANSWERS: AnswerDef[] = [
       { label: "Notice to end a tenancy in Saskatchewan", href: "/blog/saskatchewan-notice-to-end-tenancy" },
     ],
     keywords: ["notice to move out saskatchewan", "notice to end tenancy saskatchewan"],
+  },
+  {
+    slug: "can-a-landlord-say-no-pets-in-canada",
+    question: "Can a landlord say no to pets in Canada?",
+    category: "Pets",
+    shortAnswer:
+      "In most provinces, yes — a landlord can refuse pets or enforce a 'no-pet' clause if it's written into the lease. Ontario is the key exception: there a no-pet clause is void once you've signed, so you generally can't be evicted just for having a pet unless it causes damage, a serious disturbance, or allergic reactions, or is a dangerous breed.",
+    blocks: [
+      { type: "p", text: "Ontario stands alone. Under the Residential Tenancies Act a no-pet clause has no effect once the lease is signed, though a landlord can still decline a pet-owning applicant before signing." },
+      { type: "p", text: "In BC, Alberta, Quebec, and the rest of Canada, a no-pet clause in the lease is generally enforceable. One rule is nationwide: certified service animals are protected under human-rights law and can't be refused or charged a fee." },
+    ],
+    related: [
+      { label: "Pet rules by province", href: "/pet-rules-by-province-canada" },
+      { label: "Can your landlord say 'no pets' in Ontario?", href: "/blog/no-pet-clause-ontario" },
+    ],
+    keywords: ["can a landlord say no pets canada", "are no-pet clauses legal", "no pet clause by province"],
+  },
+  {
+    slug: "can-a-landlord-charge-a-pet-deposit-canada",
+    question: "Can a landlord charge a pet deposit in Canada?",
+    category: "Pets",
+    shortAnswer:
+      "Only where provincial law allows it. BC permits a separate pet damage deposit of up to half a month's rent. Most other provinces fold any pet-related damage into the single security deposit, and Ontario and Quebec don't allow pet (or any) damage deposits at all.",
+    blocks: [
+      { type: "p", text: "In BC the pet damage deposit is on top of the regular security deposit, but still capped at half a month's rent. In provinces with a single deposit cap (like Alberta), pet damage simply comes out of that one deposit." },
+      { type: "p", text: "A landlord can never charge a deposit or fee for a certified service animal." },
+    ],
+    related: [
+      { label: "Pet rules by province", href: "/pet-rules-by-province-canada" },
+      { label: "Security deposit limits by province", href: "/security-deposit-limits-canada" },
+    ],
+    keywords: ["pet deposit canada", "can a landlord charge a pet deposit", "pet damage deposit bc"],
+  },
+  {
+    slug: "how-much-notice-does-a-landlord-need-to-enter-canada",
+    question: "How much notice does a landlord have to give to enter in Canada?",
+    category: "Privacy",
+    shortAnswer:
+      "In every Canadian province the standard is 24 hours' written notice, stating the reason and the time of entry, and entry is only allowed during set daytime hours. The two exceptions are a genuine emergency and your own consent at the time.",
+    blocks: [
+      { type: "p", text: "The permitted-hours window varies: 8 a.m.–8 p.m. in Ontario, 8 a.m.–9 p.m. in BC, 9 a.m.–9 p.m. in Nova Scotia, and 7 a.m.–7 p.m. in Quebec, for example." },
+      { type: "p", text: "A routine repair or inspection that simply wasn't scheduled is not an 'emergency.' Repeatedly claiming an emergency to skip notice can amount to harassment." },
+    ],
+    related: [
+      { label: "Landlord entry rules by province", href: "/landlord-entry-rules-canada" },
+      { label: "Landlord entry notice: full guide", href: "/blog/landlord-entry-notice-canada" },
+    ],
+    keywords: ["how much notice to enter rental canada", "24 hours notice landlord", "landlord entry notice canada"],
+  },
+  {
+    slug: "can-my-landlord-enter-without-notice-alberta",
+    question: "Can my landlord enter without notice in Alberta?",
+    category: "Privacy",
+    shortAnswer:
+      "No. In Alberta a landlord must give at least 24 hours' written notice before entering, and entry must be during daytime hours (generally 8 a.m. to 8 p.m.). The exceptions are a genuine emergency or your consent at the time.",
+    blocks: [
+      { type: "p", text: "The notice must state why the landlord is entering. After-hours entry isn't allowed without an emergency or your agreement." },
+      { type: "p", text: "If a landlord enters repeatedly without proper notice, keep a dated log — it can support a complaint about interference with your right to peaceful enjoyment." },
+    ],
+    related: [
+      { label: "Landlord entry rules by province", href: "/landlord-entry-rules-canada" },
+      { label: "Alberta tenant rights", href: "/canada/alberta" },
+    ],
+    keywords: ["can my landlord enter without notice alberta", "landlord entry notice alberta"],
+  },
+  {
+    slug: "whats-the-penalty-for-breaking-a-lease-canada",
+    question: "What's the penalty for breaking a lease in Canada?",
+    category: "Moving",
+    shortAnswer:
+      "No province imposes an automatic flat penalty. You're generally liable only for the landlord's actual loss — rent until the unit is re-rented plus reasonable re-renting costs — and the landlord has a legal duty to try to re-rent and reduce what you owe.",
+    blocks: [
+      { type: "p", text: "A fixed 'lease-break fee' is only enforceable if it's a genuine estimate of the landlord's costs, not a punishment. The strongest move is usually to assign or sublet rather than simply move out." },
+      { type: "p", text: "Many provinces also allow early termination for domestic or family violence, usually with shortened notice and supporting documentation." },
+    ],
+    related: [
+      { label: "Breaking a lease by province", href: "/breaking-a-lease-canada" },
+      { label: "Lease break cost calculator", href: "/tools/lease-break-calculator" },
+    ],
+    keywords: ["penalty for breaking a lease canada", "lease break fee", "cost to break a lease"],
+  },
+  {
+    slug: "can-a-landlord-ask-for-my-sin-canada",
+    question: "Can a landlord ask for my SIN on a rental application?",
+    category: "Privacy",
+    shortAnswer:
+      "A landlord can ask, but you are not required to provide your Social Insurance Number. A credit check only needs your name, date of birth, and current address — not your SIN — so you can decline and offer that instead.",
+    blocks: [
+      { type: "p", text: "Privacy regulators across Canada discourage collecting the SIN because it's a target for identity theft. A credit check will run fine without it." },
+      { type: "p", text: "If a landlord insists on the SIN as a condition of applying, that's a red flag worth questioning." },
+    ],
+    related: [
+      { label: "What a landlord can ask on an application", href: "/blog/rental-application-what-landlords-can-ask-canada" },
+      { label: "Renting without a credit history", href: "/blog/renting-without-credit-history-canada" },
+    ],
+    keywords: ["can a landlord ask for sin", "sin on rental application", "do i have to give my sin to a landlord"],
+  },
+  {
+    slug: "can-a-landlord-run-a-credit-check-without-permission-canada",
+    question: "Can a landlord run a credit check without my permission?",
+    category: "Privacy",
+    shortAnswer:
+      "No. A landlord needs your consent to pull your credit report. You can consent, decline, or offer alternatives such as references, proof of income, or a co-signer — which is useful if you have thin or no credit history.",
+    blocks: [
+      { type: "p", text: "Running a credit check without consent breaches credit-reporting and privacy rules. You control whether your report is pulled." },
+      { type: "p", text: "A strong reference package — past-landlord references plus proof of steady income — often stands in for a credit check." },
+    ],
+    related: [
+      { label: "What a landlord can ask on an application", href: "/blog/rental-application-what-landlords-can-ask-canada" },
+      { label: "Renting without a credit history", href: "/blog/renting-without-credit-history-canada" },
+    ],
+    keywords: ["credit check without permission", "can a landlord run a credit check", "rental application credit check canada"],
+  },
+  {
+    slug: "is-my-landlord-required-to-provide-heat-canada",
+    question: "Is my landlord required to provide heat?",
+    category: "Repairs",
+    shortAnswer:
+      "In almost all cases, yes. Heat is a 'vital service' across Canada — a landlord generally can't shut it off or let it fail, even if you owe rent. Most cities set a minimum indoor temperature the landlord must maintain during the heating season.",
+    blocks: [
+      { type: "p", text: "Minimum temperatures are set by municipal bylaw: Toronto requires 21°C (Oct 1–May 15), Ottawa 20°C during the day, and Vancouver 22°C. Ontario's provincial floor is 20°C." },
+      { type: "p", text: "If it's too cold, tell your landlord in writing, log the temperatures, and contact municipal bylaw enforcement or your tenancy board if it isn't fixed." },
+    ],
+    related: [
+      { label: "Is my landlord required to provide heat?", href: "/blog/landlord-must-provide-heat-canada" },
+      { label: "Landlord repair obligations in Canada", href: "/blog/landlord-repair-obligations-canada" },
+    ],
+    keywords: ["is my landlord required to provide heat", "no heat in apartment", "landlord won't turn on heat"],
+  },
+  {
+    slug: "whats-the-minimum-temperature-for-a-rental-canada",
+    question: "What's the minimum temperature for a rental in Canada?",
+    category: "Repairs",
+    shortAnswer:
+      "It depends on your municipality. Toronto requires at least 21°C from October 1 to May 15, Ottawa 20°C during the day (16.7°C overnight), and Vancouver 22°C. Ontario's provincial regulation sets a 20°C floor and treats heat as a vital service from September 1 to June 15.",
+    blocks: [
+      { type: "p", text: "Because heat minimums are set by municipal bylaw, check your city's property-standards bylaw for the exact figure that applies to you." },
+    ],
+    related: [
+      { label: "Is my landlord required to provide heat?", href: "/blog/landlord-must-provide-heat-canada" },
+      { label: "Heat & AC rules in Ontario", href: "/blog/landlord-heat-air-conditioning-ontario" },
+    ],
+    keywords: ["minimum temperature rental canada", "minimum heat bylaw toronto", "how warm must apartment be"],
+  },
+  {
+    slug: "can-my-landlord-evict-me-to-move-in-a-family-member-canada",
+    question: "Can my landlord evict me to move in a family member?",
+    category: "Eviction",
+    shortAnswer:
+      "Yes — in every province a landlord can end a tenancy for their own use or a close family member's, but only in good faith, with the required written notice and (in most provinces) compensation. In Ontario that's an N12 with 60 days' notice and one month's rent; in BC it's 3 months' notice and one month's rent.",
+    blocks: [
+      { type: "p", text: "The person moving in must genuinely intend to live there — in Ontario and BC, for at least 12 months. If they never move in, or the unit is re-rented at a higher price soon after, that's bad faith." },
+      { type: "p", text: "For a bad-faith own-use eviction you can claim substantial compensation — a T5 application in Ontario, and up to 12 months' rent in BC. Keep evidence like new listings." },
+    ],
+    related: [
+      { label: "Own-use eviction by province", href: "/blog/n12-own-use-eviction-family-member-canada" },
+      { label: "Bad-faith N12 & T5 compensation", href: "/blog/bad-faith-n12-t5-compensation-ontario" },
+    ],
+    keywords: ["evict to move in family member", "landlord own use eviction", "n12 family member"],
   },
 ];
 

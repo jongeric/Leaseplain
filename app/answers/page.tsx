@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CATEGORY_ORDER = ["Rent", "Eviction", "Deposits", "Repairs", "Privacy", "Moving"] as const;
+const CATEGORY_ORDER = ["Rent", "Eviction", "Deposits", "Repairs", "Privacy", "Pets", "Moving"] as const;
 
 export default function AnswersHubPage() {
   const itemListSchema = {

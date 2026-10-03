@@ -9,6 +9,13 @@ import { createElement as h } from "react";
 const SIZE = { width: 1200, height: 630 };
 
 const posts = [
+  ["rental-application-what-landlords-can-ask-canada", "What Can a Landlord Legally Ask For on a Rental Application?"],
+  ["how-to-avoid-rental-scams-canada", "How to Spot and Avoid Rental Scams in Canada"],
+  ["cosigner-guarantor-lease-rights-canada", "Co-signers & Guarantors on a Lease: Your Rights"],
+  ["quiet-enjoyment-noise-complaints-canada", "Quiet Enjoyment & Noise Complaints: Your Rights"],
+  ["landlord-must-provide-heat-canada", "Is My Landlord Required to Provide Heat?"],
+  ["n12-own-use-eviction-family-member-canada", "Can My Landlord Evict Me to Move In a Family Member?"],
+  ["ontario-rent-increase-2027-guideline", "Ontario Rent Increase Guideline 2027: 1.9%"],
   ["last-months-rent-deposit-ontario", "Last Month's Rent Deposit in Ontario: Rules, Interest & Refunds"],
   ["no-pet-clause-ontario", "Can Your Landlord Say “No Pets” in Ontario?"],
   ["subletting-assignment-ontario", "Subletting & Assigning Your Lease in Ontario"],

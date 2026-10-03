@@ -573,6 +573,9 @@ export default function HomePage() {
                     { href: "/rent-increase-rules-canada", label: "Rent increase rules by province" },
                     { href: "/security-deposit-limits-canada", label: "Security deposit limits by province" },
                     { href: "/eviction-notice-periods-canada", label: "Eviction notice periods by province" },
+                    { href: "/landlord-entry-rules-canada", label: "Landlord entry rules by province" },
+                    { href: "/breaking-a-lease-canada", label: "Breaking a lease by province" },
+                    { href: "/pet-rules-by-province-canada", label: "Can a landlord say no pets? By province" },
                     { href: "/average-rent-by-city-canada", label: "Average rent by city in Canada" },
                   ].map((link) => (
                     <Link

@@ -11,6 +11,62 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/ontario-rent-increase-2027-guideline",
+    title: "Ontario Rent Increase Guideline 2027: 1.9% Explained",
+    excerpt:
+      "Ontario's 2027 rent increase guideline is 1.9% — the lowest since the 2021 freeze. What it means, who's exempt, the 90-day notice rule, and how to check your increase is legal.",
+    date: "October 3, 2026",
+    category: "Ontario",
+  },
+  {
+    href: "/blog/n12-own-use-eviction-family-member-canada",
+    title: "Can My Landlord Evict Me to Move In a Family Member? (By Province)",
+    excerpt:
+      "Landlords can end a tenancy for their own or a family member's use — but notice, compensation, and good-faith rules differ by province. Ontario N12, BC's 3-month notice, Quebec repossession, and your rights if it's bad faith.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/landlord-must-provide-heat-canada",
+    title: "Is My Landlord Required to Provide Heat? Minimum Temperatures in Canada",
+    excerpt:
+      "Heat is a vital service your landlord must maintain. Minimum indoor temperatures by city — Toronto 21°C, Ottawa 20°C, Vancouver 22°C — heating-season dates, and what to do if it's too cold.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/quiet-enjoyment-noise-complaints-canada",
+    title: "Quiet Enjoyment & Noise Complaints: Tenant Rights in Canada",
+    excerpt:
+      "Your right to 'quiet enjoyment' means more than silence. What it covers, how to handle noisy neighbours or a disruptive landlord, how to document it, and when a breach can reduce your rent.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/cosigner-guarantor-lease-rights-canada",
+    title: "Co-signers & Guarantors on a Lease: Your Rights in Canada",
+    excerpt:
+      "What a guarantor is actually on the hook for, how long the obligation lasts, the difference between a guarantor and a co-tenant, and how to limit your risk before you sign.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/how-to-avoid-rental-scams-canada",
+    title: "How to Spot and Avoid Rental Scams in Canada",
+    excerpt:
+      "Fake listings, 'send a deposit to hold it,' and landlords who won't show the unit. The red flags, how to verify a listing is real, and what to do if you've been scammed.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/rental-application-what-landlords-can-ask-canada",
+    title: "What Can a Landlord Legally Ask For on a Rental Application in Canada?",
+    excerpt:
+      "Can a landlord ask for your SIN, a credit check, bank statements, or a deposit before you sign? What's legal, what you can refuse, and your privacy rights as a rental applicant.",
+    date: "October 3, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/new-brunswick-security-deposit-rules",
     title: "New Brunswick Security Deposit Rules: What a Landlord Can Charge",
     excerpt:

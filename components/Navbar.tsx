@@ -772,7 +772,7 @@ export default function Navbar() {
           )}
           <Link
             href="/upload"
-            className="inline-flex items-center gap-1.5 bg-brand text-brand-fg text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-brand-hover transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            className="inline-flex items-center gap-1.5 bg-accent text-accent-fg text-sm font-semibold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             Check My Lease
           </Link>
@@ -866,7 +866,7 @@ export default function Navbar() {
               <Link
                 href="/upload"
                 onClick={closeMobile}
-                className="flex items-center justify-center gap-2 bg-brand text-brand-fg text-sm font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 w-full"
+                className="flex items-center justify-center gap-2 bg-accent text-accent-fg text-sm font-semibold px-4 py-3 rounded-lg hover:opacity-90 w-full"
               >
                 Check My Lease
               </Link>

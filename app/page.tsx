@@ -220,46 +220,38 @@ export default function HomePage() {
         <Navbar />
 
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-surface">
-          {/* Decorative brand glow */}
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full opacity-[0.10] blur-3xl" style={{ background: "radial-gradient(closest-side, var(--brand), transparent)" }} />
-          </div>
+        <section className="relative overflow-hidden text-brand-fg" style={{ background: "linear-gradient(155deg, var(--brand), var(--brand-hover))" }}>
           <div className="relative flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32">
-            <div className="inline-flex items-center gap-2 bg-brand-soft text-brand text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-line">
+            <div className="inline-flex items-center gap-2 bg-white/10 text-accent text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-white/15">
               <Zap className="w-3.5 h-3.5" />
               Lease risk analysis — results in under 30 seconds
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-ink max-w-3xl leading-[1.08] text-balance">
-              Before You Sign That Lease,{" "}
-              <span className="text-brand">Make Sure It Isn&apos;t Costing You Thousands</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-3xl leading-[1.05] text-balance">
+              Understand Your Lease{" "}
+              <span className="text-accent">Before You Sign It</span>
             </h1>
 
-            <p className="mt-6 text-lg text-muted max-w-xl leading-relaxed text-pretty">
-              Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues — in minutes.
-            </p>
-
-            <p className="mt-4 text-sm font-medium text-amber-600 bg-amber-500/10 border border-amber-500/25 px-4 py-2 rounded-full">
-              Most renters sign leases they don&apos;t fully understand. Don&apos;t be one of them.
+            <p className="mt-6 text-lg max-w-xl leading-relaxed text-pretty" style={{ color: "color-mix(in srgb, var(--brand-fg) 82%, transparent)" }}>
+              Upload your lease and get a plain-English breakdown of hidden fees, red-flag clauses, and the rights your province gives you — in minutes.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/upload"
-                className="inline-flex items-center justify-center gap-2 bg-brand text-brand-fg font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20 text-base"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-fg font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg text-base"
               >
                 Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/example-report"
-                className="inline-flex items-center justify-center gap-2 bg-card text-ink font-semibold px-7 py-3.5 rounded-xl border border-line hover:bg-surface-3 transition-colors text-base"
+                className="inline-flex items-center justify-center gap-2 font-semibold px-7 py-3.5 rounded-xl border border-white/25 text-brand-fg hover:bg-white/10 transition-colors text-base"
               >
                 See a Sample Report
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs text-subtle">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs" style={{ color: "color-mix(in srgb, var(--brand-fg) 68%, transparent)" }}>
               <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Private &amp; never stored</span>
               <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters across Canada</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>

@@ -8,49 +8,57 @@
    components use the Tailwind utilities generated from these (bg-surface,
    text-ink, text-brand, border-line, …). Legacy pages are remapped further down.
    ───────────────────────────────────────────────────────────────────────────── */
+/* Civic Modern — soft: warm paper grounds, a soft deep-slate brand (never hard
+   navy), a muted honey accent, and a soft slate ink that's never pure black. */
 :root {
-  --surface: #ffffff;        /* page background */
-  --surface-2: #f6f7fb;      /* subtle sections */
-  --surface-3: #eef0f7;      /* nested / hover */
-  --card: #ffffff;           /* cards */
-  --ink: #0d1220;            /* primary text */
-  --muted: #4a5568;          /* secondary text */
-  --subtle: #8a93a6;         /* tertiary text */
-  --line: #e4e7ef;           /* borders */
-  --line-2: #eef0f6;         /* subtle borders */
+  --surface: #fffdf9;        /* cards / nav / raised surfaces */
+  --surface-2: #faf6ef;      /* warm paper page background */
+  --surface-3: #f3ece0;      /* table heads, footers, tints */
+  --card: #fffdf9;           /* cards */
+  --ink: #2a3542;            /* soft deep slate — never pure black */
+  --muted: #5e6775;          /* secondary text */
+  --subtle: #8b93a0;         /* tertiary text */
+  --line: #ebe2d3;           /* warm hairline borders */
+  --line-2: #f1eade;         /* subtle borders */
 
-  /* Bolder brand: electric indigo primary + warm coral accent */
-  --brand: #4f46e5;
-  --brand-hover: #4338ca;
-  --brand-fg: #ffffff;
-  --brand-soft: #eef0fe;     /* tinted brand background */
-  --accent: #f97362;         /* warm coral for highlights */
-  --ring: #a5b4fc;
+  /* Brand: soft deep slate-blue. Accent: muted honey. */
+  --brand: #3e4f63;
+  --brand-hover: #344357;
+  --brand-fg: #f7f1e7;       /* warm cream on brand */
+  --brand-soft: #eceef1;     /* tinted brand background */
+  --accent: #cf9a5b;         /* muted honey for actions & highlights */
+  --accent-fg: #412d0e;      /* text on honey */
+  --accent-soft: #f6ecd9;    /* tinted honey background */
+  --link: #2f6f72;           /* soft teal for inline links (honey is too low-contrast for text) */
+  --ring: #cf9a5b;
 }
 
 .dark {
-  --surface: #0a0f1c;
-  --surface-2: #0f1626;
-  --surface-3: #182236;
-  --card: #111a2e;
-  --ink: #e8ecf5;
-  --muted: #9aa6bd;
-  --subtle: #6b7690;
-  --line: #223049;
-  --line-2: #1a2740;
+  --surface: #232d3a;
+  --surface-2: #1b232e;      /* soft warm charcoal-slate, never pure black */
+  --surface-3: #2a3444;
+  --card: #232d3a;
+  --ink: #e9e6de;            /* soft warm off-white */
+  --muted: #aab2bf;
+  --subtle: #7d8798;
+  --line: #313d4d;
+  --line-2: #27313f;
 
-  --brand: #7c83ff;
-  --brand-hover: #9aa0ff;
-  --brand-fg: #0a0f1c;
-  --brand-soft: #1a2140;
-  --accent: #ff8a7a;
-  --ring: #4f46e5;
+  --brand: #2a3444;          /* raised slate for the hero in dark */
+  --brand-hover: #33404f;
+  --brand-fg: #ede6d8;
+  --brand-soft: #2a3444;
+  --accent: #daa96a;         /* slightly brighter honey for dark */
+  --accent-fg: #241703;
+  --accent-soft: #36301f;
+  --link: #86c0bf;           /* soft teal for inline links (dark) */
+  --ring: #daa96a;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-sora);
+  --font-display: var(--font-fraunces);
 
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
@@ -66,19 +74,21 @@
   --color-brand-fg: var(--brand-fg);
   --color-brand-soft: var(--brand-soft);
   --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
 }
 
 body {
-  background: var(--surface);
+  background: var(--surface-2);
   color: var(--ink);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Display font for headings — gives the refresh its confident, modern feel */
+/* Fraunces serif display — the editorial, civic character of the design */
 h1, h2, h3, .font-display {
-  font-family: var(--font-sora), var(--font-geist-sans), system-ui, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
 }
 
 /* Smooth theme transition (respect reduced-motion) */
@@ -101,6 +111,39 @@ h1, h2, h3, .font-display {
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Civic Modern light remap. The ~95 content pages hardcode slate/white/indigo/
+   blue utilities. These unlayered rules beat Tailwind's layered utilities, so
+   they repaint those pages in the warm, soft palette without editing each file.
+   The .dark rules below have higher specificity (.dark .x) and always win in
+   dark mode, so this block applies only in light.
+   ───────────────────────────────────────────────────────────────────────────── */
+/* surfaces */
+.bg-white { background-color: var(--surface); }
+.bg-slate-50, .bg-gray-50 { background-color: var(--surface-2); }
+.bg-slate-100, .bg-gray-100 { background-color: var(--surface-3); }
+/* text */
+.text-slate-900, .text-slate-800, .text-gray-900 { color: var(--ink); }
+.text-slate-700, .text-slate-600, .text-gray-700, .text-gray-600 { color: var(--muted); }
+.text-slate-500, .text-slate-400, .text-gray-500, .text-gray-400 { color: var(--subtle); }
+/* hairlines */
+.border-slate-100, .border-gray-100 { border-color: var(--line-2); }
+.border-slate-200, .border-slate-300, .border-gray-200, .border-gray-300 { border-color: var(--line); }
+.divide-slate-100 > *, .divide-gray-100 > * { border-color: var(--line-2); }
+.divide-slate-200 > * { border-color: var(--line); }
+/* brand recolour: blue/indigo links -> soft teal; solid blue/indigo fills -> slate brand */
+.text-blue-600, .text-blue-700, .text-blue-800, .text-blue-900,
+.text-indigo-600, .text-indigo-700, .text-sky-700, .text-violet-700 { color: var(--link); }
+.bg-blue-600, .bg-blue-700, .bg-indigo-600, .bg-indigo-700, .bg-indigo-800,
+.bg-gradient-to-br.from-indigo-600, .from-indigo-600, .to-indigo-800 { background-color: var(--brand); background-image: none; }
+.hover\:bg-blue-700:hover, .hover\:bg-indigo-700:hover, .hover\:bg-indigo-600:hover { background-color: var(--brand-hover); }
+.text-blue-100, .text-indigo-100, .text-indigo-200, .text-indigo-300, .text-blue-200 { color: color-mix(in srgb, var(--brand-fg) 78%, transparent); }
+/* small marker/accent icons -> honey */
+.text-indigo-400, .text-indigo-500, .text-blue-500, .text-sky-500 { color: var(--accent); }
+/* info-tint callouts (blue/indigo/sky) -> warm honey note; keep green/amber/red semantics */
+.bg-blue-50, .bg-indigo-50, .bg-sky-50, .bg-violet-50, .bg-blue-100, .bg-indigo-100 { background-color: var(--accent-soft); }
+.border-blue-100, .border-blue-200, .border-indigo-100, .border-indigo-200, .border-violet-100 { border-color: var(--line); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    Legacy dark-mode compatibility. Existing pages hardcode slate/white utility

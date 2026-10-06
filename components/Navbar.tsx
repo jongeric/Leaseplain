@@ -672,11 +672,11 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="LeasePlain home"
-          className="flex items-center font-extrabold text-xl tracking-tight select-none shrink-0"
+          className="flex items-center font-display font-bold text-xl tracking-tight select-none shrink-0"
         >
-          <span className="text-[#0f1f47]">Lease</span>
-          <span className="text-blue-600">Plain</span>
-          <span className="text-[#0f1f47] font-normal text-sm ml-0.5">.com</span>
+          <span className="text-ink">Lease</span>
+          <span className="text-accent">Plain</span>
+          <span className="text-subtle font-normal text-sm ml-0.5">.com</span>
         </Link>
 
         {/* Desktop nav */}

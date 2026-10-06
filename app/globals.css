@@ -144,6 +144,10 @@ h1, h2, h3, .font-display {
 /* info-tint callouts (blue/indigo/sky) -> warm honey note; keep green/amber/red semantics */
 .bg-blue-50, .bg-indigo-50, .bg-sky-50, .bg-violet-50, .bg-blue-100, .bg-indigo-100 { background-color: var(--accent-soft); }
 .border-blue-100, .border-blue-200, .border-indigo-100, .border-indigo-200, .border-violet-100 { border-color: var(--line); }
+/* form focus states -> brand/accent (applies in both themes; tokens flip) */
+.focus\:border-indigo-400:focus, .focus\:border-blue-400:focus { border-color: var(--accent); }
+.focus\:ring-indigo-100:focus, .focus\:ring-blue-100:focus, .focus\:ring-blue-400:focus,
+.focus\:ring-blue-500:focus, .focus-visible\:ring-blue-500:focus-visible { --tw-ring-color: color-mix(in srgb, var(--accent) 38%, transparent); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    Legacy dark-mode compatibility. Existing pages hardcode slate/white utility

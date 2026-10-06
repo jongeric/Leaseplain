@@ -25,7 +25,7 @@ export default function PrintChecklistButton({ slug }: { slug: string }) {
       `<html><head><title>${esc(c.h1)} — LeasePlain</title><style>
         *{box-sizing:border-box}
         body{font-family:Arial,Helvetica,sans-serif;color:#0f172a;max-width:720px;margin:0 auto;padding:40px;line-height:1.5}
-        .brand{font-size:13px;font-weight:700;color:#4f46e5;letter-spacing:.5px;margin-bottom:6px}
+        .brand{font-size:13px;font-weight:700;color:#3e4f63;letter-spacing:.5px;margin-bottom:6px}
         h1{font-size:24px;margin:0 0 6px}
         .intro{color:#475569;font-size:13px;margin:0 0 22px}
         h2{font-size:15px;margin:22px 0 8px;color:#1e293b;border-bottom:1px solid #e2e8f0;padding-bottom:4px}

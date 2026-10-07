@@ -102,10 +102,10 @@ export default function Footer() {
           <Link
             href="/"
             aria-label="LeasePlain home"
-            className="inline-flex items-center font-extrabold text-xl tracking-tight select-none"
+            className="inline-flex items-center font-display font-bold text-xl tracking-tight select-none"
           >
             <span className="text-white">Lease</span>
-            <span className="text-blue-400">Plain</span>
+            <span className="text-accent">Plain</span>
             <span className="text-slate-400 font-normal text-sm ml-0.5">.com</span>
           </Link>
           <p className="text-sm text-slate-400 leading-relaxed">

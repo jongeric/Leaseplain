@@ -239,18 +239,20 @@ export default function LeaseAnalyzerPage() {
             </div>
           </div>
         </section>
-      
 
-              <div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-                <FAQAccordion items={[
-                  { q: "What types of leases can LeasePlain analyze?", a: "LeasePlain analyzes residential lease agreements for apartments, houses, condos, basement suites, and student housing across Canada and the US. Upload a PDF or paste the text to get started." },
-                  { q: "Is the lease analyzer free to use?", a: "Yes — completely free. Every analysis includes the full report with all sections, and there's no limit on how many leases you can analyze. No account required and no paywall." },
-                  { q: "What does LeasePlain look for in a lease?", a: "LeasePlain checks for: key financial terms (rent, deposits, fees), clauses that may be illegal under provincial law, vague or one-sided provisions, missing protections, and items worth negotiating before signing." },
-                  { q: "Can LeasePlain analyze a lease in another language?", a: "LeasePlain is optimized for English leases. French-language leases (common in Quebec) may work but with reduced accuracy. We are working to improve French-language support." },
-                  { q: "Will my lease data be used to train AI?", a: "No. Your lease content is used only to generate your analysis. We do not use customer lease data to train AI models. See our privacy policy for full details." }
-                ]} />
-              </div>
+        {/* FAQ */}
+        <section className="py-16 px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+            <FAQAccordion items={[
+              { q: "What types of leases can LeasePlain analyze?", a: "LeasePlain analyzes residential lease agreements for apartments, houses, condos, basement suites, and student housing across Canada and the US. Upload a PDF or paste the text to get started." },
+              { q: "Is the lease analyzer free to use?", a: "Yes — completely free. Every analysis includes the full report with all sections, and there's no limit on how many leases you can analyze. No account required and no paywall." },
+              { q: "What does LeasePlain look for in a lease?", a: "LeasePlain checks for: key financial terms (rent, deposits, fees), clauses that may be illegal under provincial law, vague or one-sided provisions, missing protections, and items worth negotiating before signing." },
+              { q: "Can LeasePlain analyze a lease in another language?", a: "LeasePlain is optimized for English leases. French-language leases (common in Quebec) may work but with reduced accuracy. We are working to improve French-language support." },
+              { q: "Will my lease data be used to train AI?", a: "No. Your lease content is used only to generate your analysis. We do not use customer lease data to train AI models. See our privacy policy for full details." }
+            ]} />
+          </div>
+        </section>
       </main>
 
       <Footer />

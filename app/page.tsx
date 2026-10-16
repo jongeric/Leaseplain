@@ -532,6 +532,8 @@ export default function HomePage() {
                 { href: "/resources/how-to-read-a-lease", label: "How to Read a Lease" },
                 { href: "/lease-clause/subletting", label: "Subletting Clause" },
                 { href: "/lease-clause/maintenance", label: "Maintenance & Repairs" },
+                { href: "/lease-clause/utilities", label: "Utilities Clause" },
+                { href: "/lease-clause/guests", label: "Guest Policy Clause" },
                 { href: "/lease-clause/pets", label: "Pet Policy Clause" },
               ].map((link) => (
                 <Link

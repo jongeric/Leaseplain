@@ -34,13 +34,14 @@ export const metadata: Metadata = {
 };
 
 const ontarioGuidelines = [
+  { year: "2027", rate: "1.9%" },
   { year: "2026", rate: "2.1%" },
   { year: "2025", rate: "2.5%" },
   { year: "2024", rate: "2.5%" },
   { year: "2023", rate: "2.5%" },
   { year: "2022", rate: "1.2%" },
   { year: "2021", rate: "0% (COVID-19 freeze)" },
-  { year: "2020", rate: "0% (COVID-19 freeze)" },
+  { year: "2020", rate: "2.2%" },
 ];
 
 const ontarioRules = [
@@ -167,7 +168,7 @@ export default function RentIncreaseRulesPage() {
         description="Complete guide to rent increase rules across Canada and key US states. Ontario, BC, Alberta, Quebec, Manitoba, and more — guidelines, notice periods, dispute processes, and tenant rights."
         url="https://leaseplain.com/tenant-rights/rent-increase-rules"
         datePublished="2025-01-15"
-        dateModified="2026-05-15"
+        dateModified="2026-10-16"
         keywords={[
           "Ontario rent increase rules",
           "rent increase guideline Ontario 2026",

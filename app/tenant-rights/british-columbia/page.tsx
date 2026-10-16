@@ -35,7 +35,7 @@ const rentIncreaseRules = [
   "Rent can only be increased once in any 12-month period",
   "Landlord must give at least 3 full months written notice before any rent increase takes effect",
   "The maximum annual increase is tied to the BC Consumer Price Index (CPI), set by the government each year",
-  "For 2024, the BC rent increase cap was 3.5%; for 2025, it was set at 3.0%",
+  "For 2026 the BC rent increase cap is 2.3% (down from 3.0% in 2025 and 3.5% in 2024)",
   "Additional rent increase applications can be made to the RTB for extraordinary circumstances (significant cost increases)",
 ];
 
@@ -57,7 +57,7 @@ const bcRedFlags = [
 
 const faqItems = [
   { q: "How much can a BC landlord charge for a security deposit?", a: "BC landlords can charge a security deposit of up to half a month's rent, plus a separate pet damage deposit of up to half a month's rent. Both must be returned within 15 days of the tenancy ending, with interest." },
-  { q: "How much notice does a BC landlord need to give before raising rent?", a: "Landlords must give at least 3 full months' written notice on the approved RTB form, and rent can only be raised once every 12 months. The increase is capped at the annual amount set by the BC government, tied to the Consumer Price Index." },
+  { q: "How much can a BC landlord raise rent in 2026?", a: "The 2026 BC rent increase cap is 2.3% (down from 3.0% in 2025). Landlords must give at least 3 full months' written notice on the approved RTB form, and rent can only be raised once every 12 months. The cap is set each year by the BC government based on the Consumer Price Index." },
   { q: "What is the BC Residential Tenancy Branch?", a: "The Residential Tenancy Branch (RTB) is the provincial body that resolves disputes between landlords and tenants in BC. Tenants can apply for dispute resolution online, and most hearings are conducted by phone or video conference at low or no cost." },
   { q: "How much notice must a BC landlord give to end a tenancy?", a: "It depends on the reason: 3 months for landlord's or buyer's use of the property, 4 months for major renovations or demolition, and 10 days for unpaid rent (which the tenant can dispute or pay to cancel)." },
   { q: "Can a BC landlord keep my deposit for normal wear and tear?", a: "No. Landlords can only deduct from a deposit for damage beyond normal wear and tear, unpaid rent, or other amounts owed under the tenancy agreement — and only with proper documentation, such as a move-in/move-out condition inspection report." },
@@ -71,7 +71,7 @@ export default function BritishColumbiaTenantRightsPage() {
         description="A complete guide to tenant rights in British Columbia under the Residential Tenancy Act. Covers security deposits, rent increases, notice periods, and dispute resolution."
         url="https://leaseplain.com/tenant-rights/british-columbia"
         datePublished="2025-01-15"
-        dateModified="2026-05-15"
+        dateModified="2026-10-16"
         keywords={["BC tenant rights", "Residential Tenancy Act BC", "British Columbia renter rights", "BC rent increase rules", "RTB British Columbia"]}
       />
       <BreadcrumbSchema items={[
@@ -269,8 +269,13 @@ export default function BritishColumbiaTenantRightsPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "BC Rent Increase Rules (2026)", href: "/blog/bc-rent-increase-rules" },
+                    { label: "BC Security Deposit Rules", href: "/blog/bc-security-deposit-rules" },
+                    { label: "How Much Notice to End a Tenancy in BC", href: "/blog/bc-notice-to-end-tenancy" },
+                    { label: "Rent Increase Rules by Province", href: "/rent-increase-rules-canada" },
+                    { label: "Security Deposit Limits by Province", href: "/security-deposit-limits-canada" },
+                    { label: "BC Tenant Rights Hub", href: "/canada/british-columbia" },
                     { label: "Canadian Tenant Rights", href: "/tenant-rights/canada" },
-                    { label: "BC City Guides", href: "/canada/british-columbia" },
                   ].map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="text-sm text-blue-600 hover:underline flex items-center gap-1">

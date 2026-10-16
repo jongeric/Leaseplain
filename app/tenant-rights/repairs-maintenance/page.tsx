@@ -133,7 +133,7 @@ export default function RepairsMaintenancePage() {
         description="Ontario tenants have strong repair rights under the RTA. Learn how to request repairs, what to do if your landlord ignores you, and how to get a rent abatement for maintenance issues."
         url="https://leaseplain.com/tenant-rights/repairs-maintenance"
         datePublished="2025-01-15"
-        dateModified="2026-05-15"
+        dateModified="2026-10-16"
         keywords={["tenant repair rights Ontario", "landlord repair obligations", "rent abatement Ontario", "T6 application LTB", "maintenance rights renter Canada"]}
       />
       <BreadcrumbSchema items={[
@@ -526,8 +526,12 @@ export default function RepairsMaintenancePage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "Who Pays for Repairs in Canada?", href: "/blog/landlord-repair-obligations-canada" },
+                    { label: "Tenant Repair Responsibilities", href: "/blog/tenant-repair-responsibilities-canada" },
+                    { label: "Withholding Rent Over Repairs", href: "/blog/withholding-rent-repairs-ontario" },
+                    { label: "Is My Landlord Required to Provide Heat?", href: "/blog/landlord-must-provide-heat-canada" },
+                    { label: "Mould in a Rental: Your Rights", href: "/blog/mould-in-a-rental-ontario" },
                     { label: "Repairs Clause", href: "/lease-clause/repairs" },
-                    { label: "Maintenance Responsibilities", href: "/lease-clause/maintenance" },
                     { label: "Ontario Tenant Rights", href: "/tenant-rights/ontario" },
                     { label: "Landlord Responsibilities", href: "/tenant-rights/landlord-responsibilities" },
                   ].map((l) => (

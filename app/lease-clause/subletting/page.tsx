@@ -72,7 +72,7 @@ export default function SublettingPage() {
         description="Understand subletting and assignment clauses in your lease. Learn when your landlord can and cannot refuse a sublet request in Ontario."
         url="https://leaseplain.com/lease-clause/subletting"
         datePublished="2025-01-01"
-        dateModified="2026-06-16"
+        dateModified="2026-10-16"
         keywords={["subletting clause Ontario", "tenant right to sublet Canada", "lease assignment Ontario", "landlord refuse sublet RTA", "sublease agreement Ontario"]}
       />
       <script
@@ -258,8 +258,11 @@ export default function SublettingPage() {
                 <h3 className="font-semibold text-slate-900 mb-3 text-sm">Related Pages</h3>
                 <ul className="flex flex-col gap-2">
                   {[
+                    { label: "Subletting & Assignment in Ontario", href: "/blog/subletting-assignment-ontario" },
+                    { label: "Lease Assignment & Sublet in Quebec", href: "/blog/quebec-lease-assignment-sublet" },
+                    { label: "Breaking a Lease by Province", href: "/breaking-a-lease-canada" },
+                    { label: "How to Break a Lease in Ontario", href: "/blog/how-to-break-a-lease-ontario" },
                     { label: "Early Termination Clause", href: "/lease-clause/early-termination" },
-                    { label: "Breaking a Lease", href: "/tenant-rights/breaking-a-lease" },
                     { label: "Tenant Rights in Ontario", href: "/tenant-rights/ontario" },
                   ].map((l) => (
                     <li key={l.href}>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist_Mono, Fraunces } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import OrganizationSchema from "@/components/OrganizationSchema";
@@ -8,18 +8,16 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-// Fraunces — the characterful serif display face for the Civic Modern look.
+// Fraunces — the characterful serif display face. Display-only, so we ship just
+// the heading weights (600/700) and let text render immediately (swap).
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "700"],
+  display: "swap",
 });
 
 // Set the theme class before first paint to avoid a flash of the wrong theme.
@@ -58,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

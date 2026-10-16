@@ -11,6 +11,22 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/tenant-lawyer-cost-canada",
+    title: "How Much Does a Tenant Lawyer Cost in Canada?",
+    excerpt:
+      "Tenant representation runs from free (legal clinics, duty counsel) to a few hundred dollars for a paralegal to several thousand for a lawyer. What each option really costs — and the free help most renters miss.",
+    date: "October 16, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/subletting-without-permission-canada",
+    title: "Subletting Without the Landlord's Permission: Your Rights",
+    excerpt:
+      "Can you sublet without asking? Usually not — but the landlord can't unreasonably refuse either. How consent works, what happens if you sublet anyway, and subtenant rights with no written agreement.",
+    date: "October 16, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/ontario-rent-increase-2027-guideline",
     title: "Ontario Rent Increase Guideline 2027: 1.9% Explained",
     excerpt:

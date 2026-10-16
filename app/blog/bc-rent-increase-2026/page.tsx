@@ -13,12 +13,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "BC Rent Increase Limit 2026 (2.3%) | LeasePlain",
+  title: "BC Rent Increase 2026: How Much Can a Landlord Raise Rent? | LeasePlain",
   description:
     "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements, how the Residential Tenancy Branch enforces limits, and what to do if your landlord charges more.",
   alternates: { canonical: "https://leaseplain.com/blog/bc-rent-increase-2026" },
   openGraph: {
-    title: "BC Rent Increase Limit 2026 (2.3%) | LeasePlain",
+    title: "BC Rent Increase 2026: How Much Can a Landlord Raise Rent? | LeasePlain",
     description:
       "BC's 2026 rent increase cap is 2.3%, based on BC CPI only. Learn the notice requirements and what to do if your landlord charges more.",
     url: "https://leaseplain.com/blog/bc-rent-increase-2026",

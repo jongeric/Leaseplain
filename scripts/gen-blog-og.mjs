@@ -9,6 +9,8 @@ import { createElement as h } from "react";
 const SIZE = { width: 1200, height: 630 };
 
 const posts = [
+  ["tenant-lawyer-cost-canada", "How Much Does a Tenant Lawyer Cost in Canada?"],
+  ["subletting-without-permission-canada", "Subletting Without the Landlord's Permission: Your Rights"],
   ["rental-application-what-landlords-can-ask-canada", "What Can a Landlord Legally Ask For on a Rental Application?"],
   ["how-to-avoid-rental-scams-canada", "How to Spot and Avoid Rental Scams in Canada"],
   ["cosigner-guarantor-lease-rights-canada", "Co-signers & Guarantors on a Lease: Your Rights"],

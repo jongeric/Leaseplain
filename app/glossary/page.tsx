@@ -11,12 +11,12 @@ import { BookOpen, AlertTriangle, CheckCircle, TrendingDown } from "lucide-react
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Lease Glossary | Plain-English Definitions of Rental Terms | LeasePlain",
+  title: "Lease Glossary: Plain-English Rental Terms | LeasePlain",
   description:
     "Understand every term in your lease. Plain-English definitions of security deposit, guarantor, subletting, holdover tenant, force majeure, quiet enjoyment, and 15+ more rental terms.",
   alternates: { canonical: "https://leaseplain.com/glossary" },
   openGraph: {
-    title: "Lease Glossary | Plain-English Definitions of Rental Terms | LeasePlain",
+    title: "Lease Glossary: Plain-English Rental Terms | LeasePlain",
     description: "Understand every term in your lease. Plain-English definitions of security deposit, guarantor, subletting, holdover tenant, force majeure, quiet enjoyment, and 15+ more rental terms.",
     url: "https://leaseplain.com/glossary",
     type: "website",

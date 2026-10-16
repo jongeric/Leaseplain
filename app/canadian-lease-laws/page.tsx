@@ -7,12 +7,12 @@ import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle, BookOpen, Sca
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Canadian Lease Laws Explained: Province-by-Province Guide | LeasePlain",
+  title: "Canadian Lease Laws by Province: A Plain Guide | LeasePlain",
   description:
     "A complete guide to Canadian residential lease laws by province. Understand how Ontario, BC, Alberta, Quebec, and other provinces regulate rent increases, deposits, evictions, and tenant rights.",
   alternates: { canonical: "https://leaseplain.com/canadian-lease-laws" },
   openGraph: {
-    title: "Canadian Lease Laws Explained: Province-by-Province Guide | LeasePlain",
+    title: "Canadian Lease Laws by Province: A Plain Guide | LeasePlain",
     description: "A complete guide to Canadian residential lease laws by province. Understand how Ontario, BC, Alberta, Quebec, and other provinces regulate rent increases, deposits, evictions, and tenant rights.",
     url: "https://leaseplain.com/canadian-lease-laws",
     type: "website",

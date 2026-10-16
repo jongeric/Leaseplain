@@ -13,7 +13,7 @@ import {
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Protect Yourself Before Signing a Lease | LeasePlain",
+  title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
   description:
     "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "is my lease legal", "landlord red flags", "tenant rights Ontario", "rental agreement review Canada",
   ],
   openGraph: {
-    title: "Protect Yourself Before Signing a Lease | LeasePlain",
+    title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
     description:
       "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
     type: "website",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Protect Yourself Before Signing a Lease | LeasePlain",
+    title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
     description: "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
   },
   alternates: { canonical: "https://leaseplain.com" },

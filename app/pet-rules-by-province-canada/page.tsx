@@ -10,12 +10,12 @@ import { PawPrint, ChevronRight } from "lucide-react";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Can a Landlord Say No Pets? Pet Rules by Province in Canada (2026) | LeasePlain",
+  title: "Can a Landlord Say No Pets? Rules by Province | LeasePlain",
   description:
     "Whether a landlord can refuse pets or enforce a 'no-pet' clause in every Canadian province — Ontario is the one province where no-pet clauses are void. Pet deposits, service animals, and the rules in one citable table.",
   alternates: { canonical: "https://leaseplain.com/pet-rules-by-province-canada" },
   openGraph: {
-    title: "Can a Landlord Say No Pets? Pet Rules by Province in Canada (2026) | LeasePlain",
+    title: "Can a Landlord Say No Pets? Rules by Province | LeasePlain",
     description:
       "Can a landlord refuse pets? No-pet clauses, pet deposits, and service-animal rules for every Canadian province in one table.",
     url: "https://leaseplain.com/pet-rules-by-province-canada",

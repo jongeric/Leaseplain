@@ -9,12 +9,12 @@ import { LTB_FORMS, GROUP_ORDER, GROUP_LABEL } from "@/lib/ltbForms";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Ontario LTB Forms Explained: Every N & T Form in Plain English | LeasePlain",
+  title: "Ontario LTB Forms Explained (N4, N12, T2 & More) | LeasePlain",
   description:
     "A plain-English guide to every Ontario Landlord and Tenant Board form — N1, N4, N5, N12, N13, T1, T2, T5, T6, N9, and more. What each form means, and what to do if you receive one.",
   alternates: { canonical: "https://leaseplain.com/ltb-forms" },
   openGraph: {
-    title: "Ontario LTB Forms Explained: Every N & T Form in Plain English | LeasePlain",
+    title: "Ontario LTB Forms Explained (N4, N12, T2 & More) | LeasePlain",
     description:
       "What every Ontario LTB form means — the notices you receive and the applications you can file — in plain English.",
     url: "https://leaseplain.com/ltb-forms",

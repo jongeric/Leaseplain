@@ -9,12 +9,12 @@ import FAQAccordion from "@/components/FAQAccordion";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Lease Clauses Explained: Common Terms in Residential Agreements | LeasePlain",
+  title: "Lease Clauses Explained: Common Rental Terms | LeasePlain",
   description:
     "Understand every clause in your residential lease. Plain-English explanations of security deposits, rent increases, pets, utilities, subletting, and more — with Ontario law context.",
   alternates: { canonical: "https://leaseplain.com/lease-clauses" },
   openGraph: {
-    title: "Lease Clauses Explained: Common Terms in Residential Agreements | LeasePlain",
+    title: "Lease Clauses Explained: Common Rental Terms | LeasePlain",
     description: "Understand every clause in your residential lease. Plain-English explanations of security deposits, rent increases, pets, utilities, subletting, and more — with Ontario law context.",
     url: "https://leaseplain.com/lease-clauses",
     type: "website",

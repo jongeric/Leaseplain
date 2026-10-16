@@ -10,12 +10,12 @@ import { DoorClosed, ChevronRight } from "lucide-react";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Breaking a Lease in Canada: Penalties & Rules by Province (2026) | LeasePlain",
+  title: "Breaking a Lease in Canada: Rules by Province | LeasePlain",
   description:
     "How to break a fixed-term lease early in every Canadian province — the legal route (assign, sublet, mutual agreement), what you actually owe, and the landlord's duty to re-rent. Ontario, BC, Alberta, Quebec, and more in one table.",
   alternates: { canonical: "https://leaseplain.com/breaking-a-lease-canada" },
   openGraph: {
-    title: "Breaking a Lease in Canada: Penalties & Rules by Province (2026) | LeasePlain",
+    title: "Breaking a Lease in Canada: Rules by Province | LeasePlain",
     description:
       "The legal route to end a fixed-term lease early and what you owe, for every Canadian province in one table.",
     url: "https://leaseplain.com/breaking-a-lease-canada",

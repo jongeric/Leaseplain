@@ -47,12 +47,13 @@ noindexed URLs should not be in the sitemap):
 - the 5 state pages + 3 city pages + US hub
 - the 4 comparison hubs (priority 0.8, monthly)
 
-## 4. US Q&A set (held until now)
-- Add indexed `QAPage` answers to `lib/answers.ts` — they can't carry per-page
-  `noindex`, which is why they were held. Target the transactional queries:
-  "can my landlord enter without notice [state]", "how much can my landlord raise
-  rent in [state]", "security deposit limit [state]", "how much notice to evict [state]".
-- Mirror the Canadian answer pattern; link each to the matching state page / hub.
+## 4. US Q&A set (drafted, held)
+- 18 answers are drafted in `lib/usAnswers.ts` (exported as `US_ANSWERS`) covering
+  rent increases, deposit limits, landlord entry, and eviction notice for CA/NY/TX/FL/IL.
+- The file is imported nowhere, so it renders no pages and can't be indexed while held.
+- At launch: merge `US_ANSWERS` into `ANSWERS` in `lib/answers.ts` (or wire a dedicated
+  US answers route), then add each slug to `app/sitemap.ts`. They can't carry per-page
+  `noindex`, which is why they were kept out of the live index until now.
 
 ## 5. Entry points & navigation
 - Footer already links `/united-states`. Consider adding a US item to the Navbar

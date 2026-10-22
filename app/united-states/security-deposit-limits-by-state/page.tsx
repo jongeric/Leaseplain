@@ -46,6 +46,9 @@ const ROWS: Array<{
   { state: "Texas", href: "/united-states/texas", max: "No statutory cap", deadline: "30 days", statute: "Tex. Prop. Code § 92.101–92.109", note: "No limit on the amount, but a landlord who keeps a deposit in bad faith can owe up to three times the deposit plus $100 and attorney's fees." },
   { state: "Florida", href: "/united-states/florida", max: "No statutory cap", deadline: "15 days (no claim) / 30 days (with claim)", statute: "Fla. Stat. § 83.49", note: "No cap. If the landlord intends to keep any of it, they must send written notice within 30 days or forfeit the claim. A 2023 law also allows an optional monthly fee in lieu of a deposit." },
   { state: "Illinois", href: "/united-states/illinois", max: "No statewide cap (Chicago: 1 month)", deadline: "30–45 days", statute: "765 ILCS 710 / 765 ILCS 715; Chicago RLTO", note: "No state cap. Landlords with 5+ units must give an itemized statement within 30 days and refund within 45. Chicago's RLTO adds interest and stricter deadlines." },
+  { state: "Washington", href: "/united-states/washington", max: "No statutory cap (Seattle: 1 month)", deadline: "30 days", statute: "RCW 59.18.260–.280", note: "No state dollar cap, but a written move-in condition checklist is required. Seattle caps deposits at one month's rent." },
+  { state: "Georgia", href: "/united-states/georgia", max: "2 months' rent", deadline: "30 days", statute: "O.C.G.A. § 44-7; HB 404 (2024)", note: "The 2024 Safe at Home Act set Georgia's first deposit cap at two months' rent and requires an itemized refund within 30 days." },
+  { state: "Pennsylvania", href: "/united-states/pennsylvania", max: "2 months (year 1) / 1 month (after)", deadline: "30 days", statute: "68 Pa. Stat. § 250.511a–b", note: "Tiered cap, with interest after five years. Missing the 30-day itemized refund exposes the landlord to double damages." },
 ];
 
 const faqItems = [

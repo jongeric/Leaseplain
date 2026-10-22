@@ -13,6 +13,9 @@ State pages
 - `app/united-states/florida/page.tsx`
 - `app/united-states/texas/page.tsx`
 - `app/united-states/illinois/page.tsx`
+- `app/united-states/washington/page.tsx`
+- `app/united-states/georgia/page.tsx`
+- `app/united-states/pennsylvania/page.tsx`
 - `app/united-states/page.tsx` (US hub)
 - `app/united-states/california/los-angeles/page.tsx`
 - `app/united-states/new-york/new-york-city/page.tsx`

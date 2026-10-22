@@ -53,6 +53,24 @@ const usStates = [
     law: "Illinois statutes + Chicago RLTO",
     highlight: "No statewide rent control; strong Chicago tenant ordinance",
   },
+  {
+    name: "Washington",
+    href: "/united-states/washington",
+    law: "RCW 59.18 + HB 1217 rent cap",
+    highlight: "New 2025 statewide rent cap, just-cause eviction",
+  },
+  {
+    name: "Georgia",
+    href: "/united-states/georgia",
+    law: "Georgia Code + Safe at Home Act",
+    highlight: "2024 two-month deposit cap and habitability duty",
+  },
+  {
+    name: "Pennsylvania",
+    href: "/united-states/pennsylvania",
+    law: "Landlord and Tenant Act of 1951",
+    highlight: "Tiered deposit cap, double damages for late refunds",
+  },
 ];
 
 // US by-state comparison hubs (held noindex until legal review).

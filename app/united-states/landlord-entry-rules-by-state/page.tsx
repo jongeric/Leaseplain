@@ -32,6 +32,9 @@ const ROWS: Array<{ state: string; href?: string; notice: string; hours: string;
   { state: "New York", href: "/united-states/new-york", notice: "Reasonable notice (no fixed statute)", hours: "Reasonable hours", law: "Lease + case law; NYC rules", note: "No statewide hours rule. Courts expect reasonable advance notice (commonly treated as ~24 hours), and your lease or a local rule (e.g., NYC) may set specifics." },
   { state: "Texas", href: "/united-states/texas", notice: "Set by the lease", hours: "Per lease", law: "Tex. Prop. Code (no general entry statute)", note: "Texas has no general statutory notice period for entry — the lease governs. If your lease is silent, insist on reasonable advance notice in writing." },
   { state: "Illinois", href: "/united-states/illinois", notice: "Reasonable (Chicago: 2 days)", hours: "Reasonable hours", law: "State: none general; Chicago RLTO", note: "No statewide entry statute. Chicago's RLTO requires at least 2 days' notice and entry at reasonable times; elsewhere the lease governs." },
+  { state: "Washington", href: "/united-states/washington", notice: "2 days (1 day to show)", hours: "Reasonable hours", law: "RCW 59.18.150", note: "At least 2 days' notice to enter for repairs or inspections, and 1 day to show the unit to prospective tenants or buyers. Emergencies are the exception." },
+  { state: "Georgia", href: "/united-states/georgia", notice: "Set by the lease", hours: "Per lease", law: "No general entry statute", note: "Georgia has no statutory entry-notice period, so the lease governs. Ask for reasonable advance notice in writing." },
+  { state: "Pennsylvania", href: "/united-states/pennsylvania", notice: "Reasonable (no fixed statute)", hours: "Reasonable hours", law: "Lease + case law", note: "No statute sets a notice period; courts apply a reasonable-notice standard, so the lease controls." },
 ];
 
 const faqItems = [

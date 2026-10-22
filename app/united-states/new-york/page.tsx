@@ -10,12 +10,12 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
-  title: "New York Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+  title: "New York Tenant Rights 2026: Rent Stabilization, Deposits & Eviction | LeasePlain",
   description:
     "Learn about New York tenant rights under the Housing Stability & Tenant Protection Act, rent stabilization, and DHCR oversight. LeasePlain's AI lease analysis for New York is coming soon.",
   alternates: { canonical: "https://leaseplain.com/united-states/new-york" },
   openGraph: {
-    title: "New York Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+    title: "New York Tenant Rights 2026: Rent Stabilization, Deposits & Eviction | LeasePlain",
     description: "Learn about New York tenant rights under the Housing Stability & Tenant Protection Act, rent stabilization, and DHCR oversight. LeasePlain's AI lease analysis for New York is coming soon.",
     url: "https://leaseplain.com/united-states/new-york",
     type: "website",
@@ -94,7 +94,7 @@ export default function NewYorkPage() {
               AI Analysis Coming Soon
             </div>
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
-              New York Tenant Rights &amp; Lease Help | Coming Soon
+              New York Tenant Rights 2026: Rent Stabilization, Deposits &amp; Eviction
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               New York has some of the strongest tenant protections in the United States, anchored by

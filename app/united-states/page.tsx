@@ -41,6 +41,26 @@ const usStates = [
     law: "Florida Residential Landlord & Tenant Act",
     highlight: "No statewide rent control, landlord-friendly framework",
   },
+  {
+    name: "Texas",
+    href: "/united-states/texas",
+    law: "Texas Property Code, Chapter 92",
+    highlight: "No rent control, strict deposit-refund and eviction procedure",
+  },
+  {
+    name: "Illinois",
+    href: "/united-states/illinois",
+    law: "Illinois statutes + Chicago RLTO",
+    highlight: "No statewide rent control; strong Chicago tenant ordinance",
+  },
+];
+
+// US by-state comparison hubs (held noindex until legal review).
+const usHubs = [
+  { name: "Security Deposit Limits by State", href: "/united-states/security-deposit-limits-by-state", desc: "How much a landlord can charge and how fast they must return it" },
+  { name: "Rent Control by State", href: "/united-states/rent-control-by-state", desc: "Which states cap rent increases and which ban rent control" },
+  { name: "Eviction Notice Periods by State", href: "/united-states/eviction-notice-periods-by-state", desc: "Non-payment and termination notice, plus just-cause rules" },
+  { name: "Landlord Entry Rules by State", href: "/united-states/landlord-entry-rules-by-state", desc: "Notice a landlord must give before entering your rental" },
 ];
 
 const usVsCanada = [
@@ -179,8 +199,29 @@ export default function UnitedStatesPage() {
                   ))}
                 </div>
                 <p className="mt-4 text-sm text-slate-500">
-                  More states coming soon — Texas, Illinois, Washington, and others.
+                  More states coming soon — Washington, Georgia, Pennsylvania, and others.
                 </p>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-5">Compare the Rules by State</h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {usHubs.map((h) => (
+                    <Link
+                      key={h.href}
+                      href={h.href}
+                      className="block bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-300 hover:shadow-md transition-all group"
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <h3 className="font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                          {h.name}
+                        </h3>
+                        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors mt-0.5" aria-hidden="true" />
+                      </div>
+                      <p className="text-sm text-slate-600">{h.desc}</p>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-6">

@@ -10,12 +10,12 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: true },
-  title: "California Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+  title: "California Tenant Rights 2026: Rent Caps, Deposits & Eviction | LeasePlain",
   description:
     "Learn about California tenant rights under AB 1482, statewide rent cap, just cause eviction, and the Anti-Price Gouging Law. LeasePlain's AI lease analysis for California is coming soon.",
   alternates: { canonical: "https://leaseplain.com/united-states/california" },
   openGraph: {
-    title: "California Tenant Rights & Lease Help | Coming Soon | LeasePlain",
+    title: "California Tenant Rights 2026: Rent Caps, Deposits & Eviction | LeasePlain",
     description: "Learn about California tenant rights under AB 1482, statewide rent cap, just cause eviction, and the Anti-Price Gouging Law. LeasePlain's AI lease analysis for California is coming soon.",
     url: "https://leaseplain.com/united-states/california",
     type: "website",
@@ -94,7 +94,7 @@ export default function CaliforniaPage() {
               AI Analysis Coming Soon
             </div>
             <h1 className="text-4xl font-bold text-slate-900 mb-5 leading-tight">
-              California Tenant Rights &amp; Lease Help | Coming Soon
+              California Tenant Rights 2026: Rent Caps, Deposits &amp; Eviction
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed speakable-summary">
               California enacted landmark statewide tenant protections in 2019 with AB 1482, capping

@@ -276,4 +276,175 @@ export const US_ANSWERS: AnswerDef[] = [
     ],
     keywords: ["how much notice to evict illinois", "5 day notice illinois", "chicago eviction notice"],
   },
+
+  // ─── Washington ──────────────────────────────────────────────────────────
+  {
+    slug: "how-much-can-my-landlord-raise-rent-in-washington",
+    question: "How much can my landlord raise rent in Washington?",
+    category: "Rent",
+    shortAnswer:
+      "Since HB 1217 took effect in May 2025, most increases are capped at the lesser of 7% plus CPI or 10% in any 12-month period — about 9.7% for 2026 — and no increase is allowed in the first 12 months of a tenancy. Manufactured-home lots are capped at 5%.",
+    blocks: [
+      { type: "p", text: "The cap is new: Washington had no statewide rent limit before HB 1217. A landlord must also give at least 90 days' written notice of an increase (180 days in Seattle)." },
+    ],
+    related: [
+      { label: "Washington tenant rights", href: "/united-states/washington" },
+      { label: "Rent control by state", href: "/united-states/rent-control-by-state" },
+    ],
+    keywords: ["how much can landlord raise rent washington", "washington rent cap", "hb 1217 rent increase"],
+  },
+  {
+    slug: "what-is-the-security-deposit-limit-in-washington",
+    question: "What is the security deposit limit in Washington?",
+    category: "Deposits",
+    shortAnswer:
+      "Washington has no statewide dollar cap on the deposit amount, but the landlord must give a written move-in condition checklist and return the deposit within 30 days of move-out with an itemized statement. Seattle caps deposits at one month's rent.",
+    blocks: [
+      { type: "p", text: "The move-in checklist matters: without a written condition report signed at move-in, a landlord generally can't claim against your deposit for damage (RCW 59.18.260)." },
+    ],
+    related: [
+      { label: "Washington tenant rights", href: "/united-states/washington" },
+      { label: "Security deposit limits by state", href: "/united-states/security-deposit-limits-by-state" },
+    ],
+    keywords: ["washington security deposit limit", "seattle deposit cap", "security deposit washington"],
+  },
+  {
+    slug: "can-my-landlord-enter-without-notice-in-washington",
+    question: "Can my landlord enter without notice in Washington?",
+    category: "Privacy",
+    shortAnswer:
+      "No. Under RCW 59.18.150, a Washington landlord must give at least 2 days' notice to enter for repairs or inspections, and at least 1 day's notice to show the unit to prospective tenants or buyers. Entry must be at reasonable times, with emergencies the only exception.",
+    blocks: [
+      { type: "p", text: "A landlord who enters repeatedly without proper notice can be liable, and the tenant may have remedies for the intrusion." },
+    ],
+    related: [
+      { label: "Landlord entry rules by state", href: "/united-states/landlord-entry-rules-by-state" },
+      { label: "Washington tenant rights", href: "/united-states/washington" },
+    ],
+    keywords: ["can my landlord enter without notice washington", "washington 2 day notice", "rcw 59.18.150"],
+  },
+  {
+    slug: "how-much-notice-to-evict-in-washington",
+    question: "How much notice does a landlord have to give to evict in Washington?",
+    category: "Eviction",
+    shortAnswer:
+      "For non-payment of rent, a 14-day pay-or-vacate notice. Washington also requires 'just cause' to end most tenancies (RCW 59.18.650), so a landlord can't simply decline to renew because the lease term lapsed. Only a court can order an eviction.",
+    blocks: [
+      { type: "p", text: "The 14-day non-payment notice (up from 3 days in 2019) and the statewide just-cause rule make Washington one of the more tenant-protective states." },
+    ],
+    related: [
+      { label: "Eviction notice periods by state", href: "/united-states/eviction-notice-periods-by-state" },
+      { label: "Washington tenant rights", href: "/united-states/washington" },
+    ],
+    keywords: ["how much notice to evict washington", "14 day pay or vacate washington", "just cause eviction washington"],
+  },
+
+  // ─── Georgia ─────────────────────────────────────────────────────────────
+  {
+    slug: "what-is-the-security-deposit-limit-in-georgia",
+    question: "What is the security deposit limit in Georgia?",
+    category: "Deposits",
+    shortAnswer:
+      "As of July 1, 2024, the Safe at Home Act (HB 404) caps Georgia security deposits at two months' rent — the state's first deposit limit. The deposit must be returned within 30 days of move-out with an itemized written statement of any deductions.",
+    blocks: [
+      { type: "p", text: "Before HB 404, Georgia had no statutory cap. The same law also added a duty of habitability, requiring landlords to keep units fit to live in." },
+    ],
+    related: [
+      { label: "Georgia tenant rights", href: "/united-states/georgia" },
+      { label: "Security deposit limits by state", href: "/united-states/security-deposit-limits-by-state" },
+    ],
+    keywords: ["georgia security deposit limit", "safe at home act deposit", "security deposit georgia"],
+  },
+  {
+    slug: "how-much-can-my-landlord-raise-rent-in-georgia",
+    question: "How much can my landlord raise rent in Georgia?",
+    category: "Rent",
+    shortAnswer:
+      "There's no limit. Georgia has no rent control, and state law preempts cities and counties from enacting it. The rent is fixed during a lease term; at renewal or on a month-to-month tenancy a landlord can raise it with proper notice.",
+    blocks: [
+      { type: "p", text: "For a month-to-month tenancy, a landlord generally must give 60 days' notice to change terms or end the tenancy, while a tenant gives 30 days." },
+    ],
+    related: [
+      { label: "Georgia tenant rights", href: "/united-states/georgia" },
+      { label: "Rent control by state", href: "/united-states/rent-control-by-state" },
+    ],
+    keywords: ["how much can landlord raise rent georgia", "georgia rent control", "rent increase georgia"],
+  },
+  {
+    slug: "can-my-landlord-enter-without-notice-in-georgia",
+    question: "Can my landlord enter without notice in Georgia?",
+    category: "Privacy",
+    shortAnswer:
+      "Georgia has no statute setting a landlord entry-notice period, so the lease controls. If your lease is silent, ask for reasonable advance notice in writing and keep a record of entries. A landlord still can't use entry to harass a tenant.",
+    blocks: [
+      { type: "p", text: "Because the law leaves routine entry to the lease, read that clause before signing and negotiate a notice requirement if it's missing." },
+    ],
+    related: [
+      { label: "Landlord entry rules by state", href: "/united-states/landlord-entry-rules-by-state" },
+      { label: "Georgia tenant rights", href: "/united-states/georgia" },
+    ],
+    keywords: ["can my landlord enter without notice georgia", "georgia landlord entry", "landlord notice to enter georgia"],
+  },
+
+  // ─── Pennsylvania ────────────────────────────────────────────────────────
+  {
+    slug: "what-is-the-security-deposit-limit-in-pennsylvania",
+    question: "What is the security deposit limit in Pennsylvania?",
+    category: "Deposits",
+    shortAnswer:
+      "Pennsylvania caps deposits at two months' rent during the first year of a lease, dropping to one month's rent from the second year onward. The landlord must return the deposit within 30 days of move-out with an itemized list of deductions.",
+    blocks: [
+      { type: "p", text: "If the landlord misses the 30-day deadline (or fails to itemize), the tenant can sue for up to double the amount wrongfully withheld. Deposits held more than five years generally earn interest for the tenant." },
+    ],
+    related: [
+      { label: "Pennsylvania tenant rights", href: "/united-states/pennsylvania" },
+      { label: "Security deposit limits by state", href: "/united-states/security-deposit-limits-by-state" },
+    ],
+    keywords: ["pennsylvania security deposit limit", "pa deposit two months", "security deposit pennsylvania"],
+  },
+  {
+    slug: "how-much-can-my-landlord-raise-rent-in-pennsylvania",
+    question: "How much can my landlord raise rent in Pennsylvania?",
+    category: "Rent",
+    shortAnswer:
+      "There's no limit. Pennsylvania has no statewide rent control, and no Pennsylvania city has it in practice. The rent is fixed during a lease term; at renewal or on a month-to-month tenancy a landlord can raise it with proper written notice.",
+    blocks: [
+      { type: "p", text: "Your protection is the lease and the notice rule — a landlord can't raise rent mid-term, and must give proper notice to change it." },
+    ],
+    related: [
+      { label: "Pennsylvania tenant rights", href: "/united-states/pennsylvania" },
+      { label: "Rent control by state", href: "/united-states/rent-control-by-state" },
+    ],
+    keywords: ["how much can landlord raise rent pennsylvania", "pennsylvania rent control", "rent increase pennsylvania"],
+  },
+  {
+    slug: "how-much-notice-to-evict-in-pennsylvania",
+    question: "How much notice does a landlord have to give to evict in Pennsylvania?",
+    category: "Eviction",
+    shortAnswer:
+      "For non-payment of rent, a landlord generally must give a 10-day written notice to quit before filing in court. But many standard Pennsylvania leases waive this notice, and courts enforce the waiver — so check your lease. Only a court can order an eviction.",
+    blocks: [
+      { type: "p", text: "For ending a term, the notice is typically 15 days for a lease of a year or less and 30 days for a longer one, unless the lease says otherwise." },
+    ],
+    related: [
+      { label: "Eviction notice periods by state", href: "/united-states/eviction-notice-periods-by-state" },
+      { label: "Pennsylvania tenant rights", href: "/united-states/pennsylvania" },
+    ],
+    keywords: ["how much notice to evict pennsylvania", "10 day notice to quit pennsylvania", "pennsylvania eviction notice"],
+  },
+  {
+    slug: "can-my-landlord-enter-without-notice-in-pennsylvania",
+    question: "Can my landlord enter without notice in Pennsylvania?",
+    category: "Privacy",
+    shortAnswer:
+      "Pennsylvania has no statute fixing a landlord's entry-notice period, so the lease governs and courts expect reasonable advance notice. If your lease is silent, ask for notice in writing, and remember a landlord can't enter to harass you or without a legitimate reason.",
+    blocks: [
+      { type: "p", text: "Some cities, like Philadelphia, add local protections — check your local ordinance alongside your lease." },
+    ],
+    related: [
+      { label: "Landlord entry rules by state", href: "/united-states/landlord-entry-rules-by-state" },
+      { label: "Pennsylvania tenant rights", href: "/united-states/pennsylvania" },
+    ],
+    keywords: ["can my landlord enter without notice pennsylvania", "pennsylvania landlord entry", "landlord notice to enter pa"],
+  },
 ];

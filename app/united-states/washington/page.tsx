@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ReviewedByline from "@/components/ReviewedByline";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
@@ -99,6 +100,7 @@ export default function WashingtonPage() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-10">
+                <ReviewedByline updated="October 2026" jurisdiction="Washington RCW 59.18 & HB 1217" />
                 <div>
                   <h2 className="text-2xl font-bold text-slate-900 mb-4">Washington Tenancy Law Overview</h2>
                   <p className="text-slate-700 leading-relaxed mb-4">

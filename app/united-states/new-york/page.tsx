@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Globe, ChevronRight, Upload, CheckCircle } from "lucide-react";
 import FAQAccordion from "@/components/FAQAccordion";
+import ReviewedByline from "@/components/ReviewedByline";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
@@ -108,6 +109,7 @@ export default function NewYorkPage() {
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
             <div className="lg:col-span-2 space-y-12">
+              <ReviewedByline updated="October 2026" jurisdiction="New York Real Property Law & HSTPA" />
 
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">New York Tenancy Law Overview</h2>
@@ -173,13 +175,11 @@ export default function NewYorkPage() {
                 <p className="mt-4 text-sm text-slate-500">More NY cities coming soon — Buffalo, Albany, Rochester, and others.</p>
               </div>
 
-            </div>
-
               <div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
                 <FAQAccordion items={faqItems} />
               </div>
-
+            </div>
 
             <aside className="flex flex-col gap-5">
               <div className="bg-blue-600 rounded-2xl p-6 text-white">
@@ -214,6 +214,9 @@ export default function NewYorkPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-800">
+                <strong>General information, not legal advice.</strong> Confirm with New York's Real Property Law, the HSTPA, or a New York attorney.
               </div>
             </aside>
           </div>

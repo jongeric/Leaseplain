@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Security Deposit Limits by State (US) | LeasePlain",
   description:
     "How much a landlord can charge for a security deposit, and how fast they must return it, in California, New York, Texas, Florida, and Illinois — with the governing statute for each.",

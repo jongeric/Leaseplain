@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Georgia Tenant Rights 2026: Deposits, Eviction & the Safe at Home Act | LeasePlain",
   description:
     "Georgia tenant rights: the 2024 Safe at Home Act's two-month deposit cap and habitability duty, the dispossessory eviction process, and why Georgia has no rent control.",

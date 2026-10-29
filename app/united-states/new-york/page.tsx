@@ -10,7 +10,6 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "New York Tenant Rights 2026: Rent Stabilization, Deposits & Eviction | LeasePlain",
   description:
     "Learn about New York tenant rights under the Housing Stability & Tenant Protection Act, rent stabilization, and DHCR oversight. LeasePlain's AI lease analysis for New York is coming soon.",

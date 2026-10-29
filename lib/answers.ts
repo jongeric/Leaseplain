@@ -1,6 +1,7 @@
 // Data-driven "Answers" hub — concise, directly-worded responses to the exact
 // questions renters type/ask, optimized for featured snippets and AI answers
 // (QAPage schema). Each answer links out to the deeper guide for detail.
+import { US_ANSWERS } from "./usAnswers";
 
 export interface AnswerBlock {
   type: "p" | "list";
@@ -874,6 +875,7 @@ export const ANSWERS: AnswerDef[] = [
     ],
     keywords: ["evict to move in family member", "landlord own use eviction", "n12 family member"],
   },
+  ...US_ANSWERS,
 ];
 
 export function getAnswer(slug: string): AnswerDef | undefined {

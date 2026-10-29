@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Texas Tenant Rights & Lease Help | Coming Soon | LeasePlain",
   description:
     "Texas tenant rights under the Property Code: security deposits, the repair-and-remedy process, notice to vacate, and why Texas has no rent control. A plain-English guide.",

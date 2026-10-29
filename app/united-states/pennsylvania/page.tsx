@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Pennsylvania Tenant Rights 2026: Deposits, Eviction & Notice | LeasePlain",
   description:
     "Pennsylvania tenant rights: the tiered security-deposit cap (two months year one, one month after), the 30-day deposit-return rule with double damages, eviction notice, and rent rules.",

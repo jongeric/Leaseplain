@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Illinois Tenant Rights & Lease Help | Coming Soon | LeasePlain",
   description:
     "Illinois tenant rights: security-deposit return and interest rules, eviction notice periods, rent-control preemption, and Chicago's stronger RLTO protections. A plain-English guide.",

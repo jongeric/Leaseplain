@@ -1,12 +1,7 @@
-// HELD — US Q&A drafts for the CA/NY/TX/FL/IL beachhead.
-//
-// This file is intentionally NOT imported anywhere, so it renders no pages and
-// cannot be indexed while US content is held behind noindex (see
-// docs/us-launch-checklist.md). At launch, merge these into lib/answers.ts (or a
-// dedicated US answers route) and add each slug to the sitemap.
-//
-// Figures verified against state statutes (Oct 2026); pending licensed US legal
-// review before anything here goes live.
+// US Q&A answers for the 8-state beachhead (CA/NY/TX/FL/IL/WA/GA/PA).
+// Merged into ANSWERS via lib/answers.ts, so these render at /answers/<slug>.
+// Figures verified against state statutes (Oct 2026). General information,
+// not legal advice.
 
 import type { AnswerDef } from "./answers";
 
@@ -283,7 +278,7 @@ export const US_ANSWERS: AnswerDef[] = [
     question: "How much can my landlord raise rent in Washington?",
     category: "Rent",
     shortAnswer:
-      "Since HB 1217 took effect in May 2025, most increases are capped at the lesser of 7% plus CPI or 10% in any 12-month period — about 9.7% for 2026 — and no increase is allowed in the first 12 months of a tenancy. Manufactured-home lots are capped at 5%.",
+      "Since HB 1217 took effect in May 2025, most increases are capped at the lesser of 7% plus CPI or 10% in any 12-month period — 9.683% for 2026 — and no increase is allowed in the first 12 months of a tenancy. Manufactured-home lots are capped at 5%.",
     blocks: [
       { type: "p", text: "The cap is new: Washington had no statewide rent limit before HB 1217. A landlord must also give at least 90 days' written notice of an increase (180 days in Seattle)." },
     ],

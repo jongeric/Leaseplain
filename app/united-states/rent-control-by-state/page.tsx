@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Rent Control by State (US) | LeasePlain",
   description:
     "Which US states allow rent control, which ban it, and the annual cap where one exists — California, New York, Texas, Florida, and Illinois — with the governing law for each.",
@@ -32,7 +31,7 @@ const ROWS: Array<{ state: string; href?: string; control: string; cap: string; 
   { state: "Texas", href: "/united-states/texas", control: "No — preempted", cap: "No limit", law: "Tex. Loc. Gov't Code § 214.902", note: "State law bars cities from enacting rent control except in a declared housing emergency with state approval. Increases are governed by the lease and notice terms." },
   { state: "Florida", href: "/united-states/florida", control: "No — preempted", cap: "No limit", law: "Fla. Stat. § 125.0103 (2023 preemption)", note: "Florida has no rent control, and a 2023 state law blocks local governments from adopting it. Only the lease and notice rules limit increases." },
   { state: "Illinois", href: "/united-states/illinois", control: "No — preempted", cap: "No limit", law: "Rent Control Preemption Act, 50 ILCS 825", note: "No statewide rent control, and cities are barred from enacting it. (Repeal has been proposed repeatedly but has not passed.)" },
-  { state: "Washington", href: "/united-states/washington", control: "Yes (statewide, 2025)", cap: "7% + CPI, max 10% (~9.7% for 2026)", law: "HB 1217 (2025)", note: "Washington's new statewide cap limits most increases to the lesser of 7% + CPI or 10%, bars any increase in the first 12 months, and caps manufactured-home lots at 5%. 90-day notice required." },
+  { state: "Washington", href: "/united-states/washington", control: "Yes (statewide, 2025)", cap: "7% + CPI, max 10% (9.683% for 2026)", law: "HB 1217 (2025)", note: "Washington's new statewide cap limits most increases to the lesser of 7% + CPI or 10%, bars any increase in the first 12 months, and caps manufactured-home lots at 5%. 90-day notice required." },
   { state: "Georgia", href: "/united-states/georgia", control: "No — preempted", cap: "No limit", law: "O.C.G.A. § 44-7-19", note: "No rent control, and state law bars cities and counties from enacting it." },
   { state: "Pennsylvania", href: "/united-states/pennsylvania", control: "No", cap: "No limit", law: "No statewide statute", note: "No statewide rent control, and no Pennsylvania city has it in practice. The lease and notice rules govern increases." },
 ];

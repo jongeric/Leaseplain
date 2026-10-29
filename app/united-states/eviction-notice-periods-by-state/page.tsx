@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Eviction Notice Periods by State (US) | LeasePlain",
   description:
     "How much notice a landlord must give before eviction — for non-payment and for ending a month-to-month tenancy — in California, New York, Texas, Florida, and Illinois, plus whether 'just cause' is required.",

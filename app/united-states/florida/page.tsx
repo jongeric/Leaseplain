@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Florida Tenant Rights 2026: Deposits, Eviction & Notice | LeasePlain",
   description:
     "Florida tenant rights under Chapter 83: security-deposit return deadlines, the 3-day eviction notice, 12-hour landlord entry rule, and why Florida has no rent control. A plain-English guide.",

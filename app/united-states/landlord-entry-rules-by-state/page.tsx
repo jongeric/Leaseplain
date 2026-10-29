@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Landlord Entry Rules by State (US) | LeasePlain",
   description:
     "How much notice a landlord must give before entering your rental — California, New York, Texas, Florida, and Illinois. Some states set a strict hours rule; others rely on your lease.",

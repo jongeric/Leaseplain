@@ -10,7 +10,6 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "California Tenant Rights 2026: Rent Caps, Deposits & Eviction | LeasePlain",
   description:
     "Learn about California tenant rights under AB 1482, statewide rent cap, just cause eviction, and the Anti-Price Gouging Law. LeasePlain's AI lease analysis for California is coming soon.",

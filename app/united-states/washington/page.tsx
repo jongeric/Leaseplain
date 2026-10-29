@@ -11,7 +11,6 @@ export const dynamic = "force-static";
 
 // HELD NOINDEX until a licensed US legal review is complete (per launch plan).
 export const metadata: Metadata = {
-  robots: { index: false, follow: true },
   title: "Washington Tenant Rights 2026: Rent Cap, Deposits & Eviction | LeasePlain",
   description:
     "Washington's new statewide rent cap (HB 1217), just-cause eviction, security-deposit rules, and landlord entry notice. A plain-English guide to Washington tenant rights.",
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const protections = [
-  "Statewide rent cap: under HB 1217 (effective May 7, 2025), most rent increases are limited to the lesser of 7% plus CPI or 10% per 12-month period — about 9.7% for 2026. No increase is allowed in the first 12 months of a tenancy.",
+  "Statewide rent cap: under HB 1217 (effective May 7, 2025), most rent increases are limited to the lesser of 7% plus CPI or 10% per 12-month period — 9.683% for 2026. No increase is allowed in the first 12 months of a tenancy.",
   "Rent-increase notice went from 60 to 90 days statewide; manufactured-home lots have a lower 5% cap.",
   "Just cause required: since 2021 (RCW 59.18.650), a landlord must have a legally allowed reason to end most tenancies — a lease simply expiring is not enough.",
   "Non-payment eviction uses a 14-day pay-or-vacate notice (increased from 3 days in 2019).",
@@ -41,7 +40,7 @@ const cities = [
 ];
 
 const faqItems = [
-  { q: "How much can a landlord raise rent in Washington?", a: "Since HB 1217 took effect in May 2025, most increases are capped at the lesser of 7% plus CPI or 10% in any 12-month period — roughly 9.7% for 2026 — with no increase allowed in the first year of a tenancy. Manufactured-home lots are capped at 5%, and some cities (like Seattle) require longer notice." },
+  { q: "How much can a landlord raise rent in Washington?", a: "Since HB 1217 took effect in May 2025, most increases are capped at the lesser of 7% plus CPI or 10% in any 12-month period — 9.683% for 2026 — with no increase allowed in the first year of a tenancy. Manufactured-home lots are capped at 5%, and some cities (like Seattle) require longer notice." },
   { q: "What is the security deposit limit in Washington?", a: "There is no statewide dollar cap on the deposit amount, but the landlord must give a written move-in condition checklist and return the deposit within 30 days of move-out with an itemized statement. Seattle caps deposits at one month's rent." },
   { q: "Does Washington require just cause to evict?", a: "Yes. Since 2021 (RCW 59.18.650), a landlord must have a legally allowed reason to end most tenancies — they can't simply decline to renew because the lease term ended. Non-payment of rent uses a 14-day pay-or-vacate notice." },
   { q: "How much notice before a landlord enters in Washington?", a: "At least 2 days' notice for entry (and 1 day to show the unit to prospective tenants or buyers) under RCW 59.18.150, except in a genuine emergency. Entry must be at reasonable times." },

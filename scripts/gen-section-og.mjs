@@ -1,13 +1,21 @@
 // Renders static OpenGraph card PNGs for the site root and section landing
-// pages, reproducing the existing centered opengraph-image.tsx design.
-// Dynamic next/og routes 500 on the Cloudflare edge runtime, so these are
-// prerendered to committed opengraph-image.png files.
+// pages. Civic Modern palette (soft slate ground, cream text, honey accents),
+// matching scripts/og-card.mjs. Dynamic next/og routes 500 on the Cloudflare
+// edge runtime, so these are prerendered to committed opengraph-image.png files.
 import pkg from "next/dist/server/og/image-response.js";
 const { ImageResponse } = pkg;
 import { writeFileSync } from "node:fs";
 import { createElement as h } from "react";
 
 const SIZE = { width: 1200, height: 630 };
+
+// Civic Modern brand tokens (match app/globals.css + scripts/og-card.mjs)
+const SLATE = "#3e4f63";
+const SLATE_2 = "#2f3d4e";
+const CREAM = "#f7f1e7";
+const HONEY = "#cf9a5b";
+const BODY = "'Inter', sans-serif";
+const DISPLAY = "Georgia, 'Times New Roman', serif";
 
 // dir → card definition. `lines` is the heading split across visual lines.
 const cards = {
@@ -58,7 +66,7 @@ const cards = {
   },
   tools: {
     lines: ["Free Tools for Canadian Renters"],
-    subtitle: "9 free calculators — rent increase, deposits, notice periods, eviction checkers & more",
+    subtitle: "Free calculators — rent increase, deposits, notice periods, eviction checkers & more",
     chips: ["No sign-up", "Covers all provinces", "Instant results"],
   },
 };
@@ -66,12 +74,12 @@ const cards = {
 function logoSvg() {
   return h(
     "svg",
-    { width: "40", height: "40", viewBox: "0 0 24 24", fill: "none" },
-    h("path", { d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
-    h("polyline", { points: "14 2 14 8 20 8", stroke: "white", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
-    h("line", { x1: "16", y1: "13", x2: "8", y2: "13", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-    h("line", { x1: "16", y1: "17", x2: "8", y2: "17", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
-    h("polyline", { points: "10 9 9 9 8 9", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
+    { width: "36", height: "36", viewBox: "0 0 24 24", fill: "none" },
+    h("path", { d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
+    h("polyline", { points: "14 2 14 8 20 8", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
+    h("line", { x1: "16", y1: "13", x2: "8", y2: "13", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
+    h("line", { x1: "16", y1: "17", x2: "8", y2: "17", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
+    h("polyline", { points: "10 9 9 9 8 9", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
   );
 }
 
@@ -80,64 +88,68 @@ function card(def) {
   const subtitleSize = def.subtitleSize ?? 25;
   const children = [];
 
-  // Logo
+  // Logo: honey icon box + "Lease" cream / "Plain" honey wordmark
   children.push(
     h(
       "div",
-      { key: "logo", style: { display: "flex", alignItems: "center", gap: "20px", marginBottom: "32px" } },
+      { key: "logo", style: { display: "flex", alignItems: "center", gap: "18px", marginBottom: "32px" } },
       h(
         "div",
-        { style: { width: "72px", height: "72px", background: "rgba(255,255,255,0.15)", borderRadius: "18px", display: "flex", alignItems: "center", justifyContent: "center" } },
+        { style: { width: "64px", height: "64px", background: HONEY, borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center" } },
         logoSvg(),
       ),
-      h("span", { style: { fontSize: "36px", fontWeight: 700, color: "white", letterSpacing: "-0.5px" } }, "LeasePlain"),
+      h(
+        "div",
+        { style: { display: "flex", fontSize: "36px", fontWeight: 700, letterSpacing: "-0.5px" } },
+        h("span", { style: { color: CREAM } }, "Lease"),
+        h("span", { style: { color: HONEY } }, "Plain"),
+      ),
     ),
   );
 
-  // Optional badge
   if (def.badge) {
     children.push(
       h(
         "div",
-        { key: "badge", style: { background: "rgba(255,255,255,0.12)", borderRadius: "12px", padding: "8px 20px", color: "rgba(255,255,255,0.85)", fontSize: "18px", fontWeight: 600, marginBottom: "24px", letterSpacing: "0.5px" } },
+        { key: "badge", style: { background: "rgba(207,154,91,0.18)", border: `1px solid rgba(207,154,91,0.5)`, borderRadius: "999px", padding: "8px 20px", color: HONEY, fontSize: "18px", fontWeight: 600, marginBottom: "24px", letterSpacing: "0.5px", fontFamily: BODY } },
         def.badge,
       ),
     );
   }
 
-  // Heading (lines stacked)
+  // Heading (serif, stacked lines)
   children.push(
     h(
       "div",
       { key: "h1", style: { display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "20px" } },
       ...def.lines.map((line, i) =>
-        h("div", { key: i, style: { display: "flex", fontSize: `${headingSize}px`, fontWeight: 800, color: "white", textAlign: "center", lineHeight: 1.1, letterSpacing: "-1px" } }, line),
+        h("div", { key: i, style: { display: "flex", fontSize: `${headingSize}px`, fontWeight: 700, color: CREAM, textAlign: "center", lineHeight: 1.1, letterSpacing: "-0.5px", fontFamily: DISPLAY } }, line),
       ),
     ),
   );
 
-  // Subtitle
+  // Subtitle (sans)
   children.push(
     h(
       "div",
-      { key: "sub", style: { display: "flex", fontSize: `${subtitleSize}px`, color: "rgba(255,255,255,0.8)", textAlign: "center", marginBottom: "48px", maxWidth: "760px", lineHeight: 1.3 } },
+      { key: "sub", style: { display: "flex", fontSize: `${subtitleSize}px`, color: "rgba(247,241,231,0.82)", textAlign: "center", marginBottom: "44px", maxWidth: "780px", lineHeight: 1.3, fontFamily: BODY } },
       def.subtitle,
     ),
   );
 
-  // Chips
+  // Chips (honey-tinted)
   children.push(
     h(
       "div",
-      { key: "chips", style: { display: "flex", gap: "24px" } },
+      { key: "chips", style: { display: "flex", gap: "20px" } },
       ...def.chips.map((c) =>
         h(
           "div",
-          { key: c, style: { display: "flex", alignItems: "center", gap: "10px", background: "rgba(255,255,255,0.15)", borderRadius: "12px", padding: "12px 20px", color: "white", fontSize: "18px", fontWeight: 600 } },
+          { key: c, style: { display: "flex", alignItems: "center", gap: "10px", background: "rgba(207,154,91,0.16)", border: `1px solid rgba(207,154,91,0.45)`, borderRadius: "12px", padding: "12px 20px", color: CREAM, fontSize: "18px", fontWeight: 600, fontFamily: BODY } },
           h(
             "svg",
             { width: "18", height: "18", viewBox: "0 0 24 24", fill: "none" },
-            h("polyline", { points: "20 6 9 17 4 12", stroke: "white", strokeWidth: "3", strokeLinecap: "round", strokeLinejoin: "round" }),
+            h("polyline", { points: "20 6 9 17 4 12", stroke: HONEY, strokeWidth: "3", strokeLinecap: "round", strokeLinejoin: "round" }),
           ),
           h("div", { style: { display: "flex" } }, c),
         ),
@@ -145,18 +157,17 @@ function card(def) {
     ),
   );
 
-  // Domain
   children.push(
-    h("div", { key: "domain", style: { position: "absolute", bottom: "32px", right: "48px", color: "rgba(255,255,255,0.5)", fontSize: "18px" } }, "leaseplain.com"),
+    h("div", { key: "domain", style: { position: "absolute", bottom: "32px", right: "48px", color: "rgba(247,241,231,0.55)", fontSize: "18px", fontFamily: BODY } }, "leaseplain.com"),
   );
 
   return h(
     "div",
     {
       style: {
-        background: "linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)",
+        background: `linear-gradient(135deg, ${SLATE} 0%, ${SLATE_2} 100%)`,
         width: "100%", height: "100%", display: "flex", flexDirection: "column",
-        alignItems: "center", justifyContent: "center", fontFamily: "sans-serif", padding: "60px",
+        alignItems: "center", justifyContent: "center", fontFamily: DISPLAY, padding: "60px",
       },
     },
     ...children,

@@ -635,6 +635,87 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── NOW COVERING THE US ──────────────────────────────────────────── */}
+        <section className="py-14 px-4 bg-white border-b border-line" id="united-states">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 bg-brand-soft text-brand rounded-full px-3.5 py-1.5 text-xs font-bold mb-4">
+                <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
+                New — now covering the United States
+              </div>
+              <h2 className="text-2xl font-bold text-ink mb-2">U.S. Tenant Rights &amp; Rental Law</h2>
+              <p className="text-muted max-w-xl mx-auto text-sm">
+                Security deposit limits, rent control, eviction notice periods, and landlord entry rules —
+                compared state by state, in plain English.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3">Compare by state</h3>
+                <div className="grid gap-2">
+                  {[
+                    { href: "/united-states/security-deposit-limits-by-state", label: "Security deposit limits by state" },
+                    { href: "/united-states/rent-control-by-state", label: "Rent control by state" },
+                    { href: "/united-states/eviction-notice-periods-by-state", label: "Eviction notice periods by state" },
+                    { href: "/united-states/landlord-entry-rules-by-state", label: "Landlord entry rules by state" },
+                    { href: "/united-states", label: "See all U.S. tenant rights guides →" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="flex items-center gap-2 px-4 py-3 rounded-lg border border-line bg-white text-muted text-sm hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3">Tenant rights by state</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { href: "/united-states/california", label: "California" },
+                    { href: "/united-states/new-york", label: "New York" },
+                    { href: "/united-states/texas", label: "Texas" },
+                    { href: "/united-states/florida", label: "Florida" },
+                    { href: "/united-states/illinois", label: "Illinois" },
+                    { href: "/united-states/washington", label: "Washington" },
+                    { href: "/united-states/georgia", label: "Georgia" },
+                    { href: "/united-states/pennsylvania", label: "Pennsylvania" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3.5 py-1.5 rounded-full border border-line bg-white text-muted text-xs font-medium hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+                <h3 className="text-xs font-bold uppercase tracking-wide text-subtle mb-3 mt-6">By city</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { href: "/united-states/california/los-angeles", label: "Los Angeles" },
+                    { href: "/united-states/new-york/new-york-city", label: "New York City" },
+                    { href: "/united-states/florida/miami", label: "Miami" },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3.5 py-1.5 rounded-full border border-line bg-white text-muted text-xs font-medium hover:border-indigo-200 hover:text-brand hover:bg-brand-soft transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── LATEST ARTICLES ──────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-surface-2" id="blog">
           <div className="max-w-6xl mx-auto">

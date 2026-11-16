@@ -51,10 +51,26 @@ const NAV_LOCATIONS = {
   us: {
     heading: "United States",
     hub: { label: "All United States", href: "/united-states" },
-    links: [
-      { label: "New York", href: "/united-states/new-york", city: { label: "New York City", href: "/united-states/new-york/new-york-city" } },
-      { label: "California", href: "/united-states/california", city: { label: "Los Angeles", href: "/united-states/california/los-angeles" } },
-      { label: "Florida", href: "/united-states/florida", city: { label: "Miami", href: "/united-states/florida/miami" } },
+    states: [
+      { label: "California", href: "/united-states/california" },
+      { label: "New York", href: "/united-states/new-york" },
+      { label: "Texas", href: "/united-states/texas" },
+      { label: "Florida", href: "/united-states/florida" },
+      { label: "Illinois", href: "/united-states/illinois" },
+      { label: "Washington", href: "/united-states/washington" },
+      { label: "Georgia", href: "/united-states/georgia" },
+      { label: "Pennsylvania", href: "/united-states/pennsylvania" },
+    ],
+    cities: [
+      { label: "Los Angeles", href: "/united-states/california/los-angeles" },
+      { label: "New York City", href: "/united-states/new-york/new-york-city" },
+      { label: "Miami", href: "/united-states/florida/miami" },
+    ],
+    dataHubs: [
+      { label: "Security deposit limits", href: "/united-states/security-deposit-limits-by-state" },
+      { label: "Rent control", href: "/united-states/rent-control-by-state" },
+      { label: "Eviction notice periods", href: "/united-states/eviction-notice-periods-by-state" },
+      { label: "Landlord entry rules", href: "/united-states/landlord-entry-rules-by-state" },
     ],
   },
 };
@@ -251,7 +267,7 @@ function MegaMenu({ label, isActive, children }: MegaMenuProps) {
 
 function LocationsPanel({ close }: { close: () => void }) {
   return (
-    <div className="flex gap-0 px-1" style={{ width: 880 }}>
+    <div className="flex gap-0 px-1" style={{ width: 940 }}>
       {/* Canada provinces */}
       <div className="px-4" style={{ minWidth: 180 }}>
         <Link
@@ -318,7 +334,7 @@ function LocationsPanel({ close }: { close: () => void }) {
       <div className="w-px bg-slate-100 mx-1" />
 
       {/* United States */}
-      <div className="px-4" style={{ minWidth: 180 }}>
+      <div className="px-4" style={{ minWidth: 230 }}>
         <Link
           href={NAV_LOCATIONS.us.hub.href}
           role="menuitem"
@@ -336,31 +352,47 @@ function LocationsPanel({ close }: { close: () => void }) {
           {NAV_LOCATIONS.us.hub.label}
           <ChevronRight className="w-3 h-3" aria-hidden="true" />
         </Link>
-        {NAV_LOCATIONS.us.links.map((s) => (
-          <div key={s.href} className="mb-1">
-            <div className="flex items-center justify-between px-1 py-1">
-              <Link
-                href={s.href}
-                role="menuitem"
-                onClick={close}
-                className="text-sm text-slate-700 hover:text-blue-600 transition-colors font-medium"
-              >
-                {s.label}
-              </Link>
-              <span className="text-[10px] font-semibold bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-full ml-2 shrink-0">
-                Soon
-              </span>
-            </div>
+        <div className="grid grid-cols-2 gap-x-2 gap-y-0">
+          {NAV_LOCATIONS.us.states.map((s) => (
             <Link
-              href={s.city.href}
+              key={s.href}
+              href={s.href}
               role="menuitem"
               onClick={close}
-              className="block pl-4 py-0.5 text-sm text-slate-500 hover:text-blue-600 transition-colors"
+              className="block px-1 py-1 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-colors"
             >
-              → {s.city.label}
+              {s.label}
             </Link>
-          </div>
+          ))}
+        </div>
+
+        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Compare by state</p>
+        {NAV_LOCATIONS.us.dataHubs.map((l) => (
+          <Link
+            key={l.href}
+            href={l.href}
+            role="menuitem"
+            onClick={close}
+            className="block px-1 py-1 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-lg transition-colors"
+          >
+            {l.label}
+          </Link>
         ))}
+
+        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-3 mb-1">Cities</p>
+        <div className="flex flex-wrap gap-x-3 gap-y-0.5 pl-1">
+          {NAV_LOCATIONS.us.cities.map((c) => (
+            <Link
+              key={c.href}
+              href={c.href}
+              role="menuitem"
+              onClick={close}
+              className="text-sm text-slate-500 hover:text-blue-600 transition-colors"
+            >
+              {c.label}
+            </Link>
+          ))}
+        </div>
       </div>
 
       <div className="w-px bg-slate-100 mx-1" />
@@ -618,13 +650,9 @@ export default function Navbar() {
           <p className="ml-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2 mb-1">Canadian Cities</p>
           <MobileLinks links={NAV_LOCATIONS.cities} />
           <p className="ml-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2 mb-1">United States</p>
-          <MobileLinks links={[
-            NAV_LOCATIONS.us.hub,
-            ...NAV_LOCATIONS.us.links.flatMap((s) => [
-              { label: s.label, href: s.href },
-              { label: `  → ${s.city.label}`, href: s.city.href },
-            ]),
-          ]} />
+          <MobileLinks links={[NAV_LOCATIONS.us.hub, ...NAV_LOCATIONS.us.states, ...NAV_LOCATIONS.us.cities]} />
+          <p className="ml-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2 mb-1">U.S. — Compare by State</p>
+          <MobileLinks links={NAV_LOCATIONS.us.dataHubs} />
           <p className="ml-4 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2 mb-1">Lease Review</p>
           <MobileLinks links={[NAV_LEASE_REVIEW.hub, ...NAV_LEASE_REVIEW.links]} />
         </>

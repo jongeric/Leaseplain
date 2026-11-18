@@ -72,14 +72,12 @@ const cards = {
 };
 
 function logoSvg() {
+  // Plainmark: a check over a clean baseline.
   return h(
     "svg",
     { width: "36", height: "36", viewBox: "0 0 24 24", fill: "none" },
-    h("path", { d: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
-    h("polyline", { points: "14 2 14 8 20 8", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }),
-    h("line", { x1: "16", y1: "13", x2: "8", y2: "13", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
-    h("line", { x1: "16", y1: "17", x2: "8", y2: "17", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
-    h("polyline", { points: "10 9 9 9 8 9", stroke: SLATE, strokeWidth: "2", strokeLinecap: "round" }),
+    h("polyline", { points: "6 12 10.5 16.5 18 7.5", stroke: SLATE, strokeWidth: "2.2", strokeLinecap: "round", strokeLinejoin: "round" }),
+    h("line", { x1: "7", y1: "19.2", x2: "17", y2: "19.2", stroke: SLATE, strokeWidth: "2.2", strokeLinecap: "round" }),
   );
 }
 

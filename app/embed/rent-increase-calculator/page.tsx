@@ -71,7 +71,7 @@ export default function RentIncreaseEmbed() {
         </div>
 
         <button onClick={calc}
-          style={{ width: "100%", padding: "11px", borderRadius: 10, border: "none", background: "#4f46e5", color: "#fff", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+          style={{ width: "100%", padding: "11px", borderRadius: 10, border: "none", background: "#cf9a5b", color: "#2f3d4e", fontWeight: 700, fontSize: 14, cursor: "pointer" }}>
           Check increase
         </button>
 
@@ -96,7 +96,7 @@ export default function RentIncreaseEmbed() {
       <a href="https://leaseplain.com/tools/rent-increase-calculator?utm_source=embed"
         target="_blank" rel="noopener"
         style={{ display: "block", textAlign: "center", marginTop: 10, fontSize: 12, color: "#64748b", textDecoration: "none" }}>
-        Powered by <span style={{ fontWeight: 700, color: "#4f46e5" }}>LeasePlain</span> — free lease &amp; tenant-rights tools
+        Powered by <span style={{ fontWeight: 700, color: "#b07d3a" }}>LeasePlain</span> — free lease &amp; tenant-rights tools
       </a>
     </div>
   );

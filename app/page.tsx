@@ -3,6 +3,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EmailCapture from "@/components/EmailCapture";
+import HeroClauseScanner from "@/components/HeroClauseScanner";
+import Reveal from "@/components/Reveal";
 import {
   FileText, ShieldCheck, Zap, AlertTriangle, DollarSign,
   Lightbulb, ChevronRight, Star, CheckCircle, Lock, MapPin,
@@ -221,40 +223,50 @@ export default function HomePage() {
 
         {/* ── HERO ─────────────────────────────────────────────────────────── */}
         <section className="relative overflow-hidden text-brand-fg" style={{ background: "linear-gradient(155deg, var(--brand), var(--brand-hover))" }}>
-          <div className="relative flex flex-col items-center justify-center text-center px-4 py-24 sm:py-32">
-            <div className="inline-flex items-center gap-2 bg-white/10 text-accent text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-white/15">
-              <Zap className="w-3.5 h-3.5" />
-              Lease risk analysis — results in under 30 seconds
+          {/* soft decorative glow */}
+          <div aria-hidden="true" className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, var(--accent), transparent 70%)" }} />
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+            {/* Left: copy */}
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-accent text-xs font-semibold px-3.5 py-1.5 rounded-full mb-6 border border-white/15">
+                <Zap className="w-3.5 h-3.5" />
+                Lease risk analysis — results in under 30 seconds
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-balance">
+                Understand Your Lease{" "}
+                <span className="text-accent">Before You Sign It</span>
+              </h1>
+
+              <p className="mt-6 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed text-pretty" style={{ color: "color-mix(in srgb, var(--brand-fg) 82%, transparent)" }}>
+                Upload your lease and get a plain-English breakdown of hidden fees, red-flag clauses, and the rights your province gives you — in minutes.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <Link
+                  href="/upload"
+                  className="inline-flex items-center justify-center gap-2 bg-accent text-accent-fg font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg text-base"
+                >
+                  Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/example-report"
+                  className="inline-flex items-center justify-center gap-2 font-semibold px-7 py-3.5 rounded-xl border border-white/25 text-brand-fg hover:bg-white/10 transition-colors text-base"
+                >
+                  See a Sample Report
+                </Link>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3 sm:gap-6 items-center justify-center lg:justify-start text-xs" style={{ color: "color-mix(in srgb, var(--brand-fg) 68%, transparent)" }}>
+                <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Private &amp; never stored</span>
+                <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters across Canada</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-3xl leading-[1.05] text-balance">
-              Understand Your Lease{" "}
-              <span className="text-accent">Before You Sign It</span>
-            </h1>
-
-            <p className="mt-6 text-lg max-w-xl leading-relaxed text-pretty" style={{ color: "color-mix(in srgb, var(--brand-fg) 82%, transparent)" }}>
-              Upload your lease and get a plain-English breakdown of hidden fees, red-flag clauses, and the rights your province gives you — in minutes.
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                href="/upload"
-                className="inline-flex items-center justify-center gap-2 bg-accent text-accent-fg font-semibold px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg text-base"
-              >
-                Check My Lease for Hidden Risks <ChevronRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/example-report"
-                className="inline-flex items-center justify-center gap-2 font-semibold px-7 py-3.5 rounded-xl border border-white/25 text-brand-fg hover:bg-white/10 transition-colors text-base"
-              >
-                See a Sample Report
-              </Link>
-            </div>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-6 items-center justify-center text-xs" style={{ color: "color-mix(in srgb, var(--brand-fg) 68%, transparent)" }}>
-              <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Private &amp; never stored</span>
-              <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters across Canada</span>
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
+            {/* Right: live scanner */}
+            <div className="w-full max-w-md mx-auto lg:mx-0 lg:justify-self-end">
+              <HeroClauseScanner />
             </div>
           </div>
         </section>
@@ -293,23 +305,119 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── RISK DETECTION ───────────────────────────────────────────────── */}
+        {/* ── WHAT WE CATCH (zig-zag) ──────────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="risk-detection">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-ink text-center mb-3">Built to Catch What You&apos;d Miss</h2>
-            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
-              LeasePlain doesn&apos;t just summarize your lease — it actively looks for the things that cost renters money and rights.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {riskCategories.map((r) => (
-                <div key={r.title} className="bg-surface-2 rounded-2xl p-6 border border-line">
-                  <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">
-                    <r.icon className="w-5 h-5 text-brand" />
+          <div className="max-w-5xl mx-auto">
+            <Reveal>
+              <div className="text-center mb-14">
+                <h2 className="text-3xl font-bold text-ink mb-3">Built to Catch What You&apos;d Miss</h2>
+                <p className="text-muted max-w-xl mx-auto">
+                  LeasePlain doesn&apos;t just summarize your lease — it actively looks for the things that cost renters money and rights.
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="flex flex-col gap-16">
+              {/* Row 1 — Red flags */}
+              <Reveal>
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+                  <div>
+                    <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-red-600 mb-3">
+                      <AlertTriangle className="w-4 h-4" aria-hidden="true" /> Red flags &amp; risks
+                    </div>
+                    <h3 className="text-2xl font-bold text-ink mb-3">Spot the clauses stacked against you</h3>
+                    <p className="text-muted leading-relaxed mb-5">
+                      Illegal entry terms, one-sided penalties, and clauses that quietly waive your rights — flagged with plain-English context on why each one matters.
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {analyzeFeatures[1].bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-muted">
+                          <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" aria-hidden="true" />{b}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="font-semibold text-ink mb-2 text-sm">{r.title}</h3>
-                  <p className="text-muted text-sm leading-relaxed">{r.desc}</p>
+                  <div className="rounded-2xl border border-line bg-surface-2 p-5 shadow-sm">
+                    <div className="flex flex-col gap-2.5">
+                      <div className="flex items-center gap-2.5 bg-white border-l-4 border-red-400 rounded-r-lg px-3.5 py-2.5">
+                        <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" /><span className="text-sm text-ink font-medium">Entry without notice</span><span className="ml-auto text-[10px] font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full">High</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 bg-white border-l-4 border-red-400 rounded-r-lg px-3.5 py-2.5">
+                        <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" /><span className="text-sm text-ink font-medium">3 months&apos; rent to break early</span><span className="ml-auto text-[10px] font-semibold bg-red-100 text-red-700 px-2 py-0.5 rounded-full">High</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 bg-white border-l-4 border-amber-400 rounded-r-lg px-3.5 py-2.5">
+                        <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" /><span className="text-sm text-ink font-medium">Vague &ldquo;general upkeep&rdquo;</span><span className="ml-auto text-[10px] font-semibold bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Medium</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </Reveal>
+
+              {/* Row 2 — Money (visual first on desktop) */}
+              <Reveal>
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+                  <div className="lg:order-last">
+                    <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent mb-3">
+                      <DollarSign className="w-4 h-4" aria-hidden="true" /> Rent &amp; financial terms
+                    </div>
+                    <h3 className="text-2xl font-bold text-ink mb-3">Every dollar, surfaced before you sign</h3>
+                    <p className="text-muted leading-relaxed mb-5">
+                      Base rent, deposits, late fees, utilities, and the charges buried in dense clauses — pulled out and totalled so there are no surprises on move-in day.
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {analyzeFeatures[0].bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-muted">
+                          <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" aria-hidden="true" />{b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-line bg-surface-2 p-5 shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-wider text-subtle mb-3">Upfront cost breakdown</p>
+                    <dl className="flex flex-col gap-2 text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
+                      {[["First month&apos;s rent", "$2,200"], ["Last month&apos;s rent (LMR)", "$2,200"], ["Key deposit", "$100"], ["Parking", "$150/mo"]].map(([k, v]) => (
+                        <div key={k} className="flex items-center justify-between border-b border-line pb-1.5 last:border-0">
+                          <dt className="text-muted" dangerouslySetInnerHTML={{ __html: k }} /><dd className="font-semibold text-ink">{v}</dd>
+                        </div>
+                      ))}
+                      <div className="flex items-center justify-between pt-1">
+                        <dt className="font-bold text-ink">Due at signing</dt><dd className="font-bold text-accent">$4,500</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Row 3 — Legal */}
+              <Reveal>
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+                  <div>
+                    <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">
+                      <ShieldCheck className="w-4 h-4" aria-hidden="true" /> Legal compliance check
+                    </div>
+                    <h3 className="text-2xl font-bold text-ink mb-3">Checked against your province&apos;s law</h3>
+                    <p className="text-muted leading-relaxed mb-5">
+                      Your lease is measured against the tenancy rules that actually apply where you live — deposit limits, the rent-increase guideline, entry notice, and repair standards.
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                      {analyzeFeatures[5].bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-muted">
+                          <Check className="w-4 h-4 text-accent mt-0.5 shrink-0" aria-hidden="true" />{b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-line bg-surface-2 p-5 shadow-sm">
+                    <p className="text-xs font-bold uppercase tracking-wider text-subtle mb-3">Ontario · compliance</p>
+                    <div className="flex flex-col gap-2.5 text-sm">
+                      <div className="flex items-center gap-2.5"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /><span className="text-muted">Deposit within legal limit (LMR only)</span></div>
+                      <div className="flex items-center gap-2.5"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /><span className="text-muted">24-hour entry notice present</span></div>
+                      <div className="flex items-center gap-2.5"><XCircle className="w-4 h-4 text-red-500 shrink-0" /><span className="text-ink font-medium">Rent-increase clause exceeds guideline</span></div>
+                      <div className="flex items-center gap-2.5"><CheckCircle className="w-4 h-4 text-green-500 shrink-0" /><span className="text-muted">Repair obligations meet RTA standard</span></div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -318,20 +426,24 @@ export default function HomePage() {
         <section className="py-20 px-4 bg-white" id="how-it-works">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-ink text-center mb-3">How It Works</h2>
-            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
+            <p className="text-muted text-center mb-14 max-w-xl mx-auto">
               Three steps between you and a lease you actually understand. Takes less than 30 seconds.
             </p>
-            <div className="grid md:grid-cols-3 gap-10">
-              {howToSteps.map((item) => (
-                <div key={item.step} className="flex flex-col items-center text-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-brand text-brand-fg font-bold text-xl flex items-center justify-center shadow-md">
-                    {item.step}
+            <Reveal>
+              <div className="relative grid md:grid-cols-3 gap-10">
+                {/* connecting line (desktop) */}
+                <div aria-hidden="true" className="hidden md:block absolute top-7 left-[16.6%] right-[16.6%] h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+                {howToSteps.map((item) => (
+                  <div key={item.step} className="relative flex flex-col items-center text-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-brand text-brand-fg font-bold text-xl flex items-center justify-center shadow-md ring-4 ring-white">
+                      {item.step}
+                    </div>
+                    <h3 className="font-semibold text-ink text-lg">{item.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
                   </div>
-                  <h3 className="font-semibold text-ink text-lg">{item.title}</h3>
-                  <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Reveal>
             <div className="mt-12 flex justify-center">
               <Link href="/upload" className="inline-flex items-center gap-2 bg-brand text-brand-fg font-semibold px-7 py-3.5 rounded-xl hover:bg-brand-hover transition-colors shadow-sm">
                 Analyze My Lease <ChevronRight className="w-4 h-4" />
@@ -342,29 +454,51 @@ export default function HomePage() {
 
         {/* ── WHAT WE ANALYZE ──────────────────────────────────────────────── */}
         <section className="py-20 px-4 bg-surface-2" id="features">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-ink text-center mb-3">What We Analyze</h2>
-            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
-              A structured report covering every section of your residential lease agreement — explained in plain English.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {analyzeFeatures.map((f) => (
-                <div key={f.title} className="bg-white rounded-2xl p-6 border border-line shadow-sm hover:shadow-md transition-shadow">
-                  <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">
-                    <f.icon className="w-5 h-5 text-brand" />
+          <div className="max-w-5xl mx-auto">
+            <Reveal>
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-ink mb-3">What&apos;s in Your Report</h2>
+                <p className="text-muted max-w-xl mx-auto">
+                  A structured, plain-English breakdown of every section of your residential lease — not just a summary.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Scoring highlight row (from riskCategories) */}
+            <Reveal>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-line rounded-2xl overflow-hidden border border-line mb-8">
+                {riskCategories.map((r) => (
+                  <div key={r.title} className="bg-white p-5">
+                    <r.icon className="w-5 h-5 text-accent mb-2.5" aria-hidden="true" />
+                    <h3 className="font-semibold text-ink text-sm mb-1">{r.title}</h3>
+                    <p className="text-muted text-xs leading-relaxed">{r.desc}</p>
                   </div>
-                  <h3 className="font-semibold text-ink mb-3">{f.title}</h3>
-                  <ul className="space-y-1.5">
-                    {f.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-muted text-sm">
-                        <CheckCircle className="w-3.5 h-3.5 text-indigo-400 mt-0.5 shrink-0" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Reveal>
+
+            {/* Report anatomy — three checklists in one panel */}
+            <Reveal>
+              <div className="bg-white rounded-2xl border border-line shadow-sm grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line">
+                {[analyzeFeatures[2], analyzeFeatures[3], analyzeFeatures[4]].map((f) => (
+                  <div key={f.title} className="p-6">
+                    <div className="flex items-center gap-2.5 mb-4">
+                      <span className="w-9 h-9 rounded-xl bg-brand-soft flex items-center justify-center shrink-0">
+                        <f.icon className="w-4.5 h-4.5 text-brand" aria-hidden="true" />
+                      </span>
+                      <h3 className="font-semibold text-ink text-sm">{f.title}</h3>
+                    </div>
+                    <ul className="space-y-2">
+                      {f.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-muted text-sm">
+                          <Check className="w-3.5 h-3.5 text-accent mt-0.5 shrink-0" aria-hidden="true" />{b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 

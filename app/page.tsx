@@ -15,24 +15,25 @@ import {
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
+  title: "Free Lease Review & Tenant Rights Help in Canada & the U.S. | LeasePlain",
   description:
-    "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
+    "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign. Covering every Canadian province and major U.S. states.",
   keywords: [
     "lease risk score", "hidden lease fees", "illegal lease clause Canada", "tenant protection tool",
     "is my lease legal", "landlord red flags", "tenant rights Ontario", "rental agreement review Canada",
+    "tenant rights by state", "US lease review", "security deposit limits by state",
   ],
   openGraph: {
-    title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
+    title: "Free Lease Review & Tenant Rights Help in Canada & the U.S. | LeasePlain",
     description:
-      "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
+      "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign. Covering every Canadian province and major U.S. states.",
     type: "website",
     url: "https://leaseplain.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Lease Review & Tenant Rights Help in Canada | LeasePlain",
-    description: "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign.",
+    title: "Free Lease Review & Tenant Rights Help in Canada & the U.S. | LeasePlain",
+    description: "Upload your lease and discover hidden risks, questionable clauses, landlord red flags, and tenant rights issues in minutes — before you sign. Covering Canada and major U.S. states.",
   },
   alternates: { canonical: "https://leaseplain.com" },
 };
@@ -149,8 +150,8 @@ const analyzeFeatures = [
 const riskCategories = [
   { icon: TrendingUp, title: "Lease Risk Score", desc: "Every lease gets an overall risk score from 0–100, so you know at a glance whether you're looking at a clean lease or one stacked against you." },
   { icon: DollarSign, title: "Hidden Fees", desc: "We surface fees buried in dense clauses — admin charges, non-refundable deposits, key replacement costs — before they catch you off guard." },
-  { icon: AlertTriangle, title: "Unusual Clauses", desc: "Terms that fall outside what's typical for your province get flagged immediately, with plain-English context on why they're unusual." },
-  { icon: ShieldCheck, title: "Potential Legal Issues", desc: "Clauses that may conflict with your province's tenancy laws are flagged so you can raise them before signing, not after." },
+  { icon: AlertTriangle, title: "Unusual Clauses", desc: "Terms that fall outside what's typical for your province or state get flagged immediately, with plain-English context on why they're unusual." },
+  { icon: ShieldCheck, title: "Potential Legal Issues", desc: "Clauses that may conflict with your province's or state's tenancy laws are flagged so you can raise them before signing, not after." },
 ];
 
 const provinceProtections = [
@@ -170,7 +171,7 @@ const comparisonRows = [
 ];
 
 const howToSteps = [
-  { step: "1", title: "Upload Your Lease", desc: "Drop in your PDF or paste your lease text. Supports all standard Canadian residential lease formats." },
+  { step: "1", title: "Upload Your Lease", desc: "Drop in your PDF or paste your lease text. Supports standard Canadian and U.S. residential lease formats." },
   { step: "2", title: "AI Reads Every Clause", desc: "Our AI analyzes every paragraph, identifies key terms, flags risks, and structures a full plain-English report." },
   { step: "3", title: "Review & Sign with Confidence", desc: "See exactly what you're agreeing to — red flags, costs, and negotiation tips — before you put pen to paper." },
 ];
@@ -239,7 +240,7 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-6 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed text-pretty" style={{ color: "color-mix(in srgb, var(--brand-fg) 82%, transparent)" }}>
-                Upload your lease and get a plain-English breakdown of hidden fees, red-flag clauses, and the rights your province gives you — in minutes.
+                Upload your lease and get a plain-English breakdown of hidden fees, red-flag clauses, and the rights your province or state gives you — in minutes.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -259,7 +260,7 @@ export default function HomePage() {
 
               <div className="mt-8 flex flex-wrap gap-3 sm:gap-6 items-center justify-center lg:justify-start text-xs" style={{ color: "color-mix(in srgb, var(--brand-fg) 68%, transparent)" }}>
                 <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5" /> Private &amp; never stored</span>
-                <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters across Canada</span>
+                <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Built for renters in Canada &amp; the U.S.</span>
                 <span className="flex items-center gap-1.5"><CheckCircle className="w-3.5 h-3.5" /> No legal knowledge required</span>
               </div>
             </div>
@@ -275,7 +276,7 @@ export default function HomePage() {
         <section className="py-5 px-4 bg-surface-2 border-b border-line">
           <div className="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-0 gap-y-3 divide-x divide-line">
             {[
-              { icon: MapPin, stat: "All 10", label: "Canadian provinces covered" },
+              { icon: MapPin, stat: "Canada + U.S.", label: "provinces and states covered" },
               { icon: Lock, stat: "Private", label: "your document is never stored" },
               { icon: Clock, stat: "Under 30s", label: "to a full risk breakdown" },
             ].map((item) => (
@@ -295,7 +296,7 @@ export default function HomePage() {
               { icon: ShieldCheck, label: "Private & secure — document never stored" },
               { icon: Clock, label: "Analysis in under 30 seconds" },
               { icon: Eye, label: "Plain English, zero legal jargon" },
-              { icon: MapPin, label: "Checked against province-specific tenancy rules" },
+              { icon: MapPin, label: "Checked against province- and state-specific rules" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2 text-muted text-sm">
                 <item.icon className="w-4 h-4 text-brand shrink-0" />
@@ -395,9 +396,9 @@ export default function HomePage() {
                     <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-700 mb-3">
                       <ShieldCheck className="w-4 h-4" aria-hidden="true" /> Legal compliance check
                     </div>
-                    <h3 className="text-2xl font-bold text-ink mb-3">Checked against your province&apos;s law</h3>
+                    <h3 className="text-2xl font-bold text-ink mb-3">Checked against your province or state law</h3>
                     <p className="text-muted leading-relaxed mb-5">
-                      Your lease is measured against the tenancy rules that actually apply where you live — deposit limits, the rent-increase guideline, entry notice, and repair standards.
+                      Your lease is measured against the tenancy rules that actually apply where you live — in any Canadian province or major U.S. state — deposit limits, rent-control caps, entry notice, and repair standards.
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
                       {analyzeFeatures[5].bullets.map((b) => (
@@ -505,9 +506,9 @@ export default function HomePage() {
         {/* ── PROVINCE-SPECIFIC PROTECTION ─────────────────────────────────── */}
         <section className="py-20 px-4 bg-white" id="provinces">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-ink text-center mb-3">Province-Specific Protection</h2>
-            <p className="text-muted text-center mb-12 max-w-xl mx-auto">
-              Tenancy law varies significantly across Canada. LeasePlain checks your lease against the rules that actually apply to you.
+            <h2 className="text-3xl font-bold text-ink text-center mb-3">Province &amp; State-Specific Protection</h2>
+            <p className="text-muted text-center mb-12 max-w-2xl mx-auto">
+              Tenancy law varies significantly from one province — or U.S. state — to the next. LeasePlain checks your lease against the rules that actually apply where you rent.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {provinceProtections.map((p) => (
@@ -524,9 +525,12 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-            <p className="text-center mt-8 text-muted text-sm">
+            <p className="text-center mt-8 text-muted text-sm flex flex-wrap justify-center gap-x-6 gap-y-2">
               <Link href="/canada" className="text-brand font-semibold hover:underline">
-                See protection details for all 10 provinces →
+                All 10 Canadian provinces →
+              </Link>
+              <Link href="/united-states" className="text-brand font-semibold hover:underline">
+                Tenant rights by U.S. state →
               </Link>
             </p>
           </div>
@@ -856,7 +860,7 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-ink mb-3">Latest from the Blog</h2>
               <p className="text-muted max-w-xl mx-auto">
-                Guides and resources to help Canadian renters understand their rights, read leases, and navigate rental laws.
+                Guides and resources to help renters in Canada and the U.S. understand their rights, read leases, and navigate rental laws.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -929,8 +933,8 @@ export default function HomePage() {
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 text-left">
               {[
-                { icon: MapPin, title: "All 10 provinces", body: "Guidance and data for every Canadian province, kept jurisdiction-specific." },
-                { icon: ShieldCheck, title: "Checked against the law", body: "Content is verified against provincial tenancy authorities and dated when reviewed." },
+                { icon: MapPin, title: "Canada & the U.S.", body: "Guidance and data for every Canadian province and major U.S. states, kept jurisdiction-specific." },
+                { icon: ShieldCheck, title: "Checked against the law", body: "Content is verified against provincial and state tenancy authorities and dated when reviewed." },
                 { icon: DollarSign, title: "Free, no account", body: "Every tool, guide, and letter is free — no paywall, no signup, no upsell." },
                 { icon: Lock, title: "Private by design", body: "Uploaded leases are analyzed in real time and never stored." },
               ].map((item) => (
@@ -979,15 +983,15 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-ink text-center mb-3">Built for Privacy, Clarity, and Renter Confidence</h2>
             <p className="text-muted text-center mb-12 max-w-2xl mx-auto text-sm leading-relaxed">
-              LeasePlain checks your lease against the tenancy rules of the applicable Canadian province and flags clauses
+              LeasePlain checks your lease against the tenancy rules of the applicable Canadian province or U.S. state and flags clauses
               that deviate from what&apos;s typical or legally enforceable. Your document is processed in real time and never
               stored after your report is generated.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { icon: ShieldCheck, title: "How we review your lease", body: "Every clause is checked against general tenancy norms and the rules published by your province's tenancy authority. Results are informational, not a legal determination." },
+                { icon: ShieldCheck, title: "How we review your lease", body: "Every clause is checked against general tenancy norms and the rules published by your province's or state's tenancy authority. Results are informational, not a legal determination." },
                 { icon: Lock, title: "Your document stays private", body: "Leases are processed to generate your report and are not retained afterward. We don't sell or share uploaded documents." },
-                { icon: ShieldCheck, title: "Not a law firm", body: "LeasePlain provides lease education and risk information for renters. It is not a law firm and does not provide legal advice. For legal decisions or disputes, consult a qualified legal professional or your provincial tenancy authority." },
+                { icon: ShieldCheck, title: "Not a law firm", body: "LeasePlain provides lease education and risk information for renters. It is not a law firm and does not provide legal advice. For legal decisions or disputes, consult a qualified legal professional or your provincial or state tenancy authority." },
               ].map((t) => (
                 <div key={t.title} className="bg-surface-2 rounded-2xl p-6 border border-line">
                   <div className="w-10 h-10 rounded-xl bg-brand-soft flex items-center justify-center mb-4">

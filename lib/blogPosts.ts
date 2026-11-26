@@ -11,6 +11,54 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    href: "/blog/can-you-be-evicted-in-winter-canada",
+    title: "Can You Be Evicted in Winter in Canada?",
+    excerpt:
+      "It's a common myth that landlords can't evict you once it's cold. Most provinces have no winter eviction ban — but proper process still applies, and there are real ways to buy time.",
+    date: "November 26, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/snow-removal-responsibility-canada",
+    title: "Snow Removal: Is It the Landlord's or Tenant's Job?",
+    excerpt:
+      "In an apartment, the landlord clears common areas. In a rented house, the lease can put shovelling on you. What's enforceable — and why your city's bylaw overrides the lease.",
+    date: "November 20, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/no-heat-tenant-rights-by-us-state",
+    title: "No Heat in Your Apartment? Tenant Rights by U.S. State",
+    excerpt:
+      "Heat is a legal requirement in every state under the implied warranty of habitability. 'Heat season' dates, minimum indoor temperatures, and your remedies when the landlord won't fix it.",
+    date: "November 20, 2026",
+    category: "United States",
+  },
+  {
+    href: "/blog/cant-pay-rent-this-winter-canada",
+    title: "Can't Pay Rent This Winter? Your Options Before Eviction",
+    excerpt:
+      "Falling behind over winter? Rent banks, emergency assistance, repayment agreements, and the deadline that lets you stop an eviction by paying what you owe. Act early — here's how.",
+    date: "November 13, 2026",
+    category: "Canada",
+  },
+  {
+    href: "/blog/security-deposit-return-timeline-by-us-state",
+    title: "How Long Does a Landlord Have to Return Your Deposit? (By U.S. State)",
+    excerpt:
+      "Deposit return deadlines run 14 to 60 days by state — NY 14, California 21, Texas 30, Florida up to 30, Illinois 30–45. Deadlines, itemization rules, and penalties for a late return.",
+    date: "November 13, 2026",
+    category: "United States",
+  },
+  {
+    href: "/blog/holiday-guests-how-long-can-visitors-stay-canada",
+    title: "Holiday Guests: How Long Can Visitors Stay?",
+    excerpt:
+      "You have the right to reasonable guests — and a landlord can't ban them or charge a fee. The line to watch is when a holiday visitor quietly becomes a long-term occupant.",
+    date: "November 6, 2026",
+    category: "Canada",
+  },
+  {
     href: "/blog/tenant-lawyer-cost-canada",
     title: "How Much Does a Tenant Lawyer Cost in Canada?",
     excerpt:

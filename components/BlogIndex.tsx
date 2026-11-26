@@ -9,6 +9,7 @@ const CATEGORY_DOT: Record<string, string> = {
   Ontario: "bg-blue-500",
   "British Columbia": "bg-emerald-500",
   Canada: "bg-slate-400",
+  "United States": "bg-rose-500",
   "Lease Tips": "bg-amber-500",
 };
 

@@ -7,6 +7,12 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { card, SIZE } from "./og-card.mjs";
 
 const posts = [
+  ["can-you-be-evicted-in-winter-canada", "Can You Be Evicted in Winter in Canada?"],
+  ["snow-removal-responsibility-canada", "Snow Removal: Is It the Landlord's or Tenant's Job?"],
+  ["no-heat-tenant-rights-by-us-state", "No Heat in Your Apartment? Tenant Rights by U.S. State", "United States"],
+  ["cant-pay-rent-this-winter-canada", "Can't Pay Rent This Winter? Your Options Before Eviction"],
+  ["security-deposit-return-timeline-by-us-state", "How Long Does a Landlord Have to Return Your Deposit? (By U.S. State)", "United States"],
+  ["holiday-guests-how-long-can-visitors-stay-canada", "Holiday Guests: How Long Can Visitors Stay?"],
   ["tenant-lawyer-cost-canada", "How Much Does a Tenant Lawyer Cost in Canada?"],
   ["subletting-without-permission-canada", "Subletting Without the Landlord's Permission: Your Rights"],
   ["rental-application-what-landlords-can-ask-canada", "What Can a Landlord Legally Ask For on a Rental Application?"],
@@ -82,8 +88,8 @@ const posts = [
   ["newfoundland-eviction-process", "The Newfoundland Eviction Process"],
 ];
 
-for (const [slug, title] of posts) {
-  const res = new ImageResponse(card(title), { ...SIZE });
+for (const [slug, title, category] of posts) {
+  const res = new ImageResponse(card(title, category ?? "Canada"), { ...SIZE });
   const buf = Buffer.from(await res.arrayBuffer());
   const dir = `app/blog/${slug}`;
   mkdirSync(dir, { recursive: true });

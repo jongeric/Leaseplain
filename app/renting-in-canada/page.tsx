@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, ChevronRight, Upload, CheckCircle, AlertTriangle, BookOpen } from "lucide-react";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,10 @@ const faqSchema = {
 export default function RentingInCanadaPage() {
   return (
     <div className="flex flex-col min-h-full">
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "https://leaseplain.com" },
+        { name: "Renting in Canada", href: "https://leaseplain.com/renting-in-canada" },
+      ]} />
       <Navbar />
 
       <main>

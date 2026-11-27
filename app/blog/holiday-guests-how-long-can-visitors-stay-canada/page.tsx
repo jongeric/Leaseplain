@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "You have the right to <strong>reasonable guests</strong> — a landlord can't ban them or charge a guest fee.",
+                  "A guest becomes an <strong>&ldquo;occupant&rdquo;</strong> only if they move in indefinitely, get mail there, or pay rent.",
+                  "Blanket <strong>&ldquo;no guests&rdquo;</strong> clauses or very low night limits are often unenforceable.",
+                  "A short visit <strong>never changes your rent</strong>; increases require the formal process and notice.",
+                  "If a guest will stay long-term, ask about <strong>adding them as an occupant</strong> or the sublet rules.",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="Canadian residential tenancy law" />
                 <TableOfContents />
 

@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "Return deadlines run <strong>14 to 60 days</strong> by state — NY 14, California 21, Texas/Washington/Georgia/PA 30, Florida up to 30, Illinois 30–45.",
+                  "If a landlord keeps any deposit, most states require a <strong>written, itemized statement</strong> — skipping it can forfeit the deduction.",
+                  "Give a <strong>written forwarding address</strong> at move-out; in some states the clock won't start without it.",
+                  "Late or wrongful withholding can expose a landlord to <strong>2–3&times; penalties</strong> plus court costs.",
+                  "Only <strong>damage beyond normal wear and tear</strong> and unpaid rent are deductible — take dated move-in/move-out photos.",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="U.S. state security-deposit statutes" />
                 <TableOfContents />
 

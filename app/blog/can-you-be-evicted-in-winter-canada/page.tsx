@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "Most Canadian provinces have <strong>no winter eviction ban</strong> — evictions can proceed year-round.",
+                  "A landlord can never evict you themselves; a <strong>tribunal order</strong> and sheriff/bailiff enforcement are always required.",
+                  "You can ask the tribunal for <strong>more time</strong> at the hearing (in Ontario, under section 83).",
+                  "For non-payment, <strong>paying the arrears</strong> before the order takes effect usually stops the eviction.",
+                  "Rules differ by province — check your tribunal (Ontario's LTB, BC's RTB, Quebec's TAL).",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="Canadian residential tenancy law" />
                 <TableOfContents />
 

@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -120,6 +121,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "Missing rent is <strong>not instant eviction</strong> — there's a notice, hearing, order, and enforcement process.",
+                  "<strong>Rent banks</strong> offer interest-free loans or grants that can clear arrears and stop the eviction.",
+                  "You can usually <strong>pay the full arrears</strong> to void a non-payment case, often right up to when the order takes effect.",
+                  "A written <strong>repayment agreement</strong> can keep you housed — check the default terms before signing.",
+                  "<strong>Free help</strong> exists: community legal clinics and tenant duty counsel. Act early.",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="Canadian residential tenancy law" />
                 <TableOfContents />
 

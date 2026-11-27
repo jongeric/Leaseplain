@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "Heat is required in <strong>every U.S. state</strong> under the implied warranty of habitability.",
+                  "Many cities set a <strong>&ldquo;heat season&rdquo;</strong> (often Oct 1–May 31) with minimums like 68&deg;F day / 62&deg;F night (e.g. NYC).",
+                  "Escalate in order: written notice &rarr; <strong>city code enforcement</strong> &rarr; repair-and-deduct or escrow &rarr; breaking the lease.",
+                  "Don't simply <strong>withhold rent</strong> — many states require paying into escrow; doing it wrong risks eviction.",
+                  "<strong>Retaliation</strong> — eviction or a rent hike for complaining — is illegal in most states.",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="U.S. habitability & housing codes" />
                 <TableOfContents />
 

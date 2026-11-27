@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function SublettingWithoutPermissionPage() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "You usually <strong>can't sublet without asking</strong> — but the landlord <strong>can't unreasonably refuse</strong> either.",
+                  "Get consent <strong>in writing</strong>; an unreasonable refusal can often be challenged at the tribunal.",
+                  "Subletting anyway can be a <strong>lease breach</strong> and grounds for eviction.",
+                  "You stay <strong>responsible to the landlord</strong> for rent and damage during a sublet.",
+                  "A subtenant has rights too — even with <strong>no written agreement</strong>.",
+                ]} />
                 <ReviewedByline updated="October 2026" jurisdiction="Canadian residential-tenancy law" />
                 <TableOfContents />
 

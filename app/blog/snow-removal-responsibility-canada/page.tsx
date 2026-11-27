@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function Page() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "In an <strong>apartment or multi-unit building</strong>, the landlord clears common walkways, entrances, and parking areas.",
+                  "In a <strong>rented house</strong>, the lease can make the tenant shovel — enforceable if it's clearly written.",
+                  "A clause offloading <strong>common-area</strong> clearing onto individual tenants is usually unenforceable.",
+                  "Your <strong>municipal bylaw</strong> separately requires clearing the public sidewalk (often within 12–24 hours), with fines.",
+                  "Confirm snow duties — and tenant-insurance liability coverage — <strong>in writing before winter</strong>.",
+                ]} />
                 <ReviewedByline updated="November 2026" jurisdiction="Canadian residential tenancy & municipal bylaws" />
                 <TableOfContents />
 

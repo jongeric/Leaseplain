@@ -9,6 +9,7 @@ import ReadingProgress from "@/components/ReadingProgress";
 import FAQAccordion from "@/components/FAQAccordion";
 import ArticleSchema from "@/components/ArticleSchema";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 export const dynamic = "force-static";
 
@@ -121,6 +122,13 @@ export default function TenantLawyerCostPage() {
           <section className="py-14 px-4">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-3 gap-10">
               <div className="lg:col-span-2 space-y-8">
+                <KeyTakeaways items={[
+                  "<strong>Community legal clinics and duty counsel</strong> can represent you for free if you qualify.",
+                  "A licensed <strong>paralegal</strong> (Ontario LTB) runs ~$75–$250/hour, or ~$500–$2,500 flat for a hearing.",
+                  "A <strong>lawyer</strong> typically costs ~$200–$500+/hour.",
+                  "You can <strong>represent yourself</strong> at the LTB — help matters most for evictions, large claims, or a bad-faith N12.",
+                  "Don't assume you'll <strong>recover your costs</strong> — tribunals award them sparingly.",
+                ]} />
                 <ReviewedByline updated="October 2026" jurisdiction="Canadian legal-aid & tribunal practice" />
                 <TableOfContents />
 
